@@ -1,0 +1,29 @@
+@import "/src/components/App/main.scss";
+
+.root {
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 20%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_typeTransparent {
+    background: transparent;
+  }
+
+  @include media-breakpoint-down(xl) {
+    flex-direction: column;
+    height: auto;
+    padding: 25px 0;
+    row-gap: 15px;
+  }
+}

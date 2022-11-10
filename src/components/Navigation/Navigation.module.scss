@@ -1,0 +1,62 @@
+@import "/src/components/App/main.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  @include media-breakpoint-down(md) {
+    gap: 18px;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.rootTypeBurger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
+.link {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: $primary-light-text-color;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  height: 100%;
+  transition: color 300ms ease, transform 200ms ease;
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    font-size: 19px;
+  }
+
+  &:hover {
+    color: $primary-gold-text-color;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $primary-gold-text-color;
+    transform: scaleX(0);
+    transition: transform 250ms ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}

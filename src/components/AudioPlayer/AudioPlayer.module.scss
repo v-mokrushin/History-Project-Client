@@ -1,0 +1,61 @@
+@import "/src/components/App/main.scss";
+
+.root {
+  position: relative;
+  width: 28px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  &_typeForHeader {
+    position: absolute;
+    right: 300px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 22px;
+  }
+}
+
+.playButton {
+  background-image: url(../../assets/images/player-icons/play.svg);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  position: absolute;
+  display: block;
+
+  &_hidden {
+    transform: translateY(-40px);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.stopButton {
+  background-image: url(../../assets/images/player-icons/stop.svg);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  position: absolute;
+  display: none;
+
+  &_hidden {
+    transform: translateY(-40px);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
