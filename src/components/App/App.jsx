@@ -5,12 +5,14 @@ import NewsPage from "../../pages/NewsPage/NewsPage";
 import Layout from "../Layout/Layout";
 import { Provider } from "react-redux";
 import { store } from "../../store";
-import "./App.scss";
-import "./main.scss";
 import WarningPage from "../../pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "../../pages/WarningPage/constants";
 import { createContext, useState } from "react";
 import { BurgerContext } from "../Burger/context";
+
+import "./App.scss";
+import "../../assets/css/main.scss";
+import ArticlePage from "../../pages/ArticlePage/ArticlePage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +34,11 @@ function App() {
                 path="/news"
                 element={<WarningPage pageType={WARNING_PAGE_TYPE.notFound} />}
               />
-              <Route path="/articles" element={<ArticlesPage />} />
+              <Route path="/articles" element={<ArticlesPage />}></Route>
+              <Route
+                path="/articles/article_:articleId"
+                element={<ArticlePage />}
+              />
               <Route
                 path="/weapons"
                 element={

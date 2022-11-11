@@ -1,4 +1,4 @@
-@import "/src/components/App/main.scss";
+@import "/src/assets/css/main.scss";
 
 .root {
   position: fixed;
@@ -14,6 +14,19 @@
 
   &Open {
     transform: translate(0);
+    // animation-name: slider;
+    // animation-duration: 300ms;
+    // animation-fill-mode: forwards;
+    // animation-delay: 150ms;
+  }
+
+  @keyframes slider {
+    0% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 
@@ -31,10 +44,11 @@
   background-size: cover;
   position: absolute;
   right: 0;
-  transition: transform 300ms;
+  transition: transform 200ms;
 
   &:active {
-    transform: rotate(90deg);
+    // transform: rotate(90deg);
+    transform: translateY(2px);
   }
 }
 
@@ -45,7 +59,7 @@
   background-size: cover;
   position: absolute;
   right: 20px;
-  transition: transform 200ms;
+  transition: transform 150ms;
   display: none;
 
   @include media-breakpoint-down(sm) {

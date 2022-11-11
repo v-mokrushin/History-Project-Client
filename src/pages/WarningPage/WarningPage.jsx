@@ -19,12 +19,19 @@ export default function WarningPage({ pageType }) {
       return "Страница в разработке";
   }
 
+  function getKey() {
+    if (pageType == WARNING_PAGE_TYPE.notFound) return 404;
+    if (pageType == WARNING_PAGE_TYPE.workInProgress) return 500;
+  }
+
+  console.log(getKey());
+
   return (
     <div
       className={classNames(styles.root, {
         [styles.root_typeNoFound]: pageType == WARNING_PAGE_TYPE.notFound,
       })}
-      key={Math.trunc(Math.random() * 1000)}
+      key={getKey()}
     >
       <div className={classNames(styles.background, getBackground())}></div>
       <p className={classNames(styles.title, ANIMATIONS.fadeInDown)}>

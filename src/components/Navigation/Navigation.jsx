@@ -36,14 +36,17 @@ export default function Navigation({ isTypeBurger = false }) {
       >
         Сражения
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/links"
         className={styles.link}
         onClick={burgerContext.setClose}
       >
         Ссылки
-      </NavLink>
-      <AudioPlayer />
+      </NavLink> */}
+
+      <AudioPlayer>
+        <span className={styles.link}>Музыка</span>
+      </AudioPlayer>
     </nav>
   );
 }

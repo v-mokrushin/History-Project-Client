@@ -1,4 +1,4 @@
-@import "/src/components/App/main.scss";
+@import "/src/assets/css/main.scss";
 
 .root {
   height: 100vh;
@@ -59,12 +59,12 @@
   }
 
   &NotFound {
-    background-image: url(../../assets/images/404-2.jpg);
+    background-image: url(../../assets/images/backgrounds/404-2.jpg);
     background-position: center top;
   }
 
   &WorkInProgress {
-    background-image: url(../../assets/images/work-in-progress.jpg);
+    background-image: url(../../assets/images/backgrounds/work-in-progress.jpg);
     background-position: center;
   }
 }

@@ -5,5 +5,5 @@ export const selectArticlesIds = (state) => selectArticlesModule(state).ids;
 export const selectArticlesLoadingStatus = (state) =>
   selectArticlesModule(state).status;
 
-export const selectArticleById = (state, { id }) =>
-  selectArticlesModule(state).entities[id];
+export const selectArticleById = (state, { articleId }) =>
+  selectArticlesModule(state).entities[articleId];

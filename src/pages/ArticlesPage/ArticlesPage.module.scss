@@ -1,4 +1,4 @@
-@import "/src/components/App/main.scss";
+@import "/src/assets/css/main.scss";
 
 .root {
   // background: rgb(204, 191, 191);
@@ -6,7 +6,7 @@
 
 .intro {
   height: 50vh;
-  background-image: url(../../assets/images/404-1.jpg);
+  background-image: url(../../assets/images/backgrounds/404-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,8 +24,8 @@
     right: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.6) 20%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(0, 0, 0, 0.55) 30%,
+      rgba(0, 0, 0, 0) 100%
     );
     z-index: 0;
   }
@@ -116,7 +116,6 @@
       rgba(255, 255, 255, 1) 100%
     );
 
-    
     @include media-breakpoint-down(sm) {
       width: 100px;
     }

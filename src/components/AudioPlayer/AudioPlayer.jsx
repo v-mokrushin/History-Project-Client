@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { useState, useRef } from "react";
 import styles from "./AudioPlayer.module.scss";
 
-export default function AudioPlayer({ forHeader }) {
+export default function AudioPlayer({ forHeader, children }) {
   const audio = useRef(null);
   const playBox = useRef(null);
   const stopBox = useRef(null);
@@ -35,7 +35,8 @@ export default function AudioPlayer({ forHeader }) {
         forHeader && styles.root_typeForHeader
       )}
     >
-      <audio ref={audio} src="audio/head-theme.mp3" loop />
+      <audio ref={audio} src="audio/apocalypse.mp3" loop />
+      {children}
       <div
         ref={playBox}
         className={styles.playButton}

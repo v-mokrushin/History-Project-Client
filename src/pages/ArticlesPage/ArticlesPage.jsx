@@ -10,9 +10,11 @@ import {
 } from "../../store/acticles/selectors";
 import { loadArticles } from "../../store/acticles/loadingMiddleware";
 import { LOADING_STATUSES } from "../../store/constants";
-import LoadingLogo from "../../components/LoadingLogo/LoadingLogo";
+import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
+import IntroImage from "../../components/IntroImage/IntroImage";
+import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch();
@@ -25,14 +27,19 @@ export default function ArticlesPage() {
 
   function getLayout() {
     if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return <LoadingLogo />;
+      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading}/>;
     }
 
     if (loadingStatus === LOADING_STATUSES.success) {
       return (
         <>
           <div className={styles.titleWrapper}>
-            <div className={classNames(styles.titleWrapper__stripe, styles.titleWrapper__stripeLeft)}></div>
+            <div
+              className={classNames(
+                styles.titleWrapper__stripe,
+                styles.titleWrapper__stripeLeft
+              )}
+            ></div>
             <h1
               className={classNames(
                 styles.titleWrapper__title,
@@ -45,7 +52,7 @@ export default function ArticlesPage() {
           </div>
           <div className={styles.cardsWrapper}>
             {articlesIds.map((val) => (
-              <ArticleCard id={val} key={val} />
+              <ArticleCard articleId={val} key={val} />
             ))}
           </div>
         </>
@@ -60,7 +67,7 @@ export default function ArticlesPage() {
   return (
     <div>
       <div className={styles.root}>
-        <div className={classNames(styles.intro)}></div>
+        <IntroImage />
         <main className={styles.mainSection}>
           <div className={styles.mainSectionContainer}>
             <div className={styles.mainSectionWrapper}>{getLayout()}</div>

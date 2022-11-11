@@ -1,15 +1,10 @@
-@import "/src/components/App/main.scss";
+@import "/src/assets/css/main.scss";
 
 .root {
   position: relative;
   width: 28px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-
-  &_typeForHeader {
-    position: absolute;
-    right: 300px;
-  }
 
   @include media-breakpoint-down(md) {
     width: 22px;
