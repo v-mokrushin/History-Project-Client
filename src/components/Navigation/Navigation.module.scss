@@ -33,8 +33,9 @@
   cursor: pointer;
   user-select: none;
   height: 100%;
-  transition: color 300ms ease, transform 200ms ease;
+  transition: color 300ms ease, transform 250ms ease;
   position: relative;
+  height: max-content;
 
   @include media-breakpoint-down(md) {
     font-size: 19px;
@@ -42,6 +43,10 @@
 
   &:hover {
     color: $primary-gold-text-color;
+  }
+
+  &:active {
+    transform: translateY(5px);
   }
 
   &::after {
@@ -61,7 +66,7 @@
   }
 }
 
-.musicBox{
+.musicBox {
   display: flex;
   gap: 5px;
   align-items: center;

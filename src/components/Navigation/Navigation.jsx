@@ -44,7 +44,7 @@ export default function Navigation({ isTypeBurger = false }) {
         Ссылки
       </NavLink> */}
 
-      <AudioPlayer>
+      <AudioPlayer isMainPlayer={!isTypeBurger}>
         <span className={styles.link}>Музыка</span>
       </AudioPlayer>
     </nav>

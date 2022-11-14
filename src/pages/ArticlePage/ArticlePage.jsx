@@ -7,7 +7,6 @@ import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { ANIMATIONS } from "../../constants/animation";
 import { selectArticleById } from "../../store/acticles/selectors";
-import { getBackgroundImageStyleObject } from "../../utils/common";
 import styles from "./ArticlePage.module.scss";
 
 export default function ArticlePage() {
@@ -16,24 +15,35 @@ export default function ArticlePage() {
     selectArticleById(state, { articleId })
   );
 
+  function getContent() {
+    if (article.paragraphs.length > 0) {
+      return (
+        <div className={styles.paragraphsWrapper}>
+          {article.paragraphs.map((item, index) => (
+            <p className={styles.text} key={index}>
+              {item}
+            </p>
+          ))}
+        </div>
+      );
+    } else {
+      return (
+        <SpecialLogo
+          type={SPECIAL_LOGO_TYPE.inDevelopment}
+          className={styles.specialLogoStyle}
+        />
+      );
+    }
+  }
+
   return (
     <div className={styles.root}>
-      {/* <div
-        className={classNames(styles.intro, ANIMATIONS.fadeIn)}
-        style={getBackgroundImageStyleObject(article.backgroundURL)}
-      ></div> */}
-      <IntroImage
-        imageUrl={article.backgroundURL}
-        className={classNames(ANIMATIONS.fadeIn)}
-      />
+      <IntroImage imageUrl={article.backgroundURL} />
       <div className={styles.contentWrapper}>
         <div className={styles.container}>
           <div className={styles.wrapper}>
             <h2 className={styles.title}>{article.title}</h2>
-            <SpecialLogo
-              type={SPECIAL_LOGO_TYPE.inDevelopment}
-              className={styles.specialLogoStyle}
-            />
+            {getContent()}
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function ArticlesPage() {
 
   function getLayout() {
     if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading}/>;
+      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} />;
     }
 
     if (loadingStatus === LOADING_STATUSES.success) {
@@ -68,9 +68,9 @@ export default function ArticlesPage() {
     <div>
       <div className={styles.root}>
         <IntroImage />
-        <main className={styles.mainSection}>
-          <div className={styles.mainSectionContainer}>
-            <div className={styles.mainSectionWrapper}>{getLayout()}</div>
+        <main className={styles.wrapper}>
+          <div className={styles.container}>
+            <div className={styles.contentWrapper}>{getLayout()}</div>
           </div>
         </main>
       </div>

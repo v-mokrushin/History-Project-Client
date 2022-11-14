@@ -24,8 +24,6 @@ export default function WarningPage({ pageType }) {
     if (pageType == WARNING_PAGE_TYPE.workInProgress) return 500;
   }
 
-  console.log(getKey());
-
   return (
     <div
       className={classNames(styles.root, {

@@ -6,7 +6,7 @@ import { selectArticleById } from "../../store/acticles/selectors";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { getBackgroundImageStyleObject } from "../../utils/common";
-import { scrollToTop } from "../../utils/scroll";
+import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 
 export default function ArticleCard({ articleId }) {
   const article = useSelector((state) =>
@@ -17,7 +17,7 @@ export default function ArticleCard({ articleId }) {
     <NavLink
       to={`/articles/article_${articleId}`}
       className={classNames(styles.root, ANIMATIONS.zoomIn)}
-      onClick={scrollToTop}
+      onClick={() => scrollTopInstantly()}
     >
       <div
         className={styles.backgroundWrapper}

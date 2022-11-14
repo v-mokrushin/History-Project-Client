@@ -1,52 +1,77 @@
 import classNames from "classnames";
 import React, { useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  playAudio,
+  stopAudio,
+} from "../../store/audioPlayer/playingMiddleware";
+import { selectAudioPlayerStatus } from "../../store/audioPlayer/selectors";
 import styles from "./AudioPlayer.module.scss";
 
-export default function AudioPlayer({ forHeader, children }) {
+export default function AudioPlayer({ isMainPlayer = false, children }) {
+  const dispatch = useDispatch();
+  const isPlaying = useSelector((state) => selectAudioPlayerStatus(state));
+
   const audio = useRef(null);
   const playBox = useRef(null);
   const stopBox = useRef(null);
-  const [player, setPlayer] = useState("stopped");
+
+  React.useEffect(() => {
+    if (isMainPlayer) {
+      if (isPlaying) {
+        audio.current.play();
+        console.log("play");
+        return;
+      }
+      if (!isPlaying) {
+        audio.current.pause();
+        return;
+      }
+    }
+  }, [isPlaying]);
 
   const playerOnPlay = () => {
-    audio.current.play();
-    playBox.current.style.display = "none";
-    stopBox.current.style.display = "block";
-    // playBox.current.classList.add("playButton_hidden");
-    // stopBox.current.classList.remove("stopButton_hidden");
-    // playBox.current.style.transform = "translateY(30px)";
-    // stopBox.current.style.transform = "translateY(0)";
+    dispatch(playAudio);
   };
 
   const playerOnStop = () => {
-    audio.current.pause();
-    stopBox.current.style.display = "none";
-    playBox.current.style.display = "block";
-    // stopBox.current.classList.toggle("stopButton_hidden");
-    // playBox.current.classList.toggle("playButton_hidden");
-    // stopBox.current.style.transform = "translateY(-40px)";
-    // playBox.current.style.transform = "translateY(0)";
+    dispatch(stopAudio);
+  };
+
+  const togglePlaying = () => {
+    console.log("toggle");
+    if (!isPlaying) playerOnPlay();
+    if (isPlaying) playerOnStop();
+  };
+
+  const update = () => {
+    console.log("update");
+    if (isPlaying) {
+    }
   };
 
   return (
-    <div
-      className={classNames(
-        styles.root,
-        forHeader && styles.root_typeForHeader
-      )}
-    >
+    <div className={classNames(styles.root)}>
       <audio ref={audio} src="audio/apocalypse.mp3" loop />
-      {children}
-      <div
-        ref={playBox}
-        className={styles.playButton}
-        onClick={playerOnPlay}
-      ></div>
-      <div
-        ref={stopBox}
-        className={classNames(styles.stopButton)}
-        onClick={playerOnStop}
-      ></div>
+      <span onClick={() => togglePlaying()}>{children}</span>
+      <div className={classNames(styles.buttonBox)}>
+        <div
+          ref={playBox}
+          className={classNames(
+            styles.playButton,
+            isPlaying ? styles.displayNone : styles.displayBlock
+          )}
+          onClick={playerOnPlay}
+        ></div>
+        <div
+          ref={stopBox}
+          className={classNames(
+            styles.stopButton,
+            isPlaying ? styles.displayBlock : styles.displayNone
+          )}
+          onClick={playerOnStop}
+        ></div>
+      </div>
     </div>
   );
 }

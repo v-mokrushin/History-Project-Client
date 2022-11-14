@@ -1,37 +1,9 @@
 @import "/src/assets/css/main.scss";
 
 .root {
-  // background: rgb(204, 191, 191);
 }
 
-.intro {
-  height: 50vh;
-  background-image: url(../../assets/images/backgrounds/404-1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.55) 30%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    z-index: 0;
-  }
-}
-
-.mainSection {
+.wrapper {
   padding: 50px 25px;
   min-height: 50vh;
 
@@ -44,38 +16,50 @@
   @include media-breakpoint-down(xs) {
     padding: 35px 15px;
   }
+}
 
-  &Container {
-    max-width: 1940px;
-    width: 100%;
-    margin: 0 auto;
+.container {
+  max-width: 1940px;
+  width: 100%;
+  margin: 0 auto;
 
-    @media screen and (max-width: 2000px) {
-      max-width: 1450px;
-    }
-
-    @media screen and (max-width: 1500px) {
-      max-width: 960px;
-    }
-
-    @include media-breakpoint-down(xl) {
-    }
-
-    @include media-breakpoint-down(lg) {
-    }
-
-    @include media-breakpoint-down(md) {
-    }
+  @media screen and (max-width: 2000px) {
+    max-width: 1450px;
   }
 
-  &Wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  @media screen and (max-width: 1500px) {
+    max-width: 960px;
+  }
 
-    @include media-breakpoint-down(xs) {
-      gap: 20px;
-    }
+  @include media-breakpoint-down(xl) {
+  }
+
+  @include media-breakpoint-down(lg) {
+  }
+
+  @include media-breakpoint-down(md) {
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 20px;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 20px;
+  row-gap: 25px;
+
+  @include media-breakpoint-down(xs) {
+    row-gap: 15px;
   }
 }
 
@@ -127,17 +111,5 @@
 
   &__stripeLeft {
     transform: scaleX(-1);
-  }
-}
-
-.cardsWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  column-gap: 20px;
-  row-gap: 25px;
-
-  @include media-breakpoint-down(xs) {
-    row-gap: 15px;
   }
 }
