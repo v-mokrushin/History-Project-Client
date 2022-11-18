@@ -41,6 +41,10 @@
     font-size: 19px;
   }
 
+  &_active {
+    color: $primary-gold-text-color;
+  }
+
   &:hover {
     color: $primary-gold-text-color;
   }
@@ -68,6 +72,6 @@
 
 .musicBox {
   display: flex;
-  gap: 5px;
+  gap: 2px;
   align-items: center;
 }

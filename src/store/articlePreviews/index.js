@@ -7,8 +7,8 @@ const initialState = {
   status: LOADING_STATUSES.idle,
 };
 
-export const articlesSlice = createSlice({
-  name: "articles",
+export const articlePreviewsSlice = createSlice({
+  name: "articlePreviewsSlice",
   initialState,
   reducers: {
     startLoading: (state) => {

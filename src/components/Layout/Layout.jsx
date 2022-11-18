@@ -6,11 +6,11 @@ import styles from "./Layout.module.scss";
 
 export default function Layout({ children }) {
   return (
-    <div className={styles.root}>
+    <>
       <Burger />
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }

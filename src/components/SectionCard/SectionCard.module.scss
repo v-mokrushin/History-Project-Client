@@ -1,0 +1,156 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  text-decoration: none;
+  transition: transform 300ms ease;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 0px 30px 0px rgba(36, 39, 42, 0.3);
+  transition: height 300ms ease;
+
+  @include media-breakpoint-down(xl) {
+    height: 280px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 250px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 200px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: rgba($color: #000000, $alpha: 0.35);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: background-color 300ms ease;
+  }
+
+  &:hover {
+    height: 370px;
+  }
+
+  &:hover::after {
+    background-color: rgba($color: #000000, $alpha: 0.45);
+  }
+
+  &:hover .separator {
+    height: 100%;
+  }
+
+  &:hover .title {
+    color: $primary-gold-text-color;
+    // transform: translateX(30%);
+  }
+
+  &:hover .backgroundWrapper {
+    transform: scale(1.075);
+  }
+}
+
+.backgroundWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 300ms ease;
+  z-index: 0;
+
+  &_articles {
+    background-image: url(../../assets/images/backgrounds/hp-bg-articles.jpg);
+  }
+  &_weapons {
+    background-image: url(../../assets/images/backgrounds/hp-bg-weapons.png);
+  }
+  &_battles {
+    background-image: url(../../assets/images/backgrounds/hp-bg-battles.jpg);
+  }
+
+  &_aviation {
+    background-image: url(../../assets/images/backgrounds/weapons/aviation_2.jpg);
+  }
+  &_armored {
+    background-image: url(../../assets/images/backgrounds/weapons/armored.jpg);
+  }
+  &_smallArms {
+    background-image: url(../../assets/images/backgrounds/weapons/gun.jpg);
+  }
+  &_artillery {
+    background-image: url(../../assets/images/backgrounds/weapons/D-1.jpg);
+  }
+}
+
+.contentWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 15px;
+  position: relative;
+  padding: 35px 50px;
+  z-index: 3;
+
+  @include media-breakpoint-down(xl) {
+    padding: 25px 30px;
+  }
+
+  @include media-breakpoint-down(lg) {
+  }
+
+  @include media-breakpoint-down(md) {
+  }
+
+  @include media-breakpoint-down(sm) {
+  }
+
+  @include media-breakpoint-down(xs) {
+    gap: 8px;
+    padding: 18px 13px;
+  }
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  letter-spacing: 2px;
+  color: $primary-light-text-color;
+  transition: transform 300ms ease, color 300ms ease;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 45px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 35px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+}
+
+.separator {
+  height: 0px;
+  width: 4px;
+  background-color: rgb(238, 226, 226);
+  transition: height 300ms ease;
+
+  @include media-breakpoint-down(xs) {
+    height: 2px;
+  }
+}

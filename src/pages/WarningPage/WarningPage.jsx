@@ -1,10 +1,15 @@
 import classNames from "classnames";
 import React from "react";
 import { ANIMATIONS } from "../../constants/animation";
+import { documentTitle } from "../../utils/updateDocumentTitle";
 import { WARNING_PAGE_TYPE } from "./constants";
 import styles from "./WarningPage.module.scss";
 
 export default function WarningPage({ pageType }) {
+  React.useEffect(() => {
+    documentTitle.setWarningPage();
+  }, []);
+
   function getBackground() {
     if (pageType == WARNING_PAGE_TYPE.notFound)
       return styles.backgroundNotFound;

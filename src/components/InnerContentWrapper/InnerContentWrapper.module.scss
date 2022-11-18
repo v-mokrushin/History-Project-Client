@@ -1,0 +1,11 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 20px;
+  }
+}

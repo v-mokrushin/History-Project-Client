@@ -20,7 +20,6 @@ export default function AudioPlayer({ isMainPlayer = false, children }) {
     if (isMainPlayer) {
       if (isPlaying) {
         audio.current.play();
-        console.log("play");
         return;
       }
       if (!isPlaying) {
@@ -39,15 +38,8 @@ export default function AudioPlayer({ isMainPlayer = false, children }) {
   };
 
   const togglePlaying = () => {
-    console.log("toggle");
     if (!isPlaying) playerOnPlay();
     if (isPlaying) playerOnStop();
-  };
-
-  const update = () => {
-    console.log("update");
-    if (isPlaying) {
-    }
   };
 
   return (

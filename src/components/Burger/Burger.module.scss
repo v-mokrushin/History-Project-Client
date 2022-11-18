@@ -38,9 +38,9 @@
 }
 
 .closeIcon {
-  width: 50px;
+  width: 45px;
   aspect-ratio: 1 / 1;
-  background-image: url(../../assets/images/burger-menu/close.png);
+  background-image: url(../../assets/images/burger-menu/close.svg);
   background-size: cover;
   position: absolute;
   right: 0;
@@ -53,7 +53,7 @@
 }
 
 .openIcon {
-  width: 40px;
+  width: 35px;
   aspect-ratio: 1 / 1;
   background-image: url(../../assets/images/burger-menu/open.png);
   background-size: cover;

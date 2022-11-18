@@ -14,6 +14,9 @@ export const audioPlayerSlice = createSlice({
     stop: (state) => {
       state.status = false;
     },
+    toggle: (state) => {
+      state.status = !state.status;
+    },
   },
 });
 

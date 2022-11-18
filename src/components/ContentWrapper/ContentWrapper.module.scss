@@ -1,0 +1,25 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  padding: 70px 40px 70px;
+  min-height: 50vh;
+
+  @include media-breakpoint-down(xl) {
+    padding: 50px 40px;
+  }
+
+  @include media-breakpoint-down(lg) {
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 50px 30px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 50px 25px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 35px 15px;
+  }
+}

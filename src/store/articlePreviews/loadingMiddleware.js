@@ -1,15 +1,15 @@
-import { articlesSlice } from ".";
+import { articlePreviewsSlice } from ".";
 import { mock } from "../../data/mock";
 import { normolize } from "../../utils/normolize";
-import { selectArticlesIds } from "./selectors";
+import { selectArticlePreviewsIds } from "./selectors";
 
-export const loadArticles = (dispatch, getState) => {
-  if (selectArticlesIds(getState())?.length > 0) return;
+export const loadArticlePreviews = (dispatch, getState) => {
+  if (selectArticlePreviewsIds(getState())?.length > 0) return;
 
-  dispatch(articlesSlice.actions.startLoading());
+  dispatch(articlePreviewsSlice.actions.startLoading());
 
   setTimeout(() => {
-    dispatch(articlesSlice.actions.successLoading(normolize(mock.articles)));
+    dispatch(articlePreviewsSlice.actions.successLoading(mock.articlePreviews));
   }, 2000);
 
   // fetch("http://localhost:3001/api/articles")

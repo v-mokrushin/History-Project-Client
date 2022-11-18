@@ -1,13 +1,17 @@
 import React from "react";
 import { createStoreHook } from "react-redux";
 import { combineReducers } from "redux";
-import { articlesSlice } from "./acticles";
+import { articlePreviewsSlice } from "./articlePreviews";
 import { configureStore } from "@reduxjs/toolkit";
 import { audioPlayerSlice } from "./audioPlayer";
+import { articleContentSlice } from "./articleContent";
+import { navigationSlice } from "./navigation";
 
 const rootReducer = combineReducers({
-  articles: articlesSlice.reducer,
+  articles: articlePreviewsSlice.reducer,
+  articleContent: articleContentSlice.reducer,
   audioPlayer: audioPlayerSlice.reducer,
+  navigation: navigationSlice.reducer,
 });
 
 export const store = configureStore({

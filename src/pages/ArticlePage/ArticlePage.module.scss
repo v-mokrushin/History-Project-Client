@@ -3,23 +3,6 @@
 .root {
 }
 
-.contentWrapper {
-  padding: 50px 40px;
-  min-height: 50vh;
-
-  @include media-breakpoint-down(md) {
-    padding: 50px 30px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    padding: 50px 25px;
-  }
-
-  @include media-breakpoint-down(xs) {
-    padding: 35px 15px;
-  }
-}
-
 .container {
   max-width: 1400px;
   width: 100%;
@@ -39,7 +22,7 @@
   }
 }
 
-.wrapper {
+.innerWrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -55,7 +38,7 @@
   gap: 30px;
 
   @include media-breakpoint-down(xs) {
-    // gap: 20px;
+    gap: 20px;
   }
 }
 
@@ -64,11 +47,9 @@
   font-weight: 600;
   font-size: 45px;
   color: $primary-gold-text-color;
-  // text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 120%;
   position: relative;
-  // width: max-content;
   margin: 0 auto 25px;
   white-space: normal;
   text-align: center;
@@ -99,9 +80,22 @@
   font-weight: 400;
   font-size: 21px;
   color: $primary-dark-text-color;
+  font-stretch: 100%;
+  line-height: 35px;
 
-  // letter-spacing: 1px;
-  line-height: 28px;
+  @include media-breakpoint-down(xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  &_bolder {
+    font-size: 22px;
+    font-weight: 500;
+
+    @include media-breakpoint-down(xs) {
+      font-size: 18px;
+    }
+  }
 }
 
 .specialLogoStyle {

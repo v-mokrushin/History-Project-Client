@@ -1,8 +1,8 @@
 @import "/src/assets/css/main.scss";
 
 .root {
-  height: 50vh;  
-  background-image: url(../../assets/images/backgrounds/404-1.jpg);
+  height: 50vh;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,4 +24,12 @@
     z-index: 0;
   }
 }
- 
+
+.background_articlesPage {
+  background-image: url(../../assets/images/backgrounds/articles-section.jpg);
+}
+
+.background_weaponsPage {
+  background-image: url(../../assets/images/backgrounds/weapons/bg.png);
+  // background-position: center top;
+}

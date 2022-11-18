@@ -1,5 +1,10 @@
 @import "/src/assets/css/main.scss";
 
 .root {
-  
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }

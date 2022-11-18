@@ -13,6 +13,7 @@ import { BurgerContext } from "../Burger/context";
 import "./App.scss";
 import "../../assets/css/main.scss";
 import ArticlePage from "../../pages/ArticlePage/ArticlePage";
+import WeaponsPage from "../../pages/WeaponsPage/WeaponsPage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,15 +40,12 @@ function App() {
                 path="/articles/article_:articleId"
                 element={<ArticlePage />}
               />
+              <Route path="/weapons" element={<WeaponsPage />} />
               <Route
-                path="/weapons"
+                path="/battles"
                 element={
                   <WarningPage pageType={WARNING_PAGE_TYPE.workInProgress} />
                 }
-              />
-              <Route
-                path="/battles"
-                element={<WarningPage pageType={WARNING_PAGE_TYPE.notFound} />}
               />
               <Route
                 path="/links"
