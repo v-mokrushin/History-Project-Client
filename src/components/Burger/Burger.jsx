@@ -12,7 +12,7 @@ export default function Burger() {
     <div
       className={classNames(
         styles.root,
-        burgerContext.isOpen && styles.rootOpen
+        burgerContext.isOpen && styles.root_open
       )}
     >
       <div className={styles.header}>

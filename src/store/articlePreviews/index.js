@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { mock } from "../../data/mock";
 import { LOADING_STATUSES } from "../constants";
 
 const initialState = {
-  entities: {},
-  ids: [],
+  entities: mock.articlePreviews.entities,
+  ids: mock.articlePreviews.ids,
   status: LOADING_STATUSES.idle,
 };
 
@@ -12,18 +13,14 @@ export const articlePreviewsSlice = createSlice({
   initialState,
   reducers: {
     startLoading: (state) => {
-      state.entities = {};
-      state.ids = [];
       state.status = LOADING_STATUSES.inProgress;
     },
     successLoading: (state, action) => {
-      state.entities = action.payload.entities;
-      state.ids = action.payload.ids;
+      // state.entities = action.payload.entities;
+      // state.ids = action.payload.ids;
       state.status = LOADING_STATUSES.success;
     },
     failedLoading: (state) => {
-      state.entities = {};
-      state.ids = [];
       state.status = LOADING_STATUSES.failed;
     },
   },

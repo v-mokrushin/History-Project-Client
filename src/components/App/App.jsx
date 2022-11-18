@@ -36,11 +36,9 @@ function App() {
                 element={<WarningPage pageType={WARNING_PAGE_TYPE.notFound} />}
               />
               <Route path="/articles" element={<ArticlesPage />}></Route>
-              <Route
-                path="/articles/article_:articleId"
-                element={<ArticlePage />}
-              />
+              <Route path="/articles/:articleId" element={<ArticlePage />} />
               <Route path="/weapons" element={<WeaponsPage />} />
+              <Route path="/weapons/:weaponsType" element={<WeaponsPage />} />
               <Route
                 path="/battles"
                 element={

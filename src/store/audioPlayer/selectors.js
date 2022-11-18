@@ -1,4 +1,7 @@
-export const selectAudioPlayerModule = (state) => state.audioPlayer;
+const audioPlayerModule = (state) => state.audioPlayer;
 
-export const selectAudioPlayerStatus = (state) =>
-  selectAudioPlayerModule(state).status;
+const audioPlayerStatus = () => (state) => audioPlayerModule(state).status;
+
+export const audioSelect = {
+  audioPlayerStatus,
+};

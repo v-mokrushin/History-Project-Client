@@ -13,5 +13,5 @@ export const loadArticleContent = (articleId) => (dispatch, getState) => {
         mock.articlesContent.entities[articleId]
       )
     );
-  }, 1200);
+  }, Math.random() * 800 + 200);
 };

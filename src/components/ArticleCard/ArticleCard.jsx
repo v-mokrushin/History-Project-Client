@@ -12,10 +12,12 @@ export default function ArticleCard({ articleId }) {
   const article = useSelector((state) =>
     selectArticlePreviewById(state, { articleId })
   );
+  const articleName = article.title.split(" ").join("_");
+  console.log(articleName);
 
   return (
     <NavLink
-      to={`/articles/article_${articleId}`}
+      to={`/articles/${articleId}`}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
       onClick={() => scrollTopInstantly()}
     >

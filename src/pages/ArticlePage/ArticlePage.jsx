@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
+import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
+import { ANIMATIONS } from "../../constants/animation";
 import { loadArticleContent } from "../../store/articleContent/loadingMiddleware";
 import {
   selectArticleContentById,
@@ -16,6 +18,7 @@ import {
   selectArticlePreviewsLoadingStatus,
 } from "../../store/articlePreviews/selectors";
 import { LOADING_STATUSES } from "../../store/constants";
+import { changeActualSection } from "../../store/navigation/changeActualSectionMiddleware";
 import styles from "./ArticlePage.module.scss";
 
 export default function ArticlePage() {
@@ -31,6 +34,7 @@ export default function ArticlePage() {
 
   React.useEffect(() => {
     dispatch(loadArticleContent(articleId));
+    dispatch(changeActualSection(NAVIGATION_ACTUAL_SECTION.articles));
   }, [articleId]);
 
   function getContent() {
@@ -55,7 +59,9 @@ export default function ArticlePage() {
         );
       }
       return (
-        <div className={styles.paragraphsWrapper}>
+        <div
+          className={classNames(styles.paragraphsWrapper, ANIMATIONS.fadeIn)}
+        >
           {articleContent.paragraphs.map((item, index) => (
             <p
               className={classNames(styles.text, !index && styles.text_bolder)}
@@ -71,11 +77,11 @@ export default function ArticlePage() {
 
   return (
     <>
-      {/* <IntroImage imageUrl={articlePreview.backgroundURL} /> */}
+      <IntroImage imageUrl={articlePreview.backgroundURL} />
       <ContentWrapper>
         <div className={styles.container}>
           <div className={styles.innerWrapper}>
-            {/* <h2 className={styles.title}>{articlePreview.title}</h2> */}
+            <h2 className={styles.title}>{articlePreview.title}</h2>
             {getContent()}
           </div>
         </div>

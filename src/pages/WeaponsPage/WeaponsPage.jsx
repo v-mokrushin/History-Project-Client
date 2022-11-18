@@ -28,7 +28,7 @@ export default function WeaponsPage() {
         <WideContainer>
           <InnerContentWrapper>
             <Title text="Вооружения" />
-            <div className={styles.innerWrapper}>
+            <div className={styles.weaponCardsWrapper}>
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.armored} />
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.smallArms} />

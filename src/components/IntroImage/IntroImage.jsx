@@ -13,6 +13,19 @@ export default function IntroImage({ type, imageUrl }) {
     if (type == INTRO_IMAGE_TYPE.pages.weapons) {
       return styles.background_weaponsPage;
     }
+
+    if (type == INTRO_IMAGE_TYPE.pages.weapons.aviation) {
+      return styles.background_aviationPage;
+    }
+    if (type == INTRO_IMAGE_TYPE.pages.weapons.armored) {
+      return styles.background_armoredPage;
+    }
+    if (type == INTRO_IMAGE_TYPE.pages.weapons.smallArms) {
+      return styles.background_smallArmsPage;
+    }
+    if (type == INTRO_IMAGE_TYPE.pages.weapons.artillery) {
+      return styles.background_artilleryPage;
+    }
   }
 
   return (

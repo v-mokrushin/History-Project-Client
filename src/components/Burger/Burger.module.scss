@@ -10,22 +10,39 @@
   z-index: 10;
   padding: 25px 15px;
   transform: translateY(-100vh);
-  transition: transform 300ms ease;
+  transition: transform 350ms ease;
 
-  &Open {
+  &_open {
     transform: translate(0);
-    // animation-name: slider;
+
+    // animation-name: sliderOpen;
     // animation-duration: 300ms;
     // animation-fill-mode: forwards;
     // animation-delay: 150ms;
+
+    @keyframes sliderOpen {
+      0% {
+        transform: translateY(-100vh);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
   }
 
-  @keyframes slider {
-    0% {
-      transform: translateY(-100vh);
-    }
-    100% {
-      transform: translateY(0);
+  &_close {
+    animation-name: sliderClose;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-delay: 150ms;
+
+    @keyframes sliderClose {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100vh);
+      }
     }
   }
 }
@@ -40,7 +57,7 @@
 .closeIcon {
   width: 45px;
   aspect-ratio: 1 / 1;
-  background-image: url(../../assets/images/burger-menu/close.svg);
+  background-image: url(../../assets/images/burger-menu/close.png);
   background-size: cover;
   position: absolute;
   right: 0;
@@ -59,7 +76,7 @@
   background-size: cover;
   position: absolute;
   right: 20px;
-  transition: transform 150ms;
+  transition: transform 200ms;
   display: none;
 
   @include media-breakpoint-down(sm) {
@@ -67,6 +84,8 @@
   }
 
   &:active {
-    transform: rotate(90deg);
+    // transform: scale(1.5);
+    // transform: translateY(10px);
+    // transform: rotate(90deg);
   }
 }

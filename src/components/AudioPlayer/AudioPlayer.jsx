@@ -1,16 +1,13 @@
 import classNames from "classnames";
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  playAudio,
-  stopAudio,
-} from "../../store/audioPlayer/playingMiddleware";
-import { selectAudioPlayerStatus } from "../../store/audioPlayer/selectors";
+import { audioMiddlewares } from "../../store/audioPlayer/playingMiddleware";
+import { audioSelect } from "../../store/audioPlayer/selectors";
 import styles from "./AudioPlayer.module.scss";
 
 export default function AudioPlayer({ isMainPlayer = false, children }) {
   const dispatch = useDispatch();
-  const isPlaying = useSelector((state) => selectAudioPlayerStatus(state));
+  const isPlaying = useSelector(audioSelect.audioPlayerStatus());
 
   const audio = useRef(null);
   const playBox = useRef(null);
@@ -29,18 +26,9 @@ export default function AudioPlayer({ isMainPlayer = false, children }) {
     }
   }, [isPlaying]);
 
-  const playerOnPlay = () => {
-    dispatch(playAudio);
-  };
-
-  const playerOnStop = () => {
-    dispatch(stopAudio);
-  };
-
-  const togglePlaying = () => {
-    if (!isPlaying) playerOnPlay();
-    if (isPlaying) playerOnStop();
-  };
+  const togglePlaying = React.useCallback(() => {
+    dispatch(audioMiddlewares.toggle);
+  }, []);
 
   return (
     <div className={classNames(styles.root)}>
@@ -53,7 +41,7 @@ export default function AudioPlayer({ isMainPlayer = false, children }) {
             styles.playButton,
             isPlaying ? styles.displayNone : styles.displayBlock
           )}
-          onClick={playerOnPlay}
+          onClick={togglePlaying}
         ></div>
         <div
           ref={stopBox}
@@ -61,7 +49,7 @@ export default function AudioPlayer({ isMainPlayer = false, children }) {
             styles.stopButton,
             isPlaying ? styles.displayBlock : styles.displayNone
           )}
-          onClick={playerOnStop}
+          onClick={togglePlaying}
         ></div>
       </div>
     </div>

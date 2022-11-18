@@ -1,14 +1,19 @@
 import { audioPlayerSlice } from ".";
 
-export const playAudio = (dispatch, getState) => {
+const play = (dispatch, getState) => {
   dispatch(audioPlayerSlice.actions.play());
 };
 
-export const stopAudio = (dispatch, getState) => {
+const stop = (dispatch, getState) => {
   dispatch(audioPlayerSlice.actions.stop());
 };
 
-export const toggleAudio = (dispatch, getState) => {
-  console.log("toggle");
+const toggle = (dispatch, getState) => {
   dispatch(audioPlayerSlice.actions.toggle());
+};
+
+export const audioMiddlewares = {
+  play,
+  stop,
+  toggle,
 };
