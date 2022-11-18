@@ -1,0 +1,84 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  height: 150px;
+  aspect-ratio: 5 / 3;
+  position: relative;
+  z-index: 0;
+  text-decoration: none;
+  transition: transform 300ms ease;
+  box-shadow: 0px 0px 30px 0px rgba(36, 39, 42, 0.3);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 300ms ease;
+  z-index: 0;
+
+  &_ussr {
+    background-image: url(../../assets/images/backgrounds/flags/flag-ussr.svg);
+  }
+  &_germany {
+    background-image: url(../../assets/images/backgrounds/flags/flag-germany.svg);
+  }
+  &_uk {
+    background-image: url(../../assets/images/backgrounds/flags/flag-uk.svg);
+  }
+  &_usa {
+    background-image: url(../../assets/images/backgrounds/flags/flag-us.svg);
+  }
+  &_japan {
+    background-image: url(../../assets/images/backgrounds/flags/flag-japan.svg);
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 100px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 90px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 80px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: rgba($color: #000000, $alpha: 0);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: background-color 300ms ease;
+  }
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:hover::after {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+
+  &:hover::after {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+
+  &:hover .title {
+    color: $primary-gold-text-color;
+  }
+}
+
+.contentWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 15px;
+  position: relative;
+  padding: 35px 50px;
+  z-index: 3;
+}

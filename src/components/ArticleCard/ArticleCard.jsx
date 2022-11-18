@@ -13,7 +13,7 @@ export default function ArticleCard({ articleId }) {
     selectArticlePreviewById(state, { articleId })
   );
   const articleName = article.title.split(" ").join("_");
-  console.log(articleName);
+  // console.log(articleName);
 
   return (
     <NavLink

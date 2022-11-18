@@ -11,6 +11,15 @@ export default function SectionCard({ type }) {
     if (type === SECTION_CARD_TYPE.articles) return "/articles";
     if (type === SECTION_CARD_TYPE.weapons) return "/weapons";
     if (type === SECTION_CARD_TYPE.battles) return "/battles";
+
+    if (type === SECTION_CARD_TYPE.pages.weapons.aviation)
+      return "/weapons/aviation";
+    if (type === SECTION_CARD_TYPE.pages.weapons.armored)
+      return "/weapons/armored";
+    if (type === SECTION_CARD_TYPE.pages.weapons.smallArms)
+      return "/weapons/small-arms";
+    if (type === SECTION_CARD_TYPE.pages.weapons.artillery)
+      return "/weapons/artillery";
   }
 
   function getBackround() {

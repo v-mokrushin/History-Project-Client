@@ -6,9 +6,8 @@ import { audioMiddlewares } from "../../store/audioPlayer/playingMiddleware";
 import { navigationSelectors } from "../../store/navigation/selectors";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import { BurgerContext } from "../Burger/context";
-import { NAVIGATION_ACTUAL_SECTION } from "./constants";
 import styles from "./Navigation.module.scss";
-import { changeActualSection } from "../../store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 
 export default function Navigation({ isTypeBurger = false }) {
   const burgerContext = useContext(BurgerContext);
@@ -57,7 +56,7 @@ export default function Navigation({ isTypeBurger = false }) {
         )}
         onClick={() => {
           burgerContext.setClose();
-          dispatch(changeActualSection(NAVIGATION_ACTUAL_SECTION.battles));
+          dispatch(navigationMiddlewares.setBattlesActualSection());
         }}
       >
         Сражения

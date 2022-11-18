@@ -13,12 +13,9 @@ import {
   selectArticleContentById,
   selectArticleContentLoadingStatus,
 } from "../../store/articleContent/selectors";
-import {
-  selectArticlePreviewById,
-  selectArticlePreviewsLoadingStatus,
-} from "../../store/articlePreviews/selectors";
+import { selectArticlePreviewById } from "../../store/articlePreviews/selectors";
 import { LOADING_STATUSES } from "../../store/constants";
-import { changeActualSection } from "../../store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import styles from "./ArticlePage.module.scss";
 
 export default function ArticlePage() {
@@ -34,7 +31,7 @@ export default function ArticlePage() {
 
   React.useEffect(() => {
     dispatch(loadArticleContent(articleId));
-    dispatch(changeActualSection(NAVIGATION_ACTUAL_SECTION.articles));
+    dispatch(navigationMiddlewares.setHomeActualSection());
   }, [articleId]);
 
   function getContent() {

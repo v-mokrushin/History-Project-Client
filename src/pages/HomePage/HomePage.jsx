@@ -7,15 +7,14 @@ import SectionCard from "../../components/SectionCard/SectionCard";
 import VideoIntro from "../../components/VideoIntro/VideoIntro";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
-import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
-import { changeActualSection } from "../../store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 
 export default function HomePage() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     documentTitle.setHomePage();
-    dispatch(changeActualSection(NAVIGATION_ACTUAL_SECTION.home));
+    dispatch(navigationMiddlewares.setHomeActualSection());
   }, []);
 
   return (

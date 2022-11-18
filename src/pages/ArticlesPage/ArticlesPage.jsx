@@ -17,8 +17,7 @@ import WideContainer from "../../components/WideContainer/WideContainer";
 import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import Title from "../../components/Title/Title";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
-import { changeActualSection } from "../../store/navigation/changeActualSectionMiddleware";
-import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
+import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ export default function ArticlesPage() {
 
   useEffect(() => {
     dispatch(loadArticlePreviews);
-    dispatch(changeActualSection(NAVIGATION_ACTUAL_SECTION.articles));
+    dispatch(navigationMiddlewares.setArticlesActualSection());
     documentTitle.setArticlesPage();
   }, []);
 

@@ -11,6 +11,9 @@ export const documentTitle = {
   setWarningPage() {
     document.title = `${logo}`;
   },
+  addRoute(route) {
+    document.title += ` | ${route}`;
+  },
 };
 
 const logo = "HoF";

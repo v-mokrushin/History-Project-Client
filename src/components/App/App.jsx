@@ -14,6 +14,7 @@ import "./App.scss";
 import "../../assets/css/main.scss";
 import ArticlePage from "../../pages/ArticlePage/ArticlePage";
 import WeaponsPage from "../../pages/WeaponsPage/WeaponsPage";
+import UniversalPage from "../../pages/UniversalPage/UniversalPage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +38,14 @@ function App() {
               />
               <Route path="/articles" element={<ArticlesPage />}></Route>
               <Route path="/articles/:articleId" element={<ArticlePage />} />
-              <Route path="/weapons" element={<WeaponsPage />} />
-              <Route path="/weapons/:weaponsType" element={<WeaponsPage />} />
+              <Route path="/weapons/" element={<WeaponsPage />} />
+              <Route path="/weapons/:weaponsType" element={<UniversalPage />} />
+              <Route
+                path="/weapons/:weaponsType/:country"
+                element={
+                  <WarningPage pageType={WARNING_PAGE_TYPE.workInProgress} />
+                }
+              />
               <Route
                 path="/battles"
                 element={
