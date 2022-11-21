@@ -44,15 +44,22 @@
 
 .title {
   font-family: "Oswald", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 1px;
+  // font-family: "Rubik", sans-serif;
+  // font-weight: 300;
+  // letter-spacing: 0.25px;
   font-size: 45px;
   color: $primary-gold-text-color;
-  letter-spacing: 1px;
-  line-height: 120%;
   position: relative;
-  margin: 0 auto 25px;
+  margin: 0 auto 15px;
   white-space: normal;
   text-align: center;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 28px;
+    margin: 0 auto;
+  }
 
   &::after {
     position: absolute;
@@ -68,33 +75,29 @@
     );
     top: calc(100% + 15px);
     left: 0;
-  }
 
-  @include media-breakpoint-down(xs) {
-    font-size: 28px;
+    @include media-breakpoint-down(xs) {
+      height: 1px;
+      top: calc(100% + 7px);
+    }
   }
 }
 
 .text {
-  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
-  font-size: 21px;
+  font-size: 20px;
   color: $primary-dark-text-color;
   font-stretch: 100%;
   line-height: 35px;
 
   @include media-breakpoint-down(xs) {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 26px;
   }
 
   &_bolder {
-    font-size: 22px;
     font-weight: 500;
-
-    @include media-breakpoint-down(xs) {
-      font-size: 18px;
-    }
   }
 }
 
