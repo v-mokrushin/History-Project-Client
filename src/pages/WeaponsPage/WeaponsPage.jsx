@@ -1,7 +1,7 @@
 import React from "react";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import SectionCard from "../../components/SectionCard/SectionCard";
-import WideContainer from "../../components/WideContainer/WideContainer";
+import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import styles from "./WeaponsPage.module.scss";
@@ -9,9 +9,9 @@ import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import Title from "../../components/Title/Title";
 import { useDispatch } from "react-redux";
-import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
+import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
 
 export default function WeaponsPage() {
   const dispatch = useDispatch();
@@ -19,14 +19,15 @@ export default function WeaponsPage() {
   React.useEffect(() => {
     documentTitle.setWeaponsPage();
     dispatch(navigationMiddlewares.setWeaponsActualSection());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
       <IntroImage type={INTRO_IMAGE_TYPE.pages.weapons} />
       <ContentWrapper>
-        <WideContainer>
+        <Container>
           <InnerContentWrapper>
+            <Beadcrumbs />
             <Title text="Вооружения" />
             <div className={styles.weaponCardsWrapper}>
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
@@ -35,7 +36,7 @@ export default function WeaponsPage() {
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.artillery} />
             </div>
           </InnerContentWrapper>
-        </WideContainer>
+        </Container>
       </ContentWrapper>
     </>
   );

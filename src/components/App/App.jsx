@@ -20,9 +20,12 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   function toggle() {
     setIsOpen((val) => !val);
+    if (!isOpen) document.body.style.overflow = "hidden";
+    if (isOpen) document.body.style.overflow = "auto";
   }
   function setClose() {
     setIsOpen(false);
+    document.body.style.overflow = "auto";
   }
 
   return (

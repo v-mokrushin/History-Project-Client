@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
@@ -78,6 +79,7 @@ export default function ArticlePage() {
       <ContentWrapper>
         <div className={styles.container}>
           <div className={styles.innerWrapper}>
+            <Beadcrumbs />
             <h2 className={styles.title}>{articlePreview.title}</h2>
             {getContent()}
           </div>

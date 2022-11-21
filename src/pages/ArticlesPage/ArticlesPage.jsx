@@ -13,7 +13,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { documentTitle } from "../../utils/updateDocumentTitle";
-import WideContainer from "../../components/WideContainer/WideContainer";
+import Container from "../../components/Container/Container";
 import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import Title from "../../components/Title/Title";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
@@ -28,7 +28,7 @@ export default function ArticlesPage() {
     dispatch(loadArticlePreviews);
     dispatch(navigationMiddlewares.setArticlesActualSection());
     documentTitle.setArticlesPage();
-  }, []);
+  }, [dispatch]);
 
   function getLayout() {
     if (loadingStatus === LOADING_STATUSES.inProgress) {
@@ -57,9 +57,9 @@ export default function ArticlesPage() {
     <>
       <IntroImage type={INTRO_IMAGE_TYPE.pages.articles} />
       <ContentWrapper>
-        <WideContainer>
+        <Container>
           <InnerContentWrapper>{getLayout()}</InnerContentWrapper>
-        </WideContainer>
+        </Container>
       </ContentWrapper>
     </>
   );

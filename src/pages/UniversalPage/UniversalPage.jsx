@@ -1,10 +1,11 @@
 import React from "react";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import WideContainer from "../../components/WideContainer/WideContainer";
+import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import styles from "./UniversalPage.module.scss";
 import Title from "../../components/Title/Title";
+import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
 import { useDispatch } from "react-redux";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
@@ -21,14 +22,15 @@ export default function UniversalPage() {
   React.useEffect(() => {
     documentTitle.addRoute(weaponsType);
     dispatch(navigationMiddlewares.setWeaponsActualSection());
-  }, []);
+  }, [dispatch, weaponsType]);
 
   return (
     <>
       <IntroImage type={pageInfo.introImage} />
       <ContentWrapper>
-        <WideContainer>
+        <Container>
           <InnerContentWrapper>
+            <Beadcrumbs />
             <Title text={pageInfo.title} />
             <div className={styles.flagsWrapper}>
               <Flag country={FLAG_COUNTRY.USSR} />
@@ -38,7 +40,7 @@ export default function UniversalPage() {
               <Flag country={FLAG_COUNTRY.japan} />
             </div>
           </InnerContentWrapper>
-        </WideContainer>
+        </Container>
       </ContentWrapper>
     </>
   );

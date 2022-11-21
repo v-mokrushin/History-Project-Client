@@ -1,6 +1,6 @@
 import React from "react";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import WideContainer from "../../components/WideContainer/WideContainer";
+import Container from "../../components/Container/Container";
 import { useDispatch } from "react-redux";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import SectionCard from "../../components/SectionCard/SectionCard";
@@ -15,19 +15,19 @@ export default function HomePage() {
   React.useEffect(() => {
     documentTitle.setHomePage();
     dispatch(navigationMiddlewares.setHomeActualSection());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
       <VideoIntro />
       <ContentWrapper>
-        <WideContainer>
+        <Container>
           <div className={styles.innerWrapper}>
             <SectionCard type={SECTION_CARD_TYPE.articles} />
             <SectionCard type={SECTION_CARD_TYPE.weapons} />
             <SectionCard type={SECTION_CARD_TYPE.battles} />
           </div>
-        </WideContainer>
+        </Container>
       </ContentWrapper>
     </>
   );
