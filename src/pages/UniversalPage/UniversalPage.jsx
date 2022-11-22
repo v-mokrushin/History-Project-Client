@@ -10,9 +10,10 @@ import { useDispatch } from "react-redux";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "./pagesData";
-import Flag from "./Flag";
-import { FLAG_COUNTRY } from "./flagsConstants";
+import { PAGES_DATA } from "../../constants/pages";
+import Flag from "../../components/Flag/Flag";
+import { FLAG_COUNTRY } from "../../components/Flag/constants";
+import Title2 from "../../components/Title2/Title2";
 
 export default function UniversalPage() {
   const dispatch = useDispatch();
@@ -30,8 +31,8 @@ export default function UniversalPage() {
       <ContentWrapper>
         <Container>
           <InnerContentWrapper>
-            <Beadcrumbs />
-            <Title text={pageInfo.title} />
+            {/* <Title text={pageInfo.title} /> */}
+            <Title2>{pageInfo.title}</Title2>
             <div className={styles.flagsWrapper}>
               <Flag country={FLAG_COUNTRY.USSR} />
               <Flag country={FLAG_COUNTRY.germany} />

@@ -3,13 +3,11 @@
 .root {
   display: flex;
   flex-direction: row;
-  gap: 10px;
   align-items: center;
-  font-family: "Oswald", sans-serif;
+  gap: 10px;
   overflow-y: hidden;
   overflow-x: auto;
-  height: 20px;
-  // box-sizing: border-box;
+  min-height: 20px;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -20,14 +18,45 @@
   }
 }
 
-.breadcrumbItem {
-  color: #252525;
+.box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 5px;
+  }
+}
+
+.item {
+  // font-family: "Oswald", sans-serif;
+  font-family: "Rubik", sans-serif;
+  color: $primary-dark-text-color;
+  text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-size: 16px;
   cursor: pointer;
   white-space: nowrap;
+
+  &:hover {
+    color: $primary-gold-text-color;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 12px;
+    letter-spacing: 0.25px;
+  }
+}
+
+.separator {
+  font-family: "Oswald", sans-serif;
+  color: $primary-dark-text-color;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
 
   @include media-breakpoint-down(xs) {
     font-size: 12px;

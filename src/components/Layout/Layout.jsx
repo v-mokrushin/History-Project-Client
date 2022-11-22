@@ -7,12 +7,12 @@ import styles from "./Layout.module.scss";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div className={styles.root}>
       <UpButton />
       <Burger />
       <Header />
-      <main>{children}</main>
+      <main className={styles.root}>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }

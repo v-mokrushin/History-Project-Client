@@ -1,0 +1,48 @@
+@import "/src/assets/css/main.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 220px;
+  height: 100%;
+}
+
+.yearBox {
+  margin-right: 15px;
+  border-right: 2px solid black;
+  display: flex;
+  align-items: center;
+  width: 35px;
+
+  @include media-breakpoint-down(xs) {
+    margin-right: 7px;
+    width: 17px;
+  }
+}
+
+.yearText {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: $primary-dark-text-color;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  @include media-breakpoint-down(xs) {
+    font-size: 15px;
+  }
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 7px;
+    overflow: auto;
+  }
+}

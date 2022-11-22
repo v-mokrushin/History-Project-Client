@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
+import Title2 from "../../components/Title2/Title2";
 
 export default function WeaponsPage() {
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ export default function WeaponsPage() {
       <ContentWrapper>
         <Container>
           <InnerContentWrapper>
-            <Beadcrumbs />
-            <Title text="Вооружения" />
+            {/* <Title text="Вооружения" /> */}
+            <Title2>Вооружения</Title2>
             <div className={styles.weaponCardsWrapper}>
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
               <SectionCard type={SECTION_CARD_TYPE.pages.weapons.armored} />

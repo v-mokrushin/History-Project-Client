@@ -1,4 +1,4 @@
-import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
+import { INTRO_IMAGE_TYPE } from "../components/IntroImage/constants";
 
 const data = [
   {
@@ -10,11 +10,13 @@ const data = [
     path: "/articles",
     title: "статьи",
     engTitle: "articles",
+    introImage: INTRO_IMAGE_TYPE.pages.articles,
   },
   {
     path: "/weapons",
     title: "вооружения",
     engTitle: "weapons",
+    introImage: INTRO_IMAGE_TYPE.pages.weapons,
   },
   {
     path: "/weapons/aviation",
@@ -42,14 +44,25 @@ const data = [
   },
 ];
 
+function getByPath(path) {
+  return data.find((item) => item.path === path);
+}
+
+function getByEngTitle(engTitle) {
+  return data.find((item) => item.engTitle === engTitle);
+}
+
+function getTitleByEngTitle(engTitle) {
+  return data.find((item) => item.engTitle === engTitle)?.title;
+}
+
+function getPathByTitle(title) {
+  return data.find((item) => item.title === title)?.path;
+}
+
 export const PAGES_DATA = {
-  getByPath(path) {
-    return data.find((item) => item.path === path);
-  },
-  getByEngTitle(engTitle) {
-    return data.find((item) => item.engTitle === engTitle);
-  },
-  getTitleByEngTitle(engTitle) {
-    return data.find((item) => item.engTitle === engTitle)?.title;
-  },
+  getByPath,
+  getByEngTitle,
+  getTitleByEngTitle,
+  getPathByTitle,
 };

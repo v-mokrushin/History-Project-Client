@@ -8,6 +8,7 @@ import VideoIntro from "../../components/VideoIntro/VideoIntro";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
+import Title2 from "../../components/Title2/Title2";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export default function HomePage() {
       <ContentWrapper>
         <Container>
           <div className={styles.innerWrapper}>
+            {/* <Title2>Главная</Title2> */}
             <SectionCard type={SECTION_CARD_TYPE.articles} />
             <SectionCard type={SECTION_CARD_TYPE.weapons} />
             <SectionCard type={SECTION_CARD_TYPE.battles} />

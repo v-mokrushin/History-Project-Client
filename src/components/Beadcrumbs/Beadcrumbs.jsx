@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { PAGES_DATA } from "../../pages/UniversalPage/pagesData";
+import { NavLink, useLocation } from "react-router-dom";
+import { PAGES_DATA } from "../../constants/pages";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
@@ -10,22 +10,37 @@ export default function Beadcrumbs() {
 
   React.useEffect(() => {
     setArr(
-      location.split("/").map((item) => PAGES_DATA.getTitleByEngTitle(item))
+      location === "/"
+        ? ["главная"]
+        : location
+            .split("/")
+            .map((item) =>
+              PAGES_DATA.getTitleByEngTitle(item)
+                ? PAGES_DATA.getTitleByEngTitle(item)
+                : item
+            )
     );
   }, [location]);
 
   return (
     <div className={styles.root}>
-      {arr.map((item, index, array) => (
-        <>
-          <div className={classNames(styles.breadcrumbItem)}>{item}</div>
-          {index != array.length - 1 && (
-            <span className={styles.breadcrumbItem}>{"/"}</span>
-          )}
-        </>
-      ))}
+      {arr.length > 1 &&
+        arr.map(
+          (item, index, array) =>
+            index != array.length - 1 && (
+              <div className={styles.box} key={index}>
+                <NavLink
+                  to={PAGES_DATA.getPathByTitle(item)}
+                  className={classNames(styles.item)}
+                >
+                  {item}
+                </NavLink>
+                {index != array.length - 1 && (
+                  <span className={styles.separator}>{"/"}</span>
+                )}
+              </div>
+            )
+        )}
     </div>
   );
 }
-
-//key={`beadcrumb-${index}`}

@@ -2,13 +2,14 @@ import classNames from "classnames";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
+import { CONTAINER_TYPES } from "../../components/Container/constants";
+import Container from "../../components/Container/Container";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
-import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { ANIMATIONS } from "../../constants/animation";
+import Title2 from "../../components/Title2/Title2";
 import { loadArticleContent } from "../../store/articleContent/loadingMiddleware";
 import {
   selectArticleContentById,
@@ -32,7 +33,7 @@ export default function ArticlePage() {
 
   React.useEffect(() => {
     dispatch(loadArticleContent(articleId));
-    dispatch(navigationMiddlewares.setHomeActualSection());
+    dispatch(navigationMiddlewares.setArticlesActualSection());
   }, [articleId]);
 
   function getContent() {
@@ -57,18 +58,45 @@ export default function ArticlePage() {
         );
       }
       return (
-        <div
-          className={classNames(styles.paragraphsWrapper, ANIMATIONS.fadeIn)}
-        >
-          {articleContent.paragraphs.map((item, index) => (
-            <p
-              className={classNames(styles.text, !index && styles.text_bolder)}
-              key={index}
-            >
-              {item}
-            </p>
-          ))}
-        </div>
+        <>
+          <div className={styles.infoBox}>
+            {articlePreview.author && (
+              <div className={styles.infoBox__string}>
+                <div className={styles.infoBox__titleBox}>
+                  <span className={classNames(styles.text, styles.text_bolder)}>
+                    Авторы
+                  </span>
+                </div>
+                <span className={styles.text}>{articlePreview.author}</span>
+              </div>
+            )}
+            {articlePreview.origin && (
+              <div className={styles.infoBox__string}>
+                <div className={styles.infoBox__titleBox}>
+                  <span className={classNames(styles.text, styles.text_bolder)}>
+                    Источник
+                  </span>
+                </div>
+                <span className={styles.text}>{articlePreview.origin}</span>
+              </div>
+            )}
+          </div>
+          <div
+            className={classNames(styles.paragraphsWrapper, ANIMATIONS.fadeIn)}
+          >
+            {articleContent.paragraphs.map((item, index) => (
+              <p
+                className={classNames(
+                  styles.text,
+                  !index && styles.text_bolder
+                )}
+                key={index}
+              >
+                {item}
+              </p>
+            ))}
+          </div>
+        </>
       );
     }
   }
@@ -77,13 +105,13 @@ export default function ArticlePage() {
     <>
       <IntroImage imageUrl={articlePreview.backgroundURL} />
       <ContentWrapper>
-        <div className={styles.container}>
+        <Container type={CONTAINER_TYPES.default}>
           <div className={styles.innerWrapper}>
-            <Beadcrumbs />
-            <h2 className={styles.title}>{articlePreview.title}</h2>
+            {/* <h2 className={styles.title}>{articlePreview.title}</h2> */}
+            <Title2 className={styles.title_2}>{articlePreview.title}</Title2>
             {getContent()}
           </div>
-        </div>
+        </Container>
       </ContentWrapper>
     </>
   );

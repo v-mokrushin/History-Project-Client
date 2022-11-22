@@ -4,7 +4,7 @@ import styles from "./Flag.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { scrollTopInstantly } from "../../utils/scroll";
-import { FLAG_COUNTRY } from "./flagsConstants";
+import { FLAG_COUNTRY } from "./constants";
 
 export default function Flag({ country }) {
   const info = getInfo();

@@ -28,4 +28,13 @@
     // left: 0;
     // top: 0;
   }
+
+  @include media-breakpoint-down(xs) {
+    padding: 15px 0;
+  }
+}
+
+.ordinar {
+  position: relative;
+  background-color: black;
 }

@@ -5,7 +5,7 @@ import styles from "./Title.module.scss";
 
 export default function Title({ text }) {
   return (
-    <div className={classNames(styles.wrapper, ANIMATIONS.fadeInDown)}>
+    <div className={classNames(styles.wrapper, ANIMATIONS.none)}>
       <div
         className={classNames(
           styles.wrapper__stripe,

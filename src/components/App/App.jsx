@@ -15,6 +15,8 @@ import "../../assets/css/main.scss";
 import ArticlePage from "../../pages/ArticlePage/ArticlePage";
 import WeaponsPage from "../../pages/WeaponsPage/WeaponsPage";
 import UniversalPage from "../../pages/UniversalPage/UniversalPage";
+import ArmoredWeaponsPage from "../../pages/ArmoredWeaponsPage/ArmoredWeaponsPage";
+import WeaponsSelectionPage from "../../pages/WeaponsSelectionPage/WeaponsSelectionPage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,9 +47,7 @@ function App() {
               <Route path="/weapons/:weaponsType" element={<UniversalPage />} />
               <Route
                 path="/weapons/:weaponsType/:country"
-                element={
-                  <WarningPage pageType={WARNING_PAGE_TYPE.workInProgress} />
-                }
+                element={<WeaponsSelectionPage />}
               />
               <Route
                 path="/battles"

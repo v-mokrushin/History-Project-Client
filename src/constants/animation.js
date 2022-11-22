@@ -1,4 +1,5 @@
 export const ANIMATIONS = {
+  none: "",
   backInDown: "animate__animated " + "animate__backInDown",
   fadeIn: "animate__animated " + "animate__fadeIn",
   fadeInDown: "animate__animated " + "animate__fadeInDown",

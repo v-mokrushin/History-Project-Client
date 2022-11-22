@@ -17,23 +17,24 @@
 
   &__title {
     font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    font-size: 38px;
+    // font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 36px;
     color: $primary-gold-text-color;
     white-space: nowrap;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
     @include media-breakpoint-down(lg) {
-      font-size: 33px;
+      font-size: 31px;
     }
 
     @include media-breakpoint-down(sm) {
-      font-size: 32px;
+      font-size: 28px;
     }
 
     @include media-breakpoint-down(xs) {
-      font-size: 25px;
+      font-size: 24px;
       letter-spacing: 2px;
     }
   }
