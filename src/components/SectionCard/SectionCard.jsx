@@ -15,7 +15,7 @@ export default function SectionCard({ type }) {
     if (type === SECTION_CARD_TYPE.pages.weapons.aviation)
       return "/weapons/aviation";
     if (type === SECTION_CARD_TYPE.pages.weapons.armored)
-      return "/weapons/armored";
+      return "/weapons/armored-vehicles";
     if (type === SECTION_CARD_TYPE.pages.weapons.smallArms)
       return "/weapons/small-arms";
     if (type === SECTION_CARD_TYPE.pages.weapons.artillery)

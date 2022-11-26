@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  min-height: 220px;
+  // min-height: 220px;
   height: 100%;
 }
 
@@ -36,13 +36,22 @@
 }
 
 .contentBox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-gap: 8px;
+  }
 
   @include media-breakpoint-down(xs) {
-    gap: 7px;
-    overflow: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
   }
 }

@@ -1,0 +1,27 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 1px;
+  color: $primary-dark-text-color;
+  margin-bottom: 25px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 25px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 21px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}

@@ -19,6 +19,8 @@ import { selectArticlePreviewById } from "../../store/articlePreviews/selectors"
 import { LOADING_STATUSES } from "../../store/constants";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import styles from "./ArticlePage.module.scss";
+import Paragraph from "../../components/Paragraph/Paragraph";
+import Text from "../../components/Text/Text";
 
 export default function ArticlePage() {
   const dispatch = useDispatch();
@@ -63,37 +65,23 @@ export default function ArticlePage() {
             {articlePreview.author && (
               <div className={styles.infoBox__string}>
                 <div className={styles.infoBox__titleBox}>
-                  <span className={classNames(styles.text, styles.text_bolder)}>
-                    Авторы
-                  </span>
+                  <Text bold>Авторы</Text>
                 </div>
-                <span className={styles.text}>{articlePreview.author}</span>
+                <Text>{articlePreview.author}</Text>
               </div>
             )}
             {articlePreview.origin && (
               <div className={styles.infoBox__string}>
                 <div className={styles.infoBox__titleBox}>
-                  <span className={classNames(styles.text, styles.text_bolder)}>
-                    Источник
-                  </span>
+                  <Text bold>Источник</Text>
                 </div>
-                <span className={styles.text}>{articlePreview.origin}</span>
+                <Text>{articlePreview.origin}</Text>
               </div>
             )}
           </div>
-          <div
-            className={classNames(styles.paragraphsWrapper, ANIMATIONS.fadeIn)}
-          >
+          <div>
             {articleContent.paragraphs.map((item, index) => (
-              <p
-                className={classNames(
-                  styles.text,
-                  !index && styles.text_bolder
-                )}
-                key={index}
-              >
-                {item}
-              </p>
+              <Paragraph>{item}</Paragraph>
             ))}
           </div>
         </>
@@ -107,8 +95,7 @@ export default function ArticlePage() {
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>
           <div className={styles.innerWrapper}>
-            {/* <h2 className={styles.title}>{articlePreview.title}</h2> */}
-            <Title2 className={styles.title_2}>{articlePreview.title}</Title2>
+            <Title2 centered>{articlePreview.title}</Title2>
             {getContent()}
           </div>
         </Container>

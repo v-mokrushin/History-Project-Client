@@ -4,24 +4,24 @@ import styles from "./Flag.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { scrollTopInstantly } from "../../utils/scroll";
-import { FLAG_COUNTRY } from "./constants";
+import { NATIONS } from "../../constants/nations";
 
-export default function Flag({ country }) {
+export default function Flag({ nation }) {
   const info = getInfo();
 
   function getInfo() {
     let flag;
-    if (country == FLAG_COUNTRY.USSR) flag = styles.root_ussr;
-    if (country == FLAG_COUNTRY.germany) flag = styles.root_germany;
-    if (country == FLAG_COUNTRY.USA) flag = styles.root_usa;
-    if (country == FLAG_COUNTRY.unitedKindom) flag = styles.root_uk;
-    if (country == FLAG_COUNTRY.japan) flag = styles.root_japan;
+    if (nation == NATIONS.USSR) flag = styles.root_ussr;
+    if (nation == NATIONS.germany) flag = styles.root_germany;
+    if (nation == NATIONS.USA) flag = styles.root_usa;
+    if (nation == NATIONS.greatBritain) flag = styles.root_uk;
+    if (nation == NATIONS.japan) flag = styles.root_japan;
     return { flag };
   }
 
   return (
     <NavLink
-      to={`${country}`}
+      to={`${nation.path}`}
       className={classNames(styles.root, info.flag, ANIMATIONS.fadeIn)}
       onClick={() => scrollTopInstantly()}
     ></NavLink>

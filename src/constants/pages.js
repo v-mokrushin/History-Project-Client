@@ -20,14 +20,14 @@ const data = [
   },
   {
     path: "/weapons/aviation",
-    title: "авиация",
+    title: "Авиация",
     engTitle: "aviation",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.aviation,
   },
   {
-    path: "/weapons/armored",
+    path: "/weapons/armored-vehicles",
     title: "Бронетехника",
-    engTitle: "armored",
+    engTitle: "armored-vehicles",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.armored,
   },
   {
@@ -60,9 +60,14 @@ function getPathByTitle(title) {
   return data.find((item) => item.title === title)?.path;
 }
 
+function getPathLength(path) {
+  return path.split("/").length;
+}
+
 export const PAGES_DATA = {
   getByPath,
   getByEngTitle,
   getTitleByEngTitle,
   getPathByTitle,
+  getPathLength,
 };

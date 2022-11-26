@@ -1,0 +1,12 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+}
+
+.box {
+  margin-bottom: 45px;
+
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 25px;
+  }
+}

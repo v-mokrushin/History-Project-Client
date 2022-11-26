@@ -1,0 +1,54 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 45px;
+  width: 430px;
+
+  @include media-breakpoint-down(xs) {
+    min-width: auto;
+    gap: 5px;
+    width: 100%;
+    background-color: rgb(234, 242, 243);
+    padding: 10px 10px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 10px;
+  }
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: $primary-dark-text-color;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 25px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 21px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 18px;
+    margin: 0 auto;
+  }
+}

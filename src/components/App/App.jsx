@@ -7,16 +7,16 @@ import { Provider } from "react-redux";
 import { store } from "../../store";
 import WarningPage from "../../pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "../../pages/WarningPage/constants";
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { BurgerContext } from "../Burger/context";
 
 import "./App.scss";
 import "../../assets/css/main.scss";
 import ArticlePage from "../../pages/ArticlePage/ArticlePage";
-import WeaponsPage from "../../pages/WeaponsPage/WeaponsPage";
-import UniversalPage from "../../pages/UniversalPage/UniversalPage";
-import ArmoredWeaponsPage from "../../pages/ArmoredWeaponsPage/ArmoredWeaponsPage";
-import WeaponsSelectionPage from "../../pages/WeaponsSelectionPage/WeaponsSelectionPage";
+import WeaponsTypeSelectionPage from "../../pages/WeaponsTypeSelectionPage/WeaponsTypeSelectionPage";
+import UniversalPage from "../../pages/NationSelectionPage/NationSelectionPage";
+import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
+import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +29,12 @@ function App() {
     setIsOpen(false);
     document.body.style.overflow = "auto";
   }
+
+  React.useEffect(() => {
+    document.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+  }, []);
 
   return (
     <Provider store={store}>
@@ -43,11 +49,18 @@ function App() {
               />
               <Route path="/articles" element={<ArticlesPage />}></Route>
               <Route path="/articles/:articleId" element={<ArticlePage />} />
-              <Route path="/weapons/" element={<WeaponsPage />} />
-              <Route path="/weapons/:weaponsType" element={<UniversalPage />} />
+              <Route path="/weapons/" element={<WeaponsTypeSelectionPage />} />
               <Route
-                path="/weapons/:weaponsType/:country"
-                element={<WeaponsSelectionPage />}
+                path="/weapons/:weaponsTypePath"
+                element={<UniversalPage />}
+              />
+              <Route
+                path="/weapons/:weaponsTypePath/:nationPath"
+                element={<WeaponsPreviewPage />}
+              />
+              <Route
+                path="/weapons/:weaponsTypePath/:nationPath/:weaponId"
+                element={<WeaponDisplayPage />}
               />
               <Route
                 path="/battles"

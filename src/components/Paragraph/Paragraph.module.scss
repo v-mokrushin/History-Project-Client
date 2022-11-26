@@ -1,0 +1,29 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: $primary-dark-text-color;
+  font-stretch: 100%;
+  line-height: 35px;
+  margin-bottom: 25px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_bolder {
+    font-weight: 500;
+  }
+
+  &_noMargin {
+    margin: 0;
+  }
+}

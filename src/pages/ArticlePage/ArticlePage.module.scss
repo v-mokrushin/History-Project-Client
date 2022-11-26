@@ -3,112 +3,6 @@
 .root {
 }
 
-.innerWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  @include media-breakpoint-down(md) {
-    gap: 30px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    gap: 25px;
-  }
-
-  @include media-breakpoint-down(xs) {
-    gap: 20px;
-  }
-}
-
-.paragraphsWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  @include media-breakpoint-down(xs) {
-    gap: 20px;
-  }
-}
-
-.title {
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 120%;
-  font-size: 45px;
-  color: $primary-gold-text-color;
-  position: relative;
-  margin: 0 auto 15px;
-  white-space: normal;
-  text-align: center;
-
-  @include media-breakpoint-down(md) {
-    margin: 0 auto;
-    gap: 36px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: 34px;
-  }
-
-  @include media-breakpoint-down(xs) {
-    font-size: 28px;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      #fff 0%,
-      $primary-gold-text-color 15%,
-      $primary-gold-text-color 85%,
-      #fff 100%
-    );
-    top: calc(100% + 15px);
-    left: 0;
-
-    @include media-breakpoint-down(md) {
-      top: calc(100% + 10px);
-    }
-
-    @include media-breakpoint-down(sm) {
-      top: calc(100% + 9px);
-    }
-
-    @include media-breakpoint-down(xs) {
-      height: 1px;
-      top: calc(100% + 7px);
-    }
-  }
-}
-
-.title_2 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  color: $primary-dark-text-color;
-  font-stretch: 100%;
-  line-height: 35px;
-
-  @include media-breakpoint-down(xs) {
-    font-size: 15px;
-    line-height: 26px;
-  }
-
-  &_bolder {
-    font-weight: 500;
-  }
-}
-
 .infoBox {
   display: flex;
   flex-direction: column;
@@ -126,4 +20,22 @@
 
 .specialLogoStyle {
   margin-top: 7vh;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media-breakpoint-down(md) {
+    gap: 30px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    gap: 25px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    gap: 20px;
+  }
 }

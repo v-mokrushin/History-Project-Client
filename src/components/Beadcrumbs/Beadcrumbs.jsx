@@ -5,33 +5,49 @@ import { PAGES_DATA } from "../../constants/pages";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
-  const location = useLocation().pathname;
-  const [arr, setArr] = React.useState([]);
+  const locationPathname = useLocation().pathname;
+  const [labels, setLabels] = React.useState([]);
+  const [pathNames, setPathNames] = React.useState([]);
 
   React.useEffect(() => {
-    setArr(
-      location === "/"
-        ? ["главная"]
-        : location
-            .split("/")
-            .map((item) =>
-              PAGES_DATA.getTitleByEngTitle(item)
-                ? PAGES_DATA.getTitleByEngTitle(item)
-                : item
-            )
-    );
-  }, [location]);
+    setLabels(getLabelsArray(locationPathname));
+    setPathNames(getPathnamesArray(locationPathname));
+  }, [locationPathname]);
+
+  function getLabelsArray(locationPathname) {
+    return locationPathname === "/"
+      ? ["главная"]
+      : locationPathname
+          .split("/")
+          .map((item) => PAGES_DATA.getTitleByEngTitle(item) || item);
+  }
+
+  function getPathnamesArray(locationPathname) {
+    const pathNamesArray = [];
+    let previousPosition = -1;
+    let curentPosition = -1;
+
+    while (locationPathname.indexOf("/", curentPosition + 1) != -1) {
+      previousPosition = curentPosition + 1;
+      curentPosition = locationPathname.indexOf("/", curentPosition + 1);
+      pathNamesArray.push(locationPathname.slice(0, curentPosition));
+    }
+
+    pathNamesArray.push(locationPathname.slice(0));
+
+    return pathNamesArray;
+  }
 
   return (
     <div className={styles.root}>
-      {arr.length > 1 &&
-        arr.map(
+      {labels.length > 1 &&
+        labels.map(
           (item, index, array) =>
             index != array.length - 1 && (
               <div className={styles.box} key={index}>
                 <NavLink
-                  to={PAGES_DATA.getPathByTitle(item)}
-                  className={classNames(styles.item)}
+                  to={pathNames[index]}
+                  className={classNames(styles.label)}
                 >
                   {item}
                 </NavLink>

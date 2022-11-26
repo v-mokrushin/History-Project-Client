@@ -9,6 +9,7 @@ import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 export default function PreviewWeaponCard({ weapon }) {
   return (
     <NavLink
+      to={weapon.id}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
       onClick={() => scrollTopInstantly()}
     >
