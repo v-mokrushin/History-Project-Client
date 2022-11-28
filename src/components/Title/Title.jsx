@@ -4,6 +4,7 @@ import { ANIMATIONS } from "../../constants/animation";
 import styles from "./Title.module.scss";
 
 export default function Title({
+  id,
   noMargin = false,
   centered = false,
   className,
@@ -11,11 +12,12 @@ export default function Title({
 }) {
   return (
     <h1
+      id={id}
       className={classNames(
         className,
         styles.title,
         centered && styles.centered,
-        noMargin && styles.noMargin 
+        noMargin && styles.noMargin
       )}
     >
       {children}

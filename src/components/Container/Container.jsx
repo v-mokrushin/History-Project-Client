@@ -5,11 +5,13 @@ import styles from "./Container.module.scss";
 
 export default function Container({
   type = CONTAINER_TYPES.default,
+  className,
   children,
 }) {
   return (
     <div
       className={classNames({
+        className,
         [styles.default]: type === CONTAINER_TYPES.default,
         [styles.article]: type === CONTAINER_TYPES.article,
       })}

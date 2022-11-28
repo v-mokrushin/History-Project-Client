@@ -75,6 +75,15 @@ let USSR = [
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     JSXComponent: <IS_2 />,
+    sections: [
+      "Введение",
+      "Характеристики",
+      "История создания",
+      "Конструкция",
+      "Вооружение",
+      "Применение в бою",
+      "Видеоматериалы",
+    ],
     gallery: {
       icon: "/images/weapons/armored/USSR/ИС-2/1.webp",
       photo: [],

@@ -32,7 +32,7 @@ function App() {
 
   React.useEffect(() => {
     document.addEventListener("contextmenu", (event) => {
-      event.preventDefault();
+      // event.preventDefault();
     });
   }, []);
 

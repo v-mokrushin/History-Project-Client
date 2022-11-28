@@ -5,19 +5,29 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px;
 
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 12px;
+  }
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
   @include media-breakpoint-down(xs) {
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    // grid-gap: 2px;
   }
 }
 
 .video {
-  height: 280px;
+  aspect-ratio: 1.77 / 1;
   width: 100%;
   border-radius: 5px;
 
   @include media-breakpoint-down(xs) {
     height: auto;
-    aspect-ratio: 1.77 / 1;
+    // aspect-ratio: 1.77 / 1;
   }
 }

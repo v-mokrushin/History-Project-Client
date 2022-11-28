@@ -11,10 +11,15 @@
 
 .yearBox {
   margin-right: 15px;
+  width: 35px;
   border-right: 2px solid black;
   display: flex;
   align-items: center;
-  width: 35px;
+
+  @include media-breakpoint-down(xl) {
+    margin-right: 12px;
+    width: 23px;
+  }
 
   @include media-breakpoint-down(xs) {
     margin-right: 7px;
@@ -29,6 +34,10 @@
   color: $primary-dark-text-color;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+
+  @include media-breakpoint-down(xl) {
+    font-size: 20px;
+  }
 
   @include media-breakpoint-down(xs) {
     font-size: 15px;

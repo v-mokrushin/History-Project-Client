@@ -4,16 +4,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 190px;
+  max-width: 200px;
   position: sticky;
-  // right: 0;
-  top: 0;
+  top: 75px;
+  height: max-content;
+}
+
+.wrapper {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 10px;
 }
 
 .linksBox {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .title {
@@ -21,7 +27,7 @@
   color: #6c757d;
   text-decoration: none;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 21px;
 }
 
 .link {
@@ -29,7 +35,12 @@
   color: #6c757d;
   text-decoration: none;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 19px;
+  transition: transform 200ms ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
 }
 
 .separator {

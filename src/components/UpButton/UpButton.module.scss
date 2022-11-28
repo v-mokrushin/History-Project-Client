@@ -17,12 +17,15 @@
   aspect-ratio: 1 / 1;
   z-index: 20;
   cursor: pointer;
-  // transform: scale(0) translateY(-300px);
   transform: translateY(200px);
   transition: 300ms transform;
 
+  @include media-breakpoint-down(xl) {
+    height: 85px;
+  }
+
   @include media-breakpoint-down(lg) {
-    height: 90px;
+    height: 80px;
   }
 
   @include media-breakpoint-down(md) {
@@ -31,7 +34,7 @@
   @include media-breakpoint-down(sm) {
     display: none;
     bottom: 10px;
-    height: 80px;
+    height: 70px;
   }
 
   @include media-breakpoint-down(xs) {
@@ -40,6 +43,5 @@
 }
 
 .visible {
-  // transform: scale(1) translateY(0);
   transform: translateY(0);
 }

@@ -10,7 +10,7 @@ export default function IS_2() {
   return (
     <TextBlock>
       <TextBlock>
-        <Subtitle id="history">История создания</Subtitle>
+        <Subtitle id="История создания">История создания</Subtitle>
         <Paragraph>
           Ещё в начале 1942 года конструкторы Челябинского завода попытались
           реализовать идею танка, по огневой мощи и бронезащите соответствующего
@@ -42,7 +42,7 @@ export default function IS_2() {
         </Paragraph>
       </TextBlock>
       <TextBlock>
-        <Subtitle>Конструкция</Subtitle>
+        <Subtitle id="Конструкция">Конструкция</Subtitle>
         <Paragraph>
           Экипаж танка ИС-2 размещался так: механик-водитель сидел в носовой
           части, между двумя топливными баками. В его распоряжении находились
@@ -88,7 +88,7 @@ export default function IS_2() {
         </Paragraph>
       </TextBlock>
       <TextBlock>
-        <Subtitle>Вооружение</Subtitle>
+        <Subtitle id="Вооружение">Вооружение</Subtitle>
         <Paragraph>
           Главное оружие ИС-2 – пушка Д-25Т калибра 122мм. Прототипом послужило
           буксируемое орудие А-19 – пушки ранних танков даже имели аналогичный
@@ -117,7 +117,7 @@ export default function IS_2() {
         </Paragraph>
       </TextBlock>
       <TextBlock>
-        <Subtitle>Применение в бою</Subtitle>
+        <Subtitle id="Применение в бою">Применение в бою</Subtitle>
         <Paragraph>
           В бой «ИСы»с 85мм пушкой пошли в феврале 1944 года. Первое применение
           оказалось неудачным – все танки, штурмовавшие деревню Лисянка, были
@@ -154,11 +154,9 @@ export default function IS_2() {
           Официально танк сняли с вооружения только в 90-х годах. Некоторое
           количество ИС-2 было передано на Кубу, Северному Вьетнаму и КНДР.
         </Paragraph>
-        <Paragraph></Paragraph>
-        <Paragraph></Paragraph>
       </TextBlock>
 
-      <Subtitle>Рекомендованные видеоматериалы</Subtitle>
+      <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
       <YTFrame
         links={[
           "https://www.youtube.com/embed/_nypiSnpvow",
