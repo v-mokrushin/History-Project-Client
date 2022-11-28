@@ -8,7 +8,7 @@ import VideoIntro from "../../components/VideoIntro/VideoIntro";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
-import Title2 from "../../components/Title2/Title2";
+import Title from "../../components/Title/Title";
 
 export default function HomePage() {
   const dispatch = useDispatch();

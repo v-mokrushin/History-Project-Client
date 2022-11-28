@@ -10,7 +10,7 @@ import { navigationMiddlewares } from "../../store/navigation/changeActualSectio
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../constants/pages";
 import Flag from "../../components/Flag/Flag";
-import Title2 from "../../components/Title2/Title2";
+import Title from "../../components/Title/Title";
 import { NATIONS } from "../../constants/nations";
 
 export default function NationSelectionPage() {
@@ -27,16 +27,14 @@ export default function NationSelectionPage() {
       <IntroImage type={pageInfo.introImage} />
       <ContentWrapper>
         <Container>
-          <InnerContentWrapper>
-            <Title2>{pageInfo.title}</Title2>
-            <div className={styles.flagsWrapper}>
-              <Flag nation={NATIONS.USSR} />
-              <Flag nation={NATIONS.germany} />
-              <Flag nation={NATIONS.USA} />
-              <Flag nation={NATIONS.greatBritain} />
-              <Flag nation={NATIONS.japan} />
-            </div>
-          </InnerContentWrapper>
+          <Title>{pageInfo.title}</Title>
+          <div className={styles.flagsWrapper}>
+            <Flag nation={NATIONS.USSR} />
+            <Flag nation={NATIONS.germany} />
+            <Flag nation={NATIONS.USA} />
+            <Flag nation={NATIONS.greatBritain} />
+            <Flag nation={NATIONS.japan} />
+          </div>
         </Container>
       </ContentWrapper>
     </>

@@ -8,9 +8,9 @@ import YTFrame from "../../components/YTFrame/YTFrame";
 
 export default function IS_2() {
   return (
-    <div>
+    <TextBlock>
       <TextBlock>
-        <Subtitle>История создания танка</Subtitle>
+        <Subtitle id="history">История создания</Subtitle>
         <Paragraph>
           Ещё в начале 1942 года конструкторы Челябинского завода попытались
           реализовать идею танка, по огневой мощи и бронезащите соответствующего
@@ -168,7 +168,7 @@ export default function IS_2() {
           "https://www.youtube.com/embed/5Zqu4XgXjac",
         ]}
       />
-    </div>
+    </TextBlock>
   );
 }
 

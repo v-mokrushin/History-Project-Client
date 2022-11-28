@@ -9,7 +9,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import PreviewWeaponCard from "../../components/PreviewWeaponCard/PreviewWeaponCard";
 import Timeline from "../../components/Timeline/Timeline";
 import TimelineItem from "../../components/TimelineItem/TimelineItem";
-import Title2 from "../../components/Title2/Title2";
+import Title from "../../components/Title/Title";
 import { NATIONS } from "../../constants/nations";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 import { WEAPONS_DATA } from "../../data/weapons";
@@ -41,16 +41,14 @@ export default function WeaponsPreviewPage() {
     <div className={styles.root}>
       <ContentWrapper>
         <Container>
-          <InnerContentWrapper>
-            <Title2>
-              {weaponsTypeObject.name.russian}{" "}
-              {nationObject.name.russianАccusative}
-            </Title2>
-            <Timeline
-              contentCollection={filteredWeapons}
-              uniqueDates={uniqueDates}
-            ></Timeline>
-          </InnerContentWrapper>
+          <Title>
+            {weaponsTypeObject.name.russian}{" "}
+            {nationObject.name.russianАccusative}
+          </Title>
+          <Timeline
+            contentCollection={filteredWeapons}
+            uniqueDates={uniqueDates}
+          ></Timeline>
         </Container>
       </ContentWrapper>
     </div>

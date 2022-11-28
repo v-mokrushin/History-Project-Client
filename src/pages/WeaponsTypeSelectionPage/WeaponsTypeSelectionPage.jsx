@@ -7,12 +7,11 @@ import InnerContentWrapper from "../../components/InnerContentWrapper/InnerConte
 import styles from "./WeaponsTypeSelectionPage.module.scss";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
-import Title from "../../components/Title/Title";
 import { useDispatch } from "react-redux";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
-import Title2 from "../../components/Title2/Title2";
+import Title from "../../components/Title/Title";
 
 export default function WeaponsTypeSelectionPage() {
   const dispatch = useDispatch();
@@ -27,15 +26,13 @@ export default function WeaponsTypeSelectionPage() {
       <IntroImage type={INTRO_IMAGE_TYPE.pages.weapons} />
       <ContentWrapper>
         <Container>
-          <InnerContentWrapper>
-            <Title2>Вооружения</Title2>
-            <div className={styles.weaponCardsWrapper}>
-              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.armored} />
-              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
-              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.smallArms} />
-              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.artillery} />
-            </div>
-          </InnerContentWrapper>
+          <Title>Вооружения</Title>
+          <div className={styles.weaponCardsWrapper}>
+            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.armored} />
+            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
+            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.smallArms} />
+            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.artillery} />
+          </div>
         </Container>
       </ContentWrapper>
     </>

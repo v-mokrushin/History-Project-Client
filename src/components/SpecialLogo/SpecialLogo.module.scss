@@ -8,6 +8,7 @@
   user-select: none;
   text-decoration: none;
   margin: 0 auto;
+  width: max-content;
   cursor: wait;
 
   @include media-breakpoint-down(xs) {

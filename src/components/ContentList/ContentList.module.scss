@@ -1,0 +1,39 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 190px;
+  position: sticky;
+  // right: 0;
+  top: 0;
+}
+
+.linksBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  color: #6c757d;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.link {
+  font-family: "Rubik", sans-serif;
+  color: #6c757d;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: #6c757d;
+}

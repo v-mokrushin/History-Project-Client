@@ -9,7 +9,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { ANIMATIONS } from "../../constants/animation";
-import Title2 from "../../components/Title2/Title2";
+import Title from "../../components/Title/Title";
 import { loadArticleContent } from "../../store/articleContent/loadingMiddleware";
 import {
   selectArticleContentById,
@@ -95,7 +95,7 @@ export default function ArticlePage() {
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>
           <div className={styles.innerWrapper}>
-            <Title2 centered>{articlePreview.title}</Title2>
+            <Title centered>{articlePreview.title}</Title>
             {getContent()}
           </div>
         </Container>

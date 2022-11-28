@@ -29,6 +29,7 @@
   }
 
   @include media-breakpoint-down(sm) {
+    display: none;
     bottom: 10px;
     height: 80px;
   }
