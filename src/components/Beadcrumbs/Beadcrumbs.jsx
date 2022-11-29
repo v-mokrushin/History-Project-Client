@@ -34,6 +34,7 @@ export default function Beadcrumbs() {
     }
 
     pathNamesArray.push(locationPathname.slice(0));
+    pathNamesArray[0] = "/";
 
     return pathNamesArray;
   }

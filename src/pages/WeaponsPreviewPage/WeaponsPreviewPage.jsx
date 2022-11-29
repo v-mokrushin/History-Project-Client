@@ -4,16 +4,14 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
-import IntroImage from "../../components/IntroImage/IntroImage";
-import PreviewWeaponCard from "../../components/PreviewWeaponCard/PreviewWeaponCard";
 import Timeline from "../../components/Timeline/Timeline";
-import TimelineItem from "../../components/TimelineItem/TimelineItem";
+import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
 import { NATIONS } from "../../constants/nations";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 import { WEAPONS_DATA } from "../../data/weapons";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
+import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 
 export default function WeaponsPreviewPage() {
@@ -45,10 +43,18 @@ export default function WeaponsPreviewPage() {
             {weaponsTypeObject.name.russian}{" "}
             {nationObject.name.russianАccusative}
           </Title>
-          <Timeline
+          {filteredWeapons.length > 0 ? (
+            <Timeline
+              contentCollection={filteredWeapons}
+              uniqueDates={uniqueDates}
+            />
+          ) : (
+            <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} />
+          )}
+          {/* <Timeline
             contentCollection={filteredWeapons}
             uniqueDates={uniqueDates}
-          ></Timeline>
+          /> */}
         </Container>
       </ContentWrapper>
     </div>

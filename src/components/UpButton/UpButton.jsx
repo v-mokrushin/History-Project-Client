@@ -6,7 +6,6 @@ import classNames from "classnames";
 export default function UpButton() {
   const [toShow, setToShow] = React.useState(false);
   const [scrollPosition, setScrollPosition] = React.useState(0);
-  // console.log("render");
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {

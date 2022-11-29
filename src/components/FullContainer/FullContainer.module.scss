@@ -4,15 +4,15 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 200px 1fr 200px;
-  grid-column-gap: 50px;
+  grid-column-gap: 85px;
 
   @media screen and (max-width: 2000px) {
-    grid-column-gap: 20px;
+    grid-column-gap: 65px;
   }
 
   @include media-breakpoint-down(xl) {
-    // grid-template-columns: 1fr;
     display: block;
+    width: 100%;
   }
 }
 

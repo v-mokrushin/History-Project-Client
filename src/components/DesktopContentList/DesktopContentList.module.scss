@@ -8,6 +8,10 @@
   position: sticky;
   top: 75px;
   height: max-content;
+
+  @include media-breakpoint-down(xl) {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -28,6 +32,7 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 21px;
+  letter-spacing: 1px;
 }
 
 .link {
@@ -37,6 +42,7 @@
   font-weight: 400;
   font-size: 19px;
   transition: transform 200ms ease;
+  letter-spacing: 0.5px;
 
   &:hover {
     transform: translateX(5px);

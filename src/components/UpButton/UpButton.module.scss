@@ -4,28 +4,35 @@
   position: fixed;
   width: max-content;
   height: max-content;
-  right: 1%;
-  bottom: 20px;
+  right: 2%;
+  bottom: 45px;
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  background-image: url(../../assets/images/up-button/up.png);
+  background-image: url(../../assets/images/up-button/up-2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 100px;
+  height: 70px;
   aspect-ratio: 1 / 1;
   z-index: 20;
   cursor: pointer;
   transform: translateY(200px);
   transition: 300ms transform;
 
+  &:hover {
+    // transform: scale(1.05);
+    transform: translateY(5px);
+  }
+
   @include media-breakpoint-down(xl) {
-    height: 85px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
   }
 
   @include media-breakpoint-down(lg) {
-    height: 80px;
+    height: 55px;
   }
 
   @include media-breakpoint-down(md) {

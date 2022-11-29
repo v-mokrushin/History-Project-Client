@@ -35,9 +35,13 @@
 .title {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 27px;
   letter-spacing: 1px;
   color: $primary-dark-text-color;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 26px;
+  }
 
   @include media-breakpoint-down(lg) {
     font-size: 25px;
