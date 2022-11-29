@@ -5,7 +5,17 @@
   flex-direction: column;
   gap: 15px;
   margin-bottom: 45px;
-  width: 430px;
+  min-width: 400px;
+  width: 100%;
+
+  @include media-breakpoint-down(md) {
+    min-width: 300px;
+    margin-bottom: 25px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    min-width: auto;
+  }
 
   @include media-breakpoint-down(xs) {
     min-width: auto;
@@ -38,6 +48,7 @@
   font-size: 27px;
   letter-spacing: 1px;
   color: $primary-dark-text-color;
+  margin: 0 auto;
 
   @include media-breakpoint-down(xl) {
     font-size: 26px;

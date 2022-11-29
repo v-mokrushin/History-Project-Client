@@ -15,6 +15,12 @@
     margin-bottom: 17px;
   }
 
+  @include media-breakpoint-down(xl) {
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 17px;
+  }
+
   @include media-breakpoint-down(xs) {
     font-size: 15px;
     line-height: 26px;
