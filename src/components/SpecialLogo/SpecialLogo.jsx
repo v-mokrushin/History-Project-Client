@@ -5,7 +5,12 @@ import { ANIMATIONS } from "../../constants/animation";
 import { SPECIAL_LOGO_TYPE } from "./constants";
 import styles from "./SpecialLogo.module.scss";
 
-export default function SpecialLogo({ className, type }) {
+export default function SpecialLogo({
+  centered50vh = false,
+  centered75vh = false,
+  className,
+  type,
+}) {
   function getIconStyle() {
     if (type == SPECIAL_LOGO_TYPE.loading) {
       return styles.icon_typeLoading;
@@ -26,7 +31,13 @@ export default function SpecialLogo({ className, type }) {
 
   return (
     <div
-      className={classNames(styles.wrapper, ANIMATIONS.fadeInDown, className)}
+      className={classNames(
+        styles.wrapper,
+        // ANIMATIONS.fadeInDown,
+        className,
+        centered50vh && styles.сentered_50vh,
+        centered75vh && styles.сentered_75vh
+      )}
     >
       <div
         className={classNames(

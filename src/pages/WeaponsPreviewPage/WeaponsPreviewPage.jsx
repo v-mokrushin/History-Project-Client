@@ -24,7 +24,10 @@ export default function WeaponsPreviewPage() {
   const [filteredWeapons, setFilteredWeapons] = React.useState(
     WEAPONS_DATA.filter(
       (item) => item.type.baseType.path === weaponsTypePath
-    ).filter((item) => item.nation.path === nationPath)
+    ).filter(
+      (item) =>
+        nationPath === NATIONS.world.path || item.nation.path === nationPath
+    )
   );
 
   React.useEffect(() => {
@@ -49,12 +52,8 @@ export default function WeaponsPreviewPage() {
               uniqueDates={uniqueDates}
             />
           ) : (
-            <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} />
+            <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} centered50vh />
           )}
-          {/* <Timeline
-            contentCollection={filteredWeapons}
-            uniqueDates={uniqueDates}
-          /> */}
         </Container>
       </ContentWrapper>
     </div>

@@ -1,3 +1,13 @@
+const world = {
+  name: {
+    russian: "Весь мир",
+    russianАccusative: "мира",
+    english: "All world",
+  },
+  path: "world",
+  flagImage: "/images/flags/flag-world.png",
+};
+
 const USSR = {
   name: {
     russian: "СССР",
@@ -49,6 +59,7 @@ const japan = {
 };
 
 export const NATIONS = {
+  world,
   USSR,
   germany,
   USA,

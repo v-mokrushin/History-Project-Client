@@ -13,10 +13,15 @@ export default function Flag({ nation }) {
     <NavLink
       to={`${nation.path}`}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
-      style={getBackgroundImageStyleObject(nation.flagImage)}
       onClick={() => scrollTopInstantly()}
     >
-      {/* <Paragraph>{nation.name.russian}</Paragraph> */}
+      <div
+        className={classNames(styles.flag)}
+        style={getBackgroundImageStyleObject(nation.flagImage)}
+      ></div>
+      <Paragraph className={classNames(styles.text)}>
+        {nation.name.russian}
+      </Paragraph>
     </NavLink>
   );
 }

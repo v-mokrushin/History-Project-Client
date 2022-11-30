@@ -70,29 +70,6 @@
   background-size: cover;
   transition: transform 300ms ease;
   z-index: 0;
-
-  &_articles {
-    background-image: url(../../assets/images/backgrounds/hp-bg-articles.jpg);
-  }
-  &_weapons {
-    background-image: url(../../assets/images/backgrounds/hp-bg-weapons.png);
-  }
-  &_battles {
-    background-image: url(../../assets/images/backgrounds/hp-bg-battles.jpg);
-  }
-
-  &_aviation {
-    background-image: url(../../assets/images/backgrounds/weapons/aviation_2.jpg);
-  }
-  &_armored {
-    background-image: url(../../assets/images/backgrounds/weapons/armored.jpg);
-  }
-  &_smallArms {
-    background-image: url(../../assets/images/backgrounds/weapons/gun.jpg);
-  }
-  &_artillery {
-    background-image: url(../../assets/images/backgrounds/weapons/artillery.jpg);
-  }
 }
 
 .contentWrapper {

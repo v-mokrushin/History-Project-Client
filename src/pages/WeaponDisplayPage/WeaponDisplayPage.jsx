@@ -298,7 +298,10 @@ export default function WeaponDisplayPage() {
                 </div>
               </TextBlock>
             ) : (
-              <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} />
+              <SpecialLogo
+                type={SPECIAL_LOGO_TYPE.inDevelopment}
+                centered75vh
+              />
             )}
             {weapon.JSXComponent}
             {/* {weapon.specifications && (

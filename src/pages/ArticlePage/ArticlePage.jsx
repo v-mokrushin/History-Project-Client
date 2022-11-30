@@ -43,12 +43,7 @@ export default function ArticlePage() {
       return;
     }
     if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return (
-        <SpecialLogo
-          type={SPECIAL_LOGO_TYPE.loading}
-          className={styles.specialLogoStyle}
-        />
-      );
+      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} centered75vh />;
     }
     if (loadingStatus === LOADING_STATUSES.success) {
       if (!articleContent?.paragraphs?.length) {
@@ -56,11 +51,12 @@ export default function ArticlePage() {
           <SpecialLogo
             type={SPECIAL_LOGO_TYPE.inDevelopment}
             className={styles.specialLogoStyle}
+            centered75vh
           />
         );
       }
       return (
-        <>
+        <div className={classNames(styles.innerWrapper, ANIMATIONS.fadeIn)}>
           <div className={styles.infoBox}>
             {articlePreview.author && (
               <div className={styles.infoBox__string}>
@@ -84,7 +80,7 @@ export default function ArticlePage() {
               <Paragraph>{item}</Paragraph>
             ))}
           </div>
-        </>
+        </div>
       );
     }
   }
