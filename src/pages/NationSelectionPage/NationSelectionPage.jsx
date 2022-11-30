@@ -29,11 +29,10 @@ export default function NationSelectionPage() {
         <Container>
           <Title>{pageInfo.title}</Title>
           <div className={styles.flagsWrapper}>
-            <Flag nation={NATIONS.USSR} />
-            <Flag nation={NATIONS.germany} />
-            <Flag nation={NATIONS.USA} />
-            <Flag nation={NATIONS.greatBritain} />
-            <Flag nation={NATIONS.japan} />
+            {Object.values(NATIONS).map(
+              (item, index) =>
+                typeof item === "object" && <Flag key={index} nation={item} />
+            )}
           </div>
         </Container>
       </ContentWrapper>

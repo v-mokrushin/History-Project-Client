@@ -15,22 +15,6 @@
   transition: transform 300ms ease;
   z-index: 0;
 
-  &_ussr {
-    background-image: url(../../assets/images/backgrounds/flags/flag-ussr.svg);
-  }
-  &_germany {
-    background-image: url(../../assets/images/backgrounds/flags/flag-germany.svg);
-  }
-  &_uk {
-    background-image: url(../../assets/images/backgrounds/flags/flag-uk.svg);
-  }
-  &_usa {
-    background-image: url(../../assets/images/backgrounds/flags/flag-us.svg);
-  }
-  &_japan {
-    background-image: url(../../assets/images/backgrounds/flags/flag-japan.svg);
-  }
-
   @include media-breakpoint-down(FHD) {
     height: 120px;
   }

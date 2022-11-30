@@ -5,6 +5,7 @@ const USSR = {
     english: "Soviet Union",
   },
   path: "soviet-union",
+  flagImage: "/images/flags/flag-ussr.svg",
 };
 
 const germany = {
@@ -14,6 +15,7 @@ const germany = {
     english: "Germany",
   },
   path: "germany",
+  flagImage: "/images/flags/flag-germany.svg",
 };
 
 const USA = {
@@ -23,6 +25,7 @@ const USA = {
     english: "USA",
   },
   path: "usa",
+  flagImage: "/images/flags/flag-us.svg",
 };
 
 const greatBritain = {
@@ -32,6 +35,7 @@ const greatBritain = {
     english: "Great Britain",
   },
   path: "great-britain",
+  flagImage: "/images/flags/flag-uk.svg",
 };
 
 const japan = {
@@ -41,6 +45,7 @@ const japan = {
     english: "Japan",
   },
   path: "japan",
+  flagImage: "/images/flags/flag-japan.svg",
 };
 
 export const NATIONS = {

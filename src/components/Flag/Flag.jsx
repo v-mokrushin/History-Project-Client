@@ -5,25 +5,18 @@ import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { scrollTopInstantly } from "../../utils/scroll";
 import { NATIONS } from "../../constants/nations";
+import { getBackgroundImageStyleObject } from "../../utils/common";
+import Paragraph from "../Paragraph/Paragraph";
 
 export default function Flag({ nation }) {
-  const info = getInfo();
-
-  function getInfo() {
-    let flag;
-    if (nation == NATIONS.USSR) flag = styles.root_ussr;
-    if (nation == NATIONS.germany) flag = styles.root_germany;
-    if (nation == NATIONS.USA) flag = styles.root_usa;
-    if (nation == NATIONS.greatBritain) flag = styles.root_uk;
-    if (nation == NATIONS.japan) flag = styles.root_japan;
-    return { flag };
-  }
-
   return (
     <NavLink
       to={`${nation.path}`}
-      className={classNames(styles.root, info.flag, ANIMATIONS.fadeIn)}
+      className={classNames(styles.root, ANIMATIONS.fadeIn)}
+      style={getBackgroundImageStyleObject(nation.flagImage)}
       onClick={() => scrollTopInstantly()}
-    ></NavLink>
+    >
+      {/* <Paragraph>{nation.name.russian}</Paragraph> */}
+    </NavLink>
   );
 }
