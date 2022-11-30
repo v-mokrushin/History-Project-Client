@@ -13,7 +13,7 @@ export default function Container({
       className={classNames({
         className,
         [styles.default]: type === CONTAINER_TYPES.default,
-        [styles.article]: type === CONTAINER_TYPES.article,
+        [styles.aside]: type === CONTAINER_TYPES.aside,
       })}
     >
       {children}

@@ -18,10 +18,10 @@ import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import TextBlock from "../../components/TextBlock/TextBlock";
 import DesktopContentList from "../../components/DesktopContentList/DesktopContentList";
-import FullContainer from "../../components/FullContainer/FullContainer";
 import MobileContentList from "../../components/MobileContentList/MobileContentList";
 import { useDispatch } from "react-redux";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
+import { CONTAINER_TYPES } from "../../components/Container/constants";
 
 export default function WeaponDisplayPage() {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export default function WeaponDisplayPage() {
     <div className={classNames(styles.root)}>
       <IntroImage imageUrl={weapon.gallery.icon} />
       <ContentWrapper className={ANIMATIONS.fadeIn}>
-        <FullContainer>
+        <Container type={CONTAINER_TYPES.aside}>
           <div></div>
           <Container>
             <MobileContentList list={weapon.sections} />
@@ -309,7 +309,7 @@ export default function WeaponDisplayPage() {
           )} */}
           </Container>
           <DesktopContentList list={weapon.sections} />
-        </FullContainer>
+        </Container>
       </ContentWrapper>
     </div>
   );

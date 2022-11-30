@@ -8,8 +8,13 @@
   color: $primary-dark-text-color;
   margin-bottom: 40px;
 
+  @include media-breakpoint-down(FHD) {
+    font-size: 40px;
+    margin-bottom: 35px;
+  }
+
   @include media-breakpoint-down(xl) {
-    font-size: 35px;
+    font-size: 33px;
     margin-bottom: 25px;
   }
 
