@@ -7,7 +7,7 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Timeline from "../../components/Timeline/Timeline";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
-import { NATIONS } from "../../constants/nations";
+import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 import { WEAPONS_DATA } from "../../data/weapons";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
@@ -19,7 +19,7 @@ export default function WeaponsPreviewPage() {
   const { weaponsTypePath } = useParams();
   const { nationPath } = useParams();
   const weaponsTypeObject = WEAPONS_TYPE.getObjectByPath(weaponsTypePath);
-  const nationObject = NATIONS.getObjectByPath(nationPath);
+  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
   const [uniqueDates, setUniqueDates] = React.useState([]);
   const [filteredWeapons, setFilteredWeapons] = React.useState(
     WEAPONS_DATA.filter(

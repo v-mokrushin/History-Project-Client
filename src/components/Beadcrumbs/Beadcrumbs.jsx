@@ -19,7 +19,7 @@ export default function Beadcrumbs() {
       ? ["главная"]
       : locationPathname
           .split("/")
-          .map((item) => PAGES_DATA.getTitleByEngTitle(item) || item);
+          .map((item) => PAGES_DATA.getRussianName(item) || item);
   }
 
   function getPathnamesArray(locationPathname) {

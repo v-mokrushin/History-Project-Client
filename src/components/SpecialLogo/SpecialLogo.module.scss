@@ -44,7 +44,7 @@
   align-items: center;
 
   @include media-breakpoint-down(xs) {
-    gap: 4px;
+    gap: 5px;
   }
 }
 
@@ -59,14 +59,18 @@
 
   @include media-breakpoint-down(xs) {
     font-size: 12px;
+    letter-spacing: 1px;
   }
 }
 
 .datesWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 3px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 2px;
+  }
 }
 
 .title {
@@ -79,6 +83,7 @@
 
   @include media-breakpoint-down(xs) {
     font-size: 18px;
+    letter-spacing: 3px;
   }
 }
 
@@ -91,6 +96,7 @@
   text-transform: uppercase;
 
   @include media-breakpoint-down(xs) {
+    letter-spacing: 2px;
     font-size: 9px;
   }
 }
@@ -105,7 +111,7 @@
   background-color: $primary-gold-text-color;
 
   @include media-breakpoint-down(xs) {
-    width: 13px;
+    width: 12px;
   }
 }
 

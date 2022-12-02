@@ -1,73 +1,81 @@
 import { INTRO_IMAGE_TYPE } from "../components/IntroImage/constants";
+import { NATIONS, NATIONS_METHODS } from "./nations";
 
 const data = [
   {
     path: "/",
-    title: "главная",
-    engTitle: "",
+    name: {
+      russian: "главная",
+      english: "main",
+    },
   },
   {
-    path: "/articles",
-    title: "статьи",
-    engTitle: "articles",
+    path: "articles",
     introImage: INTRO_IMAGE_TYPE.pages.articles,
+    name: {
+      russian: "статьи",
+      english: "articles",
+    },
   },
   {
-    path: "/weapons",
-    title: "вооружения",
-    engTitle: "weapons",
+    path: "weapons",
     introImage: INTRO_IMAGE_TYPE.pages.weapons,
+    name: {
+      russian: "вооружения",
+      english: "weapons",
+    },
   },
   {
-    path: "/weapons/aviation",
-    title: "Авиация",
-    engTitle: "aviation",
+    path: "aviation",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.aviation,
+    name: {
+      russian: "Авиация",
+      english: "aviation",
+    },
   },
   {
-    path: "/weapons/armored-vehicles",
-    title: "Бронетехника",
-    engTitle: "armored-vehicles",
+    path: "armored-vehicles",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.armored,
+    name: {
+      russian: "Бронетехника",
+      english: "aviation",
+    },
   },
   {
-    path: "/weapons/small-arms",
-    title: "Стрелковое оружие",
-    engTitle: "small-arms",
+    path: "small-arms",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.smallArms,
+    name: {
+      russian: "Стрелковое оружие",
+      english: "small arms",
+    },
   },
   {
-    path: "/weapons/artillery",
-    title: "Артиллерия",
-    engTitle: "artillery",
+    path: "artillery",
     introImage: INTRO_IMAGE_TYPE.pages.weapons.artillery,
+    name: {
+      russian: "Артиллерия",
+      english: "artillery",
+    },
   },
+  ...NATIONS_METHODS.getNationsAsArray(),
 ];
 
-function getByPath(path) {
-  return data.find((item) => item.path === path);
-}
-
-function getByEngTitle(engTitle) {
-  return data.find((item) => item.engTitle === engTitle);
-}
-
-function getTitleByEngTitle(engTitle) {
-  return data.find((item) => item.engTitle === engTitle)?.title;
-}
-
-function getPathByTitle(title) {
-  return data.find((item) => item.title === title)?.path;
+function getRussianNameByPath(path) {
+  return data.find((item) => item.path === path)?.name.russian;
 }
 
 function getPathLength(path) {
   return path.split("/").length;
 }
 
+function getByPath(path) {
+  const lastPathElement = path.split("/").at(-1);
+  console.log(data.find((item) => item.path === lastPathElement));
+  return data.find((item) => item.path === lastPathElement);
+}
+
 export const PAGES_DATA = {
   getByPath,
-  getByEngTitle,
-  getTitleByEngTitle,
-  getPathByTitle,
+  getRussianName: getRussianNameByPath,
   getPathLength,
 };

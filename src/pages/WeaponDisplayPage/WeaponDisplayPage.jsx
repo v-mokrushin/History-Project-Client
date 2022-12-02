@@ -22,6 +22,7 @@ import MobileContentList from "../../components/MobileContentList/MobileContentL
 import { useDispatch } from "react-redux";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
+import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 
 export default function WeaponDisplayPage() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ export default function WeaponDisplayPage() {
 
   return (
     <div className={classNames(styles.root)}>
+      <ReadingProgressBar />
       <IntroImage imageUrl={weapon.gallery.icon} />
       <ContentWrapper className={ANIMATIONS.fadeIn}>
         <Container type={CONTAINER_TYPES.aside}>

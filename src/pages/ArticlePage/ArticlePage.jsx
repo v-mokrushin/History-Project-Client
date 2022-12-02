@@ -21,6 +21,7 @@ import { navigationMiddlewares } from "../../store/navigation/changeActualSectio
 import styles from "./ArticlePage.module.scss";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
+import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 
 export default function ArticlePage() {
   const dispatch = useDispatch();
@@ -77,7 +78,9 @@ export default function ArticlePage() {
           </div>
           <div>
             {articleContent.paragraphs.map((item, index) => (
-              <Paragraph>{item}</Paragraph>
+              <Paragraph key={articlePreview.id + "par" + index}>
+                {item}
+              </Paragraph>
             ))}
           </div>
         </div>
@@ -87,6 +90,7 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ReadingProgressBar />
       <IntroImage imageUrl={articlePreview.backgroundURL} />
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>

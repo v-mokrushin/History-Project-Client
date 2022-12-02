@@ -1,0 +1,14 @@
+@import "/src/assets/css/main.scss";
+
+.root {
+  height: 4px;
+  background: $primary-gold-text-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  @include media-breakpoint-down(sm) {
+    height: 3px;
+  }
+}

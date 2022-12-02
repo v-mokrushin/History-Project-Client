@@ -157,7 +157,7 @@ export default function IS_2() {
       </TextBlock>
 
       <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
-      <YTFrame
+      {/* <YTFrame
         links={[
           "https://www.youtube.com/embed/_nypiSnpvow",
           "https://www.youtube.com/embed/_ZFXUBEb24g",
@@ -165,7 +165,7 @@ export default function IS_2() {
           "https://www.youtube.com/embed/sodVseKNDNI",
           "https://www.youtube.com/embed/5Zqu4XgXjac",
         ]}
-      />
+      /> */}
     </TextBlock>
   );
 }
