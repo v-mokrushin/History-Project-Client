@@ -3,27 +3,29 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import SectionCard from "../../components/SectionCard/SectionCard";
 import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
-import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import styles from "./WeaponsTypeSelectionPage.module.scss";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
-import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import { useDispatch } from "react-redux";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
-import Beadcrumbs from "../../components/Beadcrumbs/Beadcrumbs";
 import Title from "../../components/Title/Title";
+import { useLocation, useParams } from "react-router-dom";
+import { PAGES_DATA } from "../../constants/pages";
 
 export default function WeaponsTypeSelectionPage() {
   const dispatch = useDispatch();
+  const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
 
   React.useEffect(() => {
     documentTitle.setWeaponsPage();
     dispatch(navigationMiddlewares.setWeaponsActualSection());
   }, [dispatch]);
 
+  console.log(pageInfo);
+
   return (
     <>
-      <IntroImage type={INTRO_IMAGE_TYPE.pages.weapons} />
+      <IntroImage imageUrl={pageInfo.introImage} />
       <ContentWrapper>
         <Container>
           <Title>Вооружения</Title>

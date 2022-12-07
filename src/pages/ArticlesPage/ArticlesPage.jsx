@@ -18,11 +18,14 @@ import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import Title from "../../components/Title/Title";
+import { useLocation, useParams } from "react-router-dom";
+import { PAGES_DATA } from "../../constants/pages";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch();
   const articlesIds = useSelector(selectArticlePreviewsIds);
   const loadingStatus = useSelector(selectArticlePreviewsLoadingStatus);
+  const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
 
   useEffect(() => {
     dispatch(loadArticlePreviews);
@@ -55,7 +58,7 @@ export default function ArticlesPage() {
 
   return (
     <>
-      <IntroImage type={INTRO_IMAGE_TYPE.pages.articles} />
+      <IntroImage imageUrl={pageInfo.introImage} />
       <ContentWrapper>
         <Container>
           <InnerContentWrapper>{getLayout()}</InnerContentWrapper>

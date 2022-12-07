@@ -24,10 +24,10 @@ export default function NationSelectionPage() {
 
   return (
     <>
-      <IntroImage type={pageInfo.introImage} />
+      <IntroImage imageUrl={pageInfo.introImage} />
       <ContentWrapper>
         <Container>
-          <Title>{pageInfo.title}</Title>
+          <Title>{pageInfo.name.russian}</Title>
           <div className={styles.flagsWrapper}>
             {Object.values(NATIONS).map(
               (item, index) =>

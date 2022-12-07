@@ -39,10 +39,6 @@
     transition: background-color 300ms ease;
   }
 
-  &:hover {
-    // height: 370px;
-  }
-
   &:hover::after {
     background-color: rgba($color: #000000, $alpha: 0.45);
   }
@@ -109,7 +105,6 @@
 
 .title {
   font-family: "Oswald", sans-serif;
-  // font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 45px;
   letter-spacing: 2px;
@@ -121,7 +116,7 @@
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 38px;
+    font-size: 35px;
   }
 
   @include media-breakpoint-down(sm) {

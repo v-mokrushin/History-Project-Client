@@ -26,6 +26,10 @@
   margin-top: 50px;
 }
 
+.rootTypeBurger .link {
+  letter-spacing: 3px;
+}
+
 .link {
   font-family: "Oswald", sans-serif;
   font-weight: 500;
@@ -61,7 +65,7 @@
     position: absolute;
     content: "";
     top: calc(100% + 8px);
-    left: 0;
+    left: -2px;
     width: 100%;
     height: 2px;
     background: $primary-gold-text-color;

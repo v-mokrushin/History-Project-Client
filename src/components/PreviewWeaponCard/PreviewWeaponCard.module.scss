@@ -91,11 +91,11 @@
   z-index: 3;
 
   @include media-breakpoint-down(FHD) {
+    padding: 9px;
   }
 
-  @include media-breakpoint-down(lg) {
-    gap: 12px;
-    // padding: 25px 16px;
+  @include media-breakpoint-down(xl) {
+    padding: 7px;
   }
 
   @include media-breakpoint-down(sm) {
@@ -104,7 +104,7 @@
   }
 
   @include media-breakpoint-down(xs) {
-    padding: 8px;
+    padding: 4px;
     gap: 5px;
   }
 }
@@ -112,33 +112,32 @@
 .title {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 19px;
   color: $primary-light-text-color;
   letter-spacing: 1px;
   transition: color 300ms ease;
   text-align: center;
 
   @include media-breakpoint-down(FHD) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   @include media-breakpoint-down(lg) {
   }
 
   @include media-breakpoint-down(md) {
-  
   }
 
   @include media-breakpoint-down(sm) {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   @include media-breakpoint-down(xs) {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 

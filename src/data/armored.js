@@ -280,10 +280,11 @@ USSR = USSR.map((item) => ({ ...item, nation: NATIONS.USSR }));
 let germany = [
   {
     name: "PzKpfw VI Ausf.B «Tiger II»",
-    id: "af4480b7-1f59-4149-ae14-14889cdc1092",
+    get id() {
+      return this.name.replaceAll(" ", "_");
+    },
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    weapon: {},
     gallery: {
       icon: "/images/weapons/armored/germany/Tiger-2/1.jpg",
       photo: [],
@@ -305,9 +306,150 @@ let germany = [
     id: "924a2012-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    weapon: {},
     gallery: {
       icon: "/images/weapons/armored/germany/Panther/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Pz.Kpfw. IV Ausf.G",
+    id: "469a2012-3fc5-4099-bfc2-f8952a6aed8d",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Pz-4-G/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Pz.Kpfw. IV Ausf.H",
+    id: "101a2012-3fc5-4099-bfc2-f8952a6aed8d",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Pz-4-H/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Pz.Kpfw. III Ausf.J1",
+    id: "353a2012-3fc5-4099-bfc2-f8952a6aed8d",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1941,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Pz-3/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Pz.Kpfw. III Ausf.M",
+    get id() {
+      return this.name.replace(" ", "_");
+    },
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Pz-3-M/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Pz.Kpfw. II",
+    id: "111b8912-3fc5-4099-bfc2-f8952a6aed8d",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1935,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Pz-2/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Jagdtiger (Sd.Kfz.186)»",
+    id: "111ajfg1-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Jagdtiger/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Jagdpanther (Sd.Kfz. 173)»",
+    id: "524a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Jagdpanther/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Ferdinand (Sd.Kfz. 184)»",
+    id: "876a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1943,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Ferdinand/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Nashorn",
+    id: "076a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1943,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Nashorn/2.webp",
+      photo: [],
+    },
+  },
+  {
+    name: "StuG III Ausf.G",
+    id: "973a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1942,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Stug-3-G/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "StuG III Ausf.F",
+    id: "333a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1942,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Stug-3-F/1.webp",
+      photo: [],
+    },
+  },
+  {
+    name: "10,5 cm Sturmhaubitze 42",
+    id: "122a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1942,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Stug-3-G-42/1.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "StuG III Ausf.A",
+    id: "123a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1940,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Stug-3-A/2.jpg",
+      photo: [],
+    },
+  },
+  {
+    name: "Hummel",
+    id: "765b0012-3fc5-4099-bfc2-f8952aаaed8d",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1943,
+    gallery: {
+      icon: "/images/weapons/armored/germany/Hummel/1.jpg",
       photo: [],
     },
   },
@@ -315,3 +457,4 @@ let germany = [
 germany = germany.map((item) => ({ ...item, nation: NATIONS.germany }));
 
 export const ARMORED_VEHICLES = [...USSR, ...germany];
+ARMORED_VEHICLES.forEach((item) => item);

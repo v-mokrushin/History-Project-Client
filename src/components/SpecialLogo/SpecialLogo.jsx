@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { ANIMATIONS } from "../../constants/animation";
 import { SPECIAL_LOGO_TYPE } from "./constants";
 import styles from "./SpecialLogo.module.scss";
@@ -13,10 +12,10 @@ export default function SpecialLogo({
 }) {
   function getIconStyle() {
     if (type == SPECIAL_LOGO_TYPE.loading) {
-      return styles.icon_typeLoading;
+      return styles.animatedIcon_typeLoading;
     }
     if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
-      return styles.icon_typeDevelopment;
+      return styles.animatedIcon_typeDevelopment;
     }
   }
 
@@ -40,11 +39,7 @@ export default function SpecialLogo({
       )}
     >
       <div
-        className={classNames(
-          styles.icon,
-          getIconStyle(),
-          styles.icon_leftSide
-        )}
+        className={classNames(styles.animatedIcon_left, getIconStyle())}
       ></div>
       <div className={styles.bodyWrapper}>
         <div className={styles.logoWrapper}>
@@ -61,11 +56,7 @@ export default function SpecialLogo({
         <p className={styles.causeTitle}>{getTitle()}</p>
       </div>
       <div
-        className={classNames(
-          styles.icon,
-          getIconStyle(),
-          styles.icon_rightSide
-        )}
+        className={classNames(styles.animatedIcon_right, getIconStyle())}
       ></div>
     </div>
   );

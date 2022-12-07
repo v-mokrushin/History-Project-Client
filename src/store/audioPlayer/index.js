@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { shuffle } from "../../utils/common";
 
 let trackList = [
   "/audio/de-wolfe-intro.mp3",
@@ -12,12 +13,9 @@ let trackList = [
   "/audio/neutral-theme.mp3",
   "/audio/pacific-attack.mp3",
   "/audio/rise-of-nazism.mp3",
-  // "/audio/dark-father.mp3",
+  "/audio/dark-father.mp3",
 ];
-
-// for (let i = 1; i < trackList.length; i++) {
-//   trackList[]
-// }
+shuffle(trackList);
 
 const initialState = {
   status: false,
@@ -44,7 +42,6 @@ export const audioPlayerSlice = createSlice({
         state.currentTrackNumber = 0;
       else state.currentTrackNumber++;
       state.currentTrack = state.trackList[state.currentTrackNumber];
-      console.log(state.currentTrack);
     },
     previous: (state) => {
       if (state.currentTrackNumber === 0)

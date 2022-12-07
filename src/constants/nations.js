@@ -81,10 +81,5 @@ function getObjectByPath(path) {
 }
 
 function getNationsAsArray() {
-  // return Object.entries(NATIONS);
-  // let arr = [];
-  // for (let i of Object.values(NATIONS)) arr.;
   return Object.values(NATIONS);
 }
-
-console.log(getNationsAsArray());

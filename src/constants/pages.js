@@ -1,9 +1,9 @@
 import { INTRO_IMAGE_TYPE } from "../components/IntroImage/constants";
-import { NATIONS, NATIONS_METHODS } from "./nations";
+import { NATIONS_METHODS } from "./nations";
 
 const data = [
   {
-    path: "/",
+    path: "",
     name: {
       russian: "главная",
       english: "main",
@@ -11,7 +11,7 @@ const data = [
   },
   {
     path: "articles",
-    introImage: INTRO_IMAGE_TYPE.pages.articles,
+    introImage: "/images/backgrounds/articles-section.jpg",
     name: {
       russian: "статьи",
       english: "articles",
@@ -19,7 +19,7 @@ const data = [
   },
   {
     path: "weapons",
-    introImage: INTRO_IMAGE_TYPE.pages.weapons,
+    introImage: "/images/backgrounds/weapons/background.png",
     name: {
       russian: "вооружения",
       english: "weapons",
@@ -27,7 +27,7 @@ const data = [
   },
   {
     path: "aviation",
-    introImage: INTRO_IMAGE_TYPE.pages.weapons.aviation,
+    introImage: "/images/backgrounds/weapons/aviation_2.jpg",
     name: {
       russian: "Авиация",
       english: "aviation",
@@ -35,7 +35,7 @@ const data = [
   },
   {
     path: "armored-vehicles",
-    introImage: INTRO_IMAGE_TYPE.pages.weapons.armored,
+    introImage: "/images/backgrounds/weapons/armored.jpg",
     name: {
       russian: "Бронетехника",
       english: "aviation",
@@ -43,7 +43,7 @@ const data = [
   },
   {
     path: "small-arms",
-    introImage: INTRO_IMAGE_TYPE.pages.weapons.smallArms,
+    introImage: "/images/backgrounds/weapons/gun.jpg",
     name: {
       russian: "Стрелковое оружие",
       english: "small arms",
@@ -51,7 +51,7 @@ const data = [
   },
   {
     path: "artillery",
-    introImage: INTRO_IMAGE_TYPE.pages.weapons.artillery,
+    introImage: "/images/backgrounds/weapons/artillery.jpg",
     name: {
       russian: "Артиллерия",
       english: "artillery",
@@ -70,7 +70,6 @@ function getPathLength(path) {
 
 function getByPath(path) {
   const lastPathElement = path.split("/").at(-1);
-  console.log(data.find((item) => item.path === lastPathElement));
   return data.find((item) => item.path === lastPathElement);
 }
 

@@ -19,25 +19,19 @@
     left: 2.5vw;
 
     @include media-breakpoint-down(xl) {
+      // position: relative;
+      // left: auto;
+    }
+
+    @include media-breakpoint-down(lg) {
       position: relative;
       left: auto;
     }
   }
 
-  &:hover {
-    // transform: translateY(3px);
-  }
-
-  &:hover .title {
-    // color: $primary-gold-text-color;
-  }
-
   &:hover .titleDates {
     color: $primary-light-text-color;
   }
-}
-
-.wrapper_typeLoading {
 }
 
 .title {
