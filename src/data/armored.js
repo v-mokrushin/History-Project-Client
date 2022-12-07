@@ -5,73 +5,42 @@ import IS_2 from "../fragments/weapons/IS-2";
 let USSR = [
   {
     name: "ИС-3",
-    id: "69ea2120-3689-42e9-a226-57143986597b",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/ИС-3/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "КВ-1",
-    id: "ac7b3fad-05de-4210-804f-dca5cdc959dd",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/КВ-1/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "КВ-2",
-    id: "40108a6e-991a-4d94-8714-5374c2633818",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/КВ-2/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
-    name: "КВ-1C",
-    id: "ff820ec6-6521-4753-af14-87a039fa55b0",
+    name: "КВ-1С",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/КВ-1С/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-35",
-    id: "9d92dcb1-2129-4128-80eb-0d45ffe904ed",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1933,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-35/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "ИС-1",
-    id: "d8595613-07f4-46bd-8c35-c1cd62150d98",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/ИС-1/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "ИС-2",
-    id: "3a0ff217-6f5e-4a50-8df6-c520e85e28ab",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     JSXComponent: <IS_2 />,
@@ -84,10 +53,7 @@ let USSR = [
       "Применение в бою",
       "Видеоматериалы",
     ],
-    gallery: {
-      icon: "/images/weapons/armored/USSR/ИС-2/1.webp",
-      photo: [],
-    },
+    icon: "1.webp",
     intro: [
       "ИС-2 (Объект 240) — советский основной и тяжёлый танк периода Великой Отечественной войны, являлся самым мощным и наиболее тяжелобронированным из советских и союзных серийных танков периода войны, и одним из сильнейших основных танков на то время в мире. В годы Великой Отечественной войны вместе с обозначением ИС-2 на равных использовалось название ИС-122, в этом случае число 122 означает калибр пушки — основного вооружения боевой машины. Танки этого типа сыграли большую роль в боях 1944—1945 годов, особенно отличившись при штурме городов. После завершения войны ИС-2 были модернизированы и находились на вооружении Советской Армии ВС Союза ССР и впоследствии ВС России до 1993 года. Также танки ИС-2 поставлялись в ряд государств и участвовали в некоторых вооружённых конфликтах после 1945 года.",
     ],
@@ -161,300 +127,411 @@ let USSR = [
   },
   {
     name: "Т-28",
-    id: "hh068dbc-kdje-32d1-84a6-3f046ee09207",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1933,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-28/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-34 обр. 1940 г.",
-    id: "4a0685bc-2cb2-42d9-94a2-cf046ee09207",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-34-40/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-34 обр. 1941 г.",
-    id: "2bb18929-7f20-4bb0-9251-8d7458269931",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-34-41/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-34 обр. 1942 г.",
-    id: "ea5254ef-0de0-437b-96a8-8b8d86779156",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-34-42/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-34-57",
-    id: "2009c011-bcbc-4b66-bd63-3576aeedb765",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-34-57/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-34-85",
-    id: "0b5804aa-8f0a-4812-9585-84bf694e29e0",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-34-85/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "БТ-7",
-    id: "60d23b91-50c6-4786-940d-b45ee9ee1f1c",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/БТ-7/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Т-70",
-    id: "ca8b6704-38ae-4567-92be-b057760abbb7",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/Т-70/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
+  },
+  {
+    name: "ИСУ-152",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
+  },
+  {
+    name: "СУ-100",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "ИСУ-122",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "СУ-152",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
+  },
+  {
+    name: "СУ-85",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
   },
   {
     name: "СУ-76",
-    id: "2cbb9414-3d23-459a-9d7d-f0e4ce636636",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/СУ-76/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "СУ-122",
-    id: "0c5390ea-0979-43aa-b3bb-d32763503aea",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/USSR/СУ-122/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "БА-10",
-    id: "hg7b3fad-05de-4210-804f-dca5cdc959dd",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/USSR/БА-10/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
 ];
-USSR = USSR.map((item) => ({ ...item, nation: NATIONS.USSR }));
+USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
 let germany = [
   {
     name: "PzKpfw VI Ausf.B «Tiger II»",
-    get id() {
-      return this.name.replaceAll(" ", "_");
-    },
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Tiger-2/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "PzKpfw VI «Tiger»",
-    id: "9ae87222-4712-4534-9d70-fbc4f14804d3",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    weapon: {},
-    gallery: {
-      icon: "/images/weapons/armored/germany/Tiger/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "PzKpfw V «Panther»",
-    id: "924a2012-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Panther/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",
-    id: "469a2012-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Pz-4-G/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. IV Ausf.H",
-    id: "101a2012-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Pz-4-H/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. III Ausf.J1",
-    id: "353a2012-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Pz-3/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. III Ausf.M",
-    get id() {
-      return this.name.replace(" ", "_");
-    },
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Pz-3-M/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. II",
-    id: "111b8912-3fc5-4099-bfc2-f8952a6aed8d",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Pz-2/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
-    name: "Jagdtiger (Sd.Kfz.186)»",
-    id: "111ajfg1-3fc5-4099-bfc2-f8952aаaed8d",
+    name: "Jagdtiger",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Jagdtiger/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
-    name: "Jagdpanther (Sd.Kfz. 173)»",
-    id: "524a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    name: "Jagdpanther",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Jagdpanther/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
-    name: "Ferdinand (Sd.Kfz. 184)»",
-    id: "876a0012-3fc5-4099-bfc2-f8952aаaed8d",
+    name: "Ferdinand",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Ferdinand/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Nashorn",
-    id: "076a0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Nashorn/2.webp",
-      photo: [],
-    },
+    icon: "2.webp",
   },
   {
     name: "StuG III Ausf.G",
-    id: "973a0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Stug-3-G/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "StuG III Ausf.F",
-    id: "333a0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Stug-3-F/1.webp",
-      photo: [],
-    },
+    icon: "1.webp",
   },
   {
     name: "10,5 cm Sturmhaubitze 42",
-    id: "122a0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Stug-3-G-42/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "StuG III Ausf.A",
-    id: "123a0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1940,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Stug-3-A/2.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
   {
     name: "Hummel",
-    id: "765b0012-3fc5-4099-bfc2-f8952aаaed8d",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
-    gallery: {
-      icon: "/images/weapons/armored/germany/Hummel/1.jpg",
-      photo: [],
-    },
+    icon: "1.jpg",
   },
 ];
-germany = germany.map((item) => ({ ...item, nation: NATIONS.germany }));
+germany.forEach((item) => (item.nation = NATIONS.germany));
 
-export const ARMORED_VEHICLES = [...USSR, ...germany];
-ARMORED_VEHICLES.forEach((item) => item);
+let usa = [
+  {
+    name: "M26 Pershing",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1945,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A3E2 76(W) Jumbo",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A3E2 Jumbo",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A3 76(W) Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A2 76(W) Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A1 76(W) Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A3(105) Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A2 Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4 Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jpg",
+  },
+  {
+    name: "M4A1 Sherman",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jpg",
+  },
+  {
+    name: "M3 Lee",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+  {
+    name: "M24 Chaffee",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "M5A1 Stuart",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jpg",
+  },
+  {
+    name: "M3 Stuart",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+  {
+    name: "GMC M36 Jackson",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
+  },
+  {
+    name: "GMC M18 Hellcat",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "GMC M10 Wolverine",
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
+  },
+  {
+    name: "GMC M40",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1945,
+    icon: "1.jpg",
+  },
+];
+usa.forEach((item) => (item.nation = NATIONS.USA));
+
+let britain = [
+  {
+    name: "Churchill III",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jfif",
+  },
+  {
+    name: "Churchill I",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+  {
+    name: "Matilda Mk III",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+  {
+    name: "Sherman Firefly",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    icon: "1.jpg",
+  },
+  {
+    name: "Valentine Mk XI",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jfif",
+  },
+  {
+    name: "Valentine Mk X",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+    icon: "1.jpg",
+  },
+  {
+    name: "Valentine Mk I",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1939,
+    icon: "1.jfif",
+  },
+  {
+    name: "Crusader Mk III",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    icon: "1.jpg",
+  },
+  {
+    name: "Crusader Mk II",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+  {
+    name: "Tetrach I",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1940,
+    icon: "1.jpeg",
+  },
+  {
+    name: "Dimler Mk II",
+    type: WEAPONS_TYPE.armoredVehicle.armoredCar,
+    adoptedIntoServiceDate: 1941,
+    icon: "1.jpg",
+  },
+];
+britain.forEach((item) => (item.nation = NATIONS.greatBritain));
+
+export const ARMORED_VEHICLES = [...USSR, ...germany, ...usa, ...britain];
+
+ARMORED_VEHICLES.forEach((item) => {
+  let name = item.name;
+  if (name.at(-1) === ".") name = name.slice(0, -1);
+
+  Object.defineProperty(item, "id", {
+    get: function () {
+      return this.name.replaceAll(" ", "-");
+    },
+  });
+
+  item.gallery = {
+    icon:
+      `/images/weapons/armored/` +
+      item.nation.path +
+      "/" +
+      name.replaceAll(" ", "-").replaceAll("(", "").replaceAll(")", "") +
+      "/" +
+      item.icon,
+  };
+  delete item.icon;
+});

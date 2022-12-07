@@ -5,8 +5,9 @@ import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
+import Flag from "../Flag/Flag";
 
-export default function PreviewWeaponCard({ weapon }) {
+export default function PreviewWeaponCard({ weapon, showFlag = false }) {
   return (
     <NavLink
       to={weapon.id}
@@ -17,10 +18,9 @@ export default function PreviewWeaponCard({ weapon }) {
         className={styles.backgroundWrapper}
         style={getBackgroundImageStyleObject(weapon.gallery.icon)}
       ></div>
+      {showFlag && <Flag nation={weapon.nation} minimized isNavLink={false} />}
       <div className={styles.contentWrapper}>
         <p className={styles.title}>{weapon?.name}</p>
-        {/* <div className={styles.separator}></div> */}
-        {/* <p className={styles.description}></p> */}
       </div>
     </NavLink>
   );

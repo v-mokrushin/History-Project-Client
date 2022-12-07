@@ -3,7 +3,6 @@ import { normolize } from "../utils/normolize";
 
 let articles = [
   {
-    id: "ac3ebdd8-db98-471c-8cdf-2fa8787c6dff",
     title: "Бои на Халхин-Голе",
     description:
       "Вооружённый конфликт между советско-монгольскими войсками и Вооружёнными силами Японии в 1939 году",
@@ -27,7 +26,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "dbdcaaf0-080c-433a-8adb-5f27cc852c29",
     title: "План «Барбаросса»",
     description: "Cтратегический план нападения нацистской Германии на СССР",
     author: "Алексей Исаев, Артем Драбкин",
@@ -55,7 +53,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "0e878583-b074-4849-a394-68edd4c044e1",
     title: "Реформирование и перевооружение Красной армии",
     description: "",
     author: "Алексей Исаев, Артем Драбкин",
@@ -79,7 +76,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "06fc708c-9c1f-4cd8-816f-78e4252d3eaa",
     title: "Красная Армия и Вермахт накануне 22 июня 1941 года",
     description:
       "Cравнение материально-технического обеспечения и организационной структуры",
@@ -88,7 +84,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "bc5ebedd-53ee-4b18-841a-fd86c8561345",
     title: "Экономика Второй мировой войны",
     description: "Алексей Исаев об экономике Второй мировой войны",
     backgroundURL: "/images/articles/people.jpg",
@@ -96,7 +91,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "23f409b2-85e2-41aa-b2c1-0125ef0eb077",
     title: "Смоленское сражение и крах стратегии блицкрига",
     description: "",
     backgroundURL: "/images/articles/smolensk.jpg",
@@ -104,7 +98,6 @@ let articles = [
     paragraphs: null,
   },
   {
-    id: "84e0c06c-0220-4391-8aa9-de696886373a",
     title: "Cражение за линию Сталина летом 1941 года",
     description:
       "Cражение за линию Сталина летом 1941 года и бои в Украине в июле - августе 1941 года",
@@ -113,6 +106,14 @@ let articles = [
     paragraphs: null,
   },
 ];
+
+articles.forEach((item) => {
+  Object.defineProperty(item, "id", {
+    get: function () {
+      return this.title.replaceAll(" ", "-");
+    },
+  });
+});
 
 articles.forEach((item) => {
   item.paragraphs = createParagraphs(item.text);

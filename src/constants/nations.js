@@ -12,7 +12,7 @@ const USSR = {
   name: {
     russian: "СССР",
     russianАccusative: "СССР",
-    english: "Soviet Union",
+    english: "USSR",
   },
   path: "soviet-union",
   flagImage: "/images/flags/flag-ussr.svg",
@@ -22,7 +22,7 @@ const germany = {
   name: {
     russian: "Германия",
     russianАccusative: "Германии",
-    english: "Germany",
+    english: "germany",
   },
   path: "germany",
   flagImage: "/images/flags/flag-germany.svg",

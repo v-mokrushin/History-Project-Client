@@ -50,6 +50,7 @@ export default function WeaponsPreviewPage() {
             <Timeline
               contentCollection={filteredWeapons}
               uniqueDates={uniqueDates}
+              showFlags={nationObject === NATIONS.world}
             />
           ) : (
             <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} centered50vh />

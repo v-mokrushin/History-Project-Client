@@ -8,6 +8,18 @@
   }
 }
 
+.minimized {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  height: 16%;
+
+  & .flag {
+    height: 100%;
+    border-radius: 2px;
+  }
+}
+
 .text {
   text-align: center;
   transition: color 400ms ease;
@@ -29,6 +41,10 @@
   background-size: cover;
   transition: transform 400 ease;
   z-index: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include media-breakpoint-down(FHD) {
     height: 120px;
