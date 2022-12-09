@@ -2,21 +2,24 @@
 
 .root {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 50px;
+  overflow-x: auto;
+  padding: 0 35px;
 
   @include media-breakpoint-down(FHD) {
     // overflow-x: auto;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
   }
 
   @include media-breakpoint-down(xl) {
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
     grid-column-gap: 35px;
   }
 
   @include media-breakpoint-down(lg) {
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 30px;
   }
 

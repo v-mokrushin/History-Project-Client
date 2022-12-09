@@ -13,29 +13,44 @@ import { WEAPONS_DATA } from "../../data/weapons";
 import { navigationMiddlewares } from "../../store/navigation/changeActualSectionMiddleware";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
+import Filter from "../../components/Filter/Filter";
 
 export default function WeaponsPreviewPage() {
   const dispatch = useDispatch();
-  const { weaponsTypePath } = useParams();
+  const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
-  const weaponsTypeObject = WEAPONS_TYPE.getObjectByPath(weaponsTypePath);
+  const weaponsBranchObject = WEAPONS_TYPE.getObjectByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
-  const [uniqueDates, setUniqueDates] = React.useState([]);
-  const [filteredWeapons, setFilteredWeapons] = React.useState(
-    WEAPONS_DATA.filter(
-      (item) => item.type.baseType.path === weaponsTypePath
+  const selectedWeapons = React.useMemo(selectWeapons, []);
+  const [filters, setFilters] = React.useState({});
+  const filteredWeapons = React.useMemo(() => filterWeapons(), [filters]);
+  const uniqueDates = React.useMemo(getUniqueDates, [filteredWeapons]);
+
+  function selectWeapons() {
+    return WEAPONS_DATA.filter(
+      (item) => item.type.baseType.path === weaponsBranchPath
     ).filter(
       (item) =>
         nationPath === NATIONS.world.path || item.nation.path === nationPath
-    )
-  );
+    );
+  }
+
+  function filterWeapons() {
+    if (Object.keys(filters).length === 0) {
+      return selectedWeapons;
+    } else {
+      return selectedWeapons.filter((item) => item.type === filters.type);
+    }
+  }
+
+  function getUniqueDates() {
+    let dates = filteredWeapons.map((item) => item.adoptedIntoServiceDate);
+    dates = Array.from(new Set(dates)).sort((a, b) => b - a);
+    return dates;
+  }
 
   React.useEffect(() => {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
-
-    let dates = filteredWeapons.map((item) => item.adoptedIntoServiceDate);
-    dates = Array.from(new Set(dates)).sort((a, b) => b - a);
-    setUniqueDates(dates);
   }, []);
 
   return (
@@ -43,9 +58,10 @@ export default function WeaponsPreviewPage() {
       <ContentWrapper>
         <Container>
           <Title>
-            {weaponsTypeObject.name.russian}{" "}
+            {weaponsBranchObject.name.russian}{" "}
             {nationObject.name.russianАccusative}
           </Title>
+          <Filter weaponBranch={weaponsBranchObject} setFilters={setFilters} />
           {filteredWeapons.length > 0 ? (
             <Timeline
               contentCollection={filteredWeapons}

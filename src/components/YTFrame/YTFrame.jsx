@@ -5,7 +5,7 @@ import classNames from "classnames";
 export default function YTFrame({ className, links }) {
   return (
     <div className={styles.frameBox}>
-      {links?.map((item) => (
+      {links?.map((item, index) => (
         <iframe
           className={styles.video}
           src={item}

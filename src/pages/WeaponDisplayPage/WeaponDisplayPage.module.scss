@@ -40,7 +40,7 @@
   }
 
   &_open {
-    max-height: 2500px;
+    max-height: 3500px;
 
     &::after {
       height: 0;
@@ -54,4 +54,22 @@
     font-size: 15px;
     z-index: 3;
   }
+}
+
+%btn {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left {
+  @extend %btn;
+  left: 0;
+}
+
+.right {
+  @extend %btn;
+  right: 0;
 }

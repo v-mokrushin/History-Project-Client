@@ -55,11 +55,11 @@ function App() {
                 element={<UniversalPage />}
               />
               <Route
-                path="/weapons/:weaponsTypePath/:nationPath"
+                path="/weapons/:weaponsBranchPath/:nationPath"
                 element={<WeaponsPreviewPage />}
               />
               <Route
-                path="/weapons/:weaponsTypePath/:nationPath/:weaponId"
+                path="/weapons/:weaponsBranchPath/:nationPath/:weaponId"
                 element={<WeaponDisplayPage />}
               />
               <Route

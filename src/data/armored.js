@@ -77,6 +77,26 @@ let USSR = [
         height: 2630,
         clearance: 420,
       },
+      armoring: {
+        type: "катаная высокой твёрдости, литая средней твёрдости",
+        body: {
+          foreheadTop: "120мм / 60°",
+          foreheadBottom: "100мм / −30°",
+          boardTop: "90-120 / 15°",
+          boardBottom: "90 / 0°",
+          sternTop: "60мм / 49°",
+          sternBottom: "60мм / 49°",
+          bottom: "20мм",
+          roof: "30мм",
+        },
+        tower: {
+          forehead: "100мм",
+          gunMask: "100мм",
+          board: "100 / 20°",
+          stern: "100 / 30°",
+          roof: "30мм",
+        },
+      },
       weapon: {
         cannon: {
           trademark: "Д-25Т",
@@ -163,13 +183,13 @@ let USSR = [
   },
   {
     name: "БТ-7",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
     icon: "1.jpg",
   },
   {
     name: "Т-70",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     icon: "1.jpg",
   },
@@ -181,13 +201,13 @@ let USSR = [
   },
   {
     name: "СУ-100",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     icon: "1.jpg",
   },
   {
     name: "ИСУ-122",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     icon: "1.jpg",
   },
@@ -199,7 +219,7 @@ let USSR = [
   },
   {
     name: "СУ-85",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     icon: "1.jpg",
   },
@@ -311,7 +331,7 @@ let germany = [
   },
   {
     name: "10,5 cm Sturmhaubitze 42",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     icon: "1.jpg",
   },
@@ -529,7 +549,12 @@ ARMORED_VEHICLES.forEach((item) => {
       `/images/weapons/armored/` +
       item.nation.path +
       "/" +
-      name.replaceAll(" ", "-").replaceAll("(", "").replaceAll(")", "") +
+      name
+        .replaceAll(" ", "-")
+        .replaceAll("«", "")
+        .replaceAll("»", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "") +
       "/" +
       item.icon,
   };

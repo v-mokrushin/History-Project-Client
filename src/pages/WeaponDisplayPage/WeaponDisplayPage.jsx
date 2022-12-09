@@ -66,6 +66,8 @@ export default function WeaponDisplayPage() {
                     {open ? "Скрыть" : "Раскрыть"}
                   </button> */}
                   <Spec>
+                    <div className={styles.left}></div>
+                    <div className={styles.right}></div>
                     <div className={styles.box}>
                       <SpecSection title="Общее">
                         <SpecLine
@@ -211,6 +213,64 @@ export default function WeaponDisplayPage() {
                       <SpecLine
                         crit="Боекомплект пулеметов, выстр."
                         val={weapon.specifications.weapon.machinegunАmmunition}
+                      />
+                    </SpecSection>
+                    <SpecSection title="Бронирование">
+                      <SpecLine
+                        crit="Тип брони"
+                        val={weapon.specifications.armoring.type}
+                      />
+                      <SpecLine
+                        crit="Лоб корпуса (верх)"
+                        val={weapon.specifications.armoring.body.foreheadTop}
+                      />
+                      <SpecLine
+                        crit="Лоб корпуса (низ)"
+                        val={weapon.specifications.armoring.body.foreheadBottom}
+                      />
+                      <SpecLine
+                        crit="Борт корпуса (верх)"
+                        val={weapon.specifications.armoring.body.boardTop}
+                      />
+                      <SpecLine
+                        crit="Борт корпуса (низ)"
+                        val={weapon.specifications.armoring.body.boardBottom}
+                      />
+                      <SpecLine
+                        crit="Корма корпуса (верх)"
+                        val={weapon.specifications.armoring.body.sternTop}
+                      />
+                      <SpecLine
+                        crit="Корма корпуса (низ)"
+                        val={weapon.specifications.armoring.body.sternBottom}
+                      />
+                      <SpecLine
+                        crit="Днище"
+                        val={weapon.specifications.armoring.body.bottom}
+                      />
+                      <SpecLine
+                        crit="Крыша корпуса"
+                        val={weapon.specifications.armoring.body.roof}
+                      />
+                      <SpecLine
+                        crit="Лоб башни"
+                        val={weapon.specifications.armoring.tower.forehead}
+                      />
+                      <SpecLine
+                        crit="Маска орудия"
+                        val={weapon.specifications.armoring.tower.gunMask}
+                      />
+                      <SpecLine
+                        crit="Борт башни"
+                        val={weapon.specifications.armoring.tower.board}
+                      />
+                      <SpecLine
+                        crit="Корма башни"
+                        val={weapon.specifications.armoring.tower.stern}
+                      />
+                      <SpecLine
+                        crit="Крыша башни"
+                        val={weapon.specifications.armoring.tower.roof}
                       />
                     </SpecSection>
                     <SpecSection title="Подвижность">

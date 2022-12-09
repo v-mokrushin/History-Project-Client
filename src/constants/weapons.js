@@ -31,7 +31,7 @@ let armoredVehicle = {
   },
   armoredCar: {
     name: {
-      russian: "бронеавтомобиль",
+      russian: "Бронеавтомобиль",
     },
   },
 };
@@ -47,6 +47,21 @@ let aviation = {
       russian: "Истребитель",
     },
   },
+  interceptor: {
+    name: {
+      russian: "Перехватчик",
+    },
+  },
+  attackАircraft: {
+    name: {
+      russian: "Штурмовик",
+    },
+  },
+  bomber: {
+    name: {
+      russian: "Бомбардировщик",
+    },
+  },
 };
 
 let smallArms = {
@@ -59,9 +74,34 @@ let smallArms = {
 
 let artillery = {
   name: {
-    russian: "Артлиллерия",
+    russian: "Артиллерия",
     english: "artillery",
     path: "artillery",
+  },
+  division: {
+    name: {
+      russian: "Дивизионная",
+    },
+  },
+  antitank: {
+    name: {
+      russian: "Противотанковая",
+    },
+  },
+  armyAndCorps: {
+    name: {
+      russian: "Корпусная/армейская",
+    },
+  },
+  specialPower: {
+    name: {
+      russian: "Большой и особой мощности",
+    },
+  },
+  antiaircraft: {
+    name: {
+      russian: "Зенитная",
+    },
   },
 };
 
@@ -76,6 +116,16 @@ export const WEAPONS_TYPE = {
   smallArms,
   artillery,
   getObjectByPath: getByPath,
+  getTypesArray,
+  getTypesArrayWithAll,
+  getAllType,
+  isAllType,
+};
+
+const allType = {
+  name: {
+    russian: "Все",
+  },
 };
 
 function getByPath(path) {
@@ -90,4 +140,23 @@ function appendBaseType(object) {
   for (let [key, value] of Object.entries(object)) {
     if (key != "name") value.baseType = object.name;
   }
+}
+
+function getAllType() {
+  return allType;
+}
+
+function getTypesArray(weaponBranch) {
+  const copy = {};
+  Object.assign(copy, weaponBranch);
+  delete copy.name;
+  return Object.values(copy);
+}
+
+function isAllType(type) {
+  return getAllType() === type;
+}
+
+function getTypesArrayWithAll(weaponBranch) {
+  return [getAllType(), ...getTypesArray(weaponBranch)];
 }

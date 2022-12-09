@@ -1,40 +1,96 @@
 import { WEAPONS_TYPE } from "../constants/weapons";
 import { NATIONS } from "../constants/nations";
 
-let USSR = [
+let ussr = [
   {
     name: "Ла-5ФН",
-    id: "hgea2g20-3689-42e9-a226-57143986597b",
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     weapon: {},
-    gallery: {
-      icon: "/images/weapons/aviation/USSR/Ла-5ФН/1.jpg",
-      photo: [],
-    },
+    icon: "icon.jpg",
   },
 ];
-USSR = USSR.map((item) => ({
-  ...item,
-  nation: NATIONS.USSR,
-}));
+ussr.forEach((item) => (item.nation = NATIONS.USSR));
 
 let germany = [
   {
     name: "Messerschmitt Me.262 «Schwalbe»",
-    id: "2cc51dcf-a8b8-451e-8202-7f1468e89597",
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1944,
     weapon: {},
-    gallery: {
-      icon: "/images/weapons/aviation/germany/Me.262/1.jpg",
-      photo: [],
-    },
+    icon: "icon.jpg",
+  },
+  {
+    name: "Heinkel He 111",
+    type: WEAPONS_TYPE.aviation.bomber,
+    adoptedIntoServiceDate: 1935,
+    weapon: {},
+    icon: "icon.jpg",
   },
 ];
-germany = germany.map((item) => ({
-  ...item,
-  nation: NATIONS.germany,
-}));
+germany.forEach((item) => (item.nation = NATIONS.germany));
 
-export const AVIATION_DATA = [...USSR, ...germany];
+let usa = [
+  {
+    name: "P-51-D5 Mustang",
+    type: WEAPONS_TYPE.aviation.fighter,
+    adoptedIntoServiceDate: 1944,
+    weapon: {},
+    icon: "icon.jpg",
+  },
+  {
+    name: "Douglas A-20G Havoc",
+    type: WEAPONS_TYPE.aviation.attackАircraft,
+    adoptedIntoServiceDate: 1943,
+    weapon: {},
+    icon: "icon.jpg",
+  },
+];
+usa.forEach((item) => (item.nation = NATIONS.USA));
+
+let japan = [
+  {
+    name: "A6M5 Raisen",
+    type: WEAPONS_TYPE.aviation.fighter,
+    adoptedIntoServiceDate: 1943,
+    weapon: {},
+    icon: "icon.jpg",
+  },
+  {
+    name: "G4M",
+    type: WEAPONS_TYPE.aviation.bomber,
+    adoptedIntoServiceDate: 1941,
+    weapon: {},
+    icon: "icon.jpg",
+  },
+];
+japan.forEach((item) => (item.nation = NATIONS.japan));
+
+export const AVIATION_DATA = [...ussr, ...germany, ...usa, ...japan];
+
+AVIATION_DATA.forEach((item) => {
+  let name = item.name;
+  if (name.at(-1) === ".") name = name.slice(0, -1);
+
+  Object.defineProperty(item, "id", {
+    get: function () {
+      return this.name.replaceAll(" ", "-");
+    },
+  });
+
+  item.gallery = {
+    icon:
+      `/images/weapons/aviation/` +
+      item.nation.path +
+      "/" +
+      name
+        .replaceAll(" ", "-")
+        .replaceAll("«", "")
+        .replaceAll("»", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "") +
+      "/" +
+      item.icon,
+  };
+  delete item.icon;
+});
