@@ -1,4 +1,4 @@
-@import "/src/assets/css/main.scss";
+@import "/src/assets/css/common.scss";
 
 .root {
   display: flex;
@@ -7,6 +7,10 @@
   width: max-content;
   user-select: none;
   cursor: pointer;
+
+  @include media-breakpoint-down(xs) {
+    gap: 15px;
+  }
 }
 
 .item {
@@ -35,6 +39,7 @@
   @include media-breakpoint-down(xs) {
     min-width: 160px;
     height: 30px;
+    gap: 9px;
   }
 
   &_selected {

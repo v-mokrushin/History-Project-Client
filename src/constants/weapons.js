@@ -64,28 +64,20 @@ let aviation = {
   },
 };
 
-let smallArms = {
-  name: {
-    russian: "Стрелковое оружие",
-    english: "small arms",
-    path: "small-arms",
-  },
-};
-
 let artillery = {
   name: {
     russian: "Артиллерия",
     english: "artillery",
     path: "artillery",
   },
-  division: {
-    name: {
-      russian: "Дивизионная",
-    },
-  },
   antitank: {
     name: {
       russian: "Противотанковая",
+    },
+  },
+  division: {
+    name: {
+      russian: "Дивизионная",
     },
   },
   armyAndCorps: {
@@ -101,6 +93,49 @@ let artillery = {
   antiaircraft: {
     name: {
       russian: "Зенитная",
+    },
+  },
+};
+
+let smallArms = {
+  name: {
+    russian: "Стрелковое оружие",
+    english: "small arms",
+    path: "small-arms",
+  },
+  revolver: {
+    name: {
+      russian: "Револьвер",
+    },
+  },
+  gun: {
+    name: {
+      russian: "Пистолет",
+    },
+  },
+  rifle: {
+    name: {
+      russian: "Винтовка и карабин",
+    },
+  },
+  selfLoadingRifle: {
+    name: {
+      russian: "Самозарядная  винтовка",
+    },
+  },
+  assaultRifle: {
+    name: {
+      russian: "Штурмовая винтовка",
+    },
+  },
+  machineGun: {
+    name: {
+      russian: "Пулемет",
+    },
+  },
+  antiTankGun: {
+    name: {
+      russian: "Противотанковое ружье",
     },
   },
 };

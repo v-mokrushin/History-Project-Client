@@ -4,8 +4,6 @@ import classNames from "classnames";
 import Text from "../Text/Text";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 
-const arr = ["Тип"];
-
 export default function Filter({ className, weaponBranch, setFilters }) {
   const [open, setOpen] = React.useState(false);
   const [selectedWeaponType, setSelectedType] = React.useState(

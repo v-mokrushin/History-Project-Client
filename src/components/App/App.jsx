@@ -1,7 +1,7 @@
+import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ArticlesPage from "../../pages/ArticlesPage/ArticlesPage";
 import HomePage from "../../pages/HomePage/HomePage";
-import NewsPage from "../../pages/NewsPage/NewsPage";
 import Layout from "../Layout/Layout";
 import { Provider } from "react-redux";
 import { store } from "../../store";
@@ -9,12 +9,10 @@ import WarningPage from "../../pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "../../pages/WarningPage/constants";
 import React, { createContext, useState } from "react";
 import { BurgerContext } from "../Burger/context";
-
-import "./App.scss";
 import "../../assets/css/main.scss";
 import ArticlePage from "../../pages/ArticlePage/ArticlePage";
-import WeaponsTypeSelectionPage from "../../pages/WeaponsTypeSelectionPage/WeaponsTypeSelectionPage";
-import UniversalPage from "../../pages/NationSelectionPage/NationSelectionPage";
+import WeaponsBranchSelectionPage from "../../pages/WeaponsBranchSelectionPage/WeaponsBranchSelectionPage";
+import NationSelectionPage from "../../pages/NationSelectionPage/NationSelectionPage";
 import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
 
@@ -49,10 +47,13 @@ function App() {
               />
               <Route path="/articles" element={<ArticlesPage />}></Route>
               <Route path="/articles/:articleId" element={<ArticlePage />} />
-              <Route path="/weapons/" element={<WeaponsTypeSelectionPage />} />
               <Route
-                path="/weapons/:weaponsTypePath"
-                element={<UniversalPage />}
+                path="/weapons/"
+                element={<WeaponsBranchSelectionPage />}
+              />
+              <Route
+                path="/weapons/:WeaponsBranchSelectionPage"
+                element={<NationSelectionPage />}
               />
               <Route
                 path="/weapons/:weaponsBranchPath/:nationPath"

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { shuffle } from "../../utils/common";
+import { shuffleTracks } from "../../utils/common";
 
 let trackList = [
   "/audio/de-wolfe-intro.mp3",
@@ -15,7 +15,7 @@ let trackList = [
   "/audio/rise-of-nazism.mp3",
   "/audio/dark-father.mp3",
 ];
-shuffle(trackList);
+shuffleTracks(trackList);
 
 const initialState = {
   status: false,

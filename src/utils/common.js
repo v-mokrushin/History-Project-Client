@@ -20,7 +20,7 @@ export function createParagraphs(text) {
   return p;
 }
 
-export function shuffle(array) {
+export function shuffleTracks(array) {
   let currentIndex = array.length,
     randomIndex;
 
