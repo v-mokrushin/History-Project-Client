@@ -21,9 +21,9 @@
     min-width: auto;
     gap: 5px;
     width: 100%;
-    background-color: rgb(234, 242, 243);
+    background-color: rgb(240, 246, 246);
     padding: 10px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-bottom: 25px;
   }
 
@@ -37,8 +37,12 @@
   flex-direction: column;
   gap: 15px;
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(xl) {
     gap: 10px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    gap: 9px;
   }
 }
 
@@ -51,7 +55,8 @@
   margin: 0 auto;
 
   @include media-breakpoint-down(xl) {
-    font-size: 26px;
+    letter-spacing: 0.75px;
+    font-size: 25px;
   }
 
   @include media-breakpoint-down(lg) {
