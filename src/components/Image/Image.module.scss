@@ -1,0 +1,52 @@
+@import "/src/assets/css/common.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 20px 30px;
+  width: 25%;
+  float: right;
+  clear: right;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 10px;
+    width: 40%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.image {
+  border-radius: 4px;
+  width: 100%;
+  object-fit: contain;
+  transition: transform 250ms ease;
+
+  &:hover {
+    // transform: scale(1.025);
+  }
+}
+
+.title {
+  text-align: center;
+  line-height: 25px;
+  color: $grey-text-color;
+
+  @include media-breakpoint-down(FHD) {
+    line-height: 23px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    line-height: 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    line-height: 18px;
+  }
+}

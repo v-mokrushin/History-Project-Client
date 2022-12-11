@@ -9,6 +9,11 @@
   line-height: 35px;
   margin-bottom: 25px;
 
+  @include media-breakpoint-down(FHD) {
+    font-size: 19px;
+    margin-bottom: 22px;
+  }
+
   @include media-breakpoint-down(xl) {
     font-size: 17px;
     line-height: 30px;
