@@ -9,3 +9,33 @@ export const WEAPONS_DATA = [
   ...ARTILLERY_DATA,
   ...SMALL_ARMS_DATA,
 ];
+
+WEAPONS_DATA.forEach((item) => {
+  let name = item.name;
+  if (name.at(-1) === ".") name = name.slice(0, -1);
+
+  Object.defineProperty(item, "id", {
+    get: function () {
+      return this.name.replaceAll(" ", "-");
+    },
+  });
+
+  item.gallery = {
+    icon:
+      `/images/weapons/${item.type.baseType.path}/` +
+      item.nation.path +
+      "/" +
+      name
+        .replaceAll(" ", "-")
+        .replaceAll("«", "")
+        .replaceAll("»", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "") +
+      "/" +
+      item.icon,
+  };
+
+  delete item.icon;
+});
+
+console.log(WEAPONS_DATA);

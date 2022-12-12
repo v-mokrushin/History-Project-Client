@@ -59,30 +59,3 @@ let japan = [];
 japan.forEach((item) => (item.nation = NATIONS.japan));
 
 export const SMALL_ARMS_DATA = [...ussr, ...germany, ...usa, ...japan];
-
-SMALL_ARMS_DATA.forEach((item) => {
-  let name = item.name;
-  if (name.at(-1) === ".") name = name.slice(0, -1);
-
-  Object.defineProperty(item, "id", {
-    get: function () {
-      return this.name.replaceAll(" ", "-");
-    },
-  });
-
-  item.gallery = {
-    icon:
-      `/images/weapons/small-arms/` +
-      item.nation.path +
-      "/" +
-      name
-        .replaceAll(" ", "-")
-        .replaceAll("«", "")
-        .replaceAll("»", "")
-        .replaceAll("(", "")
-        .replaceAll(")", "") +
-      "/" +
-      item.icon,
-  };
-  delete item.icon;
-});

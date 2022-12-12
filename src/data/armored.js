@@ -185,13 +185,31 @@ let USSR = [
     name: "БТ-7",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
-    icon: "1.jpg",
+    icon: "icon.jpg",
+  },
+  {
+    name: "БТ-5",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1933,
+    icon: "icon.jpg",
+  },
+  {
+    name: "БТ-2",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1932,
+    icon: "icon.jpg",
   },
   {
     name: "Т-70",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     icon: "1.jpg",
+  },
+  {
+    name: "Т-26",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1931,
+    icon: "icon.jpg",
   },
   {
     name: "ИСУ-152",
@@ -240,6 +258,12 @@ let USSR = [
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
     icon: "1.jpg",
+  },
+  {
+    name: "Т-27",
+    type: WEAPONS_TYPE.armoredVehicle.tankette,
+    adoptedIntoServiceDate: 1931,
+    icon: "icon.jpg",
   },
 ];
 USSR.forEach((item) => (item.nation = NATIONS.USSR));
@@ -533,30 +557,3 @@ let britain = [
 britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
 export const ARMORED_VEHICLES = [...USSR, ...germany, ...usa, ...britain];
-
-ARMORED_VEHICLES.forEach((item) => {
-  let name = item.name;
-  if (name.at(-1) === ".") name = name.slice(0, -1);
-
-  Object.defineProperty(item, "id", {
-    get: function () {
-      return this.name.replaceAll(" ", "-");
-    },
-  });
-
-  item.gallery = {
-    icon:
-      `/images/weapons/armored/` +
-      item.nation.path +
-      "/" +
-      name
-        .replaceAll(" ", "-")
-        .replaceAll("«", "")
-        .replaceAll("»", "")
-        .replaceAll("(", "")
-        .replaceAll(")", "") +
-      "/" +
-      item.icon,
-  };
-  delete item.icon;
-});

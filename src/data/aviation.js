@@ -67,30 +67,3 @@ let japan = [
 japan.forEach((item) => (item.nation = NATIONS.japan));
 
 export const AVIATION_DATA = [...ussr, ...germany, ...usa, ...japan];
-
-AVIATION_DATA.forEach((item) => {
-  let name = item.name;
-  if (name.at(-1) === ".") name = name.slice(0, -1);
-
-  Object.defineProperty(item, "id", {
-    get: function () {
-      return this.name.replaceAll(" ", "-");
-    },
-  });
-
-  item.gallery = {
-    icon:
-      `/images/weapons/aviation/` +
-      item.nation.path +
-      "/" +
-      name
-        .replaceAll(" ", "-")
-        .replaceAll("«", "")
-        .replaceAll("»", "")
-        .replaceAll("(", "")
-        .replaceAll(")", "") +
-      "/" +
-      item.icon,
-  };
-  delete item.icon;
-});

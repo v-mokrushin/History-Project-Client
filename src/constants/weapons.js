@@ -29,6 +29,11 @@ let armoredVehicle = {
       russian: "ПТ-САУ",
     },
   },
+  tankette: {
+    name: {
+      russian: "Танкетка",
+    },
+  },
   armoredCar: {
     name: {
       russian: "Бронеавтомобиль",
