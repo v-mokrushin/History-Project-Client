@@ -9,7 +9,7 @@ export default function BurgerIcon() {
   return (
     <div
       className={styles.openIcon}
-      onClick={() => burgerContext.toggle()}
+      onClick={() => burgerContext.toggleBurgerOpen()}
     ></div>
   );
 }

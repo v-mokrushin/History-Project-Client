@@ -12,12 +12,12 @@ export default function Burger() {
     <div
       className={classNames(
         styles.root,
-        burgerContext.isOpen && styles.root_open
+        burgerContext.burgerOpen && styles.root_open
       )}
     >
       <div className={styles.header}>
-        <Logo onClick={burgerContext.toggle} />
-        <div className={styles.closeIcon} onClick={burgerContext.toggle}></div>
+        <Logo onClick={burgerContext.toggleBurgerOpen} />
+        <div className={styles.closeIcon} onClick={burgerContext.setBurgerClose}></div>
       </div>
       <Navigation isTypeBurger={true} />
     </div>

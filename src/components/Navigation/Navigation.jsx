@@ -23,7 +23,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualHome) && styles.link_active
         )}
-        onClick={burgerContext.setClose}
+        onClick={burgerContext.setBurgerClose}
       >
         Главная
       </NavLink>
@@ -34,7 +34,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualArticles) &&
             styles.link_active
         )}
-        onClick={burgerContext.setClose}
+        onClick={burgerContext.setBurgerClose}
       >
         Статьи
       </NavLink>
@@ -44,7 +44,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualWeapons) && styles.link_active
         )}
-        onClick={burgerContext.setClose}
+        onClick={burgerContext.setBurgerClose}
       >
         Вооружения
       </NavLink>
@@ -55,7 +55,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualBattles) && styles.link_active
         )}
         onClick={() => {
-          burgerContext.setClose();
+          burgerContext.setBurgerClose();
           dispatch(navigationMiddlewares.setBattlesActualSection());
         }}
       >
