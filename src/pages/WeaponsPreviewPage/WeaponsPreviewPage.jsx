@@ -28,7 +28,7 @@ export default function WeaponsPreviewPage() {
 
   function selectWeapons() {
     return WEAPONS_DATA.filter(
-      (item) => item.type.baseType.path === weaponsBranchPath
+      (item) => item.type.branch.path === weaponsBranchPath
     ).filter(
       (item) =>
         nationPath === NATIONS.world.path || item.nation.path === nationPath

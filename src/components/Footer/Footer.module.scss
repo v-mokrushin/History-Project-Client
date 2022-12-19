@@ -7,6 +7,10 @@
   // padding: 100px 50px 60px;
   padding: 75px 50px 45px;
 
+  @include media-breakpoint-down(xl) {
+    padding: 40px 50px 35px;
+  }
+
   @include media-breakpoint-down(md) {
     padding-top: 60px;
   }
@@ -43,7 +47,7 @@
   flex-direction: column;
   gap: 40px;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(xl) {
     padding-bottom: 30px;
     gap: 30px;
   }

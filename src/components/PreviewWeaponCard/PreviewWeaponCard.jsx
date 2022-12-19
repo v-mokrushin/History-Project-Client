@@ -21,6 +21,7 @@ export default function PreviewWeaponCard({ weapon, showFlag = false }) {
       {showFlag && <Flag nation={weapon.nation} minimized isNavLink={false} />}
       <div className={styles.contentWrapper}>
         <p className={styles.title}>{weapon?.name}</p>
+        <p className={styles.description}>{weapon?.type.name.russian}</p>
       </div>
     </NavLink>
   );

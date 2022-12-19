@@ -24,7 +24,7 @@ export default function HomePage() {
       <ContentWrapper>
         <Container>
           <div className={styles.innerWrapper}>
-            {/* <Title2>Главная</Title2> */}
+            {/* <Title>Главная</Title> */}
             <SectionCard type={SECTION_CARD_TYPE.articles} />
             <SectionCard type={SECTION_CARD_TYPE.weapons} />
             <SectionCard type={SECTION_CARD_TYPE.battles} />

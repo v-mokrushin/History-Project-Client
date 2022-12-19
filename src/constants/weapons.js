@@ -118,6 +118,11 @@ let smallArms = {
       russian: "Пистолет",
     },
   },
+  submachineGun: {
+    name: {
+      russian: "Пистолет-пулемет",
+    },
+  },
   rifle: {
     name: {
       russian: "Винтовка и карабин",
@@ -145,10 +150,16 @@ let smallArms = {
   },
 };
 
-appendBaseType(armoredVehicle);
-appendBaseType(aviation);
-appendBaseType(smallArms);
-appendBaseType(artillery);
+appendBranch(armoredVehicle);
+appendBranch(aviation);
+appendBranch(smallArms);
+appendBranch(artillery);
+
+function appendBranch(object) {
+  for (let [key, value] of Object.entries(object)) {
+    if (key != "name") value.branch = object.name;
+  }
+}
 
 export const WEAPONS_TYPE = {
   armoredVehicle,
@@ -173,12 +184,6 @@ function getByPath(path) {
     if (WEAPONS_TYPE[key].name.path === path) {
       return WEAPONS_TYPE[key];
     }
-  }
-}
-
-function appendBaseType(object) {
-  for (let [key, value] of Object.entries(object)) {
-    if (key != "name") value.baseType = object.name;
   }
 }
 

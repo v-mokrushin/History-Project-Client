@@ -12,15 +12,30 @@ import { PAGES_DATA } from "../../constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
 import { NATIONS } from "../../constants/nations";
+import { WEAPONS_DATA } from "../../data/weapons";
 
 export default function NationSelectionPage() {
   const dispatch = useDispatch();
-  const { weaponsType } = useParams();
+  const { weaponsBranchPath } = useParams();
   const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
+  const nations = selectNations();
+
+  function selectNations() {
+    return [
+      NATIONS.world,
+      ...Array.from(
+        new Set(
+          WEAPONS_DATA.filter(
+            (item) => item.type.branch.path === weaponsBranchPath
+          ).map((item) => item.nation)
+        )
+      ),
+    ];
+  }
 
   React.useEffect(() => {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
-  }, [dispatch, weaponsType]);
+  }, [dispatch, weaponsBranchPath]);
 
   return (
     <>
@@ -29,10 +44,9 @@ export default function NationSelectionPage() {
         <Container>
           <Title>{pageInfo.name.russian}</Title>
           <div className={styles.flagsWrapper}>
-            {Object.values(NATIONS).map(
-              (item, index) =>
-                typeof item === "object" && <Flag key={index} nation={item} />
-            )}
+            {nations.map((item, index) => (
+              <Flag key={index} nation={item} />
+            ))}
           </div>
         </Container>
       </ContentWrapper>

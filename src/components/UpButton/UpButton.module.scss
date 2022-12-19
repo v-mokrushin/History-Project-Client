@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 70px;
+  height: 65px;
   aspect-ratio: 1 / 1;
   z-index: 20;
   cursor: pointer;
@@ -25,14 +25,18 @@
     transform: translateY(5px);
   }
 
+  @include media-breakpoint-down(FHD) {
+    height: 60px;
+  }
+
   @include media-breakpoint-down(xl) {
-    height: 55px;
+    height: 50px;
     bottom: 25px;
     right: 25px;
   }
 
   @include media-breakpoint-down(lg) {
-    height: 55px;
+    height: 45px;
   }
 
   @include media-breakpoint-down(md) {

@@ -62,7 +62,7 @@ function App() {
                   element={<WeaponsBranchSelectionPage />}
                 />
                 <Route
-                  path="/weapons/:WeaponsBranchSelectionPage"
+                  path="/weapons/:weaponsBranchPath"
                   element={<NationSelectionPage />}
                 />
                 <Route

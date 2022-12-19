@@ -8,6 +8,9 @@ let USSR = [
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
     icon: "1.jpg",
+    // intro: [
+    //   "ИС-3 (Объект 703) — советский тяжёлый танк разработки периода Великой Отечественной войны, запущенный в серийное производство в последние её дни и не успевший принять участие в боях. Поэтому эту боевую машину чаще считают одним из первых послевоенных советских танков.",
+    // ],
   },
   {
     name: "КВ-1",
@@ -57,10 +60,18 @@ let USSR = [
     intro: [
       "ИС-2 (Объект 240) — советский основной и тяжёлый танк периода Великой Отечественной войны, являлся самым мощным и наиболее тяжелобронированным из советских и союзных серийных танков периода войны, и одним из сильнейших основных танков на то время в мире. В годы Великой Отечественной войны вместе с обозначением ИС-2 на равных использовалось название ИС-122, в этом случае число 122 означает калибр пушки — основного вооружения боевой машины. Танки этого типа сыграли большую роль в боях 1944—1945 годов, особенно отличившись при штурме городов. После завершения войны ИС-2 были модернизированы и находились на вооружении Советской Армии ВС Союза ССР и впоследствии ВС России до 1993 года. Также танки ИС-2 поставлялись в ряд государств и участвовали в некоторых вооружённых конфликтах после 1945 года.",
     ],
+    videomaterials: [
+      "https://www.youtube.com/embed/_nypiSnpvow",
+      "https://www.youtube.com/embed/_ZFXUBEb24g",
+      "https://www.youtube.com/embed/Yfr26UvEtzc",
+      "https://www.youtube.com/embed/sodVseKNDNI",
+      "https://www.youtube.com/embed/5Zqu4XgXjac",
+    ],
     specifications: {
       common: {
         developer: "Челябинский Кировский Завод",
         manufacturer: "Челябинский Кировский Завод",
+        chiefDesigner: "Ж.Я. Котин",
         developmentYear: 1943,
         productionYears: [1943, 1945],
         exploitationYears: [1944, 1945],
@@ -80,21 +91,21 @@ let USSR = [
       armoring: {
         type: "катаная высокой твёрдости, литая средней твёрдости",
         body: {
-          foreheadTop: "120мм / 60°",
-          foreheadBottom: "100мм / −30°",
-          boardTop: "90-120 / 15°",
-          boardBottom: "90 / 0°",
-          sternTop: "60мм / 49°",
-          sternBottom: "60мм / 49°",
-          bottom: "20мм",
-          roof: "30мм",
+          foreheadTop: "120 мм / 60°",
+          foreheadBottom: "100 мм / −30°",
+          boardTop: "90-120 мм / 15°",
+          boardBottom: "90 мм / 0°",
+          sternTop: "60 мм / 49°",
+          sternBottom: "60 мм / 49°",
+          bottom: "20 мм",
+          roof: "30 мм",
         },
         tower: {
-          forehead: "100мм",
-          gunMask: "100мм",
-          board: "100 / 20°",
-          stern: "100 / 30°",
-          roof: "30мм",
+          forehead: "100 мм",
+          gunMask: "100 мм",
+          board: "100 мм / 20°",
+          stern: "100 мм / 30°",
+          roof: "30 мм",
         },
       },
       weapon: {
@@ -106,7 +117,7 @@ let USSR = [
           ammunition: "БР-471, БР-471Б, ОФ-471",
           chargingType: "раздельное",
           combatFireRate: "< 3",
-          muzzleBrake: "двухкамерный ",
+          muzzleBrake: "двухкамерный",
           trigger: "механический, электрический",
         },
         сannonАmmunition: 28,
@@ -119,7 +130,7 @@ let USSR = [
       },
       mobility: {
         engine: {
-          trademark: "В‑2-10",
+          trademark: "В-2ИС",
           type: "дизельный",
           power: 520 + " л.с.",
           capacity: 38.88 + " л",
@@ -361,7 +372,7 @@ let germany = [
   },
   {
     name: "StuG III Ausf.A",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
     icon: "1.jpg",
   },
@@ -556,4 +567,64 @@ let britain = [
 ];
 britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
-export const ARMORED_VEHICLES = [...USSR, ...germany, ...usa, ...britain];
+let france = [
+  {
+    name: "Somua S35",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1935,
+    icon: "icon.jpg",
+  },
+];
+france.forEach((item) => (item.nation = NATIONS.france));
+
+let italy = [
+  {
+    name: "Lancia IZ/IZM",
+    type: WEAPONS_TYPE.armoredVehicle.armoredCar,
+    adoptedIntoServiceDate: 1916,
+    icon: "icon.jpg",
+  },
+];
+italy.forEach((item) => (item.nation = NATIONS.italy));
+
+let czechoslovakia = [
+  {
+    name: "LT vz.38",
+    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1939,
+    icon: "icon.jpg",
+  },
+];
+czechoslovakia.forEach((item) => (item.nation = NATIONS.czechoslovakia));
+
+let finland = [
+  {
+    name: "BT-42",
+    type: WEAPONS_TYPE.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1942,
+    icon: "icon.jpg",
+  },
+];
+finland.forEach((item) => (item.nation = NATIONS.finland));
+
+let japan = [
+  {
+    name: "Chi-Nu",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+    icon: "icon.jfif",
+  },
+];
+japan.forEach((item) => (item.nation = NATIONS.japan));
+
+export const ARMORED_VEHICLES = [
+  ...USSR,
+  ...germany,
+  ...usa,
+  ...britain,
+  ...france,
+  ...italy,
+  ...czechoslovakia,
+  ...finland,
+  ...japan,
+];

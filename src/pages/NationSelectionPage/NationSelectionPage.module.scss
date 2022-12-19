@@ -8,13 +8,14 @@
 
 .flagsWrapper {
   display: flex;
-  justify-content: space-between;
   gap: 25px;
   flex-wrap: wrap;
 
+  // display: grid;
+  // grid-template-columns: repeat(5, 1fr);
+  // grid-row-gap: 20px;
+
   @include media-breakpoint-down(FHD) {
-    gap: 0px;
-    grid-row-gap: 20px;
   }
 
   @include media-breakpoint-down(xl) {
@@ -22,6 +23,10 @@
   }
 
   @include media-breakpoint-down(md) {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    column-gap: 20px;
+    row-gap: 15px;
   }
 }

@@ -51,9 +51,26 @@ let USSR = [
     icon: "icon.jpg",
   },
 ];
-USSR = USSR.map((item) => ({
-  ...item,
-  nation: NATIONS.USSR,
-}));
+USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
-export const ARTILLERY_DATA = [...USSR];
+let germany = [
+  {
+    name: "7,5 cm Pak. 40",
+    type: WEAPONS_TYPE.artillery.antitank,
+    adoptedIntoServiceDate: 1941,
+    icon: "icon.jpg",
+  },
+];
+germany.forEach((item) => (item.nation = NATIONS.germany));
+
+let britain = [
+  {
+    name: "QF 17 pounder",
+    type: WEAPONS_TYPE.artillery.antitank,
+    adoptedIntoServiceDate: 1943,
+    icon: "icon.jpg",
+  },
+];
+britain.forEach((item) => (item.nation = NATIONS.greatBritain));
+
+export const ARTILLERY_DATA = [...USSR, ...germany, ...britain];

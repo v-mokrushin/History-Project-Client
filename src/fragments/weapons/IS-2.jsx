@@ -9,14 +9,14 @@ import Image from "../../components/Image/Image";
 import HightlitingText from "../../components/HightlitingText/HightlitingText";
 
 const images = {
-  kotin: "/images/weapons/armored/soviet-union/ИС-2/article/котин.jpg",
-  test: "/images/weapons/armored/soviet-union/ИС-2/article/tests.jpg",
-  tiger: "/images/weapons/armored/soviet-union/ИС-2/article/tiger.jpg",
+  kotin: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/котин.jpg",
+  test: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/tests.jpg",
+  tiger: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/tiger.jpg",
   scheme:
-    "/images/weapons/armored/soviet-union/ИС-2/article/scheme_of_armour.jpg",
-  road: "/images/weapons/armored/soviet-union/ИС-2/article/road.jpg",
-  praha: "/images/weapons/armored/soviet-union/ИС-2/article/praha.jpg",
-  road: "/images/weapons/armored/soviet-union/ИС-2/article/road.jpg",
+    "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/scheme_of_armour.jpg",
+  road: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/road.jpg",
+  praha: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/praha.jpg",
+  road: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/road.jpg",
   // road: "/images/weapons/armored/soviet-union/ИС-2/article/road.jpg",
 };
 
@@ -268,17 +268,6 @@ export default function IS_2() {
           количество ИС-2 было передано на Кубу, Северному Вьетнаму и КНДР.
         </Paragraph>
       </TextBlock>
-
-      <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
-      <YTFrame
-        links={[
-          "https://www.youtube.com/embed/_nypiSnpvow",
-          "https://www.youtube.com/embed/_ZFXUBEb24g",
-          "https://www.youtube.com/embed/Yfr26UvEtzc",
-          "https://www.youtube.com/embed/sodVseKNDNI",
-          "https://www.youtube.com/embed/5Zqu4XgXjac",
-        ]}
-      />
     </TextBlock>
   );
 }

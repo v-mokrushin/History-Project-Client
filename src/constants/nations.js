@@ -5,7 +5,7 @@ const world = {
     english: "All world",
   },
   path: "world",
-  flagImage: "/images/flags/flag-world.png",
+  flagImage: "/images/flags/flag-world.svg",
 };
 
 const USSR = {
@@ -15,7 +15,7 @@ const USSR = {
     english: "USSR",
   },
   path: "soviet-union",
-  flagImage: "/images/flags/flag-ussr.svg",
+  flagImage: "/images/flags/flag-ussr.webp",
 };
 
 const germany = {
@@ -48,6 +48,36 @@ const greatBritain = {
   flagImage: "/images/flags/flag-uk.svg",
 };
 
+const france = {
+  name: {
+    russian: "Франция",
+    russianАccusative: "Франции",
+    english: "France",
+  },
+  path: "france",
+  flagImage: "/images/flags/flag-france.webp",
+};
+
+const italy = {
+  name: {
+    russian: "Италия",
+    russianАccusative: "Италии",
+    english: "Italy",
+  },
+  path: "italy",
+  flagImage: "/images/flags/flag-italy.svg",
+};
+
+const czechoslovakia = {
+  name: {
+    russian: "Чехословакия",
+    russianАccusative: "Чехословакии",
+    english: "Czechoslovakia",
+  },
+  path: "czechoslovakia",
+  flagImage: "/images/flags/flag-czechoslovakia.svg",
+};
+
 const japan = {
   name: {
     russian: "Япония",
@@ -58,13 +88,27 @@ const japan = {
   flagImage: "/images/flags/flag-japan.svg",
 };
 
+const finland = {
+  name: {
+    russian: "Финляндия",
+    russianАccusative: "Финляндии",
+    english: "Finland",
+  },
+  path: "finland",
+  flagImage: "/images/flags/flag-finland.png",
+};
+
 export const NATIONS = {
   world,
   USSR,
   germany,
   USA,
   greatBritain,
+  france,
+  italy,
+  czechoslovakia,
   japan,
+  finland,
 };
 
 export const NATIONS_METHODS = {

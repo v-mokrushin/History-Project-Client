@@ -16,17 +16,18 @@ WEAPONS_DATA.forEach((item) => {
 
   Object.defineProperty(item, "id", {
     get: function () {
-      return this.name.replaceAll(" ", "-");
+      return this.name.replaceAll(" ", "-").replaceAll("/", "-");
     },
   });
 
   item.gallery = {
     icon:
-      `/images/weapons/${item.type.baseType.path}/` +
+      `/images/weapons/${item.type.branch.path}/` +
       item.nation.path +
       "/" +
       name
         .replaceAll(" ", "-")
+        .replaceAll("/", "-")
         .replaceAll("«", "")
         .replaceAll("»", "")
         .replaceAll("(", "")

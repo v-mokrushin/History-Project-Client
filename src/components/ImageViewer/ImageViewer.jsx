@@ -8,26 +8,28 @@ export default function ImageViewer({}) {
   if (context.value.open) document.body.style.overflow = "hidden";
   if (!context.value.open) document.body.style.overflow = "auto";
 
+  function close() {
+    context.setValue({ open: false });
+  }
+
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
-      // console.log(event.key);
       if (event.key === "Escape") {
-        context.setValue({ open: false });
+        close();
       }
     });
   }, []);
 
   return (
     <div
-      onClick={() => {
-        context.setValue({ open: false });
-      }}
+      onClick={close}
       className={classNames(
         styles.root,
         context.value.open && styles.root_open
       )}
     >
       <img
+        id="image-viewer-image"
         className={classNames(
           styles.image,
           context.value.open && styles.image_open
