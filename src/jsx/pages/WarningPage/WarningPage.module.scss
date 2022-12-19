@@ -1,0 +1,102 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+  }
+
+  &_typeNoFound::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 5%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: scaling;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+  @keyframes scaling {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.25);
+    }
+  }
+
+  &NotFound {
+    background-image: url(../../../assets/images/backgrounds/not-found.jpg);
+    background-position: center top;
+  }
+
+  &WorkInProgress {
+    background-image: url(../../../assets/images/backgrounds/work-in-progress.jpg);
+    background-position: center;
+  }
+}
+
+.title {
+  position: relative;
+  z-index: 3;
+  margin-top: 300px;
+  color: $primary-light-text-color;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 34px;
+    margin-top: 200px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 32px;
+    margin-top: 250px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 23px;
+  }
+}
