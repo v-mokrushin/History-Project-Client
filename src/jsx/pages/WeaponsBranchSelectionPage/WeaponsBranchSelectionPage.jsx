@@ -7,7 +7,7 @@ import styles from "./WeaponsBranchSelectionPage.module.scss";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import { useDispatch } from "react-redux";
 import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
-import { navigationMiddlewares } from "../../../javascript/store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";

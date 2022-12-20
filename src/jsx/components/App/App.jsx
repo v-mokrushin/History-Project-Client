@@ -4,7 +4,7 @@ import ArticlesPage from "../../pages/ArticlesPage/ArticlesPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import { Provider } from "react-redux";
-import { store } from "../../../javascript/store";
+import { store } from "../../../javascript/store/redux";
 import WarningPage from "../../pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "../../pages/WarningPage/constants";
 import React, { createContext, useState } from "react";

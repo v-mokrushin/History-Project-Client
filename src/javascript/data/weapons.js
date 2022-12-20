@@ -38,5 +38,3 @@ WEAPONS_DATA.forEach((item) => {
 
   delete item.icon;
 });
-
-console.log(WEAPONS_DATA);

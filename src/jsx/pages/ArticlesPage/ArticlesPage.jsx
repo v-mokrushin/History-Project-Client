@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectArticlePreviewsIds,
   selectArticlePreviewsLoadingStatus,
-} from "../../../javascript/store/articlePreviews/selectors";
-import { loadArticlePreviews } from "../../../javascript/store/articlePreviews/loadingMiddleware";
-import { LOADING_STATUSES } from "../../../javascript/store/constants";
+} from "../../../javascript/store/redux/articlePreviews/selectors";
+import { loadArticlePreviews } from "../../../javascript/store/redux/articlePreviews/loadingMiddleware";
+import { LOADING_STATUSES } from "../../../javascript/store/redux/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
@@ -16,7 +16,7 @@ import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
 import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
-import { navigationMiddlewares } from "../../../javascript/store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";

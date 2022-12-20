@@ -10,7 +10,7 @@ import Title from "../../components/Title/Title";
 import { NATIONS, NATIONS_METHODS } from "../../../javascript/constants/nations";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
 import { WEAPONS_DATA } from "../../../javascript/data/weapons";
-import { navigationMiddlewares } from "../../../javascript/store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";

@@ -1,5 +1,5 @@
 import { articleContentSlice } from ".";
-import { mock } from "../../data/mock";
+import { mock } from "../../../data/mock";
 import { selectArticleContentById } from "./selectors";
 
 export const loadArticleContent = (articleId) => (dispatch, getState) => {

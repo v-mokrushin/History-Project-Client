@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { shuffleTracks } from "../../utils/common";
+import { shuffleTracks } from "../../../utils/common";
 
 let trackList = [
   "/audio/de-wolfe-intro.mp3",

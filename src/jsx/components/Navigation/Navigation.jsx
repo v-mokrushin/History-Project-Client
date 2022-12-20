@@ -2,12 +2,12 @@ import classNames from "classnames";
 import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { audioMiddlewares } from "../../../javascript/store/audioPlayer/playingMiddleware";
-import { navigationSelectors } from "../../../javascript/store/navigation/selectors";
+import { audioMiddlewares } from "../../../javascript/store/redux/audioPlayer/playingMiddleware";
+import { navigationSelectors } from "../../../javascript/store/redux/navigation/selectors";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import { BurgerContext } from "../Burger/context";
 import styles from "./Navigation.module.scss";
-import { navigationMiddlewares } from "../../../javascript/store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 
 export default function Navigation({ isTypeBurger = false }) {
   const burgerContext = useContext(BurgerContext);
@@ -72,44 +72,4 @@ export default function Navigation({ isTypeBurger = false }) {
       </div>
     </nav>
   );
-}
-
-{
-  /* <NavLink
-        to="/"
-        className={({ isActive }) => {
-          console.log(isActive);
-          return classNames(styles.link, { [styles.link_active]: isActive });
-        }}
-        onClick={burgerContext.setClose}
-      >
-        Главная
-      </NavLink>
-      <NavLink
-        to="/articles"
-        className={({ isActive }) =>
-          classNames(styles.link, { [styles.link_active]: isActive })
-        }
-        onClick={burgerContext.setClose}
-      >
-        Статьи
-      </NavLink>
-      <NavLink
-        to="/weapons"
-        className={({ isActive }) =>
-          classNames(styles.link, { [styles.link_active]: isActive })
-        }
-        onClick={burgerContext.setClose}
-      >
-        Вооружения
-      </NavLink>
-      <NavLink
-        to="/battles"
-        className={({ isActive }) =>
-          classNames(styles.link, { [styles.link_active]: isActive })
-        }
-        onClick={burgerContext.setClose}
-      >
-        Сражения
-      </NavLink> */
 }

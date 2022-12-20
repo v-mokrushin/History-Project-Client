@@ -1,4 +1,4 @@
-import { NAVIGATION_ACTUAL_SECTION } from "../../../jsx/components/Navigation/constants";
+import { NAVIGATION_ACTUAL_SECTION } from "../../../../jsx/components/Navigation/constants";
 
 const selectNavigationModule = (state) => state.navigation;
 const selectActualSection = (state) =>

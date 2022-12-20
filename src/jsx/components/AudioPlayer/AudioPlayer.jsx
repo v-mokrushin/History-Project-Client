@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { audioMiddlewares } from "../../../javascript/store/audioPlayer/playingMiddleware";
-import { audioSelect } from "../../../javascript/store/audioPlayer/selectors";
+import { audioMiddlewares } from "../../../javascript/store/redux/audioPlayer/playingMiddleware";
+import { audioSelect } from "../../../javascript/store/redux/audioPlayer/selectors";
 import styles from "./AudioPlayer.module.scss";
 
 export default function AudioPlayer({ isMainPlayer = false }) {

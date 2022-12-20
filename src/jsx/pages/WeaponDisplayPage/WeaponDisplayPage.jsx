@@ -19,11 +19,12 @@ import TextBlock from "../../components/TextBlock/TextBlock";
 import DesktopContentList from "../../components/DesktopContentList/DesktopContentList";
 import MobileContentList from "../../components/MobileContentList/MobileContentList";
 import { useDispatch } from "react-redux";
-import { navigationMiddlewares } from "../../../javascript/store/navigation/changeActualSectionMiddleware";
+import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
+import counter from "../../../javascript/store/mobx/counter";
 
 export default function WeaponDisplayPage() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export default function WeaponDisplayPage() {
 
   React.useEffect(() => {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
+    counter.increase();
   }, [dispatch]);
 
   console.log(
@@ -647,16 +649,16 @@ export default function WeaponDisplayPage() {
   }
 
   function getVideomaterials() {
-    if (weapon.videomaterials)
-      return (
-        <>
-          <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
-          <YTFrame links={weapon.videomaterials} id={weapon.id} />
-        </>
-      );
+    // if (weapon.videomaterials)
+    //   return (
+    //     <>
+    //       <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
+    //       <YTFrame links={weapon.videomaterials} id={weapon.id} />
+    //     </>
+    //   );
   }
 
-  console.log(weapon);
+  console.log(counter.count);
 
   return (
     <div className={classNames(styles.root)}>
@@ -668,6 +670,7 @@ export default function WeaponDisplayPage() {
           <Container>
             <MobileContentList list={weapon.sections} />
             <Title id="Введение">{weapon.name}</Title>
+            <p>{counter.count}</p>
             {getIntro()}
             {weapon.specifications ? (
               getSpecification()

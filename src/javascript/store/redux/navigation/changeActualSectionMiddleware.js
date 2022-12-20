@@ -1,5 +1,5 @@
 import { navigationSlice } from ".";
-import { NAVIGATION_ACTUAL_SECTION } from "../../../jsx/components/Navigation/constants";
+import { NAVIGATION_ACTUAL_SECTION } from "../../../../jsx/components/Navigation/constants";
 
 const changeActualSection = (actualSection) => (dispatch) => {
   dispatch(navigationSlice.actions.setActualSection(actualSection));
