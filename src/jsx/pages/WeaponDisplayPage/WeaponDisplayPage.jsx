@@ -24,7 +24,6 @@ import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
-import counter from "../../../javascript/store/mobx/counter";
 
 export default function WeaponDisplayPage() {
   const dispatch = useDispatch();
@@ -33,12 +32,7 @@ export default function WeaponDisplayPage() {
 
   React.useEffect(() => {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
-    counter.increase();
   }, [dispatch]);
-
-  console.log(
-    weapon.type.branch.path === WEAPONS_TYPE.armoredVehicle.name.path
-  );
 
   function getSpecification() {
     if (weapon.specifications) {
@@ -649,16 +643,14 @@ export default function WeaponDisplayPage() {
   }
 
   function getVideomaterials() {
-    // if (weapon.videomaterials)
-    //   return (
-    //     <>
-    //       <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
-    //       <YTFrame links={weapon.videomaterials} id={weapon.id} />
-    //     </>
-    //   );
+    if (weapon.videomaterials)
+      return (
+        <>
+          <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
+          <YTFrame links={weapon.videomaterials} id={weapon.id} />
+        </>
+      );
   }
-
-  console.log(counter.count);
 
   return (
     <div className={classNames(styles.root)}>
@@ -670,7 +662,6 @@ export default function WeaponDisplayPage() {
           <Container>
             <MobileContentList list={weapon.sections} />
             <Title id="Введение">{weapon.name}</Title>
-            <p>{counter.count}</p>
             {getIntro()}
             {weapon.specifications ? (
               getSpecification()

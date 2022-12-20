@@ -5,12 +5,11 @@ import { NavLink } from "react-router-dom";
 import { audioMiddlewares } from "../../../javascript/store/redux/audioPlayer/playingMiddleware";
 import { navigationSelectors } from "../../../javascript/store/redux/navigation/selectors";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
-import { BurgerContext } from "../Burger/context";
 import styles from "./Navigation.module.scss";
 import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
+import { burgerStore } from "../../../javascript/store/mobx/index";
 
 export default function Navigation({ isTypeBurger = false }) {
-  const burgerContext = useContext(BurgerContext);
   const dispatch = useDispatch();
 
   return (
@@ -23,7 +22,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualHome) && styles.link_active
         )}
-        onClick={burgerContext.setBurgerClose}
+        onClick={burgerStore.setClose}
       >
         Главная
       </NavLink>
@@ -34,7 +33,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualArticles) &&
             styles.link_active
         )}
-        onClick={burgerContext.setBurgerClose}
+        onClick={burgerStore.setClose}
       >
         Статьи
       </NavLink>
@@ -44,7 +43,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualWeapons) && styles.link_active
         )}
-        onClick={burgerContext.setBurgerClose}
+        onClick={burgerStore.setClose}
       >
         Вооружения
       </NavLink>
@@ -55,7 +54,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualBattles) && styles.link_active
         )}
         onClick={() => {
-          burgerContext.setBurgerClose();
+          burgerStore.setClose();
           dispatch(navigationMiddlewares.setBattlesActualSection());
         }}
       >

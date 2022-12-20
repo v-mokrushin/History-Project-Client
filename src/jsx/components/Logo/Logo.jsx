@@ -1,12 +1,11 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { burgerStore } from "../../../javascript/store/mobx/index";
 import { scrollToTop } from "../../../javascript/utils/scroll";
-import { BurgerContext } from "../Burger/context";
 import styles from "./Logo.module.scss";
 
 export default function Logo({ forHeader = false }) {
-  const burgerContext = useContext(BurgerContext);
   return (
     <NavLink
       to="/"
@@ -16,7 +15,7 @@ export default function Logo({ forHeader = false }) {
       )}
       onClick={() => {
         scrollToTop();
-        burgerContext.setClose();
+        burgerStore.setClose();
       }}
     >
       <h1 className={styles.title}>
