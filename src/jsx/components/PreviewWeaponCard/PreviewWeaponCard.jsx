@@ -4,7 +4,10 @@ import styles from "./PreviewWeaponCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../javascript/constants/animation";
 import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
-import { scrollTopInstantly, scrollToTop } from "../../../javascript/utils/scroll";
+import {
+  scrollTopInstantly,
+  scrollToTop,
+} from "../../../javascript/utils/scroll";
 import Flag from "../Flag/Flag";
 
 export default function PreviewWeaponCard({ weapon, showFlag = false }) {
@@ -12,7 +15,9 @@ export default function PreviewWeaponCard({ weapon, showFlag = false }) {
     <NavLink
       to={weapon.id}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
-      onClick={() => scrollTopInstantly()}
+      onClick={() => {
+        scrollTopInstantly();
+      }}
     >
       <div
         className={styles.backgroundWrapper}

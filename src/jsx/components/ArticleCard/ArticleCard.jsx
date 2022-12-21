@@ -2,11 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./ArticleCard.module.scss";
 import { useSelector } from "react-redux";
-import { selectArticlePreviewById } from "../../../javascript/store/articlePreviews/selectors";
+import { selectArticlePreviewById } from "../../../javascript/store/redux/articlePreviews/selectors";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../javascript/constants/animation";
 import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
-import { scrollTopInstantly, scrollToTop } from "../../../javascript/utils/scroll";
+import {
+  scrollTopInstantly,
+  scrollToTop,
+} from "../../../javascript/utils/scroll";
 
 export default function ArticleCard({ articleId }) {
   const article = useSelector((state) =>

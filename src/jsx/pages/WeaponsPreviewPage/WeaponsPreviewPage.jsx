@@ -7,15 +7,20 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Timeline from "../../components/Timeline/Timeline";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
-import { NATIONS, NATIONS_METHODS } from "../../../javascript/constants/nations";
+import {
+  NATIONS,
+  NATIONS_METHODS,
+} from "../../../javascript/constants/nations";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
 import { WEAPONS_DATA } from "../../../javascript/data/weapons";
 import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
+import { observer } from "mobx-react";
+import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
 
-export default function WeaponsPreviewPage() {
+const WeaponsPreviewPage = observer(() => {
   const dispatch = useDispatch();
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
@@ -50,7 +55,19 @@ export default function WeaponsPreviewPage() {
   }
 
   React.useEffect(() => {
+    const scrollEvent = () => {
+      scrollMemoryStore.setValue(window.scrollY);
+    };
+
+    scrollMemoryStore.activate();
     dispatch(navigationMiddlewares.setWeaponsActualSection());
+    document.addEventListener("scroll", scrollEvent);
+    scrollMemoryStore.shouldRemember = true;
+
+    return () => {
+      document.removeEventListener("scroll", scrollEvent);
+      scrollMemoryStore.shouldRemember = false;
+    };
   }, []);
 
   return (
@@ -75,7 +92,9 @@ export default function WeaponsPreviewPage() {
       </ContentWrapper>
     </div>
   );
-}
+});
+
+export default WeaponsPreviewPage;
 
 {
   /* {uniqueDates.map((year, yearIndex) => (

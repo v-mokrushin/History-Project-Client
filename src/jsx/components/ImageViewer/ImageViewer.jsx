@@ -1,42 +1,40 @@
 import React from "react";
 import styles from "./ImageViewer.module.scss";
 import classNames from "classnames";
-import { ImageViewerContext } from "./context";
+import { observer } from "mobx-react";
+import { imageViewerStore } from "../../../javascript/store/mobx";
 
-export default function ImageViewer({}) {
-  const context = React.useContext(ImageViewerContext);
-  if (context.value.open) document.body.style.overflow = "hidden";
-  if (!context.value.open) document.body.style.overflow = "auto";
-
-  function close() {
-    context.setValue({ open: false });
-  }
+const ImageViewer = observer(() => {
+  // if (context.value.open) document.body.style.overflow = "hidden";
+  // if (!context.value.open) document.body.style.overflow = "auto";
 
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
-        close();
+        imageViewerStore.setClose();
       }
     });
   }, []);
 
   return (
     <div
-      onClick={close}
+      onClick={() => imageViewerStore.setClose()}
       className={classNames(
         styles.root,
-        context.value.open && styles.root_open
+        imageViewerStore.open && styles.root_open
       )}
     >
       <img
         id="image-viewer-image"
         className={classNames(
           styles.image,
-          context.value.open && styles.image_open
+          imageViewerStore.open && styles.image_open
         )}
-        src={context.value.url}
+        src={imageViewerStore.url}
         alt=""
       />
     </div>
   );
-}
+});
+
+export default ImageViewer;

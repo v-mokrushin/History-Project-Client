@@ -12,6 +12,10 @@ import { burgerStore } from "../../../javascript/store/mobx/index";
 export default function Navigation({ isTypeBurger = false }) {
   const dispatch = useDispatch();
 
+  function actionOnClose() {
+    burgerStore.setClose();
+  }
+
   return (
     <nav
       className={classNames(styles.root, isTypeBurger && styles.rootTypeBurger)}
@@ -22,7 +26,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualHome) && styles.link_active
         )}
-        onClick={burgerStore.setClose}
+        onClick={actionOnClose}
       >
         Главная
       </NavLink>
@@ -33,7 +37,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualArticles) &&
             styles.link_active
         )}
-        onClick={burgerStore.setClose}
+        onClick={actionOnClose}
       >
         Статьи
       </NavLink>
@@ -43,7 +47,7 @@ export default function Navigation({ isTypeBurger = false }) {
           styles.link,
           useSelector(navigationSelectors.isActualWeapons) && styles.link_active
         )}
-        onClick={burgerStore.setClose}
+        onClick={actionOnClose}
       >
         Вооружения
       </NavLink>
@@ -54,7 +58,7 @@ export default function Navigation({ isTypeBurger = false }) {
           useSelector(navigationSelectors.isActualBattles) && styles.link_active
         )}
         onClick={() => {
-          burgerStore.setClose();
+          actionOnClose();
           dispatch(navigationMiddlewares.setBattlesActualSection());
         }}
       >

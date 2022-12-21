@@ -1,66 +1,66 @@
 import classNames from "classnames";
 import React, { useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { audioMiddlewares } from "../../../javascript/store/redux/audioPlayer/playingMiddleware";
-import { audioSelect } from "../../../javascript/store/redux/audioPlayer/selectors";
 import styles from "./AudioPlayer.module.scss";
+import { observer } from "mobx-react";
+import audioPlayerStore from "../../../javascript/store/mobx/audioPlayer";
 
-export default function AudioPlayer({ isMainPlayer = false }) {
-  const dispatch = useDispatch();
-  const isPlaying = useSelector(audioSelect.audioPlayerStatus());
-  const currentTrack = useSelector(audioSelect.currentTrack());
-
+const AudioPlayer = observer(({ isMainPlayer = false }) => {
   const audio = useRef(null);
 
   React.useEffect(() => {
     if (isMainPlayer) {
-      if (isPlaying) {
+      if (audioPlayerStore.status) {
         audio.current.play();
         return;
       }
-      if (!isPlaying) {
+      if (!audioPlayerStore.status) {
         audio.current.pause();
         return;
       }
     }
-  }, [isPlaying, currentTrack]);
+  }, [audioPlayerStore.status, audioPlayerStore.currentTrack]);
 
   return (
     <div className={classNames(styles.root)}>
       {isMainPlayer && (
         <audio
           ref={audio}
-          src={currentTrack}
-          onEnded={() => dispatch(audioMiddlewares.switchNextTrack)}
+          src={audioPlayerStore.currentTrack}
+          onEnded={() => audioPlayerStore.next()}
         />
       )}
       <div className={classNames(styles.buttonBox)}>
         <button
           className={classNames(
             styles.previousButton,
-            isPlaying && styles.scale1
+            audioPlayerStore.status && styles.scale1
           )}
-          onClick={() => dispatch(audioMiddlewares.switchPrevTrack)}
+          onClick={() => audioPlayerStore.previous()}
         ></button>
         <button
           className={classNames(
             styles.playButton,
-            isPlaying ? styles.displayNone : styles.displayBlock
+            audioPlayerStore.status ? styles.displayNone : styles.displayBlock
           )}
-          onClick={() => dispatch(audioMiddlewares.toggle)}
+          onClick={() => audioPlayerStore.toggle()}
         ></button>
         <button
           className={classNames(
             styles.stopButton,
-            isPlaying ? styles.displayBlock : styles.displayNone
+            audioPlayerStore.status ? styles.displayBlock : styles.displayNone
           )}
-          onClick={() => dispatch(audioMiddlewares.toggle)}
+          onClick={() => audioPlayerStore.toggle()}
         ></button>
         <button
-          className={classNames(styles.nextButton, isPlaying && styles.scale1)}
-          onClick={() => dispatch(audioMiddlewares.switchNextTrack)}
+          className={classNames(
+            styles.nextButton,
+            audioPlayerStore.status && styles.scale1
+          )}
+          onClick={() => audioPlayerStore.next()}
         ></button>
       </div>
     </div>
   );
-}
+});
+
+export default AudioPlayer;

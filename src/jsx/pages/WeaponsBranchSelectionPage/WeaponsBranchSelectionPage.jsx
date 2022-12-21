@@ -21,7 +21,9 @@ export default function WeaponsBranchSelectionPage() {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
   }, [dispatch]);
 
-  console.log(pageInfo);
+  React.useEffect(() => {
+    // window.scrollTo(0, 500); 
+  }, []); 
 
   return (
     <>
