@@ -7,7 +7,6 @@ export class FiltersStore {
 
     makeObservable(this, {
       filters: observable,
-      count: observable,
       setFilter: action,
       isEmpty: action,
     });

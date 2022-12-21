@@ -8,7 +8,7 @@ import { observer } from "mobx-react";
 
 const Filter = observer(({ className, weaponBranch }) => {
   const [open, setOpen] = React.useState(false);
-  const types = React.useMemo(
+  const weaponTypes = React.useMemo(
     () => WEAPONS_TYPE.getTypesArrayWithAll(weaponBranch),
     [weaponBranch]
   );
@@ -37,7 +37,7 @@ const Filter = observer(({ className, weaponBranch }) => {
           className={classNames(styles.arrow, open && styles.arrow_open)}
         ></button>
         <div className={classNames(styles.vars, open && styles.vars_open)}>
-          {types.map((type, index) => (
+          {weaponTypes.map((type, index) => (
             <div
               className={styles.vars__item}
               key={type.name.russian + index}
