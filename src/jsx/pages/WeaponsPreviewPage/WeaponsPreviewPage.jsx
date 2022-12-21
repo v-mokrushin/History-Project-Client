@@ -19,6 +19,7 @@ import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
 import { observer } from "mobx-react";
 import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
+import filtersStore from "../../../javascript/store/mobx/filters";
 
 const WeaponsPreviewPage = observer(() => {
   const dispatch = useDispatch();
@@ -27,8 +28,10 @@ const WeaponsPreviewPage = observer(() => {
   const weaponsBranchObject = WEAPONS_TYPE.getObjectByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
   const selectedWeapons = React.useMemo(selectWeapons, []);
-  const [filters, setFilters] = React.useState({});
-  const filteredWeapons = React.useMemo(() => filterWeapons(), [filters]);
+  const filteredWeapons = React.useMemo(
+    () => filterWeapons(),
+    [filtersStore.filters]
+  );
   const uniqueDates = React.useMemo(getUniqueDates, [filteredWeapons]);
 
   function selectWeapons() {
@@ -41,10 +44,13 @@ const WeaponsPreviewPage = observer(() => {
   }
 
   function filterWeapons() {
-    if (Object.keys(filters).length === 0) {
+    if (filtersStore.isEmpty()) {
       return selectedWeapons;
     } else {
-      return selectedWeapons.filter((item) => item.type === filters.type);
+      return selectedWeapons.filter(
+        (item) =>
+          item.type.name.russian === filtersStore.getFilters().type.name.russian
+      );
     }
   }
 
@@ -78,7 +84,7 @@ const WeaponsPreviewPage = observer(() => {
             {weaponsBranchObject.name.russian}{" "}
             {nationObject.name.russianАccusative}
           </Title>
-          <Filter weaponBranch={weaponsBranchObject} setFilters={setFilters} />
+          <Filter weaponBranch={weaponsBranchObject} />
           {filteredWeapons.length > 0 ? (
             <Timeline
               contentCollection={filteredWeapons}

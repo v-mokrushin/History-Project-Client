@@ -3,15 +3,14 @@ import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
+import filtersStore from "../../../javascript/store/mobx/filters";
+import { observer } from "mobx-react";
 
-export default function Filter({ className, weaponBranch, setFilters }) {
+const Filter = observer(({ className, weaponBranch }) => {
   const [open, setOpen] = React.useState(false);
-  const [selectedWeaponType, setSelectedType] = React.useState(
-    WEAPONS_TYPE.getAllType()
-  );
   const types = React.useMemo(
     () => WEAPONS_TYPE.getTypesArrayWithAll(weaponBranch),
-    []
+    [weaponBranch]
   );
 
   document.onclick = React.useCallback((event) => {
@@ -21,15 +20,7 @@ export default function Filter({ className, weaponBranch, setFilters }) {
   }, []);
 
   function getTitle() {
-    if (selectedWeaponType) {
-      if (!WEAPONS_TYPE.isAllType(selectedWeaponType)) {
-        return selectedWeaponType.name.russian;
-      } else {
-        return "";
-      }
-    } else {
-      return "";
-    }
+    return filtersStore.getFilters().type?.name.russian;
   }
 
   return (
@@ -45,20 +36,15 @@ export default function Filter({ className, weaponBranch, setFilters }) {
         <button
           className={classNames(styles.arrow, open && styles.arrow_open)}
         ></button>
-        <div
-          className={classNames(
-            styles.vars,
-            open && styles.vars_open,
-            "filter"
-          )}
-        >
+        <div className={classNames(styles.vars, open && styles.vars_open)}>
           {types.map((type, index) => (
             <div
               className={styles.vars__item}
               key={type.name.russian + index}
               onClick={() => {
-                setSelectedType(type);
-                setFilters(!WEAPONS_TYPE.isAllType(type) ? { type } : {});
+                filtersStore.setFilter(
+                  !WEAPONS_TYPE.isAllType(type) ? { type } : {}
+                );
               }}
             >
               <Text className={styles.vars__item__text}>
@@ -70,4 +56,6 @@ export default function Filter({ className, weaponBranch, setFilters }) {
       </div>
     </div>
   );
-}
+});
+
+export default Filter;

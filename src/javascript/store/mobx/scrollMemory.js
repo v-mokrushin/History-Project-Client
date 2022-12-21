@@ -13,7 +13,6 @@ export class ScrollMemoryStore {
 
   setValue(val) {
     if (this.shouldRemember) this.value = val;
-    console.log(this.shouldRemember + " " + this.value);
   }
 
   activate() {
