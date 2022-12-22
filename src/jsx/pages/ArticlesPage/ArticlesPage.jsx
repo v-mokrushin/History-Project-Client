@@ -14,7 +14,6 @@ import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
-import { INTRO_IMAGE_TYPE } from "../../components/IntroImage/constants";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import Title from "../../components/Title/Title";
@@ -41,7 +40,7 @@ export default function ArticlesPage() {
     if (loadingStatus === LOADING_STATUSES.success) {
       return (
         <>
-          <Title noMargin>Статьи</Title>
+          <Title>Статьи</Title>
           <div className={styles.cardsWrapper}>
             {articlesIds.map((val) => (
               <ArticleCard articleId={val} key={val} />
@@ -60,9 +59,7 @@ export default function ArticlesPage() {
     <>
       <IntroImage imageUrl={pageInfo.introImage} />
       <ContentWrapper>
-        <Container>
-          <InnerContentWrapper>{getLayout()}</InnerContentWrapper>
-        </Container>
+        <Container>{getLayout()}</Container>
       </ContentWrapper>
     </>
   );

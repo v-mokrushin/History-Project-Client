@@ -6,7 +6,7 @@
   gap: 25px;
 
   @include media-breakpoint-down(xl) {
-    gap: 20px;
+    gap: 18px;
   }
 
   @include media-breakpoint-down(md) {
@@ -46,7 +46,7 @@
   height: max-content;
 
   @include media-breakpoint-down(xl) {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   &_active {

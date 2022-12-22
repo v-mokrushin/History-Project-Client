@@ -17,15 +17,16 @@
   }
 
   @include media-breakpoint-down(xl) {
-    height: 230px;
+    // height: 230px;
+    height: 200px;
   }
 
   @include media-breakpoint-down(sm) {
-    height: 230px;
+    height: 220px;
   }
 
   @include media-breakpoint-down(xs) {
-    height: 180px;
+    height: 160px;
   }
 
   &::after {
@@ -85,7 +86,7 @@
   }
 
   @include media-breakpoint-down(xl) {
-    padding: 25px 30px;
+    padding: 20px 20px;
   }
 
   @include media-breakpoint-down(lg) {
@@ -116,7 +117,7 @@
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   @include media-breakpoint-down(sm) {

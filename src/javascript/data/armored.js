@@ -69,8 +69,8 @@ let USSR = [
     ],
     specifications: {
       common: {
-        developer: "Челябинский Кировский Завод",
-        manufacturer: "Челябинский Кировский Завод",
+        developer: "ЧКЗ",
+        manufacturer: "ЧКЗ",
         chiefDesigner: "Ж.Я. Котин",
         developmentYear: 1943,
         productionYears: [1943, 1945],

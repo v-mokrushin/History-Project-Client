@@ -4,10 +4,14 @@ import classNames from "classnames";
 import Text from "../Text/Text";
 import { imageViewerStore } from "../../../javascript/store/mobx";
 
-export default function Image({ title, URL, className }) {
+export default function Image({ title, URL, fullWidth = false, className }) {
   return (
     <div
-      className={classNames(styles.wrapper, className)}
+      className={classNames(
+        styles.wrapper,
+        fullWidth && styles.wrapper_fullWidth,
+        className
+      )}
       onClick={() => imageViewerStore.setOpen(URL)}
     >
       <img className={classNames(styles.image)} src={URL} alt="" />

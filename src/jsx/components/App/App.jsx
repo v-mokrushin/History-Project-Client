@@ -18,10 +18,6 @@ import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
 
 function App() {
   React.useEffect(() => {
-    // document.addEventListener("scroll", () =>
-    //   scrollMemoryStore.setValue(window.scrollY)
-    // );
-
     document.addEventListener("contextmenu", (event) => {
       event.preventDefault();
     });
@@ -33,10 +29,6 @@ function App() {
         <Layout>
           <Routes>
             <Route index element={<HomePage />} />
-            <Route
-              path="/news"
-              element={<WarningPage pageType={WARNING_PAGE_TYPE.notFound} />}
-            />
             <Route path="/articles" element={<ArticlesPage />}></Route>
             <Route path="/articles/:articleId" element={<ArticlePage />} />
             <Route path="/weapons/" element={<WeaponsBranchSelectionPage />} />

@@ -6,7 +6,7 @@
   font-size: 42px;
   letter-spacing: 1px;
   color: $primary-dark-text-color;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   @include media-breakpoint-down(FHD) {
     font-size: 39px;
@@ -14,8 +14,8 @@
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 33px;
-    margin-bottom: 25px;
+    font-size: 32px;
+    margin-bottom: 22px;
   }
 
   @include media-breakpoint-down(lg) {

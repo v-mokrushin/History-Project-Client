@@ -7,9 +7,13 @@
   align-items: center;
   gap: 7px;
   margin: 0 0 20px 30px;
-  width: 27%;
+  width: 28%;
   float: right;
   clear: right;
+
+  @include media-breakpoint-down(xl) {
+    width: 33%;
+  }
 
   @include media-breakpoint-down(md) {
     margin-bottom: 10px;
@@ -20,6 +24,21 @@
     width: 100%;
     margin-left: 0;
   }
+
+  &_fullWidth {
+    width: 75%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-down(md) {
+      width: 90%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
 }
 
 .image {
@@ -27,6 +46,14 @@
   width: 100%;
   object-fit: contain;
   transition: transform 250ms ease;
+
+  @include media-breakpoint-down(xl) {
+    border-radius: 2px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    border-radius: 1px;
+  }
 
   &:hover {
     // transform: scale(1.025);
