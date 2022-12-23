@@ -26,6 +26,7 @@ export class AudioPlayerStore {
 
     makeObservable(this, {
       status: observable,
+      currentTrack: observable,
       currentTrackNumber: observable,
       trackList: observable,
       play: action,

@@ -12,9 +12,15 @@ export default function ReadingProgressBar({ className }) {
   }, []);
 
   React.useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const scrollEvent = () => {
       setScroll(window.scrollY);
-    });
+    };
+
+    window.addEventListener("scroll", scrollEvent);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEvent);
+    };
   }, []);
 
   return (

@@ -15,7 +15,6 @@ export default function ArticleCard({ articleId }) {
   const article = useSelector((state) =>
     selectArticlePreviewById(state, { articleId })
   );
-  const articleName = article.title.split(" ").join("_");
 
   return (
     <NavLink
@@ -30,16 +29,7 @@ export default function ArticleCard({ articleId }) {
       <div className={styles.contentWrapper}>
         <p className={styles.title}>{article.title}</p>
         <div className={styles.separator}></div>
-        <p className={styles.description}>
-          {/* {article.description == "" ? (
-            <>
-              <br /> <br />
-            </>
-          ) : (
-            article.description
-          )} */}
-          {article.description}
-        </p>
+        <p className={styles.description}>{article.description}</p>
       </div>
     </NavLink>
   );

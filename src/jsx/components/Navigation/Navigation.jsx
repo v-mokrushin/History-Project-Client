@@ -2,12 +2,12 @@ import classNames from "classnames";
 import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { audioMiddlewares } from "../../../javascript/store/redux/audioPlayer/playingMiddleware";
 import { navigationSelectors } from "../../../javascript/store/redux/navigation/selectors";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import styles from "./Navigation.module.scss";
 import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { burgerStore } from "../../../javascript/store/mobx/index";
+import audioPlayerStore from "../../../javascript/store/mobx/audioPlayer";
 
 export default function Navigation({ isTypeBurger = false }) {
   const dispatch = useDispatch();
@@ -65,10 +65,7 @@ export default function Navigation({ isTypeBurger = false }) {
         Сражения
       </NavLink>
       <div className={styles.musicBox}>
-        <span
-          className={styles.link}
-          onClick={() => dispatch(audioMiddlewares.toggle)}
-        >
+        <span className={styles.link} onClick={() => audioPlayerStore.toggle()}>
           Музыка
         </span>
         <AudioPlayer isMainPlayer={!isTypeBurger} />

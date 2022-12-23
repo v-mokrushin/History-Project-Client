@@ -6,13 +6,8 @@ import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
   const locationPathname = useLocation().pathname;
-  const [labels, setLabels] = React.useState([]);
-  const [pathNames, setPathNames] = React.useState([]);
-
-  React.useEffect(() => {
-    setLabels(getLabelsArray(locationPathname));
-    setPathNames(getPathnamesArray(locationPathname));
-  }, [locationPathname]);
+  const labels = getLabelsArray(locationPathname);
+  const pathNames = getPathnamesArray(locationPathname);
 
   function getLabelsArray(locationPathname) {
     return locationPathname === "/"

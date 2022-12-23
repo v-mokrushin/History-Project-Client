@@ -12,6 +12,7 @@ import Title from "../../components/Title/Title";
 import { NATIONS } from "../../../javascript/constants/nations";
 import { WEAPONS_DATA } from "../../../javascript/data/weapons";
 import filtersStore from "../../../javascript/store/mobx/filters";
+import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
 
 export default function NationSelectionPage() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ export default function NationSelectionPage() {
   React.useEffect(() => {
     dispatch(navigationMiddlewares.setWeaponsActualSection());
     filtersStore.cancelFilters();
+    scrollMemoryStore.cencel();
   }, [dispatch, weaponsBranchPath]);
 
   return (

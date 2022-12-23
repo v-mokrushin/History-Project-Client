@@ -8,6 +8,7 @@ export class ScrollMemoryStore {
     makeObservable(this, {
       value: observable,
       setValue: action,
+      cencel: action,
     });
   }
 
@@ -17,6 +18,10 @@ export class ScrollMemoryStore {
 
   activate() {
     window.scrollTo(0, this.value);
+  }
+
+  cencel() {
+    this.value = 0;
   }
 }
 

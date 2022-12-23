@@ -83,13 +83,13 @@ let articles = [
     text: "",
     paragraphs: null,
   },
-  {
-    title: "Экономика Второй мировой войны",
-    description: "Алексей Исаев об экономике Второй мировой войны",
-    backgroundURL: "/images/articles/people.jpg",
-    text: "",
-    paragraphs: null,
-  },
+  // {
+  //   title: "Экономика Второй мировой войны",
+  //   description: "Алексей Исаев об экономике Второй мировой войны",
+  //   backgroundURL: "/images/articles/people.jpg",
+  //   text: "",
+  //   paragraphs: null,
+  // },
   {
     title: "Смоленское сражение и крах стратегии блицкрига",
     description: "",
