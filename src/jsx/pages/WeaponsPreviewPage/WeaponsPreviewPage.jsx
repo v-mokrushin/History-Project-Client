@@ -13,7 +13,6 @@ import {
 } from "../../../javascript/constants/nations";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
 import { WEAPONS_DATA } from "../../../javascript/data/weapons";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
@@ -66,7 +65,6 @@ const WeaponsPreviewPage = observer(() => {
     };
 
     scrollMemoryStore.activate();
-    dispatch(navigationMiddlewares.setWeaponsActualSection());
     document.addEventListener("scroll", scrollEvent);
     scrollMemoryStore.shouldRemember = true;
 

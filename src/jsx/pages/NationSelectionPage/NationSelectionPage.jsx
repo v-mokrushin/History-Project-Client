@@ -4,7 +4,6 @@ import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import styles from "./NationSelectionPage.module.scss";
 import { useDispatch } from "react-redux";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";
 import Flag from "../../components/Flag/Flag";
@@ -34,7 +33,6 @@ export default function NationSelectionPage() {
   }
 
   React.useEffect(() => {
-    dispatch(navigationMiddlewares.setWeaponsActualSection());
     filtersStore.cancelFilters();
     scrollMemoryStore.cencel();
   }, [dispatch, weaponsBranchPath]);

@@ -2,12 +2,9 @@ import React from "react";
 import styles from "./ImageViewer.module.scss";
 import classNames from "classnames";
 import { observer } from "mobx-react";
-import { imageViewerStore } from "../../../javascript/store/mobx";
+import imageViewerStore from "../../../javascript/store/mobx/imageViewer";
 
 const ImageViewer = observer(() => {
-  // if (context.value.open) document.body.style.overflow = "hidden";
-  // if (!context.value.open) document.body.style.overflow = "auto";
-
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
@@ -15,6 +12,11 @@ const ImageViewer = observer(() => {
       }
     });
   }, []);
+
+  React.useEffect(() => {
+    if (imageViewerStore.open) document.body.style.overflow = "hidden";
+    if (!imageViewerStore.open) document.body.style.overflow = "auto";
+  }, [imageViewerStore.open]);
 
   return (
     <div

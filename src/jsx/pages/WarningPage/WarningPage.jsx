@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React from "react";
 import { ANIMATIONS } from "../../../javascript/constants/animation";
-// import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
 import { WARNING_PAGE_TYPE } from "./constants";
 import styles from "./WarningPage.module.scss";
 

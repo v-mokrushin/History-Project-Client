@@ -1,16 +1,15 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { navigationSelectors } from "../../../javascript/store/redux/navigation/selectors";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import styles from "./Navigation.module.scss";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
-import { burgerStore } from "../../../javascript/store/mobx/index";
 import audioPlayerStore from "../../../javascript/store/mobx/audioPlayer";
+import { observer } from "mobx-react";
+import actualSectionStore from "../../../javascript/store/mobx/actualSection";
+import burgerStore from "../../../javascript/store/mobx/burger";
 
-export default function Navigation({ isTypeBurger = false }) {
-  const dispatch = useDispatch();
+const Navigation = observer(({ isTypeBurger = false }) => {
+  const actualSection = actualSectionStore.actualSection;
 
   function actionOnClose() {
     burgerStore.setClose();
@@ -24,7 +23,7 @@ export default function Navigation({ isTypeBurger = false }) {
         to="/"
         className={classNames(
           styles.link,
-          useSelector(navigationSelectors.isActualHome) && styles.link_active
+          actualSectionStore.isHome() && styles.link_active
         )}
         onClick={actionOnClose}
       >
@@ -34,8 +33,7 @@ export default function Navigation({ isTypeBurger = false }) {
         to="/articles"
         className={classNames(
           styles.link,
-          useSelector(navigationSelectors.isActualArticles) &&
-            styles.link_active
+          actualSectionStore.isArticles() && styles.link_active
         )}
         onClick={actionOnClose}
       >
@@ -45,7 +43,7 @@ export default function Navigation({ isTypeBurger = false }) {
         to="/weapons"
         className={classNames(
           styles.link,
-          useSelector(navigationSelectors.isActualWeapons) && styles.link_active
+          actualSectionStore.isWeapons() && styles.link_active
         )}
         onClick={actionOnClose}
       >
@@ -55,11 +53,11 @@ export default function Navigation({ isTypeBurger = false }) {
         to="/battles"
         className={classNames(
           styles.link,
-          useSelector(navigationSelectors.isActualBattles) && styles.link_active
+          actualSectionStore.isBattles() && styles.link_active
         )}
         onClick={() => {
           actionOnClose();
-          dispatch(navigationMiddlewares.setBattlesActualSection());
+          actualSectionStore.set("/battles");
         }}
       >
         Сражения
@@ -72,4 +70,6 @@ export default function Navigation({ isTypeBurger = false }) {
       </div>
     </nav>
   );
-}
+});
+
+export default Navigation;

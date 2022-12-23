@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { burgerStore } from "../../../javascript/store/mobx/index";
+import burgerStore from "../../../javascript/store/mobx/burger";
 import { scrollToTop } from "../../../javascript/utils/scroll";
 import styles from "./Logo.module.scss";
 

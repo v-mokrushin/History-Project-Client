@@ -15,7 +15,6 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";
@@ -28,7 +27,6 @@ export default function ArticlesPage() {
 
   useEffect(() => {
     dispatch(loadArticlePreviews);
-    dispatch(navigationMiddlewares.setArticlesActualSection());
     documentTitle.setArticlesPage();
   }, [dispatch]);
 

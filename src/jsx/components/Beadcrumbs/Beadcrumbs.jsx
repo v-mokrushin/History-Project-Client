@@ -2,12 +2,18 @@ import classNames from "classnames";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";
+import actualSectionStore from "../../../javascript/store/mobx/actualSection";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
   const locationPathname = useLocation().pathname;
   const labels = getLabelsArray(locationPathname);
   const pathNames = getPathnamesArray(locationPathname);
+  // console.log("render");
+
+  React.useEffect(() => {
+    actualSectionStore.set(pathNames[1]);
+  }, [locationPathname]);
 
   function getLabelsArray(locationPathname) {
     return locationPathname === "/"

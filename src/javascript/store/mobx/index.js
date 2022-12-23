@@ -1,6 +1,20 @@
-import { BurgerStore } from "./burger";
-import { ImageViewerStore } from "./imageViewer";
-// import { injectStores } from "@mobx-dev";
+import { injectStores } from "@mobx-devtools/tools";
+import burgerStore from "./burger";
+import imageViewerStore from "./imageViewer";
+import scrollMemoryStore from "./scrollMemory";
+import audioPlayerStore from "./audioPlayer";
+import actualSectionStore from "./actualSection";
+import filtersStore from "./filters";
 
-export const burgerStore = new BurgerStore();
-export const imageViewerStore = new ImageViewerStore();
+injectStores({
+  burgerStore,
+  imageViewerStore,
+  scrollMemoryStore,
+  audioPlayerStore,
+  actualSectionStore,
+  filtersStore,
+});
+
+console.log("ss");
+
+export const LEVEL = 10;

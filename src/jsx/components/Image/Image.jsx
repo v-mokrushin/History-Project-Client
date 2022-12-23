@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Image.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { imageViewerStore } from "../../../javascript/store/mobx";
+import imageViewerStore from "../../../javascript/store/mobx/imageViewer";
 
 export default function Image({ title, URL, fullWidth = false, className }) {
   return (

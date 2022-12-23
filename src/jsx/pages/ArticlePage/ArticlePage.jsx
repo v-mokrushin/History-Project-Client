@@ -17,7 +17,6 @@ import {
 } from "../../../javascript/store/redux/articleContent/selectors";
 import { selectArticlePreviewById } from "../../../javascript/store/redux/articlePreviews/selectors";
 import { LOADING_STATUSES } from "../../../javascript/store/redux/constants";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import styles from "./ArticlePage.module.scss";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -36,7 +35,6 @@ export default function ArticlePage() {
 
   React.useEffect(() => {
     dispatch(loadArticleContent(articleId));
-    dispatch(navigationMiddlewares.setArticlesActualSection());
   }, [articleId]);
 
   function getContent() {

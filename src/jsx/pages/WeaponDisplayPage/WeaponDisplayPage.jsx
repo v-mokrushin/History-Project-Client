@@ -19,7 +19,6 @@ import TextBlock from "../../components/TextBlock/TextBlock";
 import DesktopContentList from "../../components/DesktopContentList/DesktopContentList";
 import MobileContentList from "../../components/MobileContentList/MobileContentList";
 import { useDispatch } from "react-redux";
-import { navigationMiddlewares } from "../../../javascript/store/redux/navigation/changeActualSectionMiddleware";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
@@ -29,10 +28,6 @@ export default function WeaponDisplayPage() {
   const dispatch = useDispatch();
   const { weaponId } = useParams();
   const weapon = WEAPONS_DATA.find((item) => item.id === weaponId);
-
-  React.useEffect(() => {
-    dispatch(navigationMiddlewares.setWeaponsActualSection());
-  }, [dispatch]);
 
   function getSpecification() {
     if (weapon.specifications) {

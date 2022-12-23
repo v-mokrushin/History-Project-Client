@@ -1,16 +1,11 @@
-import { action, makeObservable, observable } from "mobx";
+import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 
 export class ImageViewerStore {
   constructor() {
     this.url = "";
     this.open = false;
 
-    makeObservable(this, {
-      url: observable,
-      open: observable,
-      setOpen: action,
-      setClose: action,
-    });
+    makeAutoObservable(this);
   }
 
   setOpen(url) {
@@ -22,3 +17,6 @@ export class ImageViewerStore {
     this.open = false;
   }
 }
+
+const imageViewerStore = new ImageViewerStore();
+export default imageViewerStore;

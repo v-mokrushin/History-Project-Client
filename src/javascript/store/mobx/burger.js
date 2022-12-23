@@ -29,3 +29,6 @@ export class BurgerStore {
     document.body.style.overflow = "auto";
   }
 }
+
+const burgerStore = new BurgerStore();
+export default burgerStore;

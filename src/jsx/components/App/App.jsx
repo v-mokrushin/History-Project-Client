@@ -14,7 +14,8 @@ import WeaponsBranchSelectionPage from "../../pages/WeaponsBranchSelectionPage/W
 import NationSelectionPage from "../../pages/NationSelectionPage/NationSelectionPage";
 import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
-import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
+import { observer } from "mobx-react";
+import { LEVEL } from "../../../javascript/store/mobx";
 
 function App() {
   React.useEffect(() => {
@@ -22,6 +23,8 @@ function App() {
       event.preventDefault();
     });
   }, []);
+
+  console.log(LEVEL);
 
   return (
     <Provider store={store}>
