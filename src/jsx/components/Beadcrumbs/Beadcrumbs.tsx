@@ -6,39 +6,20 @@ import actualSectionStore from "../../../javascript/store/mobx/actualSection";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
-  const locationPathname = useLocation().pathname;
-  const labels = getLabelsArray(locationPathname);
-  const pathNames = getPathnamesArray(locationPathname);
-  // console.log("render");
+  const locationPathname: string = useLocation().pathname;
+  const labels: Array<string> = React.useMemo(
+    () => PAGES_DATA.getLabelsArray(locationPathname),
+    [locationPathname]
+  );
+
+  const pathNames: Array<string> = React.useMemo(
+    () => PAGES_DATA.getPathnamesArray(locationPathname),
+    [locationPathname]
+  );
 
   React.useEffect(() => {
     actualSectionStore.set(pathNames[1]);
   }, [locationPathname]);
-
-  function getLabelsArray(locationPathname) {
-    return locationPathname === "/"
-      ? ["главная"]
-      : locationPathname
-          .split("/")
-          .map((item) => PAGES_DATA.getRussianName(item) || item);
-  }
-
-  function getPathnamesArray(locationPathname) {
-    const pathNamesArray = [];
-    let previousPosition = -1;
-    let curentPosition = -1;
-
-    while (locationPathname.indexOf("/", curentPosition + 1) != -1) {
-      previousPosition = curentPosition + 1;
-      curentPosition = locationPathname.indexOf("/", curentPosition + 1);
-      pathNamesArray.push(locationPathname.slice(0, curentPosition));
-    }
-
-    pathNamesArray.push(locationPathname.slice(0));
-    pathNamesArray[0] = "/";
-
-    return pathNamesArray;
-  }
 
   return (
     <div className={styles.root}>

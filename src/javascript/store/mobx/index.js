@@ -15,6 +15,4 @@ injectStores({
   filtersStore,
 });
 
-console.log("ss");
-
 export const LEVEL = 10;

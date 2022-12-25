@@ -73,8 +73,35 @@ function getByPath(path) {
   return data.find((item) => item.path === lastPathElement);
 }
 
+function getLabelsArray(locationPathname) {
+  return locationPathname === "/"
+    ? ["главная"]
+    : locationPathname
+        .split("/")
+        .map((item) => getRussianNameByPath(item) || item);
+}
+
+function getPathnamesArray(locationPathname) {
+  const pathNamesArray = [];
+  let previousPosition = -1;
+  let curentPosition = -1;
+
+  while (locationPathname.indexOf("/", curentPosition + 1) != -1) {
+    previousPosition = curentPosition + 1;
+    curentPosition = locationPathname.indexOf("/", curentPosition + 1);
+    pathNamesArray.push(locationPathname.slice(0, curentPosition));
+  }
+
+  pathNamesArray.push(locationPathname.slice(0));
+  pathNamesArray[0] = "/";
+
+  return pathNamesArray;
+}
+
 export const PAGES_DATA = {
   getByPath,
-  getRussianName: getRussianNameByPath,
+  getRussianNameByPath,
   getPathLength,
+  getPathnamesArray,
+  getLabelsArray,
 };
