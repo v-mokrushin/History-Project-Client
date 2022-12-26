@@ -10,6 +10,8 @@ import {
 } from "../../../javascript/utils/scroll";
 import Flag from "../Flag/Flag";
 
+
+
 export default function PreviewWeaponCard({ weapon, showFlag = false }) {
   return (
     <NavLink

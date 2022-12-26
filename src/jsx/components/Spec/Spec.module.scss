@@ -1,8 +1,5 @@
 @import "/src/assets/css/common.scss";
 
-.root {
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -159,7 +156,12 @@
   font-size: 15px;
   background: transparent;
   border: none;
-  transition: background 200ms ease;
+  transition: opacity 200ms ease;
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
 
   @include media-breakpoint-down(sm) {
     display: none;
@@ -170,31 +172,27 @@
 .buttonScrollLeft {
   @extend %buttonScroll;
   left: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(36, 34, 34, 0.15) 100%
+  );
 
   &_active {
     z-index: 3;
-    &:hover {
-      background: linear-gradient(
-        to left,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(36, 34, 34, 0.15) 100%
-      );
-    }
   }
 }
 
 .buttonScrollRight {
   @extend %buttonScroll;
   right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(36, 34, 34, 0.15) 100%
+  );
 
   &_active {
     z-index: 3;
-    &:hover {
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(36, 34, 34, 0.15) 100%
-      );
-    }
   }
 }

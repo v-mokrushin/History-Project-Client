@@ -111,19 +111,17 @@ export const NATIONS = {
   finland,
 };
 
+// -------------------------------------------------------------------------
+
 export const NATIONS_METHODS = {
-  getObjectByPath,
-  getNationsAsArray,
-};
-
-function getObjectByPath(path) {
-  for (let val in NATIONS) {
-    if (NATIONS[val].path === path) {
-      return NATIONS[val];
+  getObjectByPath(path) {
+    for (let val in NATIONS) {
+      if (NATIONS[val].path === path) {
+        return NATIONS[val];
+      }
     }
-  }
-}
-
-function getNationsAsArray() {
-  return Object.values(NATIONS);
-}
+  },
+  getNationsAsArray() {
+    return Object.values(NATIONS);
+  },
+};

@@ -4,7 +4,7 @@ import React from "react";
 import burgerStore from "../../../javascript/store/mobx/burger";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
-import styles from "./Burger.module.scss";
+import styles from "./Burger.module.sass";
 
 const Burger = observer(() => {
   return (
