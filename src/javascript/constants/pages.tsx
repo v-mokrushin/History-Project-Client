@@ -60,20 +60,20 @@ const data = [
   ...NATIONS_METHODS.getNationsAsArray(),
 ];
 
-function getRussianNameByPath(path) {
+function getRussianNameByPath(path: string): string | undefined {
   return data.find((item) => item.path === path)?.name.russian;
 }
 
-function getPathLength(path) {
+function getPathLength(path: string): number {
   return path.split("/").length;
 }
 
-function getByPath(path) {
+function getByPath(path: string): object | undefined {
   const lastPathElement = path.split("/").at(-1);
   return data.find((item) => item.path === lastPathElement);
 }
 
-function getLabelsArray(locationPathname) {
+function getLabelsArray(locationPathname: string): string[] {
   return locationPathname === "/"
     ? ["главная"]
     : locationPathname
@@ -81,10 +81,10 @@ function getLabelsArray(locationPathname) {
         .map((item) => getRussianNameByPath(item) || item);
 }
 
-function getPathnamesArray(locationPathname) {
+function getPathnamesArray(locationPathname: string): string[] {
   const pathNamesArray = [];
-  let previousPosition = -1;
-  let curentPosition = -1;
+  let previousPosition: number = -1;
+  let curentPosition: number = -1;
 
   while (locationPathname.indexOf("/", curentPosition + 1) != -1) {
     previousPosition = curentPosition + 1;

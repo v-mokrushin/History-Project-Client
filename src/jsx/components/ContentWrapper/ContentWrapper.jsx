@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import Beadcrumbs from "../Beadcrumbs/Beadcrumbs.tsx";
+import Beadcrumbs from "../Beadcrumbs/Beadcrumbs";
 import styles from "./ContentWrapper.module.scss";
 import Container from "../Container/Container";
 import { ANIMATIONS } from "../../../javascript/constants/animation";

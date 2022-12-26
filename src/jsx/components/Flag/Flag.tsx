@@ -6,7 +6,17 @@ import { scrollTopInstantly } from "../../../javascript/utils/scroll";
 import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
 import Paragraph from "../Paragraph/Paragraph";
 
-export default function Flag({ nation, isNavLink = true, minimized = false }) {
+interface IFlagProps {
+  nation: any;
+  isNavLink?: boolean;
+  minimized?: boolean;
+}
+
+export default function Flag({
+  nation,
+  isNavLink = true,
+  minimized = false,
+}: IFlagProps) {
   function getContent() {
     return (
       <>

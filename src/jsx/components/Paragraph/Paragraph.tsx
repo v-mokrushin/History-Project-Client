@@ -2,7 +2,17 @@ import classNames from "classnames";
 import React from "react";
 import styles from "./Paragraph.module.scss";
 
-export default function Paragraph({ noMargin = false, className, children }) {
+interface IParagraphProps {
+  noMargin?: boolean;
+  className?: string;
+  children: JSX.Element;
+}
+
+export default function Paragraph({
+  noMargin = false,
+  className,
+  children,
+}: IParagraphProps) {
   return (
     <p
       className={classNames(

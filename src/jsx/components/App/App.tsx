@@ -24,8 +24,6 @@ function App() {
     });
   }, []);
 
-  console.log(LEVEL);
-
   return (
     <Provider store={store}>
       <BrowserRouter>

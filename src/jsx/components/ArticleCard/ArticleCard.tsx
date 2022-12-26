@@ -11,7 +11,11 @@ import {
   scrollToTop,
 } from "../../../javascript/utils/scroll";
 
-export default function ArticleCard({ articleId }) {
+interface IArticleCardProps {
+  articleId: string;
+}
+
+export default function ArticleCard({ articleId }: IArticleCardProps) {
   const article = useSelector((state) =>
     selectArticlePreviewById(state, { articleId })
   );

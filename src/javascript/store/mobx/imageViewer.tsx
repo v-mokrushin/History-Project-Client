@@ -1,20 +1,24 @@
 import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 
 export class ImageViewerStore {
+  public url: string | null;
+  public open: boolean;
+
   constructor() {
-    this.url = "";
+    this.url = null;
     this.open = false;
 
     makeAutoObservable(this);
   }
 
-  setOpen(url) {
+  setOpen(url: string): void {
     this.url = url;
     this.open = true;
   }
 
-  setClose() {
+  setClose(): void {
     this.open = false;
+    this.url = null;
   }
 }
 

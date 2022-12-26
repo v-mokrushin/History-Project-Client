@@ -4,7 +4,6 @@ import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
 import styles from "./Test.module.scss";
-import YTFrame from "../../components/YTFrame/YTFrame";
 import Image from "../../components/Image/Image";
 import HightlitingText from "../../components/HightlitingText/HightlitingText";
 
