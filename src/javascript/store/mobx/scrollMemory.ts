@@ -1,6 +1,9 @@
 import { action, makeObservable, observable } from "mobx";
 
 export class ScrollMemoryStore {
+  public value: number;
+  public shouldRemember: boolean;
+
   constructor() {
     this.value = 0;
     this.shouldRemember = false;
@@ -12,15 +15,15 @@ export class ScrollMemoryStore {
     });
   }
 
-  setValue(val) {
+  setValue(val: number): void {
     if (this.shouldRemember) this.value = val;
   }
 
-  activate() {
+  activate(): void {
     window.scrollTo(0, this.value);
   }
 
-  cencel() {
+  cencel(): void {
     this.value = 0;
   }
 }

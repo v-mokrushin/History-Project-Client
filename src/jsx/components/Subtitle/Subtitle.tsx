@@ -5,7 +5,7 @@ import styles from "./Subtitle.module.scss";
 interface ISubtitleProps {
   noMargin?: boolean;
   id?: string;
-  children: JSX.Element;
+  children: JSX.Element | string;
 }
 
 export default function Subtitle({ children, id, noMargin }: ISubtitleProps) {

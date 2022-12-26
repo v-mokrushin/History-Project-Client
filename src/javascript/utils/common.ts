@@ -1,12 +1,12 @@
-function getURLForBackroundImage(url) {
+function getURLForBackroundImage(url: string): string {
   return `url(${url})`;
 }
 
-export function getBackgroundImageStyleObject(url) {
+export function getBackgroundImageStyleObject(url: string): object {
   return { backgroundImage: getURLForBackroundImage(url) };
 }
 
-export function createParagraphs(text) {
+export function createParagraphs(text: string): string[] {
   let prevPos = -1;
   let pos = -1;
   const p = [];
@@ -20,7 +20,7 @@ export function createParagraphs(text) {
   return p;
 }
 
-export function shuffleTracks(array) {
+export function shuffleTracks(array: string[]): string[] {
   let currentIndex = array.length,
     randomIndex;
 

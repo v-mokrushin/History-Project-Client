@@ -5,7 +5,7 @@ import styles from "./Paragraph.module.scss";
 interface IParagraphProps {
   noMargin?: boolean;
   className?: string;
-  children: JSX.Element;
+  children: JSX.Element | string;
 }
 
 export default function Paragraph({

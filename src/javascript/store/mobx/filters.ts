@@ -2,6 +2,8 @@ import { action, makeObservable, observable, toJS } from "mobx";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 
 export class FiltersStore {
+  public filters: object;
+
   constructor() {
     this.filters = {};
 
@@ -12,19 +14,19 @@ export class FiltersStore {
     });
   }
 
-  getFilters() {
+  getFilters(): object {
     return toJS(this.filters);
   }
 
-  setFilter(object) {
-    this.filters = object;
+  setFilter(filters: object): void {
+    this.filters = filters;
   }
 
-  cancelFilters() {
+  cancelFilters(): void {
     this.filters = {};
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return Object.keys(this.filters).length === 0;
   }
 }

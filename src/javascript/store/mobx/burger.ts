@@ -1,6 +1,8 @@
 import { action, makeObservable, observable } from "mobx";
 
 export class BurgerStore {
+  public open: boolean;
+
   constructor() {
     this.open = false;
 
@@ -12,19 +14,19 @@ export class BurgerStore {
     });
   }
 
-  toggleOpen() {
+  toggleOpen(): void {
     this.open = !this.open;
     this.open
       ? (document.body.style.overflow = "auto")
       : (document.body.style.overflow = "hidden");
   }
 
-  setOpen() {
+  setOpen(): void {
     this.open = true;
     document.body.style.overflow = "hidden";
   }
 
-  setClose() {
+  setClose(): void {
     this.open = false;
     document.body.style.overflow = "auto";
   }

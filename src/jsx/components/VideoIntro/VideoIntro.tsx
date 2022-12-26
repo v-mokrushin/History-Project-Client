@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./VideoIntro.module.scss";
+// @ts-ignore
 import video from "../../../assets/videos/intro.mp4";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../javascript/constants/animation";

@@ -1,19 +1,19 @@
+const logo = "HoF";
+
 export const documentTitle = {
-  setHomePage() {
+  setHomePage(): void {
     document.title = `${logo} | Энциклопедия ВМВ`;
   },
-  setArticlesPage() {
+  setArticlesPage(): void {
     document.title = `${logo} | Статьи`;
   },
-  setWeaponsPage() {
+  setWeaponsPage(): void {
     document.title = `${logo} | Вооружения`;
   },
-  setWarningPage() {
+  setWarningPage(): void {
     document.title = `${logo}`;
   },
-  addRoute(route) {
+  addRoute(route: string): void {
     document.title += ` | ${route}`;
   },
 };
-
-const logo = "HoF";

@@ -5,7 +5,6 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
 import styles from "./Test.module.scss";
 import Image from "../../components/Image/Image";
-import HightlitingText from "../../components/HightlitingText/HightlitingText";
 
 const images = {
   kotin: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/котин.jpg",
@@ -47,7 +46,6 @@ export default function Yak_3() {
           М-107А». Итак, очередной истребитель получил путевку в жизнь, а заодно
           и новое имя - Як-3.
         </Paragraph>
-        <Paragraph></Paragraph>
       </TextBlock>
       <TextBlock>
         <Subtitle id="Боевое применение">Боевое применение</Subtitle>
@@ -105,14 +103,6 @@ export default function Yak_3() {
           были переданы СФРЮ, где эксплуатировались до конца 1946 г. Бывшие
           югославские самолеты получила Албания.
         </Paragraph>
-        <Paragraph></Paragraph>
-        <Paragraph></Paragraph>
-        <Paragraph></Paragraph>
-        <Paragraph></Paragraph>
-        {/* <Image
-          URL={images.tiger}
-          title="Маршалы Советского Союза Г. К. Жуков и К. Е. Ворошилов в парке им. Горького, осматривают трофейный танк «Тигр»"
-        /> */}
       </TextBlock>
     </TextBlock>
   );

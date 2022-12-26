@@ -4,7 +4,19 @@ import classNames from "classnames";
 import Text from "../Text/Text";
 import imageViewerStore from "../../../javascript/store/mobx/imageViewer";
 
-export default function Image({ title, URL, fullWidth = false, className }) {
+interface IImageProps {
+  title?: any;
+  URL: string;
+  fullWidth?: boolean;
+  className?: string;
+}
+
+export default function Image({
+  title,
+  URL,
+  fullWidth = false,
+  className,
+}: IImageProps) {
   return (
     <div
       className={classNames(

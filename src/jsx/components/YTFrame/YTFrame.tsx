@@ -2,7 +2,13 @@ import React from "react";
 import styles from "./YTFrame.module.scss";
 import classNames from "classnames";
 
-export default function YTFrame({ className, links, id }) {
+interface IYTFrameProps {
+  className?: string;
+  links: string[];
+  id: string;
+}
+
+export default function YTFrame({ className, links, id }: IYTFrameProps) {
   return (
     <div className={styles.frameBox}>
       {links?.map((item, index) => (

@@ -1,21 +1,16 @@
-import { action, makeObservable, observable } from "mobx";
+import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 import { NAVIGATION_ACTUAL_SECTION } from "../../../jsx/components/Navigation/constants";
 
 export class ActualSectionStore {
+  private actualSection: string | null;
+
   constructor() {
     this.actualSection = null;
 
-    makeObservable(this, {
-      actualSection: observable,
-      set: action,
-      isHome: action,
-      isWeapons: action,
-      isArticles: action,
-      isBattles: action,
-    });
+    makeAutoObservable(this);
   }
 
-  set(path) {
+  set(path: string): void {
     if (path == "/") this.actualSection = NAVIGATION_ACTUAL_SECTION.home;
     if (path == "/weapons")
       this.actualSection = NAVIGATION_ACTUAL_SECTION.weapons;
@@ -25,19 +20,19 @@ export class ActualSectionStore {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.battles;
   }
 
-  isHome() {
+  isHome(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.home;
   }
 
-  isWeapons() {
+  isWeapons(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.weapons;
   }
 
-  isArticles() {
+  isArticles(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.articles;
   }
 
-  isBattles() {
+  isBattles(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.battles;
   }
 }

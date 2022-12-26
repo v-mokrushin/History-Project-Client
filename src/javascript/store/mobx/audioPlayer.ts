@@ -1,7 +1,13 @@
-import { action, makeObservable, observable, toJS } from "mobx";
+import {
+  action,
+  makeObservable,
+  observable,
+  toJS,
+  makeAutoObservable,
+} from "mobx";
 import { shuffleTracks } from "../../utils/common";
 
-let trackList = [
+let trackList: string[] = [
   "/audio/de-wolfe-intro.mp3",
   "/audio/liberation.mp3",
   "/audio/apocalypse.mp3",
@@ -18,45 +24,40 @@ let trackList = [
 shuffleTracks(trackList);
 
 export class AudioPlayerStore {
+  public status: boolean;
+  public currentTrack: string;
+  private currentTrackNumber: number;
+  private trackList: string[];
+
   constructor() {
     this.status = false;
     this.currentTrack = trackList[0];
     this.currentTrackNumber = 0;
     this.trackList = trackList;
 
-    makeObservable(this, {
-      status: observable,
-      currentTrack: observable,
-      currentTrackNumber: observable,
-      trackList: observable,
-      play: action,
-      stop: action,
-      toggle: action,
-      next: action,
-      previous: action,
-    });
+    makeAutoObservable(this);
   }
 
-  play() {
+  play(): void {
     this.status = true;
   }
 
-  stop() {
+  stop(): void {
     this.status = false;
   }
 
-  toggle() {
+  toggle(): void {
     this.status = !this.status;
   }
 
-  next() {
+  next(): void {
     if (this.currentTrackNumber === this.trackList.length - 1)
       this.currentTrackNumber = 0;
     else this.currentTrackNumber++;
     this.currentTrack = this.trackList[this.currentTrackNumber];
   }
 
-  previous() {
+  previous(): void {
     if (this.currentTrackNumber === 0)
       this.currentTrackNumber = this.trackList.length - 1;
     else this.currentTrackNumber--;

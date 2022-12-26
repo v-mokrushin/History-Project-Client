@@ -5,7 +5,6 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
 import styles from "./Test.module.scss";
 import Image from "../../components/Image/Image";
-import HightlitingText from "../../components/HightlitingText/HightlitingText";
 
 const images = {
   kotin: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/котин.jpg",
@@ -15,8 +14,6 @@ const images = {
     "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/scheme_of_armour.jpg",
   road: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/road.jpg",
   praha: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/praha.jpg",
-  road: "/images/weapons/armored-vehicles/soviet-union/ИС-2/article/road.jpg",
-  // road: "/images/weapons/armored/soviet-union/ИС-2/article/road.jpg",
 };
 
 export default function IS_2() {

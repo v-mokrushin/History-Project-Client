@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";
 
 export default function Header() {
-  const path = useLocation().pathname;
+  const path: string = useLocation().pathname;
 
   return (
     <header

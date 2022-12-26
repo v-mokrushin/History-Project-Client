@@ -6,6 +6,4 @@ export const ANIMATIONS = {
   fadeInLeft: "animate__animated " + "animate__fadeInLeft",
   zoomIn: "animate__animated " + "animate__zoomIn",
   bounceIn: "animate__animated " + "animate__bounceIn",
-  fadeInDown: "animate__animated " + "animate__fadeInDown",
-  fadeInDown: "animate__animated " + "animate__fadeInDown",
 };
