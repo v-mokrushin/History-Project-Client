@@ -2,22 +2,15 @@ import React from "react";
 import styles from "./DesktopContentList.module.scss";
 import classNames from "classnames";
 
-export default function DesktopContentList({ list, className }) {
-  React.useEffect(() => {
-    setTimeout(() => {
-      // console.log(
-      //   Math.max(
-      //     document.body.scrollHeight,
-      //     document.documentElement.scrollHeight,
-      //     document.body.offsetHeight,
-      //     document.documentElement.offsetHeight,
-      //     document.body.clientHeight,
-      //     document.documentElement.clientHeight
-      //   )
-      // );
-    }, 1);
-  }, []);
+interface IDesktopContentListProps {
+  list: string[];
+  className?: string;
+}
 
+export default function DesktopContentList({
+  list,
+  className,
+}: IDesktopContentListProps) {
   return (
     list && (
       <div className={classNames(styles.root, className)}>
@@ -32,8 +25,8 @@ export default function DesktopContentList({ list, className }) {
               onClick={(e) => {
                 e.preventDefault();
                 document
-                  .getElementById(item)
-                  .scrollIntoView({ behavior: "smooth" });
+                  ?.getElementById(item)
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               {item}

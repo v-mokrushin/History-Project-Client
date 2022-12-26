@@ -6,14 +6,19 @@ import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
 import filtersStore from "../../../javascript/store/mobx/filters";
 import { observer } from "mobx-react";
 
-const Filter = observer(({ className, weaponBranch }) => {
+interface IFilterProps {
+  className?: string;
+  weaponBranch: object;
+}
+
+const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
   const [open, setOpen] = React.useState(false);
   const weaponTypes = React.useMemo(
     () => WEAPONS_TYPE.getTypesArrayWithAll(weaponBranch),
     [weaponBranch]
   );
 
-  document.onclick = React.useCallback((event) => {
+  document.onclick = React.useCallback((event: any) => {
     if (!event.target.closest("#filter")) {
       setOpen(false);
     }

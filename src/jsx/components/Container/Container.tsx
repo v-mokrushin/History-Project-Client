@@ -3,11 +3,17 @@ import React from "react";
 import { CONTAINER_TYPES } from "./constants";
 import styles from "./Container.module.scss";
 
+interface IContainerProps {
+  type?: string;
+  className?: string;
+  children: JSX.Element | JSX.Element[];
+}
+
 export default function Container({
   type = CONTAINER_TYPES.default,
   className,
   children,
-}) {
+}: IContainerProps) {
   return (
     <div
       className={classNames({

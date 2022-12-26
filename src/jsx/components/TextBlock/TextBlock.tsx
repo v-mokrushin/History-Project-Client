@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TextBlock.module.scss";
+import styles from "./TextBlock.module.sass";
 
 interface ITextBlockProps {
   children: JSX.Element[] | JSX.Element | string;

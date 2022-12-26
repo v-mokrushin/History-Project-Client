@@ -5,7 +5,7 @@ import styles from "./Text.module.scss";
 interface ITextProps {
   bold?: boolean;
   className?: string;
-  children: JSX.Element;
+  children: JSX.Element | string;
 }
 
 export default function Text({

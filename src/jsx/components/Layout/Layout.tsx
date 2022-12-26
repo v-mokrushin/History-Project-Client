@@ -6,7 +6,11 @@ import ImageViewer from "../ImageViewer/ImageViewer";
 import UpButton from "../UpButton/UpButton";
 import styles from "./Layout.module.scss";
 
-export default function Layout({ children }) {
+interface ILayoutProps {
+  children: JSX.Element | JSX.Element[];
+}
+
+export default function Layout({ children }: ILayoutProps) {
   return (
     <div className={styles.root}>
       <UpButton />

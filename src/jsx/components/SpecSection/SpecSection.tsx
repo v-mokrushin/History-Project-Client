@@ -2,7 +2,17 @@ import React from "react";
 import styles from "./SpecSection.module.scss";
 import classNames from "classnames";
 
-export default function SpecSection({ title, className, children }) {
+interface ISpecSectionProps {
+  title: string;
+  className: string;
+  children: React.ReactNode;
+}
+
+export default function SpecSection({
+  title,
+  className,
+  children,
+}: ISpecSectionProps) {
   return (
     <div className={classNames(styles.root, className)}>
       <p className={styles.title}>{title}</p>

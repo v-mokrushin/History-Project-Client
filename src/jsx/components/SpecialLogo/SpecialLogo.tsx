@@ -4,12 +4,19 @@ import { ANIMATIONS } from "../../../javascript/constants/animation";
 import { SPECIAL_LOGO_TYPE } from "./constants";
 import styles from "./SpecialLogo.module.scss";
 
+interface ISpecialLogoProps {
+  centered50vh?: boolean;
+  centered75vh?: boolean;
+  className?: string;
+  type: string;
+}
+
 export default function SpecialLogo({
   centered50vh = false,
   centered75vh = false,
   className,
   type,
-}) {
+}: ISpecialLogoProps) {
   function getIconStyle() {
     if (type == SPECIAL_LOGO_TYPE.loading) {
       return styles.animatedIcon_typeLoading;
@@ -32,7 +39,6 @@ export default function SpecialLogo({
     <div
       className={classNames(
         styles.wrapper,
-        // ANIMATIONS.fadeInDown,
         className,
         centered50vh && styles.сentered_50vh,
         centered75vh && styles.сentered_75vh

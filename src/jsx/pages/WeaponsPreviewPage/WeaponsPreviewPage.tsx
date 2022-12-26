@@ -1,6 +1,5 @@
-import classNames from "classnames";
 import React from "react";
-import { useDispatch } from "react-redux";
+import classNames from "classnames";
 import { useParams } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
@@ -12,7 +11,10 @@ import {
   NATIONS_METHODS,
 } from "../../../javascript/constants/nations";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
-import { WEAPONS_DATA } from "../../../javascript/data/weapons";
+import {
+  WEAPONS_DATA,
+  WEAPONS_DATA_METHODS,
+} from "../../../javascript/data/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
@@ -21,43 +23,27 @@ import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
 import filtersStore from "../../../javascript/store/mobx/filters";
 
 const WeaponsPreviewPage = observer(() => {
-  const dispatch = useDispatch();
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject = WEAPONS_TYPE.getObjectByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
-  const selectedWeapons = React.useMemo(selectWeapons, []);
+  const selectedWeapons = React.useMemo(
+    () => WEAPONS_DATA_METHODS.selectWeapons(weaponsBranchPath, nationPath),
+    []
+  );
   const filteredWeapons = React.useMemo(
-    () => filterWeapons(),
+    () =>
+      WEAPONS_DATA_METHODS.filterWeapons(
+        selectedWeapons,
+        filtersStore.isEmpty(),
+        filtersStore.getFilters()
+      ),
     [filtersStore.filters]
   );
-  const uniqueDates = React.useMemo(getUniqueDates, [filteredWeapons]);
-
-  function selectWeapons() {
-    return WEAPONS_DATA.filter(
-      (item) => item.type.branch.path === weaponsBranchPath
-    ).filter(
-      (item) =>
-        nationPath === NATIONS.world.path || item.nation.path === nationPath
-    );
-  }
-
-  function filterWeapons() {
-    if (filtersStore.isEmpty()) {
-      return selectedWeapons;
-    } else {
-      return selectedWeapons.filter(
-        (item) =>
-          item.type.name.russian === filtersStore.getFilters().type.name.russian
-      );
-    }
-  }
-
-  function getUniqueDates() {
-    let dates = filteredWeapons.map((item) => item.adoptedIntoServiceDate);
-    dates = Array.from(new Set(dates)).sort((a, b) => b - a);
-    return dates;
-  }
+  const uniqueDates = React.useMemo(
+    () => WEAPONS_DATA_METHODS.getUniqueDates(filteredWeapons),
+    [filteredWeapons]
+  );
 
   React.useEffect(() => {
     const scrollEvent = () => {

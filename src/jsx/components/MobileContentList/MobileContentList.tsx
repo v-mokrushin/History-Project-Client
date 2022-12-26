@@ -2,7 +2,15 @@ import React from "react";
 import styles from "./MobileContentList.module.scss";
 import classNames from "classnames";
 
-export default function MobileContentList({ list, className }) {
+interface IMobileContentListProps {
+  list: string[];
+  className?: string;
+}
+
+export default function MobileContentList({
+  list,
+  className,
+}: IMobileContentListProps) {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -33,8 +41,8 @@ export default function MobileContentList({ list, className }) {
               onClick={(e) => {
                 e.preventDefault();
                 document
-                  .getElementById(item)
-                  .scrollIntoView({ behavior: "smooth" });
+                  ?.getElementById(item)
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               {item}

@@ -3,7 +3,7 @@ import React from "react";
 import { ANIMATIONS } from "../../../javascript/constants/animation";
 import TimelineItem from "../TimelineItem/TimelineItem";
 import { TimelineContext } from "./context";
-import styles from "./Timeline.module.scss";
+import styles from "./Timeline.module.sass";
 
 export default function Timeline({
   contentCollection,
