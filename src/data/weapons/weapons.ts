@@ -96,4 +96,7 @@ export const WEAPONS_DATA_METHODS = {
       ),
     ];
   },
+  getById(weaponId: string) {
+    return WEAPONS_DATA.find((item) => item.id === weaponId);
+  },
 };

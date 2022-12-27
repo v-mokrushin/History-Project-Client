@@ -4,7 +4,11 @@ import { ANIMATIONS } from "../../constants/animation";
 import { WARNING_PAGE_TYPE } from "./constants";
 import styles from "./WarningPage.module.scss";
 
-export default function WarningPage({ pageType }) {
+interface IWarningPageProps {
+  pageType: string;
+}
+
+export default function WarningPage({ pageType }: IWarningPageProps) {
   React.useEffect(() => {
     // documentTitle.setWarningPage();
   }, []);

@@ -1,5 +1,10 @@
 import { IPageData } from "./pages";
 
+// interface INation {
+//   path: string;
+//   flagImage: string;
+// }
+
 const world = {
   name: {
     russian: "Весь мир",

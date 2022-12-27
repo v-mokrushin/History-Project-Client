@@ -1,7 +1,6 @@
 import React from "react";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Container from "../../components/Container/Container";
-import { useDispatch } from "react-redux";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import SectionCard from "../../components/SectionCard/SectionCard";
 import VideoIntro from "../../components/VideoIntro/VideoIntro";
@@ -9,11 +8,9 @@ import { documentTitle } from "../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
 
 export default function HomePage() {
-  const dispatch = useDispatch();
-
   React.useEffect(() => {
     documentTitle.setHomePage();
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

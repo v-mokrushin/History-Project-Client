@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
 import { ANIMATIONS } from "../../constants/animation";
-import { WEAPONS_DATA } from "../../data/weapons/weapons";
+import { WEAPONS_DATA, WEAPONS_DATA_METHODS } from "../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
 import SpecSection from "../../components/SpecSection/SpecSection";
@@ -24,8 +24,15 @@ import YTFrame from "../../components/YTFrame/YTFrame";
 import { WEAPONS_TYPE } from "../../constants/weapons";
 
 export default function WeaponDisplayPage() {
+  const navigate = useNavigate();
   const { weaponId } = useParams();
-  const weapon = WEAPONS_DATA.find((item) => item.id === weaponId);
+  const weapon = WEAPONS_DATA_METHODS.getById(weaponId);
+
+  useEffect(() => {
+    if (!weapon) {
+      navigate("*");
+    }
+  });
 
   function getSpecification() {
     if (weapon.specifications) {
@@ -647,29 +654,33 @@ export default function WeaponDisplayPage() {
 
   return (
     <div className={classNames(styles.root)}>
-      <ReadingProgressBar />
-      <IntroImage imageUrl={weapon.gallery.icon} />
-      <ContentWrapper className={ANIMATIONS.fadeIn}>
-        <Container type={CONTAINER_TYPES.aside}>
-          <div></div>
-          <Container>
-            <MobileContentList list={weapon.sections} />
-            <Title id="Введение">{weapon.name}</Title>
-            {getIntro()}
-            {weapon.specifications ? (
-              getSpecification()
-            ) : (
-              <SpecialLogo
-                type={SPECIAL_LOGO_TYPE.inDevelopment}
-                centered75vh
-              />
-            )}
-            {weapon.JSXComponent}
-            {getVideomaterials()}
-          </Container>
-          <DesktopContentList list={weapon.sections} />
-        </Container>
-      </ContentWrapper>
+      {weapon && (
+        <>
+          <ReadingProgressBar />
+          <IntroImage imageUrl={weapon.gallery.icon} />
+          <ContentWrapper className={ANIMATIONS.fadeIn}>
+            <Container type={CONTAINER_TYPES.aside}>
+              <div></div>
+              <Container>
+                <MobileContentList list={weapon.sections} />
+                <Title id="Введение">{weapon.name}</Title>
+                {getIntro()}
+                {weapon.specifications ? (
+                  getSpecification()
+                ) : (
+                  <SpecialLogo
+                    type={SPECIAL_LOGO_TYPE.inDevelopment}
+                    centered75vh
+                  />
+                )}
+                {weapon.JSXComponent}
+                {getVideomaterials()}
+              </Container>
+              <DesktopContentList list={weapon.sections} />
+            </Container>
+          </ContentWrapper>
+        </>
+      )}
     </div>
   );
 }
