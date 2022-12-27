@@ -1,0 +1,190 @@
+@import "/src/assets/css/common.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  user-select: none;
+  text-decoration: none;
+  margin: 0 auto;
+  width: max-content;
+  cursor: wait;
+
+  @include media-breakpoint-down(md) {
+    gap: 10px;
+  }
+}
+
+.сentered_50vh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.сentered_75vh {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bodyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+
+  @include media-breakpoint-down(md) {
+    gap: 5px;
+  }
+}
+
+.datesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  @include media-breakpoint-down(md) {
+    gap: 2px;
+  }
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: $primary-dark-text-color;
+  font-size: 30px;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+}
+
+.causeTitle {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: $primary-dark-text-color;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+.titleDates {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: $primary-gold-text-color;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xl) {
+    letter-spacing: 3px;
+    font-size: 11px;
+  }
+
+  @include media-breakpoint-down(md) {
+    letter-spacing: 2px;
+    font-size: 9px;
+  }
+}
+
+.decorated_letter {
+  color: $primary-gold-text-color;
+}
+
+.datesSeparator {
+  width: 18px;
+  height: 1px;
+  background-color: $primary-gold-text-color;
+
+  @include media-breakpoint-down(xl) {
+    width: 14px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 12px;
+  }
+}
+
+%animatedIcon {
+  width: 32px;
+  aspect-ratio: 1 / 1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-size: cover;
+
+  @include media-breakpoint-down(xl) {
+    width: 28px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 22px;
+  }
+}
+
+.animatedIcon {
+  &_left {
+    @extend %animatedIcon;
+    animation-name: rotation_leftSide;
+
+    @keyframes rotation_leftSide {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &_right {
+    @extend %animatedIcon;
+    animation-name: rotation_rightSide;
+
+    @keyframes rotation_rightSide {
+      0% {
+        transform: rotate(0deg) scale(-1, 1);
+      }
+      100% {
+        transform: rotate(-360deg) scale(-1, 1);
+      }
+    }
+  }
+
+  &_typeLoading {
+    background-image: url(../../assets/images/special-logo/loading.png);
+  }
+
+  &_typeDevelopment {
+    background-image: url(../../assets/images/special-logo/gear.png);
+  }
+}

@@ -1,0 +1,59 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  position: fixed;
+  width: max-content;
+  height: max-content;
+  right: 2%;
+  bottom: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url(../../assets/images/up-button/up-2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 65px;
+  aspect-ratio: 1 / 1;
+  z-index: 20;
+  cursor: pointer;
+  transform: translateY(200px);
+  transition: 300ms transform;
+
+  &:hover {
+    // transform: scale(1.05);
+    transform: translateY(5px);
+  }
+
+  @include media-breakpoint-down(FHD) {
+    height: 60px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    height: 50px;
+    bottom: 25px;
+    right: 25px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 45px;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+    bottom: 10px;
+    height: 70px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 60px;
+  }
+}
+
+.visible {
+  transform: translateY(0);
+}
