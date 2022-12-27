@@ -19,7 +19,7 @@ export default function WeaponsBranchSelectionPage() {
 
   return (
     <>
-      <IntroImage imageUrl={pageInfo.introImage} />
+      <IntroImage imageUrl={pageInfo?.introImage} />
       <ContentWrapper>
         <Container>
           <Title>Вооружения</Title>

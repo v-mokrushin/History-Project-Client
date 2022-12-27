@@ -1,5 +1,5 @@
 import { type } from "os";
-import { NATIONS } from "../constants/nations";
+import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./armored";
 import { ARTILLERY_DATA } from "./artillery";
 import { AVIATION_DATA } from "./aviation";
@@ -83,5 +83,17 @@ export const WEAPONS_DATA_METHODS = {
         (item) => item.type.name.russian === filters.type.name.russian
       );
     }
+  },
+  selectNation(weaponsBranchPath: string) {
+    return [
+      NATIONS.world,
+      ...Array.from(
+        new Set(
+          WEAPONS_DATA.filter(
+            (item) => item.type.branch.path === weaponsBranchPath
+          ).map((item) => item.nation)
+        )
+      ),
+    ];
   },
 };

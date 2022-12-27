@@ -9,33 +9,22 @@ import { PAGES_DATA } from "../../../javascript/constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
 import { NATIONS } from "../../../javascript/constants/nations";
-import { WEAPONS_DATA } from "../../../javascript/data/weapons";
+import {
+  WEAPONS_DATA,
+  WEAPONS_DATA_METHODS,
+} from "../../../javascript/data/weapons/weapons";
 import filtersStore from "../../../javascript/store/mobx/filters";
 import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
 
 export default function NationSelectionPage() {
-  const dispatch = useDispatch();
   const { weaponsBranchPath } = useParams();
   const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
-  const nations = selectNations();
-
-  function selectNations() {
-    return [
-      NATIONS.world,
-      ...Array.from(
-        new Set(
-          WEAPONS_DATA.filter(
-            (item) => item.type.branch.path === weaponsBranchPath
-          ).map((item) => item.nation)
-        )
-      ),
-    ];
-  }
+  const nations = WEAPONS_DATA_METHODS.selectNation(weaponsBranchPath);
 
   React.useEffect(() => {
     filtersStore.cancelFilters();
     scrollMemoryStore.cencel();
-  }, [dispatch, weaponsBranchPath]);
+  }, [weaponsBranchPath]);
 
   return (
     <>

@@ -7,7 +7,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
 import { ANIMATIONS } from "../../../javascript/constants/animation";
-import { WEAPONS_DATA } from "../../../javascript/data/weapons";
+import { WEAPONS_DATA } from "../../../javascript/data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
 import SpecSection from "../../components/SpecSection/SpecSection";
@@ -25,7 +25,6 @@ import YTFrame from "../../components/YTFrame/YTFrame";
 import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
 
 export default function WeaponDisplayPage() {
-  const dispatch = useDispatch();
   const { weaponId } = useParams();
   const weapon = WEAPONS_DATA.find((item) => item.id === weaponId);
 
