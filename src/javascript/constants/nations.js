@@ -1,3 +1,5 @@
+import { IPageData } from "./pages";
+
 const world = {
   name: {
     russian: "Весь мир",
@@ -115,10 +117,8 @@ export const NATIONS = {
 
 export const NATIONS_METHODS = {
   getObjectByPath(path) {
-    for (let val in NATIONS) {
-      if (NATIONS[val].path === path) {
-        return NATIONS[val];
-      }
+    for (let nation of Object.values(NATIONS)) {
+      if (nation.path === path) return nation;
     }
   },
   getNationsAsArray() {

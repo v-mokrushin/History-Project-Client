@@ -20,7 +20,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../../javascript/constants/pages";
 
 export default function ArticlesPage() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const articlesIds = useSelector(selectArticlePreviewsIds);
   const loadingStatus = useSelector(selectArticlePreviewsLoadingStatus);
   const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
@@ -40,7 +40,7 @@ export default function ArticlesPage() {
         <>
           <Title>Статьи</Title>
           <div className={styles.cardsWrapper}>
-            {articlesIds.map((val) => (
+            {articlesIds.map((val: string) => (
               <ArticleCard articleId={val} key={val} />
             ))}
           </div>
@@ -55,7 +55,7 @@ export default function ArticlesPage() {
 
   return (
     <>
-      <IntroImage imageUrl={pageInfo.introImage} />
+      <IntroImage imageUrl={pageInfo?.introImage} />
       <ContentWrapper>
         <Container>{getLayout()}</Container>
       </ContentWrapper>

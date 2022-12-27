@@ -1,9 +1,17 @@
 import { INTRO_IMAGE_TYPE } from "../../jsx/components/IntroImage/constants";
 import { NATIONS_METHODS } from "./nations";
 
+export interface IPageData {
+  path: string;
+  introImage: string;
+  name: any;
+  flagImage?: string;
+}
+
 const data = [
   {
     path: "",
+    introImage: "",
     name: {
       russian: "главная",
       english: "main",
@@ -68,7 +76,7 @@ function getPathLength(path: string): number {
   return path.split("/").length;
 }
 
-function getByPath(path: string): object | undefined {
+function getByPath(path: string): any | undefined {
   const lastPathElement = path.split("/").at(-1);
   return data.find((item) => item.path === lastPathElement);
 }

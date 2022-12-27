@@ -23,7 +23,7 @@ import Text from "../../components/Text/Text";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 
 export default function ArticlePage() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const { articleId } = useParams();
   const loadingStatus = useSelector(selectArticleContentLoadingStatus);
   const articlePreview = useSelector((state) =>
@@ -75,7 +75,7 @@ export default function ArticlePage() {
             )}
           </div>
           <div>
-            {articleContent.paragraphs.map((item, index) => (
+            {articleContent.paragraphs.map((item: string, index: number) => (
               <Paragraph key={articlePreview.id + "par" + index}>
                 {item}
               </Paragraph>

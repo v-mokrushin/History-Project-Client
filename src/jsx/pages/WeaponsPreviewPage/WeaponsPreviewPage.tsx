@@ -66,7 +66,7 @@ const WeaponsPreviewPage = observer(() => {
         <Container>
           <Title>
             {weaponsBranchObject.name.russian}{" "}
-            {nationObject.name.russianАccusative}
+            {nationObject?.name.russianАccusative}
           </Title>
           <Filter weaponBranch={weaponsBranchObject} />
           {filteredWeapons.length > 0 ? (

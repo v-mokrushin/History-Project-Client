@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ReadingProgressBar.module.scss";
 import classNames from "classnames";
 
-export default function ReadingProgressBar({ className }) {
+export default function ReadingProgressBar() {
   const bar = React.useRef(null);
   const [parent, setParent] = React.useState(null);
   const [scroll, setScroll] = React.useState(null);
@@ -33,7 +33,7 @@ export default function ReadingProgressBar({ className }) {
             100 +
           "%",
       }}
-      className={classNames(styles.root, className)}
+      className={classNames(styles.root)}
     ></div>
   );
 }

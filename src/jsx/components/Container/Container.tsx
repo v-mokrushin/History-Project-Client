@@ -6,7 +6,7 @@ import styles from "./Container.module.scss";
 interface IContainerProps {
   type?: string;
   className?: string;
-  children: JSX.Element | JSX.Element[];
+  children: any;
 }
 
 export default function Container({
