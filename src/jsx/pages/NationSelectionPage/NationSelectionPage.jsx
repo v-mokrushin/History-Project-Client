@@ -10,9 +10,9 @@ import Title from "../../components/Title/Title";
 import {
   WEAPONS_DATA,
   WEAPONS_DATA_METHODS,
-} from "../../../javascript/data/weapons/weapons";
-import filtersStore from "../../../javascript/store/mobx/filters";
-import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
+} from "../../../data/weapons/weapons";
+import filtersStore from "../../../stores/mobx/filters";
+import scrollMemoryStore from "../../../stores/mobx/scrollMemory";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();

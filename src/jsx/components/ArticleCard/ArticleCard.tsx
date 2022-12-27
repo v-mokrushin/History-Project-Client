@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./ArticleCard.module.scss";
 import { useSelector } from "react-redux";
-import { selectArticlePreviewById } from "../../../javascript/store/redux/articlePreviews/selectors";
+import { selectArticlePreviewById } from "../../../stores/redux/articlePreviews/selectors";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../constants/animation";
 import { getBackgroundImageStyleObject } from "../../../utils/common";

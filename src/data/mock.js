@@ -1,5 +1,5 @@
-import { createParagraphs } from "../../utils/common";
-import { normolize } from "../../utils/normolize";
+import { createParagraphs } from "../utils/common";
+import { normolize } from "../utils/normolize";
 
 let articles = [
   {

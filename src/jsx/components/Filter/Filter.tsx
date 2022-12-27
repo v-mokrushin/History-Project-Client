@@ -3,7 +3,7 @@ import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
-import filtersStore from "../../../javascript/store/mobx/filters";
+import filtersStore from "../../../stores/mobx/filters";
 import { observer } from "mobx-react";
 
 interface IFilterProps {

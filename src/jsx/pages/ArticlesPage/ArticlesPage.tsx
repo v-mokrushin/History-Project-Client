@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectArticlePreviewsIds,
   selectArticlePreviewsLoadingStatus,
-} from "../../../javascript/store/redux/articlePreviews/selectors";
-import { loadArticlePreviews } from "../../../javascript/store/redux/articlePreviews/loadingMiddleware";
-import { LOADING_STATUSES } from "../../../javascript/store/redux/constants";
+} from "../../../stores/redux/articlePreviews/selectors";
+import { loadArticlePreviews } from "../../../stores/redux/articlePreviews/loadingMiddleware";
+import { LOADING_STATUSES } from "../../../stores/redux/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";

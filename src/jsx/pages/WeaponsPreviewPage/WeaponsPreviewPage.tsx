@@ -14,13 +14,13 @@ import { WEAPONS_TYPE } from "../../../constants/weapons";
 import {
   WEAPONS_DATA,
   WEAPONS_DATA_METHODS,
-} from "../../../javascript/data/weapons/weapons";
+} from "../../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
 import { observer } from "mobx-react";
-import scrollMemoryStore from "../../../javascript/store/mobx/scrollMemory";
-import filtersStore from "../../../javascript/store/mobx/filters";
+import scrollMemoryStore from "../../../stores/mobx/scrollMemory";
+import filtersStore from "../../../stores/mobx/filters";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();

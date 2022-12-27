@@ -7,7 +7,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
 import { ANIMATIONS } from "../../../constants/animation";
-import { WEAPONS_DATA } from "../../../javascript/data/weapons/weapons";
+import { WEAPONS_DATA } from "../../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
 import SpecSection from "../../components/SpecSection/SpecSection";

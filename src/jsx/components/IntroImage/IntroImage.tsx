@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import imageViewerStore from "../../../javascript/store/mobx/imageViewer";
+import imageViewerStore from "../../../stores/mobx/imageViewer";
 import { getBackgroundImageStyleObject } from "../../../utils/common";
 import styles from "./IntroImage.module.scss";
 

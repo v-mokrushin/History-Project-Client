@@ -5,7 +5,7 @@ import ArticlesPage from "../../pages/ArticlesPage/ArticlesPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import { Provider } from "react-redux";
-import { store } from "../../../javascript/store/redux";
+import { store } from "../../../stores/redux";
 import WarningPage from "../../pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "../../pages/WarningPage/constants";
 import "../../../assets/css/main.scss";
@@ -15,7 +15,7 @@ import NationSelectionPage from "../../pages/NationSelectionPage/NationSelection
 import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
 import { observer } from "mobx-react";
-import { LEVEL } from "../../../javascript/store/mobx";
+import { LEVEL } from "../../../stores/mobx";
 
 function App() {
   React.useEffect(() => {

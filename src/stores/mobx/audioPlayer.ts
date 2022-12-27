@@ -5,7 +5,7 @@ import {
   toJS,
   makeAutoObservable,
 } from "mobx";
-import { shuffleTracks } from "../../../utils/common";
+import { shuffleTracks } from "../../utils/common";
 
 let trackList: string[] = [
   "/audio/de-wolfe-intro.mp3",

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Image.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import imageViewerStore from "../../../javascript/store/mobx/imageViewer";
+import imageViewerStore from "../../../stores/mobx/imageViewer";
 
 interface IImageProps {
   title?: any;

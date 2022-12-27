@@ -3,10 +3,10 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import styles from "./Navigation.module.scss";
-import audioPlayerStore from "../../../javascript/store/mobx/audioPlayer";
+import audioPlayerStore from "../../../stores/mobx/audioPlayer";
 import { observer } from "mobx-react";
-import actualSectionStore from "../../../javascript/store/mobx/actualSection";
-import burgerStore from "../../../javascript/store/mobx/burger";
+import actualSectionStore from "../../../stores/mobx/actualSection";
+import burgerStore from "../../../stores/mobx/burger";
 
 const Navigation = observer(({ isTypeBurger = false }) => {
   const actualSection = actualSectionStore.actualSection;

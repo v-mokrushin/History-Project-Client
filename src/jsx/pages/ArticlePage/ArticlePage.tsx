@@ -10,13 +10,13 @@ import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { ANIMATIONS } from "../../../constants/animation";
 import Title from "../../components/Title/Title";
-import { loadArticleContent } from "../../../javascript/store/redux/articleContent/loadingMiddleware";
+import { loadArticleContent } from "../../../stores/redux/articleContent/loadingMiddleware";
 import {
   selectArticleContentById,
   selectArticleContentLoadingStatus,
-} from "../../../javascript/store/redux/articleContent/selectors";
-import { selectArticlePreviewById } from "../../../javascript/store/redux/articlePreviews/selectors";
-import { LOADING_STATUSES } from "../../../javascript/store/redux/constants";
+} from "../../../stores/redux/articleContent/selectors";
+import { selectArticlePreviewById } from "../../../stores/redux/articlePreviews/selectors";
+import { LOADING_STATUSES } from "../../../stores/redux/constants";
 import styles from "./ArticlePage.module.scss";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
