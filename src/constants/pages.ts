@@ -1,4 +1,4 @@
-import { INTRO_IMAGE_TYPE } from "../../jsx/components/IntroImage/constants";
+import { INTRO_IMAGE_TYPE } from "../jsx/components/IntroImage/constants";
 import { NATIONS_METHODS } from "./nations";
 
 export interface IPageData {

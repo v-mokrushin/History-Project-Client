@@ -1,6 +1,6 @@
 import { IWeapon } from "./weapons";
-import { WEAPONS_TYPE } from "../../constants/weapons";
-import { NATIONS } from "../../constants/nations";
+import { WEAPONS_TYPE } from "../../../constants/weapons";
+import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../jsx/fragments/weapons/IS-2";
 
 let USSR: IWeapon[] = [

@@ -3,12 +3,10 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import styles from "./NationSelectionPage.module.scss";
-import { useDispatch } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "../../../javascript/constants/pages";
+import { PAGES_DATA } from "../../../constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
-import { NATIONS } from "../../../javascript/constants/nations";
 import {
   WEAPONS_DATA,
   WEAPONS_DATA_METHODS,

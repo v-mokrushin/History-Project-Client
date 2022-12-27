@@ -9,8 +9,8 @@ import Title from "../../components/Title/Title";
 import {
   NATIONS,
   NATIONS_METHODS,
-} from "../../../javascript/constants/nations";
-import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
+} from "../../../constants/nations";
+import { WEAPONS_TYPE } from "../../../constants/weapons";
 import {
   WEAPONS_DATA,
   WEAPONS_DATA_METHODS,

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import burgerStore from "../../../javascript/store/mobx/burger";
-import { scrollToTop } from "../../../javascript/utils/scroll";
+import { scrollToTop } from "../../../utils/scroll";
 import styles from "./Logo.module.scss";
 
 interface ILogoProps {

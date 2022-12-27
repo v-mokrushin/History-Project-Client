@@ -1,5 +1,5 @@
 import { action, makeObservable, observable, toJS } from "mobx";
-import { WEAPONS_TYPE } from "../../constants/weapons";
+import { WEAPONS_TYPE } from "../../../constants/weapons";
 
 export class FiltersStore {
   public filters: any;

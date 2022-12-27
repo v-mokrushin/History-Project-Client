@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Beadcrumbs from "../Beadcrumbs/Beadcrumbs";
 import styles from "./ContentWrapper.module.sass";
 import Container from "../Container/Container";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 
 interface IContentWrapperProps {
   className?: string;

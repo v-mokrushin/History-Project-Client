@@ -2,11 +2,11 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 import BurgerIcon from "../Burger/BurgerIcon";
 import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";
-import { PAGES_DATA } from "../../../javascript/constants/pages";
+import { PAGES_DATA } from "../../../constants/pages";
 
 export default function Header() {
   const path: string = useLocation().pathname;

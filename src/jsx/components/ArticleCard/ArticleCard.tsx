@@ -4,12 +4,12 @@ import styles from "./ArticleCard.module.scss";
 import { useSelector } from "react-redux";
 import { selectArticlePreviewById } from "../../../javascript/store/redux/articlePreviews/selectors";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
-import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
+import { ANIMATIONS } from "../../../constants/animation";
+import { getBackgroundImageStyleObject } from "../../../utils/common";
 import {
   scrollTopInstantly,
   scrollToTop,
-} from "../../../javascript/utils/scroll";
+} from "../../../utils/scroll";
 
 interface IArticleCardProps {
   articleId: string;

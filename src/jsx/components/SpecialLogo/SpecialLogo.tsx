@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 import { SPECIAL_LOGO_TYPE } from "./constants";
 import styles from "./SpecialLogo.module.scss";
 

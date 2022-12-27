@@ -12,12 +12,12 @@ import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
+import { documentTitle } from "../../../utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "../../../javascript/constants/pages";
+import { PAGES_DATA } from "../../../constants/pages";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch<any>();

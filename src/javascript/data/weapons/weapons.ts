@@ -1,5 +1,5 @@
 import { type } from "os";
-import { NATIONS } from "../../constants/nations";
+import { NATIONS } from "../../../constants/nations";
 import { ARMORED_VEHICLES } from "./armored";
 import { ARTILLERY_DATA } from "./artillery";
 import { AVIATION_DATA } from "./aviation";

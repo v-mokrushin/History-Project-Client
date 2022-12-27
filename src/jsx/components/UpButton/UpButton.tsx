@@ -1,5 +1,5 @@
 import React from "react";
-import { scrollToTop } from "../../../javascript/utils/scroll";
+import { scrollToTop } from "../../../utils/scroll";
 import styles from "./UpButton.module.scss";
 import classNames from "classnames";
 

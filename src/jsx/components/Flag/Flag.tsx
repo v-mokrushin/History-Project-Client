@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Flag.module.scss";
 import classNames from "classnames";
-import { scrollTopInstantly } from "../../../javascript/utils/scroll";
-import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
+import { scrollTopInstantly } from "../../../utils/scroll";
+import { getBackgroundImageStyleObject } from "../../../utils/common";
 import Paragraph from "../Paragraph/Paragraph";
 
 interface IFlagProps {

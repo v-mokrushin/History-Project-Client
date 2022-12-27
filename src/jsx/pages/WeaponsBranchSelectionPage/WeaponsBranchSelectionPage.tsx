@@ -5,10 +5,10 @@ import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import styles from "./WeaponsBranchSelectionPage.module.scss";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
-import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
+import { documentTitle } from "../../../utils/updateDocumentTitle";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "../../../javascript/constants/pages";
+import { PAGES_DATA } from "../../../constants/pages";
 
 export default function WeaponsBranchSelectionPage() {
   const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);

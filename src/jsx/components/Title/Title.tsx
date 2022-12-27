@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 import styles from "./Title.module.scss";
 
 interface ITitleProps {
