@@ -1,7 +1,8 @@
+import { IWeapon } from "./weapons";
 import { WEAPONS_TYPE } from "../constants/weapons";
 import { NATIONS } from "../constants/nations";
 
-let USSR = [
+let USSR: IWeapon[] = [
   {
     name: "203-мм гаубица Б-4",
     type: WEAPONS_TYPE.artillery.specialPower,
@@ -53,7 +54,7 @@ let USSR = [
 ];
 USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany = [
+let germany: IWeapon[] = [
   {
     name: "7,5 cm Pak. 40",
     type: WEAPONS_TYPE.artillery.antitank,
@@ -63,7 +64,7 @@ let germany = [
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let britain = [
+let britain: IWeapon[] = [
   {
     name: "QF 17 pounder",
     type: WEAPONS_TYPE.artillery.antitank,

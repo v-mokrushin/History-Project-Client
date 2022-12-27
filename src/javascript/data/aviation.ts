@@ -1,8 +1,9 @@
+import { IWeapon } from "./weapons";
 import { WEAPONS_TYPE } from "../constants/weapons";
 import { NATIONS } from "../constants/nations";
 import Yak_3 from "../../jsx/fragments/weapons/Yak-3";
 
-let ussr = [
+let ussr: IWeapon[] = [
   {
     name: "Ла-5ФН",
     type: WEAPONS_TYPE.aviation.fighter,
@@ -12,6 +13,7 @@ let ussr = [
   {
     name: "Ла-5Ф",
     type: WEAPONS_TYPE.aviation.fighter,
+    adoptedIntoServiceDate: 1942,
     icon: "icon.jpg",
   },
   {
@@ -25,14 +27,13 @@ let ussr = [
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1942,
     icon: "icon-2.jpg",
-    intro: "",
   },
   {
     name: "Як-3",
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     icon: "icon.jpg",
-    JSXComponent: <Yak_3 />,
+    JSXComponent: Yak_3(),
     intro: [
       "Истребитель Як-3 вошел в историю советской авиации как самый скоростной серийный поршневой самолет. Созданная в авральных условиях машина оказалась не только пригодной к серийному производству, но и получила всеобщее признание как один из лучших истребителей Великой Отечественной войны.",
       "Популярность Як-3 оказалась столь огромной, что в начале 90-х годов КБ Яковлева выпустило партию реплик знаменитого истребителя. Реплика, получившая обозначение Як-3М, имеет полностью металлическую конструкцию и силовой агрегат Allison 2L. Машины предназначались для коллекционеров.",
@@ -52,7 +53,7 @@ let ussr = [
 ];
 ussr.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany = [
+let germany: IWeapon[] = [
   {
     name: "Messerschmitt Me.262 «Schwalbe»",
     type: WEAPONS_TYPE.aviation.fighter,
@@ -74,7 +75,7 @@ let germany = [
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa = [
+let usa: IWeapon[] = [
   {
     name: "P-51-D5 Mustang",
     type: WEAPONS_TYPE.aviation.fighter,
@@ -90,7 +91,7 @@ let usa = [
 ];
 usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let japan = [
+let japan: IWeapon[] = [
   {
     name: "A6M5 Raisen",
     type: WEAPONS_TYPE.aviation.fighter,

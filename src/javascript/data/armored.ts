@@ -1,16 +1,14 @@
+import { IWeapon } from "./weapons";
 import { WEAPONS_TYPE } from "../constants/weapons";
 import { NATIONS } from "../constants/nations";
 import IS_2 from "../../jsx/fragments/weapons/IS-2";
 
-let USSR = [
+let USSR: IWeapon[] = [
   {
     name: "ИС-3",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
     icon: "1.jpg",
-    // intro: [
-    //   "ИС-3 (Объект 703) — советский тяжёлый танк разработки периода Великой Отечественной войны, запущенный в серийное производство в последние её дни и не успевший принять участие в боях. Поэтому эту боевую машину чаще считают одним из первых послевоенных советских танков.",
-    // ],
   },
   {
     name: "КВ-1",
@@ -46,7 +44,7 @@ let USSR = [
     name: "ИС-2",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    JSXComponent: <IS_2 />,
+    JSXComponent: IS_2(),
     sections: [
       "Введение",
       "Характеристики",
@@ -279,7 +277,7 @@ let USSR = [
 ];
 USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany = [
+let germany: IWeapon[] = [
   {
     name: "PzKpfw VI Ausf.B «Tiger II»",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
@@ -385,7 +383,7 @@ let germany = [
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa = [
+let usa: IWeapon[] = [
   {
     name: "M26 Pershing",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
@@ -497,7 +495,7 @@ let usa = [
 ];
 usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let britain = [
+let britain: IWeapon[] = [
   {
     name: "Churchill III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
@@ -567,7 +565,7 @@ let britain = [
 ];
 britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
-let france = [
+let france: IWeapon[] = [
   {
     name: "Somua S35",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
@@ -577,7 +575,7 @@ let france = [
 ];
 france.forEach((item) => (item.nation = NATIONS.france));
 
-let italy = [
+let italy: IWeapon[] = [
   {
     name: "Lancia IZ/IZM",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
@@ -587,7 +585,7 @@ let italy = [
 ];
 italy.forEach((item) => (item.nation = NATIONS.italy));
 
-let czechoslovakia = [
+let czechoslovakia: IWeapon[] = [
   {
     name: "LT vz.38",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
@@ -597,7 +595,7 @@ let czechoslovakia = [
 ];
 czechoslovakia.forEach((item) => (item.nation = NATIONS.czechoslovakia));
 
-let finland = [
+let finland: IWeapon[] = [
   {
     name: "BT-42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
@@ -607,7 +605,7 @@ let finland = [
 ];
 finland.forEach((item) => (item.nation = NATIONS.finland));
 
-let japan = [
+let japan: IWeapon[] = [
   {
     name: "Chi-Nu",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,

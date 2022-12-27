@@ -1,7 +1,8 @@
+import { IWeapon } from "./weapons";
 import { WEAPONS_TYPE } from "../constants/weapons";
 import { NATIONS } from "../constants/nations";
 
-let ussr = [
+let ussr: IWeapon[] = [
   {
     name: "Револьвер системы Нагана",
     type: WEAPONS_TYPE.smallArms.revolver,
@@ -35,7 +36,7 @@ let ussr = [
 ];
 ussr.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany = [
+let germany: IWeapon[] = [
   {
     name: "Mauser 98k",
     type: WEAPONS_TYPE.smallArms.rifle,
@@ -69,7 +70,7 @@ let germany = [
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa = [
+let usa: IWeapon[] = [
   {
     name: "M2-Browning",
     type: WEAPONS_TYPE.smallArms.machineGun,
@@ -79,7 +80,7 @@ let usa = [
 ];
 usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let finland = [
+let finland: IWeapon[] = [
   {
     name: "Suomi KP-31",
     type: WEAPONS_TYPE.smallArms.submachineGun,
@@ -89,7 +90,7 @@ let finland = [
 ];
 finland.forEach((item) => (item.nation = NATIONS.finland));
 
-let japan = [];
+let japan: IWeapon[] = [];
 japan.forEach((item) => (item.nation = NATIONS.japan));
 
 export const SMALL_ARMS_DATA = [

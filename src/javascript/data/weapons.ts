@@ -1,8 +1,24 @@
+import { type } from "os";
 import { NATIONS } from "../constants/nations";
 import { ARMORED_VEHICLES } from "./armored";
 import { ARTILLERY_DATA } from "./artillery";
 import { AVIATION_DATA } from "./aviation";
 import { SMALL_ARMS_DATA } from "./smallArms";
+
+export interface IWeapon {
+  name: string;
+  type: any;
+  adoptedIntoServiceDate: number;
+  icon?: string;
+  nation?: any;
+  gallery?: object;
+  id?: string;
+  JSXComponent?: JSX.Element;
+  intro?: string[];
+  videomaterials?: string[];
+  specifications?: object;
+  sections?: string[];
+}
 
 export const WEAPONS_DATA = [
   ...ARMORED_VEHICLES,
@@ -11,20 +27,20 @@ export const WEAPONS_DATA = [
   ...SMALL_ARMS_DATA,
 ];
 
-WEAPONS_DATA.forEach((item) => {
-  let name = item.name;
+WEAPONS_DATA.forEach((weapon) => {
+  let name: string = weapon.name;
   if (name.at(-1) === ".") name = name.slice(0, -1);
 
-  Object.defineProperty(item, "id", {
+  Object.defineProperty(weapon, "id", {
     get: function () {
       return this.name.replaceAll(" ", "-").replaceAll("/", "-");
     },
   });
 
-  item.gallery = {
+  weapon.gallery = {
     icon:
-      `/images/weapons/${item.type.branch.path}/` +
-      item.nation.path +
+      `/images/weapons/${weapon.type.branch.path}/` +
+      weapon.nation.path +
       "/" +
       name
         .replaceAll(" ", "-")
@@ -34,10 +50,10 @@ WEAPONS_DATA.forEach((item) => {
         .replaceAll("(", "")
         .replaceAll(")", "") +
       "/" +
-      item.icon,
+      weapon.icon,
   };
 
-  delete item.icon;
+  delete weapon.icon;
 });
 
 // --------------------------------------------------------------------------------
@@ -56,7 +72,7 @@ export const WEAPONS_DATA_METHODS = {
       (item) => item.type.branch.path === weaponsBranchPath
     ).filter(
       (item) =>
-        nationPath === NATIONS.world.path || item.nation.path === nationPath
+        nationPath === NATIONS.world.path || item.nation!.path === nationPath
     );
   },
   filterWeapons(selectedWeapons: any[], isEmpty: boolean, filters: any) {
