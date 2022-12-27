@@ -8,7 +8,7 @@ export interface IPageData {
   flagImage?: string;
 }
 
-const data = [
+const data: IPageData[] = [
   {
     path: "",
     introImage: "",
@@ -76,7 +76,7 @@ function getPathLength(path: string): number {
   return path.split("/").length;
 }
 
-function getByPath(path: string): any | undefined {
+function getByPath(path: string) {
   const lastPathElement = path.split("/").at(-1);
   return data.find((item) => item.path === lastPathElement);
 }

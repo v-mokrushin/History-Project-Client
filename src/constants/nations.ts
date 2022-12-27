@@ -1,11 +1,6 @@
 import { IPageData } from "./pages";
 
-// interface INation {
-//   path: string;
-//   flagImage: string;
-// }
-
-const world = {
+const world: IPageData = {
   name: {
     russian: "Весь мир",
     russianАccusative: "мира",
@@ -13,9 +8,10 @@ const world = {
   },
   path: "world",
   flagImage: "/images/flags/flag-world.svg",
+  introImage: "",
 };
 
-const USSR = {
+const USSR: IPageData = {
   name: {
     russian: "СССР",
     russianАccusative: "СССР",
@@ -23,9 +19,10 @@ const USSR = {
   },
   path: "soviet-union",
   flagImage: "/images/flags/flag-ussr.webp",
+  introImage: "",
 };
 
-const germany = {
+const germany: IPageData = {
   name: {
     russian: "Германия",
     russianАccusative: "Германии",
@@ -33,9 +30,10 @@ const germany = {
   },
   path: "germany",
   flagImage: "/images/flags/flag-germany.svg",
+  introImage: "",
 };
 
-const USA = {
+const USA: IPageData = {
   name: {
     russian: "США",
     russianАccusative: "США",
@@ -43,9 +41,10 @@ const USA = {
   },
   path: "usa",
   flagImage: "/images/flags/flag-us.svg",
+  introImage: "",
 };
 
-const greatBritain = {
+const greatBritain: IPageData = {
   name: {
     russian: "Великобритания",
     russianАccusative: "Великобритании",
@@ -53,9 +52,10 @@ const greatBritain = {
   },
   path: "great-britain",
   flagImage: "/images/flags/flag-uk.svg",
+  introImage: "",
 };
 
-const france = {
+const france: IPageData = {
   name: {
     russian: "Франция",
     russianАccusative: "Франции",
@@ -63,9 +63,10 @@ const france = {
   },
   path: "france",
   flagImage: "/images/flags/flag-france.webp",
+  introImage: "",
 };
 
-const italy = {
+const italy: IPageData = {
   name: {
     russian: "Италия",
     russianАccusative: "Италии",
@@ -73,9 +74,10 @@ const italy = {
   },
   path: "italy",
   flagImage: "/images/flags/flag-italy.svg",
+  introImage: "",
 };
 
-const czechoslovakia = {
+const czechoslovakia: IPageData = {
   name: {
     russian: "Чехословакия",
     russianАccusative: "Чехословакии",
@@ -83,9 +85,10 @@ const czechoslovakia = {
   },
   path: "czechoslovakia",
   flagImage: "/images/flags/flag-czechoslovakia.svg",
+  introImage: "",
 };
 
-const japan = {
+const japan: IPageData = {
   name: {
     russian: "Япония",
     russianАccusative: "Японии",
@@ -93,9 +96,10 @@ const japan = {
   },
   path: "japan",
   flagImage: "/images/flags/flag-japan.svg",
+  introImage: "",
 };
 
-const finland = {
+const finland: IPageData = {
   name: {
     russian: "Финляндия",
     russianАccusative: "Финляндии",
@@ -103,6 +107,7 @@ const finland = {
   },
   path: "finland",
   flagImage: "/images/flags/flag-finland.png",
+  introImage: "",
 };
 
 export const NATIONS = {
@@ -121,7 +126,7 @@ export const NATIONS = {
 // -------------------------------------------------------------------------
 
 export const NATIONS_METHODS = {
-  getObjectByPath(path) {
+  getObjectByPath(path: string) {
     for (let nation of Object.values(NATIONS)) {
       if (nation.path === path) return nation;
     }

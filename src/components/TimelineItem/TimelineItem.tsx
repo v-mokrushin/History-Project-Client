@@ -2,8 +2,17 @@ import React from "react";
 import PreviewWeaponCard from "../PreviewWeaponCard/PreviewWeaponCard";
 import styles from "./TimelineItem.module.scss";
 import { TimelineContext } from "../Timeline/context";
+import { IWeapon } from "data/weapons/weapons";
 
-export default function TimelineItem({ contentCollection, year }) {
+interface ITimelineItemProps {
+  contentCollection: IWeapon[];
+  year: number;
+}
+
+export default function TimelineItem({
+  contentCollection,
+  year,
+}: ITimelineItemProps) {
   const { showFlags } = React.useContext(TimelineContext);
 
   return (

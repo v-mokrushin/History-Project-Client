@@ -2,7 +2,13 @@ import React from "react";
 import styles from "./Spec.module.scss";
 import classNames from "classnames";
 
-export default function Spec({ title, children, className }) {
+interface ISpecProps {
+  title: string;
+  children: JSX.Element;
+  className?: string;
+}
+
+export default function Spec({ title, children, className }: ISpecProps) {
   const [open, setOpen] = React.useState(false);
   const body = React.useRef(null);
 
@@ -14,14 +20,14 @@ export default function Spec({ title, children, className }) {
     open &&
       document
         .querySelector("#spec-body")
-        .scrollBy({ left: -500, behavior: "smooth" });
+        ?.scrollBy({ left: -500, behavior: "smooth" });
   }
 
   function scrollRight() {
     open &&
       document
         .querySelector("#spec-body")
-        .scrollBy({ left: 500, behavior: "smooth" });
+        ?.scrollBy({ left: 500, behavior: "smooth" });
   }
 
   return (
@@ -59,14 +65,4 @@ export default function Spec({ title, children, className }) {
       </div>
     </div>
   );
-}
-
-{
-  /* <div
-          className={classNames(styles.arrowBox, open && styles.arrowBox_open)}
-        >
-          <button
-            className={classNames(styles.arrow, open && styles.arrow_open)}
-          ></button>
-        </div> */
 }

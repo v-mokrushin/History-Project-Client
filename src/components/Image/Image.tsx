@@ -5,7 +5,7 @@ import Text from "../Text/Text";
 import imageViewerStore from "../../stores/mobx/imageViewer";
 
 interface IImageProps {
-  title?: any;
+  title?: string;
   URL: string;
   fullWidth?: boolean;
   className?: string;

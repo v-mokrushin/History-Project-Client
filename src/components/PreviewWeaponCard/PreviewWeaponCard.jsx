@@ -4,15 +4,19 @@ import styles from "./PreviewWeaponCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { getBackgroundImageStyleObject } from "../../utils/common";
-import {
-  scrollTopInstantly,
-  scrollToTop,
-} from "../../utils/scroll";
+import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
+import { IWeapon } from "data/weapons/weapons";
 
+// interface IPreviewWeaponCardProps {
+//   weapon: IWeapon;
+//   showFlag?: boolean;
+// }
 
-
-export default function PreviewWeaponCard({ weapon, showFlag = false }) {
+export default function PreviewWeaponCard({
+  weapon,
+  showFlag = false,
+}) {
   return (
     <NavLink
       to={weapon.id}
@@ -23,7 +27,7 @@ export default function PreviewWeaponCard({ weapon, showFlag = false }) {
     >
       <div
         className={styles.backgroundWrapper}
-        style={getBackgroundImageStyleObject(weapon.gallery.icon)}
+        style={getBackgroundImageStyleObject(weapon?.gallery?.icon)}
       ></div>
       {showFlag && <Flag nation={weapon.nation} minimized isNavLink={false} />}
       <div className={styles.contentWrapper}>

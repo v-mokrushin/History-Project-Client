@@ -1,11 +1,11 @@
 import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 
 export class ImageViewerStore {
-  public url: string | null;
+  public url: string | undefined;
   public open: boolean;
 
   constructor() {
-    this.url = null;
+    this.url = undefined;
     this.open = false;
 
     makeAutoObservable(this);
@@ -18,7 +18,7 @@ export class ImageViewerStore {
 
   setClose(): void {
     this.open = false;
-    this.url = null;
+    this.url = undefined;
   }
 }
 

@@ -6,15 +6,9 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Timeline from "../../components/Timeline/Timeline";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
-import {
-  NATIONS,
-  NATIONS_METHODS,
-} from "../../constants/nations";
+import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
 import { WEAPONS_TYPE } from "../../constants/weapons";
-import {
-  WEAPONS_DATA,
-  WEAPONS_DATA_METHODS,
-} from "../../data/weapons/weapons";
+import { WEAPONS_DATA, WEAPONS_DATA_METHODS } from "../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
@@ -26,7 +20,7 @@ const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject = WEAPONS_TYPE.getObjectByPath(weaponsBranchPath);
-  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
+  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath!);
   const selectedWeapons = React.useMemo(
     () => WEAPONS_DATA_METHODS.selectWeapons(weaponsBranchPath, nationPath),
     []

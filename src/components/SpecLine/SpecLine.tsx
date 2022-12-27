@@ -2,7 +2,13 @@ import React from "react";
 import Text from "../Text/Text";
 import styles from "./SpecLine.module.scss";
 
-export default function SpecLine({ crit, val, mesure = "" }) {
+interface ISpecLineProps {
+  crit: string;
+  val: string | number;
+  mesure?: string;
+}
+
+export default function SpecLine({ crit, val, mesure = "" }: ISpecLineProps) {
   return (
     val && (
       <div className={styles.root}>
