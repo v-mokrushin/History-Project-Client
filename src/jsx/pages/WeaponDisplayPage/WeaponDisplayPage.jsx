@@ -6,7 +6,7 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 import { WEAPONS_DATA } from "../../../javascript/data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
@@ -18,11 +18,10 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import TextBlock from "../../components/TextBlock/TextBlock";
 import DesktopContentList from "../../components/DesktopContentList/DesktopContentList";
 import MobileContentList from "../../components/MobileContentList/MobileContentList";
-import { useDispatch } from "react-redux";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
-import { WEAPONS_TYPE } from "../../../javascript/constants/weapons";
+import { WEAPONS_TYPE } from "../../../constants/weapons";
 
 export default function WeaponDisplayPage() {
   const { weaponId } = useParams();

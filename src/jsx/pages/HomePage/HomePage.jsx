@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { SECTION_CARD_TYPE } from "../../components/SectionCard/constants";
 import SectionCard from "../../components/SectionCard/SectionCard";
 import VideoIntro from "../../components/VideoIntro/VideoIntro";
-import { documentTitle } from "../../../javascript/utils/updateDocumentTitle";
+import { documentTitle } from "../../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
 
 export default function HomePage() {

@@ -1,6 +1,6 @@
 import { articlePreviewsSlice } from ".";
-import { mock } from "../../../data/mock";
-import { normolize } from "../../../utils/normolize";
+// import { mock } from "../../../data/mock";
+// import { normolize } from "../../../utils/normolize";
 import { LOADING_STATUSES } from "../constants";
 import {
   selectArticlePreviewsIds,

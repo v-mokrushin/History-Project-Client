@@ -1,5 +1,3 @@
-import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
-
 export const WARNING_PAGE_TYPE = {
   notFound: "notFound",
   workInProgress: "workInProgress",

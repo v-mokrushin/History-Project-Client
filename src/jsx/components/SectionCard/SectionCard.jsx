@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./SectionCard.module.scss";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
-import { scrollTopInstantly } from "../../../javascript/utils/scroll";
+import { ANIMATIONS } from "../../../constants/animation";
+import { scrollTopInstantly } from "../../../utils/scroll";
 import { SECTION_CARD_TYPE } from "./constants";
-import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
+import { getBackgroundImageStyleObject } from "../../../utils/common";
 
 export default function SectionCard({ type }) {
   return (

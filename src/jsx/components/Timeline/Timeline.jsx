@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
+import { ANIMATIONS } from "../../../constants/animation";
 import TimelineItem from "../TimelineItem/TimelineItem";
 import { TimelineContext } from "./context";
 import styles from "./Timeline.module.sass";

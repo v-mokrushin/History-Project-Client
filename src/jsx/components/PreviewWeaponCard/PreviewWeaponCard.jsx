@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./PreviewWeaponCard.module.scss";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../../javascript/constants/animation";
-import { getBackgroundImageStyleObject } from "../../../javascript/utils/common";
+import { ANIMATIONS } from "../../../constants/animation";
+import { getBackgroundImageStyleObject } from "../../../utils/common";
 import {
   scrollTopInstantly,
   scrollToTop,
-} from "../../../javascript/utils/scroll";
+} from "../../../utils/scroll";
 import Flag from "../Flag/Flag";
 
 
