@@ -115,6 +115,18 @@ let germany: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     icon: "icon.jpg",
   },
+  {
+    name: "Vergeltungswaffe-2",
+    type: WEAPONS_TYPE.artillery.ballisticMissile,
+    adoptedIntoServiceDate: 1944,
+    icon: "icon.jpg",
+  },
+  {
+    name: "Vergeltungswaffe Eins",
+    type: WEAPONS_TYPE.artillery.cruiseMissile,
+    adoptedIntoServiceDate: 1944,
+    icon: "icon.jpeg",
+  },
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 

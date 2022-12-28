@@ -380,6 +380,12 @@ let germany: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     icon: "1.jpg",
   },
+  {
+    name: "Flakpanzer IV «Wirbelwind»",
+    type: WEAPONS_TYPE.armoredVehicle.zsu,
+    adoptedIntoServiceDate: 1944,
+    icon: "icon.jpg",
+  },
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
 

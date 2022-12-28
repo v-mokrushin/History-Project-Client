@@ -45,6 +45,11 @@ let armoredVehicle = {
       russian: "Бронеавтомобиль",
     },
   },
+  zsu: {
+    name: {
+      russian: "ЗСУ",
+    },
+  },
 };
 
 let aviation = {
@@ -124,6 +129,16 @@ let artillery = {
   reactive: {
     name: {
       russian: "Реактивная",
+    },
+  },
+  cruiseMissile: {
+    name: {
+      russian: "Крылатая ракета",
+    },
+  },
+  ballisticMissile: {
+    name: {
+      russian: "Баллистическая ракета",
     },
   },
 };
