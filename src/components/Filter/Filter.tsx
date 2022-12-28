@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { WEAPONS_TYPE } from "../../constants/weapons";
+import { WEAPONS_TYPE, WEAPONS_TYPE_METHODS } from "../../constants/weapons";
 import filtersStore from "../../stores/mobx/filters";
 import { observer } from "mobx-react";
 
@@ -14,7 +14,7 @@ interface IFilterProps {
 const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
   const [open, setOpen] = React.useState(false);
   const weaponTypes = React.useMemo(
-    () => WEAPONS_TYPE.getTypesArrayWithAll(weaponBranch),
+    () => WEAPONS_TYPE_METHODS.getTypesArrayWithAll(weaponBranch),
     [weaponBranch]
   );
 
@@ -48,7 +48,7 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
               key={type.name.russian + index}
               onClick={() => {
                 filtersStore.setFilter(
-                  !WEAPONS_TYPE.isAllType(type) ? { type } : {}
+                  !WEAPONS_TYPE_METHODS.isAllType(type) ? { type } : {}
                 );
               }}
             >

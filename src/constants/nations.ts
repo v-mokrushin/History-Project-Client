@@ -110,6 +110,17 @@ const finland: IPageData = {
   introImage: "",
 };
 
+const sweden: IPageData = {
+  name: {
+    russian: "Швеция",
+    russianАccusative: "Швеции",
+    english: "Sweden",
+  },
+  path: "sweden",
+  flagImage: "/images/flags/flag-sweden.svg",
+  introImage: "",
+};
+
 export const NATIONS = {
   world,
   USSR,
@@ -121,6 +132,7 @@ export const NATIONS = {
   czechoslovakia,
   japan,
   finland,
+  sweden,
 };
 
 // -------------------------------------------------------------------------

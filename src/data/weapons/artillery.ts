@@ -51,6 +51,54 @@ let USSR: IWeapon[] = [
     adoptedIntoServiceDate: 1937,
     icon: "icon.jpg",
   },
+  {
+    name: "120-мм миномёт ПМ-38",
+    type: WEAPONS_TYPE.artillery.regimental,
+    adoptedIntoServiceDate: 1938,
+    icon: "icon.jpg",
+  },
+  {
+    name: "50-мм миномёт РМ-41",
+    type: WEAPONS_TYPE.artillery.company,
+    adoptedIntoServiceDate: 1941,
+    icon: "icon.jpg",
+  },
+  {
+    name: "82-мм миномёт БМ-37",
+    type: WEAPONS_TYPE.artillery.battalion,
+    adoptedIntoServiceDate: 1937,
+    icon: "icon.jpg",
+  },
+  {
+    name: "37-мм пушка 61-К",
+    type: WEAPONS_TYPE.artillery.antiaircraft,
+    adoptedIntoServiceDate: 1939,
+    icon: "icon.jpg",
+  },
+  {
+    name: "БМ-13 (ЗИС-6)",
+    type: WEAPONS_TYPE.artillery.reactive,
+    adoptedIntoServiceDate: 1941,
+    icon: "icon.jpg",
+  },
+  {
+    name: "БМ-13 (СТЗ-5)",
+    type: WEAPONS_TYPE.artillery.reactive,
+    adoptedIntoServiceDate: 1941,
+    icon: "icon.jpg",
+  },
+  {
+    name: "БМ-13Н",
+    type: WEAPONS_TYPE.artillery.reactive,
+    adoptedIntoServiceDate: 1943,
+    icon: "icon.jpg",
+  },
+  {
+    name: "БМ-31-12",
+    type: WEAPONS_TYPE.artillery.reactive,
+    adoptedIntoServiceDate: 1944,
+    icon: "icon.jpg",
+  },
 ];
 USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
@@ -59,6 +107,12 @@ let germany: IWeapon[] = [
     name: "7,5 cm Pak. 40",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1941,
+    icon: "icon.jpg",
+  },
+  {
+    name: "15cm Panzerwerfer 42 Auf.Sf",
+    type: WEAPONS_TYPE.artillery.reactive,
+    adoptedIntoServiceDate: 1943,
     icon: "icon.jpg",
   },
 ];
@@ -74,4 +128,14 @@ let britain: IWeapon[] = [
 ];
 britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
-export const ARTILLERY_DATA = [...USSR, ...germany, ...britain];
+let sweden: IWeapon[] = [
+  {
+    name: "Bofors L/60",
+    type: WEAPONS_TYPE.artillery.antiaircraft,
+    adoptedIntoServiceDate: 1932,
+    icon: "icon.jpg",
+  },
+];
+sweden.forEach((item) => (item.nation = NATIONS.sweden));
+
+export const ARTILLERY_DATA = [...USSR, ...germany, ...britain, ...sweden];

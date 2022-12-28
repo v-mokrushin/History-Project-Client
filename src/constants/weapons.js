@@ -1,3 +1,9 @@
+function appendBranch(object) {
+  for (let [key, value] of Object.entries(object)) {
+    if (key != "name") value.branch = object.name;
+  }
+}
+
 let armoredVehicle = {
   name: {
     russian: "Бронетехника",
@@ -75,9 +81,19 @@ let artillery = {
     english: "artillery",
     path: "artillery",
   },
-  antitank: {
+  company: {
     name: {
-      russian: "Противотанковая",
+      russian: "Ротная",
+    },
+  },
+  battalion: {
+    name: {
+      russian: "Батальонная",
+    },
+  },
+  regimental: {
+    name: {
+      russian: "Полковая",
     },
   },
   division: {
@@ -95,9 +111,19 @@ let artillery = {
       russian: "Большой и особой мощности",
     },
   },
+  antitank: {
+    name: {
+      russian: "Противотанковая",
+    },
+  },
   antiaircraft: {
     name: {
       russian: "Зенитная",
+    },
+  },
+  reactive: {
+    name: {
+      russian: "Реактивная",
     },
   },
 };
@@ -155,53 +181,43 @@ appendBranch(aviation);
 appendBranch(smallArms);
 appendBranch(artillery);
 
-function appendBranch(object) {
-  for (let [key, value] of Object.entries(object)) {
-    if (key != "name") value.branch = object.name;
-  }
-}
-
-export const WEAPONS_TYPE = {
-  armoredVehicle,
-  aviation,
-  smallArms,
-  artillery,
-  getObjectByPath: getByPath,
-  getTypesArray,
-  getTypesArrayWithAll,
-  getAllType,
-  isAllType,
-};
-
 const allType = {
   name: {
     russian: "Все",
   },
 };
 
-function getByPath(path) {
-  for (let key in WEAPONS_TYPE) {
-    if (WEAPONS_TYPE[key].name.path === path) {
-      return WEAPONS_TYPE[key];
-    }
-  }
-}
+export const WEAPONS_TYPE = {
+  armoredVehicle,
+  aviation,
+  smallArms,
+  artillery,
+};
 
-function getAllType() {
-  return allType;
-}
+// ------------------------------------
+
+export const WEAPONS_TYPE_METHODS = {
+  getByPath(path) {
+    for (let key in WEAPONS_TYPE) {
+      if (WEAPONS_TYPE[key].name.path === path) {
+        return WEAPONS_TYPE[key];
+      }
+    }
+  },
+  getAllType() {
+    return allType;
+  },
+  getTypesArrayWithAll(weaponBranch) {
+    return [this.getAllType(), ...getTypesArray(weaponBranch)];
+  },
+  isAllType(type) {
+    return this.getAllType() === type;
+  },
+};
 
 function getTypesArray(weaponBranch) {
   const copy = {};
   Object.assign(copy, weaponBranch);
   delete copy.name;
   return Object.values(copy);
-}
-
-function isAllType(type) {
-  return getAllType() === type;
-}
-
-function getTypesArrayWithAll(weaponBranch) {
-  return [getAllType(), ...getTypesArray(weaponBranch)];
 }
