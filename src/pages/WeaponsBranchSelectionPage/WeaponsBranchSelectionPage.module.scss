@@ -1,13 +1,23 @@
 @import "/src/assets/css/common.scss";
 
 .weaponCardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include media-breakpoint-down(xl) {
+    gap: 15px;
+  }
+
+  @include media-breakpoint-down(md) {
+    gap: 15px;
+  }
+}
+
+.weaponCardsInnerWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-
-  @include media-breakpoint-down(FHD) {
-    // gap: 20px;
-  }
 
   @include media-breakpoint-down(xl) {
     grid-gap: 15px;

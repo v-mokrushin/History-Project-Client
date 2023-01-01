@@ -10,6 +10,7 @@ import burgerStore from "../../stores/mobx/burger";
 
 const Navigation = observer(({ isTypeBurger = false }) => {
   const actualSection = actualSectionStore.actualSection;
+  const isArticlesPreview = actualSectionStore.isWeaponsPreview();
 
   function actionOnClose() {
     burgerStore.setClose();
@@ -39,16 +40,61 @@ const Navigation = observer(({ isTypeBurger = false }) => {
       >
         Статьи
       </NavLink>
-      <NavLink
-        to="/weapons"
-        className={classNames(
-          styles.link,
-          actualSectionStore.isWeapons() && styles.link_active
-        )}
-        onClick={actionOnClose}
-      >
-        Вооружения
-      </NavLink>
+      <div className={styles.weaponBox}>
+        <NavLink
+          to="/weapons"
+          className={classNames(
+            styles.link,
+            styles.weaponBox__link,
+            actualSectionStore.isWeapons() && styles.link_active
+          )}
+          onClick={actionOnClose}
+        >
+          Вооружения
+        </NavLink>
+        <div
+          className={classNames(
+            styles.weaponBox__suggestion,
+            isArticlesPreview && styles.weaponBox__suggestion_opaque
+          )}
+        >
+          <NavLink
+            to="weapons/armored-vehicles"
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={actionOnClose}
+          >
+            Бронетехника
+          </NavLink>
+          <NavLink
+            to="/weapons/aviation"
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={actionOnClose}
+          >
+            Авиация
+          </NavLink>
+          <NavLink
+            to="/weapons/artillery"
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={actionOnClose}
+          >
+            Артиллерия
+          </NavLink>
+          <NavLink
+            to="weapons/small-arms"
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={actionOnClose}
+          >
+            Стрелковое
+          </NavLink>
+          <NavLink
+            to="weapons/grenade-launchers"
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={actionOnClose}
+          >
+            Гранатометы
+          </NavLink>
+        </div>
+      </div>
       <NavLink
         to="/battles"
         className={classNames(

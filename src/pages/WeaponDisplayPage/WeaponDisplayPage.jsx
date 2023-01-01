@@ -7,7 +7,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
 import { ANIMATIONS } from "../../constants/animation";
-import { WEAPONS_DATA, WEAPONS_DATA_METHODS } from "../../data/weapons/weapons";
+import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
 import SpecSection from "../../components/SpecSection/SpecSection";
@@ -21,12 +21,11 @@ import MobileContentList from "../../components/MobileContentList/MobileContentL
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
-import { WEAPONS_TYPE } from "../../constants/weapons";
 
 export default function WeaponDisplayPage() {
   const navigate = useNavigate();
   const { weaponId } = useParams();
-  const weapon = WEAPONS_DATA_METHODS.getById(weaponId);
+  const weapon = WEAPONS_DATA.getById(weaponId);
 
   useEffect(() => {
     if (!weapon) {
@@ -36,9 +35,9 @@ export default function WeaponDisplayPage() {
 
   function getSpecification() {
     if (weapon.specifications) {
-      if (weapon.type.branch.path === WEAPONS_TYPE.armoredVehicle.name.path)
+      if (weapon.type.branch.path === data.armoredVehicle.name.path)
         return getArmoredSpec();
-      if (weapon.type.branch === WEAPONS_TYPE.aviation)
+      if (weapon.type.branch === data.aviation)
         return getAviationSpec();
     }
   }

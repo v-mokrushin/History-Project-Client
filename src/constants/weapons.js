@@ -58,14 +58,19 @@ let aviation = {
     english: "aviation",
     path: "aviation",
   },
-  fighter: {
+  scout: {
     name: {
-      russian: "Истребитель",
+      russian: "Разведчик",
     },
   },
   interceptor: {
     name: {
       russian: "Перехватчик",
+    },
+  },
+  fighter: {
+    name: {
+      russian: "Истребитель",
     },
   },
   attackАircraft: {
@@ -76,6 +81,21 @@ let aviation = {
   bomber: {
     name: {
       russian: "Бомбардировщик",
+    },
+  },
+  multipurpose: {
+    name: {
+      russian: "Многоцелевой",
+    },
+  },
+  militaryTransport: {
+    name: {
+      russian: "Военно-транспортный",
+    },
+  },
+  training: {
+    name: {
+      russian: "Учебно-тренировочный",
     },
   },
 };
@@ -191,10 +211,44 @@ let smallArms = {
   },
 };
 
+let grenadeLaunchers = {
+  name: {
+    russian: "Гранатометы",
+    english: "Grenade Launchers",
+    path: "grenade-launchers",
+  },
+  muzzle: {
+    name: {
+      russian: "Ствольный",
+    },
+  },
+  // under: {
+  //   name: {
+  //     russian: "Подствольный",
+  //   },
+  // },
+  manual: {
+    name: {
+      russian: "Ручной",
+    },
+  },
+  heavy: {
+    name: {
+      russian: "Станковый",
+    },
+  },
+  hybrid: {
+    name: {
+      russian: "Гибридный",
+    },
+  },
+};
+
 appendBranch(armoredVehicle);
 appendBranch(aviation);
 appendBranch(smallArms);
 appendBranch(artillery);
+appendBranch(grenadeLaunchers);
 
 const allType = {
   name: {
@@ -207,6 +261,7 @@ export const WEAPONS_TYPE = {
   aviation,
   smallArms,
   artillery,
+  grenadeLaunchers,
 };
 
 // ------------------------------------

@@ -3,6 +3,7 @@ import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./armored";
 import { ARTILLERY_DATA } from "./artillery";
 import { AVIATION_DATA } from "./aviation";
+import { GRENADE_LAUNCHERS_DATA } from "./grenadeLaunchers";
 import { SMALL_ARMS_DATA } from "./smallArms";
 
 export interface IWeapon {
@@ -20,14 +21,15 @@ export interface IWeapon {
   sections?: string[];
 }
 
-export const WEAPONS_DATA = [
+const data = [
   ...ARMORED_VEHICLES,
   ...AVIATION_DATA,
   ...ARTILLERY_DATA,
   ...SMALL_ARMS_DATA,
+  ...GRENADE_LAUNCHERS_DATA,
 ];
 
-WEAPONS_DATA.forEach((weapon) => {
+data.forEach((weapon) => {
   let name: string = weapon.name;
   if (name.at(-1) === ".") name = name.slice(0, -1);
 
@@ -58,7 +60,7 @@ WEAPONS_DATA.forEach((weapon) => {
 
 // --------------------------------------------------------------------------------
 
-export const WEAPONS_DATA_METHODS = {
+export const WEAPONS_DATA = {
   getUniqueDates(collection: any[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
@@ -68,12 +70,12 @@ export const WEAPONS_DATA_METHODS = {
     weaponsBranchPath: string | undefined,
     nationPath: string | undefined
   ): any[] {
-    return WEAPONS_DATA.filter(
-      (item) => item.type.branch.path === weaponsBranchPath
-    ).filter(
-      (item) =>
-        nationPath === NATIONS.world.path || item.nation!.path === nationPath
-    );
+    return data
+      .filter((item) => item.type.branch.path === weaponsBranchPath)
+      .filter(
+        (item) =>
+          nationPath === NATIONS.world.path || item.nation!.path === nationPath
+      );
   },
   filterWeapons(selectedWeapons: any[], isEmpty: boolean, filters: any) {
     if (isEmpty) {
@@ -89,14 +91,16 @@ export const WEAPONS_DATA_METHODS = {
       NATIONS.world,
       ...Array.from(
         new Set(
-          WEAPONS_DATA.filter(
-            (item) => item.type.branch.path === weaponsBranchPath
-          ).map((item) => item.nation)
+          data
+            .filter((item) => item.type.branch.path === weaponsBranchPath)
+            .map((item) => item.nation)
         )
       ),
     ];
   },
   getById(weaponId: string | undefined) {
-    return WEAPONS_DATA.find((item) => item.id === weaponId);
+    return data.find((item) => item.id === weaponId);
   },
 };
+
+console.log(data);

@@ -18,8 +18,10 @@ export default function Beadcrumbs() {
   );
 
   React.useEffect(() => {
-    actualSectionStore.set(pathNames[1]);
+    actualSectionStore.set(pathNames[1], labels.length);
   }, [locationPathname]);
+
+  // console.log(labels);
 
   return (
     <div className={styles.root}>

@@ -7,8 +7,8 @@ import Timeline from "../../components/Timeline/Timeline";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
 import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
-import { WEAPONS_TYPE, WEAPONS_TYPE_METHODS } from "../../constants/weapons";
-import { WEAPONS_DATA, WEAPONS_DATA_METHODS } from "../../data/weapons/weapons";
+import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
+import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
@@ -22,12 +22,12 @@ const WeaponsPreviewPage = observer(() => {
   const weaponsBranchObject = WEAPONS_TYPE_METHODS.getByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath!);
   const selectedWeapons = React.useMemo(
-    () => WEAPONS_DATA_METHODS.selectWeapons(weaponsBranchPath, nationPath),
+    () => WEAPONS_DATA.selectWeapons(weaponsBranchPath, nationPath),
     []
   );
   const filteredWeapons = React.useMemo(
     () =>
-      WEAPONS_DATA_METHODS.filterWeapons(
+      WEAPONS_DATA.filterWeapons(
         selectedWeapons,
         filtersStore.isEmpty(),
         filtersStore.getFilters()
@@ -35,7 +35,7 @@ const WeaponsPreviewPage = observer(() => {
     [filtersStore.filters]
   );
   const uniqueDates = React.useMemo(
-    () => WEAPONS_DATA_METHODS.getUniqueDates(filteredWeapons),
+    () => WEAPONS_DATA.getUniqueDates(filteredWeapons),
     [filteredWeapons]
   );
 

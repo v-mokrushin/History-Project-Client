@@ -121,6 +121,72 @@ const sweden: IPageData = {
   introImage: "",
 };
 
+const lithuania: IPageData = {
+  name: {
+    russian: "Литва",
+    russianАccusative: "Литвы",
+    english: "Lithuania",
+  },
+  path: "lithuania",
+  flagImage: "/images/flags/flag-lithuania.svg",
+  introImage: "",
+};
+
+const netherlands: IPageData = {
+  name: {
+    russian: "Нидерланды",
+    russianАccusative: "Нидерландов",
+    english: "Netherlands",
+  },
+  path: "netherlands",
+  flagImage: "/images/flags/flag-netherlands.svg",
+  introImage: "",
+};
+
+const romania: IPageData = {
+  name: {
+    russian: "Румыния",
+    russianАccusative: "Румынии",
+    english: "Romania",
+  },
+  path: "romania",
+  flagImage: "/images/flags/flag-romania.svg",
+  introImage: "",
+};
+
+const poland: IPageData = {
+  name: {
+    russian: "Польша",
+    russianАccusative: "Польши",
+    english: "Poland",
+  },
+  path: "poland",
+  flagImage: "/images/flags/flag-poland.svg",
+  introImage: "",
+};
+
+const yugoslavia: IPageData = {
+  name: {
+    russian: "Югославия",
+    russianАccusative: "Югославии",
+    english: "Yugoslavia",
+  },
+  path: "yugoslavia",
+  flagImage: "/images/flags/flag-yugoslavia.svg",
+  introImage: "",
+};
+
+const hungary: IPageData = {
+  name: {
+    russian: "Венгрия",
+    russianАccusative: "Венгрии",
+    english: "Hungary",
+  },
+  path: "hungary",
+  flagImage: "/images/flags/flag-hungary.png",
+  introImage: "",
+};
+
 export const NATIONS = {
   world,
   USSR,
@@ -133,6 +199,12 @@ export const NATIONS = {
   japan,
   finland,
   sweden,
+  lithuania,
+  netherlands,
+  romania,
+  poland,
+  yugoslavia,
+  hungary,
 };
 
 // -------------------------------------------------------------------------

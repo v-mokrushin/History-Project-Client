@@ -7,17 +7,14 @@ import { useLocation, useParams } from "react-router-dom";
 import { PAGES_DATA } from "../../constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
-import {
-  WEAPONS_DATA,
-  WEAPONS_DATA_METHODS,
-} from "../../data/weapons/weapons";
+import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import filtersStore from "../../stores/mobx/filters";
 import scrollMemoryStore from "../../stores/mobx/scrollMemory";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();
   const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
-  const nations = WEAPONS_DATA_METHODS.selectNation(weaponsBranchPath);
+  const nations = WEAPONS_DATA.selectNation(weaponsBranchPath);
 
   React.useEffect(() => {
     filtersStore.cancelFilters();

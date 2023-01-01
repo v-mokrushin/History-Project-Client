@@ -65,6 +65,14 @@ const data: IPageData[] = [
       english: "artillery",
     },
   },
+  {
+    path: "grenade-launchers",
+    introImage: "/images/backgrounds/weapons/grenade-launchers.jpg",
+    name: {
+      russian: "Гранатометы",
+      english: "Grenade Launchers",
+    },
+  },
   ...NATIONS_METHODS.getNationsAsArray(),
 ];
 

@@ -25,9 +25,14 @@ export default function WeaponsBranchSelectionPage() {
           <Title>Вооружения</Title>
           <div className={styles.weaponCardsWrapper}>
             <SectionCard type={SECTION_CARD_TYPE.pages.weapons.armored} />
-            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
-            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.artillery} />
-            <SectionCard type={SECTION_CARD_TYPE.pages.weapons.smallArms} />
+            <div className={styles.weaponCardsInnerWrapper}>
+              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.aviation} />
+              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.artillery} />
+              <SectionCard type={SECTION_CARD_TYPE.pages.weapons.smallArms} />
+              <SectionCard
+                type={SECTION_CARD_TYPE.pages.weapons.grenadeLaunchers}
+              />
+            </div>
           </div>
         </Container>
       </ContentWrapper>

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { WEAPONS_TYPE, WEAPONS_TYPE_METHODS } from "../../constants/weapons";
+import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
 import filtersStore from "../../stores/mobx/filters";
 import { observer } from "mobx-react";
 

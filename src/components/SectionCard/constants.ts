@@ -37,6 +37,11 @@ export const SECTION_CARD_TYPE = {
         path: "artillery",
         backgroundImage: "/images/backgrounds/weapons/artillery.jpg",
       },
+      grenadeLaunchers: {
+        name: "Гранатометы",
+        path: "grenade-launchers",
+        backgroundImage: "/images/backgrounds/weapons/grenade-launchers.jpg",
+      },
     },
   },
 };
