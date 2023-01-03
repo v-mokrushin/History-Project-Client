@@ -27,7 +27,7 @@ const data: IPageData[] = [
   },
   {
     path: "weapons",
-    introImage: "/images/backgrounds/weapons/background.png",
+    introImage: "/images/backgrounds/weapons/background.jpg",
     name: {
       russian: "вооружения",
       english: "weapons",

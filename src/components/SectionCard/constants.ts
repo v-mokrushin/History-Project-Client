@@ -7,7 +7,7 @@ export const SECTION_CARD_TYPE = {
   weapons: {
     name: "Вооружения",
     path: "weapons",
-    backgroundImage: "/images/backgrounds/hp-bg-weapons.png",
+    backgroundImage: "/images/backgrounds/hp-bg-weapons.jpg",
   },
   battles: {
     name: "Сражения",

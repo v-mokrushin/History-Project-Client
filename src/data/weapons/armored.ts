@@ -8,37 +8,36 @@ let USSR: IWeapon[] = [
     name: "ИС-3",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
-    icon: "1.jpg",
   },
   {
     name: "КВ-1",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
-    icon: "1.jpg",
   },
   {
     name: "КВ-2",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
-    icon: "1.jpg",
+  },
+  {
+    name: "КВ-1Э",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
   },
   {
     name: "КВ-1С",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "Т-35",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1933,
-    icon: "1.jpg",
   },
   {
     name: "ИС-1",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "ИС-2",
@@ -54,7 +53,6 @@ let USSR: IWeapon[] = [
       "Применение в бою",
       "Видеоматериалы",
     ],
-    icon: "1.webp",
     intro: [
       "ИС-2 (Объект 240) — советский основной и тяжёлый танк периода Великой Отечественной войны, являлся самым мощным и наиболее тяжелобронированным из советских и союзных серийных танков периода войны, и одним из сильнейших основных танков на то время в мире. В годы Великой Отечественной войны вместе с обозначением ИС-2 на равных использовалось название ИС-122, в этом случае число 122 означает калибр пушки — основного вооружения боевой машины. Танки этого типа сыграли большую роль в боях 1944—1945 годов, особенно отличившись при штурме городов. После завершения войны ИС-2 были модернизированы и находились на вооружении Советской Армии ВС Союза ССР и впоследствии ВС России до 1993 года. Также танки ИС-2 поставлялись в ряд государств и участвовали в некоторых вооружённых конфликтах после 1945 года.",
     ],
@@ -158,121 +156,121 @@ let USSR: IWeapon[] = [
     name: "Т-28",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1933,
-    icon: "1.jpg",
   },
   {
     name: "Т-34 обр. 1940 г.",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
-    icon: "1.jpg",
-  },
-  {
-    name: "Т-34 обр. 1941 г.",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
-  },
-  {
-    name: "Т-34 обр. 1942 г.",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "Т-34-57",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
-    name: "Т-34-85",
+    name: "Т-34 обр. 1941 г.",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1941,
+  },
+  {
+    name: "Т-34Э (СТЗ)",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+  },
+  {
+    name: "Т-34Э (завод №112)",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+  },
+  {
+    name: "Т-34 обр. 1942 г.",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+  },
+  {
+    name: "Т-34 обр. 1943 г.",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1943,
+  },
+  {
+    name: "Т-34-85 (ЗИС-С-53)",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
+  },
+  {
+    name: "Т-34-85 (Д5-Т)",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
   },
   {
     name: "БТ-7",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
-    icon: "icon.jpg",
   },
   {
     name: "БТ-5",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1933,
-    icon: "icon.jpg",
   },
   {
     name: "БТ-2",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1932,
-    icon: "icon.jpg",
   },
   {
     name: "Т-70",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "Т-26",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1931,
-    icon: "icon.jpg",
   },
   {
     name: "ИСУ-152",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "СУ-100",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "ИСУ-122",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "СУ-152",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "СУ-85",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "СУ-76",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "СУ-122",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "БА-10",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
-    icon: "1.jpg",
   },
   {
     name: "Т-27",
     type: WEAPONS_TYPE.armoredVehicle.tankette,
     adoptedIntoServiceDate: 1931,
-    icon: "icon.jpg",
   },
 ];
 USSR.forEach((item) => (item.nation = NATIONS.USSR));
@@ -282,109 +280,121 @@ let germany: IWeapon[] = [
     name: "PzKpfw VI Ausf.B «Tiger II»",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "PzKpfw VI «Tiger»",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "PzKpfw V «Panther»",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. IV Ausf.H",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. III Ausf.J1",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
+  },
+  {
+    name: "Pz.Kpfw. III Ausf.L",
+    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
   },
   {
     name: "Pz.Kpfw. III Ausf.M",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Pz.Kpfw. II",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
-    icon: "1.jpg",
   },
   {
     name: "Jagdtiger",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "Jagdpanther",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "Ferdinand",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Nashorn",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    icon: "2.webp",
   },
   {
     name: "StuG III Ausf.G",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "StuG III Ausf.F",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
-    icon: "1.webp",
   },
   {
     name: "10,5 cm Sturmhaubitze 42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "StuG III Ausf.A",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
-    icon: "1.jpg",
   },
   {
     name: "Hummel",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Flakpanzer IV «Wirbelwind»",
     type: WEAPONS_TYPE.armoredVehicle.zsu,
     adoptedIntoServiceDate: 1944,
-    icon: "icon.jpg",
+  },
+  {
+    name: "Sd.Kfz. 251/1",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1940,
+  },
+  {
+    name: "Sd.Kfz. 250/1 Alte",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1941,
+  },
+  {
+    name: "Sd.Kfz. 250/3 Alte",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1941,
+  },
+  {
+    name: "Sd.Kfz. 251/16",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1943,
+  },
+  {
+    name: "Sd.Kfz. 251/22",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1944,
   },
 ];
 germany.forEach((item) => (item.nation = NATIONS.germany));
@@ -394,109 +404,91 @@ let usa: IWeapon[] = [
     name: "M26 Pershing",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
-    icon: "1.jpg",
   },
   {
     name: "M4A3E2 76(W) Jumbo",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "M4A3E2 Jumbo",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "M4A3 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "M4A2 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "M4A1 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
-  {
-    name: "M4A3(105) Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
-  },
+  // {
+  //   name: "M4A3(105) Sherman",
+  //   type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+  //   adoptedIntoServiceDate: 1944,
+  // },
   {
     name: "M4A2 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "M4 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "M4A1 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "M3 Lee",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
     name: "M24 Chaffee",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "M5A1 Stuart",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "M3 Stuart",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
     name: "GMC M36 Jackson",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "GMC M18 Hellcat",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "GMC M10 Wolverine",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "GMC M40",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1945,
-    icon: "1.jpg",
   },
 ];
 usa.forEach((item) => (item.nation = NATIONS.USA));
@@ -506,67 +498,56 @@ let britain: IWeapon[] = [
     name: "Churchill III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jfif",
   },
   {
     name: "Churchill I",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
     name: "Matilda Mk III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
     name: "Sherman Firefly",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    icon: "1.jpg",
   },
   {
     name: "Valentine Mk XI",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jfif",
   },
   {
     name: "Valentine Mk X",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "1.jpg",
   },
   {
     name: "Valentine Mk I",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1939,
-    icon: "1.jfif",
   },
   {
     name: "Crusader Mk III",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
-    icon: "1.jpg",
   },
   {
     name: "Crusader Mk II",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
   {
     name: "Tetrach I",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1940,
-    icon: "1.jpeg",
   },
   {
     name: "Dimler Mk II",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1941,
-    icon: "1.jpg",
   },
 ];
 britain.forEach((item) => (item.nation = NATIONS.greatBritain));
@@ -576,7 +557,6 @@ let france: IWeapon[] = [
     name: "Somua S35",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
-    icon: "icon.jpg",
   },
 ];
 france.forEach((item) => (item.nation = NATIONS.france));
@@ -586,7 +566,6 @@ let italy: IWeapon[] = [
     name: "Lancia IZ/IZM",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
-    icon: "icon.jpg",
   },
 ];
 italy.forEach((item) => (item.nation = NATIONS.italy));
@@ -596,7 +575,6 @@ let czechoslovakia: IWeapon[] = [
     name: "LT vz.38",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
-    icon: "icon.jpg",
   },
 ];
 czechoslovakia.forEach((item) => (item.nation = NATIONS.czechoslovakia));
@@ -606,7 +584,6 @@ let finland: IWeapon[] = [
     name: "BT-42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    icon: "icon.jpg",
   },
 ];
 finland.forEach((item) => (item.nation = NATIONS.finland));
@@ -616,7 +593,6 @@ let japan: IWeapon[] = [
     name: "Chi-Nu",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    icon: "icon.jfif",
   },
 ];
 japan.forEach((item) => (item.nation = NATIONS.japan));

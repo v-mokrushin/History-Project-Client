@@ -5,6 +5,7 @@ import Text from "../Text/Text";
 import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
 import filtersStore from "../../stores/mobx/filters";
 import { observer } from "mobx-react";
+import { WEAPONS_DATA } from "data/weapons/weapons";
 
 interface IFilterProps {
   className?: string;
@@ -26,6 +27,10 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
 
   function getTitle() {
     return filtersStore.getFilters().type?.name.russian;
+  }
+
+  function onColorizedChange() {
+    filtersStore.changeColorized();
   }
 
   return (
@@ -59,6 +64,12 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
           ))}
         </div>
       </div>
+      <button onClick={onColorizedChange}>
+        Фото: {filtersStore.colorized ? "цветные" : "ч/б"}
+      </button>
+      <button onClick={filtersStore.toggleSortInAscending.bind(filtersStore)}>
+        Сортировка: {filtersStore.sortInAscending ? "по возраст." : "по убыв."}
+      </button>
     </div>
   );
 });

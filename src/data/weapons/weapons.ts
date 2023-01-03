@@ -1,4 +1,5 @@
 import { type } from "os";
+import { getGalleryPath } from "utils/common";
 import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./armored";
 import { ARTILLERY_DATA } from "./artillery";
@@ -12,13 +13,19 @@ export interface IWeapon {
   adoptedIntoServiceDate: number;
   icon?: string;
   nation?: any;
-  gallery?: object;
+  gallery?: IWeaponGallery;
   id?: string;
   JSXComponent?: JSX.Element;
   intro?: string[];
   videomaterials?: string[];
   specifications?: object;
   sections?: string[];
+}
+
+export interface IWeaponGallery {
+  path: string;
+  isColorizedIcon: boolean;
+  get icon(): string;
 }
 
 const data = [
@@ -30,8 +37,8 @@ const data = [
 ];
 
 data.forEach((weapon) => {
-  let name: string = weapon.name;
-  if (name.at(-1) === ".") name = name.slice(0, -1);
+  let weaponName: string = weapon.name;
+  if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
   Object.defineProperty(weapon, "id", {
     get: function () {
@@ -40,19 +47,15 @@ data.forEach((weapon) => {
   });
 
   weapon.gallery = {
-    icon:
-      `/images/weapons/${weapon.type.branch.path}/` +
-      weapon.nation.path +
-      "/" +
-      name
-        .replaceAll(" ", "-")
-        .replaceAll("/", "-")
-        .replaceAll("«", "")
-        .replaceAll("»", "")
-        .replaceAll("(", "")
-        .replaceAll(")", "") +
-      "/" +
-      weapon.icon,
+    path: getGalleryPath(weaponName, weapon),
+    isColorizedIcon: false,
+    get icon() {
+      if (!this.isColorizedIcon) {
+        return this.path + "icon.jpg";
+      } else {
+        return this.path + "icon-color.jpg";
+      }
+    },
   };
 
   delete weapon.icon;
@@ -100,6 +103,14 @@ export const WEAPONS_DATA = {
   },
   getById(weaponId: string | undefined) {
     return data.find((item) => item.id === weaponId);
+  },
+  changeColorized() {
+    data.forEach((weapon) => {
+      if (weapon.gallery) {
+        weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
+      }
+    });
+    console.log(data);
   },
 };
 

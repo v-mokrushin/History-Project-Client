@@ -1,16 +1,17 @@
-import { action, makeObservable, observable, toJS } from "mobx";
+import { WEAPONS_DATA } from "./../../data/weapons/weapons";
+import { makeAutoObservable, toJS } from "mobx";
 
 export class FiltersStore {
   public filters: any;
+  public colorized: boolean;
+  public sortInAscending: boolean;
 
   constructor() {
     this.filters = {};
+    this.colorized = false;
+    this.sortInAscending = false;
 
-    makeObservable(this, {
-      filters: observable,
-      setFilter: action,
-      isEmpty: action,
-    });
+    makeAutoObservable(this);
   }
 
   getFilters() {
@@ -27,6 +28,16 @@ export class FiltersStore {
 
   isEmpty(): boolean {
     return Object.keys(this.filters).length === 0;
+  }
+
+  toggleSortInAscending(): void {
+    this.sortInAscending = !this.sortInAscending;
+    // console.log(this.yearSortion);
+  }
+
+  changeColorized(): void {
+    WEAPONS_DATA.changeColorized();
+    this.colorized = !this.colorized;
   }
 }
 

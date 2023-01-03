@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { IWeapon } from "data/weapons/weapons";
+import { observer } from "mobx-react";
 import React from "react";
+import filtersStore from "stores/mobx/filters";
 import { ANIMATIONS } from "../../constants/animation";
 import TimelineItem from "../TimelineItem/TimelineItem";
 import { TimelineContext } from "./context";
@@ -12,22 +14,25 @@ interface ITimelineProps {
   showFlags?: boolean;
 }
 
-export default function Timeline({
-  contentCollection,
-  uniqueDates,
-  showFlags = false,
-}: ITimelineProps) {
-  return (
-    <TimelineContext.Provider value={{ showFlags }}>
-      <div className={classNames(styles.wrapper, ANIMATIONS.fadeIn)}>
-        {uniqueDates.map((year, yearIndex) => (
-          <TimelineItem
-            contentCollection={contentCollection}
-            year={year}
-            key={yearIndex}
-          />
-        ))}
-      </div>
-    </TimelineContext.Provider>
-  );
-}
+const Timeline = observer(
+  ({ contentCollection, uniqueDates, showFlags = false }: ITimelineProps) => {
+    let dates = Array.from(uniqueDates);
+    if (filtersStore.sortInAscending) dates.reverse();
+
+    return (
+      <TimelineContext.Provider value={{ showFlags }}>
+        <div className={classNames(styles.wrapper, ANIMATIONS.fadeIn)}>
+          {dates.map((year, yearIndex) => (
+            <TimelineItem
+              contentCollection={contentCollection}
+              year={year}
+              key={yearIndex}
+            />
+          ))}
+        </div>
+      </TimelineContext.Provider>
+    );
+  }
+);
+
+export default Timeline;

@@ -21,6 +21,7 @@ import MobileContentList from "../../components/MobileContentList/MobileContentL
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
+import { WEAPONS_TYPE } from "constants/weapons";
 
 export default function WeaponDisplayPage() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function WeaponDisplayPage() {
 
   function getSpecification() {
     if (weapon.specifications) {
-      if (weapon.type.branch.path === data.armoredVehicle.name.path)
+      if (weapon.type.branch.path === WEAPONS_TYPE.armoredVehicle.name.path)
         return getArmoredSpec();
       if (weapon.type.branch === data.aviation)
         return getAviationSpec();

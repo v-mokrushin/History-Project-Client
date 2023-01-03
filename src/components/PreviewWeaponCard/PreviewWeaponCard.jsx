@@ -7,16 +7,17 @@ import { getBackgroundImageStyleObject } from "../../utils/common";
 import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
 import { IWeapon } from "data/weapons/weapons";
+import { observer } from "mobx-react";
+import filtersStore from "stores/mobx/filters";
 
 // interface IPreviewWeaponCardProps {
 //   weapon: IWeapon;
 //   showFlag?: boolean;
 // }
 
-export default function PreviewWeaponCard({
-  weapon,
-  showFlag = false,
-}) {
+const PreviewWeaponCard = observer(({ weapon, showFlag = false }) => {
+  const colorized = filtersStore.colorized;
+
   return (
     <NavLink
       to={weapon.id}
@@ -36,4 +37,6 @@ export default function PreviewWeaponCard({
       </div>
     </NavLink>
   );
-}
+});
+
+export default PreviewWeaponCard;

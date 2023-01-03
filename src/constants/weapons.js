@@ -10,6 +10,11 @@ let armoredVehicle = {
     english: "armored vehicles",
     path: "armored-vehicles",
   },
+  tankette: {
+    name: {
+      russian: "Танкетка",
+    },
+  },
   lightTank: {
     name: {
       russian: "Лёгкий танк",
@@ -35,9 +40,9 @@ let armoredVehicle = {
       russian: "ПТ-САУ",
     },
   },
-  tankette: {
+  zsu: {
     name: {
-      russian: "Танкетка",
+      russian: "ЗСУ",
     },
   },
   armoredCar: {
@@ -45,9 +50,9 @@ let armoredVehicle = {
       russian: "Бронеавтомобиль",
     },
   },
-  zsu: {
+  armoredСarrier: {
     name: {
-      russian: "ЗСУ",
+      russian: "Бронетранспортер",
     },
   },
 };
