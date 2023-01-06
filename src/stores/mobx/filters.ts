@@ -29,6 +29,10 @@ export class FiltersStore {
     this.filters = {};
   }
 
+  get name() {
+    return this.filters.name;
+  }
+
   isEmpty(): boolean {
     return Object.keys(this.filters).length === 0;
   }

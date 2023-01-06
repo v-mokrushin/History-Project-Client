@@ -1,11 +1,11 @@
 import { type } from "os";
 import { getGalleryPath } from "utils/common";
 import { NATIONS } from "../../constants/nations";
-import { ARMORED_VEHICLES } from "./armored";
-import { ARTILLERY_DATA } from "./artillery";
-import { AVIATION_DATA } from "./aviation";
-import { GRENADE_LAUNCHERS_DATA } from "./grenadeLaunchers";
-import { SMALL_ARMS_DATA } from "./smallArms";
+import { ARMORED_VEHICLES } from "./branches/armored";
+import { ARTILLERY_DATA } from "./branches/artillery";
+import { AVIATION_DATA } from "./branches/aviation";
+import { GRENADE_LAUNCHERS_DATA } from "./branches/grenadeLaunchers";
+import { SMALL_ARMS_DATA } from "./branches/smallArms";
 
 export interface IWeapon {
   name: string;
@@ -28,6 +28,8 @@ export interface IWeaponGallery {
   isColorizedIcon: boolean;
   get icon(): string;
 }
+
+
 
 const data = [
   ...ARMORED_VEHICLES,

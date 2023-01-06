@@ -24,12 +24,17 @@
 .aside {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 200px auto 200px;
+  grid-template-columns: 400px auto 400px;
   grid-column-gap: 85px;
 
-  @media screen and (max-width: 2000px) {
-    grid-column-gap: 65px;
+  @include media-breakpoint-down(FHD) {
+    grid-template-columns: 250px auto 250px;
+    grid-column-gap: 60px;
   }
+
+  // @media screen and (max-width: 2000px) {
+  //   grid-column-gap: 65px;
+  // }
 
   @include media-breakpoint-down(xl) {
     display: block;

@@ -1,7 +1,8 @@
-import { IWeapon } from "./weapons";
-import { WEAPONS_TYPE } from "../../constants/weapons";
-import { NATIONS } from "../../constants/nations";
-import IS_2 from "../../fragments/weapons/IS-2";
+import { IWeapon } from "../weapons";
+import { WEAPONS_TYPE } from "../../../constants/weapons";
+import { NATIONS } from "../../../constants/nations";
+import IS_2 from "../../../fragments/weapons/IS-2";
+import { D25T, F34 } from "../parts/cannons";
 
 let USSR: IWeapon[] = [
   {
@@ -110,23 +111,13 @@ let USSR: IWeapon[] = [
         },
       },
       weapon: {
-        cannon: {
-          trademark: "Д-25Т",
-          caliber: "122 мм",
-          length: "48 калибров",
-          type: "нарезное",
-          ammunition: "БР-471, БР-471Б, ОФ-471",
-          chargingType: "раздельное",
-          combatFireRate: "< 3",
-          muzzleBrake: "двухкамерный",
-          trigger: "механический, электрический",
-        },
+        cannon: D25T,
         сannonАmmunition: 28,
         verticalGA: "−3…+20°",
         horizontalGA: "360°",
         sights: "ТШ-17",
-        machinegun: `3 × 7,62-мм ДТ; 
-        1 × 12,7-мм ДШК (начиная с 1944 г.)`,
+        machinegun: `3 × 7,62-мм ДТ 
+        1 × 12,7-мм ДШК`,
         machinegunАmmunition: "ДТ - 2520,\nДШК - 250",
       },
       mobility: {
@@ -173,8 +164,23 @@ let USSR: IWeapon[] = [
   },
   {
     name: "Т-34 обр. 1941 г.",
+    isReady: true,
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
+    intro: [
+      "Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года. Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны.",
+    ],
+    sections: ["Введение"],
+    specifications: {
+      crew: {
+        size: 4,
+        structure:
+          "механик-водитель, стрелок-радист, заряжающий, командир-наводчик",
+      },
+      weapon: {
+        cannon: F34,
+      },
+    },
   },
   {
     name: "Т-34Э (СТЗ)",

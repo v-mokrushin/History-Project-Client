@@ -1,5 +1,13 @@
 @import "/src/assets/css/common.scss";
 
+.root {
+  display: none;
+
+  @include media-breakpoint-down(FHD) {
+    display: block;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -93,12 +101,10 @@
   overflow-x: auto;
   max-height: 350px;
   overflow: hidden;
-  // overflow-x: hidden;
   z-index: 1;
   transition: max-height 300ms ease;
 
   &_open {
-    // overflow: auto;
     max-height: 3500px;
 
     &::after {

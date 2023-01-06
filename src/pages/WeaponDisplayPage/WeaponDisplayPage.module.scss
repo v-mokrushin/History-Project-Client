@@ -9,26 +9,28 @@
 
 .box {
   margin-bottom: 45px;
+  width: max-content;
 
   @include media-breakpoint-down(xs) {
     margin-bottom: 25px;
   }
 }
 
-// %btn {
-//   position: absolute;
-//   height: 100%;
-//   top: 0;
-//   width: 25px;
-//   background-color: rgba(0, 0, 0, 0.5);
-// }
+.test {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 50px;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-// .left {
-//   @extend %btn;
-//   left: 0;
-// }
+  @include media-breakpoint-down(FHD) {
+    display: none;
+  }
 
-// .right {
-//   @extend %btn;
-//   right: 0;
-// }
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}

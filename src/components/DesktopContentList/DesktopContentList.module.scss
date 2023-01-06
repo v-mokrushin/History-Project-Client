@@ -8,6 +8,7 @@
   position: sticky;
   top: 50px;
   height: max-content;
+  justify-self: right;
 
   @include media-breakpoint-down(xl) {
     display: none;
@@ -31,7 +32,7 @@
   color: #6c757d;
   text-decoration: none;
   font-weight: 500;
-  font-size: 21px;
+  font-size: 23px;
   letter-spacing: 1px;
 }
 
