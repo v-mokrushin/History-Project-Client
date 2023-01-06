@@ -8,7 +8,7 @@ import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
 import { IWeapon } from "data/weapons/weapons";
 import { observer } from "mobx-react";
-import filtersStore from "stores/mobx/filters";
+import settingsStore from "stores/mobx/settings";
 
 // interface IPreviewWeaponCardProps {
 //   weapon: IWeapon;
@@ -16,7 +16,7 @@ import filtersStore from "stores/mobx/filters";
 // }
 
 const PreviewWeaponCard = observer(({ weapon, showFlag = false }) => {
-  const colorized = filtersStore.colorized;
+  const colorized = settingsStore.colorized;
 
   return (
     <NavLink

@@ -5,7 +5,8 @@ import Text from "../Text/Text";
 import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
 import filtersStore from "../../stores/mobx/filters";
 import { observer } from "mobx-react";
-import { WEAPONS_DATA } from "data/weapons/weapons";
+import settingsStore from "stores/mobx/settings";
+import Input from "components/Input/Input";
 
 interface IFilterProps {
   className?: string;
@@ -14,6 +15,7 @@ interface IFilterProps {
 
 const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
   const [open, setOpen] = React.useState(false);
+  const input = React.useRef<HTMLInputElement>(null);
   const weaponTypes = React.useMemo(
     () => WEAPONS_TYPE_METHODS.getTypesArrayWithAll(weaponBranch),
     [weaponBranch]
@@ -27,10 +29,6 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
 
   function getTitle() {
     return filtersStore.getFilters().type?.name.russian;
-  }
-
-  function onColorizedChange() {
-    filtersStore.changeColorized();
   }
 
   return (
@@ -52,9 +50,7 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
               className={styles.vars__item}
               key={type.name.russian + index}
               onClick={() => {
-                filtersStore.setFilter(
-                  !WEAPONS_TYPE_METHODS.isAllType(type) ? { type } : {}
-                );
+                filtersStore.setTypeFilter(type);
               }}
             >
               <Text className={styles.vars__item__text}>
@@ -64,12 +60,7 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
           ))}
         </div>
       </div>
-      <button onClick={onColorizedChange}>
-        Фото: {filtersStore.colorized ? "цветные" : "ч/б"}
-      </button>
-      <button onClick={filtersStore.toggleSortInAscending.bind(filtersStore)}>
-        Сортировка: {filtersStore.sortInAscending ? "по возраст." : "по убыв."}
-      </button>
+      <Input />
     </div>
   );
 });

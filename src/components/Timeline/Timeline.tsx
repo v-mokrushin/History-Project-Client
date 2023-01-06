@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { IWeapon } from "data/weapons/weapons";
 import { observer } from "mobx-react";
 import React from "react";
-import filtersStore from "stores/mobx/filters";
+import settingsStore from "stores/mobx/settings";
 import { ANIMATIONS } from "../../constants/animation";
 import TimelineItem from "../TimelineItem/TimelineItem";
 import { TimelineContext } from "./context";
@@ -17,7 +17,7 @@ interface ITimelineProps {
 const Timeline = observer(
   ({ contentCollection, uniqueDates, showFlags = false }: ITimelineProps) => {
     let dates = Array.from(uniqueDates);
-    if (filtersStore.sortInAscending) dates.reverse();
+    if (settingsStore.sortInAscending) dates.reverse();
 
     return (
       <TimelineContext.Provider value={{ showFlags }}>

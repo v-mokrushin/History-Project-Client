@@ -9,6 +9,7 @@ import { SMALL_ARMS_DATA } from "./smallArms";
 
 export interface IWeapon {
   name: string;
+  isReady?: boolean;
   type: any;
   adoptedIntoServiceDate: number;
   icon?: string;
@@ -80,13 +81,23 @@ export const WEAPONS_DATA = {
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
       );
   },
-  filterWeapons(selectedWeapons: any[], isEmpty: boolean, filters: any) {
-    if (isEmpty) {
+  filterWeapons(selectedWeapons: any[], filters: any) {
+    if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
-      return selectedWeapons.filter(
-        (item) => item.type.name.russian === filters.type.name.russian
-      );
+      let weapons = selectedWeapons;
+
+      if (filters.name)
+        weapons = weapons.filter((item) =>
+          item.name.toLowerCase().includes(filters.name.toLowerCase())
+        );
+
+      if (filters.type)
+        weapons = weapons.filter(
+          (item) => item.type.name.russian === filters.type.name.russian
+        );
+
+      return weapons;
     }
   },
   selectNation(weaponsBranchPath: string) {
@@ -110,7 +121,7 @@ export const WEAPONS_DATA = {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
     });
-    console.log(data);
+    // console.log(data);
   },
 };
 

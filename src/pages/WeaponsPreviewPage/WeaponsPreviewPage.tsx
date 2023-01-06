@@ -15,6 +15,7 @@ import Filter from "../../components/Filter/Filter";
 import { observer } from "mobx-react";
 import scrollMemoryStore from "../../stores/mobx/scrollMemory";
 import filtersStore from "../../stores/mobx/filters";
+import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPreviewSettings";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -27,11 +28,7 @@ const WeaponsPreviewPage = observer(() => {
   );
   const filteredWeapons = React.useMemo(
     () =>
-      WEAPONS_DATA.filterWeapons(
-        selectedWeapons,
-        filtersStore.isEmpty(),
-        filtersStore.getFilters()
-      ),
+      WEAPONS_DATA.filterWeapons(selectedWeapons, filtersStore.getFilters()),
     [filtersStore.filters]
   );
   const uniqueDates = React.useMemo(
@@ -60,9 +57,11 @@ const WeaponsPreviewPage = observer(() => {
         <Container>
           <Title>
             {weaponsBranchObject.name.russian}{" "}
-            {nationObject?.name.russianАccusative}
+            {nationObject?.name.russianАccusative}{" "}
+            {filteredWeapons.length === 0 || `(${filteredWeapons.length})`}
           </Title>
           <Filter weaponBranch={weaponsBranchObject} />
+          <WeaponPreviewSettings />
           {filteredWeapons.length > 0 ? (
             <Timeline
               contentCollection={filteredWeapons}
@@ -70,7 +69,7 @@ const WeaponsPreviewPage = observer(() => {
               showFlags={nationObject === NATIONS.world}
             />
           ) : (
-            <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} centered50vh />
+            <SpecialLogo type={SPECIAL_LOGO_TYPE.notFound} centered50vh />
           )}
         </Container>
       </ContentWrapper>
@@ -79,15 +78,3 @@ const WeaponsPreviewPage = observer(() => {
 });
 
 export default WeaponsPreviewPage;
-
-{
-  /* {uniqueDates.map((year, yearIndex) => (
-                <TimelineItem year={year} key={yearIndex}>
-                  {filteredWeapons
-                    .filter((item) => item.adoptedIntoServiceDate === year)
-                    .map((val, valIndex) => (
-                      <PreviewWeaponCard weapon={val} key={valIndex} />
-                    ))}
-                </TimelineItem>
-              ))} */
-}

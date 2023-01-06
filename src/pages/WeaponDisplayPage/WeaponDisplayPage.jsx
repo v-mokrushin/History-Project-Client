@@ -38,8 +38,7 @@ export default function WeaponDisplayPage() {
     if (weapon.specifications) {
       if (weapon.type.branch.path === WEAPONS_TYPE.armoredVehicle.name.path)
         return getArmoredSpec();
-      if (weapon.type.branch === data.aviation)
-        return getAviationSpec();
+      if (weapon.type.branch === data.aviation) return getAviationSpec();
     }
   }
 
@@ -275,30 +274,32 @@ export default function WeaponDisplayPage() {
             <SpecLine
               crit="Мощность двигателя"
               val={weapon.specifications.mobility.engine.power}
+              mesure="л.с."
             />
             <SpecLine
               crit="Объем двигателя"
               val={weapon.specifications.mobility.engine.capacity}
+              mesure="л"
             />
             <SpecLine
               crit="Скорость по шоссе"
               val={weapon.specifications.mobility.speed.road}
+              mesure="км/ч"
             />
             <SpecLine
               crit="Скорость по пересечённой местности"
               val={weapon.specifications.mobility.speed.roughTerrain}
+              mesure="км/ч"
             />
             <SpecLine
               crit="Запас хода по шоссе"
               val={weapon.specifications.mobility.powerReserve.road}
+              mesure="км"
             />
             <SpecLine
               crit="Запас хода по пересечённой местности"
               val={weapon.specifications.mobility.powerReserve.roughTerrain}
-            />
-            <SpecLine
-              crit="Запас хода по пересечённой местности"
-              val={weapon.specifications.mobility.powerReserve.roughTerrain}
+              mesure="км"
             />
             <SpecLine
               crit="Удельная мощность"
@@ -664,17 +665,19 @@ export default function WeaponDisplayPage() {
               <Container>
                 <MobileContentList list={weapon.sections} />
                 <Title id="Введение">{weapon.name}</Title>
-                {getIntro()}
-                {weapon.specifications ? (
-                  getSpecification()
+                {weapon.isReady ? (
+                  <>
+                    {getIntro()}
+                    {getSpecification()}
+                    {weapon.JSXComponent}
+                    {getVideomaterials()}
+                  </>
                 ) : (
                   <SpecialLogo
                     type={SPECIAL_LOGO_TYPE.inDevelopment}
                     centered75vh
                   />
                 )}
-                {weapon.JSXComponent}
-                {getVideomaterials()}
               </Container>
               <DesktopContentList list={weapon.sections} />
             </Container>

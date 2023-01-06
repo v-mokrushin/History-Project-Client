@@ -1,16 +1,12 @@
 import { WEAPONS_DATA } from "./../../data/weapons/weapons";
 import { makeAutoObservable, toJS } from "mobx";
+import { WEAPONS_TYPE_METHODS } from "constants/weapons";
 
 export class FiltersStore {
   public filters: any;
-  public colorized: boolean;
-  public sortInAscending: boolean;
 
   constructor() {
     this.filters = {};
-    this.colorized = false;
-    this.sortInAscending = false;
-
     makeAutoObservable(this);
   }
 
@@ -18,8 +14,15 @@ export class FiltersStore {
     return toJS(this.filters);
   }
 
-  setFilter(filters: object): void {
-    this.filters = filters;
+  setTypeFilter(type: object): void {
+    if (WEAPONS_TYPE_METHODS.isAllType(type)) {
+      delete this.filters.type;
+      this.filters = { ...this.filters };
+    } else this.filters = { ...this.filters, type };
+  }
+
+  setNameFilter(name: string): void {
+    this.filters = { ...this.filters, name };
   }
 
   cancelFilters(): void {
@@ -28,16 +31,6 @@ export class FiltersStore {
 
   isEmpty(): boolean {
     return Object.keys(this.filters).length === 0;
-  }
-
-  toggleSortInAscending(): void {
-    this.sortInAscending = !this.sortInAscending;
-    // console.log(this.yearSortion);
-  }
-
-  changeColorized(): void {
-    WEAPONS_DATA.changeColorized();
-    this.colorized = !this.colorized;
   }
 }
 

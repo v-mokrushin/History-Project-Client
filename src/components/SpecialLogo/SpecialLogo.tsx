@@ -24,6 +24,9 @@ export default function SpecialLogo({
     if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
       return styles.animatedIcon_typeDevelopment;
     }
+    if (type == SPECIAL_LOGO_TYPE.notFound) {
+      return styles.animatedIcon_typeNone;
+    }
   }
 
   function getTitle() {
@@ -32,6 +35,9 @@ export default function SpecialLogo({
     }
     if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
       return "В разработке";
+    }
+    if (type == SPECIAL_LOGO_TYPE.notFound) {
+      return "Не найдено";
     }
   }
 
