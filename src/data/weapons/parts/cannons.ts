@@ -8,22 +8,34 @@ interface ICannon {
   trigger?: string;
 }
 
-export const D25T: ICannon = {
-  trademark: "Д-25T",
-  caliber: 122,
-  length: 48,
-  type: "нарезное",
-  chargingType: "раздельное",
-  // combatFireRate: "< 3",
-  muzzleBrake: "двухкамерный",
-  trigger: "механический, электрический",
-};
+const CANNONS_DATA: ICannon[] = [
+  {
+    trademark: "Д-25T",
+    caliber: 122,
+    length: 48,
+    type: "нарезное",
+    chargingType: "раздельное",
+    muzzleBrake: "двухкамерный",
+    trigger: "механический, электрический",
+  },
+  {
+    trademark: "Ф-34",
+    caliber: 76,
+    length: 41.5,
+    type: "нарезное",
+    chargingType: "унитарное",
+    muzzleBrake: "нет",
+  },
+];
 
-export const F34: ICannon = {
-  trademark: "Ф-34",
-  caliber: 76,
-  length: 41.5,
-  type: "нарезное",
-  chargingType: "унитарное",
-  muzzleBrake: "нет",
-};
+class Cannons {
+  private cannons = CANNONS_DATA;
+
+  constructor() {}
+
+  get(trademark: string) {
+    return this.cannons.find((cannon) => cannon.trademark === trademark);
+  }
+}
+
+export const CANNONS = new Cannons();

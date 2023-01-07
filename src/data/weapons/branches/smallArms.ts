@@ -1,8 +1,9 @@
+import { appendNation } from "utils/common";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
 
-let ussr: IWeapon[] = [
+const ussr: IWeapon[] = [
   {
     name: "Револьвер системы Нагана",
     type: WEAPONS_TYPE.smallArms.revolver,
@@ -28,10 +29,14 @@ let ussr: IWeapon[] = [
     type: WEAPONS_TYPE.smallArms.antiTankGun,
     adoptedIntoServiceDate: 1941,
   },
+  {
+    name: "ДП",
+    type: WEAPONS_TYPE.smallArms.machinegun,
+    adoptedIntoServiceDate: 1927,
+  },
 ];
-ussr.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany: IWeapon[] = [
+const germany: IWeapon[] = [
   {
     name: "Mauser 98k",
     type: WEAPONS_TYPE.smallArms.rifle,
@@ -49,37 +54,39 @@ let germany: IWeapon[] = [
   },
   {
     name: "MG-42",
-    type: WEAPONS_TYPE.smallArms.machineGun,
+    type: WEAPONS_TYPE.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1942,
   },
   {
     name: "MG-34",
-    type: WEAPONS_TYPE.smallArms.machineGun,
+    type: WEAPONS_TYPE.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1938,
   },
 ];
-germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa: IWeapon[] = [
+const usa: IWeapon[] = [
   {
-    name: "M2-Browning",
-    type: WEAPONS_TYPE.smallArms.machineGun,
+    name: "Browning M2",
+    type: WEAPONS_TYPE.smallArms.heavyMachinegun,
     adoptedIntoServiceDate: 1933,
   },
 ];
-usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let finland: IWeapon[] = [
+const finland: IWeapon[] = [
   {
     name: "Suomi KP-31",
     type: WEAPONS_TYPE.smallArms.submachineGun,
     adoptedIntoServiceDate: 1931,
   },
 ];
-finland.forEach((item) => (item.nation = NATIONS.finland));
 
-let japan: IWeapon[] = [];
-japan.forEach((item) => (item.nation = NATIONS.japan));
+const japan: IWeapon[] = [];
+
+appendNation(ussr, NATIONS.USSR);
+appendNation(germany, NATIONS.germany);
+appendNation(usa, NATIONS.USA);
+appendNation(finland, NATIONS.finland);
+appendNation(japan, NATIONS.japan);
 
 export const SMALL_ARMS_DATA = [
   ...ussr,

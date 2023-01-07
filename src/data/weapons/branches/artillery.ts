@@ -1,8 +1,9 @@
+import { appendNation } from "utils/common";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
 
-let USSR: IWeapon[] = [
+const ussr: IWeapon[] = [
   {
     name: "203-мм гаубица Б-4",
     type: WEAPONS_TYPE.artillery.specialPower,
@@ -85,9 +86,8 @@ let USSR: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
   },
 ];
-USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany: IWeapon[] = [
+const germany: IWeapon[] = [
   {
     name: "7,5 cm Pak. 40",
     type: WEAPONS_TYPE.artillery.antitank,
@@ -110,24 +110,26 @@ let germany: IWeapon[] = [
     icon: "icon.jpeg",
   },
 ];
-germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let britain: IWeapon[] = [
+const britain: IWeapon[] = [
   {
     name: "QF 17 pounder",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1943,
   },
 ];
-britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
-let sweden: IWeapon[] = [
+const sweden: IWeapon[] = [
   {
     name: "Bofors L/60",
     type: WEAPONS_TYPE.artillery.antiaircraft,
     adoptedIntoServiceDate: 1932,
   },
 ];
-sweden.forEach((item) => (item.nation = NATIONS.sweden));
 
-export const ARTILLERY_DATA = [...USSR, ...germany, ...britain, ...sweden];
+appendNation(ussr, NATIONS.USSR);
+appendNation(germany, NATIONS.germany);
+appendNation(britain, NATIONS.greatBritain);
+appendNation(sweden, NATIONS.sweden);
+
+export const ARTILLERY_DATA = [...ussr, ...germany, ...britain, ...sweden];

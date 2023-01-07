@@ -9,7 +9,6 @@
 
 .box {
   margin-bottom: 45px;
-  width: max-content;
 
   @include media-breakpoint-down(xs) {
     margin-bottom: 25px;

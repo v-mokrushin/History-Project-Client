@@ -9,7 +9,11 @@
   width: 100%;
 
   @include media-breakpoint-down(FHD) {
-    // min-width: 350px;
+    min-width: 350px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    min-width: 315px;
   }
 
   @include media-breakpoint-down(md) {

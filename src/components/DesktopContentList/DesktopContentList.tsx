@@ -11,29 +11,29 @@ export default function DesktopContentList({
   list,
   className,
 }: IDesktopContentListProps) {
-  return (
-    list && (
-      <div className={classNames(styles.root, className)}>
-        <p className={styles.title}>Содержание</p>
-        <div className={classNames(styles.separator)}></div>
-        <div className={classNames(styles.linksBox)}>
-          {list.map((item, index) => (
-            <a
-              key={index}
-              className={styles.link}
-              href={`#${item}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  ?.getElementById(item)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+  return list ? (
+    <div className={classNames(styles.root, className)}>
+      <p className={styles.title}>Содержание</p>
+      <div className={classNames(styles.separator)}></div>
+      <div className={classNames(styles.linksBox)}>
+        {list.map((item, index) => (
+          <a
+            key={index}
+            className={styles.link}
+            href={`#${item}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                ?.getElementById(item)
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            {item}
+          </a>
+        ))}
       </div>
-    )
+    </div>
+  ) : (
+    <div></div>
   );
 }

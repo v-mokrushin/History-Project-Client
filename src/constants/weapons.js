@@ -1,10 +1,10 @@
 function appendBranch(object) {
-  for (let [key, value] of Object.entries(object)) {
+  for (const [key, value] of Object.entries(object)) {
     if (key != "name") value.branch = object.name;
   }
 }
 
-let armoredVehicle = {
+const armoredVehicle = {
   name: {
     russian: "Бронетехника",
     english: "armored vehicles",
@@ -13,6 +13,11 @@ let armoredVehicle = {
   tankette: {
     name: {
       russian: "Танкетка",
+    },
+  },
+  smallTank: {
+    name: {
+      russian: "Малый танк",
     },
   },
   lightTank: {
@@ -57,7 +62,7 @@ let armoredVehicle = {
   },
 };
 
-let aviation = {
+const aviation = {
   name: {
     russian: "Авиация",
     english: "aviation",
@@ -88,6 +93,26 @@ let aviation = {
       russian: "Бомбардировщик",
     },
   },
+  torpedoBomber: {
+    name: {
+      russian: "Торпедоносец",
+    },
+  },
+  lightBomber: {
+    name: {
+      russian: "Легкий бомбардировщик",
+    },
+  },
+  frontlineBomber: {
+    name: {
+      russian: "Фронтовой бомбардировщик",
+    },
+  },
+  strategicBomber: {
+    name: {
+      russian: "Дальний бомбардировщик",
+    },
+  },
   multipurpose: {
     name: {
       russian: "Многоцелевой",
@@ -105,7 +130,7 @@ let aviation = {
   },
 };
 
-let artillery = {
+const artillery = {
   name: {
     russian: "Артиллерия",
     english: "artillery",
@@ -168,7 +193,7 @@ let artillery = {
   },
 };
 
-let smallArms = {
+const smallArms = {
   name: {
     russian: "Стрелковое оружие",
     english: "small arms",
@@ -204,9 +229,24 @@ let smallArms = {
       russian: "Штурмовая винтовка",
     },
   },
-  machineGun: {
+  shotgun: {
     name: {
-      russian: "Пулемет",
+      russian: "Дробовик",
+    },
+  },
+  machinegun: {
+    name: {
+      russian: "Ручной пулемет",
+    },
+  },
+  generalPurposeMachinegun: {
+    name: {
+      russian: "Eдиный пулемет",
+    },
+  },
+  heavyMachinegun: {
+    name: {
+      russian: "Станковый пулемет",
     },
   },
   antiTankGun: {
@@ -216,7 +256,7 @@ let smallArms = {
   },
 };
 
-let grenadeLaunchers = {
+const grenadeLaunchers = {
   name: {
     russian: "Гранатометы",
     english: "Grenade Launchers",
@@ -227,11 +267,6 @@ let grenadeLaunchers = {
       russian: "Ствольный",
     },
   },
-  // under: {
-  //   name: {
-  //     russian: "Подствольный",
-  //   },
-  // },
   manual: {
     name: {
       russian: "Ручной",
@@ -273,7 +308,7 @@ export const WEAPONS_TYPE = {
 
 export const WEAPONS_TYPE_METHODS = {
   getByPath(path) {
-    for (let key in WEAPONS_TYPE) {
+    for (const key in WEAPONS_TYPE) {
       if (WEAPONS_TYPE[key].name.path === path) {
         return WEAPONS_TYPE[key];
       }

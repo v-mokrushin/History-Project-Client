@@ -1,3 +1,4 @@
+import { IPageData } from "./../constants/pages";
 import { IWeapon } from "data/weapons/weapons";
 function getURLForBackroundImage(url: string): string {
   return `url(${url})`;
@@ -52,4 +53,8 @@ export function getGalleryPath(weaponName: string, weapon: IWeapon) {
       .replaceAll(")", "") +
     "/"
   );
+}
+
+export function appendNation(weapons: IWeapon[], nation: IPageData): void {
+  weapons.forEach((weapon) => (weapon.nation = nation));
 }

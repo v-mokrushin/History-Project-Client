@@ -29,8 +29,6 @@ export interface IWeaponGallery {
   get icon(): string;
 }
 
-
-
 const data = [
   ...ARMORED_VEHICLES,
   ...AVIATION_DATA,
@@ -123,7 +121,6 @@ export const WEAPONS_DATA = {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
     });
-    // console.log(data);
   },
 };
 

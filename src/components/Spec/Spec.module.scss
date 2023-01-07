@@ -1,7 +1,7 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  display: none;
+  // display: none;
 
   @include media-breakpoint-down(FHD) {
     display: block;
@@ -97,7 +97,7 @@
 .body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 50px;
+  grid-column-gap: 30px;
   overflow-x: auto;
   max-height: 350px;
   overflow: hidden;
@@ -130,11 +130,11 @@
   }
 
   @include media-breakpoint-down(FHD) {
-    grid-column-gap: 40px;
+    grid-column-gap: 25px;
   }
 
   @include media-breakpoint-down(xl) {
-    grid-column-gap: 35px;
+    grid-column-gap: 25px;
   }
 
   @include media-breakpoint-down(lg) {

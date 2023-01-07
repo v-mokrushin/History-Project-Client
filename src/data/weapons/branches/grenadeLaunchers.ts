@@ -1,11 +1,11 @@
+import { appendNation } from "utils/common";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
 
-let ussr: IWeapon[] = [];
-ussr.forEach((item) => (item.nation = NATIONS.USSR));
+const ussr: IWeapon[] = [];
 
-let germany: IWeapon[] = [
+const germany: IWeapon[] = [
   // {
   //   name: "Panzerfaust 100",
   //   type: WEAPONS_TYPE.grenadeLaunchers.manual,
@@ -43,18 +43,16 @@ let germany: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
   },
 ];
-germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa: IWeapon[] = [
+const usa: IWeapon[] = [
   {
     name: "M1 «Bazooka»",
     type: WEAPONS_TYPE.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
   },
 ];
-usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let japan: IWeapon[] = [
+const japan: IWeapon[] = [
   {
     name: "Type 4",
     type: WEAPONS_TYPE.grenadeLaunchers.manual,
@@ -66,21 +64,25 @@ let japan: IWeapon[] = [
     adoptedIntoServiceDate: 1921,
   },
 ];
-japan.forEach((item) => (item.nation = NATIONS.japan));
 
-let britain: IWeapon[] = [
+const britain: IWeapon[] = [
   {
     name: "PIAT",
     type: WEAPONS_TYPE.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
   },
 ];
-britain.forEach((item) => (item.nation = NATIONS.greatBritain));
+
+appendNation(ussr, NATIONS.USSR);
+appendNation(germany, NATIONS.germany);
+appendNation(usa, NATIONS.USA);
+appendNation(japan, NATIONS.japan);
+appendNation(britain, NATIONS.greatBritain);
 
 export const GRENADE_LAUNCHERS_DATA = [
-  ...ussr,
-  ...germany,
-  ...usa,
-  ...japan,
-  ...britain,
+  // ...ussr,
+  // ...germany,
+  // ...usa,
+  // ...japan,
+  // ...britain,
 ];

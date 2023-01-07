@@ -17,22 +17,20 @@
 }
 
 .criteria {
-  max-width: 265px;
+  max-width: 55%;
 
   @include media-breakpoint-down(xs) {
-    max-width: 200px;
     flex-grow: 1;
     line-height: 22px;
   }
 }
 
 .value {
-  max-width: 220px;
+  max-width: 65%;
   text-align: right;
   white-space: pre-line;
 
   @include media-breakpoint-down(xs) {
-    max-width: 180px;
     line-height: 22px;
   }
 }

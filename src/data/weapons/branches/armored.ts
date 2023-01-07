@@ -2,9 +2,11 @@ import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
-import { D25T, F34 } from "../parts/cannons";
+import { ENGINES } from "../parts/engines";
+import { CANNONS } from "./../parts/cannons";
+import { appendNation } from "utils/common";
 
-let USSR: IWeapon[] = [
+const ussr: IWeapon[] = [
   {
     name: "ИС-3",
     isReady: false,
@@ -111,7 +113,7 @@ let USSR: IWeapon[] = [
         },
       },
       weapon: {
-        cannon: D25T,
+        cannon: CANNONS.get("Д-25T"),
         сannonАmmunition: 28,
         verticalGA: "−3…+20°",
         horizontalGA: "360°",
@@ -121,12 +123,7 @@ let USSR: IWeapon[] = [
         machinegunАmmunition: "ДТ - 2520,\nДШК - 250",
       },
       mobility: {
-        engine: {
-          trademark: "В-2ИС",
-          type: "дизельный V-образный 12-цилиндровый",
-          power: 520,
-          capacity: 38.88,
-        },
+        engine: ENGINES.get("В-2ИС"),
         speed: {
           road: 37,
           roughTerrain: 15,
@@ -178,7 +175,10 @@ let USSR: IWeapon[] = [
           "механик-водитель, стрелок-радист, заряжающий, командир-наводчик",
       },
       weapon: {
-        cannon: F34,
+        cannon: CANNONS.get("Ф-34"),
+      },
+      mobility: {
+        engine: ENGINES.get("В-2"),
       },
     },
   },
@@ -238,6 +238,11 @@ let USSR: IWeapon[] = [
     adoptedIntoServiceDate: 1931,
   },
   {
+    name: "Т-38",
+    type: WEAPONS_TYPE.armoredVehicle.smallTank,
+    adoptedIntoServiceDate: 1936,
+  },
+  {
     name: "ИСУ-152",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
@@ -283,23 +288,22 @@ let USSR: IWeapon[] = [
     adoptedIntoServiceDate: 1931,
   },
 ];
-USSR.forEach((item) => (item.nation = NATIONS.USSR));
 
-let germany: IWeapon[] = [
+const germany: IWeapon[] = [
   {
-    name: "PzKpfw VI Ausf.B «Tiger II»",
+    name: "PzKpfw VI Ausf.B Tiger II",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
   },
   {
-    name: "PzKpfw VI «Tiger»",
+    name: "PzKpfw VI Tiger",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
   },
   {
-    name: "PzKpfw V «Panther»",
+    name: "PzKpfw V Ausf.G Panther",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1943,
+    adoptedIntoServiceDate: 1944,
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",
@@ -407,9 +411,8 @@ let germany: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
   },
 ];
-germany.forEach((item) => (item.nation = NATIONS.germany));
 
-let usa: IWeapon[] = [
+const usa: IWeapon[] = [
   {
     name: "M26 Pershing",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
@@ -501,9 +504,8 @@ let usa: IWeapon[] = [
     adoptedIntoServiceDate: 1945,
   },
 ];
-usa.forEach((item) => (item.nation = NATIONS.USA));
 
-let britain: IWeapon[] = [
+const britain: IWeapon[] = [
   {
     name: "Churchill III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
@@ -560,61 +562,65 @@ let britain: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
   },
 ];
-britain.forEach((item) => (item.nation = NATIONS.greatBritain));
 
-let france: IWeapon[] = [
+const france: IWeapon[] = [
   {
     name: "Somua S35",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
   },
 ];
-france.forEach((item) => (item.nation = NATIONS.france));
 
-let italy: IWeapon[] = [
+const italy: IWeapon[] = [
   {
     name: "Lancia IZ/IZM",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
   },
 ];
-italy.forEach((item) => (item.nation = NATIONS.italy));
 
-let czechoslovakia: IWeapon[] = [
+const czechoslovakia: IWeapon[] = [
   {
     name: "LT vz.38",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
   },
 ];
-czechoslovakia.forEach((item) => (item.nation = NATIONS.czechoslovakia));
 
-let finland: IWeapon[] = [
+const finland: IWeapon[] = [
   {
     name: "BT-42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
   },
 ];
-finland.forEach((item) => (item.nation = NATIONS.finland));
 
-let japan: IWeapon[] = [
+const japan: IWeapon[] = [
   {
     name: "Chi-Nu",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
   },
 ];
-japan.forEach((item) => (item.nation = NATIONS.japan));
+
+appendNation(ussr, NATIONS.USSR);
+appendNation(germany, NATIONS.germany);
+appendNation(usa, NATIONS.USA);
+appendNation(britain, NATIONS.greatBritain);
+appendNation(france, NATIONS.france);
+appendNation(italy, NATIONS.italy);
+appendNation(czechoslovakia, NATIONS.czechoslovakia);
+appendNation(finland, NATIONS.finland);
+appendNation(japan, NATIONS.japan);
 
 export const ARMORED_VEHICLES = [
-  ...USSR,
+  ...ussr,
   ...germany,
   ...usa,
   ...britain,
+  ...japan,
   ...france,
   ...italy,
   ...czechoslovakia,
   ...finland,
-  ...japan,
 ];
