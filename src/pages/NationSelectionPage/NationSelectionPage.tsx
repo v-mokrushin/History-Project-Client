@@ -28,9 +28,9 @@ export default function NationSelectionPage() {
         <Container>
           <Title>{pageInfo.name.russian}</Title>
           <div className={styles.flagsWrapper}>
-            {nations.map((item, index) => (
-              <Flag key={index} nation={item} />
-            ))}
+            {nations.map(
+              (item, index) => item && <Flag key={index} nation={item} />
+            )}
           </div>
         </Container>
       </ContentWrapper>

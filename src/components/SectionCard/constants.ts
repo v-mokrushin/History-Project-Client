@@ -1,3 +1,9 @@
+export interface ISectionCard {
+  name: string;
+  path: string;
+  backgroundImage: string;
+}
+
 export const SECTION_CARD_TYPE = {
   articles: {
     name: "Статьи",

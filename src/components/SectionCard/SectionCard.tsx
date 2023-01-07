@@ -4,10 +4,14 @@ import styles from "./SectionCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animation";
 import { scrollTopInstantly } from "../../utils/scroll";
-import { SECTION_CARD_TYPE } from "./constants";
+import { ISectionCard, SECTION_CARD_TYPE } from "./constants";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 
-export default function SectionCard({ type }) {
+interface ISectionCardProps {
+  type: ISectionCard;
+}
+
+export default function SectionCard({ type }: ISectionCardProps) {
   return (
     <NavLink
       to={type.path}

@@ -8,6 +8,15 @@ export interface IPageData {
   flagImage?: string;
 }
 
+const wrongObject: IPageData = {
+  path: "WRONG",
+  introImage: "WRONG",
+  name: {
+    russian: "WRONG",
+    english: "WRONG",
+  },
+};
+
 const data: IPageData[] = [
   {
     path: "",
@@ -84,9 +93,11 @@ function getPathLength(path: string): number {
   return path.split("/").length;
 }
 
-function getByPath(path: string) {
+function getByPath(path: string): IPageData {
   const lastPathElement = path.split("/").at(-1);
-  return data.find((item) => item.path === lastPathElement);
+  const item = data.find((item) => item.path === lastPathElement);
+  if (item) return item;
+  else return wrongObject;
 }
 
 function getLabelsArray(locationPathname: string): string[] {

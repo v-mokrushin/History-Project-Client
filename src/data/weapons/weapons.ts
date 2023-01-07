@@ -1,3 +1,4 @@
+import { IPageData } from "constants/pages";
 import { type } from "os";
 import { getGalleryPath } from "utils/common";
 import { NATIONS } from "../../constants/nations";
@@ -14,7 +15,7 @@ export interface IWeapon {
   type: any;
   adoptedIntoServiceDate: number;
   icon?: string;
-  nation?: any;
+  nation?: IPageData;
   gallery?: IWeaponGallery;
   id?: string;
   JSXComponent?: JSX.Element;
@@ -37,7 +38,6 @@ const data = [
   ...SMALL_ARMS_DATA,
   ...GRENADE_LAUNCHERS_DATA,
 ];
-console.log(data);
 
 data.forEach((weapon) => {
   let weaponName: string = weapon.name;
@@ -102,7 +102,7 @@ export const WEAPONS_DATA = {
       return weapons;
     }
   },
-  selectNation(weaponsBranchPath: string) {
+  selectNation(weaponsBranchPath: string | undefined) {
     return [
       NATIONS.world,
       ...Array.from(

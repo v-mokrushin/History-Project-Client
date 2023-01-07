@@ -5,10 +5,10 @@ import classNames from "classnames";
 export default function ReadingProgressBar() {
   const bar = React.useRef(null);
   const [parent, setParent] = React.useState(null);
-  const [scroll, setScroll] = React.useState(null);
+  const [scroll, setScroll] = React.useState(0);
 
   React.useEffect(() => {
-    setParent(bar.current.parentElement);
+    if (bar.current) setParent(bar.current["parentElement"]);
   }, []);
 
   React.useEffect(() => {
@@ -26,13 +26,16 @@ export default function ReadingProgressBar() {
   return (
     <div
       ref={bar}
-      style={{
-        width:
-          (scroll /
-            (parent?.clientHeight - document.documentElement.clientHeight)) *
-            100 +
-          "%",
-      }}
+      style={
+        parent! && {
+          width:
+            (scroll /
+              (parent["clientHeight"] -
+                document.documentElement.clientHeight)) *
+              100 +
+            "%",
+        }
+      }
       className={classNames(styles.root)}
     ></div>
   );

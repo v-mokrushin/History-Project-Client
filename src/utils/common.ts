@@ -42,7 +42,7 @@ export function shuffleTracks(array: string[]): string[] {
 export function getGalleryPath(weaponName: string, weapon: IWeapon) {
   return (
     `/images/weapons/${weapon.branch.path}/` +
-    weapon.nation.path +
+    weapon.nation!.path +
     "/" +
     weaponName
       .replaceAll(" ", "-")

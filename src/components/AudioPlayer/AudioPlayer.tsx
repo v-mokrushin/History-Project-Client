@@ -4,17 +4,21 @@ import styles from "./AudioPlayer.module.scss";
 import { observer } from "mobx-react";
 import audioPlayerStore from "../../stores/mobx/audioPlayer";
 
-const AudioPlayer = observer(({ isMainPlayer = false }) => {
-  const audio = useRef(null);
+interface IAudioPlayerProps {
+  isMainPlayer?: boolean;
+}
+
+const AudioPlayer = observer(({ isMainPlayer = false }: IAudioPlayerProps) => {
+  const audio = useRef<HTMLAudioElement>(null);
 
   React.useEffect(() => {
     if (isMainPlayer) {
       if (audioPlayerStore.status) {
-        audio.current.play();
+        if (audio && audio.current) audio.current.play();
         return;
       }
       if (!audioPlayerStore.status) {
-        audio.current.pause();
+        if (audio && audio.current) audio.current.pause();
         return;
       }
     }
