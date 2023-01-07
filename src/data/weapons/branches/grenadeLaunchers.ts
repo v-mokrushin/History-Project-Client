@@ -1,4 +1,4 @@
-import { appendNation } from "utils/common";
+import { appendNation, appendWeaponBranch } from "utils/common";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
@@ -80,9 +80,10 @@ appendNation(japan, NATIONS.japan);
 appendNation(britain, NATIONS.greatBritain);
 
 export const GRENADE_LAUNCHERS_DATA = [
-  // ...ussr,
-  // ...germany,
-  // ...usa,
-  // ...japan,
-  // ...britain,
+  ...ussr,
+  ...germany,
+  ...usa,
+  ...japan,
+  ...britain,
 ];
+appendWeaponBranch(GRENADE_LAUNCHERS_DATA, WEAPONS_TYPE.grenadeLaunchers);

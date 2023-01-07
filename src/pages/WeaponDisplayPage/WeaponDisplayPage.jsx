@@ -22,6 +22,7 @@ import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
 import { WEAPONS_TYPE } from "constants/weapons";
+import Flag from "components/Flag/Flag";
 
 export default function WeaponDisplayPage() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ export default function WeaponDisplayPage() {
 
   function getSpecification() {
     if (weapon.specifications) {
-      if (weapon.type.branch.path === WEAPONS_TYPE.armoredVehicle.name.path)
+      if (weapon.branch.path === WEAPONS_TYPE.armoredVehicle.path)
         return getArmoredSpec();
     }
   }
@@ -389,6 +390,11 @@ export default function WeaponDisplayPage() {
               <Container>
                 <MobileContentList list={weapon.sections} />
                 <Title id="Введение">{weapon.name}</Title>
+                {/* <p className={styles.subtitle}>
+                  {weapon.type.name.russian +
+                    " " +
+                    weapon.nation.name.russianАccusative}
+                </p> */}
                 {weapon.isReady ? (
                   <>
                     {getIntro()}

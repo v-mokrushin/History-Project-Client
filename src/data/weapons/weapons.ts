@@ -10,6 +10,7 @@ import { SMALL_ARMS_DATA } from "./branches/smallArms";
 export interface IWeapon {
   name: string;
   isReady?: boolean;
+  branch?: any;
   type: any;
   adoptedIntoServiceDate: number;
   icon?: string;
@@ -36,6 +37,7 @@ const data = [
   ...SMALL_ARMS_DATA,
   ...GRENADE_LAUNCHERS_DATA,
 ];
+console.log(data);
 
 data.forEach((weapon) => {
   let weaponName: string = weapon.name;
@@ -75,7 +77,7 @@ export const WEAPONS_DATA = {
     nationPath: string | undefined
   ): any[] {
     return data
-      .filter((item) => item.type.branch.path === weaponsBranchPath)
+      .filter((item) => item.branch.path === weaponsBranchPath)
       .filter(
         (item) =>
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
@@ -106,7 +108,7 @@ export const WEAPONS_DATA = {
       ...Array.from(
         new Set(
           data
-            .filter((item) => item.type.branch.path === weaponsBranchPath)
+            .filter((item) => item.branch.path === weaponsBranchPath)
             .map((item) => item.nation)
         )
       ),

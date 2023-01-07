@@ -1,14 +1,8 @@
-function appendBranch(object) {
-  for (const [key, value] of Object.entries(object)) {
-    if (key != "name") value.branch = object.name;
-  }
-}
-
 const armoredVehicle = {
+  path: "armored-vehicles",
   name: {
     russian: "Бронетехника",
     english: "armored vehicles",
-    path: "armored-vehicles",
   },
   tankette: {
     name: {
@@ -63,10 +57,10 @@ const armoredVehicle = {
 };
 
 const aviation = {
+  path: "aviation",
   name: {
     russian: "Авиация",
     english: "aviation",
-    path: "aviation",
   },
   scout: {
     name: {
@@ -131,10 +125,10 @@ const aviation = {
 };
 
 const artillery = {
+  path: "artillery",
   name: {
     russian: "Артиллерия",
     english: "artillery",
-    path: "artillery",
   },
   company: {
     name: {
@@ -194,10 +188,10 @@ const artillery = {
 };
 
 const smallArms = {
+  path: "small-arms",
   name: {
     russian: "Стрелковое оружие",
     english: "small arms",
-    path: "small-arms",
   },
   revolver: {
     name: {
@@ -257,10 +251,10 @@ const smallArms = {
 };
 
 const grenadeLaunchers = {
+  path: "grenade-launchers",
   name: {
     russian: "Гранатометы",
     english: "Grenade Launchers",
-    path: "grenade-launchers",
   },
   muzzle: {
     name: {
@@ -284,12 +278,6 @@ const grenadeLaunchers = {
   },
 };
 
-appendBranch(armoredVehicle);
-appendBranch(aviation);
-appendBranch(smallArms);
-appendBranch(artillery);
-appendBranch(grenadeLaunchers);
-
 const allType = {
   name: {
     russian: "Все",
@@ -309,7 +297,7 @@ export const WEAPONS_TYPE = {
 export const WEAPONS_TYPE_METHODS = {
   getByPath(path) {
     for (const key in WEAPONS_TYPE) {
-      if (WEAPONS_TYPE[key].name.path === path) {
+      if (WEAPONS_TYPE[key].path === path) {
         return WEAPONS_TYPE[key];
       }
     }
@@ -318,6 +306,7 @@ export const WEAPONS_TYPE_METHODS = {
     return allType;
   },
   getTypesArrayWithAll(weaponBranch) {
+    console.log([this.getAllType(), ...getTypesArray(weaponBranch)]);
     return [this.getAllType(), ...getTypesArray(weaponBranch)];
   },
   isAllType(type) {
@@ -329,5 +318,6 @@ function getTypesArray(weaponBranch) {
   const copy = {};
   Object.assign(copy, weaponBranch);
   delete copy.name;
+  delete copy.path;
   return Object.values(copy);
 }

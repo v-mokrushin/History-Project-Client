@@ -4,7 +4,7 @@ import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ENGINES } from "../parts/engines";
 import { CANNONS } from "./../parts/cannons";
-import { appendNation } from "utils/common";
+import { appendNation, appendWeaponBranch } from "utils/common";
 
 const ussr: IWeapon[] = [
   {
@@ -624,3 +624,4 @@ export const ARMORED_VEHICLES = [
   ...czechoslovakia,
   ...finland,
 ];
+appendWeaponBranch(ARMORED_VEHICLES, WEAPONS_TYPE.armoredVehicle);

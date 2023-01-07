@@ -1,4 +1,4 @@
-import { appendNation } from "utils/common";
+import { appendNation, appendWeaponBranch } from "utils/common";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
@@ -264,3 +264,4 @@ export const AVIATION_DATA = [
   ...hungary,
   ...italy,
 ];
+appendWeaponBranch(AVIATION_DATA, WEAPONS_TYPE.aviation);
