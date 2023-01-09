@@ -29,6 +29,12 @@ const ENGINES_DATA: IEngine[] = [
     capacity: 38.88,
   },
   {
+    trademark: "В-2-34",
+    type: "дизельный V-образный 12-цилиндровый",
+    power: 500,
+    capacity: 38.88,
+  },
+  {
     trademark: "Maybach HL 230",
     type: "бензиновый V-образный 12-цилиндровый",
     power: 700,

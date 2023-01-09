@@ -1,10 +1,13 @@
+import { CREWS } from "../crews";
+import { BODIES } from "../parts/bodies";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapons";
 import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ENGINES } from "../parts/engines";
-import { CANNONS } from "./../parts/cannons";
+import { CANNONS } from "../parts/cannons";
 import { appendNation, appendWeaponBranch } from "utils/common";
+import { TOWERS } from "../parts/towers";
 
 const ussr: IWeapon[] = [
   {
@@ -56,7 +59,7 @@ const ussr: IWeapon[] = [
     isReady: true,
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    JSXComponent: IS_2(),
+    JSXComponent: <IS_2 />,
     sections: [
       "Введение",
       "Характеристики",
@@ -109,10 +112,7 @@ const ussr: IWeapon[] = [
         exploitationYears: [1944, 1945],
         numberOfIssued: 3483,
       },
-      crew: {
-        size: 4,
-        structure: "механик-водитель, наводчик, заряжающий, командир",
-      },
+      crew: CREWS.size.four.perfect,
       sizes: {
         weight: 46,
         length: 6770,
@@ -122,33 +122,20 @@ const ussr: IWeapon[] = [
       },
       armoring: {
         type: "катаная высокой твёрдости, литая средней твёрдости",
-        body: {
-          foreheadTop: "120 мм / 60°",
-          foreheadBottom: "100 мм / −30°",
-          boardTop: "90-120 мм / 15°",
-          boardBottom: "90 мм / 0°",
-          sternTop: "60 мм / 49°",
-          sternBottom: "60 мм / 49°",
-          bottom: "20 мм",
-          roof: "30 мм",
-        },
-        tower: {
-          forehead: "100 мм",
-          gunMask: "100 мм",
-          board: "100 мм / 20°",
-          stern: "100 мм / 30°",
-          roof: "30 мм",
-        },
+        body: BODIES.get("ИС"),
+        tower: TOWERS.get("ИС"),
       },
       weapon: {
         cannon: CANNONS.get("Д-25T"),
-        сannonАmmunition: 28,
+        ammunition: {
+          cannon: 28,
+          machinegun: "ДТ - 2520, ДШК - 250",
+        },
         verticalGA: "−3…+20°",
         horizontalGA: "360°",
         sights: "ТШ-17",
         machinegun: `3 × 7,62-мм ДТ 
         1 × 12,7-мм ДШК`,
-        machinegunАmmunition: "ДТ - 2520,\nДШК - 250",
       },
       mobility: {
         engine: ENGINES.get("В-2ИС"),
@@ -193,20 +180,21 @@ const ussr: IWeapon[] = [
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     intro: [
-      "Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года. Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны.",
+      "Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны. Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод - СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года.",
     ],
     sections: ["Введение"],
     specifications: {
-      crew: {
-        size: 4,
-        structure:
-          "механик-водитель, стрелок-радист, заряжающий, командир-наводчик",
-      },
+      crew: CREWS.size.four.weak,
       weapon: {
         cannon: CANNONS.get("Ф-34"),
       },
       mobility: {
-        engine: ENGINES.get("В-2"),
+        engine: ENGINES.get("В-2-34"),
+      },
+      armoring: {
+        type: "стальная катаная гомогенная высокой твёрдости",
+        body: BODIES.get("Т-34"),
+        tower: TOWERS.get("Т-34 обр. 40-41 г."),
       },
     },
   },
@@ -350,11 +338,7 @@ const germany: IWeapon[] = [
       },
     ],
     specifications: {
-      crew: {
-        size: 5,
-        structure:
-          "механик-водитель, стрелок-радист, заряжающий, наводчик, командир",
-      },
+      crew: CREWS.size.five.perfect,
       weapon: {
         cannon: CANNONS.get("8,8 cm KwK 36"),
       },

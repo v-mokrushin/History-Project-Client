@@ -174,11 +174,6 @@ export default function WeaponDisplayPage() {
                 val={weapon.specifications.weapon.cannon.ammunition}
               /> */}
               <SpecLine
-                crit="Боекомплект орудия"
-                val={weapon.specifications.weapon.сannonАmmunition}
-                mesure="выстрелов"
-              />
-              <SpecLine
                 crit="Тип заряжания"
                 val={weapon.specifications.weapon.cannon.chargingType}
               />
@@ -191,10 +186,10 @@ export default function WeaponDisplayPage() {
                 crit="Дульный тормоз"
                 val={weapon.specifications.weapon.cannon.muzzleBrake}
               />
-              <SpecLine
+              {/* <SpecLine
                 crit="Тип спуска"
                 val={weapon.specifications.weapon.cannon.trigger}
-              />
+              /> */}
               <SpecLine
                 crit="Углы вертик. наведения"
                 val={weapon.specifications.weapon.verticalGA}
@@ -203,17 +198,23 @@ export default function WeaponDisplayPage() {
                 crit="Углы горизон. наведения"
                 val={weapon.specifications.weapon.horizontalGA}
               />
-              <SpecLine
+              {/* <SpecLine
                 crit="Прицелы"
                 val={weapon.specifications.weapon.sights}
-              />
+              /> */}
               <SpecLine
                 crit="Пулеметы"
                 val={weapon.specifications.weapon.machinegun}
               />
               <SpecLine
-                crit="Боекомплект пулеметов, выстр."
-                val={weapon.specifications.weapon.machinegunАmmunition}
+                crit="Боекомплект орудия"
+                val={weapon.specifications.weapon.ammunition?.cannon}
+                mesure="выстрелов"
+              />
+              <SpecLine
+                crit="Боекомплект пулеметов"
+                val={weapon.specifications.weapon.ammunition?.machinegun}
+                mesure="выстрелов"
               />
             </SpecSection>
           )}
@@ -223,58 +224,66 @@ export default function WeaponDisplayPage() {
                 crit="Тип брони"
                 val={weapon.specifications.armoring.type}
               />
-              <SpecLine
-                crit="Лоб корпуса (верх)"
-                val={weapon.specifications.armoring.body.foreheadTop}
-              />
-              <SpecLine
-                crit="Лоб корпуса (низ)"
-                val={weapon.specifications.armoring.body.foreheadBottom}
-              />
-              <SpecLine
-                crit="Борт корпуса (верх)"
-                val={weapon.specifications.armoring.body.boardTop}
-              />
-              <SpecLine
-                crit="Борт корпуса (низ)"
-                val={weapon.specifications.armoring.body.boardBottom}
-              />
-              <SpecLine
-                crit="Корма корпуса (верх)"
-                val={weapon.specifications.armoring.body.sternTop}
-              />
-              <SpecLine
-                crit="Корма корпуса (низ)"
-                val={weapon.specifications.armoring.body.sternBottom}
-              />
-              <SpecLine
-                crit="Днище"
-                val={weapon.specifications.armoring.body.bottom}
-              />
-              <SpecLine
-                crit="Крыша корпуса"
-                val={weapon.specifications.armoring.body.roof}
-              />
-              <SpecLine
-                crit="Лоб башни"
-                val={weapon.specifications.armoring.tower.forehead}
-              />
-              <SpecLine
-                crit="Маска орудия"
-                val={weapon.specifications.armoring.tower.gunMask}
-              />
-              <SpecLine
-                crit="Борт башни"
-                val={weapon.specifications.armoring.tower.board}
-              />
-              <SpecLine
-                crit="Корма башни"
-                val={weapon.specifications.armoring.tower.stern}
-              />
-              <SpecLine
-                crit="Крыша башни"
-                val={weapon.specifications.armoring.tower.roof}
-              />
+              {weapon.specifications.armoring.body && (
+                <>
+                  <SpecLine
+                    crit="Лоб корпуса (верх)"
+                    val={weapon.specifications.armoring.body.forehead.top}
+                  />
+                  <SpecLine
+                    crit="Лоб корпуса (низ)"
+                    val={weapon.specifications.armoring.body.forehead.bottom}
+                  />
+                  <SpecLine
+                    crit="Борт корпуса (верх)"
+                    val={weapon.specifications.armoring.body.board.top}
+                  />
+                  <SpecLine
+                    crit="Борт корпуса (низ)"
+                    val={weapon.specifications.armoring.body.board.bottom}
+                  />
+                  <SpecLine
+                    crit="Корма корпуса (верх)"
+                    val={weapon.specifications.armoring.body.stern.top}
+                  />
+                  <SpecLine
+                    crit="Корма корпуса (низ)"
+                    val={weapon.specifications.armoring.body.stern.bottom}
+                  />
+                  <SpecLine
+                    crit="Днище"
+                    val={weapon.specifications.armoring.body.bottom}
+                  />
+                  <SpecLine
+                    crit="Крыша корпуса"
+                    val={weapon.specifications.armoring.body.roof}
+                  />
+                </>
+              )}
+              {weapon.specifications.armoring.tower && (
+                <>
+                  <SpecLine
+                    crit="Лоб башни"
+                    val={weapon.specifications.armoring.tower.forehead}
+                  />
+                  <SpecLine
+                    crit="Маска орудия"
+                    val={weapon.specifications.armoring.tower.gunMask}
+                  />
+                  <SpecLine
+                    crit="Борт башни"
+                    val={weapon.specifications.armoring.tower.board}
+                  />
+                  <SpecLine
+                    crit="Корма башни"
+                    val={weapon.specifications.armoring.tower.stern}
+                  />
+                  <SpecLine
+                    crit="Крыша башни"
+                    val={weapon.specifications.armoring.tower.roof}
+                  />
+                </>
+              )}
             </SpecSection>
           )}
           {weapon.specifications.mobility && (
