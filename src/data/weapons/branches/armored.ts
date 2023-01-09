@@ -17,9 +17,14 @@ const ussr: IWeapon[] = [
     ],
   },
   {
-    name: "КВ-1",
+    name: "КВ-1 (Л-11)",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
+  },
+  {
+    name: "КВ-1 (ЗиС-5)",
+    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
   },
   {
     name: "КВ-2",
@@ -60,6 +65,7 @@ const ussr: IWeapon[] = [
       "Вооружение",
       "Применение в бою",
       "Видеоматериалы",
+      "Модели",
     ],
     intro: [
       "ИС-2 (Объект 240) — советский основной и тяжёлый танк периода Великой Отечественной войны, являлся самым мощным и наиболее тяжелобронированным из советских и союзных серийных танков периода войны, и одним из сильнейших основных танков на то время в мире. В годы Великой Отечественной войны вместе с обозначением ИС-2 на равных использовалось название ИС-122, в этом случае число 122 означает калибр пушки — основного вооружения боевой машины. Танки этого типа сыграли большую роль в боях 1944—1945 годов, особенно отличившись при штурме городов. После завершения войны ИС-2 были модернизированы и находились на вооружении Советской Армии ВС Союза ССР и впоследствии ВС России до 1993 года. Также танки ИС-2 поставлялись в ряд государств и участвовали в некоторых вооружённых конфликтах после 1945 года.",
@@ -70,6 +76,28 @@ const ussr: IWeapon[] = [
       "https://www.youtube.com/embed/Yfr26UvEtzc",
       "https://www.youtube.com/embed/sodVseKNDNI",
       "https://www.youtube.com/embed/5Zqu4XgXjac",
+    ],
+    models: [
+      {
+        title: "Сборная модель ZVEZDA ИС-2 масштаб 1:35",
+        photo: "звезда-35.jpg",
+        link: "https://www.ozon.ru/product/sbornaya-model-zvezda-sovetskiy-tyazhelyy-tank-is-2-nabor-dlya-sborki-masshtab-1-35-zvezda-art-3524-184455104/?advert=4C-u9uSqd4qS9YZg-YmFssZC9PSLsx7qLGreCeeO4mxUY438mb_4l3C1j5ajr1Oi9QEdYwoIPHDu_QRL2tOdgyjaxMDInlHjI9BkRkumVDDTmjZioDYhPDU-rAM-01xEIbLDUxSawKwltKlxqX9kt8y6oqX6G8yGsGBMyJF285Aj35gFt45Q51pnxvdM5Rgz5_23o8iolE6n2rfshUTLubdIo6OVSHoTuVC0wXvCMse4-d462w4_1itGmKNlfrZ8sP1iMGf8YrOn8g7k-EbfvFNiZjR8KsOdpXlMdKot7kX7qjlXzJ7yBaBUSmGLmW1YsEWLLM6C0E-LUXUlKOhZfyyxBHGhTx82HVPCrwsL-K55ZDlffvkl4SZoK0FXiSh2gvJ163xL6hEZouenQZ5WeNYa0OQdlg3Ex_TP7zCzYKv0qB39vxfQ3Jpr2YPRnm6aRhu1XcDmm1heHLgXhxxcpEYvyfN59RK_Og-glKmAGsYXz6btqqeVClvmaXUjWIJliJhSMP1AytDUtsWVQYc2VxVRhofMHAQlemuVCbFLiC0Yd3VBOFq0drNmnPjJEa6VvzxAowS25dc1WVTPmMdEXrrohs6ltK1CHcPFJYx5zLqi7l4-ZXeal3b2PY22HAyi6k1ozJZrzXwx0kST-9von6mXV1EEJMfTKoCbmTKz9V02nq31ppRn11OdmXNAhcN6GGB8jTAivy_eTnrAAs9xGwzIAe9OV7WJJs4VUaYKJOGGW52Rt63kb7zKCZcM6ZnNa3eVWBrRz4teOGnGL__OLg&avtc=1&avte=4&avts=1673164064&keywords=сборная+модель+ис-2&sh=x0yThzLvBw",
+      },
+      {
+        title: "Сборная модель ZVEZDA ИС-2 масштаб 1:72",
+        photo: "звезда-72.jpg",
+        link: "https://www.ozon.ru/product/sbornaya-model-tanka-model-dlya-sborki-bez-kleya-zvezda-zvezda-sovetskiy-tyazhelyy-tank-is-2-332383229/?asb=zSWLFhAlT4Nxk%252BPQCfuSb4xdQu37usTrQr%252BbDmNCaks%253D&asb2=BoW1W8gWJuqDqsUdFT7KHYna_s9S9vyiZCRpuOyqsHsW35o-6U22CttXsVWkTfRR&avtc=1&avte=2&avts=1673165629&keywords=сборная+модель+ис-2&sh=x0yThzqpWA",
+      },
+      {
+        title: "Сборная модель ZVEZDA ИС-2 масштаб 1:100",
+        photo: "звезда-100.webp",
+        link: "https://www.ozon.ru/product/model-tanka-zvezda-sovetskiy-tyazhelyy-tank-is-2-6201-150320570/?asb=ut4OKH%252BHG0hdFZWkMEH7vGfWCaU1x%252BpL066QTBpP%252FjY%253D&asb2=48PwcmxIrY1unURAsTH_qQWO2ZgCKfim56pASKUTD8CZ0voqbnHEVRA-f90GqAR_&avtc=1&avte=2&avts=1673165581&keywords=сборная+модель+ис-2&sh=x0yTh43SOg",
+      },
+      // {
+      //   title: "Сборная модель Моделист ИС-2 масштаб 1:72",
+      //   photo: "моделист-72.webp",
+      //   link: "https://www.ozon.ru/product/modelist-sovetskiy-tank-is-2-1-72-sbornaya-model-305077003/?asb=qaU0bUqAC8vz4b%252FWrzq%252BvjRM6WCye7gKTqaRrjioRME%253D&asb2=SM58FSgS8iBxZ3_4WawBT-1n4BQSa5sErBrXprkoS590KLJbDC7SNSQsMmkQ1tw_&avtc=1&avte=2&avts=1673167244&keywords=сборная+модель+ис-2&sh=x0yThxWkjw",
+      // },
     ],
     specifications: {
       common: {
@@ -297,13 +325,62 @@ const germany: IWeapon[] = [
   },
   {
     name: "PzKpfw VI Tiger",
+    isReady: true,
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
+    intro: [
+      "Panzerkampfwagen VI Ausf. H1, или «Тигр» – это первый немецкий тяжелый танк времен Второй мировой войны. Один из самых знаменитых танков Германии.",
+    ],
+    sections: ["Введение", "Характеристики", "Модели"],
+    models: [
+      {
+        title: `Сборная модель ZVEZDA T-VI "Тигр" масштаб 1:35`,
+        photo: "звезда-35.jpg",
+        link: "https://www.ozon.ru/product/sbornaya-model-zvezda-nemetskiy-tyazhelyy-tank-t-vi-tigr-nabor-dlya-sborki-masshtab-1-35-zvezda-184454993/?advert=TM52BKx1ddYRyHAJl1EgJrUPPFsKv3mrkx85qpwqtG2kMqbJlYR_E-YiylpGo1HDXUTH-2dxHFgdrvqNgtN-SgwJUCHEo_f9Q4kem64ScJs0p9gFD8vyIahOt0W3-sNSVIyCewSON7O7_goHZJvW7O05MBa70mw2OZQZeHDcxTIXYlPjFf1LVQ9edbYWvvj4hQlVVTQDlZHpp8Cy1razFiOSH9uuelprAex98EYMwOTr3bX40r1zQwaYDOFed1Zi3DqjzEvSCeYKOdFZMF0D52n3bP-ujEqe1_WdXNHl7OXKFTD7N4ryEd9NCrtCqVqR0ql23uPiHZ418jegtjiIQr5k516mozHe5cyuHKG7XR1iokGJGLCihq7idxPlT3KplcsGGh5PlHn5xumSk7K48TryZ8o9jU8ggXG2xhuLkSQIIitNwpYPmI8UKFiazs3WHdV5t-OSrwXZlnd5s62rOgS_-rNcTSUmy5o5rEG0W7ZfvlSplc-GXC4NTN9-yo9GpP92Q6HGj8XF9MHxQbl91s2MSsogt5iQyDzqIPmPBYElSUJK_-EcsxofVVOOO48KdK8c8K0r45eEDZulOi8rxJJcXYDBCYbcToNEIuoqLulpylYLd4JXvgBv9PGA4I3DQSk7aWRqj__J6xDBObFAYbuA1Q04_XrdkeD0EAg_bA6Dp978N1hOZfihEUmDYFnBk0JxJfQKyMX9O3a9uVgYNUKHdUAn3oun2llbRz2Zb_1teOJC0w4N2Zqh4LlDnK_kINRvul4w-CHVcY1CqrHbRg&avtc=1&avte=4&avts=1673200289&keywords=модель+танка+тигр&sh=x0yTh63A0w",
+      },
+      {
+        title: `Сборная модель ZVEZDA T-VI "Тигр" масштаб 1:100`,
+        photo: "звезда-100.webp",
+        link: "https://www.ozon.ru/product/model-tanka-zvezda-nemetskiy-tyazhelyy-tank-tigr-6256-150320489/?asb=ELDnVM6SG0uy%252B646u175mxF3Btzwzd%252FeDneVrVuh%252B3M%253D&asb2=mHErVDuVq0kGXzYtVszhhr6wUJRGRW_q4_PZ1tbTflTrXAodClPN4p04TcjHgCCF&avtc=1&avte=2&avts=1673244194&keywords=модель+танка+тигр+zvezda&sh=x0yThw-vQg",
+      },
+      {
+        title: `Сборная модель ZVEZDA Великие противостояния ИC-2 против Тигра масштаб 1:72`,
+        photo: "звезда-72.jpg",
+        link: "https://www.ozon.ru/product/sbornaya-model-tanka-model-dlya-sborki-bez-kleya-zvezda-zvezda-velikie-protivostoyaniya-is-2-352958896/?asb=lMIZswAcPzfCU9TOPIUThGiYnox8u08KrKpgpRNXqXk%253D&asb2=rNC6rLT3JEkl1vF3KIcnwi8KCrqP5-f_ncw9Q7eZCNlrhJpFLH-eedIiiMdFwZjR&avtc=1&avte=2&avts=1673243988&keywords=модель+танка+тигр+zvezda&sh=x0yTh96ZjQ",
+      },
+    ],
+    specifications: {
+      crew: {
+        size: 5,
+        structure:
+          "механик-водитель, стрелок-радист, заряжающий, наводчик, командир",
+      },
+      weapon: {
+        cannon: CANNONS.get("8,8 cm KwK 36"),
+      },
+      mobility: {
+        engine: ENGINES.get("Maybach HL 230"),
+      },
+    },
   },
   {
     name: "PzKpfw V Ausf.G Panther",
+    isReady: true,
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      crew: {
+        size: 5,
+        structure:
+          "механик-водитель, стрелок-радист, заряжающий, наводчик, командир",
+      },
+      weapon: {
+        cannon: CANNONS.get("7,5 cm KwK 42"),
+      },
+      mobility: {
+        engine: ENGINES.get("Maybach HL 230"),
+      },
+    },
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",

@@ -3,8 +3,8 @@ import styles from "./Spec.module.scss";
 import classNames from "classnames";
 
 interface ISpecProps {
-  title: string;
-  children: JSX.Element;
+  title: string | JSX.Element;
+  children: JSX.Element[];
   className?: string;
 }
 

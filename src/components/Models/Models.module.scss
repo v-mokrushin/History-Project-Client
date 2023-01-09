@@ -1,0 +1,70 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.model {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  &:hover .photo {
+    transform: translateY(-5px);
+  }
+
+  &:hover .title {
+    color: $link-color;
+  }
+}
+
+.photo {
+  aspect-ratio: 1.4 / 1;
+  object-fit: contain;
+  width: 100%;
+  transition: transform 250ms ease;
+}
+
+.title {
+  text-align: center;
+  transition: color 150ms ease;
+  line-height: 25px;
+  font-size: 20px;
+
+  @include media-breakpoint-down(FHD) {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}

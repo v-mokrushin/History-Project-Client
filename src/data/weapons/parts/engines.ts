@@ -28,6 +28,12 @@ const ENGINES_DATA: IEngine[] = [
     power: 500,
     capacity: 38.88,
   },
+  {
+    trademark: "Maybach HL 230",
+    type: "бензиновый V-образный 12-цилиндровый",
+    power: 700,
+    capacity: 23,
+  },
 ];
 
 export const ENGINES = new Engines();

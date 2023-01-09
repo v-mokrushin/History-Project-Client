@@ -21,8 +21,9 @@ export interface IWeapon {
   JSXComponent?: JSX.Element;
   intro?: string[];
   videomaterials?: string[];
-  specifications?: object;
+  specifications?: any;
   sections?: string[];
+  models?: IModel[];
 }
 
 export interface IWeaponGallery {
@@ -31,7 +32,13 @@ export interface IWeaponGallery {
   get icon(): string;
 }
 
-const data = [
+export interface IModel {
+  title: string;
+  photo: string;
+  link: string;
+}
+
+const weaponsData = [
   ...ARMORED_VEHICLES,
   ...AVIATION_DATA,
   ...ARTILLERY_DATA,
@@ -39,7 +46,7 @@ const data = [
   ...GRENADE_LAUNCHERS_DATA,
 ];
 
-data.forEach((weapon) => {
+weaponsData.forEach((weapon) => {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
@@ -60,8 +67,13 @@ data.forEach((weapon) => {
       }
     },
   };
-
   delete weapon.icon;
+
+  if (weapon.models) {
+    weapon.models.forEach(
+      (model) => (model.photo = weapon.gallery?.path + "/models/" + model.photo)
+    );
+  }
 });
 
 // --------------------------------------------------------------------------------
@@ -76,7 +88,7 @@ export const WEAPONS_DATA = {
     weaponsBranchPath: string | undefined,
     nationPath: string | undefined
   ): any[] {
-    return data
+    return weaponsData
       .filter((item) => item.branch.path === weaponsBranchPath)
       .filter(
         (item) =>
@@ -107,7 +119,7 @@ export const WEAPONS_DATA = {
       NATIONS.world,
       ...Array.from(
         new Set(
-          data
+          weaponsData
             .filter((item) => item.branch.path === weaponsBranchPath)
             .map((item) => item.nation)
         )
@@ -115,10 +127,14 @@ export const WEAPONS_DATA = {
     ];
   },
   getById(weaponId: string | undefined) {
-    return data.find((item) => item.id === weaponId);
+    // const find = data.find((item) => item.id === weaponId);
+    // if (find) return find;
+    // else return data[0];
+
+    return weaponsData.find((item) => item.id === weaponId);
   },
   changeColorized() {
-    data.forEach((weapon) => {
+    weaponsData.forEach((weapon) => {
       if (weapon.gallery) {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
@@ -126,4 +142,4 @@ export const WEAPONS_DATA = {
   },
 };
 
-console.log(data);
+console.log(weaponsData);

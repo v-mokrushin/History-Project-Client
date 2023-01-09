@@ -4,8 +4,9 @@ function getURLForBackroundImage(url: string): string {
   return `url(${url})`;
 }
 
-export function getBackgroundImageStyleObject(url: string): object {
-  return { backgroundImage: getURLForBackroundImage(url) };
+export function getBackgroundImageStyleObject(url: string | undefined): object {
+  if (url) return { backgroundImage: getURLForBackroundImage(url) };
+  else return {};
 }
 
 export function createParagraphs(text: string): string[] {

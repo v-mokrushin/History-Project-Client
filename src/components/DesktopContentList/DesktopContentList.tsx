@@ -3,7 +3,7 @@ import styles from "./DesktopContentList.module.scss";
 import classNames from "classnames";
 
 interface IDesktopContentListProps {
-  list: string[];
+  list: string[] | undefined;
   className?: string;
 }
 

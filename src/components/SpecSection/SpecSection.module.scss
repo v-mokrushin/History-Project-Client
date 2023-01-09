@@ -4,40 +4,40 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 45px;
-  min-width: 400px;
-  width: 100%;
+  margin-bottom: 35px;
+  width: 400px;
 
   @include media-breakpoint-down(FHD) {
-    min-width: 350px;
+    width: 350px;
+    margin-bottom: 25px;
   }
 
   @include media-breakpoint-down(xl) {
-    min-width: 315px;
+    width: 290px;
+    margin-bottom: 23px;
+    gap: 10px;
   }
 
   @include media-breakpoint-down(md) {
-    min-width: 300px;
-    margin-bottom: 25px;
+    width: 300px;
   }
 
   @include media-breakpoint-down(md) {
-    min-width: 300px;
-    margin-bottom: 25px;
+    width: 300px;
   }
 
   @include media-breakpoint-down(sm) {
-    min-width: auto;
+    width: auto;
   }
 
   @include media-breakpoint-down(xs) {
-    min-width: auto;
+    width: auto;
     gap: 5px;
     width: 100%;
     background-color: rgb(240, 246, 246);
     padding: 10px 10px;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   &:last-child {
@@ -63,21 +63,24 @@
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 27px;
-  letter-spacing: 1px;
+  letter-spacing: 0.75px;
   color: $primary-dark-text-color;
   margin: 0 auto;
 
+  @include media-breakpoint-down(FHD) {
+    letter-spacing: normal;
+    font-size: 24px;
+  }
+
   @include media-breakpoint-down(xl) {
-    letter-spacing: 0.75px;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   @include media-breakpoint-down(lg) {
-    font-size: 25px;
   }
 
   @include media-breakpoint-down(sm) {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   @include media-breakpoint-down(xs) {

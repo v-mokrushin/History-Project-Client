@@ -278,7 +278,7 @@ const grenadeLaunchers = {
   },
 };
 
-const allType = {
+const allType: IWeaponType = {
   name: {
     russian: "Все",
   },
@@ -294,48 +294,45 @@ export const WEAPONS_TYPE = {
 
 // ------------------------------------
 
+interface IWeaponBranch {
+  path: string;
+  name: IWeaponName;
+}
+
+interface IWeaponType {
+  name: IWeaponName;
+}
+
+interface IWeaponName {
+  russian: string;
+  english?: string;
+}
+
 export const WEAPONS_TYPE_METHODS = {
-  getByPath(path) {
-    for (const key in WEAPONS_TYPE) {
-      if (WEAPONS_TYPE[key].path === path) {
-        return WEAPONS_TYPE[key];
-      }
-    }
-    // const arr = Object.values(WEAPONS_TYPE);
-    // for (let val of arr) {
-    //   if (val.path === path) return val;
+  getByPath(path: string) {
+    // for (const key in WEAPONS_TYPE) {
+    //   if (WEAPONS_TYPE[key].path === path) {
+    //     return WEAPONS_TYPE[key];
+    //   }
     // }
+    const arr = Object.values(WEAPONS_TYPE);
+    for (let val of arr) {
+      if (val.path === path) return val;
+    }
   },
   getAllType() {
     return allType;
   },
-  getTypesArrayWithAll(weaponBranch) {
+  getTypesArrayWithAll(weaponBranch: any) {
     return [this.getAllType(), ...getTypesArray(weaponBranch)];
   },
-  isAllType(type) {
+  isAllType(type: IWeaponType) {
     return this.getAllType() === type;
-  },
-  identity: {
-    isArmoredVehicle(weapon) {
-      return weapon.branch == WEAPONS_TYPE.armoredVehicle;
-    },
-    isAviation(weapon) {
-      return weapon.branch == WEAPONS_TYPE.aviation;
-    },
-    isSmallArms(weapon) {
-      return weapon.branch == WEAPONS_TYPE.smallArms;
-    },
-    isArtillery(weapon) {
-      return weapon.branch == WEAPONS_TYPE.artillery;
-    },
-    isGrenadeLaunchers(weapon) {
-      return weapon.branch == WEAPONS_TYPE.grenadeLaunchers;
-    },
   },
 };
 
-function getTypesArray(weaponBranch) {
-  const copy = {};
+function getTypesArray(weaponBranch: any) {
+  const copy: any = {};
   Object.assign(copy, weaponBranch);
   delete copy.name;
   delete copy.path;

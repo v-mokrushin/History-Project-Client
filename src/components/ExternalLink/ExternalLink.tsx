@@ -15,7 +15,7 @@ export default function ExternalLink({
   className,
 }: IExternalLinkProps) {
   return (
-    <a href={link} className={classNames(styles.link)}>
+    <a href={link} target="_blank" className={classNames(styles.link)}>
       <Text className={styles.root}>{children}</Text>
     </a>
   );

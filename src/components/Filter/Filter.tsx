@@ -15,7 +15,6 @@ interface IFilterProps {
 
 const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
   const [open, setOpen] = React.useState(false);
-  const input = React.useRef<HTMLInputElement>(null);
   const weaponTypes = React.useMemo(
     () => WEAPONS_TYPE_METHODS.getTypesArrayWithAll(weaponBranch),
     [weaponBranch]

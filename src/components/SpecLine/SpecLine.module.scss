@@ -16,8 +16,18 @@
   }
 }
 
-.criteria {
-  max-width: 55%;
+%text {
+  line-height: 26px;
+
+  @include media-breakpoint-down(FHD) {
+    line-height: 23px;
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    line-height: 22px;
+    font-size: 15px;
+  }
 
   @include media-breakpoint-down(xs) {
     flex-grow: 1;
@@ -25,12 +35,18 @@
   }
 }
 
+.criteria {
+  @extend %text;
+  max-width: 65%;
+
+  @include media-breakpoint-down(xs) {
+    flex-grow: 1;
+  }
+}
+
 .value {
+  @extend %text;
   max-width: 65%;
   text-align: right;
   white-space: pre-line;
-
-  @include media-breakpoint-down(xs) {
-    line-height: 22px;
-  }
 }
