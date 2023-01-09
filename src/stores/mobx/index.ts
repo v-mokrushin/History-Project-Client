@@ -1,10 +1,10 @@
 import { injectStores } from "@mobx-devtools/tools";
-import burgerStore from "./burger";
-import imageViewerStore from "./imageViewer";
-import scrollMemoryStore from "./scrollMemory";
-import audioPlayerStore from "./audioPlayer";
-import actualSectionStore from "./actualSection";
-import filtersStore from "./filters";
+import burgerStore from "./burgerStore";
+import imageViewerStore from "./imageViewerStore";
+import scrollMemoryStore from "./scrollMemoryStore";
+import audioPlayerStore from "./audioPlayerStore";
+import actualSectionStore from "./actualSectionStore";
+import filtersStore from "./filtersStore";
 
 injectStores({
   burgerStore,

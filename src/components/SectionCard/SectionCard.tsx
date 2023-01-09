@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./SectionCard.module.scss";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import { scrollTopInstantly } from "../../utils/scroll";
 import { ISectionCard, SECTION_CARD_TYPE } from "./constants";
 import { getBackgroundImageStyleObject } from "../../utils/common";

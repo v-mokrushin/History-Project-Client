@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
-import filtersStore from "../../stores/mobx/filters";
+import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
+import filtersStore from "../../stores/mobx/filtersStore";
 import { observer } from "mobx-react";
-import settingsStore from "stores/mobx/settings";
+import settingsStore from "stores/mobx/settingsStore";
 import Input from "components/Input/Input";
 
 interface IFilterProps {

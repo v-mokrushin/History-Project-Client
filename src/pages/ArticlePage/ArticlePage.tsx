@@ -8,7 +8,7 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import Title from "../../components/Title/Title";
 import { loadArticleContent } from "../../stores/redux/articleContent/loadingMiddleware";
 import {

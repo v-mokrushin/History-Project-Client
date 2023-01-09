@@ -1,6 +1,6 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { IWeapon } from "../weapons";
-import { WEAPONS_TYPE } from "../../../constants/weapons";
+import { WEAPONS_TYPE } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
 

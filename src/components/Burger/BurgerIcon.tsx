@@ -1,5 +1,5 @@
 import React from "react";
-import burgerStore from "../../stores/mobx/burger";
+import burgerStore from "../../stores/mobx/burgerStore";
 import styles from "./Burger.module.sass";
 
 export default function BurgerIcon() {

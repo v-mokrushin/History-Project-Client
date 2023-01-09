@@ -1,7 +1,7 @@
 import { CREWS } from "../crews";
 import { BODIES } from "../parts/bodies";
 import { IWeapon } from "../weapons";
-import { WEAPONS_TYPE } from "../../../constants/weapons";
+import { WEAPONS_TYPE } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ENGINES } from "../parts/engines";

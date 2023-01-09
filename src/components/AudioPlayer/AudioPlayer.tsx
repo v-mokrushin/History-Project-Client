@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { useRef } from "react";
 import styles from "./AudioPlayer.module.scss";
 import { observer } from "mobx-react";
-import audioPlayerStore from "../../stores/mobx/audioPlayer";
+import audioPlayerStore from "../../stores/mobx/audioPlayerStore";
 
 interface IAudioPlayerProps {
   isMainPlayer?: boolean;

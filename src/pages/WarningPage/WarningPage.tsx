@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import { WARNING_PAGE_TYPE } from "./constants";
 import styles from "./WarningPage.module.scss";
 

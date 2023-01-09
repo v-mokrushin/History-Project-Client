@@ -7,14 +7,14 @@ import Timeline from "../../components/Timeline/Timeline";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
 import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
-import { WEAPONS_TYPE_METHODS } from "../../constants/weapons";
+import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
 import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
 import { observer } from "mobx-react";
-import scrollMemoryStore from "../../stores/mobx/scrollMemory";
-import filtersStore from "../../stores/mobx/filters";
+import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
+import filtersStore from "../../stores/mobx/filtersStore";
 import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPreviewSettings";
 
 const WeaponsPreviewPage = observer(() => {

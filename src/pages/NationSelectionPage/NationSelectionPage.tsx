@@ -8,8 +8,8 @@ import { PAGES_DATA } from "../../constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
 import { WEAPONS_DATA } from "../../data/weapons/weapons";
-import filtersStore from "../../stores/mobx/filters";
-import scrollMemoryStore from "../../stores/mobx/scrollMemory";
+import filtersStore from "../../stores/mobx/filtersStore";
+import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { PAGES_DATA } from "../../constants/pages";
-import actualSectionStore from "../../stores/mobx/actualSection";
+import actualSectionStore from "../../stores/mobx/actualSectionStore";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {

@@ -1,6 +1,6 @@
-import { WEAPONS_DATA } from "./../../data/weapons/weapons";
+import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import { makeAutoObservable, toJS } from "mobx";
-import { WEAPONS_TYPE_METHODS } from "constants/weapons";
+import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 
 export class FiltersStore {
   public filters: any;

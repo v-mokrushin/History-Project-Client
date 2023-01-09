@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./WeaponPreviewSettings.module.scss";
 import classNames from "classnames";
-import settingsStore from "stores/mobx/settings";
+import settingsStore from "stores/mobx/settingsStore";
 import Text from "components/Text/Text";
 import { observer } from "mobx-react";
 

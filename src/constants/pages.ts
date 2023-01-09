@@ -1,4 +1,3 @@
-import { INTRO_IMAGE_TYPE } from "../components/IntroImage/constants";
 import { NATIONS_METHODS } from "./nations";
 
 export interface IPageData {

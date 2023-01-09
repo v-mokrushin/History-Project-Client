@@ -1,4 +1,4 @@
-import { IPageData } from "./../constants/pages";
+import { IPageData } from "../constants/pages";
 import { IWeapon } from "data/weapons/weapons";
 
 export function appendNation(weapons: IWeapon[], nation: IPageData): void {

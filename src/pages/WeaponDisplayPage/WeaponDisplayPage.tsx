@@ -6,7 +6,7 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import SpecLine from "../../components/SpecLine/SpecLine";
@@ -21,7 +21,7 @@ import MobileContentList from "../../components/MobileContentList/MobileContentL
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
-import { WEAPONS_TYPE, WEAPONS_TYPE_METHODS } from "constants/weapons";
+import { WEAPONS_TYPE, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import Flag from "components/Flag/Flag";
 import Models from "components/Models/Models";
 

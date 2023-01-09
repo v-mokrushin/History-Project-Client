@@ -4,7 +4,7 @@ import styles from "./ArticleCard.module.scss";
 import { useSelector } from "react-redux";
 import { selectArticlePreviewById } from "../../stores/redux/articlePreviews/selectors";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import {
   scrollTopInstantly,

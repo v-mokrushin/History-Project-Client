@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 import BurgerIcon from "../Burger/BurgerIcon";
 import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Input.module.scss";
 import classNames from "classnames";
-import filtersStore from "stores/mobx/filters";
+import filtersStore from "stores/mobx/filtersStore";
 import { observer } from "mobx-react";
 
 interface IInputProps {

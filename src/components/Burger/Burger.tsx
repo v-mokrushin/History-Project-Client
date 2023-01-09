@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { observer } from "mobx-react";
 import React from "react";
-import burgerStore from "../../stores/mobx/burger";
+import burgerStore from "../../stores/mobx/burgerStore";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import styles from "./Burger.module.sass";

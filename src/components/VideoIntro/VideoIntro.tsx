@@ -3,7 +3,7 @@ import styles from "./VideoIntro.module.scss";
 // @ts-ignore
 import video from "../../assets/videos/intro.mp4";
 import classNames from "classnames";
-import { ANIMATIONS } from "../../constants/animation";
+import { ANIMATIONS } from "../../constants/animations";
 
 export default function Intro() {
   return (
