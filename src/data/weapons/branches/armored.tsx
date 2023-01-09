@@ -6,7 +6,7 @@ import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ENGINES } from "../parts/engines";
 import { CANNONS } from "../parts/cannons";
-import { appendNation, appendWeaponBranch } from "utils/common";
+import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { TOWERS } from "../parts/towers";
 
 const ussr: IWeapon[] = [

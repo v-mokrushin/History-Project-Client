@@ -1,6 +1,6 @@
 import { IPageData } from "constants/pages";
 import { type } from "os";
-import { getGalleryPath } from "utils/common";
+import { createGallery, createModels, defineIdProperty } from "utils/weapons";
 import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored";
 import { ARTILLERY_DATA } from "./branches/artillery";
@@ -38,42 +38,18 @@ export interface IModel {
   link: string;
 }
 
-const weaponsData = [
-  ...ARMORED_VEHICLES,
-  ...AVIATION_DATA,
-  ...ARTILLERY_DATA,
-  ...SMALL_ARMS_DATA,
-  ...GRENADE_LAUNCHERS_DATA,
-];
+const weaponsData = ([] as IWeapon[]).concat(
+  ARMORED_VEHICLES,
+  AVIATION_DATA,
+  ARTILLERY_DATA,
+  SMALL_ARMS_DATA,
+  GRENADE_LAUNCHERS_DATA
+);
 
 weaponsData.forEach((weapon) => {
-  let weaponName: string = weapon.name;
-  if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
-
-  Object.defineProperty(weapon, "id", {
-    get: function () {
-      return this.name.replaceAll(" ", "-").replaceAll("/", "-");
-    },
-  });
-
-  weapon.gallery = {
-    path: getGalleryPath(weaponName, weapon),
-    isColorizedIcon: false,
-    get icon() {
-      if (!this.isColorizedIcon) {
-        return this.path + "icon.jpg";
-      } else {
-        return this.path + "icon-color.jpg";
-      }
-    },
-  };
-  delete weapon.icon;
-
-  if (weapon.models) {
-    weapon.models.forEach(
-      (model) => (model.photo = weapon.gallery?.path + "/models/" + model.photo)
-    );
-  }
+  defineIdProperty(weapon);
+  createGallery(weapon);
+  createModels(weapon);
 });
 
 // --------------------------------------------------------------------------------
@@ -127,10 +103,6 @@ export const WEAPONS_DATA = {
     ];
   },
   getById(weaponId: string | undefined) {
-    // const find = data.find((item) => item.id === weaponId);
-    // if (find) return find;
-    // else return data[0];
-
     return weaponsData.find((item) => item.id === weaponId);
   },
   changeColorized() {

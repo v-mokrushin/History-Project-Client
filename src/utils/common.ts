@@ -1,5 +1,3 @@
-import { IPageData } from "./../constants/pages";
-import { IWeapon } from "data/weapons/weapons";
 function getURLForBackroundImage(url: string): string {
   return `url(${url})`;
 }
@@ -38,28 +36,4 @@ export function shuffleTracks(array: string[]): string[] {
   }
 
   return array;
-}
-
-export function getGalleryPath(weaponName: string, weapon: IWeapon) {
-  return (
-    `/images/weapons/${weapon.branch.path}/` +
-    weapon.nation!.path +
-    "/" +
-    weaponName
-      .replaceAll(" ", "-")
-      .replaceAll("/", "-")
-      .replaceAll("«", "")
-      .replaceAll("»", "")
-      .replaceAll("(", "")
-      .replaceAll(")", "") +
-    "/"
-  );
-}
-
-export function appendNation(weapons: IWeapon[], nation: IPageData): void {
-  weapons.forEach((weapon) => (weapon.nation = nation));
-}
-
-export function appendWeaponBranch(weapons: IWeapon[], branch: any): void {
-  weapons.forEach((weapon) => (weapon.branch = branch));
 }

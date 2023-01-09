@@ -1,7 +1,7 @@
 import { createParagraphs } from "../utils/common";
 import { normolize } from "../utils/normolize";
 
-let articles = [
+let articles_data = [
   {
     title: "Бои на Халхин-Голе",
     description:
@@ -83,13 +83,6 @@ let articles = [
     text: "",
     paragraphs: null,
   },
-  // {
-  //   title: "Экономика Второй мировой войны",
-  //   description: "Алексей Исаев об экономике Второй мировой войны",
-  //   backgroundURL: "/images/articles/people.jpg",
-  //   text: "",
-  //   paragraphs: null,
-  // },
   {
     title: "Смоленское сражение и крах стратегии блицкрига",
     description: "",
@@ -107,7 +100,7 @@ let articles = [
   },
 ];
 
-articles.forEach((item) => {
+articles_data.forEach((item) => {
   Object.defineProperty(item, "id", {
     get: function () {
       return this.title.replaceAll(" ", "-");
@@ -115,12 +108,12 @@ articles.forEach((item) => {
   });
 });
 
-articles.forEach((item) => {
+articles_data.forEach((item) => {
   item.paragraphs = createParagraphs(item.text);
 });
 
 const articlePreviews = normolize(
-  articles.map((item) => ({
+  articles_data.map((item) => ({
     id: item.id,
     title: item.title,
     description: item.description,
@@ -131,15 +124,15 @@ const articlePreviews = normolize(
 );
 
 const articlesContent = normolize(
-  articles.map((item) => ({
+  articles_data.map((item) => ({
     id: item.id,
     paragraphs: item.paragraphs,
   }))
 );
 
-articles = normolize(articles);
+articles_data = normolize(articles_data);
 
-export const mock = {
+export const articles = {
   articlePreviews,
   articlesContent,
 };

@@ -1,5 +1,5 @@
 import { articleContentSlice } from ".";
-import { mock } from "../../../data/mock";
+import { articles } from "../../../data/articles";
 import { selectArticleContentById } from "./selectors";
 
 export const loadArticleContent = (articleId) => (dispatch, getState) => {
@@ -10,7 +10,7 @@ export const loadArticleContent = (articleId) => (dispatch, getState) => {
   setTimeout(() => {
     dispatch(
       articleContentSlice.actions.successLoading(
-        mock.articlesContent.entities[articleId]
+        articles.articlesContent.entities[articleId]
       )
     );
   }, Math.random() * 800 + 200);

@@ -15,7 +15,12 @@ const Models = ({ className, models }: IModelsProps) => {
   return (
     <div className={classNames(styles.root, className)}>
       {models.map((model) => (
-        <a href={model.link} className={styles.link} target="_blank">
+        <a
+          href={model.link}
+          className={styles.link}
+          target="_blank"
+          key={model.link}
+        >
           <div className={styles.model}>
             <img className={styles.photo} src={model.photo} alt="" />
             <Text className={styles.title}>{model.title}</Text>
