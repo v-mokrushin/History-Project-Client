@@ -3,8 +3,8 @@ import { articles } from "../../../data/articles";
 import { LOADING_STATUSES } from "../constants";
 
 const initialState = {
-  entities: mock.articlePreviews.entities,
-  ids: mock.articlePreviews.ids,
+  entities: articles.articlePreviews.entities,
+  ids: articles.articlePreviews.ids,
   status: LOADING_STATUSES.idle,
 };
 

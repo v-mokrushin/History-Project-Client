@@ -9,8 +9,8 @@ export function appendWeaponBranch(weapons: IWeapon[], branch: any): void {
   weapons.forEach((weapon) => (weapon.branch = branch));
 }
 
-export function defineIdProperty(weapon: IWeapon): void {
-  Object.defineProperty(weapon, "id", {
+export function defineIdProperty(object: any): void {
+  Object.defineProperty(object, "id", {
     get: function () {
       return this.name.replaceAll(" ", "-").replaceAll("/", "-");
     },

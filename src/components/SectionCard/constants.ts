@@ -26,7 +26,7 @@ export const SECTION_CARD_TYPE = {
       aviation: {
         name: "Авиация",
         path: "aviation",
-        backgroundImage: "/images/backgrounds/weapons/aviation_2.jpg",
+        backgroundImage: "/images/backgrounds/weapons/aviation.jpg",
       },
       armored: {
         name: "Бронетехника",

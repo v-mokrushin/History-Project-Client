@@ -45,7 +45,9 @@ export default function ArticlePage() {
       return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} centered75vh />;
     }
     if (loadingStatus === LOADING_STATUSES.success) {
-      if (!articleContent?.paragraphs?.length) {
+      if (!articleContent) return;
+
+      if (!articleContent.text) {
         return (
           <SpecialLogo
             type={SPECIAL_LOGO_TYPE.inDevelopment}
@@ -54,6 +56,7 @@ export default function ArticlePage() {
           />
         );
       }
+
       return (
         <div className={classNames(styles.innerWrapper, ANIMATIONS.fadeIn)}>
           <div className={styles.infoBox}>
@@ -74,13 +77,7 @@ export default function ArticlePage() {
               </div>
             )}
           </div>
-          <div>
-            {articleContent.paragraphs.map((item: string, index: number) => (
-              <Paragraph key={articlePreview.id + "par" + index}>
-                {item}
-              </Paragraph>
-            ))}
-          </div>
+          {articleContent.text}
         </div>
       );
     }
