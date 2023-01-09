@@ -1,0 +1,13 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 10px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 10px;
+    margin-bottom: 7px;
+  }
+}

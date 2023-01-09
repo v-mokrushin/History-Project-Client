@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 interface ISpecProps {
   title: string | JSX.Element;
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element[];
   className?: string;
 }
 

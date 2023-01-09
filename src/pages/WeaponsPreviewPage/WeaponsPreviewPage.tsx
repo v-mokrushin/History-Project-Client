@@ -16,6 +16,7 @@ import { observer } from "mobx-react";
 import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
 import filtersStore from "../../stores/mobx/filtersStore";
 import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPreviewSettings";
+import Filters from "components/Filters/Filters";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -60,7 +61,7 @@ const WeaponsPreviewPage = observer(() => {
             {nationObject?.name.russianАccusative}{" "}
             {filteredWeapons.length === 0 || `(${filteredWeapons.length})`}
           </Title>
-          <Filter weaponBranch={weaponsBranchObject} />
+          <Filters weaponBranch={weaponsBranchObject} />
           <WeaponPreviewSettings />
           {filteredWeapons.length > 0 ? (
             <Timeline

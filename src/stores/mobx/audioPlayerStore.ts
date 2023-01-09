@@ -5,7 +5,7 @@ import {
   toJS,
   makeAutoObservable,
 } from "mobx";
-import { shuffleTracks } from "../../utils/common";
+import { shuffleArray } from "../../utils/common";
 
 let trackList: string[] = [
   "/audio/de-wolfe-intro.mp3",
@@ -21,7 +21,7 @@ let trackList: string[] = [
   "/audio/rise-of-nazism.mp3",
   "/audio/dark-father.mp3",
 ];
-shuffleTracks(trackList);
+shuffleArray(trackList);
 
 export class AudioPlayerStore {
   public status: boolean;

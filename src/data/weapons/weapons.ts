@@ -1,5 +1,6 @@
 import { IPageData } from "constants/pages";
 import { type } from "os";
+import { randomInteger, shuffleArray } from "utils/common";
 import { createGallery, createModels, defineIdProperty } from "utils/weapons";
 import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored";
@@ -61,11 +62,11 @@ export const WEAPONS_DATA = {
     return dates;
   },
   selectWeapons(
-    weaponsBranchPath: string | undefined,
+    weaponBranchPath: string | undefined,
     nationPath: string | undefined
   ): any[] {
     return weaponsData
-      .filter((item) => item.branch.path === weaponsBranchPath)
+      .filter((item) => item.branch.path === weaponBranchPath)
       .filter(
         (item) =>
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
@@ -111,6 +112,19 @@ export const WEAPONS_DATA = {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
     });
+  },
+  getRecommendation(
+    weaponBranchPath: string,
+    weaponId: string | undefined
+  ): IWeapon[] {
+    let weapons = weaponsData.filter(
+      (weapon) =>
+        weapon.branch.path === weaponBranchPath && weapon.id !== weaponId
+    );
+    weapons = shuffleArray(weapons);
+    weapons = weapons.slice(0, 8);
+
+    return weapons;
   },
 };
 

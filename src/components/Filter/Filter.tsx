@@ -5,8 +5,6 @@ import Text from "../Text/Text";
 import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
 import filtersStore from "../../stores/mobx/filtersStore";
 import { observer } from "mobx-react";
-import settingsStore from "stores/mobx/settingsStore";
-import Input from "components/Input/Input";
 
 interface IFilterProps {
   className?: string;
@@ -59,7 +57,6 @@ const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
           ))}
         </div>
       </div>
-      <Input />
     </div>
   );
 });

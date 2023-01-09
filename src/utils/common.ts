@@ -21,7 +21,7 @@ export function createParagraphs(text: string): string[] {
   return p;
 }
 
-export function shuffleTracks(array: string[]): string[] {
+export function shuffleArray(array: any[]): any[] {
   let currentIndex = array.length,
     randomIndex;
 
@@ -36,4 +36,9 @@ export function shuffleTracks(array: string[]): string[] {
   }
 
   return array;
+}
+
+export function randomInteger(min: number, max: number) {
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
 }

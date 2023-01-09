@@ -1,7 +1,7 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  // display: none;
+  display: none;
 
   @include media-breakpoint-down(FHD) {
     display: block;

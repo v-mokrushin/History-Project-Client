@@ -89,5 +89,3 @@ export const articles = {
   articlePreviews,
   articlesContent,
 };
-
-console.log(articles);

@@ -13,15 +13,24 @@ import settingsStore from "stores/mobx/settingsStore";
 interface IPreviewWeaponCardProps {
   weapon: IWeapon;
   showFlag?: boolean;
+  isAbsoluteLinkPath?: boolean;
 }
 
 const PreviewWeaponCard = observer(
-  ({ weapon, showFlag = false }: IPreviewWeaponCardProps) => {
+  ({
+    weapon,
+    showFlag = false,
+    isAbsoluteLinkPath = false,
+  }: IPreviewWeaponCardProps) => {
     const colorized = settingsStore.colorized;
 
     return (
       <NavLink
-        to={weapon.id!}
+        to={
+          isAbsoluteLinkPath
+            ? `/weapons/${weapon.branch.path}/world/${weapon.id}`
+            : weapon.id!
+        }
         className={classNames(styles.root, ANIMATIONS.fadeIn)}
         onClick={() => {
           scrollTopInstantly();
