@@ -1,3 +1,4 @@
+import { NATIONS_METHODS } from "./../../constants/nations";
 import { IPageData } from "constants/pages";
 import { type } from "os";
 import { randomInteger, shuffleArray } from "utils/common";
@@ -88,6 +89,13 @@ export const WEAPONS_DATA = {
           (item) => item.type.name.russian === filters.type.name.russian
         );
 
+      if (filters.developer)
+        weapons = weapons.filter(
+          (weapon) =>
+            weapon.specifications?.common?.developer?.name.russian ==
+            filters.developer.name.russian
+        );
+
       return weapons;
     }
   },
@@ -125,6 +133,27 @@ export const WEAPONS_DATA = {
     weapons = weapons.slice(0, 8);
 
     return weapons;
+  },
+  getDevelopersWithAll(weaponBranch: any) {
+    const weapons = weaponsData.filter(
+      (weapon) => weapon.branch == weaponBranch
+    );
+    let developers = weapons
+      .filter((weapon) => {
+        if (!weapon.specifications) return false;
+        if (!weapon.specifications.common) return false;
+        return weapon.specifications.common.developer;
+      })
+      .map((weapon) => weapon.specifications.common.developer);
+
+    developers = Array.from(new Set(developers));
+    developers.sort((prev, next) => {
+      if (prev.name.russian < next.name.russian) return -1;
+      if (prev.name.russian >= next.name.russian) return 1;
+      return 0;
+    });
+    developers.unshift({ name: { russian: "Все" } });
+    return developers;
   },
 };
 

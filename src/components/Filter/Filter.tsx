@@ -2,63 +2,61 @@ import React from "react";
 import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
-import filtersStore from "../../stores/mobx/filtersStore";
 import { observer } from "mobx-react";
 
 interface IFilterProps {
+  title: string;
+  selectionVariants: any[];
+  callback: any;
+  getter: any;
   className?: string;
-  weaponBranch: object;
 }
 
-const Filter = observer(({ className, weaponBranch }: IFilterProps) => {
-  const [open, setOpen] = React.useState(false);
-  const weaponTypes = React.useMemo(
-    () => WEAPONS_TYPE_METHODS.getTypesArrayWithAll(weaponBranch),
-    [weaponBranch]
-  );
+const Filter = observer(
+  ({ title, selectionVariants, callback, getter, className }: IFilterProps) => {
+    const [open, setOpen] = React.useState(false);
 
-  document.onclick = React.useCallback((event: any) => {
-    if (!event.target.closest("#filter")) {
-      setOpen(false);
-    }
-  }, []);
+    if (selectionVariants.length === 1) return <></>;
 
-  function getTitle() {
-    return filtersStore.getFilters().type?.name.russian;
-  }
+    document.onclick = React.useCallback((event: any) => {
+      if (!event.target.closest(`#filter-${title}`)) {
+        setOpen(false);
+      }
+    }, []);
 
-  return (
-    <div className={classNames(styles.root, className)} id="filter">
+    return (
       <div
-        className={classNames(styles.item)}
-        onClick={() => {
-          setOpen(!open);
-        }}
+        className={classNames(styles.root, className)}
+        id={`filter-${title}`}
       >
-        <Text className={styles.item_text}>Тип</Text>
-        <Text className={styles.item_selectedText}>{getTitle()}</Text>
-        <button
-          className={classNames(styles.arrow, open && styles.arrow_open)}
-        ></button>
-        <div className={classNames(styles.vars, open && styles.vars_open)}>
-          {weaponTypes.map((type, index) => (
-            <div
-              className={styles.vars__item}
-              key={type.name.russian + index}
-              onClick={() => {
-                filtersStore.setTypeFilter(type);
-              }}
-            >
-              <Text className={styles.vars__item__text}>
-                {type.name.russian}
-              </Text>
-            </div>
-          ))}
+        <div
+          className={classNames(styles.item)}
+          onClick={() => {
+            setOpen((val) => !val);
+          }}
+        >
+          <Text className={styles.item_text}>{title}</Text>
+          <Text className={styles.item_selectedText}>{getter}</Text>
+          <button
+            className={classNames(styles.arrow, open && styles.arrow_open)}
+          ></button>
+          <div className={classNames(styles.vars, open && styles.vars_open)}>
+            {selectionVariants.map((variant, index) => (
+              <div
+                className={styles.vars__item}
+                key={variant.name.russian + index}
+                onClick={() => callback(variant)}
+              >
+                <Text className={styles.vars__item__text}>
+                  {variant.name.russian}
+                </Text>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default Filter;

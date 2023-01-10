@@ -2,17 +2,28 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { IWeapon } from "../weapons";
 import { WEAPONS_TYPE } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
+import { Developers } from "../developers";
 
 const ussr: IWeapon[] = [
   {
     name: "203-мм гаубица Б-4",
     type: WEAPONS_TYPE.artillery.specialPower,
     adoptedIntoServiceDate: 1931,
+    specifications: {
+      common: {
+        developer: Developers.atillery.ArtilleryDesignBureau, /// TODO (2 developers)
+      },
+    },
   },
   {
     name: "152-мм гаубица МЛ-20",
     type: WEAPONS_TYPE.artillery.armyAndCorps,
     adoptedIntoServiceDate: 1937,
+    specifications: {
+      common: {
+        developer: Developers.atillery.Plant172,
+      },
+    },
   },
   {
     name: "152-мм гаубица Д-1",
@@ -29,11 +40,21 @@ const ussr: IWeapon[] = [
     name: "76-мм пушка ЗИС-3",
     type: WEAPONS_TYPE.artillery.division,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.atillery.Plant92,
+      },
+    },
   },
   {
     name: "57-мм пушка ЗИС-2",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.atillery.Plant92,
+      },
+    },
   },
   {
     name: "45-мм пушка M-42",
@@ -92,22 +113,42 @@ const germany: IWeapon[] = [
     name: "7,5 cm Pak. 40",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.atillery.RheinmetallBorsig,
+      },
+    },
   },
   {
     name: "15cm Panzerwerfer 42 Auf.Sf",
     type: WEAPONS_TYPE.artillery.reactive,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.atillery.Opel,
+      },
+    },
   },
   {
     name: "Vergeltungswaffe-2",
     type: WEAPONS_TYPE.artillery.ballisticMissile,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.atillery.Peenemunde,
+      },
+    },
   },
   {
-    name: "Vergeltungswaffe Eins",
+    name: "Vergeltungswaffe-1",
     type: WEAPONS_TYPE.artillery.cruiseMissile,
     adoptedIntoServiceDate: 1944,
     icon: "icon.jpeg",
+    specifications: {
+      common: {
+        developer: Developers.atillery.Fieseler,
+      },
+    },
   },
 ];
 

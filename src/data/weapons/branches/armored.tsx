@@ -8,6 +8,7 @@ import { ENGINES } from "../parts/engines";
 import { CANNONS } from "../parts/cannons";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { TOWERS } from "../parts/towers";
+import { Developers } from "../developers";
 
 const ussr: IWeapon[] = [
   {
@@ -18,6 +19,11 @@ const ussr: IWeapon[] = [
     intro: [
       "ИС-3 — последний советский тяжёлый танк, принятый на вооружение и запущенный в серийное производство во время Второй Мировой войны. Его проектирование началось весной 1944 года как глубокая модернизация ИС-2, который не устраивал военных по бронезащите. В результате ИС-3 получил новый сварной корпус с характерным «щучим носом» (такое название он получил из-за формы верхней лобовой части корпуса) и бортовыми бронелистами под наклоном. На крыше башни новой конструкции были сделаны новые люки, намного более удобные для экипажа, а механик-водитель получил новый треугольный люк для лучшей обзорности вне боевой обстановки. Помимо этого, топливные баки были убраны из боевого отделения, а вместо командирской башенки установили удачные перископические приборы наблюдения.",
     ],
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Chelyabinsk,
+      },
+    },
   },
   {
     name: "КВ-1 (Л-11)",
@@ -105,12 +111,12 @@ const ussr: IWeapon[] = [
     ],
     specifications: {
       common: {
-        developer: "ЧКЗ",
+        developer: Developers.armoredVehicles.Chelyabinsk,
         manufacturer: "ЧКЗ",
         chiefDesigner: "Ж.Я. Котин",
         developmentYear: 1943,
-        productionYears: [1943, 1945],
-        exploitationYears: [1944, 1945],
+        productionYears: "1943 - 1945",
+        exploitationYears: "1943 - 1945",
         numberOfIssued: 3483,
       },
       crew: CREWS.size.four.perfect,
@@ -203,11 +209,21 @@ const ussr: IWeapon[] = [
     name: "Т-34Э (СТЗ)",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Stalingrad,
+      },
+    },
   },
   {
     name: "Т-34Э (завод №112)",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.KrasnoyeSormovo,
+      },
+    },
   },
   {
     name: "Т-34 обр. 1942 г.",
@@ -311,6 +327,11 @@ const germany: IWeapon[] = [
     name: "PzKpfw VI Ausf.B Tiger II",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Henschel,
+      },
+    },
   },
   {
     name: "PzKpfw VI Tiger",
@@ -339,6 +360,9 @@ const germany: IWeapon[] = [
       },
     ],
     specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Henschel,
+      },
       crew: CREWS.size.five.perfect,
       weapon: {
         cannon: CANNONS.get("8,8 cm KwK 36"),
@@ -354,6 +378,9 @@ const germany: IWeapon[] = [
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
+      common: {
+        developer: Developers.armoredVehicles.MAN,
+      },
       crew: {
         size: 5,
         structure:
@@ -371,31 +398,61 @@ const germany: IWeapon[] = [
     name: "Pz.Kpfw. IV Ausf.G",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Krupp,
+      },
+    },
   },
   {
     name: "Pz.Kpfw. IV Ausf.H",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Krupp,
+      },
+    },
   },
   {
     name: "Pz.Kpfw. III Ausf.J1",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+      },
+    },
   },
   {
     name: "Pz.Kpfw. III Ausf.L",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+      },
+    },
   },
   {
     name: "Pz.Kpfw. III Ausf.M",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+      },
+    },
   },
   {
     name: "Pz.Kpfw. II",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Krupp,
+      },
+    },
   },
   {
     name: "Jagdtiger",
@@ -406,6 +463,11 @@ const germany: IWeapon[] = [
     name: "Jagdpanther",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+      },
+    },
   },
   {
     name: "Ferdinand",
@@ -448,29 +510,54 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
   },
   {
-    name: "Sd.Kfz. 251/1",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
-    adoptedIntoServiceDate: 1940,
-  },
-  {
     name: "Sd.Kfz. 250/1 Alte",
     type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Demag,
+      },
+    },
   },
   {
     name: "Sd.Kfz. 250/3 Alte",
     type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Demag,
+      },
+    },
+  },
+  {
+    name: "Sd.Kfz. 251/1",
+    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Hanomag,
+      },
+    },
   },
   {
     name: "Sd.Kfz. 251/16",
     type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Hanomag,
+      },
+    },
   },
   {
     name: "Sd.Kfz. 251/22",
     type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Hanomag,
+      },
+    },
   },
 ];
 
@@ -494,16 +581,31 @@ const usa: IWeapon[] = [
     name: "M4A3 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M4A2 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M4A1 76(W) Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   // {
   //   name: "M4A3(105) Sherman",
@@ -514,16 +616,31 @@ const usa: IWeapon[] = [
     name: "M4A2 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M4 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M4A1 Sherman",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M3 Lee",
@@ -539,31 +656,61 @@ const usa: IWeapon[] = [
     name: "M5A1 Stuart",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "M3 Stuart",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+      },
+    },
   },
   {
     name: "GMC M36 Jackson",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.GMC,
+      },
+    },
   },
   {
     name: "GMC M18 Hellcat",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.GMC,
+      },
+    },
   },
   {
     name: "GMC M10 Wolverine",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.GMC,
+      },
+    },
   },
   {
     name: "GMC M40",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1945,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.GMC,
+      },
+    },
   },
 ];
 
@@ -607,11 +754,21 @@ const britain: IWeapon[] = [
     name: "Crusader Mk III",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Nuffield,
+      },
+    },
   },
   {
     name: "Crusader Mk II",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Nuffield,
+      },
+    },
   },
   {
     name: "Tetrach I",

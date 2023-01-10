@@ -29,9 +29,6 @@ export default function WeaponDisplayPage() {
   const { weaponId } = useParams();
   const weapon = WEAPONS_DATA.getById(weaponId);
 
-  // console.log(weaponId);
-  console.log(weapon);
-
   React.useEffect(() => {
     if (!weapon) {
       navigate("*");

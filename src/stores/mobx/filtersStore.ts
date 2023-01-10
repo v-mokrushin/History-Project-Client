@@ -1,4 +1,3 @@
-import { WEAPONS_DATA } from "../../data/weapons/weapons";
 import { makeAutoObservable, toJS } from "mobx";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 
@@ -14,11 +13,22 @@ export class FiltersStore {
     return toJS(this.filters);
   }
 
-  setTypeFilter(type: object): void {
+  setType(type: object): void {
     if (WEAPONS_TYPE_METHODS.isAllType(type)) {
       delete this.filters.type;
       this.filters = { ...this.filters };
-    } else this.filters = { ...this.filters, type };
+    } else {
+      this.filters = { ...this.filters, type };
+    }
+  }
+
+  setDeveloper(developer: any): void {
+    if (developer.name.russian == "Все") {
+      delete this.filters.developer;
+      this.filters = { ...this.filters };
+    } else {
+      this.filters = { ...this.filters, developer };
+    }
   }
 
   setNameFilter(name: string): void {
@@ -31,6 +41,14 @@ export class FiltersStore {
 
   get name() {
     return this.filters.name;
+  }
+
+  get typeName() {
+    return this.filters.type?.name?.russian;
+  }
+
+  get developerName() {
+    return this.filters.developer?.name?.russian;
   }
 
   isEmpty(): boolean {
