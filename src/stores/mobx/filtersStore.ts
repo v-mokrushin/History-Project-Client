@@ -1,5 +1,5 @@
 import { makeAutoObservable, toJS } from "mobx";
-import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 
 export class FiltersStore {
   public filters: any;
@@ -13,7 +13,7 @@ export class FiltersStore {
     return toJS(this.filters);
   }
 
-  setType(type: object): void {
+  setType(type: IWeaponType): void {
     if (WEAPONS_TYPE_METHODS.isAllType(type)) {
       delete this.filters.type;
       this.filters = { ...this.filters };

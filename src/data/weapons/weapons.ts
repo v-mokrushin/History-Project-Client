@@ -10,22 +10,23 @@ import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenadeLaunchers";
 import { SMALL_ARMS_DATA } from "./branches/smallArms";
+import { IWeaponType } from "constants/weapon-types";
 
 export interface IWeapon {
   name: string;
-  isReady?: boolean;
+  type: IWeaponType;
   branch?: any;
-  type: any;
+  id?: string;
+  isReady?: boolean;
   adoptedIntoServiceDate: number;
   nation?: IPageData;
   gallery?: IWeaponGallery;
-  id?: string;
   JSXComponent?: JSX.Element;
   intro?: string[];
   videomaterials?: string[];
-  specifications?: any;
   sections?: string[];
   models?: IModel[];
+  specifications: ISpecifications;
 }
 
 export interface ISpecifications {
@@ -152,7 +153,7 @@ export const WEAPONS_DATA = {
           weapon.specifications.common.developer.name.russian != "Не определено"
         );
       })
-      .map((weapon) => weapon.specifications.common.developer);
+      .map((weapon) => weapon.specifications?.common.developer);
 
     developers = Array.from(new Set(developers));
     developers.sort((prev, next) => {

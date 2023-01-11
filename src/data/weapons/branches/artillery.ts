@@ -29,11 +29,13 @@ const ussr: IWeapon[] = [
     name: "152-мм гаубица Д-1",
     type: WEAPONS_TYPE.artillery.armyAndCorps,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
   {
     name: "122-мм гаубица M-30",
     type: WEAPONS_TYPE.artillery.division,
     adoptedIntoServiceDate: 1938,
+    specifications: {},
   },
   {
     name: "76-мм пушка ЗИС-3",
@@ -59,51 +61,61 @@ const ussr: IWeapon[] = [
     name: "45-мм пушка M-42",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1942,
+    specifications: {},
   },
   {
     name: "45-мм пушка 53-К",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1937,
+    specifications: {},
   },
   {
     name: "120-мм миномёт ПМ-38",
     type: WEAPONS_TYPE.artillery.regimental,
     adoptedIntoServiceDate: 1938,
+    specifications: {},
   },
   {
     name: "50-мм миномёт РМ-41",
     type: WEAPONS_TYPE.artillery.company,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "82-мм миномёт БМ-37",
     type: WEAPONS_TYPE.artillery.battalion,
     adoptedIntoServiceDate: 1937,
+    specifications: {},
   },
   {
     name: "37-мм пушка 61-К",
     type: WEAPONS_TYPE.artillery.antiaircraft,
     adoptedIntoServiceDate: 1939,
+    specifications: {},
   },
   {
     name: "БМ-13 (ЗИС-6)",
     type: WEAPONS_TYPE.artillery.reactive,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "БМ-13 (СТЗ-5)",
     type: WEAPONS_TYPE.artillery.reactive,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "БМ-13Н",
     type: WEAPONS_TYPE.artillery.reactive,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
   {
     name: "БМ-31-12",
     type: WEAPONS_TYPE.artillery.reactive,
     adoptedIntoServiceDate: 1944,
+    specifications: {},
   },
 ];
 
@@ -155,6 +167,7 @@ const britain: IWeapon[] = [
     name: "QF 17 pounder",
     type: WEAPONS_TYPE.artillery.antitank,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
 ];
 
@@ -163,6 +176,7 @@ const sweden: IWeapon[] = [
     name: "Bofors L/60",
     type: WEAPONS_TYPE.artillery.antiaircraft,
     adoptedIntoServiceDate: 1932,
+    specifications: {},
   },
 ];
 

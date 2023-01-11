@@ -606,6 +606,11 @@ const germany: IWeapon[] = [
     name: "Jagdtiger",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Jagdpanther",
@@ -621,41 +626,81 @@ const germany: IWeapon[] = [
     name: "Ferdinand",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Nashorn",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "StuG III Ausf.G",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "StuG III Ausf.F",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "10,5 cm Sturmhaubitze 42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "StuG III Ausf.A",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Hummel",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Flakpanzer IV «Wirbelwind»",
     type: WEAPONS_TYPE.armoredVehicle.zsu,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Sd.Kfz. 250/1 Alte",
@@ -714,16 +759,31 @@ const usa: IWeapon[] = [
     name: "M26 Pershing",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "M4A3E2 76(W) Jumbo",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "M4A3E2 Jumbo",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "M4A3 76(W) Sherman",
@@ -794,11 +854,13 @@ const usa: IWeapon[] = [
     name: "M3 Lee",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "M24 Chaffee",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {},
   },
   {
     name: "M5A1 Stuart",
@@ -867,36 +929,43 @@ const britain: IWeapon[] = [
     name: "Churchill III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {},
   },
   {
     name: "Churchill I",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "Matilda Mk III",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
   {
     name: "Sherman Firefly",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {},
   },
   {
     name: "Valentine Mk XI",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
   {
     name: "Valentine Mk X",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
   {
     name: "Valentine Mk I",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1939,
+    specifications: {},
   },
   {
     name: "Crusader Mk III",
@@ -922,11 +991,13 @@ const britain: IWeapon[] = [
     name: "Tetrach I",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1940,
+    specifications: {},
   },
   {
     name: "Dimler Mk II",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1941,
+    specifications: {},
   },
 ];
 
@@ -935,6 +1006,7 @@ const france: IWeapon[] = [
     name: "Somua S35",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
+    specifications: {},
   },
 ];
 
@@ -943,6 +1015,7 @@ const italy: IWeapon[] = [
     name: "Lancia IZ/IZM",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
+    specifications: {},
   },
 ];
 
@@ -951,6 +1024,7 @@ const czechoslovakia: IWeapon[] = [
     name: "LT vz.38",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
+    specifications: {},
   },
 ];
 
@@ -959,6 +1033,7 @@ const finland: IWeapon[] = [
     name: "BT-42",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
+    specifications: {},
   },
 ];
 
@@ -967,6 +1042,7 @@ const japan: IWeapon[] = [
     name: "Chi-Nu",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {},
   },
 ];
 

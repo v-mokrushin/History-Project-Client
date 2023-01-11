@@ -77,11 +77,21 @@ const ussr: IWeapon[] = [
     name: "Як-1",
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.aviation.Yak,
+      },
+    },
   },
   {
     name: "УТ-2",
     type: WEAPONS_TYPE.aviation.training,
     adoptedIntoServiceDate: 1936,
+    specifications: {
+      common: {
+        developer: Developers.aviation.Yak,
+      },
+    },
   },
   {
     name: "Ил-10",
