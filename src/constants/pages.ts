@@ -27,7 +27,7 @@ const data: IPageData[] = [
   },
   {
     path: "articles",
-    introImage: "/images/backgrounds/articles-section.jpg",
+    introImage: "/images/backgrounds/articles.jpg",
     name: {
       russian: "статьи",
       english: "articles",
@@ -35,7 +35,8 @@ const data: IPageData[] = [
   },
   {
     path: "weapons",
-    introImage: "/images/backgrounds/weapons/background.jpg",
+    // introImage: "/images/backgrounds/weapons/background.jpg",
+    introImage: "/images/backgrounds/weapons.jpg",
     name: {
       russian: "вооружения",
       english: "weapons",

@@ -8,17 +8,17 @@ export const SECTION_CARD_TYPE = {
   articles: {
     name: "Статьи",
     path: "articles",
-    backgroundImage: "/images/backgrounds/hp-bg-articles.jpg",
+    backgroundImage: "/images/backgrounds/articles.jpg",
   },
   weapons: {
     name: "Вооружения",
     path: "weapons",
-    backgroundImage: "/images/backgrounds/hp-bg-weapons.jpg",
+    backgroundImage: "/images/backgrounds/weapons.jpg",
   },
   battles: {
     name: "Сражения",
     path: "battles",
-    backgroundImage: "/images/backgrounds/hp-bg-battles.jpg",
+    backgroundImage: "/images/backgrounds/battles.jpg",
   },
 
   pages: {

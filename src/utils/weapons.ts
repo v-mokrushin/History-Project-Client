@@ -28,7 +28,12 @@ export function getGalleryPath(weaponName: string, weapon: IWeapon) {
       .replaceAll("«", "")
       .replaceAll("»", "")
       .replaceAll("(", "")
-      .replaceAll(")", "") +
+      .replaceAll(")", "")
+      .replaceAll("ä", "a")
+      .replaceAll("Ł", "L")
+      .replaceAll("ś", "s")
+      .replaceAll("ä", "a")
+      .replaceAll("ó", "o")  +
     "/"
   );
 }
