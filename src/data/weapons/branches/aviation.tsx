@@ -51,7 +51,7 @@ const ussr: IWeapon[] = [
     isReady: true,
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1943,
-    JSXComponent: Yak_3(),
+    JSXComponent: <Yak_3 />,
     sections: [
       "Введение",
       "Разработка",

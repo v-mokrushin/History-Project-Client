@@ -1,10 +1,14 @@
-interface IBody {
-  name: string;
-  forehead: IСomplicatedDetail;
-  board: IСomplicatedDetail;
-  stern: IСomplicatedDetail;
-  bottom: string;
-  roof: string;
+export interface IBodies {
+  [key: string]: IBodyArmoring;
+}
+
+export interface IBodyArmoring {
+  readonly name: string;
+  readonly forehead: IСomplicatedDetail;
+  readonly board: IСomplicatedDetail;
+  readonly stern: IСomplicatedDetail;
+  readonly bottom: string;
+  readonly roof: string;
 }
 
 interface IСomplicatedDetail {
@@ -12,16 +16,8 @@ interface IСomplicatedDetail {
   bottom: string;
 }
 
-class Bodies {
-  private bodies = BODIES_DATA;
-
-  get(name: string) {
-    return this.bodies.find((body) => body.name === name);
-  }
-}
-
-const BODIES_DATA: IBody[] = [
-  {
+export const BODIES: IBodies = {
+  ["ИС"]: {
     name: "ИС",
     forehead: {
       top: "120 мм / 60°",
@@ -32,7 +28,7 @@ const BODIES_DATA: IBody[] = [
     bottom: "20 мм",
     roof: "30 мм",
   },
-  {
+  ["Т-34"]: {
     name: "Т-34",
     forehead: {
       top: "45 мм / 60°",
@@ -43,6 +39,4 @@ const BODIES_DATA: IBody[] = [
     bottom: "20 мм",
     roof: "20 мм",
   },
-];
-
-export const BODIES = new Bodies();
+};

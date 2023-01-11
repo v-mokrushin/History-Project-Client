@@ -31,7 +31,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -41,7 +41,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -51,7 +51,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -61,7 +61,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -71,7 +71,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -81,7 +81,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -91,7 +91,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -149,7 +149,6 @@ const ussr: IWeapon[] = [
         developer: Developers.armoredVehicles.Chelyabinsk,
         manufacturer: "ЧКЗ",
         chiefDesigner: "Ж.Я. Котин",
-        developmentYear: 1943,
         productionYears: "1943 - 1945",
         exploitationYears: "1943 - 1945",
         numberOfIssued: 3483,
@@ -164,11 +163,11 @@ const ussr: IWeapon[] = [
       },
       armoring: {
         type: "катаная высокой твёрдости, литая средней твёрдости",
-        body: BODIES.get("ИС"),
-        tower: TOWERS.get("ИС"),
+        body: BODIES["ИС"],
+        tower: TOWERS["ИC"],
       },
       weapon: {
-        cannon: CANNONS.get("Д-25T"),
+        cannon: CANNONS["Д-25T"],
         ammunition: {
           cannon: 28,
           machinegun: "ДТ - 2520, ДШК - 250",
@@ -180,7 +179,7 @@ const ussr: IWeapon[] = [
         1 × 12,7-мм ДШК`,
       },
       mobility: {
-        engine: ENGINES.get("В-2ИС"),
+        engine: ENGINES["В-2ИС"],
         speed: {
           road: 37,
           roughTerrain: 15,
@@ -207,7 +206,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -217,7 +216,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -227,7 +226,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -242,19 +241,19 @@ const ussr: IWeapon[] = [
     sections: ["Введение"],
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
       crew: CREWS.size.four.weak,
       weapon: {
-        cannon: CANNONS.get("Ф-34"),
+        cannon: CANNONS["Ф-34"],
       },
       mobility: {
-        engine: ENGINES.get("В-2-34"),
+        engine: ENGINES["В-2-34"],
       },
       armoring: {
         type: "стальная катаная гомогенная высокой твёрдости",
-        body: BODIES.get("Т-34"),
-        tower: TOWERS.get("Т-34 обр. 40-41 г."),
+        body: BODIES["Т-34"],
+        tower: TOWERS["Т-34 обр. 40/41 г."],
       },
     },
   },
@@ -284,7 +283,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -294,7 +293,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -304,7 +303,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -314,7 +313,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -324,7 +323,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -334,7 +333,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -344,7 +343,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1932,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -354,7 +353,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -364,7 +363,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -374,7 +373,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1936,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -384,7 +383,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -394,7 +393,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -404,7 +403,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -414,7 +413,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -424,7 +423,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -434,7 +433,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -444,7 +443,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -454,7 +453,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -464,7 +463,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -513,10 +512,10 @@ const germany: IWeapon[] = [
       },
       crew: CREWS.size.five.perfect,
       weapon: {
-        cannon: CANNONS.get("8,8 cm KwK 36"),
+        cannon: CANNONS["8,8 cm KwK 36"],
       },
       mobility: {
-        engine: ENGINES.get("Maybach HL 230"),
+        engine: ENGINES["Maybach HL 230"],
       },
     },
   },
@@ -535,10 +534,10 @@ const germany: IWeapon[] = [
           "механик-водитель, стрелок-радист, заряжающий, наводчик, командир",
       },
       weapon: {
-        cannon: CANNONS.get("7,5 cm KwK 42"),
+        cannon: CANNONS["7,5 cm KwK 42"],
       },
       mobility: {
-        engine: ENGINES.get("Maybach HL 230"),
+        engine: ENGINES["Maybach HL 230"],
       },
     },
   },
@@ -608,7 +607,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -628,7 +627,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -638,7 +637,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -648,7 +647,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -658,7 +657,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -668,7 +667,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -678,7 +677,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -688,7 +687,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -698,7 +697,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -761,7 +760,7 @@ const usa: IWeapon[] = [
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -771,7 +770,7 @@ const usa: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },
@@ -781,7 +780,7 @@ const usa: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.notDefined,
+        developer: Developers.undefined,
       },
     },
   },

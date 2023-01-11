@@ -1,3 +1,4 @@
+import { IDeveloper } from './../../data/weapons/developers';
 import { makeAutoObservable, toJS } from "mobx";
 import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 
@@ -22,7 +23,7 @@ export class FiltersStore {
     }
   }
 
-  setDeveloper(developer: any): void {
+  setDeveloper(developer: IDeveloper): void {
     if (developer.name.russian == "Все") {
       delete this.filters.developer;
       this.filters = { ...this.filters };

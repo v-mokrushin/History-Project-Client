@@ -52,13 +52,13 @@ const Filter = observer(
               <Text
                 className={classNames(
                   styles.variant__text,
-                  getter === variant.name.russian && styles.variant_selected,
-                  variant.name.russian === "Все" &&
+                  getter === variant.name["russian"] && styles.variant_selected,
+                  variant.name["russian"] === "Все" &&
                     !getter &&
                     styles.variant_selected
                 )}
               >
-                {variant.name.russian}
+                {variant.name["russian"]}
               </Text>
             </div>
           ))}

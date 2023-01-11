@@ -1,8 +1,7 @@
+import { Developers, IDeveloper } from "./developers";
 import { ICrew } from "./crews";
-import { NATIONS_METHODS } from "./../../constants/nations";
 import { IPageData } from "constants/pages";
-import { type } from "os";
-import { randomInteger, shuffleArray } from "utils/common";
+import { shuffleArray } from "utils/common";
 import { createGallery, createModels, defineIdProperty } from "utils/weapons";
 import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored";
@@ -11,14 +10,16 @@ import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenadeLaunchers";
 import { SMALL_ARMS_DATA } from "./branches/smallArms";
 import { IWeaponType } from "constants/weapon-types";
+import { IBodyArmoring } from "./parts/bodies";
+import { ITowerArmoring } from "./parts/towers";
 
 export interface IWeapon {
   name: string;
   type: IWeaponType;
+  adoptedIntoServiceDate: number;
   branch?: any;
   id?: string;
   isReady?: boolean;
-  adoptedIntoServiceDate: number;
   nation?: IPageData;
   gallery?: IWeaponGallery;
   JSXComponent?: JSX.Element;
@@ -31,9 +32,27 @@ export interface IWeapon {
 
 export interface ISpecifications {
   common?: any;
+  // common: {
+  //   developer?: IDeveloper;
+  //   manufacturer?: string;
+  //   chiefDesigner?: string;
+  //   productionYears?: string;
+  //   exploitationYears?: string;
+  //   numberOfIssued?: number;
+  // };
   crew?: ICrew;
-  sizes?: any;
-  armoring?: any;
+  sizes?: {
+    weight: number;
+    length: number;
+    width: number;
+    height: number;
+    clearance: number;
+  };
+  armoring?: {
+    type: string;
+    body: IBodyArmoring;
+    tower: ITowerArmoring;
+  };
   weapon?: any;
   mobility?: any;
 }
@@ -50,7 +69,7 @@ export interface IModel {
   link: string;
 }
 
-const weaponsData = ([] as IWeapon[]).concat(
+const weapons_data = ([] as IWeapon[]).concat(
   ARMORED_VEHICLES,
   AVIATION_DATA,
   ARTILLERY_DATA,
@@ -58,7 +77,7 @@ const weaponsData = ([] as IWeapon[]).concat(
   GRENADE_LAUNCHERS_DATA
 );
 
-weaponsData.forEach((weapon) => {
+weapons_data.forEach((weapon) => {
   defineIdProperty(weapon);
   createGallery(weapon);
   createModels(weapon);
@@ -76,7 +95,7 @@ export const WEAPONS_DATA = {
     weaponBranchPath: string | undefined,
     nationPath: string | undefined
   ): IWeapon[] {
-    return weaponsData
+    return weapons_data
       .filter((item) => item.branch.path === weaponBranchPath)
       .filter(
         (item) =>
@@ -114,7 +133,7 @@ export const WEAPONS_DATA = {
       NATIONS.world,
       ...Array.from(
         new Set(
-          weaponsData
+          weapons_data
             .filter((item) => item.branch.path === weaponsBranchPath)
             .map((item) => item.nation)
         )
@@ -122,10 +141,10 @@ export const WEAPONS_DATA = {
     ];
   },
   getById(weaponId: string | undefined) {
-    return weaponsData.find((item) => item.id === weaponId);
+    return weapons_data.find((item) => item.id === weaponId);
   },
   changeColorized(): void {
-    weaponsData.forEach((weapon) => {
+    weapons_data.forEach((weapon) => {
       if (weapon.gallery) {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
@@ -135,7 +154,7 @@ export const WEAPONS_DATA = {
     weaponBranchPath: string,
     weaponId: string | undefined
   ): IWeapon[] {
-    let weapons = weaponsData.filter(
+    let weapons = weapons_data.filter(
       (weapon) =>
         weapon.branch.path === weaponBranchPath && weapon.id !== weaponId
     );
@@ -144,14 +163,12 @@ export const WEAPONS_DATA = {
 
     return weapons;
   },
-  getDevelopersWithAll(selectedWeapons: IWeapon[]) {
-    let developers = selectedWeapons
+  getDevelopersWithAll(selectedWeapons: IWeapon[]): IDeveloper[] {
+    let developers: IDeveloper[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications) return false;
         if (!weapon.specifications.common) return false;
-        return (
-          weapon.specifications.common.developer.name.russian != "Не определено"
-        );
+        return weapon.specifications.common.developer != Developers.undefined;
       })
       .map((weapon) => weapon.specifications?.common.developer);
 
@@ -161,9 +178,9 @@ export const WEAPONS_DATA = {
       if (prev.name.russian >= next.name.russian) return 1;
       return 0;
     });
-    developers.unshift({ name: { russian: "Все" } });
+    developers.unshift(Developers.all);
     return developers;
   },
 };
 
-console.log(weaponsData);
+console.log(weapons_data);
