@@ -1,3 +1,4 @@
+import { ICrew } from "./crews";
 import { NATIONS_METHODS } from "./../../constants/nations";
 import { IPageData } from "constants/pages";
 import { type } from "os";
@@ -16,7 +17,6 @@ export interface IWeapon {
   branch?: any;
   type: any;
   adoptedIntoServiceDate: number;
-  icon?: string;
   nation?: IPageData;
   gallery?: IWeaponGallery;
   id?: string;
@@ -26,6 +26,15 @@ export interface IWeapon {
   specifications?: any;
   sections?: string[];
   models?: IModel[];
+}
+
+export interface ISpecifications {
+  common?: any;
+  crew?: ICrew;
+  sizes?: any;
+  armoring?: any;
+  weapon?: any;
+  mobility?: any;
 }
 
 export interface IWeaponGallery {
@@ -139,7 +148,9 @@ export const WEAPONS_DATA = {
       .filter((weapon) => {
         if (!weapon.specifications) return false;
         if (!weapon.specifications.common) return false;
-        return weapon.specifications.common.developer;
+        return (
+          weapon.specifications.common.developer.name.russian != "Не определено"
+        );
       })
       .map((weapon) => weapon.specifications.common.developer);
 

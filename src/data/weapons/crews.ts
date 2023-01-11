@@ -1,4 +1,4 @@
-interface ICrew {
+export interface ICrew {
   size: number;
   structure: string;
 }

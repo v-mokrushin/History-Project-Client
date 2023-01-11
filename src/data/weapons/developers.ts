@@ -1,4 +1,5 @@
 export const Developers = {
+  notDefined: getDeveloper("Не определено"),
   armoredVehicles: {
     Chelyabinsk: getDeveloper("КБ завода №100 ЧТЗ"),
     KrasnoyeSormovo: getDeveloper(`КБ завода №112 "Красное Сормово"`),

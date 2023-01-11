@@ -53,7 +53,6 @@ export function createGallery(weapon: IWeapon) {
       }
     },
   };
-  delete weapon.icon;
 }
 
 export function createModels(weapon: IWeapon) {

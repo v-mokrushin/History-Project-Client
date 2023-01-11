@@ -29,36 +29,71 @@ const ussr: IWeapon[] = [
     name: "КВ-1 (Л-11)",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "КВ-1 (ЗиС-5)",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "КВ-2",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "КВ-1Э",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "КВ-1С",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-35",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1933,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "ИС-1",
     type: WEAPONS_TYPE.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "ИС-2",
@@ -170,16 +205,31 @@ const ussr: IWeapon[] = [
     name: "Т-28",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1933,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34 обр. 1940 г.",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34-57",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34 обр. 1941 г.",
@@ -191,6 +241,9 @@ const ussr: IWeapon[] = [
     ],
     sections: ["Введение"],
     specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
       crew: CREWS.size.four.weak,
       weapon: {
         cannon: CANNONS.get("Ф-34"),
@@ -229,96 +282,191 @@ const ussr: IWeapon[] = [
     name: "Т-34 обр. 1942 г.",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34 обр. 1943 г.",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34-85 (ЗИС-С-53)",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-34-85 (Д5-Т)",
     type: WEAPONS_TYPE.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "БТ-7",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "БТ-5",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1933,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "БТ-2",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1932,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-70",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-26",
     type: WEAPONS_TYPE.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1931,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-38",
     type: WEAPONS_TYPE.armoredVehicle.smallTank,
     adoptedIntoServiceDate: 1936,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "ИСУ-152",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "СУ-100",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "ИСУ-122",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "СУ-152",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "СУ-85",
     type: WEAPONS_TYPE.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "СУ-76",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "СУ-122",
     type: WEAPONS_TYPE.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "БА-10",
     type: WEAPONS_TYPE.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
   {
     name: "Т-27",
     type: WEAPONS_TYPE.armoredVehicle.tankette,
     adoptedIntoServiceDate: 1931,
+    specifications: {
+      common: {
+        developer: Developers.notDefined,
+      },
+    },
   },
 ];
 

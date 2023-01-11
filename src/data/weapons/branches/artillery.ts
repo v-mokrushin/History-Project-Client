@@ -34,7 +34,6 @@ const ussr: IWeapon[] = [
     name: "122-мм гаубица M-30",
     type: WEAPONS_TYPE.artillery.division,
     adoptedIntoServiceDate: 1938,
-    icon: "icon.jpeg",
   },
   {
     name: "76-мм пушка ЗИС-3",
@@ -143,7 +142,6 @@ const germany: IWeapon[] = [
     name: "Vergeltungswaffe-1",
     type: WEAPONS_TYPE.artillery.cruiseMissile,
     adoptedIntoServiceDate: 1944,
-    icon: "icon.jpeg",
     specifications: {
       common: {
         developer: Developers.atillery.Fieseler,
