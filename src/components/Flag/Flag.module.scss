@@ -26,6 +26,7 @@
 }
 
 .flag {
+  margin: 0 auto;
   border-radius: 4px;
   height: 160px;
   aspect-ratio: 5 / 3;
@@ -67,7 +68,7 @@
   }
 
   @include media-breakpoint-down(xs) {
-    height: 80px;
+    height: 60px;
   }
 
   &::after {

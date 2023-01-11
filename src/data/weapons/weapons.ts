@@ -65,7 +65,7 @@ export const WEAPONS_DATA = {
   selectWeapons(
     weaponBranchPath: string | undefined,
     nationPath: string | undefined
-  ): any[] {
+  ): IWeapon[] {
     return weaponsData
       .filter((item) => item.branch.path === weaponBranchPath)
       .filter(
@@ -73,7 +73,7 @@ export const WEAPONS_DATA = {
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
       );
   },
-  filterWeapons(selectedWeapons: any[], filters: any) {
+  filterWeapons(selectedWeapons: IWeapon[], filters: any) {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
@@ -114,7 +114,7 @@ export const WEAPONS_DATA = {
   getById(weaponId: string | undefined) {
     return weaponsData.find((item) => item.id === weaponId);
   },
-  changeColorized() {
+  changeColorized(): void {
     weaponsData.forEach((weapon) => {
       if (weapon.gallery) {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
@@ -134,11 +134,8 @@ export const WEAPONS_DATA = {
 
     return weapons;
   },
-  getDevelopersWithAll(weaponBranch: any) {
-    const weapons = weaponsData.filter(
-      (weapon) => weapon.branch == weaponBranch
-    );
-    let developers = weapons
+  getDevelopersWithAll(selectedWeapons: IWeapon[]) {
+    let developers = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications) return false;
         if (!weapon.specifications.common) return false;

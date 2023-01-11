@@ -1,16 +1,13 @@
 @import "/src/assets/css/common.scss";
 
-.root {
-}
-
-.item {
+.wrapper {
   display: flex;
   padding: 0 10px;
   gap: 20px;
   justify-content: space-between;
   align-items: center;
   min-width: 260px;
-  height: 40px;
+  height: 45px;
   border: 1px solid black;
   border-radius: 3px;
   transition: background-color 300ms ease;
@@ -25,31 +22,29 @@
 
   @include media-breakpoint-down(md) {
     min-width: 190px;
-    height: 30px;
+    height: 35px;
   }
 
   @include media-breakpoint-down(xs) {
     min-width: 160px;
-    height: 30px;
     gap: 9px;
   }
 
   &_selected {
-    background-color: black;
-  }
-
-  &_selected &_text {
-    color: white;
-  }
-
-  &_selectedText {
     color: $primary-gold-text-color;
+    text-align: center;
+    line-height: 14px;
   }
 }
 
-.vars {
+.variantsBox {
   display: flex;
+  // max-height: 500px;
+  // overflow-y: scroll;
+  // flex-wrap: wrap;
+  // overflow: hidden;
   flex-direction: column;
+  column-gap: 30px;
   padding: 15px 25px;
   position: absolute;
   left: 0;
@@ -63,24 +58,40 @@
   transform-origin: top center;
   transition: transform 200ms ease, box-shadow 100ms ease;
 
+  @include media-breakpoint-down(xl) {
+    max-height: 500px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
   @include media-breakpoint-down(xs) {
     padding: 7px 15px;
+    max-height: 400px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
   }
 
   &_open {
     transform: scaleY(1);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
+}
 
-  &__item {
-    cursor: pointer;
+.variant {
+  cursor: pointer;
 
-    &__text {
-      transition: all 300ms ease;
+  &_selected {
+    color: $primary-gold-text-color;
+  }
 
-      &:hover {
-        color: $grey-text-color;
-      }
+  &__text {
+    transition: all 300ms ease;
+
+    &:hover {
+      color: $grey-text-color;
     }
   }
 }

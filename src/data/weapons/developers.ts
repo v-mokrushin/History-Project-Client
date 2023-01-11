@@ -1,8 +1,8 @@
 export const Developers = {
   armoredVehicles: {
-    Chelyabinsk: getDeveloper("Челябинский тракторный завод"),
-    KrasnoyeSormovo: getDeveloper(`Завод № 112 "Красное Сормово"`),
-    Stalingrad: getDeveloper("Сталинградский тракторный завод"),
+    Chelyabinsk: getDeveloper("КБ завода №100 ЧТЗ"),
+    KrasnoyeSormovo: getDeveloper(`КБ завода №112 "Красное Сормово"`),
+    Stalingrad: getDeveloper("КБ Сталинградского тракторного завода"),
     Henschel: getDeveloper("Henschel-Werke"),
     MAN: getDeveloper("MAN"),
     DaimlerBenz: getDeveloper("Daimler-Benz"),
@@ -14,11 +14,12 @@ export const Developers = {
     Nuffield: getDeveloper("Nuffield Mechanizations and Aero"),
   },
   aviation: {
-    Yak: getDeveloper("ОКБ №115 имени Яковлева"),
-    IL: getDeveloper("ОКБ №240 имeни Ильюшина"),
-    LA: getDeveloper("ОКБ №21 имeни Лавочкина"),
+    Yak: getDeveloper("ОКБ-115 Яковлева"),
+    IL: getDeveloper("ОКБ-240 Ильюшина"),
+    LA: getDeveloper("ОКБ-21 Лавочкина"),
+    Tupolev: getDeveloper("ОКБ Туполева"),
     Heinkel: getDeveloper("Heinkel Flugzeugwerke"),
-    FockeWulf: getDeveloper("Focke-Wulf Flugzeugbau GmbH"),
+    FockeWulf: getDeveloper("Focke-Wulf Flugzeugbau"),
     Junkers: getDeveloper("Junkers"),
     Messerschmitt: getDeveloper("Messerschmitt AG"),
     Grumman: getDeveloper("Grumman Corporation"),

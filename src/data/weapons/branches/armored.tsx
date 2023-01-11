@@ -91,7 +91,7 @@ const ussr: IWeapon[] = [
       {
         title: "Сборная модель ZVEZDA ИС-2 масштаб 1:35",
         photo: "звезда-35.jpg",
-        link: "https://www.ozon.ru/product/sbornaya-model-zvezda-sovetskiy-tyazhelyy-tank-is-2-nabor-dlya-sborki-masshtab-1-35-zvezda-art-3524-184455104/?advert=4C-u9uSqd4qS9YZg-YmFssZC9PSLsx7qLGreCeeO4mxUY438mb_4l3C1j5ajr1Oi9QEdYwoIPHDu_QRL2tOdgyjaxMDInlHjI9BkRkumVDDTmjZioDYhPDU-rAM-01xEIbLDUxSawKwltKlxqX9kt8y6oqX6G8yGsGBMyJF285Aj35gFt45Q51pnxvdM5Rgz5_23o8iolE6n2rfshUTLubdIo6OVSHoTuVC0wXvCMse4-d462w4_1itGmKNlfrZ8sP1iMGf8YrOn8g7k-EbfvFNiZjR8KsOdpXlMdKot7kX7qjlXzJ7yBaBUSmGLmW1YsEWLLM6C0E-LUXUlKOhZfyyxBHGhTx82HVPCrwsL-K55ZDlffvkl4SZoK0FXiSh2gvJ163xL6hEZouenQZ5WeNYa0OQdlg3Ex_TP7zCzYKv0qB39vxfQ3Jpr2YPRnm6aRhu1XcDmm1heHLgXhxxcpEYvyfN59RK_Og-glKmAGsYXz6btqqeVClvmaXUjWIJliJhSMP1AytDUtsWVQYc2VxVRhofMHAQlemuVCbFLiC0Yd3VBOFq0drNmnPjJEa6VvzxAowS25dc1WVTPmMdEXrrohs6ltK1CHcPFJYx5zLqi7l4-ZXeal3b2PY22HAyi6k1ozJZrzXwx0kST-9von6mXV1EEJMfTKoCbmTKz9V02nq31ppRn11OdmXNAhcN6GGB8jTAivy_eTnrAAs9xGwzIAe9OV7WJJs4VUaYKJOGGW52Rt63kb7zKCZcM6ZnNa3eVWBrRz4teOGnGL__OLg&avtc=1&avte=4&avts=1673164064&keywords=сборная+модель+ис-2&sh=x0yThzLvBw",
+        link: "https://www.ozon.ru/product/sbornaya-model-sovetskiy-tyazhelyy-tank-is-2-1148620/?asb=zTwUPzXxm7z8vG0eeAQ0h8GnbQPb%252BXy61d2hm7NiuHE%253D&asb2=lsvjT5U7Z5Sl3D5itlcgNKqT6dn_LwT4tWXdtYlCxSYh0xQQ3wEVeWXclzBcm9yy&avtc=1&avte=2&avts=1673354498&keywords=%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%8F+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C+%D1%82%D0%B0%D0%BD%D0%BA%D0%B0+%D0%B8%D1%81+2&sh=mpUjjT65NQ",
       },
       {
         title: "Сборная модель ZVEZDA ИС-2 масштаб 1:72",

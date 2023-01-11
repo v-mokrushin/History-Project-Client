@@ -39,15 +39,15 @@ export class FiltersStore {
     this.filters = {};
   }
 
-  get name() {
+  get name(): string {
     return this.filters.name;
   }
 
-  get typeName() {
+  get typeName(): string {
     return this.filters.type?.name?.russian;
   }
 
-  get developerName() {
+  get developerName(): string {
     return this.filters.developer?.name?.russian;
   }
 

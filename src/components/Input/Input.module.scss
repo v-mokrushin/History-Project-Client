@@ -8,19 +8,19 @@
   padding: 0px 10px;
   border: 1px solid black;
   border-radius: 3px;
-  height: 40px;
+  height: 45px;
 
   @include media-breakpoint-down(xl) {
     height: 35px;
   }
 
   @include media-breakpoint-down(md) {
-    height: 30px;
+    height: 35px;
   }
 
   @include media-breakpoint-down(xs) {
     padding: 0px 7px;
-    height: 30px;
+    // height: 30px;
   }
 }
 

@@ -46,8 +46,8 @@ const USA: IPageData = {
 
 const greatBritain: IPageData = {
   name: {
-    russian: "Великобритания",
-    russianАccusative: "Великобритании",
+    russian: "Британия",
+    russianАccusative: "Британии",
     english: "Great Britain",
   },
   path: "great-britain",
@@ -215,7 +215,12 @@ export const NATIONS_METHODS = {
       if (nation.path === path) return nation;
     }
   },
-  getNationsAsArray() {
+  getNationsAsArray(): IPageData[] {
     return Object.values(NATIONS);
+  },
+  identity: {
+    isWorld(nation: IPageData | undefined) {
+      return nation == NATIONS.world;
+    },
   },
 };

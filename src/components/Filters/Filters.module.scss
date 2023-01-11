@@ -3,10 +3,11 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
   margin-bottom: 10px;
 
   @include media-breakpoint-down(xs) {
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 7px;
   }

@@ -7,16 +7,6 @@ import { Developers } from "../developers";
 
 const ussr: IWeapon[] = [
   {
-    name: "Ил-4",
-    type: WEAPONS_TYPE.aviation.strategicBomber,
-    adoptedIntoServiceDate: 1940,
-    specifications: {
-      common: {
-        developer: Developers.aviation.IL,
-      },
-    },
-  },
-  {
     name: "Ла-5ФН",
     type: WEAPONS_TYPE.aviation.fighter,
     adoptedIntoServiceDate: 1943,
@@ -92,6 +82,36 @@ const ussr: IWeapon[] = [
     name: "УТ-2",
     type: WEAPONS_TYPE.aviation.training,
     adoptedIntoServiceDate: 1936,
+  },
+  {
+    name: "Ил-10",
+    type: WEAPONS_TYPE.aviation.attackАircraft,
+    adoptedIntoServiceDate: 1945,
+    specifications: {
+      common: {
+        developer: Developers.aviation.IL,
+      },
+    },
+  },
+  {
+    name: "Ту-2С",
+    type: WEAPONS_TYPE.aviation.frontlineBomber,
+    adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.aviation.Tupolev,
+      },
+    },
+  },
+  {
+    name: "Ил-4",
+    type: WEAPONS_TYPE.aviation.strategicBomber,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.aviation.IL,
+      },
+    },
   },
 ];
 

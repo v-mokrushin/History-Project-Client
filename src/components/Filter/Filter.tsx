@@ -8,7 +8,7 @@ interface IFilterProps {
   title: string;
   selectionVariants: any[];
   callback: any;
-  getter: any;
+  getter: string;
   className?: string;
 }
 
@@ -26,33 +26,42 @@ const Filter = observer(
 
     return (
       <div
-        className={classNames(styles.root, className)}
+        className={classNames(styles.wrapper, className)}
         id={`filter-${title}`}
+        onClick={() => {
+          setOpen((val) => !val);
+        }}
       >
+        <Text>{title}</Text>
+        <Text className={styles.wrapper_selected}>{getter}</Text>
+        <button
+          className={classNames(styles.arrow, open && styles.arrow_open)}
+        ></button>
         <div
-          className={classNames(styles.item)}
-          onClick={() => {
-            setOpen((val) => !val);
-          }}
+          className={classNames(
+            styles.variantsBox,
+            open && styles.variantsBox_open
+          )}
         >
-          <Text className={styles.item_text}>{title}</Text>
-          <Text className={styles.item_selectedText}>{getter}</Text>
-          <button
-            className={classNames(styles.arrow, open && styles.arrow_open)}
-          ></button>
-          <div className={classNames(styles.vars, open && styles.vars_open)}>
-            {selectionVariants.map((variant, index) => (
-              <div
-                className={styles.vars__item}
-                key={variant.name.russian + index}
-                onClick={() => callback(variant)}
+          {selectionVariants.map((variant, index) => (
+            <div
+              className={styles.variant}
+              key={variant.name.russian + index}
+              onClick={() => callback(variant)}
+            >
+              <Text
+                className={classNames(
+                  styles.variant__text,
+                  getter === variant.name.russian && styles.variant_selected,
+                  variant.name.russian === "Все" &&
+                    !getter &&
+                    styles.variant_selected
+                )}
               >
-                <Text className={styles.vars__item__text}>
-                  {variant.name.russian}
-                </Text>
-              </div>
-            ))}
-          </div>
+                {variant.name.russian}
+              </Text>
+            </div>
+          ))}
         </div>
       </div>
     );
