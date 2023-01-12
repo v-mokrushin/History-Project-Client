@@ -5,10 +5,11 @@ import filtersStore from "stores/mobx/filtersStore";
 import { observer } from "mobx-react";
 
 interface IInputProps {
+  callback: (text: string) => void;
   className?: string;
 }
 
-const Input = observer(({ className }: IInputProps) => {
+const Input = observer(({ callback, className }: IInputProps) => {
   const input = React.useRef<HTMLInputElement>(null);
 
   return (
@@ -19,7 +20,7 @@ const Input = observer(({ className }: IInputProps) => {
         className={styles.input}
         placeholder="Название..."
         value={filtersStore.name}
-        onInput={() => filtersStore.setNameFilter(input.current!.value)}
+        onInput={() => callback(input.current!.value)}
       ></input>
       <div className={styles.icon}></div>
     </div>

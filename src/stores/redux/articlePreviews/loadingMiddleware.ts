@@ -7,7 +7,10 @@ import {
   selectArticlePreviewsLoadingStatus,
 } from "./selectors";
 
-export const loadArticlePreviews = (dispatch: Function, getState: Function) => {
+export const loadArticlePreviews = (
+  dispatch: Function,
+  getState: Function
+): void => {
   if (
     selectArticlePreviewsLoadingStatus(getState()) === LOADING_STATUSES.success
   )

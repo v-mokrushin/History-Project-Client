@@ -29,7 +29,7 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
         setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.developerName}
       />
-      <Input />
+      <Input callback={filtersStore.setNameFilter.bind(filtersStore)} />
     </div>
   );
 };

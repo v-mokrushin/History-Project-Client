@@ -3,34 +3,43 @@ import PreviewWeaponCard from "../PreviewWeaponCard/PreviewWeaponCard";
 import styles from "./TimelineItem.module.scss";
 import { TimelineContext } from "../Timeline/context";
 import { IWeapon } from "data/weapons/weapons";
+import classNames from "classnames";
+import settingsStore from "stores/mobx/settingsStore";
+import { observer } from "mobx-react";
 
 interface ITimelineItemProps {
   contentCollection: IWeapon[];
   year: number;
 }
 
-export default function TimelineItem({
-  contentCollection,
-  year,
-}: ITimelineItemProps) {
-  const { showFlags } = React.useContext(TimelineContext);
+const TimelineItem = observer(
+  ({ contentCollection, year }: ITimelineItemProps) => {
+    const { showFlags } = React.useContext(TimelineContext);
+    
+    return (
+      <div className={styles.wrapper}>
+        <div className={styles.yearBox}>
+          <span className={styles.yearText}>{year}</span>
+        </div>
+        <div
+          className={classNames(
+            styles.contentBox,
+            settingsStore.displaySize && styles.contentBox_large
+          )}
+        >
+          {contentCollection
+            .filter((item) => item.adoptedIntoServiceDate === year)
+            .map((val, valIndex) => (
+              <PreviewWeaponCard
+                weapon={val}
+                key={valIndex}
+                showFlag={showFlags}
+              />
+            ))}
+        </div>
+      </div>
+    );
+  }
+);
 
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.yearBox}>
-        <span className={styles.yearText}>{year}</span>
-      </div>
-      <div className={styles.contentBox}>
-        {contentCollection
-          .filter((item) => item.adoptedIntoServiceDate === year)
-          .map((val, valIndex) => (
-            <PreviewWeaponCard
-              weapon={val}
-              key={valIndex}
-              showFlag={showFlags}
-            />
-          ))}
-      </div>
-    </div>
-  );
-}
+export default TimelineItem;

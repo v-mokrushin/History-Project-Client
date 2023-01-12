@@ -4,10 +4,12 @@ import { makeAutoObservable } from "mobx";
 export class SettingsStore {
   public colorized: boolean;
   public sortInAscending: boolean;
+  public displaySize: boolean;
 
   constructor() {
     this.colorized = false;
     this.sortInAscending = false;
+    this.displaySize = false;
 
     makeAutoObservable(this);
   }
@@ -19,6 +21,10 @@ export class SettingsStore {
   changeColorized(): void {
     WEAPONS.changeColorized();
     this.colorized = !this.colorized;
+  }
+
+  changeDisplaySize(): void {
+    this.displaySize = !this.displaySize;
   }
 }
 

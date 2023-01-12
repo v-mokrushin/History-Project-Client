@@ -23,7 +23,7 @@
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.2) 70%,
+      rgba(0, 0, 0, 0.2) 65%,
       #000000 100%
     );
     left: 0;
@@ -34,11 +34,11 @@
   }
 
   &:hover::after {
-    background-color: rgba($color: #000000, $alpha: 0.2);
+    background-color: rgba($color: #000000, $alpha: 0.25);
   }
 
   &:hover .separator {
-    width: 100%;
+    // width: 100%;
   }
 
   &:hover .description {
@@ -51,7 +51,7 @@
   }
 
   &:hover .backgroundWrapper {
-    transform: scale(1.075);
+    transform: scale(1.06);
   }
 }
 

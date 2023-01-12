@@ -6,7 +6,7 @@ import settingsStore from "stores/mobx/settingsStore";
 import { ANIMATIONS } from "../../constants/animations";
 import TimelineItem from "../TimelineItem/TimelineItem";
 import { TimelineContext } from "./context";
-import styles from "./Timeline.module.sass";
+import styles from "./Timeline.module.scss";
 
 interface ITimelineProps {
   contentCollection: IWeapon[];

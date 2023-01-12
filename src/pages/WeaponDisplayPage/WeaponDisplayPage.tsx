@@ -65,7 +65,7 @@ export default function WeaponDisplayPage() {
   return (
     <div className={classNames(styles.root)}>
       <>
-        <ReadingProgressBar />
+        {weapon.isReady && <ReadingProgressBar />}
         {weapon.gallery && <IntroImage imageUrl={weapon.gallery.icon} />}
         <ContentWrapper className={ANIMATIONS.fadeIn}>
           <Container type={CONTAINER_TYPES.aside}>

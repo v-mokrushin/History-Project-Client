@@ -18,7 +18,7 @@ const WeaponPreviewSettings = observer(
           className={styles.btn}
         >
           <Text className={styles.btn__text}>
-            Сортировка:{" "}
+            Порядок:{" "}
             {settingsStore.sortInAscending ? "по возраст." : "по убыванию"}
           </Text>
         </button>
@@ -28,6 +28,14 @@ const WeaponPreviewSettings = observer(
         >
           <Text className={styles.btn__text}>
             Фото: {settingsStore.colorized ? "цветные" : "чёрно-белые"}
+          </Text>
+        </button>
+        <button
+          onClick={() => settingsStore.changeDisplaySize()}
+          className={styles.btn}
+        >
+          <Text className={styles.btn__text}>
+            Размер: {settingsStore.displaySize ? "крупный" : "норм."}
           </Text>
         </button>
       </div>

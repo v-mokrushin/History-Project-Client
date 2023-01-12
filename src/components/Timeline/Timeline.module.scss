@@ -1,0 +1,16 @@
+@import "/src/assets/css/common.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+
+  @include media-breakpoint-down(xl) {
+    gap: 14px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    gap: 10px;
+  }
+}
