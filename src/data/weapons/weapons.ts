@@ -4,12 +4,12 @@ import { IPageData } from "constants/pages";
 import { shuffleArray } from "utils/common";
 import { createGallery, createModels, defineIdProperty } from "utils/weapons";
 import { NATIONS } from "../../constants/nations";
-import { ARMORED_VEHICLES } from "./branches/armored";
+import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenadeLaunchers";
 import { SMALL_ARMS_DATA } from "./branches/smallArms";
-import { IWeaponType } from "constants/weapon-types";
+import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
 
@@ -17,7 +17,7 @@ export interface IWeapon {
   name: string;
   type: IWeaponType;
   adoptedIntoServiceDate: number;
-  branch?: any;
+  branch?: IWaponBranch;
   id?: string;
   isReady?: boolean;
   nation?: IPageData;
@@ -96,7 +96,7 @@ export const WEAPONS_DATA = {
     nationPath: string | undefined
   ): IWeapon[] {
     return weapons_data
-      .filter((item) => item.branch.path === weaponBranchPath)
+      .filter((item) => item.branch?.path === weaponBranchPath)
       .filter(
         (item) =>
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
@@ -134,7 +134,7 @@ export const WEAPONS_DATA = {
       ...Array.from(
         new Set(
           weapons_data
-            .filter((item) => item.branch.path === weaponsBranchPath)
+            .filter((item) => item.branch?.path === weaponsBranchPath)
             .map((item) => item.nation)
         )
       ),
@@ -151,12 +151,12 @@ export const WEAPONS_DATA = {
     });
   },
   getRecommendation(
-    weaponBranchPath: string,
+    weaponBranchPath: string | undefined,
     weaponId: string | undefined
   ): IWeapon[] {
     let weapons = weapons_data.filter(
       (weapon) =>
-        weapon.branch.path === weaponBranchPath && weapon.id !== weaponId
+        weapon.branch?.path === weaponBranchPath && weapon.id !== weaponId
     );
     weapons = shuffleArray(weapons);
     weapons = weapons.slice(0, 8);

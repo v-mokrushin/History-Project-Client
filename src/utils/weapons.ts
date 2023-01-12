@@ -1,3 +1,4 @@
+import { IWaponBranch } from "constants/weapon-types";
 import { IPageData } from "../constants/pages";
 import { IWeapon } from "data/weapons/weapons";
 
@@ -5,21 +6,24 @@ export function appendNation(weapons: IWeapon[], nation: IPageData): void {
   weapons.forEach((weapon) => (weapon.nation = nation));
 }
 
-export function appendWeaponBranch(weapons: IWeapon[], branch: any): void {
+export function appendWeaponBranch(
+  weapons: IWeapon[],
+  branch: IWaponBranch
+): void {
   weapons.forEach((weapon) => (weapon.branch = branch));
 }
 
-export function defineIdProperty(object: any): void {
-  Object.defineProperty(object, "id", {
+export function defineIdProperty(weapon: IWeapon): void {
+  Object.defineProperty(weapon, "id", {
     get: function () {
       return this.name.replaceAll(" ", "-").replaceAll("/", "-");
     },
   });
 }
 
-export function getGalleryPath(weaponName: string, weapon: IWeapon) {
+export function getGalleryPath(weaponName: string, weapon: IWeapon): string {
   return (
-    `/images/weapons/${weapon.branch.path}/` +
+    `/images/weapons/${weapon.branch?.path}/` +
     weapon.nation!.path +
     "/" +
     weaponName
@@ -33,12 +37,12 @@ export function getGalleryPath(weaponName: string, weapon: IWeapon) {
       .replaceAll("Ł", "L")
       .replaceAll("ś", "s")
       .replaceAll("ä", "a")
-      .replaceAll("ó", "o")  +
+      .replaceAll("ó", "o") +
     "/"
   );
 }
 
-export function createGallery(weapon: IWeapon) {
+export function createGallery(weapon: IWeapon): void {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
@@ -55,7 +59,7 @@ export function createGallery(weapon: IWeapon) {
   };
 }
 
-export function createModels(weapon: IWeapon) {
+export function createModels(weapon: IWeapon): void {
   if (weapon.models) {
     weapon.models.forEach(
       (model) => (model.photo = weapon.gallery?.path + "/models/" + model.photo)

@@ -1,6 +1,6 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { IWeapon } from "../weapons";
-import { WEAPONS_TYPE } from "../../../constants/weapon-types";
+import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
 import { Developers } from "../developers";
@@ -8,7 +8,7 @@ import { Developers } from "../developers";
 const ussr: IWeapon[] = [
   {
     name: "Ла-5ФН",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -18,7 +18,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Ла-5Ф",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -28,7 +28,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Ла-5",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -38,7 +38,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Як-9",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -49,7 +49,7 @@ const ussr: IWeapon[] = [
   {
     name: "Як-3",
     isReady: true,
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     JSXComponent: <Yak_3 />,
     sections: [
@@ -75,7 +75,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Як-1",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -85,7 +85,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "УТ-2",
-    type: WEAPONS_TYPE.aviation.training,
+    type: WEAPONS_CLASSIFICATION.aviation.training,
     adoptedIntoServiceDate: 1936,
     specifications: {
       common: {
@@ -95,7 +95,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Ил-10",
-    type: WEAPONS_TYPE.aviation.attackАircraft,
+    type: WEAPONS_CLASSIFICATION.aviation.attackАircraft,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
@@ -105,7 +105,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Ту-2С",
-    type: WEAPONS_TYPE.aviation.frontlineBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.frontlineBomber,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -115,7 +115,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Ил-4",
-    type: WEAPONS_TYPE.aviation.strategicBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.strategicBomber,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -128,7 +128,7 @@ const ussr: IWeapon[] = [
 const germany: IWeapon[] = [
   {
     name: "Heinkel He 162 Volksjäger",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
@@ -138,7 +138,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Messerschmitt Me.262 «Schwalbe»",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -148,7 +148,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Heinkel He 111",
-    type: WEAPONS_TYPE.aviation.frontlineBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.frontlineBomber,
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
@@ -158,7 +158,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Focke-Wulf Ta 152",
-    type: WEAPONS_TYPE.aviation.interceptor,
+    type: WEAPONS_CLASSIFICATION.aviation.interceptor,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -168,7 +168,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Junkers Ju 87 G-1 Stuka",
-    type: WEAPONS_TYPE.aviation.attackАircraft,
+    type: WEAPONS_CLASSIFICATION.aviation.attackАircraft,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -178,7 +178,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Junkers Ju 290",
-    type: WEAPONS_TYPE.aviation.scout,
+    type: WEAPONS_CLASSIFICATION.aviation.scout,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -188,7 +188,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Messerschmitt Me.323 Gigant",
-    type: WEAPONS_TYPE.aviation.militaryTransport,
+    type: WEAPONS_CLASSIFICATION.aviation.militaryTransport,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -198,7 +198,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Focke-Wulf Fw 200 Condor",
-    type: WEAPONS_TYPE.aviation.multipurpose,
+    type: WEAPONS_CLASSIFICATION.aviation.multipurpose,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
@@ -211,7 +211,7 @@ const germany: IWeapon[] = [
 const usa: IWeapon[] = [
   {
     name: "Grumman F8F Bearcat",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
@@ -221,7 +221,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "North American P-51-D Mustang",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -231,7 +231,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "Douglas A-20G Havoc",
-    type: WEAPONS_TYPE.aviation.attackАircraft,
+    type: WEAPONS_CLASSIFICATION.aviation.attackАircraft,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -241,7 +241,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "Boeing B-29 Superfortress",
-    type: WEAPONS_TYPE.aviation.strategicBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.strategicBomber,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -254,7 +254,7 @@ const usa: IWeapon[] = [
 const britain: IWeapon[] = [
   {
     name: "Gloster Meteor F.Mk.4",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -264,7 +264,7 @@ const britain: IWeapon[] = [
   },
   {
     name: "Avro 683 Lancaster",
-    type: WEAPONS_TYPE.aviation.strategicBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.strategicBomber,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -277,7 +277,7 @@ const britain: IWeapon[] = [
 const france: IWeapon[] = [
   {
     name: "Morane-Saulnier MS.406",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1939,
     specifications: {
       common: {
@@ -290,7 +290,7 @@ const france: IWeapon[] = [
 const japan: IWeapon[] = [
   {
     name: "Mitsubishi A6M5 Raisen",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -300,7 +300,7 @@ const japan: IWeapon[] = [
   },
   {
     name: "Mitsubishi G4M",
-    type: WEAPONS_TYPE.aviation.torpedoBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.torpedoBomber,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -313,7 +313,7 @@ const japan: IWeapon[] = [
 const italy: IWeapon[] = [
   {
     name: "Macchi C.205 Veltro",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -326,7 +326,7 @@ const italy: IWeapon[] = [
 const poland: IWeapon[] = [
   {
     name: "PZL.37-Łoś",
-    type: WEAPONS_TYPE.aviation.bomber,
+    type: WEAPONS_CLASSIFICATION.aviation.bomber,
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
@@ -339,7 +339,7 @@ const poland: IWeapon[] = [
 const sweden: IWeapon[] = [
   {
     name: "Saab 17",
-    type: WEAPONS_TYPE.aviation.lightBomber,
+    type: WEAPONS_CLASSIFICATION.aviation.lightBomber,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -352,7 +352,7 @@ const sweden: IWeapon[] = [
 const finland: IWeapon[] = [
   {
     name: "VL Myrsky II",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -365,7 +365,7 @@ const finland: IWeapon[] = [
 const romania: IWeapon[] = [
   {
     name: "IAR 80",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -378,7 +378,7 @@ const romania: IWeapon[] = [
 const lithuania: IWeapon[] = [
   {
     name: "ANBO-41",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
@@ -391,7 +391,7 @@ const lithuania: IWeapon[] = [
 const netherlands: IWeapon[] = [
   {
     name: "Fokker G.1",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
@@ -404,7 +404,7 @@ const netherlands: IWeapon[] = [
 const yugoslavia: IWeapon[] = [
   {
     name: "Ikarus IK-2",
-    type: WEAPONS_TYPE.aviation.fighter,
+    type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1939,
     specifications: {
       common: {
@@ -417,7 +417,7 @@ const yugoslavia: IWeapon[] = [
 const hungary: IWeapon[] = [
   {
     name: "Weiss WM 21 Sólyom",
-    type: WEAPONS_TYPE.aviation.scout,
+    type: WEAPONS_CLASSIFICATION.aviation.scout,
     adoptedIntoServiceDate: 1939,
     specifications: {
       common: {
@@ -460,4 +460,4 @@ export const AVIATION_DATA = [
   ...hungary,
   ...italy,
 ];
-appendWeaponBranch(AVIATION_DATA, WEAPONS_TYPE.aviation);
+appendWeaponBranch(AVIATION_DATA, WEAPONS_CLASSIFICATION.aviation);

@@ -3,7 +3,11 @@ import { NATIONS_METHODS } from "./nations";
 export interface IPageData {
   path: string;
   introImage: string;
-  name: any;
+  name: {
+    russian: string;
+    russianАccusative: string;
+    english: string;
+  };
   flagImage?: string;
 }
 
@@ -13,6 +17,7 @@ const wrongObject: IPageData = {
   name: {
     russian: "WRONG",
     english: "WRONG",
+    russianАccusative: "",
   },
 };
 
@@ -23,6 +28,7 @@ const data: IPageData[] = [
     name: {
       russian: "главная",
       english: "main",
+      russianАccusative: "",
     },
   },
   {
@@ -31,15 +37,16 @@ const data: IPageData[] = [
     name: {
       russian: "статьи",
       english: "articles",
+      russianАccusative: "",
     },
   },
   {
     path: "weapons",
-    // introImage: "/images/backgrounds/weapons/background.jpg",
     introImage: "/images/backgrounds/weapons.jpg",
     name: {
       russian: "вооружения",
       english: "weapons",
+      russianАccusative: "",
     },
   },
   {
@@ -48,6 +55,7 @@ const data: IPageData[] = [
     name: {
       russian: "Авиация",
       english: "aviation",
+      russianАccusative: "",
     },
   },
   {
@@ -56,6 +64,7 @@ const data: IPageData[] = [
     name: {
       russian: "Бронетехника",
       english: "aviation",
+      russianАccusative: "",
     },
   },
   {
@@ -64,6 +73,7 @@ const data: IPageData[] = [
     name: {
       russian: "Стрелковое оружие",
       english: "small arms",
+      russianАccusative: "",
     },
   },
   {
@@ -72,6 +82,7 @@ const data: IPageData[] = [
     name: {
       russian: "Артиллерия",
       english: "artillery",
+      russianАccusative: "",
     },
   },
   {
@@ -80,10 +91,21 @@ const data: IPageData[] = [
     name: {
       russian: "Гранатометы",
       english: "Grenade Launchers",
+      russianАccusative: "",
     },
   },
   ...NATIONS_METHODS.getNationsAsArray(),
 ];
+
+// ------------------------------------------------------------------------------
+
+export const PAGES_DATA = {
+  getByPath,
+  getRussianNameByPath,
+  getPathLength,
+  getPathnamesArray,
+  getLabelsArray,
+};
 
 function getRussianNameByPath(path: string): string | undefined {
   return data.find((item) => item.path === path)?.name.russian;
@@ -111,12 +133,12 @@ function getLabelsArray(locationPathname: string): string[] {
 function getPathnamesArray(locationPathname: string): string[] {
   const pathNamesArray = [];
   let previousPosition: number = -1;
-  let curentPosition: number = -1;
+  let currentPosition: number = -1;
 
-  while (locationPathname.indexOf("/", curentPosition + 1) != -1) {
-    previousPosition = curentPosition + 1;
-    curentPosition = locationPathname.indexOf("/", curentPosition + 1);
-    pathNamesArray.push(locationPathname.slice(0, curentPosition));
+  while (locationPathname.indexOf("/", currentPosition + 1) != -1) {
+    previousPosition = currentPosition + 1;
+    currentPosition = locationPathname.indexOf("/", currentPosition + 1);
+    pathNamesArray.push(locationPathname.slice(0, currentPosition));
   }
 
   pathNamesArray.push(locationPathname.slice(0));
@@ -124,11 +146,3 @@ function getPathnamesArray(locationPathname: string): string[] {
 
   return pathNamesArray;
 }
-
-export const PAGES_DATA = {
-  getByPath,
-  getRussianNameByPath,
-  getPathLength,
-  getPathnamesArray,
-  getLabelsArray,
-};

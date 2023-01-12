@@ -28,7 +28,7 @@ const PreviewWeaponCard = observer(
       <NavLink
         to={
           isAbsoluteLinkPath
-            ? `/weapons/${weapon.branch.path}/world/${weapon.id}`
+            ? `/weapons/${weapon.branch?.path}/world/${weapon.id}`
             : weapon.id!
         }
         className={classNames(styles.root, ANIMATIONS.fadeIn)}

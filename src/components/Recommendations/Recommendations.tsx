@@ -5,13 +5,13 @@ import PreviewWeaponCard from "components/PreviewWeaponCard/PreviewWeaponCard";
 import { IWeapon, WEAPONS_DATA } from "data/weapons/weapons";
 
 interface IRecommendationsProps {
-  className?: string;
   weapon: IWeapon;
+  className?: string;
 }
 
 const Recommendations = ({ className, weapon }: IRecommendationsProps) => {
   const collecion = WEAPONS_DATA.getRecommendation(
-    weapon.branch.path,
+    weapon.branch?.path,
     weapon.id
   );
 

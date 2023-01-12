@@ -7,7 +7,7 @@ interface ITitleProps {
   noMargin?: boolean;
   centered?: boolean;
   className?: string;
-  children?: string | string[];
+  children: any;
 }
 
 export default function Title({

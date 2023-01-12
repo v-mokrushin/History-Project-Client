@@ -52,15 +52,3 @@ export const CANNONS: ICannons = {
     muzzleBrake: "да",
   },
 };
-
-// class Cannons {
-//   private cannons = CANNONS_DATA;
-
-//   constructor() {}
-
-//   get(trademark: string) {
-//     return this.cannons.find((cannon) => cannon.trademark === trademark);
-//   }
-// }
-
-// export const CANNONS = new Cannons();

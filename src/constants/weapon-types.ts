@@ -1,7 +1,91 @@
 import { type } from "os";
 import { IWeapon } from "data/weapons/weapons";
 
-const armoredVehicle = {
+export type IWaponBranch =
+  | IArmoredVehiclesBranch
+  | IAviationBranch
+  | IArtilleryBranch
+  | ISmallArmsBranch
+  | IGrenadeLaunchersBranch;
+
+interface IBaseWeaponBranch {
+  path: string;
+  name: IWeaponName;
+}
+
+interface IArmoredVehiclesBranch extends IBaseWeaponBranch {
+  tankette: IWeaponType;
+  smallTank: IWeaponType;
+  lightTank: IWeaponType;
+  mediumTank: IWeaponType;
+  heavyTank: IWeaponType;
+  sau: IWeaponType;
+  ptsau: IWeaponType;
+  zsu: IWeaponType;
+  armoredCar: IWeaponType;
+  armoredСarrier: IWeaponType;
+}
+
+interface IAviationBranch extends IBaseWeaponBranch {
+  scout: IWeaponType;
+  interceptor: IWeaponType;
+  fighter: IWeaponType;
+  attackАircraft: IWeaponType;
+  bomber: IWeaponType;
+  torpedoBomber: IWeaponType;
+  lightBomber: IWeaponType;
+  frontlineBomber: IWeaponType;
+  strategicBomber: IWeaponType;
+  multipurpose: IWeaponType;
+  militaryTransport: IWeaponType;
+  training: IWeaponType;
+}
+
+interface IArtilleryBranch extends IBaseWeaponBranch {
+  company: IWeaponType;
+  battalion: IWeaponType;
+  regimental: IWeaponType;
+  division: IWeaponType;
+  armyAndCorps: IWeaponType;
+  specialPower: IWeaponType;
+  antitank: IWeaponType;
+  antiaircraft: IWeaponType;
+  reactive: IWeaponType;
+  cruiseMissile: IWeaponType;
+  ballisticMissile: IWeaponType;
+}
+
+interface ISmallArmsBranch extends IBaseWeaponBranch {
+  revolver: IWeaponType;
+  gun: IWeaponType;
+  submachineGun: IWeaponType;
+  rifle: IWeaponType;
+  selfLoadingRifle: IWeaponType;
+  assaultRifle: IWeaponType;
+  shotgun: IWeaponType;
+  machinegun: IWeaponType;
+  generalPurposeMachinegun: IWeaponType;
+  heavyMachinegun: IWeaponType;
+  antiTankGun: IWeaponType;
+}
+
+interface IGrenadeLaunchersBranch extends IBaseWeaponBranch {
+  muzzle: IWeaponType;
+  manual: IWeaponType;
+  heavy: IWeaponType;
+  hybrid: IWeaponType;
+}
+
+export interface IWeaponType {
+  name: IWeaponName;
+}
+
+interface IWeaponName {
+  russian: string;
+  english?: string;
+}
+
+const armoredVehicle: IArmoredVehiclesBranch = {
   path: "armored-vehicles",
   name: {
     russian: "Бронетехника",
@@ -18,7 +102,7 @@ const armoredVehicle = {
   armoredСarrier: WeaponType("Бронетранспортер"),
 };
 
-const aviation = {
+const aviation: IAviationBranch = {
   path: "aviation",
   name: {
     russian: "Авиация",
@@ -37,7 +121,7 @@ const aviation = {
   training: WeaponType("Учебно-тренировочный"),
 };
 
-const artillery = {
+const artillery: IArtilleryBranch = {
   path: "artillery",
   name: {
     russian: "Артиллерия",
@@ -55,7 +139,7 @@ const artillery = {
   ballisticMissile: WeaponType("Баллистическая ракета"),
 };
 
-const smallArms = {
+const smallArms: ISmallArmsBranch = {
   path: "small-arms",
   name: {
     russian: "Стрелковое оружие",
@@ -73,7 +157,7 @@ const smallArms = {
   antiTankGun: WeaponType("Противотанковое ружье"),
 };
 
-const grenadeLaunchers = {
+const grenadeLaunchers: IGrenadeLaunchersBranch = {
   path: "grenade-launchers",
   name: {
     russian: "Гранатометы",
@@ -84,13 +168,13 @@ const grenadeLaunchers = {
   hybrid: WeaponType("Гибридный"),
 };
 
-const allType: IWeaponType = {
+const ALL_TYPE: IWeaponType = {
   name: {
     russian: "Все",
   },
 };
 
-export const WEAPONS_TYPE = {
+export const WEAPONS_CLASSIFICATION = {
   armoredVehicle,
   aviation,
   smallArms,
@@ -104,64 +188,43 @@ function WeaponType(russianName: string): IWeaponType {
 
 // ------------------------------------
 
-interface IWeaponBranch {
-  path: string;
-  name: IWeaponName;
-}
-
-// interface IArmoredBranch {}
-
-// interface IWeaponBranch {}
-
-// interface IBranch {}
-
-export interface IWeaponType {
-  name: IWeaponName;
-}
-
-interface IWeaponName {
-  russian: string;
-  english?: string;
-}
-
 export const WEAPONS_TYPE_METHODS = {
-  getByPath(path: string | undefined) {
-    for (let val of Object.values(WEAPONS_TYPE)) {
+  getByPath(path: string | undefined): IWeaponType {
+    for (let val of Object.values(WEAPONS_CLASSIFICATION)) {
       if (val.path === path) return val;
     }
-    return allType;
+    return ALL_TYPE;
   },
-  getAllType() {
-    return allType;
+  getAllType(): IWeaponType {
+    return ALL_TYPE;
   },
   getTypesArrayWithAll(weaponBranch: any) {
     return [this.getAllType(), ...getTypesArray(weaponBranch)];
   },
-  isAllType(type: IWeaponType) {
+  isAllType(type: IWeaponType): boolean {
     return this.getAllType() === type;
   },
   identity: {
     isArmoredVehicle(weapon: IWeapon) {
-      return weapon.branch == WEAPONS_TYPE.armoredVehicle;
+      return weapon.branch == WEAPONS_CLASSIFICATION.armoredVehicle;
     },
     isAviation(weapon: IWeapon) {
-      return weapon.branch == WEAPONS_TYPE.aviation;
+      return weapon.branch == WEAPONS_CLASSIFICATION.aviation;
     },
     isSmallArms(weapon: IWeapon) {
-      return weapon.branch == WEAPONS_TYPE.smallArms;
+      return weapon.branch == WEAPONS_CLASSIFICATION.smallArms;
     },
     isArtillery(weapon: IWeapon) {
-      return weapon.branch == WEAPONS_TYPE.artillery;
+      return weapon.branch == WEAPONS_CLASSIFICATION.artillery;
     },
     isGrenadeLaunchers(weapon: IWeapon) {
-      return weapon.branch == WEAPONS_TYPE.grenadeLaunchers;
+      return weapon.branch == WEAPONS_CLASSIFICATION.grenadeLaunchers;
     },
   },
 };
 
-function getTypesArray(weaponBranch: any) {
-  const copy: any = {};
-  Object.assign(copy, weaponBranch);
+function getTypesArray(weaponBranch: IWaponBranch) {
+  const copy: any = { ...weaponBranch };
   delete copy.name;
   delete copy.path;
   return Object.values(copy);

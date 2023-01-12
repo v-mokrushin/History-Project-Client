@@ -1,7 +1,7 @@
 import { CREWS } from "../crews";
 import { BODIES } from "../parts/bodies";
 import { IWeapon } from "../weapons";
-import { WEAPONS_TYPE } from "../../../constants/weapon-types";
+import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ENGINES } from "../parts/engines";
@@ -14,7 +14,7 @@ const ussr: IWeapon[] = [
   {
     name: "ИС-3",
     isReady: false,
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
     intro: [
       "ИС-3 — последний советский тяжёлый танк, принятый на вооружение и запущенный в серийное производство во время Второй Мировой войны. Его проектирование началось весной 1944 года как глубокая модернизация ИС-2, который не устраивал военных по бронезащите. В результате ИС-3 получил новый сварной корпус с характерным «щучим носом» (такое название он получил из-за формы верхней лобовой части корпуса) и бортовыми бронелистами под наклоном. На крыше башни новой конструкции были сделаны новые люки, намного более удобные для экипажа, а механик-водитель получил новый треугольный люк для лучшей обзорности вне боевой обстановки. Помимо этого, топливные баки были убраны из боевого отделения, а вместо командирской башенки установили удачные перископические приборы наблюдения.",
@@ -27,7 +27,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "КВ-1 (Л-11)",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -37,7 +37,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "КВ-1 (ЗиС-5)",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -47,7 +47,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "КВ-2",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -57,7 +57,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "КВ-1Э",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -67,7 +67,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "КВ-1С",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -77,7 +77,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-35",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
@@ -87,7 +87,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "ИС-1",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -98,7 +98,7 @@ const ussr: IWeapon[] = [
   {
     name: "ИС-2",
     isReady: true,
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     JSXComponent: <IS_2 />,
     sections: [
@@ -202,7 +202,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-28",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
@@ -212,7 +212,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34 обр. 1940 г.",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -222,7 +222,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34-57",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -233,7 +233,7 @@ const ussr: IWeapon[] = [
   {
     name: "Т-34 обр. 1941 г.",
     isReady: true,
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     intro: [
       "Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны. Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод - СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года.",
@@ -259,7 +259,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34Э (СТЗ)",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -269,7 +269,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34Э (завод №112)",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -279,7 +279,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34 обр. 1942 г.",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -289,7 +289,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34 обр. 1943 г.",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -299,7 +299,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34-85 (ЗИС-С-53)",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -309,7 +309,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-34-85 (Д5-Т)",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -319,7 +319,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "БТ-7",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
@@ -329,7 +329,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "БТ-5",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
@@ -339,7 +339,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "БТ-2",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1932,
     specifications: {
       common: {
@@ -349,7 +349,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-70",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -359,7 +359,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-26",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
@@ -369,7 +369,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-38",
-    type: WEAPONS_TYPE.armoredVehicle.smallTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.smallTank,
     adoptedIntoServiceDate: 1936,
     specifications: {
       common: {
@@ -379,7 +379,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "ИСУ-152",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -389,7 +389,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "СУ-100",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -399,7 +399,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "ИСУ-122",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -409,7 +409,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "СУ-152",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -419,7 +419,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "СУ-85",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -429,7 +429,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "СУ-76",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -439,7 +439,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "СУ-122",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -449,7 +449,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "БА-10",
-    type: WEAPONS_TYPE.armoredVehicle.armoredCar,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
@@ -459,7 +459,7 @@ const ussr: IWeapon[] = [
   },
   {
     name: "Т-27",
-    type: WEAPONS_TYPE.armoredVehicle.tankette,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.tankette,
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
@@ -472,7 +472,7 @@ const ussr: IWeapon[] = [
 const germany: IWeapon[] = [
   {
     name: "PzKpfw VI Ausf.B Tiger II",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -483,7 +483,7 @@ const germany: IWeapon[] = [
   {
     name: "PzKpfw VI Tiger",
     isReady: true,
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
     intro: [
       "Panzerkampfwagen VI Ausf. H1, или «Тигр» – это первый немецкий тяжелый танк времен Второй мировой войны. Один из самых знаменитых танков Германии.",
@@ -522,7 +522,7 @@ const germany: IWeapon[] = [
   {
     name: "PzKpfw V Ausf.G Panther",
     isReady: true,
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -543,7 +543,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -553,7 +553,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. IV Ausf.H",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -563,7 +563,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. III Ausf.J1",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -573,7 +573,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. III Ausf.L",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -583,7 +583,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. III Ausf.M",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -593,7 +593,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Pz.Kpfw. II",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
@@ -603,7 +603,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Jagdtiger",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -613,7 +613,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Jagdpanther",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -623,7 +623,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Ferdinand",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -633,7 +633,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Nashorn",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -643,7 +643,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "StuG III Ausf.G",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -653,7 +653,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "StuG III Ausf.F",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -663,7 +663,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "10,5 cm Sturmhaubitze 42",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -673,7 +673,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "StuG III Ausf.A",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -683,7 +683,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Hummel",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -693,7 +693,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Flakpanzer IV «Wirbelwind»",
-    type: WEAPONS_TYPE.armoredVehicle.zsu,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.zsu,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -703,7 +703,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Sd.Kfz. 250/1 Alte",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -713,7 +713,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Sd.Kfz. 250/3 Alte",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -723,7 +723,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Sd.Kfz. 251/1",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -733,7 +733,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Sd.Kfz. 251/16",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -743,7 +743,7 @@ const germany: IWeapon[] = [
   },
   {
     name: "Sd.Kfz. 251/22",
-    type: WEAPONS_TYPE.armoredVehicle.armoredСarrier,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredСarrier,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -756,7 +756,7 @@ const germany: IWeapon[] = [
 const usa: IWeapon[] = [
   {
     name: "M26 Pershing",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
@@ -766,7 +766,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A3E2 76(W) Jumbo",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -776,7 +776,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A3E2 Jumbo",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -786,7 +786,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A3 76(W) Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -796,7 +796,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A2 76(W) Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -806,7 +806,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A1 76(W) Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -821,7 +821,7 @@ const usa: IWeapon[] = [
   // },
   {
     name: "M4A2 Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -831,7 +831,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4 Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -841,7 +841,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M4A1 Sherman",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -851,19 +851,19 @@ const usa: IWeapon[] = [
   },
   {
     name: "M3 Lee",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     specifications: {},
   },
   {
     name: "M24 Chaffee",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1944,
     specifications: {},
   },
   {
     name: "M5A1 Stuart",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -873,7 +873,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "M3 Stuart",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -883,7 +883,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "GMC M36 Jackson",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -893,7 +893,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "GMC M18 Hellcat",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -903,7 +903,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "GMC M10 Wolverine",
-    type: WEAPONS_TYPE.armoredVehicle.ptsau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -913,7 +913,7 @@ const usa: IWeapon[] = [
   },
   {
     name: "GMC M40",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
@@ -926,49 +926,49 @@ const usa: IWeapon[] = [
 const britain: IWeapon[] = [
   {
     name: "Churchill III",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
     specifications: {},
   },
   {
     name: "Churchill I",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
     specifications: {},
   },
   {
     name: "Matilda Mk III",
-    type: WEAPONS_TYPE.armoredVehicle.heavyTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
     specifications: {},
   },
   {
     name: "Sherman Firefly",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {},
   },
   {
     name: "Valentine Mk XI",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {},
   },
   {
     name: "Valentine Mk X",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {},
   },
   {
     name: "Valentine Mk I",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1939,
     specifications: {},
   },
   {
     name: "Crusader Mk III",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -978,7 +978,7 @@ const britain: IWeapon[] = [
   },
   {
     name: "Crusader Mk II",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -988,13 +988,13 @@ const britain: IWeapon[] = [
   },
   {
     name: "Tetrach I",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1940,
     specifications: {},
   },
   {
     name: "Dimler Mk II",
-    type: WEAPONS_TYPE.armoredVehicle.armoredCar,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1941,
     specifications: {},
   },
@@ -1003,7 +1003,7 @@ const britain: IWeapon[] = [
 const france: IWeapon[] = [
   {
     name: "Somua S35",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
     specifications: {},
   },
@@ -1012,7 +1012,7 @@ const france: IWeapon[] = [
 const italy: IWeapon[] = [
   {
     name: "Lancia IZ/IZM",
-    type: WEAPONS_TYPE.armoredVehicle.armoredCar,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
     specifications: {},
   },
@@ -1021,7 +1021,7 @@ const italy: IWeapon[] = [
 const czechoslovakia: IWeapon[] = [
   {
     name: "LT vz.38",
-    type: WEAPONS_TYPE.armoredVehicle.lightTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
     specifications: {},
   },
@@ -1030,7 +1030,7 @@ const czechoslovakia: IWeapon[] = [
 const finland: IWeapon[] = [
   {
     name: "BT-42",
-    type: WEAPONS_TYPE.armoredVehicle.sau,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     specifications: {},
   },
@@ -1039,7 +1039,7 @@ const finland: IWeapon[] = [
 const japan: IWeapon[] = [
   {
     name: "Chi-Nu",
-    type: WEAPONS_TYPE.armoredVehicle.mediumTank,
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {},
   },
@@ -1066,4 +1066,4 @@ export const ARMORED_VEHICLES = [
   ...czechoslovakia,
   ...finland,
 ];
-appendWeaponBranch(ARMORED_VEHICLES, WEAPONS_TYPE.armoredVehicle);
+appendWeaponBranch(ARMORED_VEHICLES, WEAPONS_CLASSIFICATION.armoredVehicle);
