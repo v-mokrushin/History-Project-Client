@@ -33,10 +33,11 @@ export interface IWeapon {
 export interface ISpecifications {
   common?: any;
   // common: {
-  //   developer?: IDeveloper;
+  //   developer: IDeveloper;
+  //   developmentYear?: number;
   //   manufacturer?: string;
   //   chiefDesigner?: string;
-  //   productionYears?: string;
+  //   productionPeriod?: string;
   //   exploitationYears?: string;
   //   numberOfIssued?: number;
   // };
@@ -177,7 +178,7 @@ export const WEAPONS = {
         if (!weapon.specifications.common) return false;
         return weapon.specifications.common.developer != Developers.undefined;
       })
-      .map((weapon) => weapon.specifications.common.developer.name.original);
+      .map((weapon) => weapon.specifications.common.developer?.name.original);
 
     developers = Array.from(new Set(developers));
     developers.sort().unshift("Все");

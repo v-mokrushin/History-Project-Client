@@ -21,7 +21,7 @@ function getCommon(weapon: IWeapon) {
       <SpecLine crit="Тип" val={weapon.type.name.russian.toLowerCase()} />
       <SpecLine
         crit="Разработчик"
-        val={weapon.specifications.common.developer.name.russian}
+        val={weapon.specifications.common.developer?.name.original}
       />
       <SpecLine
         crit="Главный конструктор"
@@ -37,7 +37,7 @@ function getCommon(weapon: IWeapon) {
       />
       <SpecLine
         crit="Годы производства"
-        val={weapon.specifications.common.productionYears}
+        val={weapon.specifications.common.productionPeriod}
       />
       <SpecLine
         crit="Поизведено"

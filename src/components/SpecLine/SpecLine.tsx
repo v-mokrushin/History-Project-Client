@@ -4,7 +4,7 @@ import styles from "./SpecLine.module.scss";
 
 interface ISpecLineProps {
   crit: string;
-  val: string | number;
+  val: string | number | undefined;
   mesure?: string;
 }
 

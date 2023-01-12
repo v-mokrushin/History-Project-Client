@@ -19,58 +19,21 @@ import MobileContentList from "../../components/MobileContentList/MobileContentL
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
-import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import Models from "components/Models/Models";
-import { SpecificationsLayout } from "utils/specifications-layout";
 import Recommendations from "components/Recommendations/Recommendations";
+import SideSpec from "components/SideSpec/SideSpec";
+import WarningPage from "pages/WarningPage/WarningPage";
+import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 
 export default function WeaponDisplayPage() {
-  const navigate = useNavigate();
   const { weaponId } = useParams();
   const weapon = WEAPONS.getById(weaponId);
-
-  React.useEffect(() => {
-    if (!weapon) {
-      navigate("*");
-    }
-  });
-
-  function getSpecification() {
-    if (weapon?.specifications) {
-      if (WEAPONS_TYPE_METHODS.identity.isArmoredVehicle(weapon))
-        return getArmoredSpec();
-    }
-  }
-
-  function getArmoredSpec() {
-    if (!weapon) return;
-    return (
-      <TextBlock>
-        <Spec
-          title={
-            <Subtitle id="Характеристики" noMargin>
-              Характеристики
-            </Subtitle>
-          }
-        >
-          <div className={styles.box}>
-            {SpecificationsLayout.armored.getCommon(weapon)}
-            {SpecificationsLayout.armored.getSizes(weapon)}
-            {SpecificationsLayout.armored.getCrew(weapon)}
-          </div>
-          {SpecificationsLayout.armored.getWeapon(weapon)}
-          {SpecificationsLayout.armored.getArmoring(weapon)}
-          {SpecificationsLayout.armored.getMobility(weapon)}
-        </Spec>
-      </TextBlock>
-    );
-  }
 
   function getIntro() {
     if (!weapon) return;
     if (weapon.intro)
       return weapon.intro.map((item, index) => (
-        <Paragraph key={`${weapon.id}-${index}`}>{item}</Paragraph>
+        <Paragraph key={`${weapon.id}-intro-${index}`}>{item}</Paragraph>
       ));
   }
 
@@ -96,22 +59,8 @@ export default function WeaponDisplayPage() {
       );
   }
 
-  function getSideSpecifications() {
-    if (!weapon) return <div></div>;
-    if (!weapon.isReady) return <div></div>;
-    return (
-      <div className={styles.test}>
-        {SpecificationsLayout.armored.getCommon(weapon)}
-        {SpecificationsLayout.armored.getSizes(weapon)}
-        {SpecificationsLayout.armored.getCrew(weapon)}
-        {SpecificationsLayout.armored.getWeapon(weapon)}
-        {SpecificationsLayout.armored.getArmoring(weapon)}
-        {SpecificationsLayout.armored.getMobility(weapon)}
-      </div>
-    );
-  }
-
-  if (!weapon) return <></>;
+  if (!weapon)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
     <div className={classNames(styles.root)}>
@@ -127,7 +76,9 @@ export default function WeaponDisplayPage() {
               {weapon.isReady ? (
                 <>
                   {getIntro()}
-                  {getSpecification()}
+                  <TextBlock>
+                    <Spec weapon={weapon} />
+                  </TextBlock>
                   {weapon.JSXComponent}
                   {getVideomaterials()}
                   {getModels()}
@@ -143,7 +94,7 @@ export default function WeaponDisplayPage() {
                 />
               )}
             </Container>
-            {getSideSpecifications()}
+            <SideSpec weapon={weapon} />
           </Container>
         </ContentWrapper>
       </>

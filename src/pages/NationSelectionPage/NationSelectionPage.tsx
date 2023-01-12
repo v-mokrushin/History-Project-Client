@@ -10,6 +10,8 @@ import Title from "../../components/Title/Title";
 import { WEAPONS } from "../../data/weapons/weapons";
 import filtersStore from "../../stores/mobx/filtersStore";
 import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
+import WarningPage from "pages/WarningPage/WarningPage";
+import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();
@@ -20,6 +22,9 @@ export default function NationSelectionPage() {
     filtersStore.cancelFilters();
     scrollMemoryStore.cencel();
   }, [weaponsBranchPath]);
+
+  if (!pageInfo)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
     <>

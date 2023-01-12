@@ -21,6 +21,8 @@ import styles from "./ArticlePage.module.scss";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
+import WarningPage from "pages/WarningPage/WarningPage";
+import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 
 export default function ArticlePage() {
   const dispatch = useDispatch<any>();
@@ -82,6 +84,9 @@ export default function ArticlePage() {
       );
     }
   }
+
+  if (!articlePreview)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
     <>

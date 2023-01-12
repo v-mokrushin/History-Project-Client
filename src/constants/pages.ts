@@ -115,11 +115,11 @@ function getPathLength(path: string): number {
   return path.split("/").length;
 }
 
-function getByPath(path: string): IPageData {
+function getByPath(path: string): IPageData | undefined {
   const lastPathElement = path.split("/").at(-1);
   const item = data.find((item) => item.path === lastPathElement);
-  if (item) return item;
-  else return wrongObject;
+  return item;
+  // else return wrongObject;
 }
 
 function getLabelsArray(locationPathname: string): string[] {

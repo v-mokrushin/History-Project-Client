@@ -190,11 +190,11 @@ function WeaponType(russianName: string): IWeaponType {
 // ----------------------------------------------------------------------------
 
 export const WEAPONS_TYPE_METHODS = {
-  getByPath(path: string | undefined): IWeaponType {
+  getByPath(path: string | undefined): IWeaponType | undefined {
     for (let val of Object.values(WEAPONS_CLASSIFICATION)) {
       if (val.path === path) return val;
     }
-    return ALL_TYPE;
+    return undefined;
   },
   getAllType(): IWeaponType {
     return ALL_TYPE;

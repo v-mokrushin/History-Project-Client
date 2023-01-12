@@ -1,0 +1,20 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 50px;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include media-breakpoint-down(FHD) {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}

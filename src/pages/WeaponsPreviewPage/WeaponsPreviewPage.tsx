@@ -17,6 +17,8 @@ import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
 import filtersStore from "../../stores/mobx/filtersStore";
 import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPreviewSettings";
 import Filters from "components/Filters/Filters";
+import WarningPage from "pages/WarningPage/WarningPage";
+import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -28,8 +30,7 @@ const WeaponsPreviewPage = observer(() => {
     []
   );
   const filteredWeapons: IWeapon[] = React.useMemo(
-    () =>
-      WEAPONS.filterWeapons(selectedWeapons, filtersStore.getFilters()),
+    () => WEAPONS.filterWeapons(selectedWeapons, filtersStore.getFilters()),
     [filtersStore.filters]
   );
   const uniqueDates = React.useMemo(
@@ -52,13 +53,16 @@ const WeaponsPreviewPage = observer(() => {
     };
   }, []);
 
+  if (!weaponsBranchObject || !nationObject)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
+
   return (
     <div className={styles.root}>
       <ContentWrapper>
         <Container>
           <Title>
             {weaponsBranchObject.name.russian}{" "}
-            {nationObject?.name.russianАccusative}{" "}
+            {nationObject.name.russianАccusative}{" "}
             {filteredWeapons.length === 0 || `(${filteredWeapons.length})`}
           </Title>
           <Filters selectedWeapons={selectedWeapons} />
