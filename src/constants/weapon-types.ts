@@ -1,4 +1,3 @@
-import { type } from "os";
 import { IWeapon } from "data/weapons/weapons";
 
 export type IWaponBranch =
@@ -84,6 +83,8 @@ interface IWeaponName {
   russian: string;
   english?: string;
 }
+
+// ----------------------------------------------------------------------------
 
 const armoredVehicle: IArmoredVehiclesBranch = {
   path: "armored-vehicles",
@@ -186,7 +187,7 @@ function WeaponType(russianName: string): IWeaponType {
   return { name: { russian: russianName } };
 }
 
-// ------------------------------------
+// ----------------------------------------------------------------------------
 
 export const WEAPONS_TYPE_METHODS = {
   getByPath(path: string | undefined): IWeaponType {
@@ -198,8 +199,8 @@ export const WEAPONS_TYPE_METHODS = {
   getAllType(): IWeaponType {
     return ALL_TYPE;
   },
-  getTypesArrayWithAll(weaponBranch: any) {
-    return [this.getAllType(), ...getTypesArray(weaponBranch)];
+  getTypesArrayWithAll(weaponBranch: IWaponBranch): string[] {
+    return [this.getAllType().name.russian, ...getTypesArray(weaponBranch)];
   },
   isAllType(type: IWeaponType): boolean {
     return this.getAllType() === type;
@@ -223,9 +224,8 @@ export const WEAPONS_TYPE_METHODS = {
   },
 };
 
-function getTypesArray(weaponBranch: IWaponBranch) {
-  const copy: any = { ...weaponBranch };
-  delete copy.name;
-  delete copy.path;
-  return Object.values(copy);
+function getTypesArray(weaponBranch: IWaponBranch): string[] {
+  return Object.values(weaponBranch)
+    .map((item) => item.name?.russian)
+    .filter((item) => item != undefined);
 }

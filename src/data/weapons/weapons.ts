@@ -85,12 +85,13 @@ weapons_data.forEach((weapon) => {
 
 // --------------------------------------------------------------------------------
 
-export const WEAPONS_DATA = {
+export const WEAPONS = {
   getUniqueDates(collection: any[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
     return dates;
   },
+
   selectWeapons(
     weaponBranchPath: string | undefined,
     nationPath: string | undefined
@@ -102,6 +103,7 @@ export const WEAPONS_DATA = {
           nationPath === NATIONS.world.path || item.nation!.path === nationPath
       );
   },
+
   filterWeapons(selectedWeapons: IWeapon[], filters: any) {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
@@ -115,19 +117,20 @@ export const WEAPONS_DATA = {
 
       if (filters.type)
         weapons = weapons.filter(
-          (item) => item.type.name.russian === filters.type.name.russian
+          (item) => item.type.name.russian === filters.type
         );
 
       if (filters.developer)
         weapons = weapons.filter(
           (weapon) =>
-            weapon.specifications?.common?.developer?.name.russian ==
-            filters.developer.name.russian
+            weapon.specifications?.common?.developer?.name.original ==
+            filters.developer
         );
 
       return weapons;
     }
   },
+
   selectNation(weaponsBranchPath: string | undefined) {
     return [
       NATIONS.world,
@@ -140,9 +143,11 @@ export const WEAPONS_DATA = {
       ),
     ];
   },
+
   getById(weaponId: string | undefined) {
     return weapons_data.find((item) => item.id === weaponId);
   },
+
   changeColorized(): void {
     weapons_data.forEach((weapon) => {
       if (weapon.gallery) {
@@ -150,6 +155,7 @@ export const WEAPONS_DATA = {
       }
     });
   },
+
   getRecommendation(
     weaponBranchPath: string | undefined,
     weaponId: string | undefined
@@ -163,22 +169,18 @@ export const WEAPONS_DATA = {
 
     return weapons;
   },
-  getDevelopersWithAll(selectedWeapons: IWeapon[]): IDeveloper[] {
-    let developers: IDeveloper[] = selectedWeapons
+
+  getDevelopers(selectedWeapons: IWeapon[]): string[] {
+    let developers: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications) return false;
         if (!weapon.specifications.common) return false;
         return weapon.specifications.common.developer != Developers.undefined;
       })
-      .map((weapon) => weapon.specifications?.common.developer);
+      .map((weapon) => weapon.specifications.common.developer.name.original);
 
     developers = Array.from(new Set(developers));
-    developers.sort((prev, next) => {
-      if (prev.name.russian < next.name.russian) return -1;
-      if (prev.name.russian >= next.name.russian) return 1;
-      return 0;
-    });
-    developers.unshift(Developers.all);
+    developers.sort().unshift("Все");
     return developers;
   },
 };

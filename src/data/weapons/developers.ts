@@ -1,7 +1,11 @@
 export interface IDeveloper {
   name: {
-    russian: string;
+    original: string;
   };
+}
+
+function Developer(russianName: string): IDeveloper {
+  return { name: { original: russianName } };
 }
 
 export const Developers = {
@@ -58,7 +62,3 @@ export const Developers = {
     Peenemunde: Developer("Heeresversuchsanstalt Peenemünde"),
   },
 };
-
-function Developer(russianName: string): IDeveloper {
-  return { name: { russian: russianName } };
-}

@@ -5,7 +5,7 @@ import Input from "components/Input/Input";
 import Filter from "components/Filter/Filter";
 import filtersStore from "stores/mobx/filtersStore";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
-import { IWeapon, WEAPONS_DATA } from "data/weapons/weapons";
+import { IWeapon, WEAPONS } from "data/weapons/weapons";
 
 interface IFiltersProps {
   selectedWeapons: IWeapon[];
@@ -18,14 +18,14 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
       <Filter
         title="Тип"
         selectionVariants={WEAPONS_TYPE_METHODS.getTypesArrayWithAll(
-          selectedWeapons[0].branch
+          selectedWeapons[0].branch!
         )}
         callback={filtersStore.setType.bind(filtersStore)}
         getter={filtersStore.typeName}
       />
       <Filter
         title="Разработчик"
-        selectionVariants={WEAPONS_DATA.getDevelopersWithAll(selectedWeapons)}
+        selectionVariants={WEAPONS.getDevelopers(selectedWeapons)}
         callback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.developerName}
       />

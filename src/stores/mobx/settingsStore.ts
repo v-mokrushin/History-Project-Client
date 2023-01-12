@@ -1,4 +1,4 @@
-import { WEAPONS_DATA } from "../../data/weapons/weapons";
+import { WEAPONS } from "../../data/weapons/weapons";
 import { makeAutoObservable } from "mobx";
 
 export class SettingsStore {
@@ -17,7 +17,7 @@ export class SettingsStore {
   }
 
   changeColorized(): void {
-    WEAPONS_DATA.changeColorized();
+    WEAPONS.changeColorized();
     this.colorized = !this.colorized;
   }
 }

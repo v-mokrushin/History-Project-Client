@@ -6,9 +6,9 @@ import { observer } from "mobx-react";
 
 interface IFilterProps {
   title: string;
-  selectionVariants: any[];
+  selectionVariants: string[];
   callback: any;
-  getter: string;
+  getter: string | undefined;
   className?: string;
 }
 
@@ -16,7 +16,7 @@ const Filter = observer(
   ({ title, selectionVariants, callback, getter, className }: IFilterProps) => {
     const [open, setOpen] = React.useState(false);
 
-    if (selectionVariants.length === 1) return <></>;
+    if (selectionVariants.length <= 1) return <></>;
 
     document.onclick = React.useCallback((event: any) => {
       if (!event.target.closest(`#filter-${title}`)) {
@@ -46,19 +46,17 @@ const Filter = observer(
           {selectionVariants.map((variant, index) => (
             <div
               className={styles.variant}
-              key={variant.name.russian + index}
+              key={variant + index}
               onClick={() => callback(variant)}
             >
               <Text
                 className={classNames(
                   styles.variant__text,
-                  getter === variant.name["russian"] && styles.variant_selected,
-                  variant.name["russian"] === "Все" &&
-                    !getter &&
-                    styles.variant_selected
+                  getter === variant && styles.variant_selected,
+                  variant === "Все" && !getter && styles.variant_selected
                 )}
               >
-                {variant.name["russian"]}
+                {variant}
               </Text>
             </div>
           ))}

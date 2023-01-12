@@ -7,7 +7,7 @@ import IntroImage from "../../components/IntroImage/IntroImage";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
 import { ANIMATIONS } from "../../constants/animations";
-import { WEAPONS_DATA } from "../../data/weapons/weapons";
+import { WEAPONS } from "../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import Spec from "../../components/Spec/Spec";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
@@ -27,7 +27,7 @@ import Recommendations from "components/Recommendations/Recommendations";
 export default function WeaponDisplayPage() {
   const navigate = useNavigate();
   const { weaponId } = useParams();
-  const weapon = WEAPONS_DATA.getById(weaponId);
+  const weapon = WEAPONS.getById(weaponId);
 
   React.useEffect(() => {
     if (!weapon) {

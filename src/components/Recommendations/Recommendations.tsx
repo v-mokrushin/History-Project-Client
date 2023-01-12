@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Recommendations.module.scss";
 import classNames from "classnames";
 import PreviewWeaponCard from "components/PreviewWeaponCard/PreviewWeaponCard";
-import { IWeapon, WEAPONS_DATA } from "data/weapons/weapons";
+import { IWeapon, WEAPONS } from "data/weapons/weapons";
 
 interface IRecommendationsProps {
   weapon: IWeapon;
@@ -10,7 +10,7 @@ interface IRecommendationsProps {
 }
 
 const Recommendations = ({ className, weapon }: IRecommendationsProps) => {
-  const collecion = WEAPONS_DATA.getRecommendation(
+  const collecion = WEAPONS.getRecommendation(
     weapon.branch?.path,
     weapon.id
   );

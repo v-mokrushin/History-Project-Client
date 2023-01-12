@@ -1,9 +1,13 @@
-import { IDeveloper } from './../../data/weapons/developers';
 import { makeAutoObservable, toJS } from "mobx";
-import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+
+type TFilters = {
+  name?: string;
+  type?: string;
+  developer?: string;
+};
 
 export class FiltersStore {
-  public filters: any;
+  public filters: TFilters;
 
   constructor() {
     this.filters = {};
@@ -14,8 +18,8 @@ export class FiltersStore {
     return toJS(this.filters);
   }
 
-  setType(type: IWeaponType): void {
-    if (WEAPONS_TYPE_METHODS.isAllType(type)) {
+  setType(type: string): void {
+    if (type == "Все") {
       delete this.filters.type;
       this.filters = { ...this.filters };
     } else {
@@ -23,8 +27,8 @@ export class FiltersStore {
     }
   }
 
-  setDeveloper(developer: IDeveloper): void {
-    if (developer.name.russian == "Все") {
+  setDeveloper(developer: string): void {
+    if (developer == "Все") {
       delete this.filters.developer;
       this.filters = { ...this.filters };
     } else {
@@ -40,16 +44,16 @@ export class FiltersStore {
     this.filters = {};
   }
 
-  get name(): string {
+  get name(): string | undefined {
     return this.filters.name;
   }
 
-  get typeName(): string {
-    return this.filters.type?.name?.russian;
+  get typeName(): string | undefined {
+    return this.filters.type;
   }
 
-  get developerName(): string {
-    return this.filters.developer?.name?.russian;
+  get developerName(): string | undefined {
+    return this.filters.developer;
   }
 
   isEmpty(): boolean {
