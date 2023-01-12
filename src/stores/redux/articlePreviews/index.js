@@ -16,8 +16,6 @@ export const articlePreviewsSlice = createSlice({
       state.status = LOADING_STATUSES.inProgress;
     },
     successLoading: (state, action) => {
-      // state.entities = action.payload.entities;
-      // state.ids = action.payload.ids;
       state.status = LOADING_STATUSES.success;
     },
     failedLoading: (state) => {

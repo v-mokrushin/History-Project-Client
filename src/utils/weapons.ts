@@ -1,3 +1,4 @@
+import { IWeaponGallery } from "./../data/weapons/weapons";
 import { IWaponBranch } from "constants/weapon-types";
 import { IPageData } from "../constants/pages";
 import { IWeapon } from "data/weapons/weapons";
@@ -40,6 +41,25 @@ export function getGalleryPath(weaponName: string, weapon: IWeapon): string {
       .replaceAll("ó", "o") +
     "/"
   );
+}
+
+export function getGallery(weapon: IWeapon): IWeaponGallery {
+  let weaponName: string = weapon.name;
+  if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
+
+  const gallery: IWeaponGallery = {
+    path: getGalleryPath(weaponName, weapon),
+    isColorizedIcon: false,
+    get icon() {
+      if (!this.isColorizedIcon) {
+        return this.path + "icon.jpg";
+      } else {
+        return this.path + "icon-color.jpg";
+      }
+    },
+  };
+
+  return gallery;
 }
 
 export function createGallery(weapon: IWeapon): void {

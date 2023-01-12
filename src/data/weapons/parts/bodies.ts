@@ -39,4 +39,15 @@ export const BODIES: IBodies = {
     bottom: "20 мм",
     roof: "20 мм",
   },
+  ["СУ-85"]: {
+    name: "СУ-85",
+    forehead: {
+      top: "45 мм / 50°",
+      bottom: "45 мм / −45°",
+    },
+    board: { top: "45 мм / 20°", bottom: "45 мм / 0°" },
+    stern: { top: "40 мм / 48°", bottom: "40 мм / -45°" },
+    bottom: "15 мм",
+    roof: "20 мм",
+  },
 };

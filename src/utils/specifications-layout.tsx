@@ -18,7 +18,7 @@ function getCommon(weapon: IWeapon) {
   return (
     <SpecSection title="Общее">
       <SpecLine crit="Страна" val={weapon.nation!.name.russian} />
-      <SpecLine crit="Тип" val={weapon.type.name.russian.toLowerCase()} />
+      <SpecLine crit="Тип" val={weapon.type.name.russian} />
       <SpecLine
         crit="Разработчик"
         val={weapon.specifications.common.developer?.name.original}

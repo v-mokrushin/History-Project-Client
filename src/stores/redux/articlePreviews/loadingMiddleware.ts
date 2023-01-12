@@ -7,7 +7,7 @@ import {
   selectArticlePreviewsLoadingStatus,
 } from "./selectors";
 
-export const loadArticlePreviews = (dispatch, getState) => {
+export const loadArticlePreviews = (dispatch: Function, getState: Function) => {
   if (
     selectArticlePreviewsLoadingStatus(getState()) === LOADING_STATUSES.success
   )
@@ -16,7 +16,7 @@ export const loadArticlePreviews = (dispatch, getState) => {
   dispatch(articlePreviewsSlice.actions.startLoading());
 
   setTimeout(() => {
-    dispatch(articlePreviewsSlice.actions.successLoading());
+    dispatch(articlePreviewsSlice.actions.successLoading(getState()));
   }, Math.random() * 500 + 500);
 };
 

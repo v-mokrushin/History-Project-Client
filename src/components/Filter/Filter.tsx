@@ -7,13 +7,19 @@ import { observer } from "mobx-react";
 interface IFilterProps {
   title: string;
   selectionVariants: string[];
-  callback: any;
+  setterCallback: (parameter: string) => void;
   getter: string | undefined;
   className?: string;
 }
 
 const Filter = observer(
-  ({ title, selectionVariants, callback, getter, className }: IFilterProps) => {
+  ({
+    title,
+    selectionVariants,
+    setterCallback,
+    getter,
+    className,
+  }: IFilterProps) => {
     const [open, setOpen] = React.useState(false);
 
     if (selectionVariants.length <= 1) return <></>;
@@ -47,7 +53,7 @@ const Filter = observer(
             <div
               className={styles.variant}
               key={variant + index}
-              onClick={() => callback(variant)}
+              onClick={() => setterCallback(variant)}
             >
               <Text
                 className={classNames(

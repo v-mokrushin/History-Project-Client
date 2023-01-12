@@ -1,8 +1,15 @@
+import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
+import { type } from "os";
 import { Developers, IDeveloper } from "./developers";
 import { ICrew } from "./crews";
 import { IPageData } from "constants/pages";
 import { shuffleArray } from "utils/common";
-import { createGallery, createModels, defineIdProperty } from "utils/weapons";
+import {
+  createGallery,
+  createModels,
+  defineIdProperty,
+  getGallery,
+} from "utils/weapons";
 import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
@@ -12,6 +19,7 @@ import { SMALL_ARMS_DATA } from "./branches/smallArms";
 import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
+import { TFilters } from "stores/mobx/filtersStore";
 
 export interface IWeapon {
   name: string;
@@ -29,6 +37,28 @@ export interface IWeapon {
   models?: IModel[];
   specifications: ISpecifications;
 }
+
+class Weapon implements IWeapon {
+  public name: string;
+  public type: IWeaponType;
+  public adoptedIntoServiceDate: number;
+  public specifications: ISpecifications;
+
+  constructor(name: string, type: IWeaponType, adoptedIntoServiceDate: number) {
+    this.name = name;
+    this.type = type;
+    this.adoptedIntoServiceDate = adoptedIntoServiceDate;
+    this.specifications = {};
+  }
+
+  get id() {
+    return this.name.replaceAll(" ", "-").replaceAll("/", "-");
+  }
+}
+
+console.log(
+  new Weapon("Tiger", WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank, 1942)
+);
 
 export interface ISpecifications {
   common?: any;
@@ -52,7 +82,7 @@ export interface ISpecifications {
   armoring?: {
     type: string;
     body: IBodyArmoring;
-    tower: ITowerArmoring;
+    tower?: ITowerArmoring;
   };
   weapon?: any;
   mobility?: any;
@@ -87,7 +117,7 @@ weapons_data.forEach((weapon) => {
 // --------------------------------------------------------------------------------
 
 export const WEAPONS = {
-  getUniqueDates(collection: any[]): number[] {
+  getUniqueDates(collection: IWeapon[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
     return dates;
@@ -105,7 +135,7 @@ export const WEAPONS = {
       );
   },
 
-  filterWeapons(selectedWeapons: IWeapon[], filters: any) {
+  filterWeapons(selectedWeapons: IWeapon[], filters: TFilters) {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
@@ -113,7 +143,7 @@ export const WEAPONS = {
 
       if (filters.name)
         weapons = weapons.filter((item) =>
-          item.name.toLowerCase().includes(filters.name.toLowerCase())
+          item.name.toLowerCase().includes(String(filters.name).toLowerCase())
         );
 
       if (filters.type)

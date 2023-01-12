@@ -20,13 +20,13 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
         selectionVariants={WEAPONS_TYPE_METHODS.getTypesArrayWithAll(
           selectedWeapons[0].branch!
         )}
-        callback={filtersStore.setType.bind(filtersStore)}
+        setterCallback={filtersStore.setType.bind(filtersStore)}
         getter={filtersStore.typeName}
       />
       <Filter
         title="Разработчик"
         selectionVariants={WEAPONS.getDevelopers(selectedWeapons)}
-        callback={filtersStore.setDeveloper.bind(filtersStore)}
+        setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.developerName}
       />
       <Input />

@@ -425,6 +425,14 @@ const ussr: IWeapon[] = [
       common: {
         developer: Developers.undefined,
       },
+      crew: CREWS.size.five.perfect,
+      mobility: {
+        engine: ENGINES["В-2-34"],
+      },
+      armoring: {
+        type: "стальная катаная гомогенная высокой твёрдости",
+        body: BODIES["СУ-85"],
+      },
     },
   },
   {

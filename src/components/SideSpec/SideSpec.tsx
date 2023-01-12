@@ -12,7 +12,7 @@ interface ISideSpecProps {
 
 export default function SideSpec({ weapon, className }: ISideSpecProps) {
   if (!weapon) return <div></div>;
-  if (!weapon.isReady) return <div></div>;
+  if (!weapon.specifications) return <div></div>;
 
   return (
     <div className={classNames(styles.root, className)}>

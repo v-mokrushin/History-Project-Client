@@ -35,8 +35,11 @@ export default function ArticlePage() {
     selectArticleContentById(state, { articleId })
   );
 
+  if (!articlePreview)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
+
   React.useEffect(() => {
-    dispatch(loadArticleContent(articleId));
+    articleId && dispatch(loadArticleContent(articleId));
   }, [articleId]);
 
   function getContent() {
@@ -84,9 +87,6 @@ export default function ArticlePage() {
       );
     }
   }
-
-  if (!articlePreview)
-    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
     <>

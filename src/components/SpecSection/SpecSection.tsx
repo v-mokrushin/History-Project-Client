@@ -5,7 +5,7 @@ import classNames from "classnames";
 interface ISpecSectionProps {
   title: string;
   className?: string;
-  children: JSX.Element[];
+  children: (JSX.Element | undefined)[];
 }
 
 export default function SpecSection({

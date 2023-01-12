@@ -1,6 +1,6 @@
 import { makeAutoObservable, toJS } from "mobx";
 
-type TFilters = {
+export type TFilters = {
   name?: string;
   type?: string;
   developer?: string;
