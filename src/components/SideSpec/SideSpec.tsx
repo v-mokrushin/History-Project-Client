@@ -7,12 +7,18 @@ import { IWeapon } from "data/weapons/weapons";
 
 interface ISideSpecProps {
   weapon: IWeapon | undefined;
+  loadingStatus: boolean;
   className?: string;
 }
 
-export default function SideSpec({ weapon, className }: ISideSpecProps) {
+export default function SideSpec({
+  weapon,
+  loadingStatus,
+  className,
+}: ISideSpecProps) {
   if (!weapon) return <div></div>;
   if (!weapon.specifications) return <div></div>;
+  if (loadingStatus) return <div></div>;
 
   return (
     <div className={classNames(styles.root, className)}>

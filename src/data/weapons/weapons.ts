@@ -57,10 +57,6 @@ class Weapon implements IWeapon {
   }
 }
 
-console.log(
-  new Weapon("Tiger", WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank, 1942)
-);
-
 export interface ISpecifications {
   common?: any;
   // common: {

@@ -24,10 +24,18 @@ import Recommendations from "components/Recommendations/Recommendations";
 import SideSpec from "components/SideSpec/SideSpec";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
+import loadingStore from "stores/mobx/loadingStore";
+import { observer } from "mobx-react";
 
-export default function WeaponDisplayPage() {
+const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
   const weapon = WEAPONS.getById(weaponId);
+  // console.log("render");
+  // loadingStore.checkLoading(weaponId)
+
+  React.useEffect(() => {
+    loadingStore.checkLoading(weaponId);
+  }, [weaponId]);
 
   function getIntro() {
     if (!weapon) return;
@@ -69,35 +77,49 @@ export default function WeaponDisplayPage() {
         {weapon.gallery && <IntroImage imageUrl={weapon.gallery.icon} />}
         <ContentWrapper className={ANIMATIONS.fadeIn}>
           <Container type={CONTAINER_TYPES.aside}>
-            <DesktopContentList list={weapon.sections} />
+            <DesktopContentList
+              list={weapon.sections}
+              loadingStatus={loadingStore.getStatus()}
+            />
             <Container>
-              <MobileContentList list={weapon.sections} />
               <Title id="Введение">{weapon.name}</Title>
-              {weapon.isReady ? (
-                <>
-                  {getIntro()}
-                  <TextBlock>
-                    <Spec weapon={weapon} />
-                  </TextBlock>
-                  {weapon.JSXComponent}
-                  {getVideomaterials()}
-                  {getModels()}
-                  <TextBlock>
-                    <Subtitle id="Читайте также">Читайте также</Subtitle>
-                    <Recommendations weapon={weapon} />
-                  </TextBlock>
-                </>
+              {loadingStore.getStatus() ? (
+                <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} centered75vh />
               ) : (
-                <SpecialLogo
-                  type={SPECIAL_LOGO_TYPE.inDevelopment}
-                  centered75vh
-                />
+                <>
+                  {weapon.isReady ? (
+                    <>
+                      <MobileContentList list={weapon.sections} />
+                      {getIntro()}
+                      <TextBlock>
+                        <Spec weapon={weapon} />
+                      </TextBlock>
+                      {weapon.JSXComponent}
+                      {getVideomaterials()}
+                      {getModels()}
+                      <TextBlock>
+                        <Subtitle id="Читайте также">Читайте также</Subtitle>
+                        <Recommendations weapon={weapon} />
+                      </TextBlock>
+                    </>
+                  ) : (
+                    <SpecialLogo
+                      type={SPECIAL_LOGO_TYPE.inDevelopment}
+                      centered75vh
+                    />
+                  )}
+                </>
               )}
             </Container>
-            <SideSpec weapon={weapon} />
+            <SideSpec
+              weapon={weapon}
+              loadingStatus={loadingStore.getStatus()}
+            />
           </Container>
         </ContentWrapper>
       </>
     </div>
   );
-}
+});
+
+export default WeaponDisplayPage;

@@ -13,7 +13,6 @@ interface IFiltersProps {
 }
 
 const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
-  console.log(WEAPONS.getChiefDesigners(selectedWeapons));
   return (
     <div className={classNames(styles.root, className)}>
       <Input callback={filtersStore.setNameFilter.bind(filtersStore)} />
