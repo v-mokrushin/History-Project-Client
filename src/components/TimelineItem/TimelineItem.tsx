@@ -1,5 +1,5 @@
 import React from "react";
-import PreviewWeaponCard from "../PreviewWeaponCard/PreviewWeaponCard";
+import WeaponCard from "../WeaponCard/WeaponCard";
 import styles from "./TimelineItem.module.scss";
 import { TimelineContext } from "../Timeline/context";
 import { IWeapon } from "data/weapons/weapons";
@@ -30,7 +30,7 @@ const TimelineItem = observer(
           {contentCollection
             .filter((item) => item.adoptedIntoServiceDate === year)
             .map((val, valIndex) => (
-              <PreviewWeaponCard
+              <WeaponCard
                 weapon={val}
                 key={valIndex}
                 showFlag={showFlags}

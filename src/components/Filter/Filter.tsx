@@ -22,10 +22,14 @@ const Filter = observer(
   }: IFilterProps) => {
     const [open, setOpen] = React.useState(false);
 
-    if (selectionVariants.length <= 1) return <></>;
+    if (selectionVariants.length <= 2) return <></>;
 
     document.onclick = React.useCallback((event: any) => {
-      if (!event.target.closest(`#filter-${title}`)) {
+      if (
+        !event.target.closest(
+          `#filter-${title.replace(" ", "").replace(".", "")}`
+        )
+      ) {
         setOpen(false);
       }
     }, []);
@@ -33,7 +37,7 @@ const Filter = observer(
     return (
       <div
         className={classNames(styles.wrapper, className)}
-        id={`filter-${title}`}
+        id={`filter-${title.replace(" ", "").replace(".", "")}`}
         onClick={() => {
           setOpen((val) => !val);
         }}
@@ -59,7 +63,9 @@ const Filter = observer(
                 className={classNames(
                   styles.variant__text,
                   getter === variant && styles.variant_selected,
-                  variant === "Все" && !getter && styles.variant_selected
+                  (variant === "Все" || variant === "Весь мир") &&
+                    !getter &&
+                    styles.variant_selected
                 )}
               >
                 {variant}

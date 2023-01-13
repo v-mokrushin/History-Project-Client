@@ -1,3 +1,4 @@
+import { ChiefDesigners } from "./chief-designers";
 import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
 import { type } from "os";
 import { Developers, IDeveloper } from "./developers";
@@ -14,8 +15,8 @@ import { NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
-import { GRENADE_LAUNCHERS_DATA } from "./branches/grenadeLaunchers";
-import { SMALL_ARMS_DATA } from "./branches/smallArms";
+import { GRENADE_LAUNCHERS_DATA } from "./branches/grenade-launchers";
+import { SMALL_ARMS_DATA } from "./branches/small-arms";
 import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
@@ -146,6 +147,11 @@ export const WEAPONS = {
           item.name.toLowerCase().includes(String(filters.name).toLowerCase())
         );
 
+      if (filters.nation)
+        weapons = weapons.filter(
+          (item) => item.nation?.name.russian === filters.nation
+        );
+
       if (filters.type)
         weapons = weapons.filter(
           (item) => item.type.name.russian === filters.type
@@ -156,6 +162,20 @@ export const WEAPONS = {
           (weapon) =>
             weapon.specifications?.common?.developer?.name.original ==
             filters.developer
+        );
+
+      if (filters.chiefDesigner)
+        weapons = weapons.filter(
+          (weapon) =>
+            weapon.specifications?.common?.chiefDesigner?.name.russian ==
+            filters.chiefDesigner
+        );
+
+      if (filters.platform)
+        weapons = weapons.filter(
+          (weapon) =>
+            weapon.specifications?.common?.platform?.name.original ==
+            filters.platform
         );
 
       return weapons;
@@ -213,6 +233,46 @@ export const WEAPONS = {
     developers = Array.from(new Set(developers));
     developers.sort().unshift("Все");
     return developers;
+  },
+
+  getNations(selectedWeapons: IWeapon[]): string[] {
+    let nations: string[] = selectedWeapons.map(
+      (weapon) => weapon.nation?.name.russian!
+    );
+
+    nations = Array.from(new Set(nations));
+    nations.sort().unshift("Весь мир");
+    return nations;
+  },
+
+  getChiefDesigners(selectedWeapons: IWeapon[]): string[] {
+    let designers: string[] = selectedWeapons
+      .filter((weapon) => {
+        if (!weapon.specifications) return false;
+        if (!weapon.specifications.common) return false;
+        return weapon.specifications.common.chiefDesigner;
+      })
+      .map(
+        (weapon) => weapon.specifications.common.chiefDesigner?.name.russian
+      );
+
+    designers = Array.from(new Set(designers));
+    designers.sort().unshift("Все");
+    return designers;
+  },
+
+  getPlatforms(selectedWeapons: IWeapon[]): string[] {
+    let platforms: string[] = selectedWeapons
+      .filter((weapon) => {
+        if (!weapon.specifications) return false;
+        if (!weapon.specifications.common) return false;
+        return weapon.specifications.common.platform;
+      })
+      .map((weapon) => weapon.specifications.common.platform?.name.original);
+
+    platforms = Array.from(new Set(platforms));
+    platforms.sort().unshift("Все");
+    return platforms;
   },
 };
 

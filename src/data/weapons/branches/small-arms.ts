@@ -1,77 +1,122 @@
+import { Developers } from "../developers";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { IWeapon } from "../weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
+import { ChiefDesigners } from "../chief-designers";
 
 const ussr: IWeapon[] = [
   {
     name: "Револьвер системы Нагана",
     type: WEAPONS_CLASSIFICATION.smallArms.revolver,
     adoptedIntoServiceDate: 1895,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Nagan,
+      },
+    },
   },
   {
     name: "ППС-43",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Sudaev,
+      },
+    },
   },
   {
     name: "ППШ-41",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1940,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Shpagin,
+      },
+    },
   },
   {
     name: "ППД-40",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1940,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+      },
+    },
   },
   {
     name: "ПТРД",
     type: WEAPONS_CLASSIFICATION.smallArms.antiTankGun,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+      },
+    },
   },
   {
     name: "ДП",
     type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
     adoptedIntoServiceDate: 1927,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+      },
+    },
   },
 ];
 
 const germany: IWeapon[] = [
   {
-    name: "Mauser 98k",
+    name: "Mauser 98",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
-    adoptedIntoServiceDate: 1935,
-    specifications: {},
+    adoptedIntoServiceDate: 1898,
+    specifications: {
+      common: { chiefDesigner: ChiefDesigners.smallArms.Mauser },
+    },
   },
   {
     name: "Sturmgewehr 44",
     type: WEAPONS_CLASSIFICATION.smallArms.assaultRifle,
     adoptedIntoServiceDate: 1944,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.HugoSchmeisser,
+      },
+    },
   },
   {
     name: "Gewehr 43",
     type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: {
+      common: {
+        developer: Developers.smallArms.Walther,
+      },
+    },
   },
   {
-    name: "MG-42",
+    name: "MG 42",
     type: WEAPONS_CLASSIFICATION.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1942,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.WernerGruner,
+      },
+    },
   },
   {
-    name: "MG-34",
+    name: "MG 34",
     type: WEAPONS_CLASSIFICATION.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1938,
-    specifications: {},
+    specifications: {
+      common: {
+        developer: Developers.RheinmetallBorsig,
+        chiefDesigner: ChiefDesigners.smallArms.LouisStange,
+      },
+    },
   },
 ];
 
@@ -80,16 +125,22 @@ const usa: IWeapon[] = [
     name: "Browning M2",
     type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
     adoptedIntoServiceDate: 1933,
-    specifications: {},
+    specifications: {
+      common: { chiefDesigner: ChiefDesigners.smallArms.Browning },
+    },
   },
 ];
 
 const finland: IWeapon[] = [
   {
-    name: "Suomi KP-31",
+    name: "Suomi KP/-31",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1931,
-    specifications: {},
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.AimoLahti,
+      },
+    },
   },
 ];
 

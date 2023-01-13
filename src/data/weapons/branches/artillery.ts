@@ -126,7 +126,7 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.atillery.RheinmetallBorsig,
+        developer: Developers.RheinmetallBorsig,
       },
     },
   },

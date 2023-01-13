@@ -25,7 +25,7 @@ function getCommon(weapon: IWeapon) {
       />
       <SpecLine
         crit="Главный конструктор"
-        val={weapon.specifications.common.chiefDesigner}
+        val={weapon.specifications.common.chiefDesigner?.name.russian}
       />
       <SpecLine
         crit="Производитель"

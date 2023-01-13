@@ -3,7 +3,7 @@
 .wrapper {
   display: flex;
   padding: 0 10px;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   min-width: 260px;
@@ -16,18 +16,18 @@
   cursor: pointer;
 
   @include media-breakpoint-down(xl) {
-    min-width: 255px;
+    min-width: 240px;
     height: 35px;
   }
 
   @include media-breakpoint-down(md) {
-    min-width: 190px;
+    min-width: 180px;
     height: 35px;
   }
 
   @include media-breakpoint-down(xs) {
-    min-width: 160px;
-    gap: 9px;
+    min-width: 150px;
+    gap: 5px;
   }
 
   &_selected {

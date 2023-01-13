@@ -4,6 +4,8 @@ import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
 import { Developers } from "../developers";
+import { ChiefDesigners } from "../chief-designers";
+import { Platforms } from "../platforms";
 
 const ussr: IWeapon[] = [
   {
@@ -13,6 +15,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.LA,
+        chiefDesigner: ChiefDesigners.aviation.Lavochkin,
+        platform: Platforms.aviation.La5,
       },
     },
   },
@@ -23,6 +27,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.LA,
+        chiefDesigner: ChiefDesigners.aviation.Lavochkin,
+        platform: Platforms.aviation.La5,
       },
     },
   },
@@ -33,6 +39,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.LA,
+        chiefDesigner: ChiefDesigners.aviation.Lavochkin,
+        platform: Platforms.aviation.La5,
       },
     },
   },
@@ -43,6 +51,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Yak,
+        chiefDesigner: ChiefDesigners.aviation.Yakovlev,
       },
     },
   },
@@ -70,6 +79,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Yak,
+        chiefDesigner: ChiefDesigners.aviation.Yakovlev,
       },
     },
   },
@@ -80,6 +90,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Yak,
+        chiefDesigner: ChiefDesigners.aviation.Yakovlev,
       },
     },
   },
@@ -90,6 +101,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Yak,
+        chiefDesigner: ChiefDesigners.aviation.Yakovlev,
       },
     },
   },
@@ -109,7 +121,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.aviation.Tupolev,
+        developer: Developers.aviation.TU,
       },
     },
   },
@@ -173,6 +185,18 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Junkers,
+        platform: Platforms.aviation.Ju87,
+      },
+    },
+  },
+  {
+    name: "Junkers Ju-87 D-3 Stuka",
+    type: WEAPONS_CLASSIFICATION.aviation.attackАircraft,
+    adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        developer: Developers.aviation.Junkers,
+        platform: Platforms.aviation.Ju87,
       },
     },
   },
@@ -295,6 +319,7 @@ const japan: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Mitsubishi,
+        chiefDesigner: ChiefDesigners.aviation.Horikoshi,
       },
     },
   },

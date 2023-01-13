@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./PreviewWeaponCard.module.scss";
+import styles from "./WeaponCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
@@ -10,18 +10,18 @@ import { IWeapon } from "data/weapons/weapons";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
 
-interface IPreviewWeaponCardProps {
+interface IWeaponCardProps {
   weapon: IWeapon;
   showFlag?: boolean;
   isAbsoluteLinkPath?: boolean;
 }
 
-const PreviewWeaponCard = observer(
+const WeaponCard = observer(
   ({
     weapon,
     showFlag = false,
     isAbsoluteLinkPath = false,
-  }: IPreviewWeaponCardProps) => {
+  }: IWeaponCardProps) => {
     const colorized = settingsStore.colorized;
 
     return (
@@ -31,7 +31,11 @@ const PreviewWeaponCard = observer(
             ? `/weapons/${weapon.branch?.path}/world/${weapon.id}`
             : weapon.id!
         }
-        className={classNames(styles.root, ANIMATIONS.fadeIn)}
+        className={classNames(
+          styles.root,
+          settingsStore.displaySize && styles.root_large,
+          ANIMATIONS.fadeIn
+        )}
         onClick={() => {
           scrollTopInstantly();
         }}
@@ -52,4 +56,4 @@ const PreviewWeaponCard = observer(
   }
 );
 
-export default PreviewWeaponCard;
+export default WeaponCard;

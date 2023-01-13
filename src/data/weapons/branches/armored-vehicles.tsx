@@ -9,6 +9,8 @@ import { CANNONS } from "../parts/cannons";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { TOWERS } from "../parts/towers";
 import { Developers } from "../developers";
+import { ChiefDesigners } from "../chief-designers";
+import { Platforms } from "../platforms";
 
 const ussr: IWeapon[] = [
   {
@@ -21,7 +23,8 @@ const ussr: IWeapon[] = [
     ],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Chelyabinsk,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
       },
     },
   },
@@ -32,6 +35,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        platform: Platforms.armoredVehicles.KV1,
       },
     },
   },
@@ -42,6 +47,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        platform: Platforms.armoredVehicles.KV1,
       },
     },
   },
@@ -62,6 +69,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        platform: Platforms.armoredVehicles.KV1,
       },
     },
   },
@@ -72,6 +81,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        platform: Platforms.armoredVehicles.KV1S,
       },
     },
   },
@@ -92,6 +103,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
+        platform: Platforms.armoredVehicles.IS1,
       },
     },
   },
@@ -146,9 +159,10 @@ const ussr: IWeapon[] = [
     ],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Chelyabinsk,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
+        platform: Platforms.armoredVehicles.IS1,
         manufacturer: "ЧКЗ",
-        chiefDesigner: "Ж.Я. Котин",
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         productionYears: "1943 - 1945",
         exploitationYears: "1943 - 1945",
         numberOfIssued: 3483,
@@ -216,7 +230,9 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
+        developer: Developers.armoredVehicles.Kharkov, // ???
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -226,7 +242,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural, // ???
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -241,7 +258,8 @@ const ussr: IWeapon[] = [
     sections: ["Введение"],
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural,
+        platform: Platforms.armoredVehicles.T34,
       },
       crew: CREWS.size.four.weak,
       weapon: {
@@ -264,6 +282,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Stalingrad,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -274,6 +293,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.KrasnoyeSormovo,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -283,7 +303,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -293,7 +314,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -303,7 +325,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -314,6 +337,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -323,7 +347,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Kharkov,
       },
     },
   },
@@ -333,7 +357,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Kharkov,
       },
     },
   },
@@ -343,7 +367,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1932,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Kharkov,
       },
     },
   },
@@ -383,7 +407,9 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
+        platform: Platforms.armoredVehicles.IS1,
       },
     },
   },
@@ -404,6 +430,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
+        platform: Platforms.armoredVehicles.IS1,
       },
     },
   },
@@ -414,6 +442,8 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
+        platform: Platforms.armoredVehicles.KV1S,
       },
     },
   },
@@ -484,7 +514,9 @@ const germany: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
         developer: Developers.armoredVehicles.Henschel,
+        platform: Platforms.armoredVehicles.PzKpfw6B,
       },
     },
   },
@@ -516,6 +548,7 @@ const germany: IWeapon[] = [
     ],
     specifications: {
       common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
         developer: Developers.armoredVehicles.Henschel,
       },
       crew: CREWS.size.five.perfect,
@@ -535,6 +568,8 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.MAN,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Wibke,
+        platform: Platforms.armoredVehicles.PzKpfw5,
       },
       crew: {
         size: 5,
@@ -556,6 +591,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
+        platform: Platforms.armoredVehicles.PzKpfw4,
       },
     },
   },
@@ -566,6 +602,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
+        platform: Platforms.armoredVehicles.PzKpfw4,
       },
     },
   },
@@ -576,6 +613,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -586,6 +624,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -596,6 +635,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -616,6 +656,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.PzKpfw6B,
       },
     },
   },
@@ -626,6 +667,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw5,
       },
     },
   },
@@ -656,6 +698,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.Stug3,
       },
     },
   },
@@ -666,6 +709,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.Stug3,
       },
     },
   },
@@ -676,6 +720,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.Stug3,
       },
     },
   },
@@ -686,6 +731,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.Stug3,
       },
     },
   },
@@ -706,6 +752,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.PzKpfw4,
       },
     },
   },
@@ -799,6 +846,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -809,6 +857,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -819,6 +868,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -834,6 +884,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -844,6 +895,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -854,6 +906,7 @@ const usa: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -954,7 +1007,9 @@ const britain: IWeapon[] = [
     name: "Sherman Firefly",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
-    specifications: {},
+    specifications: {
+      common: { platform: Platforms.armoredVehicles.Sherman },
+    },
   },
   {
     name: "Valentine Mk XI",

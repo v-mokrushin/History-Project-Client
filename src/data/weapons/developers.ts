@@ -11,10 +11,13 @@ function Developer(russianName: string): IDeveloper {
 export const Developers = {
   all: Developer("Все"),
   undefined: Developer("Не определено"),
+  RheinmetallBorsig: Developer("Rheinmetall-Borsig A.G."),
   armoredVehicles: {
-    Chelyabinsk: Developer("КБ завода №100 ЧТЗ"),
+    Chelyabinsk100: Developer("КБ завода №100 ЧТЗ"),
     KrasnoyeSormovo: Developer(`КБ завода №112 "Красное Сормово"`),
     Stalingrad: Developer("КБ Сталинградского тракторного завода"),
+    Ural: Developer("КБ Уральского завода №183"),
+    Kharkov: Developer("КБ Харьковского завода №183"),
     Henschel: Developer("Henschel-Werke"),
     MAN: Developer("MAN"),
     DaimlerBenz: Developer("Daimler-Benz"),
@@ -29,7 +32,7 @@ export const Developers = {
     Yak: Developer("ОКБ-115 Яковлева"),
     IL: Developer("ОКБ-240 Ильюшина"),
     LA: Developer("ОКБ-21 Лавочкина"),
-    Tupolev: Developer("ОКБ Туполева"),
+    TU: Developer("ОКБ Туполева"),
     Heinkel: Developer("Heinkel Flugzeugwerke"),
     FockeWulf: Developer("Focke-Wulf Flugzeugbau"),
     Junkers: Developer("Junkers"),
@@ -57,8 +60,10 @@ export const Developers = {
     Plant92: Developer("КБ завода №92"),
     Plant172: Developer("КБ завода №172"),
     Opel: Developer("Opel"),
-    RheinmetallBorsig: Developer("Rheinmetall-Borsig A.G."),
     Fieseler: Developer("Fieseler"),
     Peenemunde: Developer("Heeresversuchsanstalt Peenemünde"),
+  },
+  smallArms: {
+    Walther: Developer("Walther"),
   },
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Recommendations.module.scss";
 import classNames from "classnames";
-import PreviewWeaponCard from "components/PreviewWeaponCard/PreviewWeaponCard";
+import WeaponCard from "components/WeaponCard/WeaponCard";
 import { IWeapon, WEAPONS } from "data/weapons/weapons";
 
 interface IRecommendationsProps {
@@ -18,7 +18,7 @@ const Recommendations = ({ className, weapon }: IRecommendationsProps) => {
   return (
     <div className={classNames(styles.root, className)}>
       {collecion.map((weapon) => (
-        <PreviewWeaponCard
+        <WeaponCard
           weapon={weapon}
           showFlag
           isAbsoluteLinkPath
