@@ -1,15 +1,15 @@
-interface IEngines {
-  [key: string]: IEngine;
+interface IArmoredEngines {
+  [key: string]: IArmoredEngine;
 }
 
-export interface IEngine {
+export interface IArmoredEngine {
   readonly trademark: string;
   readonly type: string;
   readonly power: number;
   readonly capacity: number;
 }
 
-export const ENGINES: IEngines = {
+export const ARMORED_ENGINES: IArmoredEngines = {
   ["В-2"]: {
     trademark: "В-2",
     type: "дизельный V-образный 12-цилиндровый",

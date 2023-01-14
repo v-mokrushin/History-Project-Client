@@ -2,10 +2,10 @@ import React from "react";
 import WeaponCard from "../WeaponCard/WeaponCard";
 import styles from "./TimelineItem.module.scss";
 import { TimelineContext } from "../Timeline/context";
-import { IWeapon } from "data/weapons/weapons";
 import classNames from "classnames";
 import settingsStore from "stores/mobx/settingsStore";
 import { observer } from "mobx-react";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface ITimelineItemProps {
   contentCollection: IWeapon[];
@@ -15,7 +15,7 @@ interface ITimelineItemProps {
 const TimelineItem = observer(
   ({ contentCollection, year }: ITimelineItemProps) => {
     const { showFlags } = React.useContext(TimelineContext);
-    
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.yearBox}>
@@ -30,11 +30,7 @@ const TimelineItem = observer(
           {contentCollection
             .filter((item) => item.adoptedIntoServiceDate === year)
             .map((val, valIndex) => (
-              <WeaponCard
-                weapon={val}
-                key={valIndex}
-                showFlag={showFlags}
-              />
+              <WeaponCard weapon={val} key={valIndex} showFlag={showFlags} />
             ))}
         </div>
       </div>

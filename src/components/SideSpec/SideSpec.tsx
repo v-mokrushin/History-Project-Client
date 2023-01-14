@@ -3,7 +3,8 @@ import styles from "./SideSpec.module.scss";
 import classNames from "classnames";
 import Subtitle from "components/Subtitle/Subtitle";
 import { SpecificationsLayout } from "utils/specifications-layout";
-import { IWeapon } from "data/weapons/weapons";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 
 interface ISideSpecProps {
   weapon: IWeapon | undefined;
@@ -22,12 +23,31 @@ export default function SideSpec({
 
   return (
     <div className={classNames(styles.root, className)}>
-      {SpecificationsLayout.armored.getCommon(weapon)}
-      {SpecificationsLayout.armored.getSizes(weapon)}
-      {SpecificationsLayout.armored.getCrew(weapon)}
-      {SpecificationsLayout.armored.getWeapon(weapon)}
-      {SpecificationsLayout.armored.getArmoring(weapon)}
-      {SpecificationsLayout.armored.getMobility(weapon)}
+      {SpecificationsLayout.getCommon(
+        weapon.specifications,
+        weapon.nation,
+        weapon.type
+      )}
+      {WEAPONS_TYPE_METHODS.identity.isArmoredVehicle(weapon) && (
+        <>
+          {SpecificationsLayout.armored.getSizes(weapon.specifications)}
+          {SpecificationsLayout.getCrew(weapon.specifications)}
+          {SpecificationsLayout.armored.getWeapon(weapon.specifications)}
+          {SpecificationsLayout.armored.getArmoring(weapon.specifications)}
+          {SpecificationsLayout.armored.getMobility(weapon.specifications)}
+        </>
+      )}
+      {WEAPONS_TYPE_METHODS.identity.isAviation(weapon) && (
+        <>
+          {SpecificationsLayout.avivation.getSizes(weapon.specifications)}
+          {SpecificationsLayout.getCrew(weapon.specifications)}
+          {SpecificationsLayout.avivation.getFlightCharacteristics(
+            weapon.specifications
+          )}
+          {SpecificationsLayout.avivation.getPowerUnits(weapon.specifications)}
+          {SpecificationsLayout.avivation.getWeapons(weapon.specifications)}
+        </>
+      )}
     </div>
   );
 }

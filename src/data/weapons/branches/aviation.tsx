@@ -1,11 +1,12 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
-import { IWeapon } from "../weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
 import { Developers } from "../developers";
 import { ChiefDesigners } from "../chief-designers";
 import { Platforms } from "../platforms";
+import { IWeapon } from "../interfaces/common-weapon-interfaces";
+import { AVIATION_ENGINES } from "../parts/engines/aviation-engines";
 
 const ussr: IWeapon[] = [
   {
@@ -80,6 +81,34 @@ const ussr: IWeapon[] = [
       common: {
         developer: Developers.aviation.Yak,
         chiefDesigner: ChiefDesigners.aviation.Yakovlev,
+      },
+      sizes: {
+        emptyWeight: 2105,
+        curbWeight: 2650,
+        length: 8.49,
+        height: 2.38,
+        wingSpan: 9.2,
+        wingArea: 14.83,
+      },
+      crew: {
+        size: 1,
+        structure: "пилот",
+      },
+      flightCharacteristics: {
+        technicalRange: 885,
+        practicalRange: 648,
+        maximumSpeed: 645,
+        climbRate: 18.5,
+      },
+      powerUnits: {
+        enginesNumber: 1,
+        engine: AVIATION_ENGINES["ВК-105ПФ2"],
+      },
+      weapons: {
+        weaponsSet: "1 × 20-мм пушка ШВАК, 2 × 12,7-мм пулемёта УБС",
+        ammunition: "20-мм - 120 выстрелов, 12,7-мм - 300 выстрелов",
+        secondSalvoWeight: "2.81",
+        bombWeapons: "отсутсвует",
       },
     },
   },

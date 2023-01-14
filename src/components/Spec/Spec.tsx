@@ -3,7 +3,7 @@ import styles from "./Spec.module.scss";
 import classNames from "classnames";
 import Subtitle from "components/Subtitle/Subtitle";
 import { SpecificationsLayout } from "utils/specifications-layout";
-import { IWeapon } from "data/weapons/weapons";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface ISpecProps {
   weapon: IWeapon | undefined;
@@ -66,16 +66,16 @@ export default function Spec({ weapon, className }: ISpecProps) {
           ref={body}
           className={classNames(styles.body, open && styles.body_open)}
         >
-          <>
+          {/* <>
             <div className={styles.box}>
-              {SpecificationsLayout.armored.getCommon(weapon)}
-              {SpecificationsLayout.armored.getSizes(weapon)}
-              {SpecificationsLayout.armored.getCrew(weapon)}
+              {SpecificationsLayout.armored.getCommon(weapon.specifications)}
+              {SpecificationsLayout.armored.getSizes(weapon.specifications)}
+              {SpecificationsLayout.armored.getCrew(weapon.specifications)}
             </div>
-            {SpecificationsLayout.armored.getWeapon(weapon)}
-            {SpecificationsLayout.armored.getArmoring(weapon)}
-            {SpecificationsLayout.armored.getMobility(weapon)}
-          </>
+            {SpecificationsLayout.armored.getWeapon(weapon.specifications)}
+            {SpecificationsLayout.armored.getArmoring(weapon.specifications)}
+            {SpecificationsLayout.armored.getMobility(weapon.specifications)}
+          </> */}
         </div>
       </div>
     </div>

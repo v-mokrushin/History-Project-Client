@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { IWeapon } from "data/weapons/weapons";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import { observer } from "mobx-react";
 import React from "react";
 import settingsStore from "stores/mobx/settingsStore";

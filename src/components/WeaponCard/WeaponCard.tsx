@@ -6,9 +6,9 @@ import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
-import { IWeapon } from "data/weapons/weapons";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IWeaponCardProps {
   weapon: IWeapon;

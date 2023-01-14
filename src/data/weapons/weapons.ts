@@ -9,7 +9,6 @@ import {
   createGallery,
   createModels,
   defineIdProperty,
-  getGallery,
 } from "utils/weapons";
 import { INation, NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
@@ -21,81 +20,7 @@ import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
-
-export interface IWeapon {
-  name: string;
-  type: IWeaponType;
-  adoptedIntoServiceDate: number;
-  branch?: IWaponBranch;
-  id?: string;
-  isReady?: boolean;
-  nation?: INation;
-  gallery?: IWeaponGallery;
-  JSXComponent?: JSX.Element;
-  intro?: string[];
-  videomaterials?: string[];
-  sections?: string[];
-  models?: IModel[];
-  specifications: ISpecifications;
-}
-
-class Weapon implements IWeapon {
-  public name: string;
-  public type: IWeaponType;
-  public adoptedIntoServiceDate: number;
-  public specifications: ISpecifications;
-
-  constructor(name: string, type: IWeaponType, adoptedIntoServiceDate: number) {
-    this.name = name;
-    this.type = type;
-    this.adoptedIntoServiceDate = adoptedIntoServiceDate;
-    this.specifications = {};
-  }
-
-  get id() {
-    return this.name.replaceAll(" ", "-").replaceAll("/", "-");
-  }
-}
-
-export interface ISpecifications {
-  common?: any;
-  // common: {
-  //   developer: IDeveloper;
-  //   developmentYear?: number;
-  //   manufacturer?: string;
-  //   chiefDesigner?: string;
-  //   productionPeriod?: string;
-  //   exploitationYears?: string;
-  //   numberOfIssued?: number;
-  // };
-  crew?: ICrew;
-  sizes?: {
-    weight: number;
-    length: number;
-    width: number;
-    height: number;
-    clearance: number;
-  };
-  armoring?: {
-    type: string;
-    body: IBodyArmoring;
-    tower?: ITowerArmoring;
-  };
-  weapon?: any;
-  mobility?: any;
-}
-
-export interface IWeaponGallery {
-  path: string;
-  isColorizedIcon: boolean;
-  get icon(): string;
-}
-
-export interface IModel {
-  title: string;
-  photo: string;
-  link: string;
-}
+import { IWeapon } from "./interfaces/common-weapon-interfaces";
 
 const weapons_data = ([] as IWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -220,11 +145,10 @@ export const WEAPONS = {
   getDevelopers(selectedWeapons: IWeapon[]): string[] {
     let developers: string[] = selectedWeapons
       .filter((weapon) => {
-        if (!weapon.specifications) return false;
-        if (!weapon.specifications.common) return false;
+        if (!weapon.specifications.common.developer) return false;
         return weapon.specifications.common.developer != Developers.undefined;
       })
-      .map((weapon) => weapon.specifications.common.developer?.name.original);
+      .map((weapon) => weapon.specifications.common.developer!.name.original);
 
     developers = Array.from(new Set(developers));
     developers.sort().unshift("Все");
@@ -244,12 +168,10 @@ export const WEAPONS = {
   getChiefDesigners(selectedWeapons: IWeapon[]): string[] {
     let designers: string[] = selectedWeapons
       .filter((weapon) => {
-        if (!weapon.specifications) return false;
-        if (!weapon.specifications.common) return false;
         return weapon.specifications.common.chiefDesigner;
       })
       .map(
-        (weapon) => weapon.specifications.common.chiefDesigner?.name.russian
+        (weapon) => weapon.specifications.common.chiefDesigner!.name.russian
       );
 
     designers = Array.from(new Set(designers));
@@ -264,7 +186,7 @@ export const WEAPONS = {
         if (!weapon.specifications.common) return false;
         return weapon.specifications.common.platform;
       })
-      .map((weapon) => weapon.specifications.common.platform?.name.original);
+      .map((weapon) => weapon.specifications.common.platform!.name.original);
 
     platforms = Array.from(new Set(platforms));
     platforms.sort().unshift("Все");

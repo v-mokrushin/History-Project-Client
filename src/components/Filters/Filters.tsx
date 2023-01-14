@@ -5,7 +5,8 @@ import Input from "components/Input/Input";
 import Filter from "components/Filter/Filter";
 import filtersStore from "stores/mobx/filtersStore";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
-import { IWeapon, WEAPONS } from "data/weapons/weapons";
+import { WEAPONS } from "data/weapons/weapons";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IFiltersProps {
   selectedWeapons: IWeapon[];

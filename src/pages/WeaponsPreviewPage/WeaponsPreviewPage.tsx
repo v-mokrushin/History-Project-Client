@@ -8,7 +8,7 @@ import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import Title from "../../components/Title/Title";
 import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
 import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
-import { IWeapon, WEAPONS } from "../../data/weapons/weapons";
+import { WEAPONS } from "../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Filter/Filter";
@@ -19,6 +19,7 @@ import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPrevie
 import Filters from "components/Filters/Filters";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
+import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();

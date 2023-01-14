@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Models.module.scss";
 import classNames from "classnames";
-import { IModel } from "data/weapons/weapons";
 import Text from "components/Text/Text";
+import { IModel } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IModelsProps {
   className?: string;

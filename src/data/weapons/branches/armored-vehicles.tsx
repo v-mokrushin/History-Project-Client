@@ -1,16 +1,17 @@
 import { CREWS } from "../crews";
 import { BODIES } from "../parts/bodies";
-import { IWeapon } from "../weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
-import { ENGINES } from "../parts/engines";
+import { ARMORED_ENGINES } from "../parts/engines/armored-engines";
 import { CANNONS } from "../parts/cannons";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { TOWERS } from "../parts/towers";
 import { Developers } from "../developers";
 import { ChiefDesigners } from "../chief-designers";
 import { Platforms } from "../platforms";
+import { IWeapon } from "../interfaces/common-weapon-interfaces";
+import { IArmoredVehiclesSpecifications } from "../interfaces/armored-interfaces";
 
 const ussr: IWeapon[] = [
   {
@@ -26,7 +27,7 @@ const ussr: IWeapon[] = [
         developer: Developers.armoredVehicles.Chelyabinsk100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
       },
-    },
+    } as IArmoredVehiclesSpecifications,
   },
   {
     name: "КВ-1 (Л-11)",
@@ -163,17 +164,17 @@ const ussr: IWeapon[] = [
         platform: Platforms.armoredVehicles.IS1,
         manufacturer: "ЧКЗ",
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
-        productionYears: "1943 - 1945",
+        productionPeriod: "1943 - 1945",
         exploitationYears: "1943 - 1945",
         numberOfIssued: 3483,
       },
       crew: CREWS.size.four.perfect,
       sizes: {
         weight: 46,
-        length: 6770,
-        width: 3070,
-        height: 2630,
-        clearance: 420,
+        length: 6.77,
+        width: 3.07,
+        height: 2.63,
+        clearance: 0.42,
       },
       armoring: {
         type: "катаная высокой твёрдости, литая средней твёрдости",
@@ -193,7 +194,7 @@ const ussr: IWeapon[] = [
         1 × 12,7-мм ДШК`,
       },
       mobility: {
-        engine: ENGINES["В-2ИС"],
+        engine: ARMORED_ENGINES["В-2ИС"],
         speed: {
           road: 37,
           roughTerrain: 15,
@@ -212,7 +213,7 @@ const ussr: IWeapon[] = [
           ford: 1.3,
         },
       },
-    },
+    } as IArmoredVehiclesSpecifications,
   },
   {
     name: "Т-28",
@@ -266,7 +267,7 @@ const ussr: IWeapon[] = [
         cannon: CANNONS["Ф-34"],
       },
       mobility: {
-        engine: ENGINES["В-2-34"],
+        engine: ARMORED_ENGINES["В-2-34"],
       },
       armoring: {
         type: "стальная катаная гомогенная высокой твёрдости",
@@ -458,7 +459,7 @@ const ussr: IWeapon[] = [
       },
       crew: CREWS.size.five.perfect,
       mobility: {
-        engine: ENGINES["В-2-34"],
+        engine: ARMORED_ENGINES["В-2-34"],
       },
       armoring: {
         type: "стальная катаная гомогенная высокой твёрдости",
@@ -558,7 +559,7 @@ const germany: IWeapon[] = [
         cannon: CANNONS["8,8 cm KwK 36"],
       },
       mobility: {
-        engine: ENGINES["Maybach HL 230"],
+        engine: ARMORED_ENGINES["Maybach HL 230"],
       },
     },
   },
@@ -582,7 +583,7 @@ const germany: IWeapon[] = [
         cannon: CANNONS["7,5 cm KwK 42"],
       },
       mobility: {
-        engine: ENGINES["Maybach HL 230"],
+        engine: ARMORED_ENGINES["Maybach HL 230"],
       },
     },
   },
@@ -916,13 +917,13 @@ const usa: IWeapon[] = [
     name: "M3 Lee",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "M24 Chaffee",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1944,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "M5A1 Stuart",
@@ -991,19 +992,21 @@ const britain: IWeapon[] = [
     name: "Churchill III",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Churchill I",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Matilda Mk III",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: {
+      common: {},
+    },
   },
   {
     name: "Sherman Firefly",
@@ -1017,19 +1020,19 @@ const britain: IWeapon[] = [
     name: "Valentine Mk XI",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Valentine Mk X",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Valentine Mk I",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1939,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Crusader Mk III",
@@ -1055,13 +1058,13 @@ const britain: IWeapon[] = [
     name: "Tetrach I",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1940,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "Dimler Mk II",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -1070,7 +1073,7 @@ const france: IWeapon[] = [
     name: "Somua S35",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -1079,7 +1082,7 @@ const italy: IWeapon[] = [
     name: "Lancia IZ/IZM",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -1088,7 +1091,7 @@ const czechoslovakia: IWeapon[] = [
     name: "LT vz.38",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -1097,7 +1100,7 @@ const finland: IWeapon[] = [
     name: "BT-42",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -1106,7 +1109,7 @@ const japan: IWeapon[] = [
     name: "Chi-Nu",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 

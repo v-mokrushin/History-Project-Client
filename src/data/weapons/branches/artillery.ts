@@ -1,8 +1,8 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
-import { IWeapon } from "../weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { Developers } from "../developers";
+import { IWeapon } from "../interfaces/common-weapon-interfaces";
 
 const ussr: IWeapon[] = [
   {
@@ -29,13 +29,13 @@ const ussr: IWeapon[] = [
     name: "152-мм гаубица Д-1",
     type: WEAPONS_CLASSIFICATION.artillery.armyAndCorps,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "122-мм гаубица M-30",
     type: WEAPONS_CLASSIFICATION.artillery.division,
     adoptedIntoServiceDate: 1938,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "76-мм пушка ЗИС-3",
@@ -61,61 +61,61 @@ const ussr: IWeapon[] = [
     name: "45-мм пушка M-42",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1942,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "45-мм пушка 53-К",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1937,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "120-мм миномёт ПМ-38",
     type: WEAPONS_CLASSIFICATION.artillery.regimental,
     adoptedIntoServiceDate: 1938,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "50-мм миномёт РМ-41",
     type: WEAPONS_CLASSIFICATION.artillery.company,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "82-мм миномёт БМ-37",
     type: WEAPONS_CLASSIFICATION.artillery.battalion,
     adoptedIntoServiceDate: 1937,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "37-мм пушка 61-К",
     type: WEAPONS_CLASSIFICATION.artillery.antiaircraft,
     adoptedIntoServiceDate: 1939,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "БМ-13 (ЗИС-6)",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "БМ-13 (СТЗ-5)",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1941,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "БМ-13Н",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
   {
     name: "БМ-31-12",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1944,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -167,7 +167,7 @@ const britain: IWeapon[] = [
     name: "QF 17 pounder",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1943,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 
@@ -176,7 +176,7 @@ const sweden: IWeapon[] = [
     name: "Bofors L/60",
     type: WEAPONS_CLASSIFICATION.artillery.antiaircraft,
     adoptedIntoServiceDate: 1932,
-    specifications: {},
+    specifications: { common: {} },
   },
 ];
 

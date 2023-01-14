@@ -1,8 +1,7 @@
 import { INation } from "./../constants/nations";
-import { IWeaponGallery } from "./../data/weapons/weapons";
 import { IWaponBranch } from "constants/weapon-types";
 import { IPage } from "../constants/pages";
-import { IWeapon } from "data/weapons/weapons";
+import { IWeapon, IWeaponGallery } from "data/weapons/interfaces/common-weapon-interfaces";
 
 export function appendNation(weapons: IWeapon[], nation: INation): void {
   weapons.forEach((weapon) => (weapon.nation = nation));
