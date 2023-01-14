@@ -405,7 +405,7 @@ export const SpecificationsLayout = {
           <SpecLine
             crit="Моторесурс"
             val={specifications.powerUnits.engine.motorResource}
-            mesure="ч."
+            mesure="моточасов"
           />
         </SpecSection>
       );

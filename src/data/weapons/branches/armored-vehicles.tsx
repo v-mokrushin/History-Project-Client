@@ -179,7 +179,7 @@ const ussr: IWeapon[] = [
       armoring: {
         type: "катаная высокой твёрдости, литая средней твёрдости",
         body: BODIES["ИС"],
-        tower: TOWERS["ИC"],
+        tower: TOWERS["ИС"],
       },
       weapon: {
         cannon: CANNONS["Д-25T"],

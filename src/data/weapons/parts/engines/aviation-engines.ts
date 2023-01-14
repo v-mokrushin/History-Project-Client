@@ -14,7 +14,7 @@ export interface IAviationEngine {
 export const AVIATION_ENGINES: IAviationEngines = {
   ["ВК-105ПФ2"]: {
     trademark: "ВК-105ПФ2",
-    type: "дизельный V-образный 12-цилиндровый",
+    type: "бензиновый V-образный 12-цилиндровый",
     takeoffPower: 1290,
     combatPower: 1290,
     capacity: 35.08,
