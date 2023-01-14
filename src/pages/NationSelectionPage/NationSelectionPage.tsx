@@ -4,7 +4,7 @@ import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import styles from "./NationSelectionPage.module.scss";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "../../constants/pages";
+import { PAGES } from "../../constants/pages";
 import Flag from "../../components/Flag/Flag";
 import Title from "../../components/Title/Title";
 import { WEAPONS } from "../../data/weapons/weapons";
@@ -15,7 +15,7 @@ import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();
-  const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
+  const pageInfo = PAGES.getByPath(useLocation().pathname);
   const nations = WEAPONS.selectNation(weaponsBranchPath);
 
   React.useEffect(() => {

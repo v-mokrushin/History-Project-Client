@@ -5,10 +5,11 @@ import classNames from "classnames";
 import { scrollTopInstantly } from "../../utils/scroll";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import Paragraph from "../Paragraph/Paragraph";
-import { IPageData } from "constants/pages";
+import { IPage } from "constants/pages";
+import { INation } from "constants/nations";
 
 interface IFlagProps {
-  nation: IPageData;
+  nation: INation;
   isNavLink?: boolean;
   minimized?: boolean;
 }
@@ -23,7 +24,7 @@ export default function Flag({
       <>
         <div
           className={classNames(styles.flag)}
-          style={getBackgroundImageStyleObject(nation.flagImage!)}
+          style={getBackgroundImageStyleObject(nation.flagImage)}
         ></div>
         {!minimized && (
           <Paragraph className={classNames(styles.text)}>

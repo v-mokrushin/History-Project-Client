@@ -17,13 +17,13 @@ import Container from "../../components/Container/Container";
 import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES_DATA } from "../../constants/pages";
+import { PAGES } from "../../constants/pages";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch<any>();
   const articlesIds = useSelector(selectArticlePreviewsIds);
   const loadingStatus = useSelector(selectArticlePreviewsLoadingStatus);
-  const pageInfo = PAGES_DATA.getByPath(useLocation().pathname);
+  const pageInfo = PAGES.getByPath(useLocation().pathname);
 
   useEffect(() => {
     dispatch(loadArticlePreviews);

@@ -6,7 +6,7 @@ import { ANIMATIONS } from "../../constants/animations";
 import BurgerIcon from "../Burger/BurgerIcon";
 import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";
-import { PAGES_DATA } from "../../constants/pages";
+import { PAGES } from "../../constants/pages";
 
 export default function Header() {
   const path: string = useLocation().pathname;
@@ -15,7 +15,7 @@ export default function Header() {
     <header
       className={classNames(
         styles.root,
-        PAGES_DATA.getPathLength(path) === 4 && styles.ordinar,
+        PAGES.getPathLength(path) === 4 && styles.ordinar,
         ANIMATIONS.fadeIn
       )}
     >

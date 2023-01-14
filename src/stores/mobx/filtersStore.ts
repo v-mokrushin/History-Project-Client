@@ -78,8 +78,8 @@ export class FiltersStore {
     return this.filters.nation;
   }
 
-  get name(): string | undefined {
-    return this.filters.name;
+  get name(): string {
+    return this.filters.name || "";
   }
 
   get typeName(): string | undefined {

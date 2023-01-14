@@ -1,19 +1,19 @@
 import classNames from "classnames";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { PAGES_DATA } from "../../constants/pages";
+import { PAGES } from "../../constants/pages";
 import actualSectionStore from "../../stores/mobx/actualSectionStore";
 import styles from "./Beadcrumbs.module.scss";
 
 export default function Beadcrumbs() {
   const locationPathname: string = useLocation().pathname;
   const labels: Array<string> = React.useMemo(
-    () => PAGES_DATA.getLabelsArray(locationPathname),
+    () => PAGES.getLabelsArray(locationPathname),
     [locationPathname]
   );
 
   const pathNames: Array<string> = React.useMemo(
-    () => PAGES_DATA.getPathnamesArray(locationPathname),
+    () => PAGES.getPathnamesArray(locationPathname),
     [locationPathname]
   );
 

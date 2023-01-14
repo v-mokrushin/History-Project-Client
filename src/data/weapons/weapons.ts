@@ -3,7 +3,7 @@ import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
 import { type } from "os";
 import { Developers, IDeveloper } from "./developers";
 import { ICrew } from "./crews";
-import { IPageData } from "constants/pages";
+import { IPage } from "constants/pages";
 import { shuffleArray } from "utils/common";
 import {
   createGallery,
@@ -11,7 +11,7 @@ import {
   defineIdProperty,
   getGallery,
 } from "utils/weapons";
-import { NATIONS } from "../../constants/nations";
+import { INation, NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
@@ -29,7 +29,7 @@ export interface IWeapon {
   branch?: IWaponBranch;
   id?: string;
   isReady?: boolean;
-  nation?: IPageData;
+  nation?: INation;
   gallery?: IWeaponGallery;
   JSXComponent?: JSX.Element;
   intro?: string[];

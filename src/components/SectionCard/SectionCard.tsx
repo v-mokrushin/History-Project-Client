@@ -4,26 +4,27 @@ import styles from "./SectionCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animations";
 import { scrollTopInstantly } from "../../utils/scroll";
-import { ISectionCard, SECTION_CARD_TYPE } from "./constants";
+
 import { getBackgroundImageStyleObject } from "../../utils/common";
+import { IPage } from "constants/pages";
 
 interface ISectionCardProps {
-  type: ISectionCard;
+  information: IPage;
 }
 
-export default function SectionCard({ type }: ISectionCardProps) {
+export default function SectionCard({ information }: ISectionCardProps) {
   return (
     <NavLink
-      to={type.path}
+      to={information.path}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
       onClick={() => scrollTopInstantly()}
     >
       <div
         className={classNames(styles.backgroundWrapper)}
-        style={getBackgroundImageStyleObject(type.backgroundImage)}
+        style={getBackgroundImageStyleObject(information.introImage)}
       ></div>
       <div className={styles.contentWrapper}>
-        <p className={styles.title}>{type.name}</p>
+        <p className={styles.title}>{information.name.russian}</p>
       </div>
     </NavLink>
   );

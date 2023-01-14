@@ -419,7 +419,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Ural,
       },
     },
   },
@@ -454,6 +454,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.T34,
       },
       crew: CREWS.size.five.perfect,
       mobility: {
@@ -482,6 +483,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
+        platform: Platforms.armoredVehicles.T34,
       },
     },
   },
@@ -698,7 +700,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
-        platform: Platforms.armoredVehicles.Stug3,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -709,7 +711,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
-        platform: Platforms.armoredVehicles.Stug3,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -720,7 +722,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
-        platform: Platforms.armoredVehicles.Stug3,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
@@ -731,7 +733,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.undefined,
-        platform: Platforms.armoredVehicles.Stug3,
+        platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
   },
