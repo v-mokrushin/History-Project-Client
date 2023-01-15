@@ -61,8 +61,8 @@ export const Developers = {
   },
   atillery: {
     ArtilleryDesignBureau: Developer("Артиллерийское конструкторское бюро"),
-    Plant92: Developer("КБ завода №92"),
-    Plant172: Developer("КБ завода №172"),
+    Plant92: Developer("КБ Нижегородского завода №92"),
+    Plant172: Developer("КБ Пермского завода №172"),
     Opel: Developer("Opel"),
     Fieseler: Developer("Fieseler"),
     Peenemunde: Developer("Heeresversuchsanstalt Peenemünde"),

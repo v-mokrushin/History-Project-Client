@@ -2,9 +2,9 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { Developers } from "../developers";
-import { IWeapon } from "../interfaces/common-weapon-interfaces";
+import { TWeapon } from "../interfaces/common-weapon-interfaces";
 
-const ussr: IWeapon[] = [
+const ussr: TWeapon[] = [
   {
     name: "203-мм гаубица Б-4",
     type: WEAPONS_CLASSIFICATION.artillery.specialPower,
@@ -119,7 +119,7 @@ const ussr: IWeapon[] = [
   },
 ];
 
-const germany: IWeapon[] = [
+const germany: TWeapon[] = [
   {
     name: "7,5 cm Pak. 40",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
@@ -162,7 +162,7 @@ const germany: IWeapon[] = [
   },
 ];
 
-const britain: IWeapon[] = [
+const britain: TWeapon[] = [
   {
     name: "QF 17 pounder",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
@@ -171,7 +171,7 @@ const britain: IWeapon[] = [
   },
 ];
 
-const sweden: IWeapon[] = [
+const sweden: TWeapon[] = [
   {
     name: "Bofors L/60",
     type: WEAPONS_CLASSIFICATION.artillery.antiaircraft,

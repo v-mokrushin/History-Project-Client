@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import { observer } from "mobx-react";
 import React from "react";
 import settingsStore from "stores/mobx/settingsStore";
@@ -9,7 +9,7 @@ import { TimelineContext } from "./context";
 import styles from "./Timeline.module.scss";
 
 interface ITimelineProps {
-  contentCollection: IWeapon[];
+  contentCollection: TWeapon[];
   uniqueDates: number[];
   showFlags?: boolean;
 }

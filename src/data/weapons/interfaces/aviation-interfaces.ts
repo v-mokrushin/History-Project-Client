@@ -1,15 +1,17 @@
 import { IAviationEngine } from "./../parts/engines/aviation-engines";
 import { ICrew } from "../crews";
-import { IBodyArmoring } from "../parts/bodies";
-import { ITowerArmoring } from "../parts/towers";
-import { IWaponCommonSpec } from "./common-weapon-interfaces";
+import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
+
+export interface IAircraft extends IBaseWeapon {
+  specifications: IAviationSpecifications;
+}
 
 export interface IAviationSpecifications {
   common: IWaponCommonSpec;
   crew?: ICrew;
   sizes?: IAviationSizes;
   weapons?: IAviationWeapons;
-  flightCharacteristics: IFlightCharacteristics;
+  flightCharacteristics?: IFlightCharacteristics;
   powerUnits?: IAviationPowerUnits;
 }
 

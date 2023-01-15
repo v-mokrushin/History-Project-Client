@@ -5,10 +5,10 @@ import Yak_3 from "../../../fragments/weapons/Yak-3";
 import { Developers } from "../developers";
 import { ChiefDesigners } from "../chief-designers";
 import { Platforms } from "../platforms";
-import { IWeapon } from "../interfaces/common-weapon-interfaces";
 import { AVIATION_ENGINES } from "../parts/engines/aviation-engines";
+import { IAircraft } from "../interfaces/aviation-interfaces";
 
-const ussr: IWeapon[] = [
+const ussr: IAircraft[] = [
   {
     name: "Ла-5ФН",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -107,7 +107,7 @@ const ussr: IWeapon[] = [
       weapons: {
         weaponsSet: "1 × 20-мм пушка ШВАК, 2 × 12,7-мм пулемёта УБС",
         ammunition: "20-мм - 120 выстрелов, 12,7-мм - 300 выстрелов",
-        secondSalvoWeight: "2.81",
+        secondSalvoWeight: 2.81,
         bombWeapons: "отсутсвует",
       },
     },
@@ -166,7 +166,7 @@ const ussr: IWeapon[] = [
   },
 ];
 
-const germany: IWeapon[] = [
+const germany: IAircraft[] = [
   {
     name: "Heinkel He 162 Volksjäger",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -261,7 +261,7 @@ const germany: IWeapon[] = [
   },
 ];
 
-const usa: IWeapon[] = [
+const usa: IAircraft[] = [
   {
     name: "Grumman F8F Bearcat",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -304,7 +304,7 @@ const usa: IWeapon[] = [
   },
 ];
 
-const britain: IWeapon[] = [
+const britain: IAircraft[] = [
   {
     name: "Gloster Meteor F.Mk.4",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -327,7 +327,7 @@ const britain: IWeapon[] = [
   },
 ];
 
-const france: IWeapon[] = [
+const france: IAircraft[] = [
   {
     name: "Morane-Saulnier MS.406",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -340,7 +340,7 @@ const france: IWeapon[] = [
   },
 ];
 
-const japan: IWeapon[] = [
+const japan: IAircraft[] = [
   {
     name: "Mitsubishi A6M5 Raisen",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -364,7 +364,7 @@ const japan: IWeapon[] = [
   },
 ];
 
-const italy: IWeapon[] = [
+const italy: IAircraft[] = [
   {
     name: "Macchi C.205 Veltro",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -377,7 +377,7 @@ const italy: IWeapon[] = [
   },
 ];
 
-const poland: IWeapon[] = [
+const poland: IAircraft[] = [
   {
     name: "PZL.37-Łoś",
     type: WEAPONS_CLASSIFICATION.aviation.bomber,
@@ -390,7 +390,7 @@ const poland: IWeapon[] = [
   },
 ];
 
-const sweden: IWeapon[] = [
+const sweden: IAircraft[] = [
   {
     name: "Saab 17",
     type: WEAPONS_CLASSIFICATION.aviation.lightBomber,
@@ -403,7 +403,7 @@ const sweden: IWeapon[] = [
   },
 ];
 
-const finland: IWeapon[] = [
+const finland: IAircraft[] = [
   {
     name: "VL Myrsky II",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -416,7 +416,7 @@ const finland: IWeapon[] = [
   },
 ];
 
-const romania: IWeapon[] = [
+const romania: IAircraft[] = [
   {
     name: "IAR 80",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -429,7 +429,7 @@ const romania: IWeapon[] = [
   },
 ];
 
-const lithuania: IWeapon[] = [
+const lithuania: IAircraft[] = [
   {
     name: "ANBO-41",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -442,7 +442,7 @@ const lithuania: IWeapon[] = [
   },
 ];
 
-const netherlands: IWeapon[] = [
+const netherlands: IAircraft[] = [
   {
     name: "Fokker G.1",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -455,7 +455,7 @@ const netherlands: IWeapon[] = [
   },
 ];
 
-const yugoslavia: IWeapon[] = [
+const yugoslavia: IAircraft[] = [
   {
     name: "Ikarus IK-2",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
@@ -468,7 +468,7 @@ const yugoslavia: IWeapon[] = [
   },
 ];
 
-const hungary: IWeapon[] = [
+const hungary: IAircraft[] = [
   {
     name: "Weiss WM 21 Sólyom",
     type: WEAPONS_CLASSIFICATION.aviation.scout,

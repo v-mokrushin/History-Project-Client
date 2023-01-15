@@ -5,10 +5,10 @@ import { TimelineContext } from "../Timeline/context";
 import classNames from "classnames";
 import settingsStore from "stores/mobx/settingsStore";
 import { observer } from "mobx-react";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface ITimelineItemProps {
-  contentCollection: IWeapon[];
+  contentCollection: TWeapon[];
   year: number;
 }
 

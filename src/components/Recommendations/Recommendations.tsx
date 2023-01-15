@@ -3,10 +3,10 @@ import styles from "./Recommendations.module.scss";
 import classNames from "classnames";
 import WeaponCard from "components/WeaponCard/WeaponCard";
 import { WEAPONS } from "data/weapons/weapons";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IRecommendationsProps {
-  weapon: IWeapon;
+  weapon: TWeapon;
   className?: string;
 }
 

@@ -1,7 +1,11 @@
 import { ICrew } from "../crews";
 import { IBodyArmoring } from "../parts/bodies";
 import { ITowerArmoring } from "../parts/towers";
-import { IWaponCommonSpec } from "./common-weapon-interfaces";
+import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
+
+export interface IArmoredVehicle extends IBaseWeapon {
+  specifications: IArmoredVehiclesSpecifications;
+}
 
 export interface IArmoredVehiclesSpecifications {
   common: IWaponCommonSpec;

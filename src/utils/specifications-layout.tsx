@@ -1,14 +1,17 @@
 import SpecLine from "components/SpecLine/SpecLine";
 import SpecSection from "components/SpecSection/SpecSection";
 import { INation } from "constants/nations";
-import { IWeaponType } from "constants/weapon-types";
+import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
 import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import {
+  TWeapon,
+  TWeaponSpecification,
+} from "data/weapons/interfaces/common-weapon-interfaces";
 
 export const SpecificationsLayout = {
   getCommon(
-    specifications: IArmoredVehiclesSpecifications,
+    specifications: TWeaponSpecification,
     nation: INation | undefined,
     type: IWeaponType | undefined
   ) {
@@ -49,7 +52,7 @@ export const SpecificationsLayout = {
       </SpecSection>
     );
   },
-  getCrew(specifications: IArmoredVehiclesSpecifications) {
+  getCrew(specifications: TWeaponSpecification) {
     if (!specifications.crew) return;
     return (
       <SpecSection title="Экипаж">
@@ -61,6 +64,60 @@ export const SpecificationsLayout = {
         <SpecLine crit="Состав" val={specifications.crew.structure} />
       </SpecSection>
     );
+  },
+  getAll(weapon: TWeapon) {
+    if (WEAPONS_TYPE_METHODS.identity.isArmoredVehicle(weapon)) {
+      return (
+        <>
+          {SpecificationsLayout.getCommon(
+            weapon.specifications,
+            weapon.nation,
+            weapon.type
+          )}
+          {SpecificationsLayout.armored.getSizes(
+            weapon.specifications as IArmoredVehiclesSpecifications
+          )}
+          {SpecificationsLayout.getCrew(
+            weapon.specifications as IArmoredVehiclesSpecifications
+          )}
+          {SpecificationsLayout.armored.getWeapon(
+            weapon.specifications as IArmoredVehiclesSpecifications
+          )}
+          {SpecificationsLayout.armored.getArmoring(
+            weapon.specifications as IArmoredVehiclesSpecifications
+          )}
+          {SpecificationsLayout.armored.getMobility(
+            weapon.specifications as IArmoredVehiclesSpecifications
+          )}
+        </>
+      );
+    }
+    if (WEAPONS_TYPE_METHODS.identity.isAviation(weapon)) {
+      return (
+        <>
+          {SpecificationsLayout.getCommon(
+            weapon.specifications,
+            weapon.nation,
+            weapon.type
+          )}
+          {SpecificationsLayout.avivation.getSizes(
+            weapon.specifications as IAviationSpecifications
+          )}
+          {SpecificationsLayout.getCrew(
+            weapon.specifications as IAviationSpecifications
+          )}
+          {SpecificationsLayout.avivation.getFlightCharacteristics(
+            weapon.specifications as IAviationSpecifications
+          )}
+          {SpecificationsLayout.avivation.getPowerUnits(
+            weapon.specifications as IAviationSpecifications
+          )}
+          {SpecificationsLayout.avivation.getWeapons(
+            weapon.specifications as IAviationSpecifications
+          )}
+        </>
+      );
+    }
   },
   armored: {
     getSizes(specifications: IArmoredVehiclesSpecifications) {
@@ -111,10 +168,6 @@ export const SpecificationsLayout = {
             mesure="м/с"
           />
           <SpecLine crit="Тип орудия" val={specifications.weapon.cannon.type} />
-          {/* <SpecLine
-                    crit="Боеприпасы"
-                    val={specifications.weapon.cannon.ammunition}
-                  /> */}
           <SpecLine
             crit="Тип заряжания"
             val={specifications.weapon.cannon.chargingType}
@@ -128,10 +181,6 @@ export const SpecificationsLayout = {
             crit="Дульный тормоз"
             val={specifications.weapon.cannon.muzzleBrake}
           />
-          {/* <SpecLine
-                    crit="Тип спуска"
-                    val={specifications.weapon.cannon.trigger}
-                  /> */}
           <SpecLine
             crit="Углы вертик. наведения"
             val={specifications.weapon.verticalGA}
@@ -140,10 +189,6 @@ export const SpecificationsLayout = {
             crit="Углы горизон. наведения"
             val={specifications.weapon.horizontalGA}
           />
-          {/* <SpecLine
-                    crit="Прицелы"
-                    val={specifications.weapon.sights}
-                  /> */}
           <SpecLine crit="Пулеметы" val={specifications.weapon.machinegun} />
           <SpecLine
             crit="Боекомплект орудия"

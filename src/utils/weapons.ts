@@ -1,20 +1,20 @@
 import { INation } from "./../constants/nations";
 import { IWaponBranch } from "constants/weapon-types";
 import { IPage } from "../constants/pages";
-import { IWeapon, IWeaponGallery } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon, IWeaponGallery } from "data/weapons/interfaces/common-weapon-interfaces";
 
-export function appendNation(weapons: IWeapon[], nation: INation): void {
+export function appendNation(weapons: TWeapon[], nation: INation): void {
   weapons.forEach((weapon) => (weapon.nation = nation));
 }
 
 export function appendWeaponBranch(
-  weapons: IWeapon[],
+  weapons: TWeapon[],
   branch: IWaponBranch
 ): void {
   weapons.forEach((weapon) => (weapon.branch = branch));
 }
 
-export function defineIdProperty(weapon: IWeapon): void {
+export function defineIdProperty(weapon: TWeapon): void {
   Object.defineProperty(weapon, "id", {
     get: function () {
       return this.name.replaceAll(" ", "-").replaceAll("/", "-");
@@ -22,7 +22,7 @@ export function defineIdProperty(weapon: IWeapon): void {
   });
 }
 
-export function getGalleryPath(weaponName: string, weapon: IWeapon): string {
+export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
   return (
     `/images/weapons/${weapon.branch?.path}/` +
     weapon.nation!.path +
@@ -43,7 +43,7 @@ export function getGalleryPath(weaponName: string, weapon: IWeapon): string {
   );
 }
 
-export function getGallery(weapon: IWeapon): IWeaponGallery {
+export function getGallery(weapon: TWeapon): IWeaponGallery {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
@@ -62,7 +62,7 @@ export function getGallery(weapon: IWeapon): IWeaponGallery {
   return gallery;
 }
 
-export function createGallery(weapon: IWeapon): void {
+export function createGallery(weapon: TWeapon): void {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
@@ -79,7 +79,7 @@ export function createGallery(weapon: IWeapon): void {
   };
 }
 
-export function createModels(weapon: IWeapon): void {
+export function createModels(weapon: TWeapon): void {
   if (weapon.models) {
     weapon.models.forEach(
       (model) => (model.photo = weapon.gallery?.path + "/models/" + model.photo)

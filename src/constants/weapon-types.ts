@@ -1,4 +1,4 @@
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 export type IWaponBranch =
   | IArmoredVehiclesBranch
@@ -206,19 +206,19 @@ export const WEAPONS_TYPE_METHODS = {
     return this.getAllType() === type;
   },
   identity: {
-    isArmoredVehicle(weapon: IWeapon): boolean {
+    isArmoredVehicle(weapon: TWeapon): boolean {
       return weapon.branch == WEAPONS_CLASSIFICATION.armoredVehicle;
     },
-    isAviation(weapon: IWeapon): boolean {
+    isAviation(weapon: TWeapon): boolean {
       return weapon.branch == WEAPONS_CLASSIFICATION.aviation;
     },
-    isSmallArms(weapon: IWeapon): boolean {
+    isSmallArms(weapon: TWeapon): boolean {
       return weapon.branch == WEAPONS_CLASSIFICATION.smallArms;
     },
-    isArtillery(weapon: IWeapon): boolean {
+    isArtillery(weapon: TWeapon): boolean {
       return weapon.branch == WEAPONS_CLASSIFICATION.artillery;
     },
-    isGrenadeLaunchers(weapon: IWeapon): boolean {
+    isGrenadeLaunchers(weapon: TWeapon): boolean {
       return weapon.branch == WEAPONS_CLASSIFICATION.grenadeLaunchers;
     },
   },

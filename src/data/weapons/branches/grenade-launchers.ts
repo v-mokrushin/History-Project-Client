@@ -1,11 +1,11 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
-import { IWeapon } from "../interfaces/common-weapon-interfaces";
+import { TWeapon } from "../interfaces/common-weapon-interfaces";
 
-const ussr: IWeapon[] = [];
+const ussr: TWeapon[] = [];
 
-const germany: IWeapon[] = [
+const germany: TWeapon[] = [
   // {
   //   name: "Panzerfaust 100",
   //   type: WEAPONS_TYPE.grenadeLaunchers.manual,
@@ -50,7 +50,7 @@ const germany: IWeapon[] = [
   },
 ];
 
-const usa: IWeapon[] = [
+const usa: TWeapon[] = [
   {
     name: "M1 «Bazooka»",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
@@ -59,7 +59,7 @@ const usa: IWeapon[] = [
   },
 ];
 
-const japan: IWeapon[] = [
+const japan: TWeapon[] = [
   {
     name: "Type 4",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
@@ -74,7 +74,7 @@ const japan: IWeapon[] = [
   },
 ];
 
-const britain: IWeapon[] = [
+const britain: TWeapon[] = [
   {
     name: "PIAT",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,

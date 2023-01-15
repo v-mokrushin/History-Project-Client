@@ -6,10 +6,10 @@ import Filter from "components/Filter/Filter";
 import filtersStore from "stores/mobx/filtersStore";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { WEAPONS } from "data/weapons/weapons";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IFiltersProps {
-  selectedWeapons: IWeapon[];
+  selectedWeapons: TWeapon[];
   className?: string;
 }
 

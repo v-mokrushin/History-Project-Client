@@ -10,10 +10,12 @@ import { TOWERS } from "../parts/towers";
 import { Developers } from "../developers";
 import { ChiefDesigners } from "../chief-designers";
 import { Platforms } from "../platforms";
-import { IWeapon } from "../interfaces/common-weapon-interfaces";
-import { IArmoredVehiclesSpecifications } from "../interfaces/armored-interfaces";
+import {
+  IArmoredVehicle,
+  IArmoredVehiclesSpecifications,
+} from "../interfaces/armored-interfaces";
 
-const ussr: IWeapon[] = [
+const ussr: IArmoredVehicle[] = [
   {
     name: "ИС-3",
     isReady: false,
@@ -27,7 +29,7 @@ const ussr: IWeapon[] = [
         developer: Developers.armoredVehicles.Chelyabinsk100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
       },
-    } as IArmoredVehiclesSpecifications,
+    },
   },
   {
     name: "КВ-1 (Л-11)",
@@ -186,11 +188,10 @@ const ussr: IWeapon[] = [
         cannon: CANNONS["Д-25T"],
         ammunition: {
           cannon: 28,
-          machinegun: "ДТ - 2520, ДШК - 250",
+          machinegun: `ДТ - 2520, ДШК - 250`,
         },
         verticalGA: "−3…+20°",
         horizontalGA: "360°",
-        sights: "ТШ-17",
         machinegun: `3 × 7,62-мм ДТ 
         1 × 12,7-мм ДШК`,
       },
@@ -214,7 +215,7 @@ const ussr: IWeapon[] = [
           ford: 1.3,
         },
       },
-    } as IArmoredVehiclesSpecifications,
+    },
   },
   {
     name: "Т-28",
@@ -512,7 +513,7 @@ const ussr: IWeapon[] = [
   },
 ];
 
-const germany: IWeapon[] = [
+const germany: IArmoredVehicle[] = [
   {
     name: "PzKpfw VI Ausf.B Tiger II",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
@@ -829,7 +830,7 @@ const germany: IWeapon[] = [
   },
 ];
 
-const usa: IWeapon[] = [
+const usa: IArmoredVehicle[] = [
   {
     name: "M26 Pershing",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
@@ -1005,7 +1006,7 @@ const usa: IWeapon[] = [
   },
 ];
 
-const britain: IWeapon[] = [
+const britain: IArmoredVehicle[] = [
   {
     name: "Churchill III",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
@@ -1086,7 +1087,7 @@ const britain: IWeapon[] = [
   },
 ];
 
-const france: IWeapon[] = [
+const france: IArmoredVehicle[] = [
   {
     name: "Somua S35",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
@@ -1095,7 +1096,7 @@ const france: IWeapon[] = [
   },
 ];
 
-const italy: IWeapon[] = [
+const italy: IArmoredVehicle[] = [
   {
     name: "Lancia IZ/IZM",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
@@ -1104,7 +1105,7 @@ const italy: IWeapon[] = [
   },
 ];
 
-const czechoslovakia: IWeapon[] = [
+const czechoslovakia: IArmoredVehicle[] = [
   {
     name: "LT vz.38",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
@@ -1117,7 +1118,7 @@ const czechoslovakia: IWeapon[] = [
   },
 ];
 
-const finland: IWeapon[] = [
+const finland: IArmoredVehicle[] = [
   {
     name: "BT-42",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
@@ -1126,7 +1127,7 @@ const finland: IWeapon[] = [
   },
 ];
 
-const japan: IWeapon[] = [
+const japan: IArmoredVehicle[] = [
   {
     name: "Chi-Nu",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,

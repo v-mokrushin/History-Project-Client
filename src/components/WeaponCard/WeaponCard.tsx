@@ -8,10 +8,10 @@ import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IWeaponCardProps {
-  weapon: IWeapon;
+  weapon: TWeapon;
   showFlag?: boolean;
   isAbsoluteLinkPath?: boolean;
 }

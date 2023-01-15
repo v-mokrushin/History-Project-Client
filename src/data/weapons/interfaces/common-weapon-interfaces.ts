@@ -1,15 +1,15 @@
 import { INation } from "constants/nations";
 import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IChiefDesigner } from "../chief-designers";
-import { ICrew } from "../crews";
 import { IDeveloper } from "../developers";
-import { IBodyArmoring } from "../parts/bodies";
-import { ITowerArmoring } from "../parts/towers";
 import { IPlatform } from "../platforms";
-import { IArmoredVehiclesSpecifications } from "./armored-interfaces";
-import { IAviationSpecifications } from "./aviation-interfaces";
+import {
+  IArmoredVehicle,
+  IArmoredVehiclesSpecifications,
+} from "./armored-interfaces";
+import { IAircraft, IAviationSpecifications } from "./aviation-interfaces";
 
-export interface IWeapon {
+export interface IBaseWeapon {
   name: string;
   type: IWeaponType;
   adoptedIntoServiceDate: number;
@@ -23,10 +23,11 @@ export interface IWeapon {
   videomaterials?: string[];
   sections?: string[];
   models?: IModel[];
-  specifications: any;
 }
 
-type TWeaponSpecification =
+export type TWeapon = IArmoredVehicle | IAircraft;
+
+export type TWeaponSpecification =
   | IArmoredVehiclesSpecifications
   | IAviationSpecifications;
 

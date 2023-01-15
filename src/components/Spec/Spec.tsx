@@ -3,11 +3,13 @@ import styles from "./Spec.module.scss";
 import classNames from "classnames";
 import Subtitle from "components/Subtitle/Subtitle";
 import { SpecificationsLayout } from "utils/specifications-layout";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
+import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
 
 interface ISpecProps {
-  weapon: IWeapon | undefined;
+  weapon: TWeapon | undefined;
   className?: string;
 }
 
@@ -83,19 +85,25 @@ export default function Spec({ weapon, className }: ISpecProps) {
               <>
                 <div className={styles.box}>
                   {SpecificationsLayout.getCommon(
-                    weapon.specifications,
+                    weapon.specifications as IArmoredVehiclesSpecifications,
                     weapon.nation,
                     weapon.type
                   )}
-                  {SpecificationsLayout.armored.getSizes(weapon.specifications)}
-                  {SpecificationsLayout.getCrew(weapon.specifications)}
+                  {SpecificationsLayout.armored.getSizes(
+                    weapon.specifications as IArmoredVehiclesSpecifications
+                  )}
+                  {SpecificationsLayout.getCrew(
+                    weapon.specifications as IArmoredVehiclesSpecifications
+                  )}
                 </div>
-                {SpecificationsLayout.armored.getWeapon(weapon.specifications)}
+                {SpecificationsLayout.armored.getWeapon(
+                  weapon.specifications as IArmoredVehiclesSpecifications
+                )}
                 {SpecificationsLayout.armored.getArmoring(
-                  weapon.specifications
+                  weapon.specifications as IArmoredVehiclesSpecifications
                 )}
                 {SpecificationsLayout.armored.getMobility(
-                  weapon.specifications
+                  weapon.specifications as IArmoredVehiclesSpecifications
                 )}
               </>
             )}
@@ -103,26 +111,26 @@ export default function Spec({ weapon, className }: ISpecProps) {
               <>
                 <div className={styles.box}>
                   {SpecificationsLayout.getCommon(
-                    weapon.specifications,
+                    weapon.specifications as IAviationSpecifications,
                     weapon.nation,
                     weapon.type
                   )}
                   {SpecificationsLayout.avivation.getSizes(
-                    weapon.specifications
+                    weapon.specifications as IAviationSpecifications
                   )}
                 </div>
                 <div className={styles.box}>
                   {SpecificationsLayout.avivation.getFlightCharacteristics(
-                    weapon.specifications
+                    weapon.specifications as IAviationSpecifications
                   )}
                   {SpecificationsLayout.avivation.getPowerUnits(
-                    weapon.specifications
+                    weapon.specifications as IAviationSpecifications
                   )}
                 </div>
                 <div className={styles.box}>
                   {SpecificationsLayout.getCrew(weapon.specifications)}
                   {SpecificationsLayout.avivation.getWeapons(
-                    weapon.specifications
+                    weapon.specifications as IAviationSpecifications
                   )}
                 </div>
               </>

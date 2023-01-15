@@ -20,9 +20,9 @@ import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
-import { IWeapon } from "./interfaces/common-weapon-interfaces";
+import { TWeapon } from "./interfaces/common-weapon-interfaces";
 
-const weapons_data = ([] as IWeapon[]).concat(
+const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
   AVIATION_DATA,
   ARTILLERY_DATA,
@@ -39,7 +39,7 @@ weapons_data.forEach((weapon) => {
 // --------------------------------------------------------------------------------
 
 export const WEAPONS = {
-  getUniqueDates(collection: IWeapon[]): number[] {
+  getUniqueDates(collection: TWeapon[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
     return dates;
@@ -48,7 +48,7 @@ export const WEAPONS = {
   selectWeapons(
     weaponBranchPath: string | undefined,
     nationPath: string | undefined
-  ): IWeapon[] {
+  ): TWeapon[] {
     return weapons_data
       .filter((item) => item.branch?.path === weaponBranchPath)
       .filter(
@@ -57,7 +57,7 @@ export const WEAPONS = {
       );
   },
 
-  filterWeapons(selectedWeapons: IWeapon[], filters: TFilters) {
+  filterWeapons(selectedWeapons: TWeapon[], filters: TFilters) {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
@@ -131,7 +131,7 @@ export const WEAPONS = {
   getRecommendation(
     weaponBranchPath: string | undefined,
     weaponId: string | undefined
-  ): IWeapon[] {
+  ): TWeapon[] {
     let weapons = weapons_data.filter(
       (weapon) =>
         weapon.branch?.path === weaponBranchPath && weapon.id !== weaponId
@@ -142,7 +142,7 @@ export const WEAPONS = {
     return weapons;
   },
 
-  getDevelopers(selectedWeapons: IWeapon[]): string[] {
+  getDevelopers(selectedWeapons: TWeapon[]): string[] {
     let developers: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications.common.developer) return false;
@@ -155,7 +155,7 @@ export const WEAPONS = {
     return developers;
   },
 
-  getNations(selectedWeapons: IWeapon[]): string[] {
+  getNations(selectedWeapons: TWeapon[]): string[] {
     let nations: string[] = selectedWeapons.map(
       (weapon) => weapon.nation?.name.russian!
     );
@@ -165,7 +165,7 @@ export const WEAPONS = {
     return nations;
   },
 
-  getChiefDesigners(selectedWeapons: IWeapon[]): string[] {
+  getChiefDesigners(selectedWeapons: TWeapon[]): string[] {
     let designers: string[] = selectedWeapons
       .filter((weapon) => {
         return weapon.specifications.common.chiefDesigner;
@@ -179,7 +179,7 @@ export const WEAPONS = {
     return designers;
   },
 
-  getPlatforms(selectedWeapons: IWeapon[]): string[] {
+  getPlatforms(selectedWeapons: TWeapon[]): string[] {
     let platforms: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications) return false;

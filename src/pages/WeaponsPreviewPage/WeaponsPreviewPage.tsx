@@ -19,18 +19,18 @@ import WeaponPreviewSettings from "components/WeaponPreviewSettings/WeaponPrevie
 import Filters from "components/Filters/Filters";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
-import { IWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject = WEAPONS_TYPE_METHODS.getByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath!);
-  const selectedWeapons: IWeapon[] = React.useMemo(
+  const selectedWeapons: TWeapon[] = React.useMemo(
     () => WEAPONS.selectWeapons(weaponsBranchPath, nationPath),
     []
   );
-  const filteredWeapons: IWeapon[] = React.useMemo(
+  const filteredWeapons: TWeapon[] = React.useMemo(
     () => WEAPONS.filterWeapons(selectedWeapons, filtersStore.getFilters()),
     [filtersStore.filters]
   );
