@@ -93,7 +93,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Barykov,
+        // developer: Developers.armoredVehicles.Leningrad185,
       },
     },
   },
@@ -221,7 +222,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.KB3,
       },
     },
   },
@@ -232,7 +233,7 @@ const ussr: IWeapon[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
-        developer: Developers.armoredVehicles.Kharkov, // ???
+        developer: Developers.armoredVehicles.Kharkov183, // ???
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -243,7 +244,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural, // ???
+        developer: Developers.armoredVehicles.Ural183, // ???
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -259,7 +260,7 @@ const ussr: IWeapon[] = [
     sections: ["Введение"],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural,
+        developer: Developers.armoredVehicles.Ural183,
         platform: Platforms.armoredVehicles.T34,
       },
       crew: CREWS.size.four.weak,
@@ -293,7 +294,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.KrasnoyeSormovo,
+        developer: Developers.armoredVehicles.KrasnoyeSormovo112,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -304,7 +305,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural,
+        developer: Developers.armoredVehicles.Ural183,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -315,7 +316,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural,
+        developer: Developers.armoredVehicles.Ural183,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -326,7 +327,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural,
+        developer: Developers.armoredVehicles.Ural183,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -348,7 +349,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Kharkov,
+        developer: Developers.armoredVehicles.Kharkov183,
       },
     },
   },
@@ -358,7 +359,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Kharkov,
+        developer: Developers.armoredVehicles.Kharkov183,
       },
     },
   },
@@ -368,7 +369,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1932,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Kharkov,
+        developer: Developers.armoredVehicles.Kharkov183,
       },
     },
   },
@@ -420,7 +421,7 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural,
+        developer: Developers.armoredVehicles.Ural183,
       },
     },
   },
@@ -473,7 +474,8 @@ const ussr: IWeapon[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.Kirov38,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ginzburg,
       },
     },
   },
@@ -695,6 +697,17 @@ const germany: IWeapon[] = [
     },
   },
   {
+    name: "Jagdpanzer 38(t) Hetzer",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.CKD,
+        // platform: Platforms.armoredVehicles.SdKfz251,
+      },
+    },
+  },
+  {
     name: "StuG III Ausf.G",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
@@ -766,6 +779,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Demag,
+        platform: Platforms.armoredVehicles.SdKfz250,
       },
     },
   },
@@ -776,6 +790,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Demag,
+        platform: Platforms.armoredVehicles.SdKfz250,
       },
     },
   },
@@ -786,6 +801,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Hanomag,
+        platform: Platforms.armoredVehicles.SdKfz251,
       },
     },
   },
@@ -796,6 +812,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Hanomag,
+        platform: Platforms.armoredVehicles.SdKfz251,
       },
     },
   },
@@ -806,6 +823,7 @@ const germany: IWeapon[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Hanomag,
+        platform: Platforms.armoredVehicles.SdKfz251,
       },
     },
   },
@@ -1091,7 +1109,11 @@ const czechoslovakia: IWeapon[] = [
     name: "LT vz.38",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1939,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.CKD,
+      },
+    },
   },
 ];
 

@@ -18,6 +18,8 @@ export const Platforms = {
     PzKpfw4: Platform("Pz.Kpfw. IV"),
     PzKpfw5: Platform("Pz.Kpfw. V Panther"),
     PzKpfw6B: Platform("Pz.Kpfw. VI Ausf.B Tiger II"),
+    SdKfz250: Platform("Sd.Kfz. 250"),
+    SdKfz251: Platform("Sd.Kfz. 251"),
     Stug3: Platform("StuG III"),
     Sherman: Platform("M4 Sherman"),
   },
