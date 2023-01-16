@@ -10,18 +10,18 @@ export function getBackgroundImageStyleObject(url: string | undefined): object {
 export function createParagraphs(text: string): string[] {
   let prevPos = -1;
   let pos = -1;
-  const p = [];
+  const paragraphs = [];
 
   while (text.indexOf("\n", pos + 1) != -1) {
     prevPos = pos + 1;
     pos = text.indexOf("\n", pos + 1);
-    p.push(text.slice(prevPos, pos).trim());
+    paragraphs.push(text.slice(prevPos, pos).trim());
   }
 
-  return p;
+  return paragraphs;
 }
 
-export function shuffleArray(array: any[]): any[] {
+export function shuffleArray<Type>(array: Type[]): Type[] {
   let currentIndex = array.length,
     randomIndex;
 
@@ -38,7 +38,7 @@ export function shuffleArray(array: any[]): any[] {
   return array;
 }
 
-export function randomInteger(min: number, max: number) {
+export function randomInteger(min: number, max: number): number {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 }

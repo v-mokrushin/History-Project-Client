@@ -2,11 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Flag.module.scss";
 import classNames from "classnames";
-import { scrollTopInstantly } from "../../utils/scroll";
+
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import Paragraph from "../Paragraph/Paragraph";
 import { IPage } from "constants/pages";
 import { INation } from "constants/nations";
+import { Scroll } from "utils/scroll";
 
 interface IFlagProps {
   nation: INation;
@@ -39,7 +40,7 @@ export default function Flag({
     <NavLink
       to={nation.path}
       className={classNames(styles.root, minimized && styles.minimized)}
-      onClick={() => scrollTopInstantly()}
+      onClick={Scroll.toTopInstantly}
     >
       {getContent()}
     </NavLink>

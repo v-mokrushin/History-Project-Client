@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ExternalLink.module.sass";
+import styles from "./ExternalLink.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
 

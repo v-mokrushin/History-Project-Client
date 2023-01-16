@@ -1,7 +1,8 @@
-export const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-export const scrollTopInstantly = () => {
-  window.scrollTo({ top: 0 });
+export const Scroll = {
+  toTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  },
+  toTopInstantly() {
+    window.scrollTo({ top: 0 });
+  },
 };

@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import burgerStore from "../../stores/mobx/burgerStore";
-import { scrollToTop } from "../../utils/scroll";
 import styles from "./Logo.module.scss";
+import { Scroll } from "utils/scroll";
 
 interface ILogoProps {
   forHeader?: boolean;
@@ -19,7 +19,7 @@ export default function Logo({ forHeader = false }: ILogoProps) {
         forHeader && styles.wrapper_typeForHeader
       )}
       onClick={() => {
-        scrollToTop();
+        Scroll.toTop();
         burgerStore.setClose();
       }}
     >

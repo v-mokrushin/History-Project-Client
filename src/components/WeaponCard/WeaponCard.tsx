@@ -4,11 +4,11 @@ import styles from "./WeaponCard.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
-import { scrollTopInstantly, scrollToTop } from "../../utils/scroll";
 import Flag from "../Flag/Flag";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { Scroll } from "utils/scroll";
 
 interface IWeaponCardProps {
   weapon: TWeapon;
@@ -37,7 +37,7 @@ const WeaponCard = observer(
           ANIMATIONS.fadeIn
         )}
         onClick={() => {
-          scrollTopInstantly();
+          Scroll.toTopInstantly();
         }}
       >
         <div

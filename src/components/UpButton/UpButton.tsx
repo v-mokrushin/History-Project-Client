@@ -1,7 +1,7 @@
 import React from "react";
-import { scrollToTop } from "../../utils/scroll";
 import styles from "./UpButton.module.scss";
 import classNames from "classnames";
+import { Scroll } from "utils/scroll";
 
 export default function UpButton() {
   const [toShow, setToShow] = React.useState(false);
@@ -26,7 +26,7 @@ export default function UpButton() {
   return (
     <button
       className={classNames(styles.root, toShow && styles.visible)}
-      onClick={scrollToTop}
+      onClick={Scroll.toTop}
     ></button>
   );
 }

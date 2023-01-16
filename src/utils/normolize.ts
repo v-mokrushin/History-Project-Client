@@ -1,3 +1,5 @@
+import { IArticleContent, IArticlePreview } from "data/articles/interfaces";
+
 export const normolize = (data: any[]) => ({
   entities: data.reduce((obj: any, item: any) => {
     obj[item.id] = item;

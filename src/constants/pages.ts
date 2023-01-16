@@ -33,14 +33,14 @@ const pages = {
   articles: Page(
     "articles",
     "/images/backgrounds/articles.jpg",
-    "статьи",
+    "Статьи",
     "статей",
     "articles"
   ),
   weapons: Page(
     "weapons",
     "/images/backgrounds/weapons.jpg",
-    "вооружения",
+    "Вооружения",
     "вооружений",
     "weapons"
   ),

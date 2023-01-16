@@ -1,5 +1,5 @@
 import { articleContentSlice } from ".";
-import { articles } from "../../../data/articles";
+import { articles } from "../../../data/articles/articles";
 import { selectArticleContentById } from "./selectors";
 
 export const loadArticleContent =

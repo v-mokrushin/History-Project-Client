@@ -10,7 +10,6 @@ import { shuffleArray } from "../../utils/common";
 let trackList: string[] = [
   "/audio/de-wolfe-intro.mp3",
   "/audio/liberation.mp3",
-  "/audio/apocalypse.mp3",
   "/audio/dead-of-night.mp3",
   "/audio/farewell-to-peace.mp3",
   "/audio/mac-arthur.mp3",
@@ -22,6 +21,7 @@ let trackList: string[] = [
   "/audio/dark-father.mp3",
 ];
 shuffleArray(trackList);
+trackList.unshift("/audio/apocalypse.mp3");
 
 export class AudioPlayerStore {
   public status: boolean;

@@ -1,0 +1,12 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  color: #416bc0;
+}
+
+.link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

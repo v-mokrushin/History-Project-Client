@@ -1,20 +1,11 @@
-import { normolize } from "../utils/normolize";
+import { normolize } from "../../utils/normolize";
 
 import Barbarossa from "fragments/articles/Barbarossa";
 import KhalkhinGol from "fragments/articles/KhalkhinGol";
 import Rearmament from "fragments/articles/Rearmament";
+import { IArticle } from "./interfaces";
 
-interface IArticle {
-  title: string;
-  id?: string;
-  description?: string;
-  author?: string;
-  origin?: string;
-  backgroundURL: string;
-  text?: JSX.Element;
-}
-
-let articles_data: IArticle[] = [
+const articles_data: IArticle[] = [
   {
     title: "Бои на Халхин-Голе",
     description:
@@ -73,14 +64,14 @@ const articlePreviews = normolize(
     title: item.title,
     description: item.description,
     backgroundURL: item.backgroundURL,
-    author: item.author,
-    origin: item.origin,
   }))
 );
 
 const articlesContent = normolize(
   articles_data.map((item) => ({
     id: item.id,
+    author: item.author,
+    origin: item.origin,
     text: item.text,
   }))
 );
@@ -89,3 +80,5 @@ export const articles = {
   articlePreviews,
   articlesContent,
 };
+
+console.log(articles);

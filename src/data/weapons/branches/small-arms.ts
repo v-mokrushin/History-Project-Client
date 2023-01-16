@@ -3,9 +3,9 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { ChiefDesigners } from "../chief-designers";
-import { TWeapon } from "../interfaces/common-weapon-interfaces";
+import { ISmallArm } from "../interfaces/small-arms-interfaces";
 
-const ussr: TWeapon[] = [
+const ussr: ISmallArm[] = [
   {
     name: "Револьвер системы Нагана",
     type: WEAPONS_CLASSIFICATION.smallArms.revolver,
@@ -68,7 +68,7 @@ const ussr: TWeapon[] = [
   },
 ];
 
-const germany: TWeapon[] = [
+const germany: ISmallArm[] = [
   {
     name: "Mauser 98",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
@@ -120,7 +120,7 @@ const germany: TWeapon[] = [
   },
 ];
 
-const usa: TWeapon[] = [
+const usa: ISmallArm[] = [
   {
     name: "Browning M2",
     type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
@@ -131,7 +131,7 @@ const usa: TWeapon[] = [
   },
 ];
 
-const finland: TWeapon[] = [
+const finland: ISmallArm[] = [
   {
     name: "Suomi KP/-31",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
@@ -144,7 +144,7 @@ const finland: TWeapon[] = [
   },
 ];
 
-const japan: TWeapon[] = [];
+const japan: ISmallArm[] = [];
 
 appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.germany);

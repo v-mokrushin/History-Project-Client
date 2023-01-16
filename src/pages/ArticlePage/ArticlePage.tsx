@@ -23,6 +23,7 @@ import Text from "../../components/Text/Text";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
+import { Scroll } from "utils/scroll";
 
 export default function ArticlePage() {
   const dispatch = useDispatch<any>();
@@ -37,6 +38,10 @@ export default function ArticlePage() {
 
   if (!articlePreview)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
+
+  React.useEffect(() => {
+    Scroll.toTopInstantly();
+  }, []);
 
   React.useEffect(() => {
     articleId && dispatch(loadArticleContent(articleId));
@@ -65,20 +70,20 @@ export default function ArticlePage() {
       return (
         <div className={classNames(styles.innerWrapper, ANIMATIONS.fadeIn)}>
           <div className={styles.infoBox}>
-            {articlePreview.author && (
+            {articleContent.author && (
               <div className={styles.infoBox__string}>
                 <div className={styles.infoBox__titleBox}>
                   <Text bold>Авторы</Text>
                 </div>
-                <Text>{articlePreview.author}</Text>
+                <Text>{articleContent.author}</Text>
               </div>
             )}
-            {articlePreview.origin && (
+            {articleContent.origin && (
               <div className={styles.infoBox__string}>
                 <div className={styles.infoBox__titleBox}>
                   <Text bold>Источник</Text>
                 </div>
-                <Text>{articlePreview.origin}</Text>
+                <Text>{articleContent.origin}</Text>
               </div>
             )}
           </div>

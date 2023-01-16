@@ -6,10 +6,7 @@ import { selectArticlePreviewById } from "../../stores/redux/articlePreviews/sel
 import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
-import {
-  scrollTopInstantly,
-  scrollToTop,
-} from "../../utils/scroll";
+import { Scroll } from "utils/scroll";
 
 interface IArticleCardProps {
   articleId: string;
@@ -24,7 +21,6 @@ export default function ArticleCard({ articleId }: IArticleCardProps) {
     <NavLink
       to={`/articles/${articleId}`}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
-      onClick={() => scrollTopInstantly()}
     >
       <div
         className={styles.backgroundWrapper}

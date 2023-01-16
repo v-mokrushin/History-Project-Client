@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { articles } from "../../../data/articles";
+import { articles } from "../../../data/articles/articles";
 import { LOADING_STATUSES } from "../constants";
 
 const initialState = {
