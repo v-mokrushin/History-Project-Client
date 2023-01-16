@@ -82,6 +82,13 @@
 
 .variant {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @include media-breakpoint-down(xs) {
+    gap: 7px;
+  }
 
   &_selected {
     color: $primary-gold-text-color;

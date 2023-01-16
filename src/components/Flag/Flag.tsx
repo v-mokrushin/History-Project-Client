@@ -13,12 +13,14 @@ interface IFlagProps {
   nation: INation;
   isNavLink?: boolean;
   minimized?: boolean;
+  forFilter?: boolean;
 }
 
 export default function Flag({
   nation,
   isNavLink = true,
   minimized = false,
+  forFilter = false,
 }: IFlagProps) {
   function getContent() {
     return (
@@ -27,7 +29,7 @@ export default function Flag({
           className={classNames(styles.flag)}
           style={getBackgroundImageStyleObject(nation.flagImage)}
         ></div>
-        {!minimized && (
+        {(!minimized && !forFilter) && (
           <Paragraph className={classNames(styles.text)}>
             {nation.name.russian}
           </Paragraph>
@@ -45,7 +47,13 @@ export default function Flag({
       {getContent()}
     </NavLink>
   ) : (
-    <div className={classNames(styles.root, minimized && styles.minimized)}>
+    <div
+      className={classNames(
+        styles.root,
+        minimized && styles.minimized,
+        forFilter && styles.forFilter
+      )}
+    >
       {getContent()}
     </div>
   );

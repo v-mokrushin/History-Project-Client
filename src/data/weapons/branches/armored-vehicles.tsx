@@ -37,7 +37,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         platform: Platforms.armoredVehicles.KV1,
       },
@@ -49,7 +48,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
         platform: Platforms.armoredVehicles.KV1,
       },
@@ -60,9 +58,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -71,7 +67,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
         platform: Platforms.armoredVehicles.KV1,
       },
@@ -83,7 +78,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
         platform: Platforms.armoredVehicles.KV1S,
       },
@@ -106,7 +100,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
         platform: Platforms.armoredVehicles.IS1,
       },
@@ -339,7 +332,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -379,9 +371,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -389,9 +379,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1931,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -399,9 +387,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.smallTank,
     adoptedIntoServiceDate: 1936,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -432,7 +418,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         platform: Platforms.armoredVehicles.IS1,
       },
@@ -444,7 +429,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.undefined,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         platform: Platforms.armoredVehicles.KV1S,
       },
@@ -456,7 +440,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.T34,
       },
       crew: CREWS.size.five.perfect,
@@ -486,7 +469,6 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -496,9 +478,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -506,9 +486,7 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.tankette,
     adoptedIntoServiceDate: 1931,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
 ];
@@ -661,7 +639,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw6B,
       },
     },
@@ -682,9 +659,7 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -692,9 +667,7 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -714,7 +687,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
@@ -725,7 +697,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
@@ -736,7 +707,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
@@ -747,7 +717,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw3,
       },
     },
@@ -757,9 +726,7 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {
-        developer: Developers.undefined,
-      },
+      common: {},
     },
   },
   {
@@ -768,7 +735,6 @@ const germany: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
         platform: Platforms.armoredVehicles.PzKpfw4,
       },
     },
@@ -837,7 +803,7 @@ const usa: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
       },
     },
   },
@@ -847,7 +813,8 @@ const usa: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -857,7 +824,8 @@ const usa: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.undefined,
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        platform: Platforms.armoredVehicles.Sherman,
       },
     },
   },
@@ -942,7 +910,11 @@ const usa: IArmoredVehicle[] = [
     name: "M24 Chaffee",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1944,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Cadillac,
+      },
+    },
   },
   {
     name: "M5A1 Stuart",

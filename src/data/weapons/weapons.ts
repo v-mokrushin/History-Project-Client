@@ -1,15 +1,11 @@
-import { ChiefDesigners } from "./chief-designers";
+import { ChiefDesigners, IChiefDesigner } from "./chief-designers";
 import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
 import { type } from "os";
 import { Developers, IDeveloper } from "./developers";
 import { ICrew } from "./crews";
 import { IPage } from "constants/pages";
 import { shuffleArray } from "utils/common";
-import {
-  createGallery,
-  createModels,
-  defineIdProperty,
-} from "utils/weapons";
+import { createGallery, createModels, defineIdProperty } from "utils/weapons";
 import { INation, NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
@@ -21,6 +17,7 @@ import { IBodyArmoring } from "./parts/bodies";
 import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
+import { ISelectionVariantWithFlag } from "components/Filter/Filter";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -146,13 +143,38 @@ export const WEAPONS = {
     let developers: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications.common.developer) return false;
-        return weapon.specifications.common.developer != Developers.undefined;
+        return weapon.specifications.common.developer;
       })
       .map((weapon) => weapon.specifications.common.developer!.name.original);
 
     developers = Array.from(new Set(developers));
     developers.sort().unshift("Все");
     return developers;
+  },
+
+  getDevelopersWithFlags(
+    selectedWeapons: TWeapon[]
+  ): ISelectionVariantWithFlag[] {
+    let developers: IDeveloper[] = selectedWeapons
+      .filter((weapon) => {
+        return weapon.specifications.common.developer;
+      })
+      .map((item) => item.specifications.common.developer!);
+    developers = Array.from(new Set(developers));
+
+    let variants: ISelectionVariantWithFlag[] = developers.map((item) => ({
+      title: item.name.original,
+      nation: item.nation,
+    }));
+
+    variants.sort((a, b) => {
+      if (a.title > b.title) return 1;
+      if (a.title < b.title) return -1;
+      return 0;
+    });
+    variants.unshift({ title: "Все", nation: NATIONS.world });
+
+    return variants;
   },
 
   getNations(selectedWeapons: TWeapon[]): string[] {
@@ -163,6 +185,29 @@ export const WEAPONS = {
     nations = Array.from(new Set(nations));
     nations.sort().unshift("Весь мир");
     return nations;
+  },
+
+  getNationsWithFlags(selectedWeapons: TWeapon[]): ISelectionVariantWithFlag[] {
+    let nations: INation[] = selectedWeapons
+      .filter((weapon) => {
+        return weapon.nation;
+      })
+      .map((item) => item.nation!);
+    nations = Array.from(new Set(nations));
+
+    let variants: ISelectionVariantWithFlag[] = nations.map((item) => ({
+      title: item.name.russian,
+      nation: item,
+    }));
+
+    variants.sort((a, b) => {
+      if (a.title > b.title) return 1;
+      if (a.title < b.title) return -1;
+      return 0;
+    });
+    variants.unshift({ title: "Весь мир", nation: NATIONS.world });
+
+    return variants;
   },
 
   getChiefDesigners(selectedWeapons: TWeapon[]): string[] {
@@ -177,6 +222,31 @@ export const WEAPONS = {
     designers = Array.from(new Set(designers));
     designers.sort().unshift("Все");
     return designers;
+  },
+
+  getChiefDesignersWithFlags(
+    selectedWeapons: TWeapon[]
+  ): ISelectionVariantWithFlag[] {
+    let designers: IChiefDesigner[] = selectedWeapons
+      .filter((weapon) => {
+        return weapon.specifications.common.chiefDesigner;
+      })
+      .map((item) => item.specifications.common.chiefDesigner!);
+    designers = Array.from(new Set(designers));
+
+    let variants: ISelectionVariantWithFlag[] = designers.map((item) => ({
+      title: item.name.russian,
+      nation: item.nation,
+    }));
+
+    variants.sort((a, b) => {
+      if (a.title > b.title) return 1;
+      if (a.title < b.title) return -1;
+      return 0;
+    });
+    variants.unshift({ title: "Все", nation: NATIONS.world });
+
+    return variants;
   },
 
   getPlatforms(selectedWeapons: TWeapon[]): string[] {

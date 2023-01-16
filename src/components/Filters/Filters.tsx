@@ -14,12 +14,16 @@ interface IFiltersProps {
 }
 
 const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
+  console.log(WEAPONS.getChiefDesignersWithFlags(selectedWeapons));
+
   return (
     <div className={classNames(styles.root, className)}>
       <Input callback={filtersStore.setNameFilter.bind(filtersStore)} />
       <Filter
         title="Нация"
-        selectionVariants={WEAPONS.getNations(selectedWeapons)}
+        selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(
+          selectedWeapons
+        )}
         setterCallback={filtersStore.setNation.bind(filtersStore)}
         getter={filtersStore.nation}
       />
@@ -33,13 +37,17 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
       />
       <Filter
         title="Разработчик"
-        selectionVariants={WEAPONS.getDevelopers(selectedWeapons)}
+        selectionVariantsWithFlags={WEAPONS.getDevelopersWithFlags(
+          selectedWeapons
+        )}
         setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.developerName}
       />
       <Filter
         title="Глав. конструктор"
-        selectionVariants={WEAPONS.getChiefDesigners(selectedWeapons)}
+        selectionVariantsWithFlags={WEAPONS.getChiefDesignersWithFlags(
+          selectedWeapons
+        )}
         setterCallback={filtersStore.setChiefDesigner.bind(filtersStore)}
         getter={filtersStore.chiefDesigner}
       />
