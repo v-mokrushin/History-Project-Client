@@ -36,7 +36,7 @@ const Filter = observer(
     if (selectionVariantsWithFlags)
       if (selectionVariantsWithFlags.length <= 2) return <></>;
 
-    document.onclick = React.useCallback((event: any) => {
+    function onClick(event: any) {
       if (
         !event.target.closest(
           `#filter-${title.replace(" ", "").replace(".", "")}`
@@ -44,6 +44,14 @@ const Filter = observer(
       ) {
         setOpen(false);
       }
+    }
+
+    React.useEffect(() => {
+      document.addEventListener("click", onClick);
+
+      return () => {
+        document.removeEventListener("click", onClick);
+      };
     }, []);
 
     return (

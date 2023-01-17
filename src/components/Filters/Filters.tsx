@@ -14,8 +14,7 @@ interface IFiltersProps {
 }
 
 const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
-  console.log(WEAPONS.getChiefDesignersWithFlags(selectedWeapons));
-
+  console.log(WEAPONS.getProducersWithFlags(selectedWeapons));
   return (
     <div className={classNames(styles.root, className)}>
       <Input callback={filtersStore.setNameFilter.bind(filtersStore)} />
@@ -42,6 +41,14 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
         )}
         setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.developerName}
+      />
+      <Filter
+        title="Производитель"
+        selectionVariantsWithFlags={WEAPONS.getProducersWithFlags(
+          selectedWeapons
+        )}
+        setterCallback={filtersStore.setProducer.bind(filtersStore)}
+        getter={filtersStore.producer}
       />
       <Filter
         title="Глав. конструктор"

@@ -8,6 +8,7 @@ import {
   TWeapon,
   TWeaponSpecification,
 } from "data/weapons/interfaces/common-weapon-interfaces";
+import { getProducersText } from "./weapons";
 
 export const SpecificationsLayout = {
   getCommon(
@@ -30,7 +31,7 @@ export const SpecificationsLayout = {
         />
         <SpecLine
           crit="Производитель"
-          val={specifications.common.manufacturer}
+          val={getProducersText(specifications.common.producer)}
         />
         <SpecLine
           crit="Год разработки"

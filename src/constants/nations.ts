@@ -24,7 +24,7 @@ function Nation(
 }
 
 export const NATIONS = {
-  world: Nation(
+  World: Nation(
     "Весь мир",
     "мира",
     "All world",
@@ -38,7 +38,7 @@ export const NATIONS = {
     "soviet-union",
     "/images/flags/flag-ussr.webp"
   ),
-  germany: Nation(
+  Germany: Nation(
     "Германия",
     "Германии",
     "germany",
@@ -46,6 +46,7 @@ export const NATIONS = {
     "/images/flags/flag-germany.svg"
   ),
   USA: Nation("США", "США", "USA", "usa", "/images/flags/flag-us.svg"),
+  Canada: Nation("Канада", "Канады", "Canada", "canada", "/images/flags/flag-canada.svg"),
   greatBritain: Nation(
     "Британия",
     "Британии",
@@ -53,42 +54,42 @@ export const NATIONS = {
     "great-britain",
     "/images/flags/flag-uk.svg"
   ),
-  france: Nation(
+  France: Nation(
     "Франция",
     "Франции",
     "France",
     "france",
     "/images/flags/flag-france.webp"
   ),
-  italy: Nation(
+  Italy: Nation(
     "Италия",
     "Италии",
     "Italy",
     "italy",
     "/images/flags/flag-italy.svg"
   ),
-  czechoslovakia: Nation(
+  Czechoslovakia: Nation(
     "Чехословакия",
     "Чехословакии",
     "Czechoslovakia",
     "czechoslovakia",
     "/images/flags/flag-czechoslovakia.svg"
   ),
-  japan: Nation(
+  Japan: Nation(
     "Япония",
     "Японии",
     "Japan",
     "japan",
     "/images/flags/flag-japan.svg"
   ),
-  finland: Nation(
+  Finland: Nation(
     "Финляндия",
     "Финляндии",
     "Finland",
     "finland",
     "/images/flags/flag-finland.png"
   ),
-  sweden: Nation(
+  Sweden: Nation(
     "Швеция",
     "Швеции",
     "Sweden",
@@ -152,7 +153,7 @@ export const NATIONS_METHODS = {
   },
   identity: {
     isWorld(nation: INation | undefined) {
-      return nation == NATIONS.world;
+      return nation == NATIONS.World;
     },
   },
 };

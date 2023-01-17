@@ -3,6 +3,7 @@ import { IWaponBranch, IWeaponType } from "constants/weapon-types";
 import { IChiefDesigner } from "../chief-designers";
 import { IDeveloper } from "../developers";
 import { IPlatform } from "../platforms";
+import { IProducer } from "../producers";
 import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,
@@ -34,7 +35,7 @@ export type TWeaponSpecification =
 export interface IWaponCommonSpec {
   developer?: IDeveloper;
   developmentYear?: number;
-  manufacturer?: string;
+  producer?: IProducer[];
   chiefDesigner?: IChiefDesigner;
   platform?: IPlatform;
   productionPeriod?: string;

@@ -14,6 +14,7 @@ import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,
 } from "../interfaces/armored-interfaces";
+import { Producers } from "../producers";
 
 const ussr: IArmoredVehicle[] = [
   {
@@ -38,7 +39,12 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Leningrad185, // ???
         platform: Platforms.armoredVehicles.KV1,
+        producer: [
+          Producers.armoredVehicles.Leningrad185,
+          Producers.armoredVehicles.Chelyabinsk100,
+        ],
       },
     },
   },
@@ -50,6 +56,10 @@ const ussr: IArmoredVehicle[] = [
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
         platform: Platforms.armoredVehicles.KV1,
+        producer: [
+          Producers.armoredVehicles.Leningrad185,
+          Producers.armoredVehicles.Chelyabinsk100,
+        ],
       },
     },
   },
@@ -58,7 +68,10 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
-      common: {},
+      common: {
+        developer: Developers.armoredVehicles.Leningrad185,
+        producer: [Producers.armoredVehicles.Leningrad185],
+      },
     },
   },
   {
@@ -158,7 +171,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Chelyabinsk100,
         platform: Platforms.armoredVehicles.IS1,
-        manufacturer: "ЧКЗ",
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         productionPeriod: "1943 - 1945",
         exploitationYears: "1943 - 1945",
@@ -217,6 +230,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.KB3,
+        producer: [Producers.armoredVehicles.Leningrad185],
       },
     },
   },
@@ -227,7 +241,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
-        developer: Developers.armoredVehicles.Kharkov183, // ???
+        developer: Developers.armoredVehicles.Kharkov183,
         platform: Platforms.armoredVehicles.T34,
       },
     },
@@ -240,6 +254,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Ural183, // ???
         platform: Platforms.armoredVehicles.T34,
+        producer: [Producers.armoredVehicles.Kharkov183], // ???
       },
     },
   },
@@ -343,6 +358,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
+        producer: [Producers.armoredVehicles.Kharkov183],
       },
     },
   },
@@ -353,6 +369,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
+        producer: [Producers.armoredVehicles.Kharkov183],
       },
     },
   },
@@ -363,6 +380,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
+        producer: [Producers.armoredVehicles.Kharkov183],
       },
     },
   },
@@ -399,6 +417,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Chelyabinsk100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         platform: Platforms.armoredVehicles.IS1,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
       },
     },
   },
@@ -409,6 +428,12 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Ural183,
+        platform: Platforms.armoredVehicles.T34,
+        producer: [
+          Producers.armoredVehicles.Ural183,
+          Producers.armoredVehicles.Omsk174,
+        ],
+        numberOfIssued: 4661,
       },
     },
   },
@@ -419,6 +444,8 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
         platform: Platforms.armoredVehicles.IS1,
       },
     },
@@ -441,6 +468,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.T34,
+        producer: [Producers.armoredVehicles.Ural183],
       },
       crew: CREWS.size.five.perfect,
       mobility: {
@@ -501,6 +529,7 @@ const germany: IArmoredVehicle[] = [
         chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
         developer: Developers.armoredVehicles.Henschel,
         platform: Platforms.armoredVehicles.PzKpfw6B,
+        producer: [Producers.armoredVehicles.Henschel],
       },
     },
   },
@@ -534,6 +563,7 @@ const germany: IArmoredVehicle[] = [
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
         developer: Developers.armoredVehicles.Henschel,
+        producer: [Producers.armoredVehicles.Henschel],
       },
       crew: CREWS.size.five.perfect,
       weapon: {
@@ -552,6 +582,12 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.MAN,
+        producer: [
+          Producers.armoredVehicles.MAN,
+          Producers.armoredVehicles.DaimlerBenz,
+          Producers.armoredVehicles.Henschel,
+          Producers.armoredVehicles.MNH,
+        ],
         chiefDesigner: ChiefDesigners.armoredVehicles.Wibke,
         platform: Platforms.armoredVehicles.PzKpfw5,
       },
@@ -904,7 +940,16 @@ const usa: IArmoredVehicle[] = [
     name: "M3 Lee",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.AberdeenPG,
+        producer: [
+          Producers.armoredVehicles.Chrysler,
+          Producers.armoredVehicles.ALCO,
+          Producers.armoredVehicles.BLW,
+        ],
+      },
+    },
   },
   {
     name: "M24 Chaffee",
@@ -913,6 +958,10 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Cadillac,
+        producer: [
+          Producers.armoredVehicles.Cadillac,
+          Producers.armoredVehicles.MasseyHarris,
+        ],
       },
     },
   },
@@ -943,6 +992,12 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.GMC,
+        producer: [
+          Producers.armoredVehicles.Fisher,
+          Producers.armoredVehicles.MasseyHarris,
+          Producers.armoredVehicles.ALCO,
+          Producers.armoredVehicles.MontrealLW,
+        ],
       },
     },
   },
@@ -953,6 +1008,7 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.GMC,
+        producer: [Producers.armoredVehicles.Buick],
       },
     },
   },
@@ -963,6 +1019,10 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.GMC,
+        producer: [
+          Producers.armoredVehicles.Fisher,
+          Producers.armoredVehicles.Ford,
+        ],
       },
     },
   },
@@ -1109,14 +1169,14 @@ const japan: IArmoredVehicle[] = [
 ];
 
 appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.germany);
+appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
 appendNation(britain, NATIONS.greatBritain);
-appendNation(france, NATIONS.france);
-appendNation(italy, NATIONS.italy);
-appendNation(czechoslovakia, NATIONS.czechoslovakia);
-appendNation(finland, NATIONS.finland);
-appendNation(japan, NATIONS.japan);
+appendNation(france, NATIONS.France);
+appendNation(italy, NATIONS.Italy);
+appendNation(czechoslovakia, NATIONS.Czechoslovakia);
+appendNation(finland, NATIONS.Finland);
+appendNation(japan, NATIONS.Japan);
 
 export const ARMORED_VEHICLES = [
   ...ussr,

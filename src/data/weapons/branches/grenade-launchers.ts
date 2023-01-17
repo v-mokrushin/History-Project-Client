@@ -84,9 +84,9 @@ const britain: TWeapon[] = [
 ];
 
 appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.germany);
+appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
-appendNation(japan, NATIONS.japan);
+appendNation(japan, NATIONS.Japan);
 appendNation(britain, NATIONS.greatBritain);
 
 export const GRENADE_LAUNCHERS_DATA = [

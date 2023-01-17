@@ -5,7 +5,12 @@ import { Developers, IDeveloper } from "./developers";
 import { ICrew } from "./crews";
 import { IPage } from "constants/pages";
 import { shuffleArray } from "utils/common";
-import { createGallery, createModels, defineIdProperty } from "utils/weapons";
+import {
+  createGallery,
+  createModels,
+  defineIdProperty,
+  sortByTitle,
+} from "utils/weapons";
 import { INation, NATIONS } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
@@ -18,6 +23,7 @@ import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Filter/Filter";
+import { IProducer } from "./producers";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -50,7 +56,7 @@ export const WEAPONS = {
       .filter((item) => item.branch?.path === weaponBranchPath)
       .filter(
         (item) =>
-          nationPath === NATIONS.world.path || item.nation!.path === nationPath
+          nationPath === NATIONS.World.path || item.nation!.path === nationPath
       );
   },
 
@@ -96,13 +102,20 @@ export const WEAPONS = {
             filters.platform
         );
 
+      if (filters.producer)
+        weapons = weapons.filter((weapon) =>
+          weapon.specifications?.common?.producer?.find(
+            (item) => item.name.original === filters.producer
+          )
+        );
+
       return weapons;
     }
   },
 
   selectNation(weaponsBranchPath: string | undefined) {
     return [
-      NATIONS.world,
+      NATIONS.World,
       ...Array.from(
         new Set(
           weapons_data
@@ -167,12 +180,8 @@ export const WEAPONS = {
       nation: item.nation,
     }));
 
-    variants.sort((a, b) => {
-      if (a.title > b.title) return 1;
-      if (a.title < b.title) return -1;
-      return 0;
-    });
-    variants.unshift({ title: "Все", nation: NATIONS.world });
+    sortByTitle(variants);
+    variants.unshift({ title: "Все", nation: NATIONS.World });
 
     return variants;
   },
@@ -200,12 +209,8 @@ export const WEAPONS = {
       nation: item,
     }));
 
-    variants.sort((a, b) => {
-      if (a.title > b.title) return 1;
-      if (a.title < b.title) return -1;
-      return 0;
-    });
-    variants.unshift({ title: "Весь мир", nation: NATIONS.world });
+    sortByTitle(variants);
+    variants.unshift({ title: "Весь мир", nation: NATIONS.World });
 
     return variants;
   },
@@ -239,12 +244,8 @@ export const WEAPONS = {
       nation: item.nation,
     }));
 
-    variants.sort((a, b) => {
-      if (a.title > b.title) return 1;
-      if (a.title < b.title) return -1;
-      return 0;
-    });
-    variants.unshift({ title: "Все", nation: NATIONS.world });
+    sortByTitle(variants);
+    variants.unshift({ title: "Все", nation: NATIONS.World });
 
     return variants;
   },
@@ -261,6 +262,29 @@ export const WEAPONS = {
     platforms = Array.from(new Set(platforms));
     platforms.sort().unshift("Все");
     return platforms;
+  },
+
+  getProducersWithFlags(
+    selectedWeapons: TWeapon[]
+  ): ISelectionVariantWithFlag[] {
+    let producers: IProducer[] = selectedWeapons
+      .filter((weapon) => {
+        return weapon.specifications.common.producer;
+      })
+      .map((item) => item.specifications.common.producer!)
+      .flat();
+
+    producers = Array.from(new Set(producers));
+
+    let variants: ISelectionVariantWithFlag[] = producers.map((item) => ({
+      title: item.name.original,
+      nation: item.nation,
+    }));
+
+    sortByTitle(variants);
+    variants.unshift({ title: "Все", nation: NATIONS.World });
+
+    return variants;
   },
 };
 

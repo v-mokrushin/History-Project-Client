@@ -9,7 +9,7 @@
   transition: transform 300ms ease;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   box-shadow: 0px 0px 15px 0px rgba(36, 39, 42, 0.3);
   overflow: hidden;
 
@@ -59,23 +59,22 @@
 
 .backgroundWrapper {
   position: absolute;
-  // left: 0;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   transition: transform 300ms ease;
   z-index: 0;
 }
 
 .contentWrapper {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   gap: 2px;
   position: relative;
   padding: 10px;

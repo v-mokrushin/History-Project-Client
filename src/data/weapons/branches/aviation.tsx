@@ -482,20 +482,20 @@ const hungary: IAircraft[] = [
 ];
 
 appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.germany);
+appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
 appendNation(britain, NATIONS.greatBritain);
-appendNation(france, NATIONS.france);
-appendNation(finland, NATIONS.finland);
+appendNation(france, NATIONS.France);
+appendNation(finland, NATIONS.Finland);
 appendNation(poland, NATIONS.poland);
-appendNation(sweden, NATIONS.sweden);
+appendNation(sweden, NATIONS.Sweden);
 appendNation(romania, NATIONS.romania);
-appendNation(japan, NATIONS.japan);
+appendNation(japan, NATIONS.Japan);
 appendNation(lithuania, NATIONS.lithuania);
 appendNation(netherlands, NATIONS.netherlands);
 appendNation(yugoslavia, NATIONS.yugoslavia);
 appendNation(hungary, NATIONS.hungary);
-appendNation(italy, NATIONS.italy);
+appendNation(italy, NATIONS.Italy);
 
 export const AVIATION_DATA = [
   ...ussr,

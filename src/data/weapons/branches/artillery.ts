@@ -181,9 +181,9 @@ const sweden: TWeapon[] = [
 ];
 
 appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.germany);
+appendNation(germany, NATIONS.Germany);
 appendNation(britain, NATIONS.greatBritain);
-appendNation(sweden, NATIONS.sweden);
+appendNation(sweden, NATIONS.Sweden);
 
 export const ARTILLERY_DATA = [...ussr, ...germany, ...britain, ...sweden];
 appendWeaponBranch(ARTILLERY_DATA, WEAPONS_CLASSIFICATION.artillery);

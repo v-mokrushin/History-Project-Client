@@ -7,6 +7,7 @@ export type TFilters = {
   developer?: string;
   chiefDesigner?: string;
   platform?: string;
+  producer?: string;
 };
 
 export class FiltersStore {
@@ -70,6 +71,15 @@ export class FiltersStore {
     }
   }
 
+  setProducer(producer: string): void {
+    if (producer == "Все") {
+      delete this.filters.producer;
+      this.filters = { ...this.filters };
+    } else {
+      this.filters = { ...this.filters, producer };
+    }
+  }
+
   setNameFilter(name: string): void {
     this.filters = { ...this.filters, name };
   }
@@ -96,6 +106,10 @@ export class FiltersStore {
 
   get platform(): string | undefined {
     return this.filters.platform;
+  }
+
+  get producer(): string | undefined {
+    return this.filters.producer;
   }
 
   isEmpty(): boolean {

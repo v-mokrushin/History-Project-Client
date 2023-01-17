@@ -147,10 +147,10 @@ const finland: ISmallArm[] = [
 const japan: ISmallArm[] = [];
 
 appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.germany);
+appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
-appendNation(finland, NATIONS.finland);
-appendNation(japan, NATIONS.japan);
+appendNation(finland, NATIONS.Finland);
+appendNation(japan, NATIONS.Japan);
 
 export const SMALL_ARMS_DATA = [
   ...ussr,
