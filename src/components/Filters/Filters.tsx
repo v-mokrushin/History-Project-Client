@@ -7,6 +7,7 @@ import filtersStore from "stores/mobx/filtersStore";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { WEAPONS } from "data/weapons/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import Button from "components/Button/Button";
 
 interface IFiltersProps {
   selectedWeapons: TWeapon[];
@@ -64,6 +65,7 @@ const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
         setterCallback={filtersStore.setPlatform.bind(filtersStore)}
         getter={filtersStore.platform}
       />
+      <Button callback={filtersStore.cancelFilters.bind(filtersStore)} />
     </div>
   );
 };

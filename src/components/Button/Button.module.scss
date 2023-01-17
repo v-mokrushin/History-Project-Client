@@ -1,0 +1,41 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  min-width: 200px;
+  padding: 0 30px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 45px;
+  transition: transform 150ms ease, border-color 200ms ease;
+
+  @include media-breakpoint-down(xl) {
+    min-width: 240px;
+    height: 35px;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-width: 180px;
+    height: 35px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    border: none;
+    background-color: black;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:hover {
+    border-color: gray;
+  }
+}
+
+.text {
+  @include media-breakpoint-down(sm) {
+    color: white;
+  }
+}

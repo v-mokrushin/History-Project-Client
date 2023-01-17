@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 10px;
+  user-select: none;
 
   @include media-breakpoint-down(xs) {
     flex-direction: column;
