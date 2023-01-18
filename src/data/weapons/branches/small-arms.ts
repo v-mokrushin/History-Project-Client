@@ -17,6 +17,16 @@ const ussr: ISmallArm[] = [
     },
   },
   {
+    name: "Винтовка Мосина",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1892,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Mosin,
+      },
+    },
+  },
+  {
     name: "ППС-43",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1943,

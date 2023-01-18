@@ -182,7 +182,7 @@ const sweden: TWeapon[] = [
 
 appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.Germany);
-appendNation(britain, NATIONS.greatBritain);
+appendNation(britain, NATIONS.GreatBritain);
 appendNation(sweden, NATIONS.Sweden);
 
 export const ARTILLERY_DATA = [...ussr, ...germany, ...britain, ...sweden];

@@ -15,14 +15,8 @@ export default function Paragraph({
   children,
 }: IParagraphProps) {
   return (
-    <p
-      className={classNames(
-        styles.root,
-        className,
-        noMargin && styles.root_noMargin
-      )}
-    >
-      <Text>{children}</Text>
+    <p className={classNames(styles.root, noMargin && styles.root_noMargin)}>
+      <Text className={className}>{children}</Text>
     </p>
   );
 }

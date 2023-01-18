@@ -520,7 +520,7 @@ const hungary: IAircraft[] = [
 appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
-appendNation(britain, NATIONS.greatBritain);
+appendNation(britain, NATIONS.GreatBritain);
 appendNation(france, NATIONS.France);
 appendNation(finland, NATIONS.Finland);
 appendNation(poland, NATIONS.poland);
@@ -528,7 +528,7 @@ appendNation(sweden, NATIONS.Sweden);
 appendNation(romania, NATIONS.romania);
 appendNation(japan, NATIONS.Japan);
 appendNation(lithuania, NATIONS.lithuania);
-appendNation(netherlands, NATIONS.netherlands);
+appendNation(netherlands, NATIONS.Netherlands);
 appendNation(yugoslavia, NATIONS.yugoslavia);
 appendNation(hungary, NATIONS.hungary);
 appendNation(italy, NATIONS.Italy);

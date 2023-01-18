@@ -8,6 +8,7 @@ import Paragraph from "../Paragraph/Paragraph";
 import { IPage } from "constants/pages";
 import { INation } from "constants/nations";
 import { Scroll } from "utils/scroll";
+import Text from "components/Text/Text";
 
 interface IFlagProps {
   nation: INation;
@@ -29,10 +30,8 @@ export default function Flag({
           className={classNames(styles.flag)}
           style={getBackgroundImageStyleObject(nation.flagImage)}
         ></div>
-        {(!minimized && !forFilter) && (
-          <Paragraph className={classNames(styles.text)}>
-            {nation.name.russian}
-          </Paragraph>
+        {!minimized && !forFilter && (
+          <Text className={classNames(styles.text)}>{nation.name.russian}</Text>
         )}
       </>
     );

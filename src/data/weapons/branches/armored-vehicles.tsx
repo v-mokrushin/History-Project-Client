@@ -1225,7 +1225,7 @@ const japan: IArmoredVehicle[] = [
 appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
-appendNation(britain, NATIONS.greatBritain);
+appendNation(britain, NATIONS.GreatBritain);
 appendNation(france, NATIONS.France);
 appendNation(italy, NATIONS.Italy);
 appendNation(czechoslovakia, NATIONS.Czechoslovakia);

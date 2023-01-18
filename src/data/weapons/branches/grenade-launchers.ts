@@ -87,7 +87,7 @@ appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
 appendNation(japan, NATIONS.Japan);
-appendNation(britain, NATIONS.greatBritain);
+appendNation(britain, NATIONS.GreatBritain);
 
 export const GRENADE_LAUNCHERS_DATA = [
   ...ussr,

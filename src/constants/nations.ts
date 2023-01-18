@@ -38,6 +38,13 @@ export const NATIONS = {
     "soviet-union",
     "/images/flags/flag-ussr.webp"
   ),
+  RussainEmpire: Nation(
+    "Российская империя",
+    "Российской империи",
+    "Russain empire",
+    "russain-empire",
+    "/images/flags/flag-russian-empire.svg"
+  ),
   Germany: Nation(
     "Германия",
     "Германии",
@@ -45,9 +52,22 @@ export const NATIONS = {
     "germany",
     "/images/flags/flag-germany.svg"
   ),
-  USA: Nation("США", "США", "USA", "usa", "/images/flags/flag-us.svg"),
-  Canada: Nation("Канада", "Канады", "Canada", "canada", "/images/flags/flag-canada.svg"),
-  greatBritain: Nation(
+  GermanEmpire: Nation(
+    "Германcкая империя",
+    "Германcкой империи",
+    "german empire",
+    "german-empire",
+    "/images/flags/flag-german-empire.svg"
+  ),
+  USA: Nation("США", "США", "USA", "usa", "/images/flags/flag-usa.svg"),
+  Canada: Nation(
+    "Канада",
+    "Канады",
+    "Canada",
+    "canada",
+    "/images/flags/flag-canada.svg"
+  ),
+  GreatBritain: Nation(
     "Британия",
     "Британии",
     "Great Britain",
@@ -103,12 +123,19 @@ export const NATIONS = {
     "lithuania",
     "/images/flags/flag-lithuania.svg"
   ),
-  netherlands: Nation(
+  Netherlands: Nation(
     "Нидерланды",
     "Нидерландов",
     "Netherlands",
     "netherlands",
     "/images/flags/flag-netherlands.svg"
+  ),
+  Belgium: Nation(
+    "Бельгия",
+    "Бельгии",
+    "Belgium",
+    "belgium",
+    "/images/flags/flag-belgium.svg"
   ),
   romania: Nation(
     "Румыния",

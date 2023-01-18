@@ -49,7 +49,7 @@ export const Developers = {
     AberdeenPG: Developer("Aberdeen Proving Ground", NATIONS.USA),
     Nuffield: Developer(
       "Nuffield Mechanizations and Aero",
-      NATIONS.greatBritain
+      NATIONS.GreatBritain
     ),
   },
   aviation: {
@@ -65,8 +65,8 @@ export const Developers = {
     NorthAmerican: Developer("North American", NATIONS.USA),
     Douglas: Developer("Douglas Aircraft", NATIONS.USA),
     Boeing: Developer("Boeing", NATIONS.USA),
-    Gloster: Developer("Gloster Aircraft Company", NATIONS.greatBritain),
-    Avro: Developer("Avro Aircraft", NATIONS.greatBritain),
+    Gloster: Developer("Gloster Aircraft Company", NATIONS.GreatBritain),
+    Avro: Developer("Avro Aircraft", NATIONS.GreatBritain),
     MoraneSaulnier: Developer("Morane-Saulnier", NATIONS.France),
     Mitsubishi: Developer("Mitsubishi", NATIONS.Japan),
     Macchi: Developer("Aeronautica Macchi", NATIONS.Italy),
@@ -75,7 +75,7 @@ export const Developers = {
     VL: Developer("Valtion lentokonetehdas", NATIONS.Finland),
     IAR: Developer("IAR", NATIONS.romania),
     ANBO: Developer("ANBO", NATIONS.lithuania),
-    Fokker: Developer("Fokker", NATIONS.netherlands),
+    Fokker: Developer("Fokker", NATIONS.Netherlands),
     Ikarus: Developer("Ikarus", NATIONS.yugoslavia),
     Weiss: Developer("Weiss", NATIONS.hungary),
   },
