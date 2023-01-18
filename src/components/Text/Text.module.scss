@@ -5,16 +5,17 @@
   font-weight: 400;
   font-size: 20px;
   color: $primary-dark-text-color;
-  line-height: 32px;
+  line-height: 35px;
   margin: 0;
 
   @include media-breakpoint-down(FHD) {
-    font-size: 19px;
+    line-height: 30px;
+    font-size: 18px;
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 17px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
   }
 
   @include media-breakpoint-down(xs) {

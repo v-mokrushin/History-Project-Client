@@ -17,21 +17,22 @@
 }
 
 %text {
-  line-height: 26px;
+  line-height: 23px;
+  font-size: 18px;
 
   @include media-breakpoint-down(FHD) {
-    line-height: 23px;
-    font-size: 17px;
+    line-height: 21px;
+    font-size: 16px;
   }
 
   @include media-breakpoint-down(xl) {
-    line-height: 22px;
-    font-size: 15px;
+    line-height: 19px;
+    font-size: 14px;
   }
 
   @include media-breakpoint-down(xs) {
     flex-grow: 1;
-    line-height: 22px;
+    line-height: 16px;
   }
 }
 

@@ -5,16 +5,16 @@
   flex-direction: column;
   position: sticky;
   top: 50px;
-  max-height: 90vh;
-  overflow-x: hidden;
+  max-height: 87vh;
+  // overflow-x: hidden;
   overflow-y: auto;
 
-  @include media-breakpoint-down(FHD) {
+  @include media-breakpoint-down(xl) {
     display: none;
   }
 
   &::-webkit-scrollbar {
-    width: 0;
+    width: 0px;
     height: 0;
   }
 }

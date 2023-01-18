@@ -1,28 +1,17 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  color: $primary-dark-text-color;
-  font-stretch: 100%;
-  line-height: 35px;
   margin-bottom: 25px;
 
   @include media-breakpoint-down(FHD) {
-    font-size: 19px;
     margin-bottom: 22px;
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 17px;
-    line-height: 30px;
     margin-bottom: 17px;
   }
 
   @include media-breakpoint-down(xs) {
-    font-size: 15px;
-    line-height: 26px;
     margin-bottom: 15px;
   }
 

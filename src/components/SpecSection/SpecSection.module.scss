@@ -3,13 +3,18 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 35px;
-  width: 400px;
+  gap: 12px;
+  margin-bottom: 25px;
+  min-width: 400px;
+  max-width: 430px;
+  // background-color: rgb(239, 240, 247);
+  // padding: 25px 15px;
+  // border-radius: 5px;
 
   @include media-breakpoint-down(FHD) {
+    min-width: auto;
     width: 325px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   @include media-breakpoint-down(xl) {
@@ -34,7 +39,7 @@
     width: auto;
     gap: 5px;
     width: 100%;
-    background-color: rgb(240, 246, 246);
+    background-color: rgb(239, 240, 247);
     padding: 10px 10px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -48,7 +53,7 @@
 .infoBox {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 
   @include media-breakpoint-down(xl) {
     gap: 10px;
@@ -62,29 +67,29 @@
 .title {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  font-size: 27px;
+  font-size: 25px;
   letter-spacing: 0.75px;
   color: $primary-dark-text-color;
   margin: 0 auto;
 
   @include media-breakpoint-down(FHD) {
     letter-spacing: normal;
-    font-size: 24px;
+    font-size: 22px;
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   @include media-breakpoint-down(lg) {
   }
 
   @include media-breakpoint-down(sm) {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   @include media-breakpoint-down(xs) {
-    font-size: 18px;
+    font-size: 17px;
     margin: 0 auto;
   }
 }

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Text from "components/Text/Text";
 import React from "react";
 import styles from "./Paragraph.module.scss";
 
@@ -21,7 +22,7 @@ export default function Paragraph({
         noMargin && styles.root_noMargin
       )}
     >
-      {children}
+      <Text>{children}</Text>
     </p>
   );
 }

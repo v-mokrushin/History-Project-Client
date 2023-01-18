@@ -13,12 +13,12 @@
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 26px;
-    margin-bottom: 19px;
+    font-size: 23px;
+    margin-bottom: 17px;
   }
 
   @include media-breakpoint-down(lg) {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   @include media-breakpoint-down(sm) {

@@ -4,6 +4,10 @@
   display: none;
 
   @include media-breakpoint-down(FHD) {
+    // display: block;
+  }
+
+  @include media-breakpoint-down(xl) {
     display: block;
   }
 }

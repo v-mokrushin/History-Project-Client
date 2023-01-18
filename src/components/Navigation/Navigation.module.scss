@@ -5,6 +5,10 @@
   align-items: center;
   gap: 25px;
 
+  @include media-breakpoint-down(FHD) {
+    gap: 22px;
+  }
+
   @include media-breakpoint-down(xl) {
     gap: 18px;
   }
@@ -45,6 +49,10 @@
   position: relative;
   height: max-content;
   white-space: normal;
+
+  @include media-breakpoint-down(FHD) {
+    font-size: 18px;
+  }
 
   @include media-breakpoint-down(xl) {
     font-size: 15px;
@@ -123,7 +131,7 @@
 
     @include media-breakpoint-down(xl) {
       padding: 10px 12px 13px;
-      gap: 6px
+      gap: 6px;
     }
 
     @include media-breakpoint-down(xs) {

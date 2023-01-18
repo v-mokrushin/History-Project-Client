@@ -21,14 +21,18 @@
 .innerWrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
+
+  @include media-breakpoint-down(xl) {
+    gap: 25px;
+  }
 
   @include media-breakpoint-down(md) {
-    gap: 30px;
+    gap: 23px;
   }
 
   @include media-breakpoint-down(sm) {
-    gap: 25px;
+    gap: 21px;
   }
 
   @include media-breakpoint-down(xs) {

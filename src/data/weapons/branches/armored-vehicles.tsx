@@ -297,6 +297,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Stalingrad,
+        producer: [Producers.armoredVehicles.Stalingrad],
         platform: Platforms.armoredVehicles.T34,
       },
     },
