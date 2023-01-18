@@ -2,11 +2,12 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
-import { Developers } from "../developers";
-import { ChiefDesigners } from "../chief-designers";
-import { Platforms } from "../platforms";
+import { Developers } from "../departments/developers";
+import { ChiefDesigners } from "../departments/chief-designers";
+import { Platforms } from "../departments/platforms";
 import { AVIATION_ENGINES } from "../parts/engines/aviation-engines";
 import { IAircraft } from "../interfaces/aviation-interfaces";
+import { Producers } from "../departments/producers";
 
 const ussr: IAircraft[] = [
   {
@@ -42,6 +43,12 @@ const ussr: IAircraft[] = [
         developer: Developers.aviation.LA,
         chiefDesigner: ChiefDesigners.aviation.Lavochkin,
         platform: Platforms.aviation.La5,
+        producer: [
+          Producers.aviation.Gorkiy21,
+          Producers.aviation.Tbilisi31,
+          Producers.aviation.UlanUde99,
+          Producers.aviation.Moskva381,
+        ], // ???
       },
     },
   },
@@ -53,6 +60,11 @@ const ussr: IAircraft[] = [
       common: {
         developer: Developers.aviation.Yak,
         chiefDesigner: ChiefDesigners.aviation.Yakovlev,
+        producer: [
+          Producers.aviation.Novosibirsk153,
+          Producers.aviation.Omsk166,
+          Producers.aviation.Moskva82,
+        ], // ???
       },
     },
   },
@@ -81,6 +93,7 @@ const ussr: IAircraft[] = [
       common: {
         developer: Developers.aviation.Yak,
         chiefDesigner: ChiefDesigners.aviation.Yakovlev,
+        producer: [Producers.aviation.Tbilisi31, Producers.aviation.Saratov292],
       },
       sizes: {
         emptyWeight: 2105,
@@ -120,6 +133,7 @@ const ussr: IAircraft[] = [
       common: {
         developer: Developers.aviation.Yak,
         chiefDesigner: ChiefDesigners.aviation.Yakovlev,
+        producer: [Producers.aviation.Saratov292, Producers.aviation.Khimki301],
       },
     },
   },
@@ -141,6 +155,13 @@ const ussr: IAircraft[] = [
     specifications: {
       common: {
         developer: Developers.aviation.IL,
+        chiefDesigner: ChiefDesigners.aviation.Ilyushin,
+        producer: [
+          Producers.aviation.Kuibyshev1,
+          Producers.aviation.Kuibyshev18,
+          Producers.aviation.Voronezh64,
+        ],
+        numberOfIssued: 4390,
       },
     },
   },
@@ -161,6 +182,14 @@ const ussr: IAircraft[] = [
     specifications: {
       common: {
         developer: Developers.aviation.IL,
+        chiefDesigner: ChiefDesigners.aviation.Ilyushin,
+        producer: [
+          Producers.aviation.Voronezh18,
+          Producers.aviation.Komsomolsk126,
+          Producers.aviation.Moskva23,
+          Producers.aviation.Moskva39,
+          Producers.aviation.Irkutsk39,
+        ],
       },
     },
   },
@@ -184,6 +213,7 @@ const germany: IAircraft[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Messerschmitt,
+        producer: [Producers.aviation.Messerschmitt],
       },
     },
   },
@@ -299,6 +329,12 @@ const usa: IAircraft[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Boeing,
+        producer: [
+          Producers.aviation.BoeingSeattle,
+          Producers.aviation.BoeingWichita,
+          Producers.aviation.BellAtlanta,
+          Producers.aviation.MartinOmaha,
+        ],
       },
     },
   },

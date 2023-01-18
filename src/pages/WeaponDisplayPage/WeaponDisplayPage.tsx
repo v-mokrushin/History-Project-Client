@@ -84,7 +84,7 @@ const WeaponDisplayPage = observer(() => {
             <Container>
               <Title id="Введение">{weapon.name}</Title>
               {loadingStore.getStatus() ? (
-                <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} centered75vh />
+                <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
               ) : (
                 <>
                   {weapon.isReady ? (
@@ -105,7 +105,7 @@ const WeaponDisplayPage = observer(() => {
                   ) : (
                     <SpecialLogo
                       type={SPECIAL_LOGO_TYPE.inDevelopment}
-                      centered75vh
+                      vertiacalFill
                     />
                   )}
                 </>

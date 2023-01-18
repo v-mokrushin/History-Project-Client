@@ -1,9 +1,9 @@
 import { INation } from "constants/nations";
 import { IWaponBranch, IWeaponType } from "constants/weapon-types";
-import { IChiefDesigner } from "../chief-designers";
-import { IDeveloper } from "../developers";
-import { IPlatform } from "../platforms";
-import { IProducer } from "../producers";
+import { IChiefDesigner } from "../departments/chief-designers";
+import { IDeveloper } from "../departments/developers";
+import { IPlatform } from "../departments/platforms";
+import { IProducer } from "../departments/producers";
 import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,

@@ -75,7 +75,7 @@ const WeaponsPreviewPage = observer(() => {
               showFlags={NATIONS_METHODS.identity.isWorld(nationObject)}
             />
           ) : (
-            <SpecialLogo type={SPECIAL_LOGO_TYPE.notFound} centered50vh />
+            <SpecialLogo type={SPECIAL_LOGO_TYPE.notFound} vertiacalFill />
           )}
         </Container>
       </ContentWrapper>

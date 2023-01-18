@@ -1,4 +1,4 @@
-import { INation, NATIONS } from "../../constants/nations";
+import { INation, NATIONS } from "../../../constants/nations";
 
 export interface IProducer {
   name: {
@@ -22,6 +22,7 @@ export const Producers = {
     Kharkov183: Producer("Харьковский завод №183", NATIONS.USSR),
     Kirov38: Producer("Завод №38 г. Киров", NATIONS.USSR),
     Bolshevik: Producer("Завод «Большевик»", NATIONS.USSR),
+    Izhorsky: Producer("Ижорский завод", NATIONS.USSR),
     Leningrad174: Producer(
       "Ленинградский государственный завод №174",
       NATIONS.USSR
@@ -49,7 +50,30 @@ export const Producers = {
     Ford: Producer("Ford Motor Company", NATIONS.USA),
     MasseyHarris: Producer("Massey-Harris Company", NATIONS.Canada),
   },
-  aviation: {},
+  aviation: {
+    Kuibyshev1: Producer("Куйбышевский авиазавод №1", NATIONS.USSR),
+    Gorkiy21: Producer("Горьковский авиазавод №21", NATIONS.USSR),
+    Kuibyshev18: Producer("Куйбышевский авиазавод №18", NATIONS.USSR),
+    Moskva23: Producer("Московский авиазавод №23", NATIONS.USSR),
+    Moskva39: Producer("Московский авиазавод №39", NATIONS.USSR),
+    Irkutsk39: Producer("Иркутский авиазавод №39", NATIONS.USSR),
+    Tbilisi31: Producer("Тбилисский авиазавод №31", NATIONS.USSR),
+    Voronezh18: Producer("Воронежский авиазавод №18", NATIONS.USSR),
+    Voronezh64: Producer("Воронежский авиазавод №64", NATIONS.USSR),
+    Moskva82: Producer("Московский авиазавод №82", NATIONS.USSR),
+    UlanUde99: Producer("Улан-Удэнский авиазавод №99", NATIONS.USSR),
+    Komsomolsk126: Producer("Комсомольский авиазавод №126", NATIONS.USSR),
+    Novosibirsk153: Producer("Новосибирский авиазавод №153", NATIONS.USSR),
+    Omsk166: Producer("Омский авиазавод №166", NATIONS.USSR),
+    Saratov292: Producer("Саратовский авиазавод №292", NATIONS.USSR),
+    Khimki301: Producer("Химкинский авиазавод №301", NATIONS.USSR),
+    Moskva381: Producer("Московский авиазавод №381", NATIONS.USSR),
+    Messerschmitt: Producer("Messerschmitt AG", NATIONS.Germany),
+    BoeingSeattle: Producer("Boeing (Seattle, Washington)", NATIONS.USA),
+    BoeingWichita: Producer("Boeing (Wichita, Kansas)", NATIONS.USA),
+    BellAtlanta: Producer("Bell (Atlanta, Georgia)", NATIONS.USA),
+    MartinOmaha: Producer("Martin (Omaha, Nebraska)", NATIONS.USA),
+  },
   atillery: {},
   smallArms: {},
 };

@@ -1,4 +1,4 @@
-import { CREWS } from "../crews";
+import { CREWS } from "../departments/crews";
 import { BODIES } from "../parts/bodies";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
@@ -7,14 +7,14 @@ import { ARMORED_ENGINES } from "../parts/engines/armored-engines";
 import { CANNONS } from "../parts/cannons";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { TOWERS } from "../parts/towers";
-import { Developers } from "../developers";
-import { ChiefDesigners } from "../chief-designers";
-import { Platforms } from "../platforms";
+import { Developers } from "../departments/developers";
+import { ChiefDesigners } from "../departments/chief-designers";
+import { Platforms } from "../departments/platforms";
 import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,
 } from "../interfaces/armored-interfaces";
-import { Producers } from "../producers";
+import { Producers } from "../departments/producers";
 
 const ussr: IArmoredVehicle[] = [
   {
@@ -27,8 +27,10 @@ const ussr: IArmoredVehicle[] = [
     ],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Chelyabinsk100,
-        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
+        developer: Developers.armoredVehicles.ChelyabinskExp100,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
+        numberOfIssued: 2315,
       },
     },
   },
@@ -39,7 +41,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        developer: Developers.armoredVehicles.Leningrad185, // ???
+        developer: Developers.armoredVehicles.Leningrad185,
         platform: Platforms.armoredVehicles.KV1,
         producer: [
           Producers.armoredVehicles.Leningrad185,
@@ -54,7 +56,7 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         platform: Platforms.armoredVehicles.KV1,
         producer: [
           Producers.armoredVehicles.Leningrad185,
@@ -70,6 +72,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Leningrad185,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         producer: [Producers.armoredVehicles.Leningrad185],
       },
     },
@@ -80,18 +83,19 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         platform: Platforms.armoredVehicles.KV1,
       },
     },
   },
   {
-    name: "КВ-1С",
+    name: "КВ-1с",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow, // ???
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
         platform: Platforms.armoredVehicles.KV1S,
       },
     },
@@ -113,8 +117,8 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin, // ???
-        platform: Platforms.armoredVehicles.IS1,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
+        platform: Platforms.armoredVehicles.IS,
       },
     },
   },
@@ -169,10 +173,10 @@ const ussr: IArmoredVehicle[] = [
     ],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Chelyabinsk100,
-        platform: Platforms.armoredVehicles.IS1,
+        developer: Developers.armoredVehicles.ChelyabinskExp100,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
+        platform: Platforms.armoredVehicles.IS,
         producer: [Producers.armoredVehicles.Chelyabinsk100],
-        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         productionPeriod: "1943 - 1945",
         exploitationYears: "1943 - 1945",
         numberOfIssued: 3483,
@@ -393,11 +397,39 @@ const ussr: IArmoredVehicle[] = [
     },
   },
   {
-    name: "Т-26",
+    name: "Т-26 обр. 1939 г.",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1939,
+    specifications: {
+      common: {
+        producer: [Producers.armoredVehicles.Leningrad174], // ???
+      },
+    },
+  },
+  {
+    name: "Т-26 обр. 1933 г.",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
+    adoptedIntoServiceDate: 1933,
+    specifications: {
+      common: {
+        producer: [
+          Producers.armoredVehicles.Stalingrad,
+          Producers.armoredVehicles.Leningrad174,
+        ],
+      },
+    },
+  },
+  {
+    name: "Т-26 обр. 1931 г.",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1931,
     specifications: {
-      common: {},
+      common: {
+        producer: [
+          Producers.armoredVehicles.Bolshevik,
+          Producers.armoredVehicles.Leningrad174,
+        ],
+      },
     },
   },
   {
@@ -414,10 +446,50 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
+        developer: Developers.armoredVehicles.ChelyabinskExp100,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
+        platform: Platforms.armoredVehicles.IS,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
+      },
+    },
+  },
+  {
+    name: "ИСУ-122",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
+        developer: Developers.armoredVehicles.ChelyabinskExp100,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
+        platform: Platforms.armoredVehicles.IS,
+        numberOfIssued: 1375,
+      },
+    },
+  },
+  {
+    name: "ИСУ-122С",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
+    adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
+        developer: Developers.armoredVehicles.ChelyabinskExp100,
+        producer: [Producers.armoredVehicles.Chelyabinsk100],
+        platform: Platforms.armoredVehicles.IS,
+        numberOfIssued: 675,
+      },
+    },
+  },
+  {
+    name: "СУ-152",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
+    adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
         developer: Developers.armoredVehicles.Chelyabinsk100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
-        platform: Platforms.armoredVehicles.IS1,
-        producer: [Producers.armoredVehicles.Chelyabinsk100],
+        platform: Platforms.armoredVehicles.KV1S,
       },
     },
   },
@@ -434,30 +506,6 @@ const ussr: IArmoredVehicle[] = [
           Producers.armoredVehicles.Omsk174,
         ],
         numberOfIssued: 4661,
-      },
-    },
-  },
-  {
-    name: "ИСУ-122",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
-    adoptedIntoServiceDate: 1944,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
-        developer: Developers.armoredVehicles.Chelyabinsk100,
-        producer: [Producers.armoredVehicles.Chelyabinsk100],
-        platform: Platforms.armoredVehicles.IS1,
-      },
-    },
-  },
-  {
-    name: "СУ-152",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
-    adoptedIntoServiceDate: 1943,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
-        platform: Platforms.armoredVehicles.KV1S,
       },
     },
   },
@@ -506,7 +554,12 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1938,
     specifications: {
-      common: {},
+      common: {
+        developer: Developers.armoredVehicles.Izhorsky,
+        producer: [Producers.armoredVehicles.Izhorsky],
+        numberOfIssued: 3386,
+        productionPeriod: "1938 — 1941",
+      },
     },
   },
   {

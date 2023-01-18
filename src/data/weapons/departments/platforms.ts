@@ -11,7 +11,7 @@ function Platform(originalName: string): IPlatform {
 export const Platforms = {
   armoredVehicles: {
     T34: Platform("Т-34"),
-    IS1: Platform("ИС-1"),
+    IS: Platform("ИС"),
     KV1: Platform("КВ-1"),
     KV1S: Platform("КВ-1С"),
     PzKpfw3: Platform("Pz.Kpfw. III"),

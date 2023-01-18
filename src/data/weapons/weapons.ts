@@ -1,8 +1,8 @@
-import { ChiefDesigners, IChiefDesigner } from "./chief-designers";
+import { ChiefDesigners, IChiefDesigner } from "./departments/chief-designers";
 import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
 import { type } from "os";
-import { Developers, IDeveloper } from "./developers";
-import { ICrew } from "./crews";
+import { Developers, IDeveloper } from "./departments/developers";
+import { ICrew } from "./departments/crews";
 import { IPage } from "constants/pages";
 import { shuffleArray } from "utils/common";
 import {
@@ -23,7 +23,7 @@ import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Filter/Filter";
-import { IProducer } from "./producers";
+import { IProducer } from "./departments/producers";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,

@@ -52,7 +52,7 @@ export default function ArticlePage() {
       return;
     }
     if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} centered75vh />;
+      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />;
     }
     if (loadingStatus === LOADING_STATUSES.success) {
       if (!articleContent) return;
@@ -62,7 +62,7 @@ export default function ArticlePage() {
           <SpecialLogo
             type={SPECIAL_LOGO_TYPE.inDevelopment}
             className={styles.specialLogoStyle}
-            centered75vh
+            vertiacalFill
           />
         );
       }

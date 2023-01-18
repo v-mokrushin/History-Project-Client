@@ -1,4 +1,4 @@
-import { NATIONS } from "./../../constants/nations";
+import { NATIONS } from "../../../constants/nations";
 import { INation } from "constants/nations";
 
 export interface IChiefDesigner {
@@ -15,7 +15,8 @@ function ChiefDesigner(russianName: string, nation: INation): IChiefDesigner {
 export const ChiefDesigners = {
   armoredVehicles: {
     Koshkin: ChiefDesigner("Кошкин М.И.", NATIONS.USSR),
-    Kotin: ChiefDesigner("Котин Ж.И.", NATIONS.USSR),
+    Kotin: ChiefDesigner("Котин Ж.Я.", NATIONS.USSR),
+    Ermolaev: ChiefDesigner("Ермолаев А.С.", NATIONS.USSR),
     Dikhow: ChiefDesigner("Духов Н.Л.", NATIONS.USSR),
     Barykov: ChiefDesigner("Барыков Н.В.", NATIONS.USSR),
     Ginzburg: ChiefDesigner("Гинзбург С.А.", NATIONS.USSR),

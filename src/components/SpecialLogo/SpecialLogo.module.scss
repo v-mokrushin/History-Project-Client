@@ -1,5 +1,14 @@
 @import "/src/assets/css/common.scss";
 
+.root {
+  &_verticalFill {
+    min-height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -14,20 +23,6 @@
   @include media-breakpoint-down(md) {
     gap: 10px;
   }
-}
-
-.сentered_50vh {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.сentered_75vh {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .bodyWrapper {

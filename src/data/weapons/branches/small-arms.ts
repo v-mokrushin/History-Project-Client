@@ -1,8 +1,8 @@
-import { Developers } from "../developers";
+import { Developers } from "../departments/developers";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
-import { ChiefDesigners } from "../chief-designers";
+import { ChiefDesigners } from "../departments/chief-designers";
 import { ISmallArm } from "../interfaces/small-arms-interfaces";
 
 const ussr: ISmallArm[] = [

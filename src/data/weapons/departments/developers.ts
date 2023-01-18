@@ -1,4 +1,4 @@
-import { INation, NATIONS } from "./../../constants/nations";
+import { INation, NATIONS } from "./../../../constants/nations";
 
 export interface IDeveloper {
   name: {
@@ -16,6 +16,7 @@ export const Developers = {
   armoredVehicles: {
     Leningrad185: Developer("КБ Ленинградского завода №185", NATIONS.USSR),
     Chelyabinsk100: Developer("КБ Челябинского завода №100", NATIONS.USSR),
+    ChelyabinskExp100: Developer("КБ Челябинского опытного завода №100", NATIONS.USSR),
     KrasnoyeSormovo112: Developer(
       `КБ завода №112 "Красное Сормово"`,
       NATIONS.USSR
@@ -27,6 +28,7 @@ export const Developers = {
     Ural183: Developer("КБ Уральского завода №183", NATIONS.USSR),
     Kharkov183: Developer("КБ Харьковского завода №183", NATIONS.USSR),
     Kirov38: Developer("КБ завода №38 г. Киров", NATIONS.USSR),
+    Izhorsky: Developer("КБ Ижорский завода", NATIONS.USSR),
     KB3: Developer("КБ-3 ВОАО", NATIONS.USSR),
     Henschel: Developer("Henschel-Werke", NATIONS.Germany),
     MAN: Developer("MAN", NATIONS.Germany),
