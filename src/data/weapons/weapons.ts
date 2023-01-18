@@ -1,9 +1,5 @@
-import { ChiefDesigners, IChiefDesigner } from "./departments/chief-designers";
-import { WEAPONS_CLASSIFICATION } from "./../../constants/weapon-types";
-import { type } from "os";
-import { Developers, IDeveloper } from "./departments/developers";
-import { ICrew } from "./departments/crews";
-import { IPage } from "constants/pages";
+import { IChiefDesigner } from "./departments/chief-designers";
+import { IDeveloper } from "./departments/developers";
 import { shuffleArray } from "utils/common";
 import {
   createGallery,
@@ -17,9 +13,6 @@ import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenade-launchers";
 import { SMALL_ARMS_DATA } from "./branches/small-arms";
-import { IWaponBranch, IWeaponType } from "constants/weapon-types";
-import { IBodyArmoring } from "./parts/bodies";
-import { ITowerArmoring } from "./parts/towers";
 import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Filter/Filter";

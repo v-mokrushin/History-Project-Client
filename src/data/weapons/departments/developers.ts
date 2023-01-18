@@ -1,10 +1,10 @@
 import { INation, NATIONS } from "./../../../constants/nations";
 
 export interface IDeveloper {
-  name: {
-    original: string;
+  readonly name: {
+    readonly original: string;
   };
-  nation: INation;
+  readonly nation: INation;
 }
 
 function Developer(originalName: string, nation: INation): IDeveloper {
@@ -16,7 +16,10 @@ export const Developers = {
   armoredVehicles: {
     Leningrad185: Developer("КБ Ленинградского завода №185", NATIONS.USSR),
     Chelyabinsk100: Developer("КБ Челябинского завода №100", NATIONS.USSR),
-    ChelyabinskExp100: Developer("КБ Челябинского опытного завода №100", NATIONS.USSR),
+    ChelyabinskExp100: Developer(
+      "КБ Челябинского опытного завода №100",
+      NATIONS.USSR
+    ),
     KrasnoyeSormovo112: Developer(
       `КБ завода №112 "Красное Сормово"`,
       NATIONS.USSR

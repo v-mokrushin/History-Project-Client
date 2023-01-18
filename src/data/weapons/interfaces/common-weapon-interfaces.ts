@@ -11,19 +11,19 @@ import {
 import { IAircraft, IAviationSpecifications } from "./aviation-interfaces";
 
 export interface IBaseWeapon {
-  name: string;
-  type: IWeaponType;
-  adoptedIntoServiceDate: number;
+  readonly name: string;
+  readonly type: IWeaponType;
+  readonly adoptedIntoServiceDate: number;
   branch?: IWaponBranch;
-  id?: string;
-  isReady?: boolean;
+  readonly id?: string;
+  readonly isReady?: boolean;
   nation?: INation;
   gallery?: IWeaponGallery;
-  JSXComponent?: JSX.Element;
-  intro?: string[];
-  videomaterials?: string[];
-  sections?: string[];
-  models?: IModel[];
+  readonly JSXComponent?: JSX.Element;
+  readonly intro?: string[];
+  readonly videomaterials?: string[];
+  readonly sections?: string[];
+  readonly models?: IModel[];
 }
 
 export type TWeapon = IArmoredVehicle | IAircraft;
@@ -33,14 +33,14 @@ export type TWeaponSpecification =
   | IAviationSpecifications;
 
 export interface IWaponCommonSpec {
-  developer?: IDeveloper;
-  developmentYear?: number;
-  producer?: IProducer[];
-  chiefDesigner?: IChiefDesigner;
-  platform?: IPlatform;
-  productionPeriod?: string;
-  exploitationYears?: string;
-  numberOfIssued?: number;
+  readonly developer?: IDeveloper;
+  readonly developmentYear?: number;
+  readonly producer?: IProducer[];
+  readonly chiefDesigner?: IChiefDesigner;
+  readonly platform?: IPlatform;
+  readonly productionPeriod?: string;
+  readonly exploitationYears?: string;
+  readonly numberOfIssued?: number;
 }
 
 export interface IWeaponGallery {
@@ -50,7 +50,7 @@ export interface IWeaponGallery {
 }
 
 export interface IModel {
-  title: string;
+  readonly title: string;
   photo: string;
-  link: string;
+  readonly link: string;
 }

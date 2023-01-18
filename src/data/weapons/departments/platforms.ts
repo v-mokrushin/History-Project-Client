@@ -1,6 +1,6 @@
 export interface IPlatform {
-  name: {
-    original: string;
+  readonly name: {
+    readonly original: string;
   };
 }
 

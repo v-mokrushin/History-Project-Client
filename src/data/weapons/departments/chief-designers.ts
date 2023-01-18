@@ -2,10 +2,10 @@ import { NATIONS } from "../../../constants/nations";
 import { INation } from "constants/nations";
 
 export interface IChiefDesigner {
-  name: {
-    russian: string;
+  readonly name: {
+    readonly russian: string;
   };
-  nation: INation;
+  readonly nation: INation;
 }
 
 function ChiefDesigner(russianName: string, nation: INation): IChiefDesigner {

@@ -1,44 +1,44 @@
 import { IAviationEngine } from "./../parts/engines/aviation-engines";
-import { ICrew } from "../crews";
+import { ICrew } from "../departments/crews";
 import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
 
 export interface IAircraft extends IBaseWeapon {
-  specifications: IAviationSpecifications;
+  readonly specifications: IAviationSpecifications;
 }
 
 export interface IAviationSpecifications {
-  common: IWaponCommonSpec;
-  crew?: ICrew;
-  sizes?: IAviationSizes;
-  weapons?: IAviationWeapons;
-  flightCharacteristics?: IFlightCharacteristics;
-  powerUnits?: IAviationPowerUnits;
+  readonly common: IWaponCommonSpec;
+  readonly crew?: ICrew;
+  readonly sizes?: IAviationSizes;
+  readonly weapons?: IAviationWeapons;
+  readonly flightCharacteristics?: IFlightCharacteristics;
+  readonly powerUnits?: IAviationPowerUnits;
 }
 
 export interface IAviationSizes {
-  emptyWeight: number;
-  curbWeight: number;
-  length: number;
-  height: number;
-  wingSpan: number;
-  wingArea: number;
+  readonly emptyWeight: number;
+  readonly curbWeight: number;
+  readonly length: number;
+  readonly height: number;
+  readonly wingSpan: number;
+  readonly wingArea: number;
 }
 
 export interface IAviationWeapons {
-  weaponsSet: string;
-  ammunition: string;
-  secondSalvoWeight: number;
-  bombWeapons: string;
+  readonly weaponsSet: string;
+  readonly ammunition: string;
+  readonly secondSalvoWeight: number;
+  readonly bombWeapons: string;
 }
 
 export interface IFlightCharacteristics {
-  technicalRange: number;
-  practicalRange: number;
-  maximumSpeed: number;
-  climbRate: number;
+  readonly technicalRange: number;
+  readonly practicalRange: number;
+  readonly maximumSpeed: number;
+  readonly climbRate: number;
 }
 
 export interface IAviationPowerUnits {
-  enginesNumber: number;
-  engine: IAviationEngine;
+  readonly enginesNumber: number;
+  readonly engine: IAviationEngine;
 }

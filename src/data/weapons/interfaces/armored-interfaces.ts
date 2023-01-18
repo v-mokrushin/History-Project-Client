@@ -1,31 +1,31 @@
-import { ICrew } from "../crews";
+import { ICrew } from "../departments/crews";
 import { IBodyArmoring } from "../parts/bodies";
 import { ITowerArmoring } from "../parts/towers";
 import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
 
 export interface IArmoredVehicle extends IBaseWeapon {
-  specifications: IArmoredVehiclesSpecifications;
+  readonly specifications: IArmoredVehiclesSpecifications;
 }
 
 export interface IArmoredVehiclesSpecifications {
-  common: IWaponCommonSpec;
-  crew?: ICrew;
-  sizes?: IArmoredVehiclesSizes;
-  armoring?: IArmoredVehiclesArmoring;
-  weapon?: any;
-  mobility?: any;
+  readonly common: IWaponCommonSpec;
+  readonly crew?: ICrew;
+  readonly sizes?: IArmoredVehiclesSizes;
+  readonly armoring?: IArmoredVehiclesArmoring;
+  readonly weapon?: any;
+  readonly mobility?: any;
 }
 
 export interface IArmoredVehiclesSizes {
-  weight: number;
-  length: number;
-  width: number;
-  height: number;
-  clearance: number;
+  readonly weight: number;
+  readonly length: number;
+  readonly width: number;
+  readonly height: number;
+  readonly clearance: number;
 }
 
 export interface IArmoredVehiclesArmoring {
-  type: string;
-  body: IBodyArmoring;
-  tower?: ITowerArmoring;
+  readonly type: string;
+  readonly body: IBodyArmoring;
+  readonly tower?: ITowerArmoring;
 }

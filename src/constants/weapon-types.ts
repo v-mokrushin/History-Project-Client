@@ -8,80 +8,80 @@ export type IWaponBranch =
   | IGrenadeLaunchersBranch;
 
 interface IBaseWeaponBranch {
-  path: string;
-  name: IWeaponName;
+  readonly path: string;
+  readonly name: IWeaponName;
 }
 
 interface IArmoredVehiclesBranch extends IBaseWeaponBranch {
-  tankette: IWeaponType;
-  smallTank: IWeaponType;
-  lightTank: IWeaponType;
-  mediumTank: IWeaponType;
-  heavyTank: IWeaponType;
-  sau: IWeaponType;
-  ptsau: IWeaponType;
-  zsu: IWeaponType;
-  armoredCar: IWeaponType;
-  armoredСarrier: IWeaponType;
+  readonly tankette: IWeaponType;
+  readonly smallTank: IWeaponType;
+  readonly lightTank: IWeaponType;
+  readonly mediumTank: IWeaponType;
+  readonly heavyTank: IWeaponType;
+  readonly sau: IWeaponType;
+  readonly ptsau: IWeaponType;
+  readonly zsu: IWeaponType;
+  readonly armoredCar: IWeaponType;
+  readonly armoredСarrier: IWeaponType;
 }
 
 interface IAviationBranch extends IBaseWeaponBranch {
-  scout: IWeaponType;
-  interceptor: IWeaponType;
-  fighter: IWeaponType;
-  attackАircraft: IWeaponType;
-  bomber: IWeaponType;
-  torpedoBomber: IWeaponType;
-  lightBomber: IWeaponType;
-  frontlineBomber: IWeaponType;
-  strategicBomber: IWeaponType;
-  multipurpose: IWeaponType;
-  militaryTransport: IWeaponType;
-  training: IWeaponType;
+  readonly scout: IWeaponType;
+  readonly interceptor: IWeaponType;
+  readonly fighter: IWeaponType;
+  readonly attackАircraft: IWeaponType;
+  readonly bomber: IWeaponType;
+  readonly torpedoBomber: IWeaponType;
+  readonly lightBomber: IWeaponType;
+  readonly frontlineBomber: IWeaponType;
+  readonly strategicBomber: IWeaponType;
+  readonly multipurpose: IWeaponType;
+  readonly militaryTransport: IWeaponType;
+  readonly training: IWeaponType;
 }
 
 interface IArtilleryBranch extends IBaseWeaponBranch {
-  company: IWeaponType;
-  battalion: IWeaponType;
-  regimental: IWeaponType;
-  division: IWeaponType;
-  armyAndCorps: IWeaponType;
-  specialPower: IWeaponType;
-  antitank: IWeaponType;
-  antiaircraft: IWeaponType;
-  reactive: IWeaponType;
-  cruiseMissile: IWeaponType;
-  ballisticMissile: IWeaponType;
+  readonly company: IWeaponType;
+  readonly battalion: IWeaponType;
+  readonly regimental: IWeaponType;
+  readonly division: IWeaponType;
+  readonly armyAndCorps: IWeaponType;
+  readonly specialPower: IWeaponType;
+  readonly antitank: IWeaponType;
+  readonly antiaircraft: IWeaponType;
+  readonly reactive: IWeaponType;
+  readonly cruiseMissile: IWeaponType;
+  readonly ballisticMissile: IWeaponType;
 }
 
 interface ISmallArmsBranch extends IBaseWeaponBranch {
-  revolver: IWeaponType;
-  gun: IWeaponType;
-  submachineGun: IWeaponType;
-  rifle: IWeaponType;
-  selfLoadingRifle: IWeaponType;
-  assaultRifle: IWeaponType;
-  shotgun: IWeaponType;
-  machinegun: IWeaponType;
-  generalPurposeMachinegun: IWeaponType;
-  heavyMachinegun: IWeaponType;
-  antiTankGun: IWeaponType;
+  readonly revolver: IWeaponType;
+  readonly gun: IWeaponType;
+  readonly submachineGun: IWeaponType;
+  readonly rifle: IWeaponType;
+  readonly selfLoadingRifle: IWeaponType;
+  readonly assaultRifle: IWeaponType;
+  readonly shotgun: IWeaponType;
+  readonly machinegun: IWeaponType;
+  readonly generalPurposeMachinegun: IWeaponType;
+  readonly heavyMachinegun: IWeaponType;
+  readonly antiTankGun: IWeaponType;
 }
 
 interface IGrenadeLaunchersBranch extends IBaseWeaponBranch {
-  muzzle: IWeaponType;
-  manual: IWeaponType;
-  heavy: IWeaponType;
-  hybrid: IWeaponType;
+  readonly muzzle: IWeaponType;
+  readonly manual: IWeaponType;
+  readonly heavy: IWeaponType;
+  readonly hybrid: IWeaponType;
 }
 
 export interface IWeaponType {
-  name: IWeaponName;
+  readonly name: IWeaponName;
 }
 
 interface IWeaponName {
-  russian: string;
-  english?: string;
+  readonly russian: string;
+  readonly english?: string;
 }
 
 // ----------------------------------------------------------------------------

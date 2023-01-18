@@ -1,6 +1,6 @@
 export interface ICrew {
-  size: number;
-  structure: string;
+  readonly  size: number;
+  readonly structure: string;
 }
 
 export const CREWS = {

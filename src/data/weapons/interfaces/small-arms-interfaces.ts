@@ -1,9 +1,9 @@
 import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
 
 export interface ISmallArm extends IBaseWeapon {
-  specifications: ISmallArmsSpecifications;
+  readonly specifications: ISmallArmsSpecifications;
 }
 
 export interface ISmallArmsSpecifications {
-  common: IWaponCommonSpec;
+  readonly common: IWaponCommonSpec;
 }

@@ -1,10 +1,10 @@
 import { INation, NATIONS } from "../../../constants/nations";
 
 export interface IProducer {
-  name: {
-    original: string;
+  readonly name: {
+    readonly original: string;
   };
-  nation: INation;
+  readonly nation: INation;
 }
 
 function Producer(originalName: string, nation: INation): IProducer {
