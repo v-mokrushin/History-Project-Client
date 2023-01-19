@@ -80,36 +80,18 @@ export class FiltersStore {
     }
   }
 
+  // set(filter: string, value: string): void {
+  //   if (!this.filters[filter as keyof TFilters]) return;
+  //   if (value == "Все" || value == "Весь мир") {
+  //     delete this.filters[filter as keyof TFilters];
+  //     this.filters = { ...this };
+  //   } else {
+  //     this.filters = { ...this.filters, [filter]: value };
+  //   }
+  // }
+
   setNameFilter(name: string): void {
     this.filters = { ...this.filters, name };
-  }
-
-  get nation(): string | undefined {
-    return this.filters.nation;
-  }
-
-  get name(): string {
-    return this.filters.name || "";
-  }
-
-  get typeName(): string | undefined {
-    return this.filters.type;
-  }
-
-  get developerName(): string | undefined {
-    return this.filters.developer;
-  }
-
-  get chiefDesigner(): string | undefined {
-    return this.filters.chiefDesigner;
-  }
-
-  get platform(): string | undefined {
-    return this.filters.platform;
-  }
-
-  get producer(): string | undefined {
-    return this.filters.producer;
   }
 
   isEmpty(): boolean {

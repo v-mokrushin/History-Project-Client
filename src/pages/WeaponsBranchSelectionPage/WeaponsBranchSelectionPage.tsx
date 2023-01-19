@@ -23,13 +23,14 @@ export default function WeaponsBranchSelectionPage() {
         <Container>
           <Title>Вооружения</Title>
           <div className={styles.weaponCardsWrapper}>
-            <SectionCard information={PAGES.armoredVehicles} />
-            <div className={styles.weaponCardsInnerWrapper}>
-              <SectionCard information={PAGES.aviation} />
-              <SectionCard information={PAGES.artillery} />
-              <SectionCard information={PAGES.smallArms} />
-              <SectionCard information={PAGES.grenadeLaunchers} />
-            </div>
+            <SectionCard
+              information={PAGES.armoredVehicles}
+              className={styles.box1}
+            />
+            <SectionCard information={PAGES.aviation} />
+            <SectionCard information={PAGES.artillery} />
+            <SectionCard information={PAGES.smallArms} />
+            <SectionCard information={PAGES.grenadeLaunchers} />
           </div>
         </Container>
       </ContentWrapper>

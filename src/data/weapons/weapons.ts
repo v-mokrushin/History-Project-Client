@@ -54,10 +54,11 @@ export const WEAPONS = {
   },
 
   filterWeapons(selectedWeapons: TWeapon[], filters: TFilters) {
+    console.log(filters);
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
-      let weapons = selectedWeapons;
+      let weapons = [...selectedWeapons];
 
       if (filters.name)
         weapons = weapons.filter((item) =>
@@ -144,6 +145,12 @@ export const WEAPONS = {
 
     return weapons;
   },
+
+  // getTypes(selectedWeapons: TWeapon[]) {
+  //   return Object.values(weaponBranch)
+  //   .map((item) => item.name?.russian)
+  //   .filter((item) => item != undefined);
+  // },
 
   getDevelopers(selectedWeapons: TWeapon[]): string[] {
     let developers: string[] = selectedWeapons

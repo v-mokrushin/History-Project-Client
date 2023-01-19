@@ -19,7 +19,7 @@ const Input = observer(({ callback, className }: IInputProps) => {
         type="text"
         className={styles.input}
         placeholder="Название..."
-        value={filtersStore.name}
+        value={filtersStore.filters.name}
         onInput={() => callback(input.current!.value)}
       ></input>
       <div className={styles.icon}></div>

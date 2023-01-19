@@ -10,60 +10,57 @@ import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import Button from "components/Button/Button";
 
 interface IFiltersProps {
-  selectedWeapons: TWeapon[];
+  weapons: TWeapon[];
   className?: string;
 }
 
-const Filters = ({ className, selectedWeapons }: IFiltersProps) => {
-  console.log(WEAPONS.getProducersWithFlags(selectedWeapons));
+const Filters = ({ className, weapons }: IFiltersProps) => {
   return (
     <div className={classNames(styles.root, className)}>
       <Input callback={filtersStore.setNameFilter.bind(filtersStore)} />
       <Filter
         title="Нация"
-        selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(
-          selectedWeapons
-        )}
+        selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(weapons)}
         setterCallback={filtersStore.setNation.bind(filtersStore)}
-        getter={filtersStore.nation}
+        getter={filtersStore.filters.nation}
       />
       <Filter
         title="Тип"
         selectionVariants={WEAPONS_TYPE_METHODS.getTypesArrayWithAll(
-          selectedWeapons[0].branch!
+          weapons[0].branch!
         )}
         setterCallback={filtersStore.setType.bind(filtersStore)}
-        getter={filtersStore.typeName}
+        getter={filtersStore.filters.type}
       />
       <Filter
         title="Разработчик"
-        selectionVariantsWithFlags={WEAPONS.getDevelopersWithFlags(
-          selectedWeapons
-        )}
+        selectionVariantsWithFlags={WEAPONS.getDevelopersWithFlags(weapons)}
         setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
-        getter={filtersStore.developerName}
+        getter={filtersStore.filters.developer}
       />
       <Filter
         title="Производитель"
-        selectionVariantsWithFlags={WEAPONS.getProducersWithFlags(
-          selectedWeapons
-        )}
+        selectionVariantsWithFlags={WEAPONS.getProducersWithFlags(weapons)}
+        setterCallback={filtersStore.setProducer.bind(filtersStore)}
+        getter={filtersStore.filters.producer}
+      />
+      {/* <Filter
+        title="Производитель"
+        selectionVariantsWithFlags={WEAPONS.getProducersWithFlags(weapons)}
         setterCallback={filtersStore.setProducer.bind(filtersStore)}
         getter={filtersStore.producer}
-      />
+      /> */}
       <Filter
         title="Глав. конструктор"
-        selectionVariantsWithFlags={WEAPONS.getChiefDesignersWithFlags(
-          selectedWeapons
-        )}
+        selectionVariantsWithFlags={WEAPONS.getChiefDesignersWithFlags(weapons)}
         setterCallback={filtersStore.setChiefDesigner.bind(filtersStore)}
-        getter={filtersStore.chiefDesigner}
+        getter={filtersStore.filters.chiefDesigner}
       />
       <Filter
         title="База"
-        selectionVariants={WEAPONS.getPlatforms(selectedWeapons)}
+        selectionVariants={WEAPONS.getPlatforms(weapons)}
         setterCallback={filtersStore.setPlatform.bind(filtersStore)}
-        getter={filtersStore.platform}
+        getter={filtersStore.filters.platform}
       />
       <Button callback={filtersStore.cancelFilters.bind(filtersStore)} />
     </div>

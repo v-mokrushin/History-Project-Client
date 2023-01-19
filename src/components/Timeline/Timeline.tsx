@@ -21,7 +21,10 @@ const Timeline = observer(
 
     return (
       <TimelineContext.Provider value={{ showFlags }}>
-        <div className={classNames(styles.wrapper, ANIMATIONS.fadeIn)}>
+        <div
+          className={classNames(styles.wrapper, ANIMATIONS.fadeIn)}
+          key={Math.random()}
+        >
           {dates.map((year, yearIndex) => (
             <TimelineItem
               contentCollection={contentCollection}

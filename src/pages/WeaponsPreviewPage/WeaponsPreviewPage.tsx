@@ -25,7 +25,7 @@ const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject = WEAPONS_TYPE_METHODS.getByPath(weaponsBranchPath);
-  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath!);
+  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
   const selectedWeapons: TWeapon[] = React.useMemo(
     () => WEAPONS.selectWeapons(weaponsBranchPath, nationPath),
     []
@@ -36,8 +36,10 @@ const WeaponsPreviewPage = observer(() => {
   );
   const uniqueDates = React.useMemo(
     () => WEAPONS.getUniqueDates(filteredWeapons),
-    [filteredWeapons]
+    [filtersStore.filters]
   );
+
+  console.log("render");
 
   React.useEffect(() => {
     const scrollEvent = () => {
@@ -66,7 +68,8 @@ const WeaponsPreviewPage = observer(() => {
             {nationObject.name.russianАccusative}{" "}
             {filteredWeapons.length === 0 || `(${filteredWeapons.length})`}
           </Title>
-          <Filters selectedWeapons={selectedWeapons} />
+          {/* <Filters weapons={filteredWeapons} /> */}
+          <Filters weapons={selectedWeapons} />
           <WeaponPreviewSettings />
           {filteredWeapons.length > 0 ? (
             <Timeline

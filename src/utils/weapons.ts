@@ -72,8 +72,6 @@ export function createGallery(weapon: TWeapon): void {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
-  console.log("utils : " + translateToBool(localStorage.getItem("colorized")));
-
   weapon.gallery = {
     path: getGalleryPath(weaponName, weapon),
     isColorizedIcon: translateToBool(localStorage.getItem("colorized")),

@@ -42,6 +42,11 @@
     height: 26px;
     border-radius: 2px;
 
+    @include media-breakpoint-down(lg) {
+      height: 21px;
+      border-radius: 1px;
+    }
+
     @include media-breakpoint-down(xs) {
       height: 18px;
       border-radius: 1px;

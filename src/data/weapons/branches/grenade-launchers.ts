@@ -2,6 +2,8 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { TWeapon } from "../interfaces/common-weapon-interfaces";
+import { ChiefDesigners } from "../departments/chief-designers";
+import { Developers } from "../departments/developers";
 
 const ussr: TWeapon[] = [];
 
@@ -34,7 +36,12 @@ const germany: TWeapon[] = [
     name: "Faustpatrone",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.grenadeLaunchers.Langweiler,
+        developer: Developers.grenadeLaunchers.HugoSchneiderAG,
+      },
+    },
   },
   {
     name: "Sturmpistole",
@@ -55,7 +62,11 @@ const usa: TWeapon[] = [
     name: "M1 «Bazooka»",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.grenadeLaunchers.Uhl,
+      },
+    },
   },
 ];
 
@@ -79,7 +90,12 @@ const britain: TWeapon[] = [
     name: "PIAT",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.grenadeLaunchers.Jefferis,
+        developer: Developers.grenadeLaunchers.ImperialChemicalIndustries,
+      },
+    },
   },
 ];
 

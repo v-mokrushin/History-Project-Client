@@ -39,6 +39,7 @@ const WeaponCard = observer(
         onClick={() => {
           Scroll.toTopInstantly();
         }}
+        key={Math.random()}
       >
         <div
           className={styles.backgroundWrapper}

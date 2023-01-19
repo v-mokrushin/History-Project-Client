@@ -137,28 +137,28 @@ export const NATIONS = {
     "belgium",
     "/images/flags/flag-belgium.svg"
   ),
-  romania: Nation(
+  Romania: Nation(
     "Румыния",
     "Румынии",
     "Romania",
     "romania",
     "/images/flags/flag-romania.svg"
   ),
-  poland: Nation(
+  Poland: Nation(
     "Польша",
     "Польши",
     "Poland",
     "poland",
     "/images/flags/flag-poland.svg"
   ),
-  yugoslavia: Nation(
+  Yugoslavia: Nation(
     "Югославия",
     "Югославии",
     "Yugoslavia",
     "yugoslavia",
     "/images/flags/flag-yugoslavia.svg"
   ),
-  hungary: Nation(
+  Hungary: Nation(
     "Венгрия",
     "Венгрии",
     "Hungary",
@@ -170,7 +170,7 @@ export const NATIONS = {
 // -------------------------------------------------------------------------
 
 export const NATIONS_METHODS = {
-  getObjectByPath(path: string) {
+  getObjectByPath(path: string | undefined) {
     for (let nation of Object.values(NATIONS)) {
       if (nation.path === path) return nation;
     }

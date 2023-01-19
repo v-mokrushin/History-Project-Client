@@ -70,14 +70,14 @@ export const Developers = {
     MoraneSaulnier: Developer("Morane-Saulnier", NATIONS.France),
     Mitsubishi: Developer("Mitsubishi", NATIONS.Japan),
     Macchi: Developer("Aeronautica Macchi", NATIONS.Italy),
-    PZL: Developer("PZL", NATIONS.poland),
+    PZL: Developer("PZL", NATIONS.Poland),
     Saab: Developer("Saab AB", NATIONS.Sweden),
     VL: Developer("Valtion lentokonetehdas", NATIONS.Finland),
-    IAR: Developer("IAR", NATIONS.romania),
+    IAR: Developer("IAR", NATIONS.Romania),
     ANBO: Developer("ANBO", NATIONS.lithuania),
     Fokker: Developer("Fokker", NATIONS.Netherlands),
-    Ikarus: Developer("Ikarus", NATIONS.yugoslavia),
-    Weiss: Developer("Weiss", NATIONS.hungary),
+    Ikarus: Developer("Ikarus", NATIONS.Yugoslavia),
+    Weiss: Developer("Weiss", NATIONS.Hungary),
   },
   atillery: {
     ArtilleryDesignBureau: Developer(
@@ -92,5 +92,12 @@ export const Developers = {
   },
   smallArms: {
     Walther: Developer("Walther", NATIONS.Germany),
+  },
+  grenadeLaunchers: {
+    HugoSchneiderAG: Developer("Hugo Schneider AG", NATIONS.Germany),
+    ImperialChemicalIndustries: Developer(
+      "Imperial Chemical Industries",
+      NATIONS.GreatBritain
+    ),
   },
 };

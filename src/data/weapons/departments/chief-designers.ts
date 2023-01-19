@@ -34,7 +34,6 @@ export const ChiefDesigners = {
     Lusser: ChiefDesigner("Луссер Роберт", NATIONS.Germany),
     Braun: ChiefDesigner("Браун Вернер", NATIONS.Germany),
   },
-
   smallArms: {
     HugoSchmeisser: ChiefDesigner("Шмайссер Хуго", NATIONS.Germany),
     WernerGruner: ChiefDesigner("Грунер Вернер Э.", NATIONS.Germany),
@@ -47,5 +46,10 @@ export const ChiefDesigners = {
     Browning: ChiefDesigner("Браунинг Джон М.", NATIONS.USA),
     Nagan: ChiefDesigner("Наган Эмиль и Наган Леон", NATIONS.Belgium),
     Mosin: ChiefDesigner("Мосин С.И.", NATIONS.RussainEmpire),
+  },
+  grenadeLaunchers: {
+    Uhl: ChiefDesigner("Уль Эдвард", NATIONS.USA),
+    Langweiler: ChiefDesigner("Лангвайлер Генрих", NATIONS.Germany),
+    Jefferis: ChiefDesigner("Джефферис Миллис", NATIONS.GreatBritain),
   },
 };

@@ -10,13 +10,17 @@ import { Scroll } from "utils/scroll";
 
 interface ISectionCardProps {
   information: IPage;
+  className?: string;
 }
 
-export default function SectionCard({ information }: ISectionCardProps) {
+export default function SectionCard({
+  information,
+  className,
+}: ISectionCardProps) {
   return (
     <NavLink
       to={information.path}
-      className={classNames(styles.root, ANIMATIONS.fadeIn)}
+      className={classNames(styles.root, className, ANIMATIONS.fadeIn)}
       onClick={Scroll.toTopInstantly}
     >
       <div

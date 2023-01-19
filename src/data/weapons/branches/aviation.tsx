@@ -523,14 +523,14 @@ appendNation(usa, NATIONS.USA);
 appendNation(britain, NATIONS.GreatBritain);
 appendNation(france, NATIONS.France);
 appendNation(finland, NATIONS.Finland);
-appendNation(poland, NATIONS.poland);
+appendNation(poland, NATIONS.Poland);
 appendNation(sweden, NATIONS.Sweden);
-appendNation(romania, NATIONS.romania);
+appendNation(romania, NATIONS.Romania);
 appendNation(japan, NATIONS.Japan);
 appendNation(lithuania, NATIONS.lithuania);
 appendNation(netherlands, NATIONS.Netherlands);
-appendNation(yugoslavia, NATIONS.yugoslavia);
-appendNation(hungary, NATIONS.hungary);
+appendNation(yugoslavia, NATIONS.Yugoslavia);
+appendNation(hungary, NATIONS.Hungary);
 appendNation(italy, NATIONS.Italy);
 
 export const AVIATION_DATA = [
