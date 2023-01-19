@@ -21,7 +21,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    height: 220px;
+    height: 170px;
   }
 
   @include media-breakpoint-down(xs) {
@@ -120,7 +120,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    font-size: 35px;
+    font-size: 27px;
   }
 
   @include media-breakpoint-down(xs) {

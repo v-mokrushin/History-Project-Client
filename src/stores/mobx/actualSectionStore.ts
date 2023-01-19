@@ -2,7 +2,7 @@ import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 
 export class ActualSectionStore {
-  public actualSection: string | null;
+  public actualSection: NAVIGATION_ACTUAL_SECTION | null;
   private length: number | undefined;
 
   constructor() {

@@ -4,7 +4,7 @@ import { CONTAINER_TYPES } from "./constants";
 import styles from "./Container.module.scss";
 
 interface IContainerProps {
-  type?: string;
+  type?: CONTAINER_TYPES;
   className?: string;
   children: any;
 }

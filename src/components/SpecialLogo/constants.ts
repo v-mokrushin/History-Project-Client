@@ -1,5 +1,5 @@
-export const SPECIAL_LOGO_TYPE = {
-  loading: "loading",
-  inDevelopment: "inDevelopment",
-  notFound: "notFound",
-};
+export enum SPECIAL_LOGO_TYPE {
+  loading,
+  inDevelopment,
+  notFound,
+}

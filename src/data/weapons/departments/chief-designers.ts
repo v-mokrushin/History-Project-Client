@@ -29,6 +29,12 @@ export const ChiefDesigners = {
     Ilyushin: ChiefDesigner("Ильюшин С.В.", NATIONS.USSR),
     Horikoshi: ChiefDesigner("Хорикоси Дзиро", NATIONS.Japan),
   },
+  artillery: {
+    Grabin: ChiefDesigner("Грабин В.Г.", NATIONS.USSR),
+    Lusser: ChiefDesigner("Луссер Роберт", NATIONS.Germany),
+    Braun: ChiefDesigner("Браун Вернер", NATIONS.Germany),
+  },
+
   smallArms: {
     HugoSchmeisser: ChiefDesigner("Шмайссер Хуго", NATIONS.Germany),
     WernerGruner: ChiefDesigner("Грунер Вернер Э.", NATIONS.Germany),

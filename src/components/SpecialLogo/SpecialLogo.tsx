@@ -7,7 +7,7 @@ import styles from "./SpecialLogo.module.scss";
 interface ISpecialLogoProps {
   vertiacalFill?: boolean;
   className?: string;
-  type: string;
+  type: SPECIAL_LOGO_TYPE;
 }
 
 export default function SpecialLogo({

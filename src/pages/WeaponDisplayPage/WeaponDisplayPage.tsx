@@ -14,8 +14,7 @@ import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import TextBlock from "../../components/TextBlock/TextBlock";
-import DesktopContentList from "../../components/DesktopContentList/DesktopContentList";
-import MobileContentList from "../../components/MobileContentList/MobileContentList";
+import ContentList from "../../components/ContentList/ContentList";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import YTFrame from "../../components/YTFrame/YTFrame";
@@ -26,6 +25,7 @@ import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import loadingStore from "stores/mobx/loadingStore";
 import { observer } from "mobx-react";
+import { CONTENT_LIST_TYPE } from "components/ContentList/constants";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -77,7 +77,8 @@ const WeaponDisplayPage = observer(() => {
         {weapon.gallery && <IntroImage imageUrl={weapon.gallery.icon} />}
         <ContentWrapper className={ANIMATIONS.fadeIn}>
           <Container type={CONTAINER_TYPES.aside}>
-            <DesktopContentList
+            <ContentList
+              type={CONTENT_LIST_TYPE.desktop}
               list={weapon.sections}
               loadingStatus={loadingStore.getStatus()}
             />
@@ -89,7 +90,11 @@ const WeaponDisplayPage = observer(() => {
                 <>
                   {weapon.isReady ? (
                     <>
-                      <MobileContentList list={weapon.sections} />
+                      <ContentList
+                        type={CONTENT_LIST_TYPE.mobile}
+                        list={weapon.sections}
+                        loadingStatus={loadingStore.getStatus()}
+                      />
                       {getIntro()}
                       <TextBlock>
                         <Spec weapon={weapon} />

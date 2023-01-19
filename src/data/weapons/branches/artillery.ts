@@ -3,6 +3,7 @@ import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { Developers } from "../departments/developers";
 import { TWeapon } from "../interfaces/common-weapon-interfaces";
+import { ChiefDesigners } from "../departments/chief-designers";
 
 const ussr: TWeapon[] = [
   {
@@ -44,6 +45,7 @@ const ussr: TWeapon[] = [
     specifications: {
       common: {
         developer: Developers.atillery.Plant92,
+        chiefDesigner: ChiefDesigners.artillery.Grabin,
       },
     },
   },
@@ -54,6 +56,7 @@ const ussr: TWeapon[] = [
     specifications: {
       common: {
         developer: Developers.atillery.Plant92,
+        chiefDesigner: ChiefDesigners.artillery.Grabin,
       },
     },
   },
@@ -147,6 +150,7 @@ const germany: TWeapon[] = [
     specifications: {
       common: {
         developer: Developers.atillery.Peenemunde,
+        chiefDesigner: ChiefDesigners.artillery.Braun,
       },
     },
   },
@@ -157,6 +161,7 @@ const germany: TWeapon[] = [
     specifications: {
       common: {
         developer: Developers.atillery.Fieseler,
+        chiefDesigner: ChiefDesigners.artillery.Lusser,
       },
     },
   },
