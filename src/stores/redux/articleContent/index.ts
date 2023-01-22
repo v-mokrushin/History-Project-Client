@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IArticleContent } from "data/articles/interfaces";
 import { LOADING_STATUSES } from "../constants";
 
-const initialState = {
+export interface IArticlesContentState {
+  entities: { [key: string]: IArticleContent };
+  ids: string[];
+  status: LOADING_STATUSES;
+}
+
+const initialState: IArticlesContentState = {
   entities: {},
   ids: [],
   status: LOADING_STATUSES.idle,
@@ -15,11 +22,8 @@ export const articleContentSlice = createSlice({
       state.status = LOADING_STATUSES.inProgress;
     },
     successLoading: (state, action) => {
-      const obj = {};
-      obj[action.payload.id] = action.payload;
-
-      state.entities = { ...state.entities, ...obj };
-      state.ids = Array.from(new Set([...state.ids, action.payload.id]));
+      state.entities[action.payload.id] = action.payload;
+      state.ids.push(action.payload.id);
       state.status = LOADING_STATUSES.success;
     },
     failedLoading: (state) => {

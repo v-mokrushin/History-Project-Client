@@ -49,6 +49,11 @@ export const Producers = {
     Fisher: Producer("Fisher Tank Arsenal", NATIONS.USA),
     Ford: Producer("Ford Motor Company", NATIONS.USA),
     MasseyHarris: Producer("Massey-Harris Company", NATIONS.Canada),
+    Nuffield: Producer(
+      "Nuffield Mechanizations and Aero",
+      NATIONS.GreatBritain
+    ),
+    MetroCammell: Producer("Metro Cammell", NATIONS.GreatBritain),
   },
   aviation: {
     Kuibyshev1: Producer("Куйбышевский авиазавод №1", NATIONS.USSR),

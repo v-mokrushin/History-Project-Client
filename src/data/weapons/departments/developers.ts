@@ -51,6 +51,7 @@ export const Developers = {
       "Nuffield Mechanizations and Aero",
       NATIONS.GreatBritain
     ),
+    Vickers: Developer("Vickers-Armstrongs", NATIONS.GreatBritain),
   },
   aviation: {
     Yak: Developer("ОКБ-115 Яковлева", NATIONS.USSR),

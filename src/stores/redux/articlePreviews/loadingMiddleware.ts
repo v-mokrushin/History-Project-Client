@@ -1,15 +1,12 @@
+import { Articles } from "data/articles/articles";
 import { articlePreviewsSlice } from ".";
-// import { mock } from "../../../data/mock";
-// import { normolize } from "../../../utils/normolize";
+import { AppDispatch, RootState } from "..";
 import { LOADING_STATUSES } from "../constants";
-import {
-  selectArticlePreviewsIds,
-  selectArticlePreviewsLoadingStatus,
-} from "./selectors";
+import { selectArticlePreviewsLoadingStatus } from "./selectors";
 
 export const loadArticlePreviews = (
-  dispatch: Function,
-  getState: Function
+  dispatch: AppDispatch,
+  getState: () => RootState
 ): void => {
   if (
     selectArticlePreviewsLoadingStatus(getState()) === LOADING_STATUSES.success
@@ -19,16 +16,6 @@ export const loadArticlePreviews = (
   dispatch(articlePreviewsSlice.actions.startLoading());
 
   setTimeout(() => {
-    dispatch(articlePreviewsSlice.actions.successLoading(getState()));
+    dispatch(articlePreviewsSlice.actions.successLoading(Articles.previews));
   }, Math.random() * 500 + 500);
 };
-
-// dispatch(articlePreviewsSlice.actions.successLoading(mock.articlePreviews));
-// fetch("http://localhost:3001/api/articles")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     dispatch(articlesSlice.actions.successLoading(normolize(data)));
-//   })
-//   .catch(() => {
-//     dispatch(articlesSlice.actions.failedLoading());
-//   });

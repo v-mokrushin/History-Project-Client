@@ -23,7 +23,7 @@ export const BODIES: IBodies = {
       top: "120 мм / 60°",
       bottom: "100 мм / −30°",
     },
-    board: { top: "90 - 120 мм / 15°", bottom: "90 мм / 0°" },
+    board: { top: "90-120 мм / 15°", bottom: "90 мм / 0°" },
     stern: { top: "60 мм / 49°", bottom: "60 мм / -49°" },
     bottom: "20 мм",
     roof: "30 мм",

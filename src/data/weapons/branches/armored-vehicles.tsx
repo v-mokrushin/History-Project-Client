@@ -575,7 +575,7 @@ const ussr: IArmoredVehicle[] = [
 
 const germany: IArmoredVehicle[] = [
   {
-    name: "PzKpfw VI Ausf.B Tiger II",
+    name: "PzKpfw VI Ausf.B Königstiger",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -1146,6 +1146,7 @@ const britain: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Nuffield,
+        producer: [Producers.armoredVehicles.Nuffield],
       },
     },
   },
@@ -1156,6 +1157,7 @@ const britain: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Nuffield,
+        producer: [Producers.armoredVehicles.Nuffield],
       },
     },
   },
@@ -1163,7 +1165,12 @@ const britain: IArmoredVehicle[] = [
     name: "Tetrach I",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1940,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Vickers,
+        producer: [Producers.armoredVehicles.MetroCammell],
+      },
+    },
   },
   {
     name: "Dimler Mk II",

@@ -24,16 +24,19 @@ import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgr
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { Scroll } from "utils/scroll";
+import { AppDispatch, RootState } from "stores/redux";
 
 export default function ArticlePage() {
-  const dispatch = useDispatch<any>();
+  const dispatch = useDispatch<AppDispatch>();
   const { articleId } = useParams();
+  if (!articleId) return <></>;
+
   const loadingStatus = useSelector(selectArticleContentLoadingStatus);
   const articlePreview = useSelector((state) =>
-    selectArticlePreviewById(state, { articleId })
+    selectArticlePreviewById(state as RootState, { articleId })
   );
   const articleContent = useSelector((state) =>
-    selectArticleContentById(state, { articleId })
+    selectArticleContentById(state as RootState, { articleId })
   );
 
   if (!articlePreview)

@@ -40,7 +40,7 @@ export const CANNONS: ICannons = {
     muzzleVelocity: 810,
     type: "нарезное",
     chargingType: "унитарное",
-    muzzleBrake: "да",
+    muzzleBrake: "двухкамерный",
   },
   ["7,5 cm KwK 42"]: {
     trademark: "7,5 cm KwK 42",
@@ -49,6 +49,6 @@ export const CANNONS: ICannons = {
     muzzleVelocity: 935,
     type: "нарезное",
     chargingType: "унитарное",
-    muzzleBrake: "да",
+    muzzleBrake: "однакамерный",
   },
 };

@@ -1,9 +1,10 @@
 import { articleContentSlice } from ".";
-import { articles } from "../../../data/articles/articles";
+import { AppDispatch, RootState } from "..";
+import { Articles } from "../../../data/articles/articles";
 import { selectArticleContentById } from "./selectors";
 
 export const loadArticleContent =
-  (articleId: string) => (dispatch: Function, getState: Function) => {
+  (articleId: string) => (dispatch: AppDispatch, getState: () => RootState) => {
     if (selectArticleContentById(getState(), { articleId })) return;
 
     dispatch(articleContentSlice.actions.startLoading());
@@ -11,7 +12,7 @@ export const loadArticleContent =
     setTimeout(() => {
       dispatch(
         articleContentSlice.actions.successLoading(
-          articles.articlesContent.entities[articleId]
+          Articles.content.entities[articleId]
         )
       );
     }, Math.random() * 800 + 200);

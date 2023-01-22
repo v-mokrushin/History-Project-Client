@@ -58,7 +58,7 @@ articles_data.forEach((item) => {
   });
 });
 
-const articlePreviews = normolize(
+const previews = normolize(
   articles_data.map((item) => ({
     id: item.id,
     title: item.title,
@@ -67,7 +67,7 @@ const articlePreviews = normolize(
   }))
 );
 
-const articlesContent = normolize(
+const content = normolize(
   articles_data.map((item) => ({
     id: item.id,
     author: item.author,
@@ -76,9 +76,9 @@ const articlesContent = normolize(
   }))
 );
 
-export const articles = {
-  articlePreviews,
-  articlesContent,
+export const Articles = {
+  previews,
+  content,
 };
 
-console.log(articles);
+console.log(Articles);

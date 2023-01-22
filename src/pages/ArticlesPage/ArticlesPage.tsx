@@ -14,13 +14,13 @@ import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { documentTitle } from "../../utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
-import InnerContentWrapper from "../../components/InnerContentWrapper/InnerContentWrapper";
 import Title from "../../components/Title/Title";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
+import { AppDispatch } from "stores/redux";
 
 export default function ArticlesPage() {
-  const dispatch = useDispatch<any>();
+  const dispatch = useDispatch<AppDispatch>();
   const articlesIds = useSelector(selectArticlePreviewsIds);
   const loadingStatus = useSelector(selectArticlePreviewsLoadingStatus);
   const pageInfo = PAGES.getByPath(useLocation().pathname);

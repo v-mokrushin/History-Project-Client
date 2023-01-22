@@ -44,7 +44,8 @@ export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
       .replaceAll("Ł", "L")
       .replaceAll("ś", "s")
       .replaceAll("ä", "a")
-      .replaceAll("ó", "o") +
+      .replaceAll("ó", "o")
+      .replaceAll("ö", "o") +
     "/"
   );
 }

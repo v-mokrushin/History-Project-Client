@@ -1,13 +1,12 @@
 import React from "react";
-import { createStoreHook } from "react-redux";
 import { combineReducers } from "redux";
 import { articlePreviewsSlice } from "./articlePreviews";
 import { configureStore } from "@reduxjs/toolkit";
 import { articleContentSlice } from "./articleContent";
 
 const rootReducer = combineReducers({
-  articles: articlePreviewsSlice.reducer,
-  articleContent: articleContentSlice.reducer,
+  articlesPreviews: articlePreviewsSlice.reducer,
+  articlesContent: articleContentSlice.reducer,
 });
 
 export const store = configureStore({
@@ -16,3 +15,6 @@ export const store = configureStore({
     getDefaultMiddleware({ serializableCheck: false }),
   devTools: true,
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

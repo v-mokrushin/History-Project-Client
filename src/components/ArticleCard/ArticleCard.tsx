@@ -7,6 +7,7 @@ import classNames from "classnames";
 import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import { Scroll } from "utils/scroll";
+import { RootState } from "stores/redux";
 
 interface IArticleCardProps {
   articleId: string;
@@ -14,7 +15,7 @@ interface IArticleCardProps {
 
 export default function ArticleCard({ articleId }: IArticleCardProps) {
   const article = useSelector((state) =>
-    selectArticlePreviewById(state, { articleId })
+    selectArticlePreviewById(state as RootState, { articleId })
   );
 
   return (

@@ -1,6 +1,6 @@
-export const LOADING_STATUSES = {
-  idle: "idle",
-  inProgress: "inProgresss",
-  success: "success",
-  failed: "failed",
-};
+export enum LOADING_STATUSES {
+  idle,
+  inProgress,
+  success,
+  failed,
+}

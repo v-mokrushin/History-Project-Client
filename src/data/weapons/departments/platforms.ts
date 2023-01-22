@@ -17,7 +17,7 @@ export const Platforms = {
     PzKpfw3: Platform("Pz.Kpfw. III"),
     PzKpfw4: Platform("Pz.Kpfw. IV"),
     PzKpfw5: Platform("Pz.Kpfw. V Panther"),
-    PzKpfw6B: Platform("Pz.Kpfw. VI Ausf.B Tiger II"),
+    PzKpfw6B: Platform("Pz.Kpfw. VI Ausf.B Königstiger"),
     SdKfz250: Platform("Sd.Kfz. 250"),
     SdKfz251: Platform("Sd.Kfz. 251"),
     Stug3: Platform("StuG III"),

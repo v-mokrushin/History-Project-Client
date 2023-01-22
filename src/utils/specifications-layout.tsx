@@ -220,11 +220,11 @@ export const SpecificationsLayout = {
                 val={specifications.armoring.body.forehead.bottom}
               />
               <SpecLine
-                crit="Борт корпуса (верх)"
+                crit="Борт корпуса (верхний пояс)"
                 val={specifications.armoring.body.board.top}
               />
               <SpecLine
-                crit="Борт корпуса (низ)"
+                crit="Борт корпуса (нижний пояс)"
                 val={specifications.armoring.body.board.bottom}
               />
               <SpecLine
