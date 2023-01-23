@@ -24,6 +24,7 @@ import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { Scroll } from "utils/scroll";
 import { AppDispatch, RootState } from "stores/redux";
+import { PAGES } from "constants/pages";
 
 export default function ArticlePage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -89,7 +90,18 @@ export default function ArticlePage() {
   return (
     <>
       <ReadingProgressBar />
-      {articleContent && <IntroImage imageUrl={articleContent.backgroundURL} />}
+      {/* {articleContent ? (
+        <IntroImage imageUrl={PAGES.articles.introImage} animated />
+      ) : (
+        <IntroImage imageUrl={articleContent.backgroundURL} />
+      )} */}
+      <IntroImage
+        imageUrl={
+          articleContent
+            ? articleContent.backgroundURL
+            : PAGES.articles.introImage
+        }
+      />
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>
           <div className={styles.innerWrapper}>
