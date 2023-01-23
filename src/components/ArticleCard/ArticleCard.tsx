@@ -25,7 +25,7 @@ export default function ArticleCard({ articleId }: IArticleCardProps) {
     >
       <div
         className={styles.backgroundWrapper}
-        style={getBackgroundImageStyleObject(article.backgroundURL)}
+        style={getBackgroundImageStyleObject(article.minBackgroundURL)}
       ></div>
       <div className={styles.contentWrapper}>
         <p className={styles.title}>{article.title}</p>

@@ -12,7 +12,6 @@ import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import { documentTitle } from "../../utils/updateDocumentTitle";
 import Container from "../../components/Container/Container";
 import Title from "../../components/Title/Title";
 import { useLocation } from "react-router-dom";
@@ -27,37 +26,30 @@ export default function ArticlesPage() {
 
   useEffect(() => {
     dispatch(loadArticlePreviews);
-    documentTitle.setArticlesPage();
   }, [dispatch]);
-
-  function getLayout() {
-    if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} />;
-    }
-
-    if (loadingStatus === LOADING_STATUSES.success) {
-      return (
-        <>
-          <Title>Статьи</Title>
-          <div className={styles.cardsWrapper}>
-            {articlesIds.map((val: string) => (
-              <ArticleCard articleId={val} key={val} />
-            ))}
-          </div>
-        </>
-      );
-    }
-
-    if (loadingStatus === LOADING_STATUSES.failed) {
-      return <span>Загрузка не удалась</span>;
-    }
-  }
 
   return (
     <>
       <IntroImage imageUrl={pageInfo!.introImage} />
       <ContentWrapper>
-        <Container>{getLayout()}</Container>
+        <Container>
+          {loadingStatus === LOADING_STATUSES.inProgress && (
+            <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
+          )}
+          {loadingStatus === LOADING_STATUSES.failed && (
+            <span>Загрузка не удалась</span>
+          )}
+          {loadingStatus === LOADING_STATUSES.success && (
+            <>
+              <Title>Статьи</Title>
+              <div className={styles.cardsWrapper}>
+                {articlesIds.map((val: string) => (
+                  <ArticleCard articleId={val} key={val} />
+                ))}
+              </div>
+            </>
+          )}
+        </Container>
       </ContentWrapper>
     </>
   );

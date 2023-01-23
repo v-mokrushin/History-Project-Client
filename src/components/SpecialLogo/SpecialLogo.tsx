@@ -40,7 +40,12 @@ export default function SpecialLogo({
   }
 
   return (
-    <div className={styles.root_verticalFill}>
+    <div
+      className={classNames(
+        styles.root,
+        vertiacalFill && styles.root_verticalFill
+      )}
+    >
       <div className={classNames(styles.wrapper, className)}>
         <div
           className={classNames(styles.animatedIcon_left, getIconStyle())}

@@ -3,15 +3,10 @@ import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Container from "../../components/Container/Container";
 import SectionCard from "../../components/SectionCard/SectionCard";
 import VideoIntro from "../../components/VideoIntro/VideoIntro";
-import { documentTitle } from "../../utils/updateDocumentTitle";
 import styles from "./HomePage.module.scss";
 import { PAGES } from "constants/pages";
 
 export default function HomePage() {
-  React.useEffect(() => {
-    documentTitle.setHomePage();
-  }, []);
-
   return (
     <>
       <VideoIntro />

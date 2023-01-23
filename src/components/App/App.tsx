@@ -14,8 +14,26 @@ import WeaponsBranchSelectionPage from "../../pages/WeaponsBranchSelectionPage/W
 import NationSelectionPage from "../../pages/NationSelectionPage/NationSelectionPage";
 import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
-import { observer } from "mobx-react";
-import { LEVEL } from "../../stores/mobx";
+import { injectStores } from "@mobx-devtools/tools";
+import burgerStore from "../../stores/mobx/burgerStore";
+import imageViewerStore from "../../stores/mobx/imageViewerStore";
+import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
+import audioPlayerStore from "../../stores/mobx/audioPlayerStore";
+import actualSectionStore from "../../stores/mobx/actualSectionStore";
+import filtersStore from "../../stores/mobx/filtersStore";
+import settingsStore from "../../stores/mobx/settingsStore";
+import loadingStore from "../../stores/mobx/loadingStore";
+
+injectStores({
+  burgerStore,
+  imageViewerStore,
+  scrollMemoryStore,
+  audioPlayerStore,
+  actualSectionStore,
+  filtersStore,
+  settingsStore,
+  loadingStore,
+});
 
 function App() {
   React.useEffect(() => {

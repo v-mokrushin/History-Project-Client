@@ -4,17 +4,12 @@ import SectionCard from "../../components/SectionCard/SectionCard";
 import Container from "../../components/Container/Container";
 import IntroImage from "../../components/IntroImage/IntroImage";
 import styles from "./WeaponsBranchSelectionPage.module.scss";
-import { documentTitle } from "../../utils/updateDocumentTitle";
 import Title from "../../components/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
 
 export default function WeaponsBranchSelectionPage() {
   const pageInfo = PAGES.getByPath(useLocation().pathname);
-
-  React.useEffect(() => {
-    documentTitle.setWeaponsPage();
-  }, []);
 
   return (
     <>

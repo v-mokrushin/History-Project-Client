@@ -1,4 +1,5 @@
 import { action, makeObservable, observable, makeAutoObservable } from "mobx";
+import { DocumentTitle } from "utils/updateDocumentTitle";
 import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 
 export class ActualSectionStore {
@@ -13,13 +14,21 @@ export class ActualSectionStore {
   }
 
   set(path: string, length?: number): void {
-    if (path == "/") this.actualSection = NAVIGATION_ACTUAL_SECTION.home;
-    if (path == "/weapons")
+    if (path == "/") {
+      this.actualSection = NAVIGATION_ACTUAL_SECTION.home;
+      DocumentTitle.setHomePage();
+    }
+    if (path == "/weapons") {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.weapons;
-    if (path == "/articles")
+      DocumentTitle.setWeaponsPage();
+    }
+    if (path == "/articles") {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.articles;
-    if (path == "/battles")
+      DocumentTitle.setArticlesPage();
+    }
+    if (path == "/battles") {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.battles;
+    }
 
     this.length = length;
   }

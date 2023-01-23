@@ -1,5 +1,6 @@
 import { RootState } from "./../index";
 import { IArticlePreviewsState } from "./index";
+
 export const selectArticlePreviewsModule = (state: RootState) =>
   state.articlesPreviews;
 

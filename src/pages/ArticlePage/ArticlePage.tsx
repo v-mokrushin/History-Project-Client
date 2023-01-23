@@ -14,11 +14,10 @@ import { loadArticleContent } from "../../stores/redux/articleContent/loadingMid
 import {
   selectArticleContentById,
   selectArticleContentLoadingStatus,
+  selectIsExistingId,
 } from "../../stores/redux/articleContent/selectors";
-import { selectArticlePreviewById } from "../../stores/redux/articlePreviews/selectors";
 import { LOADING_STATUSES } from "../../stores/redux/constants";
 import styles from "./ArticlePage.module.scss";
-import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
 import WarningPage from "pages/WarningPage/WarningPage";
@@ -32,15 +31,12 @@ export default function ArticlePage() {
   if (!articleId) return <></>;
 
   const loadingStatus = useSelector(selectArticleContentLoadingStatus);
-  const articlePreview = useSelector((state) =>
-    selectArticlePreviewById(state as RootState, { articleId })
-  );
   const articleContent = useSelector((state) =>
     selectArticleContentById(state as RootState, { articleId })
   );
-
-  if (!articlePreview)
-    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
+  const isExistingId = useSelector((state) =>
+    selectIsExistingId(state as RootState, { articleId })
+  );
 
   React.useEffect(() => {
     Scroll.toTopInstantly();
@@ -51,26 +47,17 @@ export default function ArticlePage() {
   }, [articleId]);
 
   function getContent() {
-    if (loadingStatus === LOADING_STATUSES.idle) {
-      return;
-    }
-    if (loadingStatus === LOADING_STATUSES.inProgress) {
-      return <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />;
-    }
-    if (loadingStatus === LOADING_STATUSES.success) {
-      if (!articleContent) return;
+    if (!articleContent) return;
 
-      if (!articleContent.text) {
-        return (
-          <SpecialLogo
-            type={SPECIAL_LOGO_TYPE.inDevelopment}
-            className={styles.specialLogoStyle}
-            vertiacalFill
-          />
-        );
-      }
-
+    if (!articleContent.text) {
       return (
+        <SpecialLogo type={SPECIAL_LOGO_TYPE.inDevelopment} vertiacalFill />
+      );
+    }
+
+    return (
+      <>
+        <Title centered>{articleContent.title}</Title>
         <div className={classNames(styles.innerWrapper, ANIMATIONS.fadeIn)}>
           <div className={styles.infoBox}>
             {articleContent.author && (
@@ -92,19 +79,27 @@ export default function ArticlePage() {
           </div>
           {articleContent.text}
         </div>
-      );
-    }
+      </>
+    );
   }
+
+  if (!isExistingId)
+    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound} />;
 
   return (
     <>
       <ReadingProgressBar />
-      <IntroImage imageUrl={articlePreview.backgroundURL} />
+      {articleContent && <IntroImage imageUrl={articleContent.backgroundURL} />}
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>
           <div className={styles.innerWrapper}>
-            <Title centered>{articlePreview.title}</Title>
-            {getContent()}
+            {loadingStatus === LOADING_STATUSES.inProgress && (
+              <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
+            )}
+            {loadingStatus === LOADING_STATUSES.failed && (
+              <span>Загрузка не удалась</span>
+            )}
+            {loadingStatus === LOADING_STATUSES.success && getContent()}
           </div>
         </Container>
       </ContentWrapper>

@@ -1,6 +1,6 @@
 const logo = "HoF";
 
-export const documentTitle = {
+export const DocumentTitle = {
   setHomePage(): void {
     document.title = `${logo} | Энциклопедия ВМВ`;
   },

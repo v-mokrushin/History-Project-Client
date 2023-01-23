@@ -10,3 +10,8 @@ export const selectArticleContentById = (
 
 export const selectArticleContentLoadingStatus = (state: RootState) =>
   selectArticleContentModule(state).status;
+
+export const selectIsExistingId = (
+  state: RootState,
+  { articleId }: { [key: string]: string }
+) => selectArticleContentModule(state).existingIds.includes(articleId);
