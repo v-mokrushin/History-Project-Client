@@ -30,7 +30,7 @@ export default function ArticlesPage() {
 
   return (
     <>
-      <IntroImage imageUrl={pageInfo!.introImage} />
+      <IntroImage imageUrl={pageInfo!.introImage} animated />
       <ContentWrapper>
         <Container>
           {loadingStatus === LOADING_STATUSES.inProgress && (

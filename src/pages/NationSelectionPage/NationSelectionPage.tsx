@@ -26,9 +26,15 @@ export default function NationSelectionPage() {
   if (!pageInfo)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
+  console.log("render");
+
   return (
     <>
-      <IntroImage imageUrl={pageInfo.introImage} />
+      <IntroImage
+        imageUrl={pageInfo.introImage}
+        animated
+        shouldThrowAnimation
+      />
       <ContentWrapper>
         <Container>
           <Title>{pageInfo.name.russian}</Title>
