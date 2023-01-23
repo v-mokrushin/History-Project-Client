@@ -13,9 +13,14 @@
   background-color: rgba($color: #000000, $alpha: 0.7);
   user-select: none;
   transform: scale(0);
+  // transition: opacity 250ms ease;
+  // display: none;
+  // opacity: 0;
 
   &_open {
     transform: scale(1);
+    // display: flex;
+    // opacity: 1;
   }
 }
 
@@ -23,8 +28,9 @@
   width: 75%;
   max-height: 90%;
   object-fit: contain;
-  transform: scale(0);
-  transition: transform 250ms ease;
+  // transform: scale(0);
+  transform: translateY(300%);
+  transition: transform 350ms ease;
 
   @include media-breakpoint-down(lg) {
     width: 87%;
@@ -35,6 +41,40 @@
   }
 
   &_open {
-    transform: scale(1);
+    // transform: scale(1);
+    transform: translateY(0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  right: 2%;
+  top: 3%;
+  height: 7%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+
+  @include media-breakpoint-down(lg) {
+    top: 15px;
+    right: 15px;
+    height: 7%;
+  }
+
+  &:hover {
+    background-color: rgb(16, 16, 16);
+  }
+
+  &_icon {
+    height: 65%;
+    aspect-ratio: 1 / 1;
+    background-image: url(../../assets/images/cross.svg);
+    background-size: cover;
   }
 }

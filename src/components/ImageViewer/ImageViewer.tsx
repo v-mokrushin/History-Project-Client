@@ -20,13 +20,18 @@ const ImageViewer = observer(() => {
 
   return (
     <div
-      onClick={() => imageViewerStore.setClose()}
+      onClick={() => {
+        imageViewerStore.setClose();
+      }}
       className={classNames(
         styles.root,
         imageViewerStore.open && styles.root_open
       )}
     >
       <img
+        onClick={(event) => {
+          // event.stopPropagation();
+        }}
         id="image-viewer-image"
         className={classNames(
           styles.image,
@@ -35,6 +40,12 @@ const ImageViewer = observer(() => {
         src={imageViewerStore.url}
         alt=""
       />
+      <button
+        className={styles.closeButton}
+        onClick={() => imageViewerStore.setClose()}
+      >
+        <div className={styles.closeButton_icon}></div>
+      </button>
     </div>
   );
 });
