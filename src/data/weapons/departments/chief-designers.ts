@@ -21,6 +21,7 @@ export const ChiefDesigners = {
     Barykov: ChiefDesigner("Барыков Н.В.", NATIONS.USSR),
     Ginzburg: ChiefDesigner("Гинзбург С.А.", NATIONS.USSR),
     ErwinAders: ChiefDesigner("Адерс Эрвин", NATIONS.Germany),
+    FerdinandPorsche: ChiefDesigner("Порше Фердинанд", NATIONS.Germany),
     Wibke: ChiefDesigner("Вибке П.", NATIONS.Germany),
   },
   aviation: {

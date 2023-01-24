@@ -1,5 +1,5 @@
 import { action, makeObservable, observable, makeAutoObservable } from "mobx";
-import { DocumentTitle } from "utils/updateDocumentTitle";
+import { DocumentTitle } from "utils/document-title";
 import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
 
 export class ActualSectionStore {

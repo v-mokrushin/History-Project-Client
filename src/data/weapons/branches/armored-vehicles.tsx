@@ -749,7 +749,10 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {},
+      common: {
+        developer: Developers.armoredVehicles.Porsche,
+        chiefDesigner: ChiefDesigners.armoredVehicles.FerdinandPorsche,
+      },
     },
   },
   {
@@ -778,6 +781,12 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw3,
+        developer: Developers.armoredVehicles.MAN,
+        producer: [
+          Producers.armoredVehicles.Alkett,
+          Producers.armoredVehicles.Miag,
+        ],
+        numberOfIssued: 7800,
       },
     },
   },
@@ -788,26 +797,32 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw3,
+        producer: [Producers.armoredVehicles.Alkett],
+        numberOfIssued: 360,
       },
     },
   },
   {
-    name: "10,5 cm Sturmhaubitze 42",
+    name: "StuH 42",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw3,
+        producer: [Producers.armoredVehicles.Alkett],
+        numberOfIssued: 1311,
       },
     },
   },
   {
-    name: "StuG III Ausf.A",
+    name: "StuG III Ausf.B",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw3,
+        producer: [Producers.armoredVehicles.Alkett],
+        numberOfIssued: 300,
       },
     },
   },
@@ -916,6 +931,9 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        producer: [Producers.armoredVehicles.Fisher],
+        productionPeriod: "1944",
+        numberOfIssued: 244,
       },
     },
   },
@@ -938,6 +956,12 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        producer: [
+          Producers.armoredVehicles.PullmanStandard,
+          Producers.armoredVehicles.Fisher,
+        ],
+        productionPeriod: "1944 - 1945",
+        numberOfIssued: 2915,
       },
     },
   },
@@ -948,15 +972,27 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        producer: [Producers.armoredVehicles.PullmanStandard],
         platform: Platforms.armoredVehicles.Sherman,
+        productionPeriod: "1944 - 1945",
+        numberOfIssued: 3426,
       },
     },
   },
-  // {
-  //   name: "M4A3(105) Sherman",
-  //   type: WEAPONS_TYPE.armoredVehicle.mediumTank,
-  //   adoptedIntoServiceDate: 1944,
-  // },
+  {
+    name: "M4A3(105) Sherman",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1944,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        producer: [Producers.armoredVehicles.DetroitTankArsenal],
+        platform: Platforms.armoredVehicles.Sherman,
+        productionPeriod: "1944 - 1945",
+        numberOfIssued: 3039,
+      },
+    },
+  },
   {
     name: "M4A2 Sherman",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,

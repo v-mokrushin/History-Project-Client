@@ -39,8 +39,6 @@ const WeaponsPreviewPage = observer(() => {
     [filtersStore.filters]
   );
 
-  console.log("render");
-
   React.useEffect(() => {
     const scrollEvent = () => {
       scrollMemoryStore.setValue(window.scrollY);

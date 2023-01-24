@@ -39,8 +39,8 @@
 
 .variantsBox {
   display: flex;
-  // max-height: 500px;
-  // overflow-y: scroll;
+  max-height: 750px;
+  overflow-y: auto;
   // flex-wrap: wrap;
   // overflow: hidden;
   flex-direction: column;
@@ -58,11 +58,15 @@
   transform-origin: top center;
   transition: transform 200ms ease, box-shadow 100ms ease;
 
+  @include media-breakpoint-down(FHD) {
+    max-height: 550px;
+  }
+
   @include media-breakpoint-down(xl) {
-    max-height: 500px;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    overflow-y: auto;
+    max-height: 400px;
+    // flex-wrap: nowrap;
+    // overflow: hidden;
+    // overflow-y: auto;
   }
 
   @include media-breakpoint-down(lg) {
@@ -76,6 +80,7 @@
     overflow: hidden;
     overflow-y: auto;
     width: 100%;
+    row-gap: 5px;
   }
 
   &_open {
@@ -100,6 +105,11 @@
 
   &__text {
     transition: all 300ms ease;
+
+    @include media-breakpoint-down(xs) {
+      line-height: 14px;
+      font-size: 14px;
+    }
 
     &:hover {
       color: $grey-text-color;

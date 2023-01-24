@@ -34,7 +34,7 @@ export const Producers = {
     Krupp: Producer("Krupp", NATIONS.Germany),
     Miag: Producer("Miag", NATIONS.Germany),
     Wegmann: Producer("Wegmann", NATIONS.Germany),
-    Alkett: Producer("Wegmann", NATIONS.Germany),
+    Alkett: Producer("Alkett", NATIONS.Germany),
     MNH: Producer(
       "Maschinenfabrik Niedersachsen Hannover (MNH)",
       NATIONS.Germany
@@ -43,6 +43,8 @@ export const Producers = {
     Buick: Producer("Buick", NATIONS.USA),
     GMC: Producer("General Motors", NATIONS.USA),
     Chrysler: Producer("Chrysler", NATIONS.USA),
+    DetroitTankArsenal: Producer("Detroit Tank Arsenal", NATIONS.USA),
+    PullmanStandard: Producer("Pullman-Standard Car Company", NATIONS.USA),
     ALCO: Producer("American Locomotive Company", NATIONS.USA),
     BLW: Producer("Baldwin Locomotive Works", NATIONS.USA),
     MontrealLW: Producer("Montreal Locomotive Works", NATIONS.Canada),

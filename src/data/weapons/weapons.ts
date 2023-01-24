@@ -54,7 +54,6 @@ export const WEAPONS = {
   },
 
   filterWeapons(selectedWeapons: TWeapon[], filters: TFilters) {
-    console.log(filters);
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {

@@ -1,4 +1,5 @@
-import { action, makeObservable, observable } from "mobx";
+import { DocumentOverflow } from "./../../utils/document-overflow";
+import { makeAutoObservable } from "mobx";
 
 export class BurgerStore {
   public open: boolean;
@@ -6,29 +7,22 @@ export class BurgerStore {
   constructor() {
     this.open = false;
 
-    makeObservable(this, {
-      open: observable,
-      toggleOpen: action,
-      setOpen: action,
-      setClose: action,
-    });
+    makeAutoObservable(this);
   }
 
   toggleOpen(): void {
     this.open = !this.open;
-    this.open
-      ? (document.body.style.overflow = "auto")
-      : (document.body.style.overflow = "hidden");
+    this.open ? DocumentOverflow.setHidden() : DocumentOverflow.setAuto();
   }
 
   setOpen(): void {
     this.open = true;
-    document.body.style.overflow = "hidden";
+    DocumentOverflow.setHidden();
   }
 
   setClose(): void {
     this.open = false;
-    document.body.style.overflow = "auto";
+    DocumentOverflow.setAuto();
   }
 }
 

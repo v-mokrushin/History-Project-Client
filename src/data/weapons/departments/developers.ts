@@ -37,6 +37,7 @@ export const Developers = {
     MAN: Developer("MAN", NATIONS.Germany),
     DaimlerBenz: Developer("Daimler-Benz", NATIONS.Germany),
     Krupp: Developer("Krupp", NATIONS.Germany),
+    Porsche: Developer("Porsche AG", NATIONS.Germany),
     Hanomag: Developer("Hanomag", NATIONS.Germany),
     Demag: Developer("Demag", NATIONS.Germany),
     CKD: Developer("ČKD", NATIONS.Czechoslovakia),
