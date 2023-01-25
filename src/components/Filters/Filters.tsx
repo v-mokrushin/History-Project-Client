@@ -19,7 +19,7 @@ const Filters = ({ className, weapons }: IFiltersProps) => {
     <div className={classNames(styles.root, className)}>
       <Input setter={filtersStore.setNameFilter.bind(filtersStore)} />
       <Filter
-        title="Нация"
+        title="Страна"
         selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(weapons)}
         setterCallback={filtersStore.setNation.bind(filtersStore)}
         getter={filtersStore.filters.nation}

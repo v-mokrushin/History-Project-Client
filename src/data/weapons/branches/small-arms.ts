@@ -80,9 +80,17 @@ const ussr: ISmallArm[] = [
 
 const germany: ISmallArm[] = [
   {
-    name: "Mauser 98",
+    name: "Mauser Gewehr 98",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1898,
+    specifications: {
+      common: { chiefDesigner: ChiefDesigners.smallArms.Mauser },
+    },
+  },
+  {
+    name: "Karabiner 98k",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1935,
     specifications: {
       common: { chiefDesigner: ChiefDesigners.smallArms.Mauser },
     },
@@ -94,6 +102,17 @@ const germany: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.HugoSchmeisser,
+      },
+    },
+  },
+  {
+    name: "MP-40",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1938,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Nagan,
+        numberOfIssued: 1_200_000,
       },
     },
   },
@@ -132,11 +151,34 @@ const germany: ISmallArm[] = [
 
 const usa: ISmallArm[] = [
   {
+    name: "M1 Garand",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    adoptedIntoServiceDate: 1936,
+    specifications: {
+      common: {},
+    },
+  },
+  {
     name: "Browning M2",
     type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: { chiefDesigner: ChiefDesigners.smallArms.Browning },
+    },
+  },
+];
+
+const britain: ISmallArm[] = [];
+
+const belgium: ISmallArm[] = [
+  {
+    name: "Lewis",
+    type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
+    adoptedIntoServiceDate: 1914,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Lewis,
+      },
     },
   },
 ];
@@ -159,6 +201,8 @@ const japan: ISmallArm[] = [];
 appendNation(ussr, NATIONS.USSR);
 appendNation(germany, NATIONS.Germany);
 appendNation(usa, NATIONS.USA);
+appendNation(britain, NATIONS.GreatBritain);
+appendNation(belgium, NATIONS.Belgium);
 appendNation(finland, NATIONS.Finland);
 appendNation(japan, NATIONS.Japan);
 
@@ -167,6 +211,8 @@ export const SMALL_ARMS_DATA = [
   ...germany,
   ...usa,
   ...japan,
+  ...britain,
+  ...belgium,
   ...finland,
 ];
 appendWeaponBranch(SMALL_ARMS_DATA, WEAPONS_CLASSIFICATION.smallArms);

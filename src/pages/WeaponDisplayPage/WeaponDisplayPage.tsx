@@ -26,6 +26,7 @@ import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import loadingStore from "stores/mobx/loadingStore";
 import { observer } from "mobx-react";
 import { CONTENT_LIST_TYPE } from "components/ContentList/constants";
+import imageViewerStore from "stores/mobx/imageViewerStore";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -35,6 +36,10 @@ const WeaponDisplayPage = observer(() => {
 
   React.useEffect(() => {
     loadingStore.checkLoading(weaponId);
+
+    return () => {
+      imageViewerStore.setClose();
+    };
   }, [weaponId]);
 
   function getIntro() {

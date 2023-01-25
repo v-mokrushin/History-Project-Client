@@ -781,7 +781,6 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw3,
-        developer: Developers.armoredVehicles.MAN,
         producer: [
           Producers.armoredVehicles.Alkett,
           Producers.armoredVehicles.Miag,

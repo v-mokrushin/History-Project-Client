@@ -53,7 +53,7 @@ export const WEAPONS = {
       );
   },
 
-  filterWeapons(selectedWeapons: TWeapon[], filters: TFilters) {
+  filterWeapons(selectedWeapons: TWeapon[], filters: TFilters): TWeapon[] {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
@@ -119,7 +119,7 @@ export const WEAPONS = {
     ];
   },
 
-  getById(weaponId: string | undefined) {
+  getById(weaponId: string | undefined): TWeapon | undefined {
     return weapons_data.find((item) => item.id === weaponId);
   },
 

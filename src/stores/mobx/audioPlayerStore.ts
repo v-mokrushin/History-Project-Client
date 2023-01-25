@@ -18,7 +18,10 @@ let trackList: string[] = [
   "/audio/neutral-theme.mp3",
   "/audio/pacific-attack.mp3",
   "/audio/rise-of-nazism.mp3",
-  "/audio/dark-father.mp3",
+  "/audio/ground-forces-battle-music-6.mp3",
+  "/audio/ground-forces-battle-music-7.mp3",
+  "/audio/ground-forces-battle-music-10.mp3",
+  // "/audio/dark-father.mp3",
 ];
 shuffleArray(trackList);
 trackList.unshift("/audio/apocalypse.mp3");

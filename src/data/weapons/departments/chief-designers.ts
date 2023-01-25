@@ -47,6 +47,7 @@ export const ChiefDesigners = {
     Browning: ChiefDesigner("Браунинг Джон М.", NATIONS.USA),
     Nagan: ChiefDesigner("Наган Эмиль и Наган Леон", NATIONS.Belgium),
     Mosin: ChiefDesigner("Мосин С.И.", NATIONS.RussainEmpire),
+    Lewis: ChiefDesigner("Льюис Айзек", NATIONS.USA),
   },
   grenadeLaunchers: {
     Uhl: ChiefDesigner("Уль Эдвард", NATIONS.USA),
