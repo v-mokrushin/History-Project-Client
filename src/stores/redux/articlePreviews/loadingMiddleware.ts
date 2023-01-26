@@ -1,4 +1,5 @@
 import { Articles } from "data/articles/articles";
+import { Random } from "utils/random";
 import { articlePreviewsSlice } from ".";
 import { AppDispatch, RootState } from "..";
 import { LOADING_STATUSES } from "../constants";
@@ -17,5 +18,5 @@ export const loadArticlePreviews = (
 
   setTimeout(() => {
     dispatch(articlePreviewsSlice.actions.successLoading(Articles.previews));
-  }, Math.random() * 500 + 500);
+  }, Random.getInteger(500, 1000));
 };

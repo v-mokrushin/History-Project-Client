@@ -1,3 +1,4 @@
+import { Random } from "utils/random";
 import { articleContentSlice } from ".";
 import { AppDispatch, RootState } from "..";
 import { Articles } from "../../../data/articles/articles";
@@ -15,5 +16,5 @@ export const loadArticleContent =
           Articles.content.entities[articleId]
         )
       );
-    }, Math.random() * 800 + 200);
+    }, Random.getInteger(700, 1000));
   };
