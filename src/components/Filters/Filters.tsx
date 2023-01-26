@@ -17,7 +17,10 @@ interface IFiltersProps {
 const Filters = ({ className, weapons }: IFiltersProps) => {
   return (
     <div className={classNames(styles.root, className)}>
-      <Input setter={filtersStore.setNameFilter.bind(filtersStore)} />
+      <Input
+        setter={filtersStore.setNameFilter.bind(filtersStore)}
+        initialValue={filtersStore.filters.name}
+      />
       <Filter
         title="Страна"
         selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(weapons)}
