@@ -338,6 +338,16 @@ const usa: IAircraft[] = [
       },
     },
   },
+  {
+    name: "Douglas C-47 Skytrain",
+    type: WEAPONS_CLASSIFICATION.aviation.militaryTransport,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.aviation.Douglas,
+      },
+    },
+  },
 ];
 
 const britain: IAircraft[] = [

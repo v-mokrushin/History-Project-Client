@@ -27,4 +27,9 @@ export const Platforms = {
     La5: Platform("Ла-5"),
     Ju87: Platform("Ju-87 Stuka"),
   },
+  smallArms: {
+    Mauser: Platform("Mauser Gewehr 98"),
+    Mosin: Platform("Винтовка Мосина обр. 1891 г."),
+    Thompson: Platform("M1921 Thompson"),
+  },
 };

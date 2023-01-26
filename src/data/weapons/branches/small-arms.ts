@@ -4,6 +4,8 @@ import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
 import { NATIONS } from "../../../constants/nations";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { ISmallArm } from "../interfaces/small-arms-interfaces";
+import { platform } from "process";
+import { Platforms } from "../departments/platforms";
 
 const ussr: ISmallArm[] = [
   {
@@ -17,12 +19,23 @@ const ussr: ISmallArm[] = [
     },
   },
   {
-    name: "Винтовка Мосина",
+    name: "Винтовка Мосина обр. 1891/30 г.",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1892,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Mosin,
+        platform: Platforms.smallArms.Mosin,
+      },
+    },
+  },
+  {
+    name: "Карабин Мосина обр. 1938 г.",
+    type: WEAPONS_CLASSIFICATION.smallArms.сarbine,
+    adoptedIntoServiceDate: 1938,
+    specifications: {
+      common: {
+        platform: Platforms.smallArms.Mosin,
       },
     },
   },
@@ -84,15 +97,21 @@ const germany: ISmallArm[] = [
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1898,
     specifications: {
-      common: { chiefDesigner: ChiefDesigners.smallArms.Mauser },
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Mauser,
+        platform: Platforms.smallArms.Mauser,
+      },
     },
   },
   {
     name: "Karabiner 98k",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WEAPONS_CLASSIFICATION.smallArms.сarbine,
     adoptedIntoServiceDate: 1935,
     specifications: {
-      common: { chiefDesigner: ChiefDesigners.smallArms.Mauser },
+      common: {
+        // chiefDesigner: ChiefDesigners.smallArms.Mauser,
+        platform: Platforms.smallArms.Mauser,
+      },
     },
   },
   {
@@ -151,6 +170,49 @@ const germany: ISmallArm[] = [
 
 const usa: ISmallArm[] = [
   {
+    name: "M1A1 Thompson",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
+        platform: Platforms.smallArms.Thompson,
+      },
+    },
+  },
+  {
+    name: "M1 Thompson",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
+        platform: Platforms.smallArms.Thompson,
+      },
+    },
+  },
+  {
+    name: "M1928 Thompson",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1928,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
+        platform: Platforms.smallArms.Thompson,
+      },
+    },
+  },
+  // {
+  //   name: "Model 1928 Thompson",
+  //   type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+  //   adoptedIntoServiceDate: 1928,
+  //   specifications: {
+  //     common: {
+  //       chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
+  //     },
+  //   },
+  // },
+  {
     name: "M1 Garand",
     type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1936,
@@ -168,8 +230,30 @@ const usa: ISmallArm[] = [
   },
 ];
 
-const britain: ISmallArm[] = [];
-
+const britain: ISmallArm[] = [
+  {
+    name: "Short Magazine Lee-Enfield",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1904,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Paris,
+      },
+    },
+  },
+  {
+    name: "Boys",
+    type: WEAPONS_CLASSIFICATION.smallArms.antiTankGun,
+    adoptedIntoServiceDate: 1937,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Boys,
+        productionPeriod: "1937 - 1942",
+        // developer: Developers.smallArms.Walther,
+      },
+    },
+  },
+];
 const belgium: ISmallArm[] = [
   {
     name: "Lewis",
