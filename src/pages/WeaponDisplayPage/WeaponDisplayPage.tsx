@@ -31,8 +31,6 @@ import imageViewerStore from "stores/mobx/imageViewerStore";
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
   const weapon = WEAPONS.getById(weaponId);
-  // console.log("render");
-  // loadingStore.checkLoading(weaponId)
 
   React.useEffect(() => {
     loadingStore.checkLoading(weaponId);
@@ -48,28 +46,6 @@ const WeaponDisplayPage = observer(() => {
       return weapon.intro.map((item, index) => (
         <Paragraph key={`${weapon.id}-intro-${index}`}>{item}</Paragraph>
       ));
-  }
-
-  function getVideomaterials() {
-    if (!weapon) return;
-    if (weapon.videomaterials)
-      return (
-        <TextBlock>
-          <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
-          <YTFrame links={weapon.videomaterials} id={weapon.id!} />
-        </TextBlock>
-      );
-  }
-
-  function getModels() {
-    if (!weapon) return;
-    if (weapon.models)
-      return (
-        <TextBlock>
-          <Subtitle id="Модели">Модели</Subtitle>
-          <Models models={weapon.models} />
-        </TextBlock>
-      );
   }
 
   if (!weapon)
@@ -105,8 +81,14 @@ const WeaponDisplayPage = observer(() => {
                         <Spec weapon={weapon} />
                       </TextBlock>
                       {weapon.JSXComponent}
-                      {getVideomaterials()}
-                      {getModels()}
+
+                      {weapon.videomaterials && (
+                        <YTFrame
+                          links={weapon.videomaterials}
+                          id={weapon.id!}
+                        />
+                      )}
+                      {weapon.models && <Models models={weapon.models} />}
                       <TextBlock>
                         <Subtitle id="Читайте также">Читайте также</Subtitle>
                         <Recommendations weapon={weapon} />

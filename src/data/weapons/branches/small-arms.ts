@@ -170,6 +170,14 @@ const germany: ISmallArm[] = [
 
 const usa: ISmallArm[] = [
   {
+    name: "M3 Grease gun",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {},
+    },
+  },
+  {
     name: "M1A1 Thompson",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1942,
@@ -192,6 +200,17 @@ const usa: ISmallArm[] = [
     },
   },
   {
+    name: "M1928A1 Thompson",
+    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    adoptedIntoServiceDate: 1940, // ???
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
+        platform: Platforms.smallArms.Thompson,
+      },
+    },
+  },
+  {
     name: "M1928 Thompson",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1928,
@@ -202,22 +221,40 @@ const usa: ISmallArm[] = [
       },
     },
   },
-  // {
-  //   name: "Model 1928 Thompson",
-  //   type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
-  //   adoptedIntoServiceDate: 1928,
-  //   specifications: {
-  //     common: {
-  //       chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
-  //     },
-  //   },
-  // },
   {
     name: "M1 Garand",
     type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1936,
     specifications: {
       common: {},
+    },
+  },
+  {
+    name: "М1А1 Carbine",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingCarbine,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        numberOfIssued: 150_000,
+      },
+    },
+  },
+  {
+    name: "М3 Carbine",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingCarbine,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        numberOfIssued: 3_000,
+      },
+    },
+  },
+  {
+    name: "Browning M1918",
+    type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
+    adoptedIntoServiceDate: 1917,
+    specifications: {
+      common: { chiefDesigner: ChiefDesigners.smallArms.Browning },
     },
   },
   {

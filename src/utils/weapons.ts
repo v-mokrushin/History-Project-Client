@@ -1,6 +1,5 @@
 import { INation } from "./../constants/nations";
 import { IWaponBranch } from "constants/weapon-types";
-import { IPage } from "../constants/pages";
 import {
   TWeapon,
   IWeaponGallery,

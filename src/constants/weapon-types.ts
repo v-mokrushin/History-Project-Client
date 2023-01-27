@@ -60,6 +60,7 @@ interface ISmallArmsBranch extends IBaseWeaponBranch {
   readonly submachineGun: IWeaponType;
   readonly rifle: IWeaponType;
   readonly сarbine: IWeaponType;
+  readonly selfLoadingCarbine: IWeaponType;
   readonly selfLoadingRifle: IWeaponType;
   readonly assaultRifle: IWeaponType;
   readonly shotgun: IWeaponType;
@@ -152,6 +153,7 @@ const smallArms: ISmallArmsBranch = {
   rifle: WeaponType("Винтовка"),
   сarbine: WeaponType("Карабин"),
   selfLoadingRifle: WeaponType("Самозарядная винтовка"),
+  selfLoadingCarbine: WeaponType("Самозарядный карабин"),
   assaultRifle: WeaponType("Штурмовая винтовка"),
   shotgun: WeaponType("Дробовик"),
   machinegun: WeaponType("Ручной пулемет"),
