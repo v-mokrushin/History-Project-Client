@@ -7,6 +7,7 @@ import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
 import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
+import Block from "components/Block/Block";
 
 interface ISpecProps {
   weapon: TWeapon | undefined;
@@ -45,7 +46,7 @@ export default function Spec({ weapon, className }: ISpecProps) {
   }
 
   return (
-    <div className={classNames(styles.root, className)}>
+    <section className={classNames(styles.root, className)}>
       <div className={classNames(styles.header)}>
         <Subtitle id="Характеристики" noMargin>
           Характеристики
@@ -138,6 +139,6 @@ export default function Spec({ weapon, className }: ISpecProps) {
           </>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

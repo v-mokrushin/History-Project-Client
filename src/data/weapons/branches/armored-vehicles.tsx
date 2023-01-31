@@ -127,7 +127,7 @@ const ussr: IArmoredVehicle[] = [
     isReady: true,
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    JSXComponent: <IS_2 />,
+    article: <IS_2 />,
     sections: [
       "Введение",
       "Характеристики",
@@ -403,6 +403,7 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1939,
     specifications: {
       common: {
+        platform: Platforms.armoredVehicles.T26,
         producer: [Producers.armoredVehicles.Leningrad174], // ???
       },
     },
@@ -413,6 +414,7 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: {
+        platform: Platforms.armoredVehicles.T26,
         producer: [
           Producers.armoredVehicles.Stalingrad,
           Producers.armoredVehicles.Leningrad174,
@@ -426,6 +428,7 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
+        platform: Platforms.armoredVehicles.T26,
         producer: [
           Producers.armoredVehicles.Bolshevik,
           Producers.armoredVehicles.Leningrad174,

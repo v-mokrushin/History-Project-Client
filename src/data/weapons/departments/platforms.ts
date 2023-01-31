@@ -10,6 +10,7 @@ function Platform(originalName: string): IPlatform {
 
 export const Platforms = {
   armoredVehicles: {
+    T26: Platform("Т-26"),
     T34: Platform("Т-34"),
     IS: Platform("ИС"),
     KV1: Platform("КВ-1"),
@@ -30,6 +31,7 @@ export const Platforms = {
   smallArms: {
     Mauser: Platform("Mauser Gewehr 98"),
     Mosin: Platform("Винтовка Мосина обр. 1891 г."),
+    SVT: Platform("СВТ"),
     Thompson: Platform("M1921 Thompson"),
   },
 };

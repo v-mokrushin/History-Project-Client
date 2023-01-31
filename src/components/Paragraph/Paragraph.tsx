@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Text from "components/Text/Text";
 import React from "react";
 import styles from "./Paragraph.module.scss";
+import styles_text from "../Text/Text.module.scss";
 
 interface IParagraphProps {
   noMargin?: boolean;
@@ -15,8 +16,14 @@ export default function Paragraph({
   children,
 }: IParagraphProps) {
   return (
-    <p className={classNames(styles.root, noMargin && styles.root_noMargin)}>
-      <Text className={className}>{children}</Text>
+    <p
+      className={classNames(
+        styles_text.root,
+        styles.root,
+        noMargin && styles.root_noMargin
+      )}
+    >
+      {children}
     </p>
   );
 }

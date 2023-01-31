@@ -1,5 +1,5 @@
 import React from "react";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -9,7 +9,7 @@ import ExternalLink from "../../components/ExternalLink/ExternalLink";
 
 export default function Rearmament() {
   return (
-    <TextBlock>
+    <Block>
       <Paragraph>
         Первым шагом руководства Советского Союза сразу по окончании войны с
         Финляндией стало реформирование структуры Красной армии. Размер
@@ -243,6 +243,6 @@ export default function Rearmament() {
         оказалось в полосе немецкого наступления и оказало определенное влияние
         на развитие событий в первые дни Великой Отечественной войны.
       </Paragraph>
-    </TextBlock>
+    </Block>
   );
 }

@@ -14,7 +14,7 @@ interface IFiltersProps {
   className?: string;
 }
 
-const Filters = ({ className, weapons }: IFiltersProps) => {
+const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
   return (
     <div className={classNames(styles.root, className)}>
       <Input

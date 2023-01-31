@@ -45,9 +45,16 @@ export const NATIONS = {
     "russain-empire",
     "/images/flags/flag-russian-empire.svg"
   ),
+  // Germany: Nation(
+  //   "Германия",
+  //   "Германии",
+  //   "germany",
+  //   "germany",
+  //   "/images/flags/flag-germany.svg"
+  // ),
   Germany: Nation(
-    "Германия",
-    "Германии",
+    "Третий рейх",
+    "Третьего рейха",
     "germany",
     "germany",
     "/images/flags/flag-germany.svg"
@@ -68,8 +75,8 @@ export const NATIONS = {
     "/images/flags/flag-canada.svg"
   ),
   GreatBritain: Nation(
-    "Британия",
-    "Британии",
+    "Великобритания",
+    "Великобритании",
     "Great Britain",
     "great-britain",
     "/images/flags/flag-uk.svg"

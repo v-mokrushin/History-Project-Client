@@ -18,7 +18,7 @@ export default function Title({
   children,
 }: ITitleProps) {
   return (
-    <h1
+    <h2
       id={id}
       className={classNames(
         className,
@@ -28,6 +28,6 @@ export default function Title({
       )}
     >
       {children}
-    </h1>
+    </h2>
   );
 }

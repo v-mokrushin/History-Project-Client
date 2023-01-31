@@ -1,5 +1,5 @@
 import React from "react";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -12,8 +12,8 @@ const images = {
 
 export default function Yak_3() {
   return (
-    <TextBlock>
-      <TextBlock>
+    <Block formatAsSection>
+      <Block>
         <Subtitle id="Разработка">Разработка</Subtitle>
         <Paragraph>
           В феврале 1943 г. завершилась постройка истребителя Як-1М. Он
@@ -46,8 +46,8 @@ export default function Yak_3() {
           М-107А». Итак, очередной истребитель получил путевку в жизнь, а заодно
           и новое имя - Як-3.
         </Paragraph>
-      </TextBlock>
-      <TextBlock>
+      </Block>
+      <Block>
         <Subtitle id="Боевое применение">Боевое применение</Subtitle>
         <Paragraph>
           Первой частью, вооруженной Як-3 в июне 1944 г., стал 91-й ИАП. В его
@@ -103,7 +103,7 @@ export default function Yak_3() {
           были переданы СФРЮ, где эксплуатировались до конца 1946 г. Бывшие
           югославские самолеты получила Албания.
         </Paragraph>
-      </TextBlock>
-    </TextBlock>
+      </Block>
+    </Block>
   );
 }

@@ -1,18 +1,18 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
   @include media-breakpoint-down(FHD) {
-    margin-bottom: 22px;
+    margin-bottom: 15px;
   }
 
   @include media-breakpoint-down(xl) {
-    margin-bottom: 17px;
+    margin-bottom: 12px;
   }
 
   @include media-breakpoint-down(xs) {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
   }
 
   &:last-child {

@@ -41,6 +41,7 @@ export const ChiefDesigners = {
     LouisStange: ChiefDesigner("Штанге Луис", NATIONS.Germany),
     Mauser: ChiefDesigner("Маузер В. и Маузер П.", NATIONS.GermanEmpire),
     Shpagin: ChiefDesigner("Шпагин Г.С.", NATIONS.USSR),
+    Tokarev: ChiefDesigner("Токарев Ф.В.", NATIONS.USSR),
     Degtyarev: ChiefDesigner("Дегтярёв В.А.", NATIONS.USSR),
     Sudaev: ChiefDesigner("Судаев А.В.", NATIONS.USSR),
     AimoLahti: ChiefDesigner("Лахти Аймо И.", NATIONS.Finland),

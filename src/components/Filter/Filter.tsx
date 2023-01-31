@@ -20,7 +20,7 @@ export interface ISelectionVariantWithFlag {
   nation: INation;
 }
 
-const Filter = observer(
+const Filter: React.FC<IFilterProps> = observer(
   ({
     title,
     selectionVariants,
@@ -28,7 +28,7 @@ const Filter = observer(
     setterCallback,
     getter,
     className,
-  }: IFilterProps) => {
+  }) => {
     const [open, setOpen] = React.useState(false);
 
     if (!selectionVariants && !selectionVariantsWithFlags) return <></>;

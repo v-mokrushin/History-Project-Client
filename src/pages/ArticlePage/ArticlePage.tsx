@@ -90,11 +90,6 @@ export default function ArticlePage() {
   return (
     <>
       <ReadingProgressBar />
-      {/* {articleContent ? (
-        <IntroImage imageUrl={PAGES.articles.introImage} animated />
-      ) : (
-        <IntroImage imageUrl={articleContent.backgroundURL} />
-      )} */}
       <IntroImage
         imageUrl={
           articleContent
@@ -104,7 +99,7 @@ export default function ArticlePage() {
       />
       <ContentWrapper>
         <Container type={CONTAINER_TYPES.default}>
-          <div className={styles.innerWrapper}>
+          <article className={styles.innerWrapper}>
             {loadingStatus === LOADING_STATUSES.inProgress && (
               <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
             )}
@@ -112,7 +107,7 @@ export default function ArticlePage() {
               <span>Загрузка не удалась</span>
             )}
             {loadingStatus === LOADING_STATUSES.success && getContent()}
-          </div>
+          </article>
         </Container>
       </ContentWrapper>
     </>

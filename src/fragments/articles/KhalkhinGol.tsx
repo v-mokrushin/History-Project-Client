@@ -1,5 +1,5 @@
 import React from "react";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -9,7 +9,7 @@ import ExternalLink from "../../components/ExternalLink/ExternalLink";
 
 export default function KhalkhinGol() {
   return (
-    <TextBlock>
+    <Block>
       <Paragraph>
         В конце июля – начале августа 1938 г. разгорелся пограничный конфликт
         между Советским Союзом и Японией в районе озера Хасан в Приморском крае.
@@ -162,6 +162,6 @@ export default function KhalkhinGol() {
         не могла рассчитывать на такое внимание, какое было уделено 1-й
         армейской группе на Халхин-Голе.
       </Paragraph>
-    </TextBlock>
+    </Block>
   );
 }

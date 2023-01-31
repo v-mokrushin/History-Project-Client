@@ -6,7 +6,7 @@ interface ICompProps {
   className?: string;
 }
 
-const Comp = ({ className }: ICompProps) => {
+const Comp: React.FC<ICompProps> = ({ className }) => {
   return <div className={classNames(styles.root, className)}></div>;
 };
 

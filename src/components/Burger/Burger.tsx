@@ -8,7 +8,7 @@ import styles from "./Burger.module.sass";
 
 const Burger = observer(() => {
   return (
-    <div
+    <aside
       className={classNames(styles.root, burgerStore.open && styles.root_open)}
     >
       <div className={styles.header}>
@@ -19,7 +19,7 @@ const Burger = observer(() => {
         ></div>
       </div>
       <Navigation isTypeBurger={true} />
-    </div>
+    </aside>
   );
 });
 

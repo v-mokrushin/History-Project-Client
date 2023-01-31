@@ -19,7 +19,7 @@ export interface IBaseWeapon {
   readonly isReady?: boolean;
   nation?: INation;
   gallery?: IWeaponGallery;
-  readonly JSXComponent?: JSX.Element;
+  readonly article?: JSX.Element;
   readonly intro?: string[];
   readonly videomaterials?: string[];
   readonly sections?: string[];

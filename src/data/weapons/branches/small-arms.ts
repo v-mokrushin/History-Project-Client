@@ -40,6 +40,40 @@ const ussr: ISmallArm[] = [
     },
   },
   {
+    name: "СВТ-40",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Tokarev,
+        platform: Platforms.smallArms.SVT,
+      },
+    },
+  },
+  {
+    name: "СВТ-40 (снайперский)",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Tokarev,
+        platform: Platforms.smallArms.SVT,
+        numberOfIssued: 48_992,
+      },
+    },
+  },
+  {
+    name: "АВТ-40",
+    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.smallArms.Tokarev,
+        platform: Platforms.smallArms.SVT,
+      },
+    },
+  },
+  {
     name: "ППС-43",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1943,
@@ -67,6 +101,14 @@ const ussr: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
       },
+    },
+  },
+  {
+    name: "Пулемет Максима обр. 1910/1930 г.",
+    type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
+    adoptedIntoServiceDate: 1930,
+    specifications: {
+      common: {},
     },
   },
   {

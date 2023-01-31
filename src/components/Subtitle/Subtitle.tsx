@@ -10,8 +10,11 @@ interface ISubtitleProps {
 
 export default function Subtitle({ children, id, noMargin }: ISubtitleProps) {
   return (
-    <p id={id} className={classNames(styles.root, noMargin && styles.noMargin)}>
+    <h3
+      id={id}
+      className={classNames(styles.root, noMargin && styles.noMargin)}
+    >
       {children}
-    </p>
+    </h3>
   );
 }

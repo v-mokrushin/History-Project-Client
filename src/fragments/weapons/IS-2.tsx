@@ -1,5 +1,5 @@
 import React from "react";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -19,8 +19,8 @@ const images = {
 
 export default function IS_2() {
   return (
-    <TextBlock>
-      <TextBlock>
+    <Block formatAsSection>
+      <Block>
         <Subtitle id="История создания">История создания</Subtitle>
         <Paragraph>
           Влияние на создание нового тяжёлого танка оказало появление у врага
@@ -150,8 +150,8 @@ export default function IS_2() {
           смотровой люк-пробка механика-водителя (впоследствии замененный
           смотровой щелью со стеклоблоком).
         </Paragraph>
-      </TextBlock>
-      <TextBlock>
+      </Block>
+      <Block>
         <Subtitle id="Конструкция">Конструкция</Subtitle>
         <Paragraph>
           Экипаж танка ИС-2 размещался так: механик-водитель сидел в носовой
@@ -197,8 +197,8 @@ export default function IS_2() {
           демультипликатора), двухступенчатые бортовые передачи соединялись с
           планетарным механизмом поворота. Подвеска у танка торсионная.
         </Paragraph>
-      </TextBlock>
-      <TextBlock>
+      </Block>
+      <Block>
         <Subtitle id="Вооружение">Вооружение</Subtitle>
         <Paragraph>
           Главное оружие ИС-2 – пушка Д-25Т калибра 122мм. Прототипом послужило
@@ -226,8 +226,8 @@ export default function IS_2() {
           штатного зенитного пулемёта. Кроме этого, ранние образцы имели в
           бортах башни амбразуры для стрельбы из личного оружия.
         </Paragraph>
-      </TextBlock>
-      <TextBlock>
+      </Block>
+      <Block>
         <Subtitle id="Применение в бою">Применение в бою</Subtitle>
         <Image
           URL={images.road}
@@ -270,7 +270,7 @@ export default function IS_2() {
           Официально танк сняли с вооружения только в 90-х годах. Некоторое
           количество ИС-2 было передано на Кубу, Северному Вьетнаму и КНДР.
         </Paragraph>
-      </TextBlock>
-    </TextBlock>
+      </Block>
+    </Block>
   );
 }

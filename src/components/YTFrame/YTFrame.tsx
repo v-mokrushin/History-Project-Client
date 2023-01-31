@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./YTFrame.module.scss";
 import classNames from "classnames";
-import TextBlock from "components/TextBlock/TextBlock";
+import Block from "components/Block/Block";
 import Subtitle from "components/Subtitle/Subtitle";
 
 interface IYTFrameProps {
@@ -18,7 +18,7 @@ export default function YTFrame({
   className,
 }: IYTFrameProps) {
   return (
-    <TextBlock>
+    <Block formatAsSection>
       {showTitle ? (
         <Subtitle id="Видеоматериалы">Видеоматериалы</Subtitle>
       ) : (
@@ -37,6 +37,6 @@ export default function YTFrame({
           ></iframe>
         ))}
       </div>
-    </TextBlock>
+    </Block>
   );
 }

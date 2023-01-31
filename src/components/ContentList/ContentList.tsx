@@ -6,6 +6,7 @@ import { CONTENT_LIST_TYPE } from "./constants";
 
 interface IContentListProps {
   list: string[] | undefined;
+  weaponId: string | undefined;
   loadingStatus: boolean;
   type: CONTENT_LIST_TYPE;
   className?: string;
@@ -13,6 +14,7 @@ interface IContentListProps {
 
 export default function ContentList({
   list,
+  weaponId,
   loadingStatus,
   type,
   className,
@@ -24,13 +26,13 @@ export default function ContentList({
 
   if (type == CONTENT_LIST_TYPE.desktop)
     return (
-      <div className={classNames(styles_desktop.root, className)}>
-        <p className={styles_desktop.title}>Содержание</p>
+      <aside className={classNames(styles_desktop.root, className)}>
+        <h4 className={styles_desktop.title}>Содержание</h4>
         <div className={classNames(styles_desktop.separator)}></div>
         <div className={classNames(styles_desktop.linksBox)}>
           {list.map((item, index) => (
             <a
-              key={index}
+              key={`${weaponId}-list-${index}`}
               className={styles_desktop.link}
               href={`#${item}`}
               onClick={(e) => {
@@ -44,25 +46,25 @@ export default function ContentList({
             </a>
           ))}
         </div>
-      </div>
+      </aside>
     );
 
   if (type == CONTENT_LIST_TYPE.mobile)
     return (
-      <div
+      <aside
         className={classNames(styles_mobile.root, className)}
         onClick={() => {
           setOpen(!open);
         }}
       >
-        <p
+        <h4
           className={styles_mobile.title}
           onClick={(e) => {
             e.preventDefault();
           }}
         >
           Содержание
-        </p>
+        </h4>
         <div className={classNames(styles_mobile.separator)}></div>
         <div
           className={classNames(
@@ -86,7 +88,7 @@ export default function ContentList({
             </a>
           ))}
         </div>
-      </div>
+      </aside>
     );
 
   return <></>;

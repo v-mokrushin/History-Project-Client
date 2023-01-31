@@ -13,7 +13,7 @@ import Spec from "../../components/Spec/Spec";
 import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
 import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
 import Paragraph from "../../components/Paragraph/Paragraph";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import ContentList from "../../components/ContentList/ContentList";
 import { CONTAINER_TYPES } from "../../components/Container/constants";
 import ReadingProgressBar from "../../components/ReadingProgressBar/ReadingProgressBar";
@@ -27,6 +27,7 @@ import loadingStore from "stores/mobx/loadingStore";
 import { observer } from "mobx-react";
 import { CONTENT_LIST_TYPE } from "components/ContentList/constants";
 import imageViewerStore from "stores/mobx/imageViewerStore";
+import TextIntro from "components/TextIntro/TextIntro";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -39,14 +40,6 @@ const WeaponDisplayPage = observer(() => {
       imageViewerStore.setClose();
     };
   }, [weaponId]);
-
-  function getIntro() {
-    if (!weapon) return;
-    if (weapon.intro)
-      return weapon.intro.map((item, index) => (
-        <Paragraph key={`${weapon.id}-intro-${index}`}>{item}</Paragraph>
-      ));
-  }
 
   if (!weapon)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
@@ -61,6 +54,7 @@ const WeaponDisplayPage = observer(() => {
             <ContentList
               type={CONTENT_LIST_TYPE.desktop}
               list={weapon.sections}
+              weaponId={weapon.id}
               loadingStatus={loadingStore.getStatus()}
             />
             <Container>
@@ -73,15 +67,16 @@ const WeaponDisplayPage = observer(() => {
                     <>
                       <ContentList
                         type={CONTENT_LIST_TYPE.mobile}
+                        weaponId={weapon.id}
                         list={weapon.sections}
                         loadingStatus={loadingStore.getStatus()}
                       />
-                      {getIntro()}
-                      <TextBlock>
+                      <TextIntro weapon={weapon} />
+                      {/* <Block formatAsSection>
                         <Spec weapon={weapon} />
-                      </TextBlock>
-                      {weapon.JSXComponent}
-
+                      </Block> */}
+                      <Spec weapon={weapon} />
+                      {weapon.article}
                       {weapon.videomaterials && (
                         <YTFrame
                           links={weapon.videomaterials}
@@ -89,10 +84,10 @@ const WeaponDisplayPage = observer(() => {
                         />
                       )}
                       {weapon.models && <Models models={weapon.models} />}
-                      <TextBlock>
+                      <Block formatAsSection>
                         <Subtitle id="Читайте также">Читайте также</Subtitle>
                         <Recommendations weapon={weapon} />
-                      </TextBlock>
+                      </Block>
                     </>
                   ) : (
                     <SpecialLogo

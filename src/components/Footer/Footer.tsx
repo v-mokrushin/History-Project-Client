@@ -8,12 +8,14 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.topWrapper}>
           <Logo />
-          <div className={styles.sectionsBox}>
+          <section className={styles.sectionsBox}>
             <p className={styles.sectionsBoxText}>О проекте</p>
             <p className={styles.sectionsBoxText}>Команда</p>
             <p className={styles.sectionsBoxText}>Обратная связь</p>
-            <p className={styles.sectionsBoxText}>Политика конфиденциальности</p>
-          </div>
+            <p className={styles.sectionsBoxText}>
+              Политика конфиденциальности
+            </p>
+          </section>
         </div>
         <div className={styles.bottomWrapper}>
           <p className={styles.bottomWrapperText}>© 2022 Haze of War</p>

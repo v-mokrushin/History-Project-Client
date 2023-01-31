@@ -1,5 +1,5 @@
 import React from "react";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Block from "../../components/Block/Block";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Text from "../../components/Text/Text";
@@ -9,7 +9,7 @@ import ExternalLink from "../../components/ExternalLink/ExternalLink";
 
 export default function Barbarossa() {
   return (
-    <TextBlock>
+    <Block>
       <Paragraph>
         После подписания пакта Молотова – Риббентропа в обеих странах произошли
         значительные изменения в области пропаганды. В СССР яростная
@@ -286,6 +286,6 @@ export default function Barbarossa() {
         из 62 потерянных республиканцами истребителей И-15 и И-16 около трети
         было уничтожено на аэродромах бомбардировкой противника.
       </Paragraph>
-    </TextBlock>
+    </Block>
   );
 }

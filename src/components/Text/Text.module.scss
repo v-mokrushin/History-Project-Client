@@ -6,7 +6,6 @@
   font-size: 20px;
   color: $primary-dark-text-color;
   line-height: 35px;
-  margin: 0;
 
   @include media-breakpoint-down(FHD) {
     line-height: 30px;
@@ -21,10 +20,6 @@
   @include media-breakpoint-down(xs) {
     font-size: 15px;
     line-height: 24px;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
   }
 }
 

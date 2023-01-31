@@ -15,7 +15,7 @@ export default function SpecSection({
 }: ISpecSectionProps) {
   return (
     <div className={classNames(styles.root, className)}>
-      <p className={styles.title}>{title}</p>
+      <h4 className={styles.title}>{title}</h4>
       <div className={styles.infoBox}>{children}</div>
     </div>
   );

@@ -3,7 +3,7 @@ import styles from "./Models.module.scss";
 import classNames from "classnames";
 import Text from "components/Text/Text";
 import { IModel } from "data/weapons/interfaces/common-weapon-interfaces";
-import TextBlock from "components/TextBlock/TextBlock";
+import Block from "components/Block/Block";
 import Subtitle from "components/Subtitle/Subtitle";
 
 interface IModelsProps {
@@ -16,7 +16,7 @@ const Models = ({ models, showTitle = true, className }: IModelsProps) => {
   if (!models) return <></>;
 
   return (
-    <TextBlock>
+    <Block formatAsSection>
       {showTitle ? <Subtitle id="Модели">Модели</Subtitle> : <></>}
       <div className={classNames(styles.root, className)}>
         {models.map((model) => (
@@ -33,7 +33,7 @@ const Models = ({ models, showTitle = true, className }: IModelsProps) => {
           </a>
         ))}
       </div>
-    </TextBlock>
+    </Block>
   );
 };
 
