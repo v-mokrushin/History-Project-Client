@@ -29,6 +29,7 @@ const AudioPlayer = observer(({ isMainPlayer = false }: IAudioPlayerProps) => {
       {isMainPlayer && (
         <audio
           ref={audio}
+          preload="none"
           src={audioPlayerStore.currentTrack}
           onEnded={() => audioPlayerStore.next()}
         />
