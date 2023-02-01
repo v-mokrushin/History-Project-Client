@@ -52,12 +52,12 @@
     transform: translateY(0);
   }
 
-  &:hover .backgroundWrapper {
+  &:hover .background {
     transform: scale(1.06);
   }
 }
 
-.backgroundWrapper {
+.background {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -67,6 +67,75 @@
   transition: transform 300ms ease;
   z-index: 0;
   will-change: transform;
+}
+
+.preloader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  // background: #1a237e;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .circlesWrapper {
+    height: 15px;
+    width: 105px;
+    display: flex;
+    position: relative;
+
+    .circle {
+      aspect-ratio: 1 / 1;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fff;
+      animation: move 500ms linear 0ms infinite;
+      margin-right: 30px;
+
+      @include media-breakpoint-down(sm) {
+        // height: 10px;
+      }
+
+      &:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: grow 500ms linear 0ms infinite;
+      }
+
+      &:last-child {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 0;
+        animation: grow 500ms linear 0s infinite reverse;
+      }
+    }
+
+    @keyframes grow {
+      from {
+        transform: scale(0, 0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes move {
+      from {
+        transform: translateX(0px);
+      }
+      to {
+        transform: translateX(45px);
+      }
+    }
+  }
 }
 
 .contentWrapper {
@@ -108,6 +177,7 @@
   letter-spacing: 1px;
   transition: all 300ms ease;
   text-align: center;
+  font-display: fallback;
 
   @include media-breakpoint-down(FHD) {
     font-size: 16px;
