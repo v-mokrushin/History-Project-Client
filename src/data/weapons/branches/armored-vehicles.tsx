@@ -74,6 +74,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Leningrad185,
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         producer: [Producers.armoredVehicles.Leningrad185],
+        numberOfIssued: 204,
       },
     },
   },
@@ -97,6 +98,7 @@ const ussr: IArmoredVehicle[] = [
         chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
         developer: Developers.armoredVehicles.Chelyabinsk100,
         platform: Platforms.armoredVehicles.KV1S,
+        numberOfIssued: 1086,
       },
     },
   },
@@ -107,6 +109,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Barykov,
+        numberOfIssued: 59,
         // developer: Developers.armoredVehicles.Leningrad185,
       },
     },
@@ -119,6 +122,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
         platform: Platforms.armoredVehicles.IS,
+        numberOfIssued: 107,
       },
     },
   },
@@ -240,6 +244,7 @@ const ussr: IArmoredVehicle[] = [
   },
   {
     name: "Т-34 обр. 1940 г.",
+    shortName: "Т-34 (1940)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
     specifications: {
@@ -267,6 +272,7 @@ const ussr: IArmoredVehicle[] = [
   },
   {
     name: "Т-34 обр. 1941 г.",
+    shortName: "Т-34 (1941)",
     isReady: true,
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
@@ -325,6 +331,7 @@ const ussr: IArmoredVehicle[] = [
   },
   {
     name: "Т-34 обр. 1942 г.",
+    shortName: "Т-34 (1942)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -345,6 +352,7 @@ const ussr: IArmoredVehicle[] = [
   },
   {
     name: "Т-34 обр. 1943 г.",
+    shortName: "Т-34 (1943)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
@@ -363,7 +371,7 @@ const ussr: IArmoredVehicle[] = [
     },
   },
   {
-    name: "Т-34-85 (ЗИС-С-53)",
+    name: "Т-34-85",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -401,6 +409,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
+        numberOfIssued: 4800,
       },
     },
   },
@@ -412,6 +421,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
+        numberOfIssued: 1884,
       },
     },
   },
@@ -423,6 +433,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
+        numberOfIssued: 620,
       },
     },
   },
@@ -431,7 +442,9 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 8231,
+      },
     },
   },
   {
@@ -478,7 +491,9 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.smallTank,
     adoptedIntoServiceDate: 1936,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 1420,
+      },
     },
   },
   {
@@ -491,6 +506,7 @@ const ussr: IArmoredVehicle[] = [
         chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
         platform: Platforms.armoredVehicles.IS,
         producer: [Producers.armoredVehicles.Chelyabinsk100],
+        numberOfIssued: 670,
       },
     },
   },
@@ -617,7 +633,8 @@ const ussr: IArmoredVehicle[] = [
 
 const germany: IArmoredVehicle[] = [
   {
-    name: "PzKpfw VI Ausf.B Königstiger",
+    name: "Pz.Kpfw. VI Ausf.B Königstiger",
+    shortName: "Königstiger",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -626,11 +643,13 @@ const germany: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Henschel,
         platform: Platforms.armoredVehicles.PzKpfw6B,
         producer: [Producers.armoredVehicles.Henschel],
+        numberOfIssued: 492,
       },
     },
   },
   {
-    name: "PzKpfw VI Tiger",
+    name: "Pz.Kpfw. VI Tiger",
+    shortName: "Tiger",
     isReady: true,
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
@@ -660,6 +679,7 @@ const germany: IArmoredVehicle[] = [
         chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
         developer: Developers.armoredVehicles.Henschel,
         producer: [Producers.armoredVehicles.Henschel],
+        numberOfIssued: 1347,
       },
       crew: CREWS.size.five.perfect,
       weapon: {
@@ -671,7 +691,8 @@ const germany: IArmoredVehicle[] = [
     },
   },
   {
-    name: "PzKpfw V Ausf.G Panther",
+    name: "Pz.Kpfw. V Ausf.G Panther",
+    shortName: "Panther G",
     isReady: true,
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
@@ -684,6 +705,7 @@ const germany: IArmoredVehicle[] = [
           Producers.armoredVehicles.Henschel,
           Producers.armoredVehicles.MNH,
         ],
+        numberOfIssued: 2961,
         chiefDesigner: ChiefDesigners.armoredVehicles.Wibke,
         platform: Platforms.armoredVehicles.PzKpfw5,
       },
@@ -702,23 +724,27 @@ const germany: IArmoredVehicle[] = [
   },
   {
     name: "Pz.Kpfw. IV Ausf.G",
+    shortName: "Pz. IV G",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
         platform: Platforms.armoredVehicles.PzKpfw4,
+        numberOfIssued: 1687, /// ?
       },
     },
   },
   {
     name: "Pz.Kpfw. IV Ausf.H",
+    shortName: "Pz. IV H",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
         platform: Platforms.armoredVehicles.PzKpfw4,
+        numberOfIssued: 3898, /// ?
       },
     },
   },
@@ -762,6 +788,7 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
+        numberOfIssued: 2050,
       },
     },
   },
@@ -772,6 +799,7 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw6B,
+        numberOfIssued: 81,
       },
     },
   },
@@ -783,6 +811,7 @@ const germany: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
         platform: Platforms.armoredVehicles.PzKpfw5,
+        numberOfIssued: 413,
       },
     },
   },
@@ -794,6 +823,7 @@ const germany: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Porsche,
         chiefDesigner: ChiefDesigners.armoredVehicles.FerdinandPorsche,
+        numberOfIssued: 91,
       },
     },
   },
@@ -802,22 +832,27 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 494,
+      },
     },
   },
   {
     name: "Jagdpanzer 38(t) Hetzer",
+    shortName: "Hetzer",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.CKD,
         // platform: Platforms.armoredVehicles.SdKfz251,
+        numberOfIssued: 2612,
       },
     },
   },
   {
     name: "StuG III Ausf.G",
+    shortName: "StuG III G",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -833,6 +868,7 @@ const germany: IArmoredVehicle[] = [
   },
   {
     name: "StuG III Ausf.F",
+    shortName: "StuG III F",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -857,6 +893,7 @@ const germany: IArmoredVehicle[] = [
   },
   {
     name: "StuG III Ausf.B",
+    shortName: "StuG III B",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1940,
     specifications: {
@@ -872,16 +909,20 @@ const germany: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1943,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 705,
+      },
     },
   },
   {
     name: "Flakpanzer IV «Wirbelwind»",
+    shortName: "Wirbelwind",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.zsu,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.PzKpfw4,
+        numberOfIssued: 100,
       },
     },
   },
@@ -950,11 +991,13 @@ const usa: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
+        numberOfIssued: 2239,
       },
     },
   },
   {
     name: "M4A3E2 76(W) Jumbo",
+    shortName: "Jumbo 76mm",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -966,6 +1009,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A3E2 Jumbo",
+    shortName: "Jumbo 75mm",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -980,6 +1024,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A3 76(W) Sherman",
+    shortName: "M4A3 76(W)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -992,6 +1037,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A2 76(W) Sherman",
+    shortName: "M4A2 76(W)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -1009,6 +1055,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A1 76(W) Sherman",
+    shortName: "M4A1 76(W)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -1023,6 +1070,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A3(105) Sherman",
+    shortName: "M4A3(105)",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -1037,6 +1085,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A2 Sherman",
+    shortName: "M4A2",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -1050,6 +1099,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4 Sherman",
+    shortName: "M4",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -1063,6 +1113,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "M4A1 Sherman",
+    shortName: "M4A1",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
@@ -1101,6 +1152,7 @@ const usa: IArmoredVehicle[] = [
           Producers.armoredVehicles.Cadillac,
           Producers.armoredVehicles.MasseyHarris,
         ],
+        numberOfIssued: 4731,
       },
     },
   },
@@ -1126,6 +1178,7 @@ const usa: IArmoredVehicle[] = [
   },
   {
     name: "GMC M36 Jackson",
+    shortName: "M36 Jackson",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
@@ -1137,22 +1190,26 @@ const usa: IArmoredVehicle[] = [
           Producers.armoredVehicles.ALCO,
           Producers.armoredVehicles.MontrealLW,
         ],
+        numberOfIssued: 2324,
       },
     },
   },
   {
     name: "GMC M18 Hellcat",
+    shortName: "M18 Hellcat",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.GMC,
         producer: [Producers.armoredVehicles.Buick],
+        numberOfIssued: 2507,
       },
     },
   },
   {
     name: "GMC M10 Wolverine",
+    shortName: "M10 Wolverine",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.ptsau,
     adoptedIntoServiceDate: 1943,
     specifications: {
@@ -1162,16 +1219,19 @@ const usa: IArmoredVehicle[] = [
           Producers.armoredVehicles.Fisher,
           Producers.armoredVehicles.Ford,
         ],
+        numberOfIssued: 6706,
       },
     },
   },
   {
     name: "GMC M40",
+    shortName: "M40",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.sau,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.GMC,
+        numberOfIssued: 418,
       },
     },
   },

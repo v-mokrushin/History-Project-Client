@@ -15,8 +15,6 @@ const Input = observer(
     const input = React.useRef<HTMLInputElement>(null);
     const numberOfUse = React.useRef<number>(0);
 
-    console.log(numberOfUse);
-
     return (
       <div className={classNames(styles.root, className)}>
         <input

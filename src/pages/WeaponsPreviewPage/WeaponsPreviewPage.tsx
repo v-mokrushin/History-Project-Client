@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Timeline from "../../components/Timeline/Timeline";
@@ -20,6 +20,8 @@ import Filters from "components/Filters/Filters";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import Text from "components/Text/Text";
+import Subtitle from "components/Subtitle/Subtitle";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -57,6 +59,14 @@ const WeaponsPreviewPage = observer(() => {
   if (!weaponsBranchObject || !nationObject)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
+  const max = Math.max(
+    ...filteredWeapons
+      .filter((item) => item.specifications.common.numberOfIssued)
+      .map((item) => item.specifications.common.numberOfIssued!)
+  );
+
+  console.log(max);
+
   return (
     <div className={styles.root}>
       <ContentWrapper>
@@ -66,9 +76,64 @@ const WeaponsPreviewPage = observer(() => {
             {nationObject.name.russianАccusative}{" "}
             {filteredWeapons.length === 0 || `(${filteredWeapons.length})`}
           </Title>
-          {/* <Filters weapons={filteredWeapons} /> */}
           <Filters weapons={selectedWeapons} />
           <WeaponPreviewSettings />
+          <Subtitle noMargin>Произведено</Subtitle>
+          <div className={styles.infographic}>
+            <div className={styles.section1}>
+              {filteredWeapons
+                .filter((item) => item.specifications.common.numberOfIssued)
+                .sort(
+                  (a, b) =>
+                    b.specifications.common.numberOfIssued! -
+                    a.specifications.common.numberOfIssued!
+                )
+                .map((item) => (
+                  <NavLink
+                    key={item.id!}
+                    to={item.id!}
+                    className={styles.diagramBox}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Text className={styles.value}>
+                      {item.specifications.common.numberOfIssued}
+                    </Text>
+                    <div
+                      className={styles.column}
+                      style={{
+                        height:
+                          (item.specifications.common.numberOfIssued! / max) *
+                            100 +
+                          "%",
+                      }}
+                    ></div>
+                  </NavLink>
+                ))}
+            </div>
+            <div className={styles.section2}>
+              {filteredWeapons
+                .filter((item) => item.specifications.common.numberOfIssued)
+                .sort(
+                  (a, b) =>
+                    b.specifications.common.numberOfIssued! -
+                    a.specifications.common.numberOfIssued!
+                )
+                .map((item) => (
+                  <NavLink
+                    to={item.id!}
+                    key={item.id!}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <div className={styles.nameBox}>
+                      <Text className={styles.name}>
+                        {item.shortName ? item.shortName : item.name}
+                      </Text>
+                    </div>
+                  </NavLink>
+                ))}
+            </div>
+          </div>
+
           {filteredWeapons.length > 0 ? (
             <Timeline
               contentCollection={filteredWeapons}

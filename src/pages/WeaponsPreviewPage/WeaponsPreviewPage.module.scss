@@ -2,3 +2,86 @@
 
 .root {
 }
+
+.infographic {
+  overflow: auto;
+  margin-bottom: 25px;
+  padding: 5px 2px 15px;
+
+  .section1 {
+    height: 440px;
+    display: flex;
+    column-gap: 12px;
+    margin-bottom: 15px;
+
+    @include media-breakpoint-down(xl) {
+      height: 380px;
+      column-gap: 6px;
+    }
+  }
+
+  .section2 {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  .nameBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+
+    &:hover .name {
+      transform: rotate(270deg);
+      color: $primary-gold-text-color;
+    }
+
+    .name {
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      transform: rotate(210deg);
+      text-align: center;
+      font-size: 18px;
+      line-height: 18px;
+      height: 100px;
+      transition: 250ms ease;
+    }
+  }
+
+  .diagramBox {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0px;
+    text-decoration: none;
+    transition: transform 200ms ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    .value {
+      color: $primary-gold-text-color;
+      font-size: 17px;
+      line-height: normal;
+
+      @include media-breakpoint-down(xl) {
+        font-size: 12px;
+      }
+    }
+
+    .column {
+      width: 55px;
+      transition: height 200ms ease;
+      background-color: rgb(20, 20, 22);
+      border-radius: 2px;
+      height: 100%;
+
+      @include media-breakpoint-down(xl) {
+        width: 35px;
+      }
+    }
+  }
+}

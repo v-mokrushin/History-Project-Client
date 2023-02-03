@@ -145,6 +145,7 @@ const ussr: IAircraft[] = [
       common: {
         developer: Developers.aviation.Yak,
         chiefDesigner: ChiefDesigners.aviation.Yakovlev,
+        numberOfIssued: 7243,
       },
     },
   },
@@ -190,6 +191,7 @@ const ussr: IAircraft[] = [
           Producers.aviation.Moskva39,
           Producers.aviation.Irkutsk39,
         ],
+        numberOfIssued: 5359,
       },
     },
   },
@@ -208,12 +210,14 @@ const germany: IAircraft[] = [
   },
   {
     name: "Messerschmitt Me.262 «Schwalbe»",
+    shortName: "Me.262",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.aviation.Messerschmitt,
         producer: [Producers.aviation.Messerschmitt],
+        numberOfIssued: 1433,
       },
     },
   },
@@ -229,11 +233,13 @@ const germany: IAircraft[] = [
   },
   {
     name: "Focke-Wulf Ta 152",
+    shortName: "Ta 152",
     type: WEAPONS_CLASSIFICATION.aviation.interceptor,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.aviation.FockeWulf,
+        numberOfIssued: 43,
       },
     },
   },
@@ -261,11 +267,13 @@ const germany: IAircraft[] = [
   },
   {
     name: "Junkers Ju 290",
+    shortName: "Ju 290",
     type: WEAPONS_CLASSIFICATION.aviation.scout,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.aviation.Junkers,
+        numberOfIssued: 52,
       },
     },
   },
@@ -281,11 +289,13 @@ const germany: IAircraft[] = [
   },
   {
     name: "Focke-Wulf Fw 200 Condor",
+    shortName: "Fw 200",
     type: WEAPONS_CLASSIFICATION.aviation.multipurpose,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
         developer: Developers.aviation.FockeWulf,
+        numberOfIssued: 262,
       },
     },
   },
@@ -294,11 +304,13 @@ const germany: IAircraft[] = [
 const usa: IAircraft[] = [
   {
     name: "Grumman F8F Bearcat",
+    shortName: "F8F",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
         developer: Developers.aviation.Grumman,
+        numberOfIssued: 1014,
       },
     },
   },
@@ -340,11 +352,13 @@ const usa: IAircraft[] = [
   },
   {
     name: "Douglas C-47 Skytrain",
+    shortName: "C-47",
     type: WEAPONS_CLASSIFICATION.aviation.militaryTransport,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.aviation.Douglas,
+        numberOfIssued: 10174,
       },
     },
   },
@@ -400,11 +414,13 @@ const japan: IAircraft[] = [
   },
   {
     name: "Mitsubishi G4M",
+    shortName: "G4M",
     type: WEAPONS_CLASSIFICATION.aviation.torpedoBomber,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
         developer: Developers.aviation.Mitsubishi,
+        numberOfIssued: 2435,
       },
     },
   },
