@@ -28,7 +28,8 @@ export const Developers = {
       "КБ Сталинградского тракторного завода",
       NATIONS.USSR
     ),
-    Ural183: Developer("КБ Уральского завода №183", NATIONS.USSR),
+    Tagil183: Developer("КБ Уральского завода №183", NATIONS.USSR),
+    UZTM: Developer("КБ Уралмашзавода", NATIONS.USSR),
     Kharkov183: Developer("КБ Харьковского завода №183", NATIONS.USSR),
     Kirov38: Developer("КБ завода №38 г. Киров", NATIONS.USSR),
     Izhorsky: Developer("КБ Ижорский завода", NATIONS.USSR),

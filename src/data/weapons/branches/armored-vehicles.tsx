@@ -247,6 +247,8 @@ const ussr: IArmoredVehicle[] = [
         chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
         developer: Developers.armoredVehicles.Kharkov183,
         platform: Platforms.armoredVehicles.T34,
+        producer: [Producers.armoredVehicles.Kharkov183],
+        numberOfIssued: 117,
       },
     },
   },
@@ -256,9 +258,10 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183, // ???
+        developer: Developers.armoredVehicles.Tagil183, // ???
         platform: Platforms.armoredVehicles.T34,
         producer: [Producers.armoredVehicles.Kharkov183], // ???
+        numberOfIssued: 14,
       },
     },
   },
@@ -273,8 +276,15 @@ const ussr: IArmoredVehicle[] = [
     sections: ["Введение"],
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183,
+        developer: Developers.armoredVehicles.Tagil183,
         platform: Platforms.armoredVehicles.T34,
+        producer: [
+          Producers.armoredVehicles.Kharkov183,
+          Producers.armoredVehicles.Tagil183,
+          Producers.armoredVehicles.Stalingrad,
+          Producers.armoredVehicles.KrasnoyeSormovo112,
+        ],
+        numberOfIssued: 3_016,
       },
       crew: CREWS.size.four.weak,
       weapon: {
@@ -319,8 +329,17 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183,
+        developer: Developers.armoredVehicles.Tagil183,
         platform: Platforms.armoredVehicles.T34,
+        producer: [
+          Producers.armoredVehicles.Tagil183,
+          Producers.armoredVehicles.Stalingrad,
+          Producers.armoredVehicles.KrasnoyeSormovo112,
+          Producers.armoredVehicles.Chelyabinsk100,
+          Producers.armoredVehicles.Omsk174,
+          Producers.armoredVehicles.UZTM,
+        ],
+        numberOfIssued: 12_535,
       },
     },
   },
@@ -330,8 +349,16 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183,
+        developer: Developers.armoredVehicles.Tagil183,
         platform: Platforms.armoredVehicles.T34,
+        producer: [
+          Producers.armoredVehicles.Tagil183,
+          Producers.armoredVehicles.KrasnoyeSormovo112,
+          Producers.armoredVehicles.Chelyabinsk100,
+          Producers.armoredVehicles.Omsk174,
+          Producers.armoredVehicles.UZTM,
+        ],
+        numberOfIssued: 19_782,
       },
     },
   },
@@ -341,9 +368,16 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183,
+        developer: Developers.armoredVehicles.Tagil183,
+        producer: [
+          Producers.armoredVehicles.Tagil183,
+          Producers.armoredVehicles.Omsk174,
+          Producers.armoredVehicles.KrasnoyeSormovo112,
+        ],
         platform: Platforms.armoredVehicles.T34,
+        numberOfIssued: 12_551,
       },
+      crew: CREWS.size.five.perfect,
     },
   },
   {
@@ -353,7 +387,10 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.T34,
+        producer: [Producers.armoredVehicles.KrasnoyeSormovo112],
+        numberOfIssued: 278,
       },
+      crew: CREWS.size.four.weak,
     },
   },
   {
@@ -503,10 +540,10 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.Ural183,
+        developer: Developers.armoredVehicles.UZTM,
         platform: Platforms.armoredVehicles.T34,
         producer: [
-          Producers.armoredVehicles.Ural183,
+          Producers.armoredVehicles.UZTM,
           Producers.armoredVehicles.Omsk174,
         ],
         numberOfIssued: 4661,
@@ -520,7 +557,7 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.T34,
-        producer: [Producers.armoredVehicles.Ural183],
+        producer: [Producers.armoredVehicles.UZTM],
       },
       crew: CREWS.size.five.perfect,
       mobility: {
@@ -550,6 +587,8 @@ const ussr: IArmoredVehicle[] = [
     specifications: {
       common: {
         platform: Platforms.armoredVehicles.T34,
+        producer: [Producers.armoredVehicles.UZTM],
+        numberOfIssued: 640,
       },
     },
   },
@@ -947,6 +986,7 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        numberOfIssued: 1925,
       },
     },
   },
@@ -1003,6 +1043,8 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        numberOfIssued: 8053,
+        productionPeriod: "1942 - 1944",
       },
     },
   },
@@ -1014,6 +1056,8 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        numberOfIssued: 6748,
+        productionPeriod: "1942 - 1944",
       },
     },
   },
@@ -1025,6 +1069,8 @@ const usa: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.USArmyOrdnanceDepartment,
         platform: Platforms.armoredVehicles.Sherman,
+        numberOfIssued: 6281,
+        productionPeriod: "1942 - 1943",
       },
     },
   },
@@ -1040,6 +1086,7 @@ const usa: IArmoredVehicle[] = [
           Producers.armoredVehicles.ALCO,
           Producers.armoredVehicles.BLW,
         ],
+        numberOfIssued: 6258,
       },
     },
   },
