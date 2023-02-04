@@ -4,14 +4,15 @@
   margin-bottom: 15px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
 
   @include media-breakpoint-down(xl) {
-    gap: 5px;
+    gap: 15px;
   }
 
   @include media-breakpoint-down(xs) {
-    gap: 5px;
+    column-gap: 12px;
+    row-gap: 2px;
     margin-bottom: 10px;
   }
 }
@@ -22,12 +23,19 @@
   cursor: pointer;
   border-radius: 3px;
   transition: transform 150ms ease;
+  padding: 0;
+
+  &:hover &__text {
+    color: $grey-text-color;
+    border-bottom: 2px dotted $grey-text-color;
+  }
 
   &:active {
-    transform: translateY(2px);
+    transform: translateY(4px);
   }
 
   &__text {
     border-bottom: 2px dotted black;
+    transition: all 250ms ease;
   }
 }

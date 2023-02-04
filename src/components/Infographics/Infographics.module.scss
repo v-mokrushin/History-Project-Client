@@ -1,0 +1,120 @@
+@import "/src/assets/css/common.scss";
+
+.infographic {
+  overflow: auto;
+  margin-bottom: 25px;
+  padding: 35px 3px 15px;
+
+  .graphicWrapper {
+    position: relative;
+    height: 25vh;
+    display: flex;
+    column-gap: 13px;
+    margin-bottom: 90px;
+    width: max-content;
+
+    @include media-breakpoint-down(FHD) {
+      margin-bottom: 85px;
+    }
+
+    @include media-breakpoint-down(xl) {
+      column-gap: 10px;
+      margin-bottom: 70px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 9px);
+      height: 2px;
+      background-color: gray;
+
+      @include media-breakpoint-down(xl) {
+        height: 2px;
+        top: calc(100% + 6px);
+      }
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 200ms ease;
+
+    &:hover .body {
+      transform: scale(1.03);
+      transform-origin: bottom center;
+    }
+
+    &:hover .value {
+    }
+
+    &:hover .name {
+      color: $primary-gold-text-color;
+    }
+
+    .body {
+      position: relative;
+      width: 55px;
+      background: linear-gradient(#9ea4e8, gray);
+      box-shadow: 3px 2px 3px rgb(70, 109, 124);
+      border-radius: 2px;
+      height: 0%;
+      min-height: 1px;
+      transition: 250ms ease;
+
+      @include media-breakpoint-down(FHD) {
+      }
+
+      @include media-breakpoint-down(xl) {
+        width: 40px;
+      }
+
+      .value {
+        position: absolute;
+        bottom: calc(100% + 2px);
+        transform: translateX(-50%);
+        left: 50%;
+        color: $primary-gold-text-color;
+        font-size: 17px;
+        line-height: normal;
+        transition: 250ms ease;
+
+        @include media-breakpoint-down(FHD) {
+          font-size: 15px;
+        }
+
+        @include media-breakpoint-down(xl) {
+          font-size: 12px;
+        }
+      }
+
+      .name {
+        position: absolute;
+        top: calc(100% + 35px);
+        transform: translateX(-45%) rotate(-35deg);
+        left: 50%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 18px;
+        width: 100px;
+        transition: 250ms ease;
+
+        @include media-breakpoint-down(FHD) {
+          font-size: 15px;
+        }
+
+        @include media-breakpoint-down(xl) {
+          font-size: 12px;
+          line-height: 11px;
+          width: 60px;
+        }
+      }
+    }
+  }
+}

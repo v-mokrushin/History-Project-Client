@@ -23,6 +23,9 @@ import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import Text from "components/Text/Text";
 import Subtitle from "components/Subtitle/Subtitle";
 import { getShortNumber } from "utils/common";
+import settingsStore, { DisplayOnPreview } from "stores/mobx/settingsStore";
+import { ANIMATIONS } from "constants/animations";
+import Infographics from "components/Infographics/Infographics";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -60,12 +63,6 @@ const WeaponsPreviewPage = observer(() => {
   if (!weaponsBranchObject || !nationObject)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
-  const max = Math.max(
-    ...filteredWeapons
-      .filter((item) => item.specifications.common.numberOfIssued)
-      .map((item) => item.specifications.common.numberOfIssued!)
-  );
-
   return (
     <div className={styles.root}>
       <ContentWrapper>
@@ -77,52 +74,16 @@ const WeaponsPreviewPage = observer(() => {
           </Title>
           <Filters weapons={selectedWeapons} />
           <WeaponPreviewSettings />
-          <Subtitle noMargin>Произведено</Subtitle>
-          <div className={styles.infographic}>
-            <div className={styles.section1}>
-              {filteredWeapons
-                .filter((item) => item.specifications.common.numberOfIssued)
-                .sort(
-                  (a, b) =>
-                    b.specifications.common.numberOfIssued! -
-                    a.specifications.common.numberOfIssued!
-                )
-                .map((item) => (
-                  <NavLink
-                    key={item.id!}
-                    to={item.id!}
-                    className={styles.column}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div
-                      className={styles.body}
-                      style={{
-                        height:
-                          (item.specifications.common.numberOfIssued! / max) *
-                            100 +
-                          "%",
-                      }}
-                    >
-                      <Text className={styles.value}>
-                        {getShortNumber(
-                          item.specifications.common.numberOfIssued!
-                        )}
-                      </Text>
-                      <Text className={styles.name}>
-                        {item.shortName ? item.shortName : item.name}
-                      </Text>
-                    </div>
-                  </NavLink>
-                ))}
-            </div>
-          </div>
-
           {filteredWeapons.length > 0 ? (
-            <Timeline
-              contentCollection={filteredWeapons}
-              uniqueDates={uniqueDates}
-              showFlags={NATIONS_METHODS.identity.isWorld(nationObject)}
-            />
+            settingsStore.displayOnPreview === DisplayOnPreview.weapons ? (
+              <Timeline
+                contentCollection={filteredWeapons}
+                uniqueDates={uniqueDates}
+                showFlags={NATIONS_METHODS.identity.isWorld(nationObject)}
+              />
+            ) : (
+              <Infographics weapons={filteredWeapons} />
+            )
           ) : (
             <SpecialLogo type={SPECIAL_LOGO_TYPE.notFound} vertiacalFill />
           )}

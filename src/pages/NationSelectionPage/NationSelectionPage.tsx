@@ -12,6 +12,7 @@ import filtersStore from "../../stores/mobx/filtersStore";
 import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
+import settingsStore from "stores/mobx/settingsStore";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();
@@ -20,6 +21,7 @@ export default function NationSelectionPage() {
 
   React.useEffect(() => {
     filtersStore.cancelFilters();
+    settingsStore.resetDisplayOnPreview();
     scrollMemoryStore.cencel();
   }, [weaponsBranchPath]);
 

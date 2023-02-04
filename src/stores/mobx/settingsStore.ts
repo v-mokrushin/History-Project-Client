@@ -2,17 +2,28 @@ import { WEAPONS } from "../../data/weapons/weapons";
 import { makeAutoObservable } from "mobx";
 import { translateToBool as translateLocalstorageToBool } from "utils/common";
 
+export enum DisplayOnPreview {
+  weapons = "вооружения",
+  ingraphic = "инфорграфику",
+}
+
 export class SettingsStore {
   public colorized: boolean;
   public sortInAscending: boolean;
   public displaySize: boolean;
+  public displayOnPreview: string;
 
   constructor() {
-    this.colorized = translateLocalstorageToBool(localStorage.getItem("colorized"));
+    this.colorized = translateLocalstorageToBool(
+      localStorage.getItem("colorized")
+    );
     this.sortInAscending = translateLocalstorageToBool(
       localStorage.getItem("sortInAscending")
     );
-    this.displaySize = translateLocalstorageToBool(localStorage.getItem("displaySize"));
+    this.displaySize = translateLocalstorageToBool(
+      localStorage.getItem("displaySize")
+    );
+    this.displayOnPreview = "технику";
 
     makeAutoObservable(this);
   }
@@ -22,15 +33,27 @@ export class SettingsStore {
     localStorage.setItem("sortInAscending", String(this.sortInAscending));
   }
 
-  changeColorized(): void {
+  toggleColorized(): void {
     WEAPONS.changeColorized();
     this.colorized = !this.colorized;
     localStorage.setItem("colorized", String(this.colorized));
   }
 
-  changeDisplaySize(): void {
+  toggleDisplaySize(): void {
     this.displaySize = !this.displaySize;
     localStorage.setItem("displaySize", String(this.displaySize));
+  }
+
+  toggleDisplayOnPreview(): void {
+    if (this.displayOnPreview === DisplayOnPreview.weapons) {
+      this.displayOnPreview = DisplayOnPreview.ingraphic;
+    } else {
+      this.displayOnPreview = DisplayOnPreview.weapons;
+    }
+  }
+
+  resetDisplayOnPreview(): void {
+    this.displayOnPreview = DisplayOnPreview.weapons;
   }
 }
 
