@@ -91,11 +91,11 @@ const WeaponsPreviewPage = observer(() => {
                   <NavLink
                     key={item.id!}
                     to={item.id!}
-                    className={styles.diagramBox}
+                    className={styles.column}
                     style={{ textDecoration: "none" }}
                   >
                     <div
-                      className={styles.column}
+                      className={styles.body}
                       style={{
                         height:
                           (item.specifications.common.numberOfIssued! / max) *
@@ -108,25 +108,6 @@ const WeaponsPreviewPage = observer(() => {
                           item.specifications.common.numberOfIssued!
                         )}
                       </Text>
-                    </div>
-                  </NavLink>
-                ))}
-            </div>
-            <div className={styles.section2}>
-              {filteredWeapons
-                .filter((item) => item.specifications.common.numberOfIssued)
-                .sort(
-                  (a, b) =>
-                    b.specifications.common.numberOfIssued! -
-                    a.specifications.common.numberOfIssued!
-                )
-                .map((item) => (
-                  <NavLink
-                    to={item.id!}
-                    key={item.id!}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div className={styles.nameBox}>
                       <Text className={styles.name}>
                         {item.shortName ? item.shortName : item.name}
                       </Text>

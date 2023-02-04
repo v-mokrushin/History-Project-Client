@@ -10,7 +10,6 @@
 
   .section1 {
     position: relative;
-    // height: 440px;
     height: 35vh;
     display: flex;
     column-gap: 12px;
@@ -38,49 +37,7 @@
     }
   }
 
-  .section2 {
-    display: flex;
-    column-gap: 12px;
-
-    @include media-breakpoint-down(xl) {
-      column-gap: 7px;
-    }
-  }
-
-  .nameBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 55px;
-
-    @include media-breakpoint-down(xl) {
-      width: 38px;
-    }
-
-    &:hover .name {
-      transform: rotate(270deg);
-      color: $primary-gold-text-color;
-    }
-
-    .name {
-      text-decoration: none;
-      writing-mode: vertical-rl;
-      transform: rotate(220deg);
-      text-align: center;
-      font-size: 18px;
-      line-height: 18px;
-      height: 100px;
-      transition: 250ms ease;
-
-      @include media-breakpoint-down(xl) {
-        font-size: 12px;
-        line-height: 10px;
-        height: 60px;
-      }
-    }
-  }
-
-  .diagramBox {
+  .column {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -89,9 +46,38 @@
     gap: 0px;
     text-decoration: none;
     transition: transform 200ms ease;
+    will-change: transform;
 
-    &:hover {
-      transform: translateY(-3px);
+    &:hover .body {
+      // transform: scaleY(1.03); 
+      transform: scale(1.03);
+      transform-origin: bottom center;
+    }
+
+    &:hover .value {
+      // transform: translateX(-50%) scaleY(1);
+    }
+
+    &:hover .name {
+      // transform: translateX(-50%);
+      // transform: translateX(-50%) rotate(270deg);
+      color: $primary-gold-text-color;
+    }
+
+    .body {
+      position: relative;
+      width: 55px;
+      transition: height 350ms ease;
+      background: linear-gradient(#9ea4e8, gray);
+      box-shadow: 3px 2px 3px rgb(70, 109, 124);
+      border-radius: 2px;
+      height: 0%;
+      min-height: 1px;
+      transition: 250ms ease;
+
+      @include media-breakpoint-down(xl) {
+        width: 38px;
+      }
     }
 
     .value {
@@ -102,24 +88,30 @@
       color: $primary-gold-text-color;
       font-size: 17px;
       line-height: normal;
+      transition: 250ms ease;
 
       @include media-breakpoint-down(xl) {
         font-size: 12px;
       }
     }
 
-    .column {
-      position: relative;
-      width: 55px;
-      transition: height 350ms ease;
-      background: linear-gradient(#9ea4e8, gray);
-      box-shadow: 3px 2px 3px rgb(70, 109, 124);
-      border-radius: 2px;
-      height: 0%;
-      min-height: 1px;
+    .name {
+      position: absolute;
+      top: calc(100% + 10px);
+      text-decoration: none;
+      writing-mode: vertical-lr;
+      transform: translateX(-50%) rotate(220deg);
+      left: 50%;
+      text-align: center;
+      font-size: 18px;
+      line-height: 18px;
+      height: 100px;
+      transition: 250ms ease;
 
       @include media-breakpoint-down(xl) {
-        width: 38px;
+        font-size: 12px;
+        line-height: 10px;
+        height: 60px;
       }
     }
   }
