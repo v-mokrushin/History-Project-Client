@@ -8,69 +8,97 @@ import { ChiefDesigners } from "../departments/chief-designers";
 const ussr: TWeapon[] = [
   {
     name: "203-мм гаубица Б-4",
+    shortName: "Б-4",
     type: WEAPONS_CLASSIFICATION.artillery.specialPower,
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
         developer: Developers.atillery.ArtilleryDesignBureau, /// TODO (2 developers)
+        numberOfIssued: 1011,
       },
     },
   },
   {
     name: "152-мм гаубица МЛ-20",
+    shortName: "МЛ-20",
     type: WEAPONS_CLASSIFICATION.artillery.armyAndCorps,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
         developer: Developers.atillery.Plant172,
+        numberOfIssued: 6884,
       },
     },
   },
   {
     name: "152-мм гаубица Д-1",
+    shortName: "Д-1",
     type: WEAPONS_CLASSIFICATION.artillery.armyAndCorps,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 2827,
+      },
+    },
   },
   {
     name: "122-мм гаубица M-30",
+    shortName: "М-30",
     type: WEAPONS_CLASSIFICATION.artillery.division,
     adoptedIntoServiceDate: 1938,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 19531,
+      },
+    },
   },
   {
     name: "76-мм пушка ЗИС-3",
+    shortName: "ЗИС-3",
     type: WEAPONS_CLASSIFICATION.artillery.division,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.atillery.Plant92,
         chiefDesigner: ChiefDesigners.artillery.Grabin,
+        numberOfIssued: 48100,
       },
     },
   },
   {
     name: "57-мм пушка ЗИС-2",
+    shortName: "ЗИС-2",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
         developer: Developers.atillery.Plant92,
         chiefDesigner: ChiefDesigners.artillery.Grabin,
+        numberOfIssued: 13510,
       },
     },
   },
   {
     name: "45-мм пушка M-42",
+    shortName: "М-42",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1942,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 11156,
+      },
+    },
   },
   {
     name: "45-мм пушка 53-К",
+    shortName: "53-К",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1937,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 46100,
+      },
+    },
   },
   {
     name: "120-мм миномёт ПМ-38",
@@ -94,7 +122,11 @@ const ussr: TWeapon[] = [
     name: "37-мм пушка 61-К",
     type: WEAPONS_CLASSIFICATION.artillery.antiaircraft,
     adoptedIntoServiceDate: 1939,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 19689,
+      },
+    },
   },
   {
     name: "БМ-13 (ЗИС-6)",
@@ -112,7 +144,11 @@ const ussr: TWeapon[] = [
     name: "БМ-13Н",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 1845,
+      },
+    },
   },
   {
     name: "БМ-31-12",
@@ -125,43 +161,51 @@ const ussr: TWeapon[] = [
 const germany: TWeapon[] = [
   {
     name: "7,5 cm Pak. 40",
+    shortName: "Pak 40",
     type: WEAPONS_CLASSIFICATION.artillery.antitank,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
         developer: Developers.RheinmetallBorsig,
+        numberOfIssued: 20217,
       },
     },
   },
   {
     name: "15cm Panzerwerfer 42 Auf.Sf",
+    shortName: "Sd.Kfz.4/1",
     type: WEAPONS_CLASSIFICATION.artillery.reactive,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
         developer: Developers.atillery.Opel,
+        numberOfIssued: 600,
       },
     },
   },
   {
     name: "Vergeltungswaffe-2",
+    shortName: "V-2",
     type: WEAPONS_CLASSIFICATION.artillery.ballisticMissile,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.atillery.Peenemunde,
         chiefDesigner: ChiefDesigners.artillery.Braun,
+        numberOfIssued: 3170,
       },
     },
   },
   {
     name: "Vergeltungswaffe-1",
+    shortName: "V-1",
     type: WEAPONS_CLASSIFICATION.artillery.cruiseMissile,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.atillery.Fieseler,
         chiefDesigner: ChiefDesigners.artillery.Lusser,
+        numberOfIssued: 25000,
       },
     },
   },

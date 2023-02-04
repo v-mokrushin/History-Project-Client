@@ -28,6 +28,7 @@ import { observer } from "mobx-react";
 import { CONTENT_LIST_TYPE } from "components/ContentList/constants";
 import imageViewerStore from "stores/mobx/imageViewerStore";
 import TextIntro from "components/TextIntro/TextIntro";
+import { Scroll } from "utils/scroll";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -35,6 +36,7 @@ const WeaponDisplayPage = observer(() => {
 
   React.useEffect(() => {
     loadingStore.checkLoading(weaponId);
+    Scroll.toTopInstantly();
 
     return () => {
       imageViewerStore.setClose();

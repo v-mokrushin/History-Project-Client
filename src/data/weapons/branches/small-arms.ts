@@ -19,23 +19,37 @@ const ussr: ISmallArm[] = [
     },
   },
   {
-    name: "Винтовка Мосина обр. 1891/30 г.",
+    name: "Винтовка Мосина",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
-    adoptedIntoServiceDate: 1892,
+    adoptedIntoServiceDate: 1891,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Mosin,
         platform: Platforms.smallArms.Mosin,
+        numberOfIssued: 20_000_000, // ?
       },
     },
   },
   {
-    name: "Карабин Мосина обр. 1938 г.",
-    type: WEAPONS_CLASSIFICATION.smallArms.сarbine,
-    adoptedIntoServiceDate: 1938,
+    name: "Снайперская винтовка обр. 1891/30 г.",
+    shortName: "Снайп. винт. обр. 1891/30 г.",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1930,
     specifications: {
       common: {
         platform: Platforms.smallArms.Mosin,
+        numberOfIssued: 108_835,
+      },
+    },
+  },
+  {
+    name: "Карабин Мосина",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1907,
+    specifications: {
+      common: {
+        platform: Platforms.smallArms.Mosin,
+        numberOfIssued: 8_000_000, // ??? придумал
       },
     },
   },
@@ -47,11 +61,13 @@ const ussr: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Tokarev,
         platform: Platforms.smallArms.SVT,
+        numberOfIssued: 1_550_000,
       },
     },
   },
   {
     name: "СВТ-40 (снайперский)",
+    shortName: "СВТ-40 (снайп.)",
     type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1940,
     specifications: {
@@ -70,6 +86,7 @@ const ussr: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Tokarev,
         platform: Platforms.smallArms.SVT,
+        // numberOfIssued: 1_550_000,
       },
     },
   },
@@ -80,6 +97,7 @@ const ussr: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Sudaev,
+        numberOfIssued: 500_000,
       },
     },
   },
@@ -90,6 +108,7 @@ const ussr: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Shpagin,
+        numberOfIssued: 6_000_000,
       },
     },
   },
@@ -100,6 +119,7 @@ const ussr: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+        numberOfIssued: 90_000,
       },
     },
   },
@@ -118,16 +138,18 @@ const ussr: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+        numberOfIssued: 293_153,
       },
     },
   },
   {
-    name: "ДП",
+    name: "ДП-27",
     type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
     adoptedIntoServiceDate: 1927,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Degtyarev,
+        numberOfIssued: 795_000,
       },
     },
   },
@@ -136,33 +158,39 @@ const ussr: ISmallArm[] = [
 const germany: ISmallArm[] = [
   {
     name: "Mauser Gewehr 98",
+    shortName: "Mauser 98",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1898,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Mauser,
         platform: Platforms.smallArms.Mauser,
+        numberOfIssued: 13_000_000, // ???
       },
     },
   },
   {
     name: "Karabiner 98k",
-    type: WEAPONS_CLASSIFICATION.smallArms.сarbine,
+    shortName: "Mauser 98k",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
         // chiefDesigner: ChiefDesigners.smallArms.Mauser,
         platform: Platforms.smallArms.Mauser,
+        numberOfIssued: 15_000_000, // ???
       },
     },
   },
   {
     name: "Sturmgewehr 44",
+    shortName: "StG 44",
     type: WEAPONS_CLASSIFICATION.smallArms.assaultRifle,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.HugoSchmeisser,
+        numberOfIssued: 446_000,
       },
     },
   },
@@ -184,6 +212,7 @@ const germany: ISmallArm[] = [
     specifications: {
       common: {
         developer: Developers.smallArms.Walther,
+        numberOfIssued: 500_000,
       },
     },
   },
@@ -194,6 +223,7 @@ const germany: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.WernerGruner,
+        numberOfIssued: 423_000,
       },
     },
   },
@@ -205,6 +235,7 @@ const germany: ISmallArm[] = [
       common: {
         developer: Developers.RheinmetallBorsig,
         chiefDesigner: ChiefDesigners.smallArms.LouisStange,
+        numberOfIssued: 1_000_000, // ???
       },
     },
   },
@@ -212,11 +243,20 @@ const germany: ISmallArm[] = [
 
 const usa: ISmallArm[] = [
   {
+    name: "Springfield M1903",
+    shortName: "M1903",
+    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    adoptedIntoServiceDate: 1903,
+    specifications: {
+      common: { numberOfIssued: 1_300_000 },
+    },
+  },
+  {
     name: "M3 Grease gun",
     type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
     adoptedIntoServiceDate: 1942,
     specifications: {
-      common: {},
+      common: { numberOfIssued: 700_000 },
     },
   },
   {
@@ -227,6 +267,7 @@ const usa: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
         platform: Platforms.smallArms.Thompson,
+        numberOfIssued: 539_143,
       },
     },
   },
@@ -238,6 +279,7 @@ const usa: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
         platform: Platforms.smallArms.Thompson,
+        numberOfIssued: 285_480,
       },
     },
   },
@@ -249,6 +291,7 @@ const usa: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Thompson, // ???
         platform: Platforms.smallArms.Thompson,
+        numberOfIssued: 562_511,
       },
     },
   },
@@ -268,7 +311,9 @@ const usa: ISmallArm[] = [
     type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1936,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 5_400_000,
+      },
     },
   },
   {
@@ -312,11 +357,13 @@ const usa: ISmallArm[] = [
 const britain: ISmallArm[] = [
   {
     name: "Short Magazine Lee-Enfield",
+    shortName: "SMLE",
     type: WEAPONS_CLASSIFICATION.smallArms.rifle,
     adoptedIntoServiceDate: 1904,
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Paris,
+        numberOfIssued: 17_000_000, // ???
       },
     },
   },
@@ -328,6 +375,7 @@ const britain: ISmallArm[] = [
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Boys,
         productionPeriod: "1937 - 1942",
+        numberOfIssued: 60_000,
         // developer: Developers.smallArms.Walther,
       },
     },
@@ -341,6 +389,7 @@ const belgium: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.Lewis,
+        numberOfIssued: 202_050,
       },
     },
   },
@@ -354,6 +403,7 @@ const finland: ISmallArm[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.smallArms.AimoLahti,
+        numberOfIssued: 80_000,
       },
     },
   },

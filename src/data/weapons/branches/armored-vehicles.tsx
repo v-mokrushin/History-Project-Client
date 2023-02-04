@@ -239,6 +239,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.KB3,
         producer: [Producers.armoredVehicles.Leningrad185],
+        numberOfIssued: 503,
       },
     },
   },
@@ -547,6 +548,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Chelyabinsk100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Kotin,
         platform: Platforms.armoredVehicles.KV1S,
+        numberOfIssued: 670,
       },
     },
   },
@@ -574,6 +576,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         platform: Platforms.armoredVehicles.T34,
         producer: [Producers.armoredVehicles.UZTM],
+        numberOfIssued: 2650,
       },
       crew: CREWS.size.five.perfect,
       mobility: {
@@ -593,6 +596,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Kirov38,
         chiefDesigner: ChiefDesigners.armoredVehicles.Ginzburg,
+        numberOfIssued: 14292,
       },
     },
   },
@@ -626,7 +630,9 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.tankette,
     adoptedIntoServiceDate: 1931,
     specifications: {
-      common: {},
+      common: {
+        numberOfIssued: 3155,
+      },
     },
   },
 ];

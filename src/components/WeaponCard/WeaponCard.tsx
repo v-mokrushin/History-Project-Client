@@ -36,9 +36,6 @@ const WeaponCard = observer(
           settingsStore.displaySize && styles.root_large,
           ANIMATIONS.fadeIn
         )}
-        onClick={() => {
-          Scroll.toTopInstantly();
-        }}
         key={Math.random()}
       >
         <div

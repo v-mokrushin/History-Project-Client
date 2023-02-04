@@ -22,6 +22,7 @@ import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import Text from "components/Text/Text";
 import Subtitle from "components/Subtitle/Subtitle";
+import { getShortNumber } from "utils/common";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -65,8 +66,6 @@ const WeaponsPreviewPage = observer(() => {
       .map((item) => item.specifications.common.numberOfIssued!)
   );
 
-  console.log(max);
-
   return (
     <div className={styles.root}>
       <ContentWrapper>
@@ -95,9 +94,6 @@ const WeaponsPreviewPage = observer(() => {
                     className={styles.diagramBox}
                     style={{ textDecoration: "none" }}
                   >
-                    <Text className={styles.value}>
-                      {item.specifications.common.numberOfIssued}
-                    </Text>
                     <div
                       className={styles.column}
                       style={{
@@ -106,7 +102,13 @@ const WeaponsPreviewPage = observer(() => {
                             100 +
                           "%",
                       }}
-                    ></div>
+                    >
+                      <Text className={styles.value}>
+                        {getShortNumber(
+                          item.specifications.common.numberOfIssued!
+                        )}
+                      </Text>
+                    </div>
                   </NavLink>
                 ))}
             </div>

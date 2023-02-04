@@ -200,11 +200,13 @@ const ussr: IAircraft[] = [
 const germany: IAircraft[] = [
   {
     name: "Heinkel He 162 Volksjäger",
+    shortName: "He 162",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1945,
     specifications: {
       common: {
         developer: Developers.aviation.Heinkel,
+        numberOfIssued: 320,
       },
     },
   },
@@ -279,11 +281,13 @@ const germany: IAircraft[] = [
   },
   {
     name: "Messerschmitt Me.323 Gigant",
+    shortName: "Me.323",
     type: WEAPONS_CLASSIFICATION.aviation.militaryTransport,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.aviation.Messerschmitt,
+        numberOfIssued: 198,
       },
     },
   },
@@ -326,16 +330,19 @@ const usa: IAircraft[] = [
   },
   {
     name: "Douglas A-20G Havoc",
+    shortName: "A-20 Havoc",
     type: WEAPONS_CLASSIFICATION.aviation.attackАircraft,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
         developer: Developers.aviation.Douglas,
+        numberOfIssued: 2850,
       },
     },
   },
   {
     name: "Boeing B-29 Superfortress",
+    shortName: "B-29",
     type: WEAPONS_CLASSIFICATION.aviation.strategicBomber,
     adoptedIntoServiceDate: 1944,
     specifications: {
@@ -347,6 +354,7 @@ const usa: IAircraft[] = [
           Producers.aviation.BellAtlanta,
           Producers.aviation.MartinOmaha,
         ],
+        numberOfIssued: 3970,
       },
     },
   },
@@ -377,11 +385,13 @@ const britain: IAircraft[] = [
   },
   {
     name: "Avro 683 Lancaster",
+    shortName: "Lancaster",
     type: WEAPONS_CLASSIFICATION.aviation.strategicBomber,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
         developer: Developers.aviation.Avro,
+        numberOfIssued: 7377,
       },
     },
   },
@@ -390,11 +400,13 @@ const britain: IAircraft[] = [
 const france: IAircraft[] = [
   {
     name: "Morane-Saulnier MS.406",
+    shortName: "MS.406",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1939,
     specifications: {
       common: {
         developer: Developers.aviation.MoraneSaulnier,
+        numberOfIssued: 1074,
       },
     },
   },
@@ -429,11 +441,13 @@ const japan: IAircraft[] = [
 const italy: IAircraft[] = [
   {
     name: "Macchi C.205 Veltro",
+    shortName: "C.205",
     type: WEAPONS_CLASSIFICATION.aviation.fighter,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
         developer: Developers.aviation.Macchi,
+        numberOfIssued: 302,
       },
     },
   },
@@ -442,11 +456,13 @@ const italy: IAircraft[] = [
 const poland: IAircraft[] = [
   {
     name: "PZL.37-Łoś",
+    shortName: "PZL.37",
     type: WEAPONS_CLASSIFICATION.aviation.bomber,
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
         developer: Developers.aviation.PZL,
+        numberOfIssued: 120,
       },
     },
   },
@@ -512,6 +528,7 @@ const netherlands: IAircraft[] = [
     specifications: {
       common: {
         developer: Developers.aviation.Fokker,
+        numberOfIssued: 63,
       },
     },
   },
