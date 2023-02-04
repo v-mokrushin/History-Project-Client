@@ -3,14 +3,26 @@
 .infographic {
   overflow: auto;
   margin-bottom: 25px;
-  padding: 35px 3px 15px;
+  padding: 37px 3px 15px;
+
+  @include media-breakpoint-down(FHD) {
+    padding-top: 30px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding-top: 25px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-top: 20px;
+  }
 
   .graphicWrapper {
     position: relative;
     height: 25vh;
     display: flex;
-    column-gap: 13px;
-    margin-bottom: 90px;
+    column-gap: 15px;
+    margin-bottom: 95px;
     width: max-content;
 
     @include media-breakpoint-down(FHD) {
@@ -18,7 +30,7 @@
     }
 
     @include media-breakpoint-down(xl) {
-      column-gap: 10px;
+      column-gap: 12px;
       margin-bottom: 70px;
     }
 
@@ -47,7 +59,7 @@
     transition: transform 200ms ease;
 
     &:hover .body {
-      transform: scale(1.03);
+      transform: scale(1.02);
       transform-origin: bottom center;
     }
 
@@ -60,15 +72,17 @@
 
     .body {
       position: relative;
-      width: 55px;
+      width: 60px;
       background: linear-gradient(#9ea4e8, gray);
       box-shadow: 3px 2px 3px rgb(70, 109, 124);
       border-radius: 2px;
       height: 0%;
       min-height: 1px;
       transition: 250ms ease;
+      will-change: transform;
 
       @include media-breakpoint-down(FHD) {
+        width: 55px;
       }
 
       @include media-breakpoint-down(xl) {
@@ -96,23 +110,28 @@
 
       .name {
         position: absolute;
-        top: calc(100% + 35px);
+        top: calc(100% + 42px);
         transform: translateX(-45%) rotate(-35deg);
         left: 50%;
         text-align: center;
-        font-size: 18px;
-        line-height: 18px;
+        font-size: 17px;
+        line-height: 17px;
         width: 100px;
         transition: 250ms ease;
 
         @include media-breakpoint-down(FHD) {
           font-size: 15px;
+          line-height: 15px;
         }
 
         @include media-breakpoint-down(xl) {
           font-size: 12px;
           line-height: 11px;
           width: 60px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          top: calc(100% + 32px);
         }
       }
     }
