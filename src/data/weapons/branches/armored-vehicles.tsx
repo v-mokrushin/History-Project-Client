@@ -62,6 +62,7 @@ const ussr: IArmoredVehicle[] = [
           Producers.armoredVehicles.Leningrad185,
           Producers.armoredVehicles.Chelyabinsk100,
         ],
+        numberOfIssued: 2229,
       },
     },
   },
@@ -729,15 +730,15 @@ const germany: IArmoredVehicle[] = [
     },
   },
   {
-    name: "Pz.Kpfw. IV Ausf.G",
-    shortName: "Pz. IV G",
+    name: "Pz.Kpfw. IV Ausf.J",
+    shortName: "Pz. IV J",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1942,
+    adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Krupp,
         platform: Platforms.armoredVehicles.PzKpfw4,
-        numberOfIssued: 1687, /// ?
+        numberOfIssued: 3160,
       },
     },
   },
@@ -750,40 +751,72 @@ const germany: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Krupp,
         platform: Platforms.armoredVehicles.PzKpfw4,
-        numberOfIssued: 3898, /// ?
+        numberOfIssued: 2324, /// ?
       },
     },
   },
   {
-    name: "Pz.Kpfw. III Ausf.J1",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
-    adoptedIntoServiceDate: 1941,
-    specifications: {
-      common: {
-        developer: Developers.armoredVehicles.DaimlerBenz,
-        platform: Platforms.armoredVehicles.PzKpfw3,
-      },
-    },
-  },
-  {
-    name: "Pz.Kpfw. III Ausf.L",
+    name: "Pz.Kpfw. IV Ausf.G",
+    shortName: "Pz. IV G",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
-        developer: Developers.armoredVehicles.DaimlerBenz,
-        platform: Platforms.armoredVehicles.PzKpfw3,
+        developer: Developers.armoredVehicles.Krupp,
+        platform: Platforms.armoredVehicles.PzKpfw4,
+        numberOfIssued: 1687, /// ? F2 - 1927 - 1687
+      },
+    },
+  },
+  {
+    name: "Pz.Kpfw. IV Ausf.F2",
+    shortName: "Pz. IV F2",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Krupp,
+        platform: Platforms.armoredVehicles.PzKpfw4,
+        numberOfIssued: 166,
       },
     },
   },
   {
     name: "Pz.Kpfw. III Ausf.M",
+    shortName: "Pz. III M",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.DaimlerBenz,
         platform: Platforms.armoredVehicles.PzKpfw3,
+        numberOfIssued: 517,
+      },
+    },
+  },
+  {
+    name: "Pz.Kpfw. III Ausf.L",
+    shortName: "Pz. III L",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw3,
+        numberOfIssued: 1470,
+      },
+    },
+  },
+  {
+    name: "Pz.Kpfw. III Ausf.J",
+    shortName: "Pz. III J",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.DaimlerBenz,
+        platform: Platforms.armoredVehicles.PzKpfw3,
+        numberOfIssued: 1521,
       },
     },
   },

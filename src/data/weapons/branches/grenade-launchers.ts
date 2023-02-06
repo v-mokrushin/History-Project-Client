@@ -22,15 +22,24 @@ const germany: TWeapon[] = [
   },
   {
     name: "8,8 cm Raketenwerfer 43 «Puppchen»",
+    shortName: "«Puppchen»",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.heavy,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 3_150,
+      },
+    },
   },
   {
     name: "Panzerschreck",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 289_151,
+      },
+    },
   },
   {
     name: "Faustpatrone",
@@ -47,7 +56,11 @@ const germany: TWeapon[] = [
     name: "Sturmpistole",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 1_540_114,
+      },
+    },
   },
   {
     name: "Schiessbecher",
@@ -65,6 +78,7 @@ const usa: TWeapon[] = [
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.grenadeLaunchers.Uhl,
+        numberOfIssued: 112_290,
       },
     },
   },
@@ -75,7 +89,11 @@ const japan: TWeapon[] = [
     name: "Type 4",
     type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1944,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 3_500,
+      },
+    },
   },
   {
     name: "Type 10",
@@ -94,6 +112,7 @@ const britain: TWeapon[] = [
       common: {
         chiefDesigner: ChiefDesigners.grenadeLaunchers.Jefferis,
         developer: Developers.grenadeLaunchers.ImperialChemicalIndustries,
+        numberOfIssued: 115_000,
       },
     },
   },

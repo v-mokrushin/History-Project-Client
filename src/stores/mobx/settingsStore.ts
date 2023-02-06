@@ -23,7 +23,7 @@ export class SettingsStore {
     this.displaySize = translateLocalstorageToBool(
       localStorage.getItem("displaySize")
     );
-    this.displayOnPreview = "технику";
+    this.displayOnPreview = DisplayOnPreview.weapons;
 
     makeAutoObservable(this);
   }

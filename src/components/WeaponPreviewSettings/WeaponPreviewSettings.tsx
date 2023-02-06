@@ -15,23 +15,29 @@ const WeaponPreviewSettings = observer(
       <div className={classNames(styles.root, className)}>
         <button
           onClick={() => settingsStore.toggleDisplayOnPreview()}
+          className={classNames(styles.btn)}
+        >
+          <Text
+            className={classNames(
+              styles.btn__text,
+              settingsStore.displayOnPreview === DisplayOnPreview.weapons &&
+                styles.btn_animated
+            )}
+          >
+            Показать: {settingsStore.displayOnPreview}
+          </Text>
+        </button>
+        <button
+          onClick={() => settingsStore.toggleSortInAscending()}
           className={styles.btn}
         >
           <Text className={styles.btn__text}>
-            Показать: {settingsStore.displayOnPreview}
+            Порядок:{" "}
+            {settingsStore.sortInAscending ? "по возраст." : "по убыванию"}
           </Text>
         </button>
         {settingsStore.displayOnPreview === DisplayOnPreview.weapons && (
           <>
-            <button
-              onClick={() => settingsStore.toggleSortInAscending()}
-              className={styles.btn}
-            >
-              <Text className={styles.btn__text}>
-                Порядок:{" "}
-                {settingsStore.sortInAscending ? "по возраст." : "по убыванию"}
-              </Text>
-            </button>
             <button
               onClick={() => settingsStore.toggleColorized()}
               className={styles.btn}

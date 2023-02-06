@@ -25,6 +25,25 @@
   transition: transform 150ms ease;
   padding: 0;
 
+  &_animated {
+    animation: anim 2500ms linear infinite;
+
+    @keyframes anim {
+      from {
+        color: black;
+        border-bottom: 2px dotted black;
+      }
+      50% {
+        color: $primary-gold-text-color;
+        border-bottom: 2px dotted rgb(219, 157, 42);
+      }
+      to {
+        color: black;
+        border-bottom: 2px dotted black;
+      }
+    }
+  }
+
   &:hover &__text {
     color: $grey-text-color;
     border-bottom: 2px dotted $grey-text-color;

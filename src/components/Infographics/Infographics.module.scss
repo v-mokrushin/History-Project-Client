@@ -22,7 +22,7 @@
     height: 25vh;
     display: flex;
     column-gap: 15px;
-    margin-bottom: 95px;
+    margin-bottom: 105px;
     width: max-content;
 
     @include media-breakpoint-down(FHD) {
@@ -78,7 +78,7 @@
       border-radius: 2px;
       height: 0%;
       min-height: 1px;
-      transition: 250ms ease;
+      transition: all 250ms ease;
       will-change: transform;
 
       @include media-breakpoint-down(FHD) {
