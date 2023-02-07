@@ -4,7 +4,7 @@ import { translateToBool as translateLocalstorageToBool } from "utils/common";
 
 export enum DisplayOnPreview {
   weapons = "вооружения",
-  ingraphic = "инфорграфику",
+  ingraphic = "инфографику",
 }
 
 export class SettingsStore {

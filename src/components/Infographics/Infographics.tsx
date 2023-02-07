@@ -9,22 +9,25 @@ import { getShortNumber } from "utils/common";
 import { NavLink } from "react-router-dom";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
+import WeaponsPreviewPage from "pages/WeaponsPreviewPage/WeaponsPreviewPage";
+import WeaponCard from "components/WeaponCard/WeaponCard";
 
 interface IInfographicsProps {
   weapons: TWeapon[];
+  setPreview: Function;
   className?: string;
 }
 
 const Infographics: React.FC<IInfographicsProps> = observer(
-  ({ weapons, className }) => {
+  ({ weapons, setPreview, className }) => {
     weapons = weapons
       .filter((item) => item.specifications.common.numberOfIssued)
       .sort((a, b) =>
         !settingsStore.sortInAscending
-          ? (b.specifications.common.numberOfIssued! -
-            a.specifications.common.numberOfIssued!)
-          : (a.specifications.common.numberOfIssued! -
-            b.specifications.common.numberOfIssued!)
+          ? b.specifications.common.numberOfIssued! -
+            a.specifications.common.numberOfIssued!
+          : a.specifications.common.numberOfIssued! -
+            b.specifications.common.numberOfIssued!
       );
 
     const max = Math.max(
@@ -36,10 +39,10 @@ const Infographics: React.FC<IInfographicsProps> = observer(
         <Subtitle noMargin>Произведено</Subtitle>
         <div className={classNames(styles.infographic, ANIMATIONS.fadeIn)}>
           <div className={styles.graphicWrapper}>
-            {weapons.map((item) => (
+            {weapons.map((weapon) => (
               <NavLink
-                key={item.id!}
-                to={item.id!}
+                key={weapon.id!}
+                to={weapon.id!}
                 className={styles.column}
                 style={{ textDecoration: "none" }}
               >
@@ -47,23 +50,36 @@ const Infographics: React.FC<IInfographicsProps> = observer(
                   className={styles.body}
                   style={{
                     height:
-                      (item.specifications.common.numberOfIssued! / max) * 100 +
+                      (weapon.specifications.common.numberOfIssued! / max) *
+                        100 +
                       "%",
                   }}
+                  onMouseEnter={(event) => {
+                    setPreview({
+                      weapon: weapon,
+                      toShow: true,
+                      element: event.currentTarget,
+                    });
+                  }}
+                  onMouseLeave={() =>
+                    setPreview({
+                      toShow: false,
+                    })
+                  }
                 >
                   <Text className={styles.value}>
-                    {getShortNumber(item.specifications.common.numberOfIssued!)}
+                    {getShortNumber(
+                      weapon.specifications.common.numberOfIssued!
+                    )}
                   </Text>
                   <Text className={styles.name}>
-                    {item.shortName ? item.shortName : item.name}
+                    {weapon.shortName ? weapon.shortName : weapon.name}
                   </Text>
+                  <div className={styles.continuation}></div>
                 </div>
               </NavLink>
             ))}
           </div>
-          {/* <div>
-          <span>ss</span>
-        </div> */}
         </div>
       </div>
     );

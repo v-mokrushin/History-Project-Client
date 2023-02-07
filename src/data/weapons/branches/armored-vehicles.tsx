@@ -30,23 +30,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.ChelyabinskExp100,
         chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev,
         producer: [Producers.armoredVehicles.Chelyabinsk100],
-        numberOfIssued: 2315,
-      },
-    },
-  },
-  {
-    name: "КВ-1 (Л-11)",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1940,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        developer: Developers.armoredVehicles.Leningrad185,
-        platform: Platforms.armoredVehicles.KV1,
-        producer: [
-          Producers.armoredVehicles.Leningrad185,
-          Producers.armoredVehicles.Chelyabinsk100,
-        ],
+        numberOfIssued: 25,
       },
     },
   },
@@ -67,6 +51,47 @@ const ussr: IArmoredVehicle[] = [
     },
   },
   {
+    name: "КВ-1Э",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        platform: Platforms.armoredVehicles.KV1,
+      },
+    },
+  },
+  {
+    name: "КВ-1 (Ф-32)",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Leningrad185,
+        platform: Platforms.armoredVehicles.KV1,
+        numberOfIssued: 792,
+      },
+    },
+  },
+  {
+    name: "КВ-1 (Л-11)",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1939,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Leningrad185,
+        platform: Platforms.armoredVehicles.KV1,
+        producer: [
+          Producers.armoredVehicles.Leningrad185,
+          Producers.armoredVehicles.Chelyabinsk100,
+        ],
+        numberOfIssued: 283,
+      },
+    },
+  },
+  {
     name: "КВ-2",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1940,
@@ -79,17 +104,7 @@ const ussr: IArmoredVehicle[] = [
       },
     },
   },
-  {
-    name: "КВ-1Э",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1941,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        platform: Platforms.armoredVehicles.KV1,
-      },
-    },
-  },
+
   {
     name: "КВ-1с",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
@@ -317,6 +332,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Stalingrad,
         producer: [Producers.armoredVehicles.Stalingrad],
         platform: Platforms.armoredVehicles.T34,
+        numberOfIssued: 120,
       },
     },
   },
@@ -328,6 +344,7 @@ const ussr: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.KrasnoyeSormovo112,
         platform: Platforms.armoredVehicles.T34,
+        numberOfIssued: 80,
       },
     },
   },
@@ -822,6 +839,7 @@ const germany: IArmoredVehicle[] = [
   },
   {
     name: "Pz.Kpfw. II",
+    shortName: "Pz. II",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
     specifications: {
@@ -1281,13 +1299,31 @@ const britain: IArmoredVehicle[] = [
     name: "Churchill III",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 675,
+      },
+    },
+  },
+  {
+    name: "Churchill II",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941, /// ?
+    specifications: {
+      common: {
+        numberOfIssued: 1120,
+      },
+    },
   },
   {
     name: "Churchill I",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1941,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 303,
+      },
+    },
   },
   {
     name: "Matilda Mk III",
@@ -1302,7 +1338,10 @@ const britain: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1944,
     specifications: {
-      common: { platform: Platforms.armoredVehicles.Sherman },
+      common: {
+        platform: Platforms.armoredVehicles.Sherman,
+        numberOfIssued: 699,
+      },
     },
   },
   {
@@ -1353,6 +1392,7 @@ const britain: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Vickers,
         producer: [Producers.armoredVehicles.MetroCammell],
+        numberOfIssued: 100,
       },
     },
   },
@@ -1369,7 +1409,11 @@ const france: IArmoredVehicle[] = [
     name: "Somua S35",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1935,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 425,
+      },
+    },
   },
 ];
 
@@ -1378,7 +1422,11 @@ const italy: IArmoredVehicle[] = [
     name: "Lancia IZ/IZM",
     type: WEAPONS_CLASSIFICATION.armoredVehicle.armoredCar,
     adoptedIntoServiceDate: 1916,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 130,
+      },
+    },
   },
 ];
 

@@ -74,9 +74,6 @@ const WeaponDisplayPage = observer(() => {
                         loadingStatus={loadingStore.getStatus()}
                       />
                       <TextIntro weapon={weapon} />
-                      {/* <Block formatAsSection>
-                        <Spec weapon={weapon} />
-                      </Block> */}
                       <Spec weapon={weapon} />
                       {weapon.article}
                       {weapon.videomaterials && (

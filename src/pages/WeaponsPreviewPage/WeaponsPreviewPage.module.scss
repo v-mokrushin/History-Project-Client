@@ -1,4 +1,27 @@
 @import "/src/assets/css/common.scss";
 
 .root {
+  position: relative;
+}
+
+.preview {
+  position: absolute;
+  z-index: 5;
+  width: 15%;
+  transform: translateX(-50%) translateY(calc(-45px - 100%));
+  transition: all 110ms ease;
+  border-radius: 2.5%;
+  overflow: hidden;
+
+  @include media-breakpoint-down(FHD) {
+    transform: translateX(-50%) translateY(calc(-35px - 100%));
+  }
+
+  @include media-breakpoint-down(xl) {
+    transform: translateX(-50%) translateY(calc(-25px - 100%));
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

@@ -8,12 +8,13 @@ import Flag from "../Flag/Flag";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
-import { Scroll } from "utils/scroll";
 
 interface IWeaponCardProps {
   weapon: TWeapon;
   showFlag?: boolean;
   isAbsoluteLinkPath?: boolean;
+  variantForInfographic?: boolean;
+  className?: string;
 }
 
 const WeaponCard = observer(
@@ -21,6 +22,8 @@ const WeaponCard = observer(
     weapon,
     showFlag = false,
     isAbsoluteLinkPath = false,
+    variantForInfographic = false,
+    className,
   }: IWeaponCardProps) => {
     const colorized = settingsStore.colorized;
 
@@ -34,7 +37,8 @@ const WeaponCard = observer(
         className={classNames(
           styles.root,
           settingsStore.displaySize && styles.root_large,
-          ANIMATIONS.fadeIn
+          ANIMATIONS.fadeIn,
+          className
         )}
         key={Math.random()}
       >
@@ -57,6 +61,13 @@ const WeaponCard = observer(
           <p className={styles.title}>{weapon?.name}</p>
           <p className={styles.description}>{weapon?.type.name.russian}</p>
         </div>
+
+        {/* {variantForInfographic || (
+          <div className={styles.contentWrapper}>
+            <p className={styles.title}>{weapon?.name}</p>
+            <p className={styles.description}>{weapon?.type.name.russian}</p>
+          </div>
+        )} */}
       </NavLink>
     );
   }

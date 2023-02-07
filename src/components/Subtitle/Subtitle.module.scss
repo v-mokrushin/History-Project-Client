@@ -3,13 +3,13 @@
 .root {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 33px;
   letter-spacing: 1px;
   color: $primary-dark-text-color;
   margin-bottom: 25px;
 
   @include media-breakpoint-down(FHD) {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   @include media-breakpoint-down(xl) {

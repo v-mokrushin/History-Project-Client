@@ -12,16 +12,16 @@ interface IWeaponPreviewSettingsProps {
 const WeaponPreviewSettings = observer(
   ({ className }: IWeaponPreviewSettingsProps) => {
     return (
-      <div className={classNames(styles.root, className)}>
+      <div className={classNames(styles.wrapper, className)}>
         <button
           onClick={() => settingsStore.toggleDisplayOnPreview()}
-          className={classNames(styles.btn)}
+          className={classNames(styles.button)}
         >
           <Text
             className={classNames(
-              styles.btn__text,
+              styles.button__text,
               settingsStore.displayOnPreview === DisplayOnPreview.weapons &&
-                styles.btn_animated
+                styles.button__text_animated
             )}
           >
             Показать: {settingsStore.displayOnPreview}
@@ -29,9 +29,9 @@ const WeaponPreviewSettings = observer(
         </button>
         <button
           onClick={() => settingsStore.toggleSortInAscending()}
-          className={styles.btn}
+          className={styles.button}
         >
-          <Text className={styles.btn__text}>
+          <Text className={styles.button__text}>
             Порядок:{" "}
             {settingsStore.sortInAscending ? "по возраст." : "по убыванию"}
           </Text>
@@ -40,17 +40,17 @@ const WeaponPreviewSettings = observer(
           <>
             <button
               onClick={() => settingsStore.toggleColorized()}
-              className={styles.btn}
+              className={styles.button}
             >
-              <Text className={styles.btn__text}>
+              <Text className={styles.button__text}>
                 Фото: {settingsStore.colorized ? "цветные" : "чёрно-белые"}
               </Text>
             </button>
             <button
               onClick={() => settingsStore.toggleDisplaySize()}
-              className={styles.btn}
+              className={styles.button}
             >
-              <Text className={styles.btn__text}>
+              <Text className={styles.button__text}>
                 Размер: {settingsStore.displaySize ? "крупный" : "норм."}
               </Text>
             </button>

@@ -26,6 +26,7 @@ import { getShortNumber } from "utils/common";
 import settingsStore, { DisplayOnPreview } from "stores/mobx/settingsStore";
 import { ANIMATIONS } from "constants/animations";
 import Infographics from "components/Infographics/Infographics";
+import WeaponCard from "components/WeaponCard/WeaponCard";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -44,6 +45,11 @@ const WeaponsPreviewPage = observer(() => {
     () => WEAPONS.getUniqueDates(filteredWeapons),
     [filtersStore.filters]
   );
+  const [preview, setPreview] = React.useState({
+    weapon: filteredWeapons[1],
+    toShow: false,
+    element: document.documentElement,
+  });
 
   React.useEffect(() => {
     const scrollEvent = () => {
@@ -65,6 +71,25 @@ const WeaponsPreviewPage = observer(() => {
 
   return (
     <div className={styles.root}>
+      {preview.toShow && (
+        <div
+          className={styles.preview}
+          style={{
+            left:
+              preview.element.getBoundingClientRect().x +
+              window.pageXOffset +
+              preview.element.getBoundingClientRect().width / 2 +
+              "px",
+            top:
+              preview.element.getBoundingClientRect().y +
+              window.pageYOffset +
+              -80 +
+              "px",
+          }}
+        >
+          <WeaponCard weapon={preview.weapon} showFlag variantForInfographic />
+        </div>
+      )}
       <ContentWrapper>
         <Container>
           <Title>
@@ -82,7 +107,7 @@ const WeaponsPreviewPage = observer(() => {
                 showFlags={NATIONS_METHODS.identity.isWorld(nationObject)}
               />
             ) : (
-              <Infographics weapons={filteredWeapons} />
+              <Infographics weapons={filteredWeapons} setPreview={setPreview} />
             )
           ) : (
             <SpecialLogo type={SPECIAL_LOGO_TYPE.notFound} vertiacalFill />

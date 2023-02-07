@@ -1,6 +1,6 @@
 @import "/src/assets/css/common.scss";
 
-.root {
+.wrapper {
   margin-bottom: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -17,32 +17,13 @@
   }
 }
 
-.btn {
+.button {
   border: none;
   background: transparent;
   cursor: pointer;
   border-radius: 3px;
   transition: transform 150ms ease;
   padding: 0;
-
-  &_animated {
-    animation: anim 2500ms linear infinite;
-
-    @keyframes anim {
-      from {
-        color: black;
-        border-bottom: 2px dotted black;
-      }
-      50% {
-        color: $primary-gold-text-color;
-        border-bottom: 2px dotted rgb(219, 157, 42);
-      }
-      to {
-        color: black;
-        border-bottom: 2px dotted black;
-      }
-    }
-  }
 
   &:hover &__text {
     color: $grey-text-color;
@@ -56,5 +37,24 @@
   &__text {
     border-bottom: 2px dotted black;
     transition: all 250ms ease;
+
+    &_animated {
+      animation: anim 1800ms linear infinite;
+
+      @keyframes anim {
+        from {
+          color: black;
+          border-bottom: 2px dotted black;
+        }
+        50% {
+          color: $primary-gold-text-color;
+          border-bottom: 2px dotted rgb(219, 157, 42);
+        }
+        to {
+          color: black;
+          border-bottom: 2px dotted black;
+        }
+      }
+    }
   }
 }

@@ -35,8 +35,9 @@
     }
 
     &::after {
-      content: "";
       position: absolute;
+      content: "";
+      z-index: 3;
       left: 0;
       right: 0;
       top: calc(100% + 9px);
@@ -87,6 +88,17 @@
 
       @include media-breakpoint-down(xl) {
         width: 40px;
+      }
+
+      .continuation {
+        position: absolute;
+        content: "";
+        z-index: 6;
+        top: calc(100%);
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: transparent;
       }
 
       .value {
