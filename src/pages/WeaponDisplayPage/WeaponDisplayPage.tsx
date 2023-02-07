@@ -74,6 +74,33 @@ const WeaponDisplayPage = observer(() => {
                         loadingStatus={loadingStore.getStatus()}
                       />
                       <TextIntro weapon={weapon} />
+                      {weapon.gallery?.photos && (
+                        <>
+                          <Block formatAsSection>
+                            <Subtitle id="Фотографии">Фотографии</Subtitle>
+                            <div className={styles.photos}>
+                              {weapon.gallery.photos.map((photo) => (
+                                <div className={styles.photoWrapper}>
+                                  <img
+                                    src={photo}
+                                    className={styles.photo}
+                                    onClick={() =>
+                                      imageViewerStore.setOpen(photo)
+                                    }
+                                  />
+                                  <div
+                                    className={styles.preloader}
+                                    onClick={(event) => {
+                                      // event.stopPropagation();
+                                      console.log("click");
+                                    }}
+                                  ></div>
+                                </div>
+                              ))}
+                            </div>
+                          </Block>
+                        </>
+                      )}
                       <Spec weapon={weapon} />
                       {weapon.article}
                       {weapon.videomaterials && (

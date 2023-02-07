@@ -148,8 +148,10 @@ const ussr: IArmoredVehicle[] = [
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     article: <IS_2 />,
+    photosNumber: 10,
     sections: [
       "Введение",
+      "Фотографии",
       "Характеристики",
       "История создания",
       "Конструкция",
@@ -185,11 +187,6 @@ const ussr: IArmoredVehicle[] = [
         photo: "звезда-100.webp",
         link: "https://www.ozon.ru/product/model-tanka-zvezda-sovetskiy-tyazhelyy-tank-is-2-6201-150320570/?asb=ut4OKH%252BHG0hdFZWkMEH7vGfWCaU1x%252BpL066QTBpP%252FjY%253D&asb2=48PwcmxIrY1unURAsTH_qQWO2ZgCKfim56pASKUTD8CZ0voqbnHEVRA-f90GqAR_&avtc=1&avte=2&avts=1673165581&keywords=сборная+модель+ис-2&sh=x0yTh43SOg",
       },
-      // {
-      //   title: "Сборная модель Моделист ИС-2 масштаб 1:72",
-      //   photo: "моделист-72.webp",
-      //   link: "https://www.ozon.ru/product/modelist-sovetskiy-tank-is-2-1-72-sbornaya-model-305077003/?asb=qaU0bUqAC8vz4b%252FWrzq%252BvjRM6WCye7gKTqaRrjioRME%253D&asb2=SM58FSgS8iBxZ3_4WawBT-1n4BQSa5sErBrXprkoS590KLJbDC7SNSQsMmkQ1tw_&avtc=1&avte=2&avts=1673167244&keywords=сборная+модель+ис-2&sh=x0yThxWkjw",
-      // },
     ],
     specifications: {
       common: {

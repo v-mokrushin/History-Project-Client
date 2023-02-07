@@ -83,6 +83,14 @@ export function createGallery(weapon: TWeapon): void {
       }
     },
   };
+
+  if (weapon.photosNumber) {
+    if (!weapon.gallery) return;
+    weapon.gallery.photos = new Array<string>(weapon.photosNumber).fill("");
+    for (let i = 0; i < weapon.gallery.photos.length; i++)
+      weapon.gallery.photos[i] =
+        weapon.gallery.path + "photo/" + String(i + 1) + ".jpg";
+  }
 }
 
 export function createModels(weapon: TWeapon): void {
