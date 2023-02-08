@@ -4,14 +4,14 @@ import styles from "./Text.module.scss";
 
 interface ITextProps {
   bold?: boolean;
-  className?: string;
   children: any;
+  className?: string;
 }
 
 export default function Text({
-  className,
   bold = false,
   children,
+  className,
 }: ITextProps) {
   return (
     <span className={classNames(styles.root, className, bold && styles.bold)}>

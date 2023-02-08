@@ -1021,6 +1021,7 @@ const germany: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Hanomag,
         platform: Platforms.armoredVehicles.SdKfz251,
+        numberOfIssued: 360,
       },
     },
   },
@@ -1032,6 +1033,7 @@ const germany: IArmoredVehicle[] = [
       common: {
         developer: Developers.armoredVehicles.Hanomag,
         platform: Platforms.armoredVehicles.SdKfz251,
+        numberOfIssued: 268,
       },
     },
   },

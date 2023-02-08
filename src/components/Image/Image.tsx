@@ -24,7 +24,7 @@ export default function Image({
         fullWidth && styles.wrapper_fullWidth,
         className
       )}
-      onClick={() => imageViewerStore.setOpen(URL)}
+      onClick={() => imageViewerStore.openPhoto(URL)}
     >
       <img className={classNames(styles.image)} src={URL} alt="" />
       <Text className={styles.title}>{title}</Text>

@@ -39,7 +39,7 @@ const WeaponDisplayPage = observer(() => {
     Scroll.toTopInstantly();
 
     return () => {
-      imageViewerStore.setClose();
+      imageViewerStore.close();
     };
   }, [weaponId]);
 
@@ -79,22 +79,22 @@ const WeaponDisplayPage = observer(() => {
                           <Block formatAsSection>
                             <Subtitle id="Фотографии">Фотографии</Subtitle>
                             <div className={styles.photos}>
-                              {weapon.gallery.photos.map((photo) => (
-                                <div className={styles.photoWrapper}>
+                              {weapon.gallery.photos.map((photo, index) => (
+                                <div
+                                  key={`photo-${weapon.id}-${index}`}
+                                  className={styles.photoWrapper}
+                                >
                                   <img
                                     src={photo}
                                     className={styles.photo}
                                     onClick={() =>
-                                      imageViewerStore.setOpen(photo)
+                                      imageViewerStore.openPhotoCollection(
+                                        weapon.gallery!.photos!,
+                                        index
+                                      )
                                     }
                                   />
-                                  <div
-                                    className={styles.preloader}
-                                    onClick={(event) => {
-                                      // event.stopPropagation();
-                                      console.log("click");
-                                    }}
-                                  ></div>
+                                  <div className={styles.preloader}></div>
                                 </div>
                               ))}
                             </div>

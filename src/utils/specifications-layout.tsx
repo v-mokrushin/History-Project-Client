@@ -42,7 +42,7 @@ export const SpecificationsLayout = {
           val={specifications.common.productionPeriod}
         />
         <SpecLine
-          crit="Поизведено"
+          crit="Произведено"
           val={specifications.common.numberOfIssued}
           mesure="шт."
         />

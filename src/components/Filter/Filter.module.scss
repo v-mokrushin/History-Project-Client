@@ -64,9 +64,6 @@
 
   @include media-breakpoint-down(xl) {
     max-height: 400px;
-    // flex-wrap: nowrap;
-    // overflow: hidden;
-    // overflow-y: auto;
   }
 
   @include media-breakpoint-down(lg) {
@@ -120,16 +117,23 @@
 .arrow {
   background-image: url("../../assets/images/vector.svg");
   background-size: cover;
-  width: 18px;
-  height: 10px;
+  aspect-ratio: 1.8 / 1;
+  width: 19px;
   transform: rotate(180deg);
   background-color: transparent;
   border: none;
   transition: transform 200ms;
 
+  @include media-breakpoint-down(FHD) {
+    width: 17px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    width: 15px;
+  }
+
   @include media-breakpoint-down(xs) {
-    width: 14px;
-    height: 7px;
+    width: 13px;
   }
 
   &_open {

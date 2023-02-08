@@ -18,7 +18,7 @@ export default function IntroImage({
   return (
     <div
       className={classNames(styles.root)}
-      onClick={() => imageViewerStore.setOpen(imageUrl)}
+      onClick={() => imageViewerStore.openPhoto(imageUrl)}
       key={!shouldThrowAnimation ? "intro" : Math.random()}
     >
       <div
