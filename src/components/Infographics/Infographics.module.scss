@@ -68,7 +68,7 @@
     }
 
     &:hover .name {
-      color: $primary-gold-text-color;
+      color: $gold;
     }
 
     .body {
@@ -106,7 +106,7 @@
         bottom: calc(100% + 2px);
         transform: translateX(-50%);
         left: 50%;
-        color: $primary-gold-text-color;
+        color: $gold;
         font-size: 17px;
         line-height: normal;
         transition: 250ms ease;

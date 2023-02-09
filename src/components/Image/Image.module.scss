@@ -10,6 +10,7 @@
   width: 28%;
   float: right;
   clear: right;
+  cursor: pointer;
 
   @include media-breakpoint-down(xl) {
     width: 33%;
@@ -39,6 +40,10 @@
       width: 100%;
     }
   }
+
+  &:hover .title {
+    color: $gold;
+  }
 }
 
 .image {
@@ -63,7 +68,8 @@
 .title {
   text-align: center;
   line-height: 25px;
-  color: $grey-text-color;
+  color: $grey;
+  transition: color 250ms ease;
 
   @include media-breakpoint-down(FHD) {
     line-height: 23px;

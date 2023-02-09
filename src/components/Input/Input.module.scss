@@ -22,6 +22,10 @@
     padding: 0px 7px;
     // height: 30px;
   }
+
+  &:focus {
+    border: 2px solid black;
+  }
 }
 
 .input {
@@ -53,6 +57,10 @@
   height: 25px;
   aspect-ratio: 1 / 1;
   background-image: url("../../assets/images/input-search/magnifier.svg");
+
+  @include media-breakpoint-down(xl) {
+    height: 20px;
+  }
 
   @include media-breakpoint-down(xs) {
     height: 19px;

@@ -54,7 +54,7 @@
   }
 
   &:hover .title {
-    color: $primary-gold-text-color;
+    color: $gold;
   }
 
   &:hover .backgroundWrapper {
@@ -105,7 +105,7 @@
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   font-size: 25px;
-  color: $primary-light-text-color;
+  color: $white;
   letter-spacing: 1px;
   transition: color 300ms ease;
 
@@ -131,7 +131,7 @@
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   font-size: 19px;
-  color: $primary-light-text-color;
+  color: $white;
   letter-spacing: 1px;
 
   @include media-breakpoint-down(xl) {

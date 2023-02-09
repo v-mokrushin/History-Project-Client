@@ -39,7 +39,7 @@
 
 %item {
   font-family: "Rubik", sans-serif;
-  color: $primary-dark-text-color;
+  color: $black;
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
@@ -62,7 +62,7 @@
   @extend %item;
 
   &:hover {
-    color: $primary-gold-text-color;
+    color: $gold;
   }
 }
 

@@ -57,7 +57,7 @@
 
 .title {
   font-family: "Rubik", sans-serif;
-  color: $primary-gold-text-color;
+  color: $gold;
   text-decoration: none;
   font-weight: 500;
   font-size: 21px;
@@ -71,7 +71,7 @@
 
 .link {
   font-family: "Rubik", sans-serif;
-  color: $primary-light-text-color;
+  color: $white;
   text-decoration: none;
   font-weight: 400;
   font-size: 19px;
@@ -91,5 +91,5 @@
 .separator {
   height: 1px;
   width: 100%;
-  background-color: $primary-light-text-color;
+  background-color: $white;
 }

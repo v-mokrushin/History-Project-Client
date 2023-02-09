@@ -31,7 +31,7 @@
   }
 
   &_selected {
-    color: $primary-gold-text-color;
+    color: $gold;
     text-align: center;
     line-height: 14px;
   }
@@ -97,7 +97,7 @@
   }
 
   &_selected {
-    color: $primary-gold-text-color;
+    color: $gold;
   }
 
   &__text {
@@ -109,7 +109,7 @@
     }
 
     &:hover {
-      color: $grey-text-color;
+      color: $grey;
     }
   }
 }

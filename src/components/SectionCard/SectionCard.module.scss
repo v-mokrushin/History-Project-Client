@@ -48,7 +48,7 @@
   }
 
   &:hover .title {
-    color: $primary-gold-text-color;
+    color: $gold;
     transform: translateX(10%);
   }
 
@@ -108,7 +108,7 @@
   font-weight: 400;
   font-size: 43px;
   letter-spacing: 2px;
-  color: $primary-light-text-color;
+  color: $white;
   transition: transform 300ms ease, color 300ms ease;
 
   @include media-breakpoint-down(FHD) {

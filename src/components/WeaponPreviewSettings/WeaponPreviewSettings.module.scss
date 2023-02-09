@@ -26,8 +26,8 @@
   padding: 0;
 
   &:hover &__text {
-    color: $grey-text-color;
-    border-bottom: 2px dotted $grey-text-color;
+    color: $grey;
+    border-bottom: 2px dotted $grey
   }
 
   &:active {
@@ -47,7 +47,7 @@
           border-bottom: 2px dotted black;
         }
         50% {
-          color: $primary-gold-text-color;
+          color: $gold;
           border-bottom: 2px dotted rgb(219, 157, 42);
         }
         to {
