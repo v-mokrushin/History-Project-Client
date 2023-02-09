@@ -7,10 +7,14 @@ import audioPlayerStore from "../../stores/mobx/audioPlayerStore";
 import { observer } from "mobx-react";
 import actualSectionStore from "../../stores/mobx/actualSectionStore";
 import burgerStore from "../../stores/mobx/burgerStore";
+import settingsStore from "stores/mobx/settingsStore";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "components/LanguageSwitcher/LanguageSwitcher";
 
 const Navigation = observer(({ isTypeBurger = false }) => {
   const actualSection = actualSectionStore.actualSection;
   const isArticlesPreview = actualSectionStore.isWeaponsPreview();
+  const { t, i18n } = useTranslation();
 
   function actionOnClose() {
     burgerStore.setClose();
@@ -28,7 +32,7 @@ const Navigation = observer(({ isTypeBurger = false }) => {
         )}
         onClick={actionOnClose}
       >
-        Главная
+        {t("navigation.main")}
       </NavLink>
       <NavLink
         to="/articles"
@@ -38,7 +42,7 @@ const Navigation = observer(({ isTypeBurger = false }) => {
         )}
         onClick={actionOnClose}
       >
-        Статьи
+        {t("navigation.articles")}
       </NavLink>
       <div className={styles.weaponBox}>
         <NavLink
@@ -50,7 +54,7 @@ const Navigation = observer(({ isTypeBurger = false }) => {
           )}
           onClick={actionOnClose}
         >
-          Вооружения
+          {t("navigation.weapons")}
         </NavLink>
         <div
           className={classNames(
@@ -106,11 +110,12 @@ const Navigation = observer(({ isTypeBurger = false }) => {
           actualSectionStore.set("/battles");
         }}
       >
-        Сражения
+        {t("navigation.battles")}
       </NavLink>
+      {/* <LanguageSwitcher burgerType={isTypeBurger} /> */}
       <div className={styles.musicBox}>
         <span className={styles.link} onClick={() => audioPlayerStore.toggle()}>
-          Музыка
+          {t("navigation.music")}
         </span>
         <AudioPlayer isMainPlayer={!isTypeBurger} />
       </div>

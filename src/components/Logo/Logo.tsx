@@ -23,10 +23,10 @@ export default function Logo({ forHeader = false }: ILogoProps) {
         burgerStore.setClose();
       }}
     >
-      <h1 className={styles.title}>
+      <div className={styles.title}>
         <span className={styles.decorated_letter}>H</span>aze of{" "}
         <span className={styles.decorated_letter}>W</span>ar
-      </h1>
+      </div>
       <p className={styles.titleDates}>1939—1945</p>
     </NavLink>
   );

@@ -12,6 +12,7 @@ export class SettingsStore {
   public sortInAscending: boolean;
   public displaySize: boolean;
   public displayOnPreview: string;
+  public language: string;
 
   constructor() {
     this.colorized = translateLocalstorageToBool(
@@ -24,6 +25,7 @@ export class SettingsStore {
       localStorage.getItem("displaySize")
     );
     this.displayOnPreview = DisplayOnPreview.weapons;
+    this.language = "ru";
 
     makeAutoObservable(this);
   }
@@ -50,6 +52,12 @@ export class SettingsStore {
     } else {
       this.displayOnPreview = DisplayOnPreview.weapons;
     }
+  }
+
+  toggleLanguage(): string {
+    if (this.language === "ru") this.language = "en";
+    else this.language = "ru";
+    return this.language;
   }
 
   resetDisplayOnPreview(): void {

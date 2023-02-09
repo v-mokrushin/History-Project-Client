@@ -1,0 +1,41 @@
+@import "/src/assets/css/common.scss";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  @include media-breakpoint-down(lg) {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  &:hover .link {
+    color: $gold;
+  }
+
+  &_forBurger {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 95px;
+  }
+}
+
+.earthIcon {
+  aspect-ratio: 1 / 1;
+  height: 30px;
+
+  @include media-breakpoint-down(xl) {
+    height: 25px;
+  }
+}

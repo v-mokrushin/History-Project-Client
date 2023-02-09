@@ -1,10 +1,11 @@
 import classNames from "classnames";
+import LanguageSwitcher from "components/LanguageSwitcher/LanguageSwitcher";
 import { observer } from "mobx-react";
 import React from "react";
 import burgerStore from "../../stores/mobx/burgerStore";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
-import styles from "./Burger.module.sass";
+import styles from "./Burger.module.scss";
 
 const Burger = observer(() => {
   return (
@@ -13,12 +14,13 @@ const Burger = observer(() => {
     >
       <div className={styles.header}>
         <Logo onClick={burgerStore.toggleOpen} />
-        <div
-          className={styles.closeIcon}
+        <button
+          className={styles.closeButton}
           onClick={burgerStore.setClose.bind(burgerStore)}
-        ></div>
+        ></button>
+        <LanguageSwitcher burgerType/>
       </div>
-      <Navigation isTypeBurger={true} />
+      <Navigation isTypeBurger />
     </aside>
   );
 });

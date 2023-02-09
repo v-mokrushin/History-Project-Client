@@ -1,0 +1,60 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 10;
+  padding: 25px 15px;
+  transform: translateY(-100vh);
+  transition: transform 350ms ease;
+
+  &_open {
+    transform: translate(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  background-image: url(../../assets/images/burger-menu/close.png);
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  transition: transform 200ms;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.openButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  background-image: url(../../assets/images/burger-menu/open.png);
+  background-size: cover;
+  position: absolute;
+  right: 20px;
+  transition: transform 200ms;
+  display: none;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}

@@ -114,7 +114,9 @@
     transition: opacity 200ms ease;
     position: absolute;
     top: calc(100% + 10px);
-    left: -25px;
+    // left: -25px;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 100%;
     width: auto;
     opacity: 0;

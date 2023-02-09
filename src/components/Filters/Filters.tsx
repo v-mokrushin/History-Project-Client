@@ -8,6 +8,7 @@ import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { WEAPONS } from "data/weapons/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import Button from "components/Button/Button";
+import { useTranslation } from "react-i18next";
 
 interface IFiltersProps {
   weapons: TWeapon[];
@@ -15,14 +16,17 @@ interface IFiltersProps {
 }
 
 const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
+  const { t } = useTranslation();
+
   return (
     <div className={classNames(styles.root, className)}>
       <Input
         setter={filtersStore.setNameFilter.bind(filtersStore)}
+        placeholder={t("filters.input")!}
         initialValue={filtersStore.filters.name}
       />
       <Filter
-        title="Страна"
+        title={t("filters.country")!}
         selectionVariantsWithFlags={WEAPONS.getNationsWithFlags(weapons)}
         setterCallback={filtersStore.setNation.bind(filtersStore)}
         getter={filtersStore.filters.nation}

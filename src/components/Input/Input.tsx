@@ -7,11 +7,12 @@ import { observer } from "mobx-react";
 interface IInputProps {
   setter: (text: string) => void;
   initialValue?: string;
+  placeholder?: string;
   className?: string;
 }
 
 const Input = observer(
-  ({ setter, initialValue = "", className }: IInputProps) => {
+  ({ setter, initialValue = "", placeholder, className }: IInputProps) => {
     const input = React.useRef<HTMLInputElement>(null);
     const numberOfUse = React.useRef<number>(0);
 
@@ -21,7 +22,7 @@ const Input = observer(
           ref={input}
           type="text"
           className={styles.input}
-          placeholder="Название..."
+          placeholder={placeholder ? placeholder + "..." : ""}
           value={
             numberOfUse.current === 0 ? initialValue : input.current?.value
           }

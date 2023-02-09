@@ -11,12 +11,13 @@
   position: absolute;
   z-index: 5;
   display: flex;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  // justify-content: center;
+  justify-content: space-between;
+  padding: 0 2%;
   align-items: center;
 
   @include media-breakpoint-down(xl) {
+    height: 60px;
     // flex-direction: column;
     // height: auto;
     // padding: 25px 0;
