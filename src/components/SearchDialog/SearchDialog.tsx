@@ -1,5 +1,5 @@
-import React, { useMemo } from "react";
-import styles from "./FilterDialog.module.scss";
+import React from "react";
+import styles from "./SearchDialog.module.scss";
 import classNames from "classnames";
 import { observer } from "mobx-react";
 import { DocumentOverflow } from "utils/document-overflow";
@@ -8,13 +8,12 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { WEAPONS } from "data/weapons/weapons";
 import Text from "components/Text/Text";
 import Input from "components/Input/Input";
-import WeaponCard from "components/WeaponCard/WeaponCard";
 import { Articles } from "data/articles/articles";
-import { IArticlePreview } from "data/articles/interfaces";
 import { NavLink } from "react-router-dom";
 import burgerStore from "stores/mobx/burgerStore";
+import Preloader from "components/Preloader/Preloader";
 
-const FilterDialog = observer(() => {
+const SearchDialog = observer(() => {
   const [inputText, setInputText] = React.useState<string>("");
   const articles = React.useMemo(
     () =>
@@ -90,11 +89,14 @@ const FilterDialog = observer(() => {
                         burgerStore.setClose();
                       }}
                     >
-                      <img
-                        className={styles.item__icon}
-                        src={item.minBackgroundURL}
-                        alt=""
-                      />
+                      <div style={{ position: "relative" }}>
+                        <Preloader color="white" />
+                        <img
+                          className={styles.item__icon}
+                          src={item.minBackgroundURL}
+                          alt=""
+                        />
+                      </div>
                       <div className={styles.item__inforationWrapper}>
                         <Text bold noMargin color="gold">
                           {item.title}
@@ -126,11 +128,14 @@ const FilterDialog = observer(() => {
                         burgerStore.setClose();
                       }}
                     >
-                      <img
-                        className={styles.item__icon}
-                        src={item.gallery?.icon}
-                        alt=""
-                      />
+                      <div style={{ position: "relative" }}>
+                        <Preloader color="white" />
+                        <img
+                          className={styles.item__icon}
+                          src={item.gallery?.icon}
+                          alt=""
+                        />
+                      </div>
                       <div className={styles.item__inforationWrapper}>
                         <Text bold noMargin color="gold">
                           {item.name}
@@ -158,4 +163,4 @@ const FilterDialog = observer(() => {
   );
 });
 
-export default FilterDialog;
+export default SearchDialog;

@@ -8,6 +8,7 @@ import Flag from "../Flag/Flag";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import Preloader from "components/Preloader/Preloader";
 
 interface IWeaponCardProps {
   weapon: TWeapon;
@@ -46,6 +47,7 @@ const WeaponCard = observer(
           className={styles.background}
           style={getBackgroundImageStyleObject(weapon.gallery?.icon)}
         ></div>
+        {/* <Preloader /> */}
         <div className={styles.preloader}>
           <div className={styles.circlesWrapper}>
             <span className={styles.circle}></span>
@@ -61,13 +63,6 @@ const WeaponCard = observer(
           <p className={styles.title}>{weapon?.name}</p>
           <p className={styles.description}>{weapon?.type.name.russian}</p>
         </div>
-
-        {/* {variantForInfographic || (
-          <div className={styles.contentWrapper}>
-            <p className={styles.title}>{weapon?.name}</p>
-            <p className={styles.description}>{weapon?.type.name.russian}</p>
-          </div>
-        )} */}
       </NavLink>
     );
   }

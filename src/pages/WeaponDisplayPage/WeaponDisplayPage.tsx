@@ -29,6 +29,7 @@ import { CONTENT_LIST_TYPE } from "components/ContentList/constants";
 import imageViewerStore from "stores/mobx/imageViewerStore";
 import TextIntro from "components/TextIntro/TextIntro";
 import { Scroll } from "utils/scroll";
+import Preloader from "components/Preloader/Preloader";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -94,7 +95,7 @@ const WeaponDisplayPage = observer(() => {
                                       )
                                     }
                                   />
-                                  <div className={styles.preloader}></div>
+                                  <Preloader color="black" />
                                 </div>
                               ))}
                             </div>
