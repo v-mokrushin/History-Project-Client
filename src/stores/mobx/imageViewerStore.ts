@@ -56,8 +56,10 @@ export class ImageViewerStore {
   }
 
   public close(): void {
-    this.open = false;
-    this.url = undefined;
+    if (this.open) {
+      this.open = false;
+      this.url = undefined;
+    }
   }
 }
 

@@ -19,15 +19,15 @@ export const articlePreviewsSlice = createSlice({
   name: "articlePreviewsSlice",
   initialState,
   reducers: {
-    startLoading: (state) => {
+    startLoading(state) {
       state.status = LOADING_STATUSES.inProgress;
     },
-    successLoading: (state, action) => {
+    successLoading(state, action) {
       state.entities = action.payload.entities;
       state.ids = action.payload.ids;
       state.status = LOADING_STATUSES.success;
     },
-    failedLoading: (state) => {
+    failedLoading(state) {
       state.status = LOADING_STATUSES.failed;
     },
   },

@@ -19,6 +19,9 @@ const ImageViewer = observer(() => {
         imageViewerStore.switchPhoto(true);
       }
     });
+    document.addEventListener("wheel", () => {
+      imageViewerStore.close();
+    });
   }, []);
 
   React.useEffect(() => {

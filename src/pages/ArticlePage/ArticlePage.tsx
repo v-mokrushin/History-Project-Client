@@ -25,6 +25,7 @@ import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { Scroll } from "utils/scroll";
 import { AppDispatch, RootState } from "stores/redux";
 import { PAGES } from "constants/pages";
+import ArticleInfo from "components/ArticleInfo/ArticleInfo";
 
 export default function ArticlePage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -35,9 +36,7 @@ export default function ArticlePage() {
   const articleContent = useSelector((state) =>
     selectArticleContentById(state as RootState, { articleId })
   );
-  const isExistingId = useSelector((state) =>
-    selectIsExistingId(state as RootState, { articleId })
-  );
+  const isExistingId = useSelector(selectIsExistingId(articleId));
 
   React.useEffect(() => {
     Scroll.toTopInstantly();
@@ -60,24 +59,10 @@ export default function ArticlePage() {
       <>
         <Title centered>{articleContent.title}</Title>
         <div className={classNames(styles.innerWrapper, ANIMATIONS.fadeIn)}>
-          <div className={styles.infoBox}>
-            {articleContent.author && (
-              <div className={styles.infoBox__string}>
-                <div className={styles.infoBox__titleBox}>
-                  <Text bold>Авторы</Text>
-                </div>
-                <Text>{articleContent.author}</Text>
-              </div>
-            )}
-            {articleContent.origin && (
-              <div className={styles.infoBox__string}>
-                <div className={styles.infoBox__titleBox}>
-                  <Text bold>Источник</Text>
-                </div>
-                <Text>{articleContent.origin}</Text>
-              </div>
-            )}
-          </div>
+          <ArticleInfo
+            author={articleContent.author}
+            origin={articleContent.origin}
+          />
           {articleContent.text}
         </div>
       </>

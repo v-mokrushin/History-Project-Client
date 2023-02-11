@@ -1,0 +1,25 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+
+  @include media-breakpoint-down(lg) {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  &_forBurger {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 95px;
+    gap: 10px;
+  }
+}

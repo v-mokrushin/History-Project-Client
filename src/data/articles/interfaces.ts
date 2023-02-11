@@ -2,7 +2,7 @@ export interface IArticle {
   id?: string;
   title: string;
   description?: string;
-  author?: string;
+  author: string;
   origin?: string;
   backgroundURL: string;
   minBackgroundURL: string;
@@ -19,7 +19,7 @@ export interface IArticlePreview {
 export interface IArticleContent {
   id?: string;
   title: string;
-  author?: string;
+  author: string;
   origin?: string;
   text?: string;
   backgroundURL: string;

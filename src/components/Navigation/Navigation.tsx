@@ -114,7 +114,10 @@ const Navigation = observer(({ isTypeBurger = false }) => {
       </NavLink>
       {/* <LanguageSwitcher burgerType={isTypeBurger} /> */}
       <div className={styles.musicBox}>
-        <span className={styles.link} onClick={() => audioPlayerStore.toggle()}>
+        <span
+          className={classNames(styles.link, styles.link_mod)}
+          onClick={() => audioPlayerStore.toggle()}
+        >
           {t("navigation.music")}
         </span>
         <AudioPlayer isMainPlayer={!isTypeBurger} />

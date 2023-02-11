@@ -106,7 +106,8 @@
   }
 
   &_arrow {
-    background-image: url("../../assets/images/vector-white.svg");
+    background-image: url("../../assets/images/vector.svg");
+    filter: invert(100%) brightness(350%);
     background-size: cover;
     aspect-ratio: 1.8 / 1;
     width: 45%;

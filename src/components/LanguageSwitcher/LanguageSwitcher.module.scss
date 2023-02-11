@@ -9,33 +9,20 @@
   padding: 0;
   cursor: pointer;
 
-  @include media-breakpoint-down(lg) {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    display: none;
+  @include media-breakpoint-down(xs) {
+    gap: 5px;
   }
 
   &:hover .link {
     color: $gold;
   }
-
-  &_forBurger {
-    display: flex;
-    position: absolute;
-    right: 0;
-    top: 95px;
-  }
 }
 
 .earthIcon {
   aspect-ratio: 1 / 1;
-  height: 30px;
+  height: 2.5vh;
 
-  @include media-breakpoint-down(xl) {
-    height: 25px;
+  @include media-breakpoint-down(lg) {
+    height: 20px;
   }
 }

@@ -8,6 +8,8 @@ import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
 import LanguageSwitcher from "components/LanguageSwitcher/LanguageSwitcher";
+import ButtonSearch from "components/ButtonSearch/ButtonSearch";
+import IconsBox from "components/IconsBox/IconsBox";
 
 export default function Header() {
   const path: string = useLocation().pathname;
@@ -23,7 +25,7 @@ export default function Header() {
       <Logo />
       <BurgerIcon />
       <Navigation />
-      <LanguageSwitcher />
+      <IconsBox />
     </header>
   );
 }

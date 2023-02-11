@@ -1,6 +1,6 @@
 export enum LOADING_STATUSES {
-  idle,
-  inProgress,
-  success,
-  failed,
+  idle = "idle",
+  inProgress = "inProgress",
+  success = "success",
+  failed = "failed",
 }

@@ -1,3 +1,4 @@
+import FilterDialog from "components/FilterDialog/FilterDialog";
 import React from "react";
 import Burger from "../Burger/Burger";
 import Footer from "../Footer/Footer";
@@ -16,6 +17,7 @@ export default function Layout({ children }: ILayoutProps) {
       <UpButton />
       <Burger />
       <ImageViewer />
+      <FilterDialog />
       <Header />
       <main className={styles.root}>{children}</main>
       <Footer />

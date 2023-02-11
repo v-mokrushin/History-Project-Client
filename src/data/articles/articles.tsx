@@ -34,26 +34,26 @@ const articles_data: IArticle[] = [
     backgroundURL: "/images/articles/army.jpg",
     text: <Rearmament />,
   },
-  {
-    title: "Красная Армия и Вермахт накануне 22 июня 1941 года",
-    description:
-      "Cравнение материально-технического обеспечения и организационной структуры",
-    minBackgroundURL: "/images/articles/red-army-min.jpg",
-    backgroundURL: "/images/articles/red-army.jpg",
-  },
-  {
-    title: "Смоленское сражение и крах стратегии блицкрига",
-    description: "",
-    minBackgroundURL: "/images/articles/smolensk-min.jpg",
-    backgroundURL: "/images/articles/smolensk.jpg",
-  },
-  {
-    title: "Cражение за линию Сталина летом 1941 года",
-    description:
-      "Cражение за линию Сталина летом 1941 года и бои в Украине в июле - августе 1941 года",
-    minBackgroundURL: "images/articles/kiev-min.jpg",
-    backgroundURL: "/images/articles/kiev.jpg",
-  },
+  // {
+  //   title: "Красная Армия и Вермахт накануне 22 июня 1941 года",
+  //   description:
+  //     "Cравнение материально-технического обеспечения и организационной структуры",
+  //   minBackgroundURL: "/images/articles/red-army-min.jpg",
+  //   backgroundURL: "/images/articles/red-army.jpg",
+  // },
+  // {
+  //   title: "Смоленское сражение и крах стратегии блицкрига",
+  //   description: "",
+  //   minBackgroundURL: "/images/articles/smolensk-min.jpg",
+  //   backgroundURL: "/images/articles/smolensk.jpg",
+  // },
+  // {
+  //   title: "Cражение за линию Сталина летом 1941 года",
+  //   description:
+  //     "Cражение за линию Сталина летом 1941 года и бои в Украине в июле - августе 1941 года",
+  //   minBackgroundURL: "images/articles/kiev-min.jpg",
+  //   backgroundURL: "/images/articles/kiev.jpg",
+  // },
 ];
 
 articles_data.forEach((item) => {

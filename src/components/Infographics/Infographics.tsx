@@ -36,7 +36,7 @@ const Infographics: React.FC<IInfographicsProps> = observer(
 
     return (
       <div className={classNames(styles.root, className)} key={Math.random()}>
-        <Subtitle noMargin>Произведено</Subtitle>
+        <Subtitle noMargin>Произведено до мая 1945 г.</Subtitle>
         <div className={classNames(styles.infographic, ANIMATIONS.fadeIn)}>
           <div className={styles.graphicWrapper}>
             {weapons.map((weapon) => (

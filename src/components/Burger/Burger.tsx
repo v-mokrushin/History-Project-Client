@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import IconsBox from "components/IconsBox/IconsBox";
 import LanguageSwitcher from "components/LanguageSwitcher/LanguageSwitcher";
 import { observer } from "mobx-react";
 import React from "react";
@@ -18,7 +19,7 @@ const Burger = observer(() => {
           className={styles.closeButton}
           onClick={burgerStore.setClose.bind(burgerStore)}
         ></button>
-        <LanguageSwitcher burgerType/>
+        <IconsBox burgerType />
       </div>
       <Navigation isTypeBurger />
     </aside>

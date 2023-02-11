@@ -3,21 +3,6 @@
 .root {
 }
 
-.infoBox {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-  &__string {
-    display: flex;
-    gap: 15px;
-  }
-
-  &__titleBox {
-    min-width: 100px;
-  }
-}
-
 .innerWrapper {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,16 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.string {
+  display: flex;
+  gap: 15px;
+
+  &__titleBox {
+    min-width: 100px;
+  }
+}

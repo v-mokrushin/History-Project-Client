@@ -123,6 +123,7 @@
   background-color: transparent;
   border: none;
   transition: transform 200ms;
+  cursor: pointer;
 
   @include media-breakpoint-down(FHD) {
     width: 17px;

@@ -5,7 +5,7 @@ import filtersStore from "stores/mobx/filtersStore";
 import { observer } from "mobx-react";
 
 interface IInputProps {
-  setter: (text: string) => void;
+  setter?: (text: string) => void;
   initialValue?: string;
   placeholder?: string;
   className?: string;
@@ -14,7 +14,8 @@ interface IInputProps {
 const Input = observer(
   ({ setter, initialValue = "", placeholder, className }: IInputProps) => {
     const input = React.useRef<HTMLInputElement>(null);
-    const numberOfUse = React.useRef<number>(0);
+    const [numberOfUse, setNumberOfUse] = React.useState<number>(0);
+    console.log(input.current?.value);
 
     return (
       <div className={classNames(styles.root, className)}>
@@ -23,12 +24,10 @@ const Input = observer(
           type="text"
           className={styles.input}
           placeholder={placeholder ? placeholder + "..." : ""}
-          value={
-            numberOfUse.current === 0 ? initialValue : input.current?.value
-          }
+          value={numberOfUse === 0 ? initialValue : input.current?.value}
           onInput={() => {
-            numberOfUse.current === 0 && numberOfUse.current++;
-            setter(input.current!.value);
+            setNumberOfUse((val) => val + 1);
+            setter && setter(input.current!.value);
           }}
         ></input>
         <div className={styles.icon}></div>

@@ -64,7 +64,7 @@ const WeaponDisplayPage = observer(() => {
               {loadingStore.getStatus() ? (
                 <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
               ) : (
-                <>
+                <div className={ANIMATIONS.fadeIn}>
                   {weapon.isReady ? (
                     <>
                       <ContentList
@@ -121,7 +121,7 @@ const WeaponDisplayPage = observer(() => {
                       vertiacalFill
                     />
                   )}
-                </>
+                </div>
               )}
             </Container>
             <SideSpec

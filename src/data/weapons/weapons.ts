@@ -35,6 +35,10 @@ weapons_data.forEach((weapon) => {
 // --------------------------------------------------------------------------------
 
 export const WEAPONS = {
+  get() {
+    return weapons_data;
+  },
+
   getUniqueDates(collection: TWeapon[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
@@ -51,6 +55,12 @@ export const WEAPONS = {
         (item) =>
           nationPath === NATIONS.World.path || item.nation!.path === nationPath
       );
+  },
+
+  filterByName(name: string) {
+    return weapons_data.filter((item) =>
+      item.name.toLowerCase().includes(String(name).toLowerCase())
+    );
   },
 
   filterWeapons(selectedWeapons: TWeapon[], filters: TFilters): TWeapon[] {
