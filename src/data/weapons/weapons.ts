@@ -15,7 +15,7 @@ import { GRENADE_LAUNCHERS_DATA } from "./branches/grenade-launchers";
 import { SMALL_ARMS_DATA } from "./branches/small-arms";
 import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
-import { ISelectionVariantWithFlag } from "components/Filter/Filter";
+import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
 
 const weapons_data = ([] as TWeapon[]).concat(

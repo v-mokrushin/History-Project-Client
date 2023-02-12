@@ -1,5 +1,5 @@
-import SpecLine from "components/SpecLine/SpecLine";
-import SpecSection from "components/SpecSection/SpecSection";
+import SpecLine from "components/Specifications/SpecLine/SpecLine";
+import SpecSection from "components/Specifications/SpecSection/SpecSection";
 import { INation } from "constants/nations";
 import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
 import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";

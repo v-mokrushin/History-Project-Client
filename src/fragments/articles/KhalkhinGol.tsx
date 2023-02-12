@@ -1,11 +1,11 @@
 import React from "react";
-import Block from "../../components/Block/Block";
-import Subtitle from "../../components/Subtitle/Subtitle";
-import Paragraph from "../../components/Paragraph/Paragraph";
-import Text from "../../components/Text/Text";
+import Block from "../../components/Structure/Block/Block";
+import Subtitle from "../../components/Texts/Subtitle/Subtitle";
+import Paragraph from "../../components/Texts/Paragraph/Paragraph";
+import Text from "../../components/Texts/Text/Text";
 import styles from "./Test.module.scss";
-import Image from "../../components/Image/Image";
-import ExternalLink from "../../components/ExternalLink/ExternalLink";
+import Image from "../../components/Graphics/Image/Image";
+import ExternalLink from "../../components/Texts/ExternalLink/ExternalLink";
 
 export default function KhalkhinGol() {
   return (

@@ -3,7 +3,7 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ArticlesPage from "../../pages/ArticlesPage/ArticlesPage";
 import HomePage from "../../pages/HomePage/HomePage";
-import Layout from "../Layout/Layout";
+import Layout from "../Structure/Layout/Layout";
 import { Provider } from "react-redux";
 import { store } from "../../stores/redux";
 import WarningPage from "../../pages/WarningPage/WarningPage";

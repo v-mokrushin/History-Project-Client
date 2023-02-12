@@ -1,0 +1,86 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttonBox {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+
+  @include media-breakpoint-down(md) {
+    height: 24px;
+    gap: 8px;
+  }
+}
+
+%button {
+  height: 24px;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: transform 200ms ease;
+
+  @include media-breakpoint-down(xl) {
+    height: 20px;
+  }
+
+  @include media-breakpoint-down(md) {
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.playButton {
+  @extend %button;
+  background-image: url(../../../assets/images/player-icons/play.svg);
+  display: block;
+}
+
+.stopButton {
+  @extend %button;
+  background-image: url(../../../assets/images/player-icons/stop.svg);
+  display: none;
+}
+
+.nextButton {
+  @extend %button;
+  background-image: url(../../../assets/images/player-icons/next.svg);
+  transform: scale(0);
+}
+
+.previousButton {
+  @extend %button;
+  background-image: url(../../../assets/images/player-icons/prev.svg);
+  transform: scale(0);
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.scale1 {
+  transform: scale(1);
+}
+
+.scale1 {
+  transform: scale(1);
+}

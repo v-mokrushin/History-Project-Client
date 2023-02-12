@@ -1,6 +1,6 @@
 import { action, makeObservable, observable, makeAutoObservable } from "mobx";
 import { DocumentTitle } from "utils/document-title";
-import { NAVIGATION_ACTUAL_SECTION } from "../../components/Navigation/constants";
+import { NAVIGATION_ACTUAL_SECTION } from "../../components/Structure/Navigation/constants";
 
 export class ActualSectionStore {
   public actualSection: NAVIGATION_ACTUAL_SECTION | null;

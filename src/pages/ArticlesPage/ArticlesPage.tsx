@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ArticleCard from "../../components/ArticleCard/ArticleCard";
+import ArticleCard from "../../components/Cards/ArticleCard/ArticleCard";
 import styles from "./ArticlesPage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,12 +8,12 @@ import {
 } from "../../stores/redux/articlePreviews/selectors";
 import { loadArticlePreviews } from "../../stores/redux/articlePreviews/loadingMiddleware";
 import { LOADING_STATUSES } from "../../stores/redux/constants";
-import SpecialLogo from "../../components/SpecialLogo/SpecialLogo";
-import IntroImage from "../../components/IntroImage/IntroImage";
-import { SPECIAL_LOGO_TYPE } from "../../components/SpecialLogo/constants";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import Container from "../../components/Container/Container";
-import Title from "../../components/Title/Title";
+import SpecialLogo from "../../components/Graphics/SpecialLogo/SpecialLogo";
+import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
+import { SPECIAL_LOGO_TYPE } from "../../components/Graphics/SpecialLogo/constants";
+import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
+import Container from "../../components/Structure/Container/Container";
+import Title from "../../components/Texts/Title/Title";
 import { useLocation } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
 import { AppDispatch } from "stores/redux";

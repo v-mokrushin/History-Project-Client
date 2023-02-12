@@ -6,7 +6,7 @@ import {
 } from "data/weapons/interfaces/common-weapon-interfaces";
 import { translateToBool } from "./common";
 import { IProducer } from "data/weapons/departments/producers";
-import { ISelectionVariantWithFlag } from "components/Filter/Filter";
+import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 
 export function appendNation(weapons: TWeapon[], nation: INation): void {
   weapons.forEach((weapon) => (weapon.nation = nation));

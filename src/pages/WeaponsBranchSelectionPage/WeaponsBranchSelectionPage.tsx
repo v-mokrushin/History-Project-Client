@@ -1,10 +1,10 @@
 import React from "react";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import SectionCard from "../../components/SectionCard/SectionCard";
-import Container from "../../components/Container/Container";
-import IntroImage from "../../components/IntroImage/IntroImage";
+import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
+import SectionCard from "../../components/Cards/SectionCard/SectionCard";
+import Container from "../../components/Structure/Container/Container";
+import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
 import styles from "./WeaponsBranchSelectionPage.module.scss";
-import Title from "../../components/Title/Title";
+import Title from "../../components/Texts/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
 

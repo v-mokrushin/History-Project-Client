@@ -1,12 +1,12 @@
 import React from "react";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import Container from "../../components/Container/Container";
-import IntroImage from "../../components/IntroImage/IntroImage";
+import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
+import Container from "../../components/Structure/Container/Container";
+import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
 import styles from "./NationSelectionPage.module.scss";
 import { useLocation, useParams } from "react-router-dom";
 import { PAGES } from "../../constants/pages";
-import Flag from "../../components/Flag/Flag";
-import Title from "../../components/Title/Title";
+import Flag from "../../components/Graphics/Flag/Flag";
+import Title from "../../components/Texts/Title/Title";
 import { WEAPONS } from "../../data/weapons/weapons";
 import filtersStore from "../../stores/mobx/filtersStore";
 import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";

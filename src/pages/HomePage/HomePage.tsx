@@ -1,8 +1,8 @@
 import React from "react";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import Container from "../../components/Container/Container";
-import SectionCard from "../../components/SectionCard/SectionCard";
-import VideoIntro from "../../components/VideoIntro/VideoIntro";
+import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
+import Container from "../../components/Structure/Container/Container";
+import SectionCard from "../../components/Cards/SectionCard/SectionCard";
+import VideoIntro from "../../components/Graphics/VideoIntro/VideoIntro";
 import styles from "./HomePage.module.scss";
 import { PAGES } from "constants/pages";
 
