@@ -3,6 +3,7 @@ import styles from "./Image.module.scss";
 import classNames from "classnames";
 import Text from "../Text/Text";
 import imageViewerStore from "../../stores/mobx/imageViewerStore";
+import Preloader from "components/Preloader/Preloader";
 
 interface IImageProps {
   title?: string;
@@ -20,13 +21,16 @@ export default function Image({
   return (
     <div
       className={classNames(
-        styles.wrapper,
-        fullWidth && styles.wrapper_fullWidth,
+        styles.root,
+        fullWidth && styles.root_fullWidth,
         className
       )}
       onClick={() => imageViewerStore.openPhoto(URL)}
     >
-      <img className={classNames(styles.image)} src={URL} alt="" />
+      <div className={styles.fallbackBox}>
+        {/* <Preloader color="black" dependsOnWidth /> */}
+        <img className={classNames(styles.image)} src={URL} alt={title} />
+      </div>
       <Text className={styles.title}>{title}</Text>
     </div>
   );

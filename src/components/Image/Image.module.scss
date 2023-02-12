@@ -1,6 +1,6 @@
 @import "/src/assets/css/common.scss";
 
-.wrapper {
+.root {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +44,11 @@
   &:hover .title {
     color: $gold;
   }
+}
+
+.fallbackBox {
+  min-height: 250px;
+  position: relative;
 }
 
 .image {

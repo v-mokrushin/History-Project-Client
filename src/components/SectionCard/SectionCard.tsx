@@ -7,6 +7,7 @@ import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import { IPage } from "constants/pages";
 import { Scroll } from "utils/scroll";
+import Preloader from "components/Preloader/Preloader";
 
 interface ISectionCardProps {
   information: IPage;
@@ -23,6 +24,7 @@ export default function SectionCard({
       className={classNames(styles.root, className, ANIMATIONS.fadeIn)}
       onClick={Scroll.toTopInstantly}
     >
+      <Preloader color="white" />
       <div
         className={classNames(styles.backgroundWrapper)}
         style={getBackgroundImageStyleObject(information.introImage)}

@@ -8,6 +8,7 @@ import { ANIMATIONS } from "../../constants/animations";
 import { getBackgroundImageStyleObject } from "../../utils/common";
 import { Scroll } from "utils/scroll";
 import { RootState } from "stores/redux";
+import Preloader from "components/Preloader/Preloader";
 
 interface IArticleCardProps {
   articleId: string;
@@ -23,6 +24,7 @@ export default function ArticleCard({ articleId }: IArticleCardProps) {
       to={`/articles/${articleId}`}
       className={classNames(styles.root, ANIMATIONS.fadeIn)}
     >
+      <Preloader color="white" />
       <div
         className={styles.backgroundWrapper}
         style={getBackgroundImageStyleObject(article.minBackgroundURL)}

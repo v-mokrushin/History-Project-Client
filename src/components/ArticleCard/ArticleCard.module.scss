@@ -11,6 +11,7 @@
   display: flex;
   align-items: flex-end;
   box-shadow: 0px 0px 30px 0px rgba(36, 39, 42, 0.3);
+  background-color: #000000;
 
   @include media-breakpoint-down(xl) {
     // height: 300px;

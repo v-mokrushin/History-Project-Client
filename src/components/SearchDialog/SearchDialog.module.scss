@@ -60,7 +60,7 @@
   .search {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2vh;
     overflow: auto;
 
     .searchTheme {
@@ -108,7 +108,6 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
-            // gap: 10px;
           }
         }
       }

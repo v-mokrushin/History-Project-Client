@@ -47,15 +47,15 @@ const WeaponCard = observer(
           className={styles.background}
           style={getBackgroundImageStyleObject(weapon.gallery?.icon)}
         ></div>
-        {/* <Preloader /> */}
-        <div className={styles.preloader}>
+        <Preloader color="white" />
+        {/* <div className={styles.preloader}>
           <div className={styles.circlesWrapper}>
             <span className={styles.circle}></span>
             <span className={styles.circle}></span>
             <span className={styles.circle}></span>
             <span className={styles.circle}></span>
           </div>
-        </div>
+        </div> */}
         {showFlag && weapon.nation && (
           <Flag nation={weapon.nation} minimized isNavLink={false} />
         )}

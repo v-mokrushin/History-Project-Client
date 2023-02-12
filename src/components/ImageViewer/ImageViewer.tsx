@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import imageViewerStore from "../../stores/mobx/imageViewerStore";
 import { DocumentOverflow } from "utils/document-overflow";
 import Text from "components/Text/Text";
+import Preloader from "components/Preloader/Preloader";
 
 const ImageViewer = observer(() => {
   React.useEffect(() => {
@@ -37,6 +38,7 @@ const ImageViewer = observer(() => {
         imageViewerStore.open && styles.root_open
       )}
     >
+      {/* <Preloader color="white" /> */}
       <img
         id="image-viewer-image"
         className={classNames(

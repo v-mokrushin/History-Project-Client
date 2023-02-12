@@ -20,7 +20,7 @@ export default function WeaponsBranchSelectionPage() {
           <div className={styles.weaponCardsWrapper}>
             <SectionCard
               information={PAGES.armoredVehicles}
-              className={styles.box1}
+              className={styles.wideBox}
             />
             <SectionCard information={PAGES.aviation} />
             <SectionCard information={PAGES.artillery} />
