@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./VideoIntro.module.scss";
-// @ts-ignore
-import video from "../../../assets/videos/intro.mp4";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../constants/animations";
 
@@ -15,7 +13,7 @@ export default function Intro() {
           loop
           muted
         >
-          <source src={video} type="video/mp4" />
+          <source src={"/videos/intro.mp4"} type="video/mp4" />
         </video>
       </div>
       {/* <div className={styles.content}>

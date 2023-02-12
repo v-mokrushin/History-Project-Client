@@ -10,7 +10,9 @@
 
 # production
 /build
-/public
+/public/images
+/public/audio
+/public/videos
 
 # misc
 .DS_Store

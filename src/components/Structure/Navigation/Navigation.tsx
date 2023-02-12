@@ -9,7 +9,7 @@ import actualSectionStore from "../../../stores/mobx/actualSectionStore";
 import burgerStore from "../../../stores/mobx/burgerStore";
 import settingsStore from "stores/mobx/settingsStore";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
+import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
 
 const Navigation = observer(({ isTypeBurger = false }) => {
   const actualSection = actualSectionStore.actualSection;
