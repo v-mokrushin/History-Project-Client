@@ -11,119 +11,128 @@ import settingsStore from "stores/mobx/settingsStore";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
 
-const Navigation = observer(({ isTypeBurger = false }) => {
-  const actualSection = actualSectionStore.actualSection;
-  const isArticlesPreview = actualSectionStore.isWeaponsPreview();
-  const { t, i18n } = useTranslation();
+interface INavigationProps {
+  isTypeBurger?: boolean;
+}
 
-  function actionOnClose() {
-    burgerStore.setClose();
-  }
+const Navigation: React.FC<INavigationProps> = observer(
+  ({ isTypeBurger = false }) => {
+    const actualSection = actualSectionStore.actualSection;
+    const isArticlesPreview = actualSectionStore.isWeaponsPreview();
+    const { t, i18n } = useTranslation();
 
-  return (
-    <nav
-      className={classNames(styles.root, isTypeBurger && styles.rootTypeBurger)}
-    >
-      <NavLink
-        to="/"
+    function actionOnClose() {
+      burgerStore.setClose();
+    }
+
+    return (
+      <nav
         className={classNames(
-          styles.link,
-          actualSectionStore.isHome() && styles.link_active
+          styles.root,
+          isTypeBurger && styles.rootTypeBurger
         )}
-        onClick={actionOnClose}
       >
-        {t("navigation.main")}
-      </NavLink>
-      <NavLink
-        to="/articles"
-        className={classNames(
-          styles.link,
-          actualSectionStore.isArticles() && styles.link_active
-        )}
-        onClick={actionOnClose}
-      >
-        {t("navigation.articles")}
-      </NavLink>
-      <div className={styles.weaponBox}>
         <NavLink
-          to="/weapons"
+          to="/"
           className={classNames(
             styles.link,
-            styles.weaponBox__link,
-            actualSectionStore.isWeapons() && styles.link_active
+            actualSectionStore.isHome() && styles.link_active
           )}
           onClick={actionOnClose}
         >
-          {t("navigation.weapons")}
+          {t("navigation.main")}
         </NavLink>
-        <div
+        <NavLink
+          to="/articles"
           className={classNames(
-            styles.weaponBox__suggestion,
-            isArticlesPreview && styles.weaponBox__suggestion_opaque
+            styles.link,
+            actualSectionStore.isArticles() && styles.link_active
           )}
+          onClick={actionOnClose}
         >
+          {t("navigation.articles")}
+        </NavLink>
+        <div className={styles.weaponBox}>
           <NavLink
-            to="weapons/armored-vehicles"
-            className={classNames(styles.link, styles.link_mod)}
+            to="/weapons"
+            className={classNames(
+              styles.link,
+              styles.weaponBox__link,
+              actualSectionStore.isWeapons() && styles.link_active
+            )}
             onClick={actionOnClose}
           >
-            Бронетехника
+            {t("navigation.weapons")}
           </NavLink>
-          <NavLink
-            to="/weapons/aviation"
-            className={classNames(styles.link, styles.link_mod)}
-            onClick={actionOnClose}
+          <div
+            className={classNames(
+              styles.weaponBox__suggestion,
+              isArticlesPreview && styles.weaponBox__suggestion_opaque
+            )}
           >
-            Авиация
-          </NavLink>
-          <NavLink
-            to="/weapons/artillery"
-            className={classNames(styles.link, styles.link_mod)}
-            onClick={actionOnClose}
-          >
-            Артиллерия
-          </NavLink>
-          <NavLink
-            to="weapons/small-arms"
-            className={classNames(styles.link, styles.link_mod)}
-            onClick={actionOnClose}
-          >
-            Стрелковое
-          </NavLink>
-          <NavLink
-            to="weapons/grenade-launchers"
-            className={classNames(styles.link, styles.link_mod)}
-            onClick={actionOnClose}
-          >
-            Гранатометы
-          </NavLink>
+            <NavLink
+              to="weapons/armored-vehicles"
+              className={classNames(styles.link, styles.link_mod)}
+              onClick={actionOnClose}
+            >
+              Бронетехника
+            </NavLink>
+            <NavLink
+              to="/weapons/aviation"
+              className={classNames(styles.link, styles.link_mod)}
+              onClick={actionOnClose}
+            >
+              Авиация
+            </NavLink>
+            <NavLink
+              to="/weapons/artillery"
+              className={classNames(styles.link, styles.link_mod)}
+              onClick={actionOnClose}
+            >
+              Артиллерия
+            </NavLink>
+            <NavLink
+              to="weapons/small-arms"
+              className={classNames(styles.link, styles.link_mod)}
+              onClick={actionOnClose}
+            >
+              Стрелковое
+            </NavLink>
+            <NavLink
+              to="weapons/grenade-launchers"
+              className={classNames(styles.link, styles.link_mod)}
+              onClick={actionOnClose}
+            >
+              Гранатометы
+            </NavLink>
+          </div>
         </div>
-      </div>
-      <NavLink
-        to="/battles"
-        className={classNames(
-          styles.link,
-          actualSectionStore.isBattles() && styles.link_active
-        )}
-        onClick={() => {
-          actionOnClose();
-          actualSectionStore.set("/battles");
-        }}
-      >
-        {t("navigation.battles")}
-      </NavLink>
-      {/* <LanguageSwitcher burgerType={isTypeBurger} /> */}
-      <div className={styles.musicBox}>
-        <span
-          className={classNames(styles.link, styles.link_mod)}
-          onClick={() => audioPlayerStore.toggle()}
+        <NavLink
+          to="/battles"
+          className={classNames(
+            styles.link,
+            actualSectionStore.isBattles() && styles.link_active
+          )}
+          onClick={() => {
+            actionOnClose();
+            actualSectionStore.set("/battles");
+          }}
         >
-          {t("navigation.music")}
-        </span>
-        <AudioPlayer isMainPlayer={!isTypeBurger} />
-      </div>
-    </nav>
-  );
-});
+          {t("navigation.battles")}
+        </NavLink>
+        {/* <LanguageSwitcher burgerType={isTypeBurger} /> */}
+        <div className={styles.musicBox}>
+          <span
+            className={classNames(styles.link, styles.link_mod)}
+            onClick={() => audioPlayerStore.toggle()}
+          >
+            {t("navigation.music")}
+          </span>
+          <AudioPlayer isMainPlayer={!isTypeBurger} />
+        </div>
+      </nav>
+    );
+  }
+);
 
 export default Navigation;

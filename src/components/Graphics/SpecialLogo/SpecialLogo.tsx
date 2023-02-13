@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { Translation, useTranslation } from "react-i18next";
 import { ANIMATIONS } from "../../../constants/animations";
 import { SPECIAL_LOGO_TYPE } from "./constants";
 import styles from "./SpecialLogo.module.scss";
@@ -15,6 +16,8 @@ export default function SpecialLogo({
   className,
   type,
 }: ISpecialLogoProps) {
+  const { t } = useTranslation();
+
   function getIconStyle() {
     if (type == SPECIAL_LOGO_TYPE.loading) {
       return styles.animatedIcon_typeLoading;
@@ -29,13 +32,13 @@ export default function SpecialLogo({
 
   function getTitle() {
     if (type == SPECIAL_LOGO_TYPE.loading) {
-      return "Загрузка";
+      return t("special_logo.loading");
     }
     if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
-      return "В разработке";
+      return t("special_logo.in_development");
     }
     if (type == SPECIAL_LOGO_TYPE.notFound) {
-      return "Не найдено";
+      return t("special_logo.not_found");
     }
   }
 

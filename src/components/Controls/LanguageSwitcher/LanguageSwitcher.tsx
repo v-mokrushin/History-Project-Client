@@ -26,7 +26,7 @@ const LanguageSwitcher = observer(({ className }: ILanguageSwitcherProps) => {
         alt="Earth image"
       />
       <div className={classNames(styles2.link, styles2.link_mod)}>
-        {settingsStore.language}
+        {settingsStore.language.slice(0, 2)}
       </div>
     </button>
   );

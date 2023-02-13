@@ -4,6 +4,7 @@ import classNames from "classnames";
 import settingsStore, { DisplayOnPreview } from "stores/mobx/settingsStore";
 import Text from "components/Texts/Text/Text";
 import { observer } from "mobx-react";
+import { useTranslation } from "react-i18next";
 
 interface IWeaponPreviewSettingsProps {
   className?: string;
@@ -11,6 +12,8 @@ interface IWeaponPreviewSettingsProps {
 
 const WeaponPreviewSettings = observer(
   ({ className }: IWeaponPreviewSettingsProps) => {
+    const { t } = useTranslation();
+
     return (
       <div className={classNames(styles.wrapper, className)}>
         <button
@@ -24,7 +27,7 @@ const WeaponPreviewSettings = observer(
                 styles.button__text_animated
             )}
           >
-            Показать: {settingsStore.displayOnPreview}
+            {t("settings.show")}: {settingsStore.displayOnPreview}
           </Text>
         </button>
         <button
@@ -32,7 +35,7 @@ const WeaponPreviewSettings = observer(
           className={styles.button}
         >
           <Text className={styles.button__text}>
-            Порядок:{" "}
+            {t("settings.order")}:{" "}
             {settingsStore.sortInAscending ? "по возраст." : "по убыванию"}
           </Text>
         </button>
@@ -43,7 +46,8 @@ const WeaponPreviewSettings = observer(
               className={styles.button}
             >
               <Text className={styles.button__text}>
-                Фото: {settingsStore.colorized ? "цветные" : "чёрно-белые"}
+                {t("settings.photo")}:{" "}
+                {settingsStore.colorized ? "цветные" : "чёрно-белые"}
               </Text>
             </button>
             <button
@@ -51,7 +55,8 @@ const WeaponPreviewSettings = observer(
               className={styles.button}
             >
               <Text className={styles.button__text}>
-                Размер: {settingsStore.displaySize ? "крупный" : "норм."}
+                {t("settings.size")}:{" "}
+                {settingsStore.displaySize ? "крупный" : "норм."}
               </Text>
             </button>
           </>

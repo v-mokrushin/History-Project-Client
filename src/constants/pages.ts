@@ -4,9 +4,10 @@ export interface IPage {
   readonly path: string;
   readonly introImage: string;
   readonly name: {
-    readonly russian: string;
-    readonly russianАccusative: string;
-    readonly english: string;
+    // readonly russian: string;
+    // readonly russianАccusative: string;
+    // readonly english: string;
+    [key: string]: string;
   };
 }
 
@@ -35,14 +36,14 @@ const pages = {
     "/images/backgrounds/articles.jpg",
     "Статьи",
     "статей",
-    "articles"
+    "Articles"
   ),
   weapons: Page(
     "weapons",
     "/images/backgrounds/weapons.jpg",
     "Вооружения",
     "вооружений",
-    "weapons"
+    "Weapons"
   ),
   battles: Page(
     "battles",
@@ -56,7 +57,7 @@ const pages = {
     "/images/backgrounds/weapons/aviation.jpg",
     "Авиация",
     "авиации",
-    "aviation"
+    "Aviation"
   ),
   armoredVehicles: Page(
     "armored-vehicles",
@@ -70,14 +71,14 @@ const pages = {
     "/images/backgrounds/weapons/gun.jpg",
     "Стрелковое оружие",
     "стрелкового оружия",
-    "small arms"
+    "Small arms"
   ),
   artillery: Page(
     "artillery",
     "/images/backgrounds/weapons/artillery.jpg",
     "Артиллерия",
     "артиллерии",
-    "artillery"
+    "Artillery"
   ),
   grenadeLaunchers: Page(
     "grenade-launchers",

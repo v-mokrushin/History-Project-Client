@@ -25,10 +25,14 @@ export class SettingsStore {
       localStorage.getItem("displaySize")
     );
     this.displayOnPreview = DisplayOnPreview.weapons;
-    this.language = "ru";
+    this.language = "russian";
 
     makeAutoObservable(this);
   }
+
+  // getLang(): string {
+  //   if(this.language==='ru') return 
+  // }
 
   toggleSortInAscending(): void {
     this.sortInAscending = !this.sortInAscending;
@@ -55,8 +59,8 @@ export class SettingsStore {
   }
 
   toggleLanguage(): string {
-    if (this.language === "ru") this.language = "en";
-    else this.language = "ru";
+    if (this.language === "russian") this.language = "english";
+    else this.language = "russian";
     return this.language;
   }
 

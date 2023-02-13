@@ -40,13 +40,13 @@ const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
         getter={filtersStore.filters.type}
       />
       <Filter
-        title="Разработчик"
+        title={t("filters.developer")!}
         selectionVariantsWithFlags={WEAPONS.getDevelopersWithFlags(weapons)}
         setterCallback={filtersStore.setDeveloper.bind(filtersStore)}
         getter={filtersStore.filters.developer}
       />
       <Filter
-        title="Производитель"
+        title={t("filters.producer")!}
         selectionVariantsWithFlags={WEAPONS.getProducersWithFlags(weapons)}
         setterCallback={filtersStore.setProducer.bind(filtersStore)}
         getter={filtersStore.filters.producer}
@@ -58,18 +58,21 @@ const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
         getter={filtersStore.producer}
       /> */}
       <Filter
-        title="Глав. конструктор"
+        title={t("filters.chief_designer")!}
         selectionVariantsWithFlags={WEAPONS.getChiefDesignersWithFlags(weapons)}
         setterCallback={filtersStore.setChiefDesigner.bind(filtersStore)}
         getter={filtersStore.filters.chiefDesigner}
       />
       <Filter
-        title="База"
+        title={t("filters.platform")!}
         selectionVariants={WEAPONS.getPlatforms(weapons)}
         setterCallback={filtersStore.setPlatform.bind(filtersStore)}
         getter={filtersStore.filters.platform}
       />
-      <Button callback={filtersStore.cancelFilters.bind(filtersStore)} />
+      <Button
+        text={t("filters.cencel")!}
+        callback={filtersStore.cancelFilters.bind(filtersStore)}
+      />
     </div>
   );
 };

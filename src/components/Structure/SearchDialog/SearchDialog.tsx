@@ -12,6 +12,7 @@ import { Articles } from "data/articles/articles";
 import { NavLink } from "react-router-dom";
 import burgerStore from "stores/mobx/burgerStore";
 import Preloader from "components/Graphics/Preloader/Preloader";
+import { useTranslation } from "react-i18next";
 
 const SearchDialog = observer(() => {
   const [inputText, setInputText] = React.useState<string>("");
@@ -26,6 +27,7 @@ const SearchDialog = observer(() => {
     () => WEAPONS.filterByName(inputText),
     [inputText]
   );
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
@@ -65,7 +67,7 @@ const SearchDialog = observer(() => {
           commonApplicationStore.searchDialogVisibility && styles.window_open
         )}
       >
-        <Subtitle className={styles.title}>Поиск</Subtitle>
+        <Subtitle className={styles.title}>{t("search_dialog.title")}</Subtitle>
         <Input
           placeholder="Введите название..."
           initialValue={inputText}
@@ -76,7 +78,7 @@ const SearchDialog = observer(() => {
             {articles.length ? (
               <div className={styles.searchTheme}>
                 <Text color="gold" bold>
-                  Статьи
+                  {t("search_dialog.articles")}
                 </Text>
                 <div className={styles.searchResultsWrapper}>
                   {articles.map((item: any) => (
@@ -115,7 +117,7 @@ const SearchDialog = observer(() => {
             {weapons.length ? (
               <div className={styles.searchTheme}>
                 <Text color="gold" bold>
-                  Вооружения
+                  {t("search_dialog.weapons")}
                 </Text>
                 <div className={styles.searchResultsWrapper}>
                   {WEAPONS.filterByName(inputText).map((item) => (
