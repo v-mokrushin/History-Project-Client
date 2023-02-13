@@ -35,114 +35,6 @@ const ussr: IArmoredVehicle[] = [
     },
   },
   {
-    name: "КВ-1 (ЗиС-5)",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1941,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        platform: Platforms.armoredVehicles.KV1,
-        producer: [
-          Producers.armoredVehicles.Leningrad185,
-          Producers.armoredVehicles.Chelyabinsk100,
-        ],
-        numberOfIssued: 2229,
-      },
-    },
-  },
-  {
-    name: "КВ-1Э",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1941,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        platform: Platforms.armoredVehicles.KV1,
-      },
-    },
-  },
-  {
-    name: "КВ-1 (Ф-32)",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1941,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        developer: Developers.armoredVehicles.Leningrad185,
-        platform: Platforms.armoredVehicles.KV1,
-        numberOfIssued: 792,
-      },
-    },
-  },
-  {
-    name: "КВ-1 (Л-11)",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1939,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        developer: Developers.armoredVehicles.Leningrad185,
-        platform: Platforms.armoredVehicles.KV1,
-        producer: [
-          Producers.armoredVehicles.Leningrad185,
-          Producers.armoredVehicles.Chelyabinsk100,
-        ],
-        numberOfIssued: 283,
-      },
-    },
-  },
-  {
-    name: "КВ-2",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1940,
-    specifications: {
-      common: {
-        developer: Developers.armoredVehicles.Leningrad185,
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        producer: [Producers.armoredVehicles.Leningrad185],
-        numberOfIssued: 204,
-      },
-    },
-  },
-
-  {
-    name: "КВ-1с",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1942,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
-        developer: Developers.armoredVehicles.Chelyabinsk100,
-        platform: Platforms.armoredVehicles.KV1S,
-        numberOfIssued: 1086,
-      },
-    },
-  },
-  {
-    name: "Т-35",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1933,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Barykov,
-        numberOfIssued: 59,
-        // developer: Developers.armoredVehicles.Leningrad185,
-      },
-    },
-  },
-  {
-    name: "ИС-1",
-    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
-    adoptedIntoServiceDate: 1943,
-    specifications: {
-      common: {
-        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
-        platform: Platforms.armoredVehicles.IS,
-        numberOfIssued: 107,
-      },
-    },
-  },
-  {
     name: "ИС-2",
     isReady: true,
     type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
@@ -241,6 +133,114 @@ const ussr: IArmoredVehicle[] = [
           moat: 2.5,
           ford: 1.3,
         },
+      },
+    },
+  },
+  {
+    name: "ИС-1",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1943,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
+        platform: Platforms.armoredVehicles.IS,
+        numberOfIssued: 107,
+      },
+    },
+  },
+  {
+    name: "КВ-1 (ЗиС-5)",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        platform: Platforms.armoredVehicles.KV1,
+        producer: [
+          Producers.armoredVehicles.Leningrad185,
+          Producers.armoredVehicles.Chelyabinsk100,
+        ],
+        numberOfIssued: 2229,
+      },
+    },
+  },
+  {
+    name: "КВ-1Э",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        platform: Platforms.armoredVehicles.KV1,
+      },
+    },
+  },
+  {
+    name: "КВ-1 (Ф-32)",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1941,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Leningrad185,
+        platform: Platforms.armoredVehicles.KV1,
+        numberOfIssued: 792,
+      },
+    },
+  },
+  {
+    name: "КВ-1 (Л-11)",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1939,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Leningrad185,
+        platform: Platforms.armoredVehicles.KV1,
+        producer: [
+          Producers.armoredVehicles.Leningrad185,
+          Producers.armoredVehicles.Chelyabinsk100,
+        ],
+        numberOfIssued: 283,
+      },
+    },
+  },
+  {
+    name: "КВ-2",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1940,
+    specifications: {
+      common: {
+        developer: Developers.armoredVehicles.Leningrad185,
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        producer: [Producers.armoredVehicles.Leningrad185],
+        numberOfIssued: 204,
+      },
+    },
+  },
+
+  {
+    name: "КВ-1с",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1942,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Dikhow,
+        developer: Developers.armoredVehicles.Chelyabinsk100,
+        platform: Platforms.armoredVehicles.KV1S,
+        numberOfIssued: 1086,
+      },
+    },
+  },
+  {
+    name: "Т-35",
+    type: WEAPONS_CLASSIFICATION.armoredVehicle.heavyTank,
+    adoptedIntoServiceDate: 1933,
+    specifications: {
+      common: {
+        chiefDesigner: ChiefDesigners.armoredVehicles.Barykov,
+        numberOfIssued: 59,
+        // developer: Developers.armoredVehicles.Leningrad185,
       },
     },
   },

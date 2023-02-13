@@ -21,12 +21,15 @@ export default function ContentList({
 }: IContentListProps) {
   const [open, setOpen] = React.useState(false);
 
-  if (loadingStatus) return <div></div>;
-  if (!list) return <div></div>;
+  if (loadingStatus) return <div data-testid="empty-div"></div>;
+  if (!list) return <div data-testid="empty-div"></div>;
 
   if (type == CONTENT_LIST_TYPE.desktop)
     return (
-      <aside className={classNames(styles_desktop.root, className)}>
+      <aside
+        data-testid="block-desktop"
+        className={classNames(styles_desktop.root, className)}
+      >
         <h4 className={styles_desktop.title}>Содержание</h4>
         <div className={classNames(styles_desktop.separator)}></div>
         <div className={classNames(styles_desktop.linksBox)}>
@@ -52,6 +55,7 @@ export default function ContentList({
   if (type == CONTENT_LIST_TYPE.mobile)
     return (
       <aside
+        data-testid="block-mobile"
         className={classNames(styles_mobile.root, className)}
         onClick={() => {
           setOpen(!open);

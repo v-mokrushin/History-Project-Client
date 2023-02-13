@@ -15,11 +15,11 @@ const Input = observer(
   ({ setter, initialValue = "", placeholder, className }: IInputProps) => {
     const input = React.useRef<HTMLInputElement>(null);
     const [numberOfUse, setNumberOfUse] = React.useState<number>(0);
-    console.log(input.current?.value);
 
     return (
       <div className={classNames(styles.root, className)}>
         <input
+          data-testid="input"
           ref={input}
           type="text"
           className={styles.input}

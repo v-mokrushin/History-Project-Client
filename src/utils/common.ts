@@ -1,24 +1,6 @@
-function getURLForBackroundImage(url: string): string {
-  return `url(${url})`;
-}
-
 export function getBackgroundImageStyleObject(url: string | undefined): object {
-  if (url) return { backgroundImage: getURLForBackroundImage(url) };
+  if (url) return { backgroundImage: `url(${url})` };
   else return {};
-}
-
-export function createParagraphs(text: string): string[] {
-  let prevPos = -1;
-  let pos = -1;
-  const paragraphs = [];
-
-  while (text.indexOf("\n", pos + 1) != -1) {
-    prevPos = pos + 1;
-    pos = text.indexOf("\n", pos + 1);
-    paragraphs.push(text.slice(prevPos, pos).trim());
-  }
-
-  return paragraphs;
 }
 
 export function shuffleArray<Type>(array: Type[]): Type[] {

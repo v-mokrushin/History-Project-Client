@@ -22,16 +22,16 @@
     height: 25vh;
     display: flex;
     column-gap: 15px;
-    margin-bottom: 105px;
+    margin-bottom: 110px;
     width: max-content;
 
     @include media-breakpoint-down(FHD) {
-      margin-bottom: 85px;
+      margin-bottom: 90px;
     }
 
     @include media-breakpoint-down(xl) {
       column-gap: 12px;
-      margin-bottom: 70px;
+      margin-bottom: 75px;
     }
 
     &::after {
@@ -64,8 +64,8 @@
       transform-origin: bottom center;
     }
 
-    &:hover .value {
-    }
+    // &:hover .value {
+    // }
 
     &:hover .name {
       color: $gold;
