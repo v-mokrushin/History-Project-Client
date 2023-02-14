@@ -1,19 +1,21 @@
 import classNames from "classnames";
+import { observer } from "mobx-react-lite";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { PAGES } from "../../../constants/pages";
+import settingsStore from "stores/mobx/settingsStore";
+import { Pages } from "../../../constants/pages";
 import actualSectionStore from "../../../stores/mobx/actualSectionStore";
 import styles from "./Beadcrumbs.module.scss";
 
-export default function Beadcrumbs() {
+const Beadcrumbs = observer(() => {
   const locationPathname: string = useLocation().pathname;
   const labels: Array<string> = React.useMemo(
-    () => PAGES.getLabelsArray(locationPathname),
-    [locationPathname]
+    () => Pages.getLabelsArray(locationPathname, settingsStore.language),
+    [locationPathname, settingsStore.language]
   );
 
   const pathNames: Array<string> = React.useMemo(
-    () => PAGES.getPathnamesArray(locationPathname),
+    () => Pages.getPathnamesArray(locationPathname),
     [locationPathname]
   );
 
@@ -44,4 +46,6 @@ export default function Beadcrumbs() {
         )}
     </div>
   );
-}
+});
+
+export default Beadcrumbs;

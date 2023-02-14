@@ -6,9 +6,8 @@ import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWra
 import Timeline from "../../components/Graphics/Timeline/Timeline";
 import SpecialLogo from "../../components/Graphics/SpecialLogo/SpecialLogo";
 import Title from "../../components/Texts/Title/Title";
-import { NATIONS, NATIONS_METHODS } from "../../constants/nations";
+import { Nations, NATIONS_METHODS } from "../../constants/nations";
 import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
-import { WEAPONS } from "../../data/weapons/weapons";
 import { SPECIAL_LOGO_TYPE } from "../../components/Graphics/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Controls/Filter/Filter";
@@ -27,6 +26,7 @@ import settingsStore, { DisplayOnPreview } from "stores/mobx/settingsStore";
 import { ANIMATIONS } from "constants/animations";
 import Infographics from "components/Graphics/Infographics/Infographics";
 import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
+import { Weapons } from "data/weapons/weapons";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -34,15 +34,15 @@ const WeaponsPreviewPage = observer(() => {
   const weaponsBranchObject = WEAPONS_TYPE_METHODS.getByPath(weaponsBranchPath);
   const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
   const selectedWeapons: TWeapon[] = React.useMemo(
-    () => WEAPONS.selectWeapons(weaponsBranchPath, nationPath),
+    () => Weapons.selectWeapons(weaponsBranchPath, nationPath),
     []
   );
   const filteredWeapons: TWeapon[] = React.useMemo(
-    () => WEAPONS.filterWeapons(selectedWeapons, filtersStore.getFilters()),
+    () => Weapons.filterWeapons(selectedWeapons, filtersStore.getFilters()),
     [filtersStore.filters]
   );
   const uniqueDates = React.useMemo(
-    () => WEAPONS.getUniqueDates(filteredWeapons),
+    () => Weapons.getUniqueDates(filteredWeapons),
     [filtersStore.filters]
   );
   const [preview, setPreview] = React.useState({
@@ -87,7 +87,7 @@ const WeaponsPreviewPage = observer(() => {
               "px",
           }}
         >
-          <WeaponCard weapon={preview.weapon} showFlag variantForInfographic />
+          <WeaponCard weapon={preview.weapon} showFlag />
         </div>
       )}
       <ContentWrapper>

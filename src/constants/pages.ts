@@ -96,17 +96,17 @@ const summaryArray = [
 
 // ------------------------------------------------------------------------------
 
-export const PAGES = {
+export const Pages = {
   ...pages,
   getByPath,
-  getRussianNameByPath,
+  getNameByPath,
   getPathLength,
   getPathnamesArray,
   getLabelsArray,
 };
 
-function getRussianNameByPath(path: string): string | undefined {
-  return summaryArray.find((item) => item.path === path)?.name.russian;
+function getNameByPath(path: string, language: string): string | undefined {
+  return summaryArray.find((item) => item.path === path)?.name[language];
 }
 
 function getPathLength(path: string): number {
@@ -119,12 +119,12 @@ function getByPath(path: string): IPage | undefined {
   return item;
 }
 
-function getLabelsArray(locationPathname: string): string[] {
+function getLabelsArray(locationPathname: string, language: string): string[] {
   return locationPathname === "/"
     ? ["главная"]
     : locationPathname
         .split("/")
-        .map((item) => getRussianNameByPath(item) || item);
+        .map((path) => getNameByPath(path, language) || path);
 }
 
 function getPathnamesArray(locationPathname: string): string[] {

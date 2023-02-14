@@ -24,7 +24,7 @@ import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { Scroll } from "utils/scroll";
 import { AppDispatch, RootState } from "stores/redux";
-import { PAGES } from "constants/pages";
+import { Pages } from "constants/pages";
 import ArticleInfo from "components/Texts/ArticleInfo/ArticleInfo";
 
 export default function ArticlePage() {
@@ -79,7 +79,7 @@ export default function ArticlePage() {
         imageUrl={
           articleContent
             ? articleContent.backgroundURL
-            : PAGES.articles.introImage
+            : Pages.articles.introImage
         }
       />
       <ContentWrapper>

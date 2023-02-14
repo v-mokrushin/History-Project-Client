@@ -1,6 +1,6 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
-import { NATIONS } from "../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import Yak_3 from "../../../fragments/weapons/Yak-3";
 import { Developers } from "../departments/developers";
 import { ChiefDesigners } from "../departments/chief-designers";
@@ -563,21 +563,21 @@ const hungary: IAircraft[] = [
   },
 ];
 
-appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.Germany);
-appendNation(usa, NATIONS.USA);
-appendNation(britain, NATIONS.GreatBritain);
-appendNation(france, NATIONS.France);
-appendNation(finland, NATIONS.Finland);
-appendNation(poland, NATIONS.Poland);
-appendNation(sweden, NATIONS.Sweden);
-appendNation(romania, NATIONS.Romania);
-appendNation(japan, NATIONS.Japan);
-appendNation(lithuania, NATIONS.lithuania);
-appendNation(netherlands, NATIONS.Netherlands);
-appendNation(yugoslavia, NATIONS.Yugoslavia);
-appendNation(hungary, NATIONS.Hungary);
-appendNation(italy, NATIONS.Italy);
+appendNation(ussr, Nations.USSR);
+appendNation(germany, Nations.Germany);
+appendNation(usa, Nations.USA);
+appendNation(britain, Nations.GreatBritain);
+appendNation(france, Nations.France);
+appendNation(finland, Nations.Finland);
+appendNation(poland, Nations.Poland);
+appendNation(sweden, Nations.Sweden);
+appendNation(romania, Nations.Romania);
+appendNation(japan, Nations.Japan);
+appendNation(lithuania, Nations.lithuania);
+appendNation(netherlands, Nations.Netherlands);
+appendNation(yugoslavia, Nations.Yugoslavia);
+appendNation(hungary, Nations.Hungary);
+appendNation(italy, Nations.Italy);
 
 export const AVIATION_DATA = [
   ...ussr,

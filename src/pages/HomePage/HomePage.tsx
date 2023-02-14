@@ -4,7 +4,7 @@ import Container from "../../components/Structure/Container/Container";
 import SectionCard from "../../components/Cards/SectionCard/SectionCard";
 import VideoIntro from "../../components/Graphics/VideoIntro/VideoIntro";
 import styles from "./HomePage.module.scss";
-import { PAGES } from "constants/pages";
+import { Pages } from "constants/pages";
 
 export default function HomePage() {
   return (
@@ -13,9 +13,9 @@ export default function HomePage() {
       <ContentWrapper>
         <Container>
           <div className={styles.innerWrapper}>
-            <SectionCard information={PAGES.articles} />
-            <SectionCard information={PAGES.weapons} />
-            <SectionCard information={PAGES.battles} />
+            <SectionCard information={Pages.articles} />
+            <SectionCard information={Pages.weapons} />
+            <SectionCard information={Pages.battles} />
           </div>
         </Container>
       </ContentWrapper>

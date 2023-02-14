@@ -1,7 +1,7 @@
 import { CREWS } from "../departments/crews";
 import { BODIES } from "../parts/bodies";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
-import { NATIONS } from "../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import IS_2 from "../../../fragments/weapons/IS-2";
 import { ARMORED_ENGINES } from "../parts/engines/armored-engines";
 import { CANNONS } from "../parts/cannons";
@@ -1460,15 +1460,15 @@ const japan: IArmoredVehicle[] = [
   },
 ];
 
-appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.Germany);
-appendNation(usa, NATIONS.USA);
-appendNation(britain, NATIONS.GreatBritain);
-appendNation(france, NATIONS.France);
-appendNation(italy, NATIONS.Italy);
-appendNation(czechoslovakia, NATIONS.Czechoslovakia);
-appendNation(finland, NATIONS.Finland);
-appendNation(japan, NATIONS.Japan);
+appendNation(ussr, Nations.USSR);
+appendNation(germany, Nations.Germany);
+appendNation(usa, Nations.USA);
+appendNation(britain, Nations.GreatBritain);
+appendNation(france, Nations.France);
+appendNation(italy, Nations.Italy);
+appendNation(czechoslovakia, Nations.Czechoslovakia);
+appendNation(finland, Nations.Finland);
+appendNation(japan, Nations.Japan);
 
 export const ARMORED_VEHICLES = [
   ...ussr,

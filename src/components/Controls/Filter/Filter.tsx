@@ -3,7 +3,7 @@ import styles from "./Filter.module.scss";
 import classNames from "classnames";
 import Text from "../../Texts/Text/Text";
 import { observer } from "mobx-react";
-import { INation, NATIONS } from "constants/nations";
+import { INation, Nations } from "constants/nations";
 import Flag from "components/Graphics/Flag/Flag";
 
 interface IFilterProps {

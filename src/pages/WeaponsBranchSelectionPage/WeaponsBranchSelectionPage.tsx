@@ -6,11 +6,11 @@ import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
 import styles from "./WeaponsBranchSelectionPage.module.scss";
 import Title from "../../components/Texts/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES } from "../../constants/pages";
+import { Pages } from "../../constants/pages";
 import { useTranslation } from "react-i18next";
 
 export default function WeaponsBranchSelectionPage() {
-  const pageInfo = PAGES.getByPath(useLocation().pathname);
+  const pageInfo = Pages.getByPath(useLocation().pathname);
   const { t } = useTranslation();
 
   return (
@@ -21,13 +21,13 @@ export default function WeaponsBranchSelectionPage() {
           <Title>{t("navigation.weapons")}</Title>
           <div className={styles.weaponCardsWrapper}>
             <SectionCard
-              information={PAGES.armoredVehicles}
+              information={Pages.armoredVehicles}
               className={styles.wideBox}
             />
-            <SectionCard information={PAGES.aviation} />
-            <SectionCard information={PAGES.artillery} />
-            <SectionCard information={PAGES.smallArms} />
-            <SectionCard information={PAGES.grenadeLaunchers} />
+            <SectionCard information={Pages.aviation} />
+            <SectionCard information={Pages.artillery} />
+            <SectionCard information={Pages.smallArms} />
+            <SectionCard information={Pages.grenadeLaunchers} />
           </div>
         </Container>
       </ContentWrapper>

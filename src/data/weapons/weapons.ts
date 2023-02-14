@@ -7,7 +7,7 @@ import {
   defineIdProperty,
   sortByTitle,
 } from "utils/weapons";
-import { INation, NATIONS } from "../../constants/nations";
+import { INation, Nations } from "../../constants/nations";
 import { ARMORED_VEHICLES } from "./branches/armored-vehicles";
 import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
@@ -17,6 +17,7 @@ import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
+import { Random } from "utils/random";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -34,18 +35,24 @@ weapons_data.forEach((weapon) => {
 
 // --------------------------------------------------------------------------------
 
-export const WEAPONS = {
-  get() {
-    return weapons_data;
-  },
+export class Weapons {
+  public commonData = weapons_data;
 
-  getUniqueDates(collection: TWeapon[]): number[] {
+  public get() {
+    return weapons_data;
+  }
+
+  public static getWeaponExample(): TWeapon {
+    return weapons_data[0];
+  }
+
+  public static getUniqueDates(collection: TWeapon[]): number[] {
     let dates = collection.map((item) => item.adoptedIntoServiceDate);
     dates = Array.from(new Set(dates)).sort((a, b) => b - a);
     return dates;
-  },
+  }
 
-  selectWeapons(
+  public static selectWeapons(
     weaponBranchPath: string | undefined,
     nationPath: string | undefined
   ): TWeapon[] {
@@ -53,17 +60,20 @@ export const WEAPONS = {
       .filter((item) => item.branch?.path === weaponBranchPath)
       .filter(
         (item) =>
-          nationPath === NATIONS.World.path || item.nation!.path === nationPath
+          nationPath === Nations.World.path || item.nation!.path === nationPath
       );
-  },
+  }
 
-  filterByName(name: string) {
+  public static filterByName(name: string) {
     return weapons_data.filter((item) =>
       item.name.toLowerCase().includes(String(name).toLowerCase())
     );
-  },
+  }
 
-  filterWeapons(selectedWeapons: TWeapon[], filters: TFilters): TWeapon[] {
+  public static filterWeapons(
+    selectedWeapons: TWeapon[],
+    filters: TFilters
+  ): TWeapon[] {
     if (Object.keys(filters).length === 0) {
       return selectedWeapons;
     } else {
@@ -114,11 +124,11 @@ export const WEAPONS = {
 
       return weapons;
     }
-  },
+  }
 
-  selectNation(weaponsBranchPath: string | undefined) {
+  public static selectNation(weaponsBranchPath: string | undefined) {
     return [
-      NATIONS.World,
+      Nations.World,
       ...Array.from(
         new Set(
           weapons_data
@@ -127,21 +137,25 @@ export const WEAPONS = {
         )
       ),
     ];
-  },
+  }
 
-  getById(weaponId: string | undefined): TWeapon | undefined {
+  public static getById(weaponId: string | undefined): TWeapon | undefined {
     return weapons_data.find((item) => item.id === weaponId);
-  },
+  }
 
-  changeColorized(): void {
+  public static changeColorized(): void {
     weapons_data.forEach((weapon) => {
       if (weapon.gallery) {
         weapon.gallery.isColorizedIcon = !weapon.gallery.isColorizedIcon;
       }
     });
-  },
+  }
 
-  getRecommendation(
+  public static getRandomWeapon(): TWeapon {
+    return weapons_data[Random.getInteger(0, weapons_data.length) - 1];
+  }
+
+  public static getRecommendation(
     weaponBranchPath: string | undefined,
     weaponId: string | undefined
   ): TWeapon[] {
@@ -153,7 +167,7 @@ export const WEAPONS = {
     weapons = weapons.slice(0, 8);
 
     return weapons;
-  },
+  }
 
   // getTypes(selectedWeapons: TWeapon[]) {
   //   return Object.values(weaponBranch)
@@ -161,7 +175,7 @@ export const WEAPONS = {
   //   .filter((item) => item != undefined);
   // },
 
-  getDevelopers(selectedWeapons: TWeapon[]): string[] {
+  public static getDevelopers(selectedWeapons: TWeapon[]): string[] {
     let developers: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications.common.developer) return false;
@@ -172,9 +186,9 @@ export const WEAPONS = {
     developers = Array.from(new Set(developers));
     developers.sort().unshift("Все");
     return developers;
-  },
+  }
 
-  getDevelopersWithFlags(
+  public static getDevelopersWithFlags(
     selectedWeapons: TWeapon[]
   ): ISelectionVariantWithFlag[] {
     let developers: IDeveloper[] = selectedWeapons
@@ -190,12 +204,12 @@ export const WEAPONS = {
     }));
 
     sortByTitle(variants);
-    variants.unshift({ title: "Все", nation: NATIONS.World });
+    variants.unshift({ title: "Все", nation: Nations.World });
 
     return variants;
-  },
+  }
 
-  getNations(selectedWeapons: TWeapon[]): string[] {
+  public static getNations(selectedWeapons: TWeapon[]): string[] {
     let nations: string[] = selectedWeapons.map(
       (weapon) => weapon.nation?.name.russian!
     );
@@ -203,9 +217,11 @@ export const WEAPONS = {
     nations = Array.from(new Set(nations));
     nations.sort().unshift("Весь мир");
     return nations;
-  },
+  }
 
-  getNationsWithFlags(selectedWeapons: TWeapon[]): ISelectionVariantWithFlag[] {
+  public static getNationsWithFlags(
+    selectedWeapons: TWeapon[]
+  ): ISelectionVariantWithFlag[] {
     let nations: INation[] = selectedWeapons
       .filter((weapon) => {
         return weapon.nation;
@@ -219,12 +235,12 @@ export const WEAPONS = {
     }));
 
     sortByTitle(variants);
-    variants.unshift({ title: "Весь мир", nation: NATIONS.World });
+    variants.unshift({ title: "Весь мир", nation: Nations.World });
 
     return variants;
-  },
+  }
 
-  getChiefDesigners(selectedWeapons: TWeapon[]): string[] {
+  public static getChiefDesigners(selectedWeapons: TWeapon[]): string[] {
     let designers: string[] = selectedWeapons
       .filter((weapon) => {
         return weapon.specifications.common.chiefDesigner;
@@ -236,9 +252,9 @@ export const WEAPONS = {
     designers = Array.from(new Set(designers));
     designers.sort().unshift("Все");
     return designers;
-  },
+  }
 
-  getChiefDesignersWithFlags(
+  public static getChiefDesignersWithFlags(
     selectedWeapons: TWeapon[]
   ): ISelectionVariantWithFlag[] {
     let designers: IChiefDesigner[] = selectedWeapons
@@ -254,12 +270,12 @@ export const WEAPONS = {
     }));
 
     sortByTitle(variants);
-    variants.unshift({ title: "Все", nation: NATIONS.World });
+    variants.unshift({ title: "Все", nation: Nations.World });
 
     return variants;
-  },
+  }
 
-  getPlatforms(selectedWeapons: TWeapon[]): string[] {
+  public static getPlatforms(selectedWeapons: TWeapon[]): string[] {
     let platforms: string[] = selectedWeapons
       .filter((weapon) => {
         if (!weapon.specifications) return false;
@@ -271,9 +287,9 @@ export const WEAPONS = {
     platforms = Array.from(new Set(platforms));
     platforms.sort().unshift("Все");
     return platforms;
-  },
+  }
 
-  getProducersWithFlags(
+  public static getProducersWithFlags(
     selectedWeapons: TWeapon[]
   ): ISelectionVariantWithFlag[] {
     let producers: IProducer[] = selectedWeapons
@@ -291,10 +307,10 @@ export const WEAPONS = {
     }));
 
     sortByTitle(variants);
-    variants.unshift({ title: "Все", nation: NATIONS.World });
+    variants.unshift({ title: "Все", nation: Nations.World });
 
     return variants;
-  },
-};
+  }
+}
 
 console.log(weapons_data);

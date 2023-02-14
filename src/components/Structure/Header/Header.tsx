@@ -6,7 +6,7 @@ import { ANIMATIONS } from "../../../constants/animations";
 import BurgerIcon from "../Burger/BurgerIcon";
 import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";
-import { PAGES } from "../../../constants/pages";
+import { Pages } from "../../../constants/pages";
 import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
 import ButtonSearch from "components/Buttons/ButtonSearch/ButtonSearch";
 import IconsBox from "components/Controls/IconsBox/IconsBox";
@@ -18,7 +18,7 @@ export default function Header() {
     <header
       className={classNames(
         styles.root,
-        PAGES.getPathLength(path) === 4 && styles.ordinar,
+        Pages.getPathLength(path) === 4 && styles.ordinar,
         ANIMATIONS.fadeIn
       )}
     >

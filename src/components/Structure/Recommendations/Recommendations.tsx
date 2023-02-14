@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Recommendations.module.scss";
 import classNames from "classnames";
 import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
-import { WEAPONS } from "data/weapons/weapons";
+import { Weapons } from "data/weapons/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 
 interface IRecommendationsProps {
@@ -11,7 +11,7 @@ interface IRecommendationsProps {
 }
 
 const Recommendations = ({ className, weapon }: IRecommendationsProps) => {
-  const collecion = WEAPONS.getRecommendation(weapon.branch?.path, weapon.id);
+  const collecion = Weapons.getRecommendation(weapon.branch?.path, weapon.id);
 
   return (
     <div className={classNames(styles.root, className)}>

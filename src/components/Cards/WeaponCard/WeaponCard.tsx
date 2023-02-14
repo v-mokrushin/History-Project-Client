@@ -14,7 +14,6 @@ interface IWeaponCardProps {
   weapon: TWeapon;
   showFlag?: boolean;
   isAbsoluteLinkPath?: boolean;
-  variantForInfographic?: boolean;
   className?: string;
 }
 
@@ -23,7 +22,6 @@ const WeaponCard = observer(
     weapon,
     showFlag = false,
     isAbsoluteLinkPath = false,
-    variantForInfographic = false,
     className,
   }: IWeaponCardProps) => {
     const colorized = settingsStore.colorized;
@@ -48,14 +46,6 @@ const WeaponCard = observer(
           style={getBackgroundImageStyleObject(weapon.gallery?.icon)}
         ></div>
         <Preloader color="white" />
-        {/* <div className={styles.preloader}>
-          <div className={styles.circlesWrapper}>
-            <span className={styles.circle}></span>
-            <span className={styles.circle}></span>
-            <span className={styles.circle}></span>
-            <span className={styles.circle}></span>
-          </div>
-        </div> */}
         {showFlag && weapon.nation && (
           <Flag nation={weapon.nation} minimized isNavLink={false} />
         )}

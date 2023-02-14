@@ -23,7 +23,7 @@ function Nation(
   } as INation;
 }
 
-export const NATIONS = {
+export const Nations = {
   World: Nation(
     "Весь мир",
     "мира",
@@ -178,16 +178,16 @@ export const NATIONS = {
 
 export const NATIONS_METHODS = {
   getObjectByPath(path: string | undefined) {
-    for (let nation of Object.values(NATIONS)) {
+    for (let nation of Object.values(Nations)) {
       if (nation.path === path) return nation;
     }
   },
   getNationsAsArray(): INation[] {
-    return Object.values(NATIONS);
+    return Object.values(Nations);
   },
   identity: {
     isWorld(nation: INation | undefined) {
-      return nation == NATIONS.World;
+      return nation == Nations.World;
     },
   },
 };

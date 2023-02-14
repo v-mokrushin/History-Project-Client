@@ -1,6 +1,6 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
-import { NATIONS } from "../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import { TWeapon } from "../interfaces/common-weapon-interfaces";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { Developers } from "../departments/developers";
@@ -118,11 +118,11 @@ const britain: TWeapon[] = [
   },
 ];
 
-appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.Germany);
-appendNation(usa, NATIONS.USA);
-appendNation(japan, NATIONS.Japan);
-appendNation(britain, NATIONS.GreatBritain);
+appendNation(ussr, Nations.USSR);
+appendNation(germany, Nations.Germany);
+appendNation(usa, Nations.USA);
+appendNation(japan, Nations.Japan);
+appendNation(britain, Nations.GreatBritain);
 
 export const GRENADE_LAUNCHERS_DATA = [
   ...ussr,

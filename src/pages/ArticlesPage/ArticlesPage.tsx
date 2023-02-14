@@ -15,14 +15,14 @@ import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWra
 import Container from "../../components/Structure/Container/Container";
 import Title from "../../components/Texts/Title/Title";
 import { useLocation } from "react-router-dom";
-import { PAGES } from "../../constants/pages";
+import { Pages } from "../../constants/pages";
 import { AppDispatch } from "stores/redux";
 
 export default function ArticlesPage() {
   const dispatch = useDispatch<AppDispatch>();
   const articlesIds = useSelector(selectArticlePreviewsIds);
   const loadingStatus = useSelector(selectArticlePreviewsLoadingStatus);
-  const pageInfo = PAGES.getByPath(useLocation().pathname);
+  const pageInfo = Pages.getByPath(useLocation().pathname);
 
   useEffect(() => {
     dispatch(loadArticlePreviews);

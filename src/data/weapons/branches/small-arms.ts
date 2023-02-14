@@ -1,7 +1,7 @@
 import { Developers } from "../departments/developers";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
-import { NATIONS } from "../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { ISmallArm } from "../interfaces/small-arms-interfaces";
 import { platform } from "process";
@@ -411,13 +411,13 @@ const finland: ISmallArm[] = [
 
 const japan: ISmallArm[] = [];
 
-appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.Germany);
-appendNation(usa, NATIONS.USA);
-appendNation(britain, NATIONS.GreatBritain);
-appendNation(belgium, NATIONS.Belgium);
-appendNation(finland, NATIONS.Finland);
-appendNation(japan, NATIONS.Japan);
+appendNation(ussr, Nations.USSR);
+appendNation(germany, Nations.Germany);
+appendNation(usa, Nations.USA);
+appendNation(britain, Nations.GreatBritain);
+appendNation(belgium, Nations.Belgium);
+appendNation(finland, Nations.Finland);
+appendNation(japan, Nations.Japan);
 
 export const SMALL_ARMS_DATA = [
   ...ussr,

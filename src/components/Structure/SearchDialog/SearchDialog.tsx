@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 import { DocumentOverflow } from "utils/document-overflow";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
-import { WEAPONS } from "data/weapons/weapons";
+import { Weapons } from "data/weapons/weapons";
 import Text from "components/Texts/Text/Text";
 import Input from "components/Controls/Input/Input";
 import { Articles } from "data/articles/articles";
@@ -24,7 +24,7 @@ const SearchDialog = observer(() => {
     [inputText]
   );
   const weapons = React.useMemo(
-    () => WEAPONS.filterByName(inputText),
+    () => Weapons.filterByName(inputText),
     [inputText]
   );
   const { t } = useTranslation();
@@ -120,7 +120,7 @@ const SearchDialog = observer(() => {
                   {t("search_dialog.weapons")}
                 </Text>
                 <div className={styles.searchResultsWrapper}>
-                  {WEAPONS.filterByName(inputText).map((item) => (
+                  {Weapons.filterByName(inputText).map((item) => (
                     <NavLink
                       to={`/weapons/${item.branch?.path}/world/${item.id}`}
                       className={styles.item}

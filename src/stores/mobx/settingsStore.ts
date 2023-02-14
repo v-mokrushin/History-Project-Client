@@ -1,4 +1,4 @@
-import { WEAPONS } from "../../data/weapons/weapons";
+import { Weapons } from "../../data/weapons/weapons";
 import { makeAutoObservable } from "mobx";
 import { translateToBool as translateLocalstorageToBool } from "utils/common";
 
@@ -40,7 +40,7 @@ export class SettingsStore {
   }
 
   toggleColorized(): void {
-    WEAPONS.changeColorized();
+    Weapons.changeColorized();
     this.colorized = !this.colorized;
     localStorage.setItem("colorized", String(this.colorized));
   }

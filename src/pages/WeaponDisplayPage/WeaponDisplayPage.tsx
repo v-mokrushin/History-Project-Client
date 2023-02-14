@@ -7,7 +7,7 @@ import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
 import Subtitle from "../../components/Texts/Subtitle/Subtitle";
 import Title from "../../components/Texts/Title/Title";
 import { ANIMATIONS } from "../../constants/animations";
-import { WEAPONS } from "../../data/weapons/weapons";
+import { Weapons } from "../../data/weapons/weapons";
 import styles from "./WeaponDisplayPage.module.scss";
 import Spec from "../../components/Specifications/Spec/Spec";
 import SpecialLogo from "../../components/Graphics/SpecialLogo/SpecialLogo";
@@ -33,7 +33,7 @@ import Preloader from "components/Graphics/Preloader/Preloader";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
-  const weapon = WEAPONS.getById(weaponId);
+  const weapon = Weapons.getById(weaponId);
 
   React.useEffect(() => {
     loadingStore.checkLoading(weaponId);

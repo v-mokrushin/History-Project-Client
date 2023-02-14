@@ -1,6 +1,6 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
-import { NATIONS } from "../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import { Developers } from "../departments/developers";
 import { TWeapon } from "../interfaces/common-weapon-interfaces";
 import { ChiefDesigners } from "../departments/chief-designers";
@@ -229,10 +229,10 @@ const sweden: TWeapon[] = [
   },
 ];
 
-appendNation(ussr, NATIONS.USSR);
-appendNation(germany, NATIONS.Germany);
-appendNation(britain, NATIONS.GreatBritain);
-appendNation(sweden, NATIONS.Sweden);
+appendNation(ussr, Nations.USSR);
+appendNation(germany, Nations.Germany);
+appendNation(britain, Nations.GreatBritain);
+appendNation(sweden, Nations.Sweden);
 
 export const ARTILLERY_DATA = [...ussr, ...germany, ...britain, ...sweden];
 appendWeaponBranch(ARTILLERY_DATA, WEAPONS_CLASSIFICATION.artillery);

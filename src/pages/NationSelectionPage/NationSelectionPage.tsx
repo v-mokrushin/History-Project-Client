@@ -4,10 +4,10 @@ import Container from "../../components/Structure/Container/Container";
 import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
 import styles from "./NationSelectionPage.module.scss";
 import { useLocation, useParams } from "react-router-dom";
-import { PAGES } from "../../constants/pages";
+import { Pages } from "../../constants/pages";
 import Flag from "../../components/Graphics/Flag/Flag";
 import Title from "../../components/Texts/Title/Title";
-import { WEAPONS } from "../../data/weapons/weapons";
+import { Weapons } from "../../data/weapons/weapons";
 import filtersStore from "../../stores/mobx/filtersStore";
 import scrollMemoryStore from "../../stores/mobx/scrollMemoryStore";
 import WarningPage from "pages/WarningPage/WarningPage";
@@ -16,8 +16,8 @@ import settingsStore from "stores/mobx/settingsStore";
 
 export default function NationSelectionPage() {
   const { weaponsBranchPath } = useParams();
-  const pageInfo = PAGES.getByPath(useLocation().pathname);
-  const nations = WEAPONS.selectNation(weaponsBranchPath);
+  const pageInfo = Pages.getByPath(useLocation().pathname);
+  const nations = Weapons.selectNation(weaponsBranchPath);
 
   React.useEffect(() => {
     filtersStore.cancelFilters();
