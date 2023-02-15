@@ -1,7 +1,7 @@
 import SpecLine from "components/Specifications/SpecLine/SpecLine";
 import SpecSection from "components/Specifications/SpecSection/SpecSection";
 import { INation } from "constants/nations";
-import { IWeaponType, WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+import { IWeaponType, WeaponClassificationMethods } from "constants/weapon-types";
 import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
 import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
 import {
@@ -67,7 +67,7 @@ export const SpecificationsLayout = {
     );
   },
   getAll(weapon: TWeapon) {
-    if (WEAPONS_TYPE_METHODS.identity.isArmoredVehicle(weapon)) {
+    if (WeaponClassificationMethods.identity.isArmoredVehicle(weapon)) {
       return (
         <>
           {SpecificationsLayout.getCommon(
@@ -93,7 +93,7 @@ export const SpecificationsLayout = {
         </>
       );
     }
-    if (WEAPONS_TYPE_METHODS.identity.isAviation(weapon)) {
+    if (WeaponClassificationMethods.identity.isAviation(weapon)) {
       return (
         <>
           {SpecificationsLayout.getCommon(

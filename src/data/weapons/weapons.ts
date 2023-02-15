@@ -18,6 +18,7 @@ import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
 import { Random } from "utils/random";
+import { NationsMethods } from '../../constants/nations';
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -33,13 +34,29 @@ weapons_data.forEach((weapon) => {
   createModels(weapon);
 });
 
+
+const createdWeapons = localStorage.getItem('created-weapons');
+if (createdWeapons) {
+  const parsedCreatedWeapons: TWeapon[] = JSON.parse(localStorage.getItem('created-weapons') || '');
+  parsedCreatedWeapons.forEach(item => item.nation = NationsMethods.getByPath(item.nation?.path))
+  weapons_data.unshift(...parsedCreatedWeapons);
+}
+
 // --------------------------------------------------------------------------------
 
 export class Weapons {
-  public commonData = weapons_data;
+
+  public static addNewWeapon(weapon: TWeapon) {
+    weapons_data.unshift(weapon);
+    console.log(weapons_data);
+  }
 
   public get() {
     return weapons_data;
+  }
+
+  public static doesWeaponExist(name: string): boolean {
+    return weapons_data.find(weapon => weapon.name === name) ? true : false;
   }
 
   public static getWeaponExample(): TWeapon {

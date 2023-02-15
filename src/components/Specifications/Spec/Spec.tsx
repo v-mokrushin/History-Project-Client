@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import { SpecificationsLayout } from "utils/specifications-layout";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
-import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+import { WeaponClassificationMethods } from "constants/weapon-types";
 import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
 import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
 import Block from "components/Structure/Block/Block";
@@ -82,7 +82,7 @@ export default function Spec({ weapon, className }: ISpecProps) {
           className={classNames(styles.body, open && styles.body_open)}
         >
           <>
-            {WEAPONS_TYPE_METHODS.identity.isArmoredVehicle(weapon) && (
+            {WeaponClassificationMethods.identity.isArmoredVehicle(weapon) && (
               <>
                 <div className={styles.box}>
                   {SpecificationsLayout.getCommon(
@@ -108,7 +108,7 @@ export default function Spec({ weapon, className }: ISpecProps) {
                 )}
               </>
             )}
-            {WEAPONS_TYPE_METHODS.identity.isAviation(weapon) && (
+            {WeaponClassificationMethods.identity.isAviation(weapon) && (
               <>
                 <div className={styles.box}>
                   {SpecificationsLayout.getCommon(

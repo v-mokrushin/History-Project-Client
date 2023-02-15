@@ -1,0 +1,47 @@
+@import "/src/assets/css/common.scss";
+
+.root {}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include media-breakpoint-down(sm) {
+        gap: 20px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include media-breakpoint-down(sm) {
+            // gap: 5px;
+        }
+
+        .inputsWrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+
+            @include media-breakpoint-down(sm) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            &_fullWidth {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    .test {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+}

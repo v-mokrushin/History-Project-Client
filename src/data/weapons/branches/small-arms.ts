@@ -1,6 +1,6 @@
 import { Developers } from "../departments/developers";
 import { appendNation, appendWeaponBranch } from "utils/weapons";
-import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
+import { WeaponClassification } from "../../../constants/weapon-types";
 import { Nations } from "../../../constants/nations";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { ISmallArm } from "../interfaces/small-arms-interfaces";
@@ -10,7 +10,7 @@ import { Platforms } from "../departments/platforms";
 const ussr: ISmallArm[] = [
   {
     name: "Револьвер системы Нагана",
-    type: WEAPONS_CLASSIFICATION.smallArms.revolver,
+    type: WeaponClassification.smallArms.revolver,
     adoptedIntoServiceDate: 1895,
     specifications: {
       common: {
@@ -20,7 +20,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "Винтовка Мосина",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1891,
     specifications: {
       common: {
@@ -33,7 +33,7 @@ const ussr: ISmallArm[] = [
   {
     name: "Снайперская винтовка обр. 1891/30 г.",
     shortName: "Снайп. винт. обр. 1891/30 г.",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1930,
     specifications: {
       common: {
@@ -44,7 +44,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "Карабин Мосина",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1907,
     specifications: {
       common: {
@@ -55,7 +55,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "СВТ-40",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    type: WeaponClassification.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -68,7 +68,7 @@ const ussr: ISmallArm[] = [
   {
     name: "СВТ-40 (снайперский)",
     shortName: "СВТ-40 (снайп.)",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    type: WeaponClassification.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -80,7 +80,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "АВТ-40",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    type: WeaponClassification.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -92,7 +92,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "ППС-43",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -103,7 +103,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "ППШ-41",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -114,7 +114,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "ППД-40",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1940,
     specifications: {
       common: {
@@ -125,7 +125,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "Пулемет Максима обр. 1910/1930 г.",
-    type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
+    type: WeaponClassification.smallArms.heavyMachinegun,
     adoptedIntoServiceDate: 1930,
     specifications: {
       common: {},
@@ -133,7 +133,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "ПТРД",
-    type: WEAPONS_CLASSIFICATION.smallArms.antiTankGun,
+    type: WeaponClassification.smallArms.antiTankGun,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -144,7 +144,7 @@ const ussr: ISmallArm[] = [
   },
   {
     name: "ДП-27",
-    type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
+    type: WeaponClassification.smallArms.machinegun,
     adoptedIntoServiceDate: 1927,
     specifications: {
       common: {
@@ -159,7 +159,7 @@ const germany: ISmallArm[] = [
   {
     name: "Mauser Gewehr 98",
     shortName: "Mauser 98",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1898,
     specifications: {
       common: {
@@ -172,7 +172,7 @@ const germany: ISmallArm[] = [
   {
     name: "Karabiner 98k",
     shortName: "Mauser 98k",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1935,
     specifications: {
       common: {
@@ -185,7 +185,7 @@ const germany: ISmallArm[] = [
   {
     name: "Sturmgewehr 44",
     shortName: "StG 44",
-    type: WEAPONS_CLASSIFICATION.smallArms.assaultRifle,
+    type: WeaponClassification.smallArms.assaultRifle,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -196,7 +196,7 @@ const germany: ISmallArm[] = [
   },
   {
     name: "MP-40",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
@@ -207,7 +207,7 @@ const germany: ISmallArm[] = [
   },
   {
     name: "Gewehr 43",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    type: WeaponClassification.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -218,7 +218,7 @@ const germany: ISmallArm[] = [
   },
   {
     name: "MG 42",
-    type: WEAPONS_CLASSIFICATION.smallArms.generalPurposeMachinegun,
+    type: WeaponClassification.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -229,7 +229,7 @@ const germany: ISmallArm[] = [
   },
   {
     name: "MG 34",
-    type: WEAPONS_CLASSIFICATION.smallArms.generalPurposeMachinegun,
+    type: WeaponClassification.smallArms.generalPurposeMachinegun,
     adoptedIntoServiceDate: 1938,
     specifications: {
       common: {
@@ -245,7 +245,7 @@ const usa: ISmallArm[] = [
   {
     name: "Springfield M1903",
     shortName: "M1903",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1903,
     specifications: {
       common: { numberOfIssued: 1_300_000 },
@@ -253,7 +253,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M3 Grease gun",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: { numberOfIssued: 700_000 },
@@ -261,7 +261,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M1A1 Thompson",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -273,7 +273,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M1 Thompson",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -285,7 +285,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M1928A1 Thompson",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1940, // ???
     specifications: {
       common: {
@@ -297,7 +297,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M1928 Thompson",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1928,
     specifications: {
       common: {
@@ -308,7 +308,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "M1 Garand",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingRifle,
+    type: WeaponClassification.smallArms.selfLoadingRifle,
     adoptedIntoServiceDate: 1936,
     specifications: {
       common: {
@@ -318,7 +318,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "М1А1 Carbine",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingCarbine,
+    type: WeaponClassification.smallArms.selfLoadingCarbine,
     adoptedIntoServiceDate: 1941,
     specifications: {
       common: {
@@ -328,7 +328,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "М3 Carbine",
-    type: WEAPONS_CLASSIFICATION.smallArms.selfLoadingCarbine,
+    type: WeaponClassification.smallArms.selfLoadingCarbine,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -338,7 +338,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "Browning M1918",
-    type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
+    type: WeaponClassification.smallArms.machinegun,
     adoptedIntoServiceDate: 1917,
     specifications: {
       common: { chiefDesigner: ChiefDesigners.smallArms.Browning },
@@ -346,7 +346,7 @@ const usa: ISmallArm[] = [
   },
   {
     name: "Browning M2",
-    type: WEAPONS_CLASSIFICATION.smallArms.heavyMachinegun,
+    type: WeaponClassification.smallArms.heavyMachinegun,
     adoptedIntoServiceDate: 1933,
     specifications: {
       common: { chiefDesigner: ChiefDesigners.smallArms.Browning },
@@ -358,7 +358,7 @@ const britain: ISmallArm[] = [
   {
     name: "Short Magazine Lee-Enfield",
     shortName: "SMLE",
-    type: WEAPONS_CLASSIFICATION.smallArms.rifle,
+    type: WeaponClassification.smallArms.rifle,
     adoptedIntoServiceDate: 1904,
     specifications: {
       common: {
@@ -369,7 +369,7 @@ const britain: ISmallArm[] = [
   },
   {
     name: "Boys",
-    type: WEAPONS_CLASSIFICATION.smallArms.antiTankGun,
+    type: WeaponClassification.smallArms.antiTankGun,
     adoptedIntoServiceDate: 1937,
     specifications: {
       common: {
@@ -384,7 +384,7 @@ const britain: ISmallArm[] = [
 const belgium: ISmallArm[] = [
   {
     name: "Lewis",
-    type: WEAPONS_CLASSIFICATION.smallArms.machinegun,
+    type: WeaponClassification.smallArms.machinegun,
     adoptedIntoServiceDate: 1914,
     specifications: {
       common: {
@@ -398,7 +398,7 @@ const belgium: ISmallArm[] = [
 const finland: ISmallArm[] = [
   {
     name: "Suomi KP/-31",
-    type: WEAPONS_CLASSIFICATION.smallArms.submachineGun,
+    type: WeaponClassification.smallArms.submachineGun,
     adoptedIntoServiceDate: 1931,
     specifications: {
       common: {
@@ -428,4 +428,4 @@ export const SMALL_ARMS_DATA = [
   ...belgium,
   ...finland,
 ];
-appendWeaponBranch(SMALL_ARMS_DATA, WEAPONS_CLASSIFICATION.smallArms);
+appendWeaponBranch(SMALL_ARMS_DATA, WeaponClassification.smallArms);

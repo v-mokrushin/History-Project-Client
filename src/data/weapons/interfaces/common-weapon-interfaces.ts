@@ -22,7 +22,7 @@ export interface IBaseWeapon {
   nation?: INation;
   gallery?: IWeaponGallery;
   readonly article?: JSX.Element;
-  readonly intro?: string[];
+  readonly intro?: (string | undefined)[];
   readonly videomaterials?: string[];
   readonly sections?: string[];
   readonly models?: IModel[];

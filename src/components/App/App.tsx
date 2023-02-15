@@ -15,6 +15,7 @@ import NationSelectionPage from "../../pages/NationSelectionPage/NationSelection
 import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
 import "../../stores/mobx/index";
+import ArtilcleCreatorPage from "pages/ArtilcleCreatorPage/ArtilcleCreatorPage";
 
 function App() {
   React.useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
         <Layout>
           <Routes>
             <Route index element={<HomePage />} />
+            <Route path="/article-creator" element={<ArtilcleCreatorPage />} />
             <Route path="/articles" element={<ArticlesPage />}></Route>
             <Route path="/articles/:articleId" element={<ArticlePage />} />
             <Route path="/weapons/" element={<WeaponsBranchSelectionPage />} />

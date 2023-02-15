@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Input from "components/Controls/Input/Input";
 import Filter from "components/Controls/Filter/Filter";
 import filtersStore from "stores/mobx/filtersStore";
-import { WEAPONS_TYPE_METHODS } from "constants/weapon-types";
+import { WeaponClassificationMethods } from "constants/weapon-types";
 import { Weapons } from "data/weapons/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import Button from "components/Buttons/Button/Button";
@@ -33,7 +33,7 @@ const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
       />
       <Filter
         title="Тип"
-        selectionVariants={WEAPONS_TYPE_METHODS.getTypesArrayWithAll(
+        selectionVariants={WeaponClassificationMethods.getTypesArrayWithAll(
           weapons[0].branch!
         )}
         setterCallback={filtersStore.setType.bind(filtersStore)}

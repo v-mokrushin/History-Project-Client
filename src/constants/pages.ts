@@ -1,4 +1,4 @@
-import { NATIONS_METHODS } from "./nations";
+import { NationsMethods } from "./nations";
 
 export interface IPage {
   readonly path: string;
@@ -37,6 +37,13 @@ const pages = {
     "Статьи",
     "статей",
     "Articles"
+  ),
+  articlesCreator: Page(
+    "article-creator",
+    "/images/backgrounds/article-creator.jpg",
+    "Cоздание статьи",
+    "создание статей",
+    "Article Creator"
   ),
   weapons: Page(
     "weapons",
@@ -91,7 +98,7 @@ const pages = {
 
 const summaryArray = [
   ...Object.values(pages),
-  ...NATIONS_METHODS.getNationsAsArray(),
+  ...NationsMethods.getNationsAsArray(),
 ];
 
 // ------------------------------------------------------------------------------

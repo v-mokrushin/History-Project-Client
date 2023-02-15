@@ -176,10 +176,16 @@ export const Nations = {
 
 // -------------------------------------------------------------------------
 
-export const NATIONS_METHODS = {
-  getObjectByPath(path: string | undefined) {
+export const NationsMethods = {
+  getByPath(path: string | undefined) {
     for (let nation of Object.values(Nations)) {
       if (nation.path === path) return nation;
+    }
+  },
+  getByName(name: string | undefined) {
+    console.log(Object.values(Nations))
+    for (let nation of Object.values(Nations)) {
+      if (nation.name.russian === name) return nation;
     }
   },
   getNationsAsArray(): INation[] {

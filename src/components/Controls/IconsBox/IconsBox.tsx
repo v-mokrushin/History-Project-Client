@@ -3,6 +3,7 @@ import styles from "./IconsBox.module.scss";
 import classNames from "classnames";
 import ButtonSearch from "components/Buttons/ButtonSearch/ButtonSearch";
 import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
+import ButtonTool from "components/Buttons/ButtonTool/ButtonTool";
 
 interface IIconsBoxProps {
   burgerType?: boolean;
@@ -18,6 +19,7 @@ const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
         className
       )}
     >
+      <ButtonTool />
       <ButtonSearch />
       <LanguageSwitcher />
     </div>

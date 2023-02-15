@@ -179,7 +179,7 @@ const ALL_TYPE: IWeaponType = {
   },
 };
 
-export const WEAPONS_CLASSIFICATION = {
+export const WeaponClassification = {
   armoredVehicle,
   aviation,
   smallArms,
@@ -193,43 +193,49 @@ function WeaponType(russianName: string): IWeaponType {
 
 // ----------------------------------------------------------------------------
 
-export const WEAPONS_TYPE_METHODS = {
+export const WeaponClassificationMethods = {
   getByPath(path: string | undefined): IWeaponType | undefined {
-    for (let val of Object.values(WEAPONS_CLASSIFICATION)) {
+    for (let val of Object.values(WeaponClassification)) {
       if (val.path === path) return val;
     }
     return undefined;
+  },
+  getByName(name: string | undefined): IWeaponType {
+    for (let val of Object.values(WeaponClassification.armoredVehicle)) {
+      if (val.name?.russian === name) return val;
+    }
+    return WeaponClassification.armoredVehicle.armoredCar;
   },
   getAllType(): IWeaponType {
     return ALL_TYPE;
   },
   getTypesArrayWithAll(weaponBranch: IWaponBranch): string[] {
-    return [this.getAllType().name.russian, ...getTypesArray(weaponBranch)];
+    return [this.getAllType().name.russian, ...this.getTypesArray(weaponBranch)];
+  },
+  getTypesArray(weaponBranch: IWaponBranch): string[] {
+    return Object.values(weaponBranch)
+      .map((item) => item.name?.russian)
+      .filter((item) => item != undefined);
   },
   isAllType(type: IWeaponType): boolean {
     return this.getAllType() === type;
   },
   identity: {
     isArmoredVehicle(weapon: TWeapon): boolean {
-      return weapon.branch == WEAPONS_CLASSIFICATION.armoredVehicle;
+      return weapon.branch == WeaponClassification.armoredVehicle;
     },
     isAviation(weapon: TWeapon): boolean {
-      return weapon.branch == WEAPONS_CLASSIFICATION.aviation;
+      return weapon.branch == WeaponClassification.aviation;
     },
     isSmallArms(weapon: TWeapon): boolean {
-      return weapon.branch == WEAPONS_CLASSIFICATION.smallArms;
+      return weapon.branch == WeaponClassification.smallArms;
     },
     isArtillery(weapon: TWeapon): boolean {
-      return weapon.branch == WEAPONS_CLASSIFICATION.artillery;
+      return weapon.branch == WeaponClassification.artillery;
     },
     isGrenadeLaunchers(weapon: TWeapon): boolean {
-      return weapon.branch == WEAPONS_CLASSIFICATION.grenadeLaunchers;
+      return weapon.branch == WeaponClassification.grenadeLaunchers;
     },
   },
 };
 
-function getTypesArray(weaponBranch: IWaponBranch): string[] {
-  return Object.values(weaponBranch)
-    .map((item) => item.name?.russian)
-    .filter((item) => item != undefined);
-}

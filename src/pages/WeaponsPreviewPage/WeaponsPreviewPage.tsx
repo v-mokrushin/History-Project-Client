@@ -6,8 +6,8 @@ import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWra
 import Timeline from "../../components/Graphics/Timeline/Timeline";
 import SpecialLogo from "../../components/Graphics/SpecialLogo/SpecialLogo";
 import Title from "../../components/Texts/Title/Title";
-import { Nations, NATIONS_METHODS } from "../../constants/nations";
-import { WEAPONS_TYPE_METHODS } from "../../constants/weapon-types";
+import { Nations, NationsMethods } from "../../constants/nations";
+import { WeaponClassificationMethods } from "../../constants/weapon-types";
 import { SPECIAL_LOGO_TYPE } from "../../components/Graphics/SpecialLogo/constants";
 import styles from "./WeaponsPreviewPage.module.scss";
 import Filter from "../../components/Controls/Filter/Filter";
@@ -31,8 +31,8 @@ import { Weapons } from "data/weapons/weapons";
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
-  const weaponsBranchObject = WEAPONS_TYPE_METHODS.getByPath(weaponsBranchPath);
-  const nationObject = NATIONS_METHODS.getObjectByPath(nationPath);
+  const weaponsBranchObject = WeaponClassificationMethods.getByPath(weaponsBranchPath);
+  const nationObject = NationsMethods.getByPath(nationPath);
   const selectedWeapons: TWeapon[] = React.useMemo(
     () => Weapons.selectWeapons(weaponsBranchPath, nationPath),
     []
@@ -104,7 +104,7 @@ const WeaponsPreviewPage = observer(() => {
               <Timeline
                 contentCollection={filteredWeapons}
                 uniqueDates={uniqueDates}
-                showFlags={NATIONS_METHODS.identity.isWorld(nationObject)}
+                showFlags={NationsMethods.identity.isWorld(nationObject)}
               />
             ) : (
               <Infographics weapons={filteredWeapons} setPreview={setPreview} />

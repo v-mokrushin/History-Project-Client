@@ -1,5 +1,5 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
-import { WEAPONS_CLASSIFICATION } from "../../../constants/weapon-types";
+import { WeaponClassification } from "../../../constants/weapon-types";
 import { Nations } from "../../../constants/nations";
 import { TWeapon } from "../interfaces/common-weapon-interfaces";
 import { ChiefDesigners } from "../departments/chief-designers";
@@ -16,14 +16,14 @@ const germany: TWeapon[] = [
   // },
   {
     name: "Panzerfaust 60",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1944,
     specifications: { common: {} },
   },
   {
     name: "8,8 cm Raketenwerfer 43 «Puppchen»",
     shortName: "«Puppchen»",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.heavy,
+    type: WeaponClassification.grenadeLaunchers.heavy,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -33,7 +33,7 @@ const germany: TWeapon[] = [
   },
   {
     name: "Panzerschreck",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -43,7 +43,7 @@ const germany: TWeapon[] = [
   },
   {
     name: "Faustpatrone",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -54,7 +54,7 @@ const germany: TWeapon[] = [
   },
   {
     name: "Sturmpistole",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1943,
     specifications: {
       common: {
@@ -64,7 +64,7 @@ const germany: TWeapon[] = [
   },
   {
     name: "Schiessbecher",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.muzzle,
+    type: WeaponClassification.grenadeLaunchers.muzzle,
     adoptedIntoServiceDate: 1940,
     specifications: { common: {} },
   },
@@ -73,7 +73,7 @@ const germany: TWeapon[] = [
 const usa: TWeapon[] = [
   {
     name: "M1 «Bazooka»",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -87,7 +87,7 @@ const usa: TWeapon[] = [
 const japan: TWeapon[] = [
   {
     name: "Type 4",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1944,
     specifications: {
       common: {
@@ -97,7 +97,7 @@ const japan: TWeapon[] = [
   },
   {
     name: "Type 10",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.hybrid,
+    type: WeaponClassification.grenadeLaunchers.hybrid,
     adoptedIntoServiceDate: 1921,
     specifications: { common: {} },
   },
@@ -106,7 +106,7 @@ const japan: TWeapon[] = [
 const britain: TWeapon[] = [
   {
     name: "PIAT",
-    type: WEAPONS_CLASSIFICATION.grenadeLaunchers.manual,
+    type: WeaponClassification.grenadeLaunchers.manual,
     adoptedIntoServiceDate: 1942,
     specifications: {
       common: {
@@ -133,5 +133,5 @@ export const GRENADE_LAUNCHERS_DATA = [
 ];
 appendWeaponBranch(
   GRENADE_LAUNCHERS_DATA,
-  WEAPONS_CLASSIFICATION.grenadeLaunchers
+  WeaponClassification.grenadeLaunchers
 );
