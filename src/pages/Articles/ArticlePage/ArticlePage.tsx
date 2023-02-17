@@ -2,24 +2,24 @@ import classNames from "classnames";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { CONTAINER_TYPES } from "../../components/Structure/Container/constants";
-import Container from "../../components/Structure/Container/Container";
-import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
-import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
-import { SPECIAL_LOGO_TYPE } from "../../components/Graphics/SpecialLogo/constants";
-import SpecialLogo from "../../components/Graphics/SpecialLogo/SpecialLogo";
-import { ANIMATIONS } from "../../constants/animations";
-import Title from "../../components/Texts/Title/Title";
-import { loadArticleContent } from "../../stores/redux/articleContent/loadingMiddleware";
+import { CONTAINER_TYPES } from "../../../components/Structure/Container/constants";
+import Container from "../../../components/Structure/Container/Container";
+import ContentWrapper from "../../../components/Structure/ContentWrapper/ContentWrapper";
+import IntroImage from "../../../components/Graphics/IntroImage/IntroImage";
+import { SPECIAL_LOGO_TYPE } from "../../../components/Graphics/SpecialLogo/constants";
+import SpecialLogo from "../../../components/Graphics/SpecialLogo/SpecialLogo";
+import { ANIMATIONS } from "../../../constants/animations";
+import Title from "../../../components/Texts/Title/Title";
+import { loadArticleContent } from "../../../stores/redux/articleContent/loadingMiddleware";
 import {
   selectArticleContentById,
   selectArticleContentLoadingStatus,
   selectIsExistingId,
-} from "../../stores/redux/articleContent/selectors";
-import { LOADING_STATUSES } from "../../stores/redux/constants";
+} from "../../../stores/redux/articleContent/selectors";
+import { LOADING_STATUSES } from "../../../stores/redux/constants";
 import styles from "./ArticlePage.module.scss";
-import Text from "../../components/Texts/Text/Text";
-import ReadingProgressBar from "../../components/Graphics/ReadingProgressBar/ReadingProgressBar";
+import Text from "../../../components/Texts/Text/Text";
+import ReadingProgressBar from "../../../components/Graphics/ReadingProgressBar/ReadingProgressBar";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import { Scroll } from "utils/scroll";

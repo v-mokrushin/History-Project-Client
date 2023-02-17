@@ -9,7 +9,7 @@ import { getShortNumber } from "utils/common";
 import { NavLink } from "react-router-dom";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
-import WeaponsPreviewPage from "pages/WeaponsPreviewPage/WeaponsPreviewPage";
+import WeaponsPreviewPage from "pages/Weapons/WeaponsPreviewPage/WeaponsPreviewPage";
 import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
 
 interface IInfographicsProps {

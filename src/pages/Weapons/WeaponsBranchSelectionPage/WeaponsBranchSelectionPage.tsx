@@ -1,12 +1,12 @@
 import React from "react";
-import ContentWrapper from "../../components/Structure/ContentWrapper/ContentWrapper";
-import SectionCard from "../../components/Cards/SectionCard/SectionCard";
-import Container from "../../components/Structure/Container/Container";
-import IntroImage from "../../components/Graphics/IntroImage/IntroImage";
+import ContentWrapper from "../../../components/Structure/ContentWrapper/ContentWrapper";
+import SectionCard from "../../../components/Cards/SectionCard/SectionCard";
+import Container from "../../../components/Structure/Container/Container";
+import IntroImage from "../../../components/Graphics/IntroImage/IntroImage";
 import styles from "./WeaponsBranchSelectionPage.module.scss";
-import Title from "../../components/Texts/Title/Title";
+import Title from "../../../components/Texts/Title/Title";
 import { useLocation, useParams } from "react-router-dom";
-import { Pages } from "../../constants/pages";
+import { Pages } from "../../../constants/pages";
 import { useTranslation } from "react-i18next";
 
 export default function WeaponsBranchSelectionPage() {
