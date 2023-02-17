@@ -14,15 +14,13 @@ interface IGalleryPageProps {
   className?: string;
 }
 
-const testPhotos = new Array(11)
+const testPhotos = new Array(29)
   .fill("")
   .map((_, index: number) => `/images/gallery/${index + 1}.jpg`);
-console.log(testPhotos);
 
 const GalleryPage: React.FC<IGalleryPageProps> = ({ className }) => {
+  commonApplicationStore.setShowOrdinarHeader(true);
   React.useEffect(() => {
-    commonApplicationStore.setShowOrdinarHeader(true);
-
     return () => {
       commonApplicationStore.setShowOrdinarHeader(false);
     };
@@ -30,10 +28,10 @@ const GalleryPage: React.FC<IGalleryPageProps> = ({ className }) => {
 
   return (
     <ContentWrapper
-      showBreadcrumbs={false}
+      // showBreadcrumbs={false}
       containerType={CONTAINER_TYPES.wide}
     >
-      <Container type={CONTAINER_TYPES.wide} className={ANIMATIONS.fadeIn}>
+      <Container type={CONTAINER_TYPES.wide}>
         <Title>Галерея</Title>
         <div className={styles.root}>
           <div className={styles.sectionsBox}>

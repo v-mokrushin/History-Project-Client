@@ -52,13 +52,12 @@ const WeaponsPreviewPage = observer(() => {
     toShow: false,
     element: document.documentElement,
   });
+  commonApplicationStore.setShowOrdinarHeader(true);
 
   React.useEffect(() => {
     const scrollEvent = () => {
       scrollMemoryStore.setValue(window.scrollY);
     };
-
-    commonApplicationStore.setShowOrdinarHeader(true);
 
     scrollMemoryStore.activate();
     document.addEventListener("scroll", scrollEvent);

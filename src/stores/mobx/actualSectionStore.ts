@@ -4,12 +4,9 @@ import { NAVIGATION_ACTUAL_SECTION } from "../../components/Structure/Navigation
 
 export class ActualSectionStore {
   public actualSection: NAVIGATION_ACTUAL_SECTION | null;
-  private length: number | undefined;
 
   constructor() {
     this.actualSection = null;
-    this.length = 0;
-
     makeAutoObservable(this);
   }
 
@@ -35,7 +32,6 @@ export class ActualSectionStore {
       DocumentTitle.set("Галерея");
     }
 
-    this.length = length;
   }
 
   isHome(): boolean {
@@ -44,13 +40,6 @@ export class ActualSectionStore {
 
   isWeapons(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.weapons;
-  }
-
-  isWeaponsPreview(): boolean {
-    return (
-      this.actualSection === NAVIGATION_ACTUAL_SECTION.weapons &&
-      this.length === 4
-    );
   }
 
   isArticles(): boolean {

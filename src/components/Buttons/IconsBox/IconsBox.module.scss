@@ -3,7 +3,7 @@
 .root {
   display: flex;
   align-items: center;
-  gap: 1.2vw;
+  gap: 0.8vw;
 
   @include media-breakpoint-down(lg) {
     position: absolute;
