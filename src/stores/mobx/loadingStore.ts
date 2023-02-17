@@ -25,7 +25,7 @@ export class LoadingStore {
         runInAction(() => {
           this.status = false;
         });
-      }, 700);
+      }, 1000);
     } else {
       this.status = false;
     }

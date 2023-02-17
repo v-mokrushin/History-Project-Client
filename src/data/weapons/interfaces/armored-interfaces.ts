@@ -10,7 +10,7 @@ export interface IArmoredVehicle extends IBaseWeapon {
 export interface IArmoredVehiclesSpecifications {
   readonly common: IWaponCommonSpec;
   readonly crew?: ICrew;
-  readonly sizes?: IArmoredVehiclesSizes;
+  sizes?: IArmoredVehiclesSizes;
   readonly armoring?: IArmoredVehiclesArmoring;
   readonly weapon?: any;
   readonly mobility?: any;
