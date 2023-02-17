@@ -13,6 +13,9 @@ export const DocumentTitle = {
   setWarningPage(): void {
     document.title = `${logo}`;
   },
+  set(title: string): void {
+    document.title = `${logo} | ${title}`;
+  },
   addRoute(route: string): void {
     document.title += ` | ${route}`;
   },

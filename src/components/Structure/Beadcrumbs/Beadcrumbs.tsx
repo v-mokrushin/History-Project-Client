@@ -23,8 +23,6 @@ const Beadcrumbs = observer(() => {
     actualSectionStore.set(pathNames[1], labels.length);
   }, [locationPathname]);
 
-  // console.log(labels);
-
   return (
     <div className={styles.root}>
       {labels.length > 1 &&

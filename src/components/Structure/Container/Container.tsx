@@ -19,6 +19,7 @@ export default function Container({
       className={classNames({
         className,
         [styles.default]: type === CONTAINER_TYPES.default,
+        [styles.wide]: type === CONTAINER_TYPES.wide,
         [styles.aside]: type === CONTAINER_TYPES.aside,
       })}
     >

@@ -16,6 +16,7 @@ import WeaponDisplayPage from "../../pages/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/WeaponsPreviewPage/WeaponsPreviewPage";
 import "../../stores/mobx/index";
 import ArtilcleCreatorPage from "pages/ArtilcleCreatorPage/ArtilcleCreatorPage";
+import GalleryPage from "pages/GalleryPage/GalleryPage";
 
 function App() {
   React.useEffect(() => {
@@ -52,12 +53,7 @@ function App() {
                 <WarningPage pageType={WARNING_PAGE_TYPE.workInProgress} />
               }
             />
-            <Route
-              path="/links"
-              element={
-                <WarningPage pageType={WARNING_PAGE_TYPE.workInProgress} />
-              }
-            />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route
               path="*"
               element={<WarningPage pageType={WARNING_PAGE_TYPE.notFound} />}

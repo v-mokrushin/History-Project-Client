@@ -9,7 +9,8 @@ import actualSectionStore from "../../../stores/mobx/actualSectionStore";
 import burgerStore from "../../../stores/mobx/burgerStore";
 import settingsStore from "stores/mobx/settingsStore";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
+import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 interface INavigationProps {
   isTypeBurger?: boolean;
@@ -18,7 +19,6 @@ interface INavigationProps {
 const Navigation: React.FC<INavigationProps> = observer(
   ({ isTypeBurger = false }) => {
     const actualSection = actualSectionStore.actualSection;
-    const isArticlesPreview = actualSectionStore.isWeaponsPreview();
     const { t, i18n } = useTranslation();
 
     function actionOnClose() {
@@ -67,7 +67,8 @@ const Navigation: React.FC<INavigationProps> = observer(
           <div
             className={classNames(
               styles.weaponBox__suggestion,
-              isArticlesPreview && styles.weaponBox__suggestion_opaque
+              commonApplicationStore.showOrdinarHeader &&
+                styles.weaponBox__suggestion_opaque
             )}
           >
             <NavLink
@@ -120,7 +121,19 @@ const Navigation: React.FC<INavigationProps> = observer(
         >
           {t("navigation.battles")}
         </NavLink>
-        {/* <LanguageSwitcher burgerType={isTypeBurger} /> */}
+        <NavLink
+          to="/gallery"
+          className={classNames(
+            styles.link,
+            actualSectionStore.isGallery() && styles.link_active
+          )}
+          onClick={() => {
+            actionOnClose();
+            actualSectionStore.set("/gallery");
+          }}
+        >
+          {t("navigation.gallery")}
+        </NavLink>
         <div className={styles.musicBox}>
           <span
             className={classNames(styles.link, styles.link_mod)}

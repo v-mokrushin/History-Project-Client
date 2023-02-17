@@ -7,18 +7,21 @@ import BurgerIcon from "../Burger/BurgerIcon";
 import Navigation from "../Navigation/Navigation";
 import { useLocation } from "react-router-dom";
 import { Pages } from "../../../constants/pages";
-import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
+import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import ButtonSearch from "components/Buttons/ButtonSearch/ButtonSearch";
-import IconsBox from "components/Controls/IconsBox/IconsBox";
+import IconsBox from "components/Buttons/IconsBox/IconsBox";
+import actualSectionStore from "stores/mobx/actualSectionStore";
+import { observer } from "mobx-react-lite";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
-export default function Header() {
+const Header = observer(() => {
   const path: string = useLocation().pathname;
 
   return (
     <header
       className={classNames(
         styles.root,
-        Pages.getPathLength(path) === 4 && styles.ordinar,
+        commonApplicationStore.showOrdinarHeader && styles.ordinar,
         ANIMATIONS.fadeIn
       )}
     >
@@ -28,4 +31,6 @@ export default function Header() {
       <IconsBox />
     </header>
   );
-}
+});
+
+export default Header;

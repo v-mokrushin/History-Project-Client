@@ -3,4 +3,5 @@ export enum NAVIGATION_ACTUAL_SECTION {
   articles,
   weapons,
   battles,
+  gallery,
 }

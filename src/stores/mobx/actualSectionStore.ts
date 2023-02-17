@@ -30,6 +30,11 @@ export class ActualSectionStore {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.battles;
     }
 
+    if (path == "/gallery") {
+      this.actualSection = NAVIGATION_ACTUAL_SECTION.gallery;
+      DocumentTitle.set("Галерея");
+    }
+
     this.length = length;
   }
 
@@ -54,6 +59,10 @@ export class ActualSectionStore {
 
   isBattles(): boolean {
     return this.actualSection === NAVIGATION_ACTUAL_SECTION.battles;
+  }
+
+  isGallery(): boolean {
+    return this.actualSection === NAVIGATION_ACTUAL_SECTION.gallery;
   }
 }
 

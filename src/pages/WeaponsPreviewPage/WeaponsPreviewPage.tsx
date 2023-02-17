@@ -27,11 +27,13 @@ import { ANIMATIONS } from "constants/animations";
 import Infographics from "components/Graphics/Infographics/Infographics";
 import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
 import { Weapons } from "data/weapons/weapons";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
-  const weaponsBranchObject = WeaponClassificationMethods.getByPath(weaponsBranchPath);
+  const weaponsBranchObject =
+    WeaponClassificationMethods.getByPath(weaponsBranchPath);
   const nationObject = NationsMethods.getByPath(nationPath);
   const selectedWeapons: TWeapon[] = React.useMemo(
     () => Weapons.selectWeapons(weaponsBranchPath, nationPath),
@@ -56,12 +58,15 @@ const WeaponsPreviewPage = observer(() => {
       scrollMemoryStore.setValue(window.scrollY);
     };
 
+    commonApplicationStore.setShowOrdinarHeader(true);
+
     scrollMemoryStore.activate();
     document.addEventListener("scroll", scrollEvent);
     scrollMemoryStore.shouldRemember = true;
 
     return () => {
       document.removeEventListener("scroll", scrollEvent);
+      commonApplicationStore.setShowOrdinarHeader(false);
       scrollMemoryStore.shouldRemember = false;
     };
   }, []);

@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import IconsBox from "components/Controls/IconsBox/IconsBox";
-import LanguageSwitcher from "components/Controls/LanguageSwitcher/LanguageSwitcher";
+import IconsBox from "components/Buttons/IconsBox/IconsBox";
+import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import { observer } from "mobx-react";
 import React from "react";
 import burgerStore from "../../../stores/mobx/burgerStore";

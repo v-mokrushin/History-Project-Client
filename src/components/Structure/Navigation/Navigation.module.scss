@@ -91,6 +91,10 @@
 
   &:hover::after {
     transform: scaleX(1);
+
+    @include media-breakpoint-down(md) {
+      transform: scaleX(0);
+    }
   }
 }
 
@@ -137,7 +141,7 @@
       gap: 6px;
     }
 
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(md) {
       display: none;
     }
   }

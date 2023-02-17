@@ -12,6 +12,7 @@ i18n.use(initReactI18next).init({
         "navigation.articles": "статьи",
         "navigation.weapons": "Вооружения",
         "navigation.battles": "сражения",
+        "navigation.gallery": "галерея",
         "navigation.music": "музыка",
         "footer.about": "о проекте",
         "footer.team": "команда",

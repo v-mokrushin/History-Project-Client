@@ -37,47 +37,4 @@
       }
     }
   }
-
-  .preloader {
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    height: 45%;
-    aspect-ratio: 1 / 1;
-
-    &::after {
-      content: " ";
-      display: block;
-      aspect-ratio: 1 / 1;
-      height: 100%;
-      border-radius: 50%;
-      border: 5px solid black;
-      border-color: black transparent black transparent;
-      animation: lds-dual-ring 1.2s linear infinite;
-
-      @include media-breakpoint-down(FHD) {
-        border-width: 4px;
-      }
-
-      @include media-breakpoint-down(xl) {
-        border-width: 3px;
-      }
-
-      @include media-breakpoint-down(md) {
-        border-width: 2px;
-      }
-    }
-
-    @keyframes lds-dual-ring {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  }
 }
