@@ -71,6 +71,15 @@
   will-change: transform;
 }
 
+.video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  will-change: transform;
+}
+
 .preloader {
   position: absolute;
   left: 0;

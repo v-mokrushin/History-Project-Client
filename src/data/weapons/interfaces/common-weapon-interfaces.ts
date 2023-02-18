@@ -26,6 +26,7 @@ export interface IBaseWeapon {
   readonly videomaterials?: string[];
   readonly sections?: string[];
   readonly models?: IModel[];
+  isVideoIntro?: boolean;
 }
 
 export type TWeapon = IArmoredVehicle | IAircraft;
@@ -49,6 +50,7 @@ export interface IWeaponGallery {
   path: string;
   isColorizedIcon: boolean;
   get icon(): string;
+  get intro(): string;
   photos?: string[];
 }
 

@@ -41,10 +41,26 @@ const WeaponCard = observer(
         )}
         key={Math.random()}
       >
-        <div
+        {/* <div
           className={styles.background}
           style={getBackgroundImageStyleObject(weapon.gallery?.icon)}
-        ></div>
+        ></div> */}
+        {!weapon.isVideoIntro ? (
+          <div
+            className={styles.background}
+            style={getBackgroundImageStyleObject(weapon.gallery?.icon)}
+          ></div>
+        ) : (
+          <video
+            className={classNames(styles.video)}
+            autoPlay
+            loop
+            muted
+            poster={weapon.gallery?.icon}
+          >
+            <source src={weapon.gallery?.intro} type="video/mp4" />
+          </video>
+        )}
         <Preloader color="white" />
         {showFlag && weapon.nation && (
           <Flag nation={weapon.nation} minimized isNavLink={false} />

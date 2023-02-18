@@ -41,6 +41,7 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     article: <IS_2 />,
     photosNumber: 10,
+    isVideoIntro: true,
     sections: [
       "Введение",
       "Фотографии",
@@ -421,6 +422,7 @@ const ussr: IArmoredVehicle[] = [
     name: "БТ-7",
     type: WeaponClassification.armoredVehicle.lightTank,
     adoptedIntoServiceDate: 1935,
+    isVideoIntro: true,
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Kharkov183,

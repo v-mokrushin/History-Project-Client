@@ -31,7 +31,10 @@ export class ActualSectionStore {
       this.actualSection = NAVIGATION_ACTUAL_SECTION.gallery;
       DocumentTitle.set("Галерея");
     }
+  }
 
+  throw(): void {
+    this.actualSection = null;
   }
 
   isHome(): boolean {

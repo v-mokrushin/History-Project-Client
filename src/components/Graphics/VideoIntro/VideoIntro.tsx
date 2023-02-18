@@ -2,26 +2,43 @@ import React, { useRef, useEffect } from "react";
 import styles from "./VideoIntro.module.scss";
 import classNames from "classnames";
 import { ANIMATIONS } from "../../../constants/animations";
+import Preloader from "../Preloader/Preloader";
 
-export default function Intro() {
+interface IVideoIntroProps {
+  size?: "maximized" | "half";
+  path?: string;
+  poster?: string;
+}
+
+export default function VideoIntro({
+  size = "maximized",
+  path = "/videos/intro.mp4",
+  poster = "",
+}: IVideoIntroProps) {
   return (
-    <div className={styles.root}>
-      <div className={styles.video}>
+    <div className={classNames(styles.root)}>
+      <div
+        className={classNames(
+          styles.video,
+          size === "half" && styles.video_half
+        )}
+      >
+        {/* <Preloader color="white" /> */}
         <video
-          className={classNames(styles.video__media, ANIMATIONS.fadeIn)}
+          className={classNames(
+            styles.video__media,
+
+            ANIMATIONS.fadeIn
+          )}
           autoPlay
           loop
           muted
+          preload="auto"
+          poster={poster}
         >
-          <source src={"/videos/intro.mp4"} type="video/mp4" />
+          <source src={path} type="video/mp4" />
         </video>
       </div>
-      {/* <div className={styles.content}>
-        <div className={styles.container}>
-          <h2 className={styles.title}>Энциклопедия по</h2>
-          <h2 className={styles.title}>Второй Мировой войне</h2>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -28,6 +28,7 @@ import Infographics from "components/Graphics/Infographics/Infographics";
 import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
 import { Weapons } from "data/weapons/weapons";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 
 const WeaponsPreviewPage = observer(() => {
   const { weaponsBranchPath } = useParams();
@@ -52,13 +53,13 @@ const WeaponsPreviewPage = observer(() => {
     toShow: false,
     element: document.documentElement,
   });
-  commonApplicationStore.setShowOrdinarHeader(true);
 
   React.useEffect(() => {
     const scrollEvent = () => {
       scrollMemoryStore.setValue(window.scrollY);
     };
 
+    commonApplicationStore.setShowOrdinarHeader(true);
     scrollMemoryStore.activate();
     document.addEventListener("scroll", scrollEvent);
     scrollMemoryStore.shouldRemember = true;
@@ -67,6 +68,7 @@ const WeaponsPreviewPage = observer(() => {
       document.removeEventListener("scroll", scrollEvent);
       commonApplicationStore.setShowOrdinarHeader(false);
       scrollMemoryStore.shouldRemember = false;
+      console.log("close");
     };
   }, []);
 
@@ -75,6 +77,7 @@ const WeaponsPreviewPage = observer(() => {
 
   return (
     <div className={styles.root}>
+      {/* <VideoIntro size="half" path="/videos/aviation.mp4" /> */}
       {preview.toShow && (
         <div
           className={styles.preview}

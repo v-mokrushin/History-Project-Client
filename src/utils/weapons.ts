@@ -49,24 +49,24 @@ export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
   );
 }
 
-export function getGallery(weapon: TWeapon): IWeaponGallery {
-  let weaponName: string = weapon.name;
-  if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
+// export function getGallery(weapon: TWeapon): IWeaponGallery {
+//   let weaponName: string = weapon.name;
+//   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
-  const gallery: IWeaponGallery = {
-    path: getGalleryPath(weaponName, weapon),
-    isColorizedIcon: false,
-    get icon() {
-      if (!this.isColorizedIcon) {
-        return this.path + "icon.jpg";
-      } else {
-        return this.path + "icon-color.jpg";
-      }
-    },
-  };
+//   const gallery: IWeaponGallery = {
+//     path: getGalleryPath(weaponName, weapon),
+//     isColorizedIcon: false,
+//     get icon() {
+//       if (!this.isColorizedIcon) {
+//         return this.path + "icon.jpg";
+//       } else {
+//         return this.path + "icon-color.jpg";
+//       }
+//     },
+//   };
 
-  return gallery;
-}
+//   return gallery;
+// }
 
 export function createGallery(weapon: TWeapon): void {
   let weaponName: string = weapon.name;
@@ -81,6 +81,9 @@ export function createGallery(weapon: TWeapon): void {
       } else {
         return this.path + "icon-color.jpg";
       }
+    },
+    get intro() {
+      return this.path + "intro.mp4";
     },
   };
 

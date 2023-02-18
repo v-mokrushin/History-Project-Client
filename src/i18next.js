@@ -16,7 +16,7 @@ i18n.use(initReactI18next).init({
         "navigation.music": "музыка",
         "footer.about": "о проекте",
         "footer.team": "команда",
-        "footer.feedback": "музыка",
+        "footer.feedback": "обратная связь",
         "footer.privacy_policy": "политика конфиденциальности",
         "filters.input": "Название",
         "filters.country": "Страна",

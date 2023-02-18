@@ -33,6 +33,7 @@ import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import { Alert } from "@material-ui/lab";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { FormInitialState, IFormState } from "./interfaces";
+import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -211,7 +212,8 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   return (
     <div className={classNames(styles.root, className)}>
       <>
-        <IntroImage imageUrl={pageInfo.introImage} animated />
+        {/* <IntroImage imageUrl={pageInfo.introImage} animated /> */}
+        <VideoIntro size="half" path="/videos/building.mp4" />
         <ContentWrapper>
           <Container>
             <Title>{pageInfo.name.russian}</Title>

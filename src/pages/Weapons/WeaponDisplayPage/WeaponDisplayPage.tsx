@@ -30,6 +30,7 @@ import imageViewerStore from "stores/mobx/imageViewerStore";
 import TextIntro from "components/Texts/TextIntro/TextIntro";
 import { Scroll } from "utils/scroll";
 import Preloader from "components/Graphics/Preloader/Preloader";
+import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -51,7 +52,16 @@ const WeaponDisplayPage = observer(() => {
     <div className={classNames(styles.root)}>
       <>
         {weapon.isReady && <ReadingProgressBar />}
-        {weapon.gallery && <IntroImage imageUrl={weapon.gallery.icon} />}
+        {weapon.gallery &&
+          (!weapon.isVideoIntro ? (
+            <IntroImage imageUrl={weapon.gallery.icon} />
+          ) : (
+            <VideoIntro
+              path={weapon.gallery?.intro}
+              poster={weapon.gallery.icon}
+              size="half"
+            />
+          ))}
         <ContentWrapper className={ANIMATIONS.fadeIn}>
           <Container type={CONTAINER_TYPES.aside}>
             <ContentList
