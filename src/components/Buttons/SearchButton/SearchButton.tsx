@@ -1,16 +1,16 @@
 import React from "react";
-import styles from "./ButtonSearch.module.scss";
+import styles from "./SearchButton.module.scss";
 import classNames from "classnames";
 import { observer } from "mobx-react";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
-interface IButtonSearchProps {
+interface ISearchButtonProps {
   burgerType?: boolean;
   className?: string;
 }
 
-const ButtonSearch = observer(
-  ({ burgerType, className }: IButtonSearchProps) => {
+const SearchButton = observer(
+  ({ burgerType, className }: ISearchButtonProps) => {
     return (
       <button
         onClick={() => commonApplicationStore.showSearchDialog()}
@@ -20,4 +20,4 @@ const ButtonSearch = observer(
   }
 );
 
-export default ButtonSearch;
+export default SearchButton;

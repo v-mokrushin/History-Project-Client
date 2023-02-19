@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./IconsBox.module.scss";
 import classNames from "classnames";
-import ButtonSearch from "components/Buttons/ButtonSearch/ButtonSearch";
+import ButtonSearch from "components/Buttons/SearchButton/SearchButton";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
-import ButtonTool from "components/Buttons/ButtonTool/ButtonTool";
+import ToolButton from "components/Buttons/ToolButton/ToolButton";
+import AccountButton from "../AccountButton/AccountButton";
 
 interface IIconsBoxProps {
   burgerType?: boolean;
@@ -19,9 +20,11 @@ const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
         className
       )}
     >
-      <ButtonTool />
+      <ToolButton />
       <ButtonSearch />
-      <LanguageSwitcher />
+      {/* <LanguageSwitcher /> */}
+      <AccountButton label="Регистрация" color="grey" />
+      <AccountButton label="Войти" color="gold" />
     </div>
   );
 };

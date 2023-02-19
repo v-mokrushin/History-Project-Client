@@ -44,9 +44,10 @@
   transition: color 300ms ease;
 
   @include media-breakpoint-down(xl) {
-    font-size: 28px;
+    font-size: 25px;
     letter-spacing: 4px;
   }
+
 }
 
 .titleDates {
@@ -59,7 +60,7 @@
   transition: color 300ms ease;
 
   @include media-breakpoint-down(xl) {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 6px;
   }
 }
