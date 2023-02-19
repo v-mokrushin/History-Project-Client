@@ -67,7 +67,7 @@ const Navigation: React.FC<INavigationProps> = observer(
           <div
             className={classNames(
               styles.weaponBox__suggestion,
-              commonApplicationStore.showOrdinarHeader &&
+              commonApplicationStore.rdinarHeaderVisibility &&
                 styles.weaponBox__suggestion_opaque
             )}
           >

@@ -31,7 +31,7 @@
   max-height: 70%;
   transform: translateY(350%) translateX(-50%);
   transition: transform 350ms ease;
-  border: 2px solid $gold;
+  // border: 2px solid $gold;
   transform: height 200ms ease;
 
   @include media-breakpoint-down(xl) {

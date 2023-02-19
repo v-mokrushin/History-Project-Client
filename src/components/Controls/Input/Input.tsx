@@ -5,6 +5,9 @@ import filtersStore from "stores/mobx/filtersStore";
 import { observer } from "mobx-react";
 
 interface IInputProps {
+  theme?: "light" | "dark";
+  type: "text" | "password";
+  hideIcon?: boolean;
   setter?: (text: string) => void;
   initialValue?: string;
   placeholder?: string;
@@ -12,16 +15,24 @@ interface IInputProps {
 }
 
 const Input = observer(
-  ({ setter, initialValue = "", placeholder, className }: IInputProps) => {
+  ({
+    setter,
+    initialValue = "",
+    type,
+    theme = "light",
+    hideIcon = false,
+    placeholder,
+    className,
+  }: IInputProps) => {
     const input = React.useRef<HTMLInputElement>(null);
     const [numberOfUse, setNumberOfUse] = React.useState<number>(0);
 
     return (
-      <div className={classNames(styles.root, className)}>
+      <div className={classNames(styles.root, styles[theme])}>
         <input
           data-testid="input"
           ref={input}
-          type="text"
+          type={type}
           className={styles.input}
           placeholder={placeholder ? placeholder + "..." : ""}
           value={numberOfUse === 0 ? initialValue : input.current?.value}
@@ -30,7 +41,7 @@ const Input = observer(
             setter && setter(input.current!.value);
           }}
         ></input>
-        <div className={styles.icon}></div>
+        {hideIcon || <div className={styles.icon}></div>}
       </div>
     );
   }

@@ -5,6 +5,7 @@ import ButtonSearch from "components/Buttons/SearchButton/SearchButton";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import ToolButton from "components/Buttons/ToolButton/ToolButton";
 import AccountButton from "../AccountButton/AccountButton";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 interface IIconsBoxProps {
   burgerType?: boolean;
@@ -24,7 +25,11 @@ const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
       <ButtonSearch />
       {/* <LanguageSwitcher /> */}
       <AccountButton label="Регистрация" color="grey" />
-      <AccountButton label="Войти" color="gold" />
+      <AccountButton
+        label="Войти"
+        color="gold"
+        onClick={() => commonApplicationStore.showLogInDialog()}
+      />
     </div>
   );
 };

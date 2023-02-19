@@ -21,6 +21,7 @@ const Filters: React.FC<IFiltersProps> = ({ className, weapons }) => {
   return (
     <div className={classNames(styles.root, className)}>
       <Input
+        type="text"
         setter={filtersStore.setNameFilter.bind(filtersStore)}
         placeholder={t("filters.input")!}
         initialValue={filtersStore.filters.name}

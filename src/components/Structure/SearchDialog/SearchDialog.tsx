@@ -69,6 +69,8 @@ const SearchDialog = observer(() => {
       >
         <Subtitle className={styles.title}>{t("search_dialog.title")}</Subtitle>
         <Input
+          theme="dark"
+          type="text"
           placeholder="Введите название..."
           initialValue={inputText}
           setter={setInputText}

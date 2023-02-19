@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import ImageViewer from "../../Graphics/ImageViewer/ImageViewer";
 import UpButton from "../../Buttons/UpButton/UpButton";
 import styles from "./Layout.module.scss";
+import LogIn from "../LogIn/LogIn";
 
 interface ILayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -18,6 +19,7 @@ export default function Layout({ children }: ILayoutProps) {
       <Burger />
       <ImageViewer />
       <SearchDialog />
+      <LogIn />
       <Header />
       <main className={styles.root}>{children}</main>
       <Footer />

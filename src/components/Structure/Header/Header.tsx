@@ -21,7 +21,7 @@ const Header = observer(() => {
     <header
       className={classNames(
         styles.root,
-        commonApplicationStore.showOrdinarHeader && styles.ordinar,
+        commonApplicationStore.rdinarHeaderVisibility && styles.ordinar,
         ANIMATIONS.fadeIn
       )}
     >
