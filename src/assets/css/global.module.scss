@@ -1,0 +1,21 @@
+@import "/src/assets/css/common.scss";
+
+.bold {
+  font-weight: 500;
+}
+
+.gold {
+  color: $gold;
+}
+
+.white {
+  color: $white;
+}
+
+.grey {
+  color: $grey;
+}
+
+.noMargin {
+  margin-bottom: 0px;
+}

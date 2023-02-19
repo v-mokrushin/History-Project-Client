@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import styles from "./Text.module.scss";
+import global_styles from "../../../assets/css/global.module.scss";
 
 interface ITextProps {
   bold?: boolean;
@@ -22,8 +23,8 @@ export default function Text({
       className={classNames(
         styles.root,
         noMargin && styles.noMargin,
-        bold && styles.bold,
-        styles[color],
+        bold && global_styles.bold,
+        global_styles[color],
         className
       )}
     >

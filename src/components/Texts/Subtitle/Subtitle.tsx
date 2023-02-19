@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import styles from "./Subtitle.module.scss";
+import global_styles from "../../../assets/css/global.module.scss";
 
 interface ISubtitleProps {
   noMargin?: boolean;
@@ -20,7 +21,7 @@ export default function Subtitle({
       id={id}
       className={classNames(
         styles.root,
-        noMargin && styles.noMargin,
+        noMargin && global_styles.noMargin,
         className
       )}
     >

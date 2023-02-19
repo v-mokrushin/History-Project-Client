@@ -83,7 +83,11 @@ export function createGallery(weapon: TWeapon): void {
       }
     },
     get intro() {
-      return this.path + "intro.mp4";
+      if (!this.isColorizedIcon) {
+        return this.path + "intro.mp4";
+      } else {
+        return this.path + "intro-color.mp4";
+      }
     },
   };
 

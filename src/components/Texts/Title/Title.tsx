@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import styles from "./Title.module.scss";
+import global_styles from "../../../assets/css/global.module.scss";
 
 interface ITitleProps {
   id?: string;
@@ -24,7 +25,7 @@ export default function Title({
         className,
         styles.title,
         centered && styles.centered,
-        noMargin && styles.noMargin
+        noMargin && global_styles.noMargin
       )}
     >
       {children}
