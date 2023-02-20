@@ -1,11 +1,9 @@
 import React from "react";
-import styles from "./LogIn.module.scss";
+import styles from "./RegistrationDialog.module.scss";
 import classNames from "classnames";
 import { observer } from "mobx-react";
 import { DocumentOverflow } from "utils/document-overflow";
 import Text from "components/Texts/Text/Text";
-import Preloader from "components/Graphics/Preloader/Preloader";
-import Title from "components/Texts/Title/Title";
 import Input from "../../Controls/Input/Input";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
@@ -13,53 +11,56 @@ import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
 
-const LogIn = observer(() => {
+const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [passwordConfirm, setPasswordConfirm] = React.useState("");
 
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
-        commonApplicationStore.hideLogInDialog();
+        commonApplicationStore.hideRegistrationDialog();
       }
     });
   }, []);
 
   React.useEffect(() => {
-    commonApplicationStore.logInDialogVisibility
+    commonApplicationStore.registrationDialogVisibility
       ? DocumentOverflow.setHidden()
       : DocumentOverflow.setAuto();
-  }, [commonApplicationStore.logInDialogVisibility]);
+  }, [commonApplicationStore.registrationDialogVisibility]);
 
   function clearForm() {
     setUsername("");
     setPassword("");
+    setPasswordConfirm("");
   }
 
   return (
     <div
       className={classNames(
         styles.root,
-        commonApplicationStore.logInDialogVisibility && styles.root_open
+        commonApplicationStore.registrationDialogVisibility && styles.root_open
       )}
     >
       <div
         className={classNames(
           styles.dialog,
-          commonApplicationStore.logInDialogVisibility && styles.dialog_open
+          commonApplicationStore.registrationDialogVisibility &&
+            styles.dialog_open
         )}
       >
         <button
           onClick={() => {
-            commonApplicationStore.hideLogInDialog();
+            commonApplicationStore.hideRegistrationDialog();
             clearForm();
           }}
           className={styles.closeButton}
         ></button>
         <Logo disableLink className={styles.logo} />
         <Subtitle color="white" className={styles.title}>
-          Вход
+          Регистрация
         </Subtitle>
         <div className={styles.separator}></div>
         <form onSubmit={(event) => event.preventDefault()}>
@@ -80,30 +81,46 @@ const LogIn = observer(() => {
               theme="dark"
               hideIcon
             />
+            <Input
+              label="Подтвердите пароль"
+              initialValue={passwordConfirm}
+              setter={setPasswordConfirm}
+              type="password"
+              theme="dark"
+              hideIcon
+            />
           </div>
           <button
             className={classNames(styles.submit)}
             onClick={() => {
               if (username === "") {
-                alert("Введите никнейм.");
+                alert("Придумайте никнейм.");
                 return;
               }
 
               if (password === "") {
-                alert("Введите пароль.");
+                alert("Придумайте пароль.");
+                return;
+              }
+
+              if (passwordConfirm === "") {
+                alert("Подтвердите пароль.");
+                return;
+              }
+
+              if (password !== passwordConfirm) {
+                alert("Пароли не совпадают.");
                 return;
               }
 
               setTimeout(() => {
-                burgerStore.setClose();
                 clearForm();
-                navigate("/account");
-                commonApplicationStore.hideLogInDialog();
+                commonApplicationStore.hideRegistrationDialog();
                 commonApplicationStore.setIsUserAuthorized(true);
               }, 500);
             }}
           >
-            <Text color="white">ВОЙТИ</Text>
+            <Text color="white">Зарегистрироваться</Text>
           </button>
         </form>
       </div>
@@ -111,4 +128,4 @@ const LogIn = observer(() => {
   );
 });
 
-export default LogIn;
+export default RegistrationDialog;

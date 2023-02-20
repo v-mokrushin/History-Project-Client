@@ -3,7 +3,7 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ArticlesPage from "../../pages/Articles/ArticlesPage/ArticlesPage";
 import HomePage from "../../pages/HomePage/HomePage";
-import Layout from "../Structure/Layout/Layout";
+import Layout from "../Layout/Layout";
 import { Provider } from "react-redux";
 import { store } from "../../stores/redux";
 import WarningPage from "../../pages/WarningPage/WarningPage";
@@ -17,7 +17,6 @@ import WeaponsPreviewPage from "../../pages/Weapons/WeaponsPreviewPage/WeaponsPr
 import "../../stores/mobx/index";
 import ArtilcleCreatorPage from "pages/Articles/ArtilcleCreatorPage/ArtilcleCreatorPage";
 import GalleryPage from "pages/GalleryPage/GalleryPage";
-import RegistrationPage from "pages/RegistrationPage/RegistrationPage";
 import AccountPage from "pages/AccountPage/AccountPage";
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/account" element={<AccountPage />} />
-            <Route path="/registration" element={<RegistrationPage />} />
             <Route path="/article-creator" element={<ArtilcleCreatorPage />} />
             <Route path="/articles" element={<ArticlesPage />}></Route>
             <Route path="/articles/:articleId" element={<ArticlePage />} />

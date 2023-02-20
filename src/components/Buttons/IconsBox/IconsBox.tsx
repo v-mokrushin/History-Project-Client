@@ -9,47 +9,49 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { useNavigate } from "react-router";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import PersonButton from "../PersonButton/PersonButton";
+import { observer } from "mobx-react-lite";
 
 interface IIconsBoxProps {
   burgerType?: boolean;
   className?: string;
 }
 
-const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
-  const navigation = useNavigate();
+const IconsBox: React.FC<IIconsBoxProps> = observer(
+  ({ burgerType, className }) => {
+    const navigation = useNavigate();
 
-  return (
-    <div
-      className={classNames(
-        styles.root,
-        burgerType && styles.root_forBurger,
-        className
-      )}
-    >
-      <ToolButton />
-      <ButtonSearch />
-      {/* <LanguageSwitcher /> */}
-      {!commonApplicationStore.isUserAuthorized ? (
-        <>
-          <AccountButton
-            label="Регистрация"
-            color="grey"
-            onClick={() => {
-              navigation("/registration");
-              actualSectionStore.throw();
-            }}
-          />
-          <AccountButton
-            label="Войти"
-            color="gold"
-            onClick={() => commonApplicationStore.showLogInDialog()}
-          />
-        </>
-      ) : (
-        <PersonButton />
-      )}
-    </div>
-  );
-};
+    return (
+      <div
+        className={classNames(
+          styles.root,
+          burgerType && styles.root_forBurger,
+          className
+        )}
+      >
+        <ToolButton />
+        <ButtonSearch />
+        <LanguageSwitcher />
+        {!commonApplicationStore.isUserAuthorized ? (
+          <>
+            <AccountButton
+              label="Регистрация"
+              color="grey"
+              onClick={() => {
+                commonApplicationStore.showRegistrationDialog();
+              }}
+            />
+            <AccountButton
+              label="Войти"
+              color="gold"
+              onClick={() => commonApplicationStore.showLogInDialog()}
+            />
+          </>
+        ) : (
+          <PersonButton />
+        )}
+      </div>
+    );
+  }
+);
 
 export default IconsBox;

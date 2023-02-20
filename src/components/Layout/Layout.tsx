@@ -1,12 +1,13 @@
 import SearchDialog from "components/Structure/SearchDialog/SearchDialog";
 import React from "react";
-import Burger from "../Burger/Burger";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import ImageViewer from "../../Graphics/ImageViewer/ImageViewer";
-import UpButton from "../../Buttons/UpButton/UpButton";
+import Burger from "../Structure/Burger/Burger";
+import Footer from "../Structure/Footer/Footer";
+import Header from "../Structure/Header/Header";
+import ImageViewer from "../Graphics/ImageViewer/ImageViewer";
+import UpButton from "../Buttons/UpButton/UpButton";
 import styles from "./Layout.module.scss";
-import LogIn from "../LogIn/LogIn";
+import LogInDialog from "../Modals/LogInDialog/LogInDialog";
+import RegistrationDialog from "../Modals/RegistrationDialog/RegistrationDialog";
 
 interface ILayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -19,7 +20,8 @@ export default function Layout({ children }: ILayoutProps) {
       <Burger />
       <ImageViewer />
       <SearchDialog />
-      <LogIn />
+      <LogInDialog />
+      <RegistrationDialog />
       <Header />
       <main className={styles.root}>{children}</main>
       <Footer />

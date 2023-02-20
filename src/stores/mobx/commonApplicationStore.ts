@@ -4,6 +4,7 @@ export class CommonApplicationStore {
   public searchDialogVisibility: boolean = false;
   public rdinarHeaderVisibility: boolean = false;
   public logInDialogVisibility: boolean = false;
+  public registrationDialogVisibility: boolean = false;
   public isUserAuthorized: boolean = false;
 
   constructor() {
@@ -30,9 +31,17 @@ export class CommonApplicationStore {
     this.logInDialogVisibility = false;
   }
 
+  public showRegistrationDialog(): void {
+    this.registrationDialogVisibility = true;
+  }
+
+  public hideRegistrationDialog(): void {
+    this.registrationDialogVisibility = false;
+  }
+
   public setIsUserAuthorized(value: boolean): void {
     this.isUserAuthorized = value;
-    console.log('ss')
+    console.log("ss");
   }
 }
 
