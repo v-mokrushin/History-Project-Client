@@ -53,25 +53,25 @@ const SearchDialog = observer(() => {
         commonApplicationStore.searchDialogVisibility && styles.root_open
       )}
     >
-      <button
-        className={styles.closeButton}
-        onClick={() => {
-          commonApplicationStore.hideSearchDialog();
-        }}
-      >
-        <div className={styles.closeButton_icon}></div>
-      </button>
       <div
         className={classNames(
           styles.window,
           commonApplicationStore.searchDialogVisibility && styles.window_open
         )}
       >
+        <button
+          className={styles.closeButton}
+          onClick={() => {
+            commonApplicationStore.hideSearchDialog();
+          }}
+        >
+          <div className={styles.closeButton_icon}></div>
+        </button>
         <Subtitle className={styles.title}>{t("search_dialog.title")}</Subtitle>
         <Input
           theme="dark"
           type="text"
-          placeholder="Введите название..."
+          placeholder="Введите название"
           initialValue={inputText}
           setter={setInputText}
         />

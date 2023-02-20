@@ -10,8 +10,14 @@ import Input from "../../Controls/Input/Input";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
+import { useNavigate } from "react-router";
+import burgerStore from "stores/mobx/burgerStore";
 
 const LogIn = observer(() => {
+  const navigate = useNavigate();
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
@@ -26,8 +32,10 @@ const LogIn = observer(() => {
       : DocumentOverflow.setAuto();
   }, [commonApplicationStore.logInDialogVisibility]);
 
-  const req = { nickname: "xvadim", password: 12345 };
-  console.log(JSON.stringify(req));
+  function clearForm() {
+    setUsername("");
+    setPassword("");
+  }
 
   return (
     <div
@@ -42,30 +50,62 @@ const LogIn = observer(() => {
           commonApplicationStore.logInDialogVisibility && styles.dialog_open
         )}
       >
-        <Logo />
-        <Subtitle color="gold">Вход</Subtitle>
-        <div className={styles.separator}></div>
-        <div className={styles.inputsWrapper}>
-          <div className={styles.block}>
-            <Text noMargin color="gold">
-              Ник
-            </Text>
-            <Input type="text" theme="dark" hideIcon />
-          </div>
-          <div className={styles.block}>
-            <Text noMargin color="gold">
-              Пароль
-            </Text>
-            <Input type="password" theme="dark" hideIcon />
-          </div>
-        </div>
-        <button className={classNames(styles.submit)}>
-          <Text color="white">ВОЙТИ</Text>
-        </button>
         <button
-          onClick={() => commonApplicationStore.hideLogInDialog()}
+          onClick={() => {
+            commonApplicationStore.hideLogInDialog();
+            clearForm();
+          }}
           className={styles.closeButton}
         ></button>
+        <Logo disableLink className={styles.logo} />
+        <Subtitle color="white" className={styles.title}>
+          Вход
+        </Subtitle>
+        <div className={styles.separator}></div>
+        <form onSubmit={(event) => event.preventDefault()}>
+          <div className={styles.inputsWrapper}>
+            <Input
+              label="Никнэйм"
+              initialValue={username}
+              setter={setUsername}
+              type="text"
+              theme="dark"
+              hideIcon
+            />
+            <Input
+              label="Пароль"
+              initialValue={password}
+              setter={setPassword}
+              type="password"
+              theme="dark"
+              hideIcon
+            />
+          </div>
+          <button
+            className={classNames(styles.submit)}
+            onClick={() => {
+              if (username === "") {
+                alert("Введите никнейм.");
+                return;
+              }
+
+              if (password === "") {
+                alert("Введите пароль.");
+                return;
+              }
+
+              setTimeout(() => {
+                burgerStore.setClose();
+                clearForm();
+                navigate("/account");
+                commonApplicationStore.hideLogInDialog();
+                commonApplicationStore.setIsUserAuthorized(true);
+              }, 500);
+            }}
+          >
+            <Text color="white">ВОЙТИ</Text>
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -6,6 +6,9 @@ import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitch
 import ToolButton from "components/Buttons/ToolButton/ToolButton";
 import AccountButton from "../AccountButton/AccountButton";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import { useNavigate } from "react-router";
+import actualSectionStore from "stores/mobx/actualSectionStore";
+import PersonButton from "../PersonButton/PersonButton";
 
 interface IIconsBoxProps {
   burgerType?: boolean;
@@ -13,6 +16,8 @@ interface IIconsBoxProps {
 }
 
 const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
+  const navigation = useNavigate();
+
   return (
     <div
       className={classNames(
@@ -24,12 +29,25 @@ const IconsBox: React.FC<IIconsBoxProps> = ({ burgerType, className }) => {
       <ToolButton />
       <ButtonSearch />
       {/* <LanguageSwitcher /> */}
-      <AccountButton label="Регистрация" color="grey" />
-      <AccountButton
-        label="Войти"
-        color="gold"
-        onClick={() => commonApplicationStore.showLogInDialog()}
-      />
+      {!commonApplicationStore.isUserAuthorized ? (
+        <>
+          <AccountButton
+            label="Регистрация"
+            color="grey"
+            onClick={() => {
+              navigation("/registration");
+              actualSectionStore.throw();
+            }}
+          />
+          <AccountButton
+            label="Войти"
+            color="gold"
+            onClick={() => commonApplicationStore.showLogInDialog()}
+          />
+        </>
+      ) : (
+        <PersonButton />
+      )}
     </div>
   );
 };

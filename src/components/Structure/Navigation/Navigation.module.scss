@@ -1,6 +1,9 @@
 @import "/src/assets/css/common.scss";
 
 .root {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 25px;
@@ -10,11 +13,18 @@
   }
 
   @include media-breakpoint-down(xl) {
-    gap: 18px;
+    gap: 17px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    position: static;
+    transform: none;
+    // left: 0;
   }
 
   @include media-breakpoint-down(md) {
     gap: 17px;
+    position: static;
   }
 
   @include media-breakpoint-down(sm) {

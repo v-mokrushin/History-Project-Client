@@ -1,0 +1,26 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+}
+
+.box {
+  // display: flex;
+  // flex-direction: column;
+  // margin-bottom: 3vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 10px;
+  column-gap: 35px;
+  width: 20%;
+  margin-bottom: 3vh;
+  line-height: 1.2vh;
+}
+
+// .exitButton {
+//   min-width: 20%;
+//   background-color: rgb(189, 89, 89);
+
+//   &:hover {
+//     background-color: rgb(216, 60, 60);
+//   }
+// }

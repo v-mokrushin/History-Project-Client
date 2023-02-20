@@ -2,6 +2,12 @@
 
 .root {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputWrapper {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 5px;

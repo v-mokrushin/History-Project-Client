@@ -4,6 +4,7 @@ export class CommonApplicationStore {
   public searchDialogVisibility: boolean = false;
   public rdinarHeaderVisibility: boolean = false;
   public logInDialogVisibility: boolean = false;
+  public isUserAuthorized: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -27,6 +28,11 @@ export class CommonApplicationStore {
 
   public hideLogInDialog(): void {
     this.logInDialogVisibility = false;
+  }
+
+  public setIsUserAuthorized(value: boolean): void {
+    this.isUserAuthorized = value;
+    console.log('ss')
   }
 }
 

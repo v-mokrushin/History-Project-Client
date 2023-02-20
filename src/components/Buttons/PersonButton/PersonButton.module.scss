@@ -1,0 +1,17 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+  background-image: url(../../../assets/images/person.svg);
+  background-size: cover;
+  filter: invert(100%);
+  aspect-ratio: 1 / 1;
+  height: 2.5vh;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include media-breakpoint-down(lg) {
+    height: 25px;
+  }
+}
