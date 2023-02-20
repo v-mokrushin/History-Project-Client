@@ -6,11 +6,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-
-  @include media-breakpoint-down(lg) {
-    gap: 30px;
-  }
+  gap: 3vh;
 
   @include media-breakpoint-down(sm) {
     gap: 20px;
@@ -26,14 +22,19 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
       }
 
       @include media-breakpoint-down(sm) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 15px;
+      }
+
+      @include media-breakpoint-down(xxs) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
       }
 
       &_fullWidth {

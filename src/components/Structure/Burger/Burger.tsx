@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import IconsBox from "components/Buttons/IconsBox/IconsBox";
+import HeaderButtonsGroup from "components/Buttons/HeaderButtonsGroup/HeaderButtonsGroup";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import { observer } from "mobx-react";
 import React from "react";
@@ -19,7 +19,7 @@ const Burger = observer(() => {
           className={styles.closeButton}
           onClick={burgerStore.setClose.bind(burgerStore)}
         ></button>
-        <IconsBox burgerType />
+        <HeaderButtonsGroup burgerType />
       </div>
       <Navigation isTypeBurger />
     </aside>

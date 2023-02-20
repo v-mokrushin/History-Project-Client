@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./IconsBox.module.scss";
+import styles from "./HeaderButtonsGroup.module.scss";
 import classNames from "classnames";
 import ButtonSearch from "components/Buttons/SearchButton/SearchButton";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
@@ -11,12 +11,12 @@ import actualSectionStore from "stores/mobx/actualSectionStore";
 import PersonButton from "../PersonButton/PersonButton";
 import { observer } from "mobx-react-lite";
 
-interface IIconsBoxProps {
+interface IHeaderButtonsGroupProps {
   burgerType?: boolean;
   className?: string;
 }
 
-const IconsBox: React.FC<IIconsBoxProps> = observer(
+const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
   ({ burgerType, className }) => {
     const navigation = useNavigate();
 
@@ -54,4 +54,4 @@ const IconsBox: React.FC<IIconsBoxProps> = observer(
   }
 );
 
-export default IconsBox;
+export default HeaderButtonsGroup;

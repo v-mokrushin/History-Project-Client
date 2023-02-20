@@ -34,6 +34,7 @@ import { Alert } from "@material-ui/lab";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { FormInitialState, IFormState } from "./interfaces";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
+import { InputAdornment } from "@mui/material";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -232,36 +233,41 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     required
                     label="Пара слов о технике"
                     multiline
-                    rows={4}
+                    rows={5}
                   />
                 </div>
                 <div className={styles.section}>
                   <Text color="gold">Общее</Text>
                   <div className={styles.inputsWrapper}>
                     <TextField
+                      label="Название"
+                      value={state.name}
                       onChange={(event) =>
                         dispatch({
                           type: "setName",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.name}
-                      label="Название"
                       variant="outlined"
                       required
                     />
                     <TextField
+                      label="Принято на вооружение"
+                      value={state.adoptedIntoService || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setAdoptedIntoService",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.adoptedIntoService || ""}
-                      label="Принят на вооружение (год)"
                       variant="outlined"
                       type="number"
                       required
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">год</InputAdornment>
+                        ),
+                      }}
                     />
                     <FormControl required>
                       <InputLabel htmlFor="country">Страна</InputLabel>
@@ -310,38 +316,53 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       </Select>
                     </FormControl>
                     <TextField
+                      label="Годы производства"
+                      value={state.productionPeriod}
                       onChange={(event) =>
                         dispatch({
                           type: "setProductionPeriod",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.productionPeriod}
-                      label="Годы производства"
                       variant="outlined"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">c – по</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Произведено"
+                      value={state.numberOfIssued || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setNumberOfIssued",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.numberOfIssued || ""}
-                      label="Произведено"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">штук</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Годы эксплуатации"
+                      value={state.exploitationYears}
                       onChange={(event) =>
                         dispatch({
                           type: "setExploitationYears",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.exploitationYears}
-                      label="Годы эксплуатации"
                       variant="outlined"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">c – по</InputAdornment>
+                        ),
+                      }}
                     />
                   </div>
                 </div>
@@ -349,64 +370,89 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   <Text color="gold">Размеры и масса</Text>
                   <div className={styles.inputsWrapper}>
                     <TextField
+                      label="Масса"
+                      value={state.weight || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setWeight",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.weight || ""}
-                      label="Масса (тонн)"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">тонн</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Длина"
+                      value={state.length || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setLength",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.length || ""}
-                      label="Длина (м)"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Ширина"
+                      value={state.width || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setWidth",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.width || ""}
-                      label="Ширина (м)"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Высота"
+                      value={state.height || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setHeight",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.height || ""}
-                      label="Высота (м)"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
+                      label="Клиренс"
+                      value={state.clearance || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setClearance",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.clearance || ""}
-                      label="Клиренс (м)"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
                     />
                   </div>
                 </div>
@@ -414,16 +460,23 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   <Text color="gold">Экипаж</Text>
                   <div className={styles.inputsWrapper}>
                     <TextField
+                      label="Количество"
+                      value={state.crewSize || ""}
                       onChange={(event) =>
                         dispatch({
                           type: "setCrewSize",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.crewSize || ""}
-                      label="Количество"
                       variant="outlined"
                       type="number"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            человек(а)
+                          </InputAdornment>
+                        ),
+                      }}
                     />
                     <TextField
                       onChange={(event) =>

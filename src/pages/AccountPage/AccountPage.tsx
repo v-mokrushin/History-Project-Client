@@ -7,7 +7,7 @@ import Container from "components/Structure/Container/Container";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { useNavigate } from "react-router";
 import Text from "components/Texts/Text/Text";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { observer } from "mobx-react-lite";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import actualSectionStore from "stores/mobx/actualSectionStore";
@@ -45,9 +45,54 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   return (
     <ContentWrapper>
       <Container>
-        <Title>Личный кабинет</Title>
-        <Subtitle>Общее</Subtitle>
-        <div className={styles.box}>
+        <Subtitle>Личный кабинет</Subtitle>
+        <form>
+          <div className={styles.wrapper}>
+            <div className={styles.section}>
+              <Text color="gold">Общее</Text>
+              <div className={styles.inputsWrapper}>
+                <TextField
+                  label="Никнейм"
+                  value={"xvadim"}
+                  variant="outlined"
+                  type="text"
+                />
+                <TextField
+                  label="Имя"
+                  value={"Вадим"}
+                  variant="outlined"
+                  type="text"
+                />
+                <TextField
+                  label="Фамилия"
+                  value={"Мокрушин"}
+                  variant="outlined"
+                  type="text"
+                />
+                <TextField
+                  label="Дата регистрации"
+                  value={"20.02.2023"}
+                  variant="outlined"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div className={styles.test}>
+              <Button
+                variant="contained"
+                size="medium"
+                color="warning"
+                onClick={onExitClick}
+                className={styles.exitButton}
+                style={{ minWidth: "33%", margin: "0 auto" }}
+              >
+                Выйти из учетной записи
+              </Button>
+            </div>
+          </div>
+        </form>
+        {/* <Subtitle>Общее</Subtitle> */}
+        {/* <div className={styles.box}>
           <Text color="gold">Никнейм</Text>
           <Text>xvadim</Text>
           <Text color="gold">Имя</Text>
@@ -58,17 +103,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
             Дата регистрации
           </Text>
           <Text>20.02.2023</Text>
-        </div>
-        <Button
-          variant="contained"
-          size="medium"
-          color="warning"
-          onClick={onExitClick}
-          className={styles.exitButton}
-          style={{ minWidth: "33%", margin: "0 auto" }}
-        >
-          Выйти из учетной записи
-        </Button>
+        </div> */}
       </Container>
     </ContentWrapper>
   );

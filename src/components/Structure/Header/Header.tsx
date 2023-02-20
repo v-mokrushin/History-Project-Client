@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import { Pages } from "../../../constants/pages";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import ButtonSearch from "components/Buttons/SearchButton/SearchButton";
-import IconsBox from "components/Buttons/IconsBox/IconsBox";
+import HeaderButtonsGroup from "components/Buttons/HeaderButtonsGroup/HeaderButtonsGroup";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import { observer } from "mobx-react-lite";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
@@ -28,7 +28,7 @@ const Header = observer(() => {
       <Logo />
       <BurgerIcon />
       <Navigation />
-      <IconsBox />
+      <HeaderButtonsGroup />
     </header>
   );
 });

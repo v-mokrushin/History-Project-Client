@@ -13,12 +13,12 @@
   }
 
   @include media-breakpoint-down(xl) {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 26px;
   }
 
   @include media-breakpoint-down(xs) {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 24px;
   }
 }
