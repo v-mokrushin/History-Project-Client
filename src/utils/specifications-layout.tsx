@@ -48,7 +48,7 @@ export const SpecificationsLayout = {
         />
         <SpecLine
           crit="Годы эксплуатации"
-          val={specifications.common.exploitationYears}
+          val={specifications.common.exploitationPeriod}
         />
       </SpecSection>
     );

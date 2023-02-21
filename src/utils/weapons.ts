@@ -74,8 +74,20 @@ export function createGallery(weapon: TWeapon): void {
 
   weapon.gallery = {
     path: getGalleryPath(weaponName, weapon),
+    isIconsRemote: weapon.galleryInfo?.isIconsRemote,
+    remoteOriginalIcon: weapon.galleryInfo?.remoteOriginalIcon || "error",
+    remoteColorizedIcon: weapon.galleryInfo?.remoteColorizedIcon || "error",
     isColorizedIcon: translateToBool(localStorage.getItem("colorized")),
     get icon() {
+      if (this.isIconsRemote) {
+        // if (this.isColorizedIcon) {
+        //   return this.remoteOriginalIcon;
+        // }
+        return !this.isColorizedIcon
+          ? this.remoteOriginalIcon
+          : this.remoteColorizedIcon;
+      }
+
       if (!this.isColorizedIcon) {
         return this.path + "icon.jpg";
       } else {
@@ -90,6 +102,8 @@ export function createGallery(weapon: TWeapon): void {
       }
     },
   };
+
+  delete weapon.galleryInfo;
 
   if (weapon.photosNumber) {
     if (!weapon.gallery) return;

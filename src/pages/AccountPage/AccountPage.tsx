@@ -56,24 +56,36 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                   value={"xvadim"}
                   variant="outlined"
                   type="text"
+                  InputProps={{
+                    readOnly: true,
+                  }}
                 />
                 <TextField
                   label="Имя"
                   value={"Вадим"}
                   variant="outlined"
                   type="text"
+                  InputProps={{
+                    readOnly: true,
+                  }}
                 />
                 <TextField
                   label="Фамилия"
                   value={"Мокрушин"}
                   variant="outlined"
                   type="text"
+                  InputProps={{
+                    readOnly: true,
+                  }}
                 />
                 <TextField
                   label="Дата регистрации"
                   value={"20.02.2023"}
                   variant="outlined"
                   type="text"
+                  InputProps={{
+                    readOnly: true,
+                  }}
                 />
               </div>
             </div>
@@ -91,19 +103,6 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
             </div>
           </div>
         </form>
-        {/* <Subtitle>Общее</Subtitle> */}
-        {/* <div className={styles.box}>
-          <Text color="gold">Никнейм</Text>
-          <Text>xvadim</Text>
-          <Text color="gold">Имя</Text>
-          <Text>Вадим</Text>
-          <Text color="gold">Фамилия</Text>
-          <Text>Мокрушин</Text>
-          <Text color="gold" smallLineHeight>
-            Дата регистрации
-          </Text>
-          <Text>20.02.2023</Text>
-        </div> */}
       </Container>
     </ContentWrapper>
   );

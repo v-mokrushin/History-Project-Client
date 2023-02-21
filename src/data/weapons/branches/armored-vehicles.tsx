@@ -88,7 +88,7 @@ const ussr: IArmoredVehicle[] = [
         platform: Platforms.armoredVehicles.IS,
         producer: [Producers.armoredVehicles.Chelyabinsk100],
         productionPeriod: "1943 - 1945",
-        exploitationYears: "1943 - 1945",
+        exploitationPeriod: "1943 - 1945",
         numberOfIssued: 3483,
       },
       crew: CREWS.size.four.perfect,

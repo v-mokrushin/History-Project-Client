@@ -21,6 +21,7 @@ export interface IBaseWeapon {
   readonly isReady?: boolean;
   nation?: INation;
   gallery?: IWeaponGallery;
+  galleryInfo?: IWeaponGalleryInfo;
   readonly article?: JSX.Element;
   readonly intro?: (string | undefined)[];
   readonly videomaterials?: string[];
@@ -42,7 +43,7 @@ export interface IWaponCommonSpec {
   readonly chiefDesigner?: IChiefDesigner;
   readonly platform?: IPlatform;
   readonly productionPeriod?: string;
-  readonly exploitationYears?: string;
+  readonly exploitationPeriod?: string;
   readonly numberOfIssued?: number;
 }
 
@@ -52,6 +53,15 @@ export interface IWeaponGallery {
   get icon(): string;
   get intro(): string;
   photos?: string[];
+  isIconsRemote?: boolean;
+  remoteOriginalIcon: string;
+  remoteColorizedIcon: string;
+}
+
+export interface IWeaponGalleryInfo {
+  isIconsRemote: boolean;
+  remoteOriginalIcon: string;
+  remoteColorizedIcon: string;
 }
 
 export interface IModel {

@@ -24,17 +24,11 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Text from "components/Texts/Text/Text";
 import { IArmoredVehicle } from "data/weapons/interfaces/armored-interfaces";
-import { CREWS } from "data/weapons/departments/crews";
 import { createGallery, createModels, defineIdProperty } from "utils/weapons";
-import { action } from "mobx";
-import Subtitle from "components/Texts/Subtitle/Subtitle";
-import Block from "components/Structure/Block/Block";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
-import { Alert } from "@material-ui/lab";
-import { PayloadAction } from "@reduxjs/toolkit";
-import { FormInitialState, IFormState } from "./interfaces";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { InputAdornment } from "@mui/material";
+import { useFormik } from "formik";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -44,168 +38,146 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   className,
 }) => {
   const pageInfo = Pages.getByPath(useLocation().pathname);
-
-  const [state, dispatch] = React.useReducer(
-    (state: IFormState, action: any) => {
-      switch (action.type) {
-        case "setIntro":
-          return { ...state, intro: action.payload };
-        case "setName":
-          return { ...state, name: action.payload };
-        case "setAdoptedIntoService":
-          return {
-            ...state,
-            adoptedIntoService: action.payload < 1946 ? action.payload : 0,
-          };
-        case "setCountry":
-          return { ...state, country: action.payload };
-        case "setType":
-          return { ...state, type: action.payload };
-        case "setProductionPeriod":
-          return { ...state, productionPeriod: action.payload };
-        case "setExploitationYears":
-          return { ...state, exploitationYears: action.payload };
-        case "setNumberOfIssued":
-          return { ...state, numberOfIssued: action.payload };
-
-        case "setWeight":
-          return {
-            ...state,
-            weight:
-              action.payload > 0 && action.payload < 300 ? action.payload : 0,
-          };
-        case "setLength":
-          return {
-            ...state,
-            length:
-              action.payload > 0 && action.payload < 10 ? action.payload : 0,
-          };
-        case "setWidth":
-          return {
-            ...state,
-            width:
-              action.payload > 0 && action.payload < 10 ? action.payload : 0,
-          };
-        case "setHeight":
-          return {
-            ...state,
-            height:
-              action.payload > 0 && action.payload < 10 ? action.payload : 0,
-          };
-        case "setClearance":
-          return {
-            ...state,
-            clearance: action.payload > 0 ? action.payload : 0,
-          };
-
-        case "setCrewSize":
-          return {
-            ...state,
-            crewSize: action.payload > 0 ? action.payload : 0,
-          };
-        case "setCrewStructure":
-          return { ...state, crewStructure: action.payload };
-
-        case "setInitialState":
-          return { ...FormInitialState };
-
-        default:
-          return state;
-      }
-    },
-    FormInitialState
-  );
+  const [counter, setCounter] = React.useState<number>(0);
+  const iconInput = React.useRef<HTMLInputElement>(null);
 
   function testFill() {
-    dispatch({
-      type: "setIntro",
-      payload:
-        "Т-34 Экранированный (сокращенно Т-34Э) — экранированная версия советского среднего танка Т-34. Из-за возросшей мощи немецких танковых орудий и противотанковой артиллерии с лета 1942 года, Народный комиссариат обороны (НКО) СССР, выдал задание особой группе сотрудников научно-исследовательского института (НИИ) завода №112 на усиление бронирования средних танков Т-34.",
-    });
-    dispatch({ type: "setName", payload: "Т-34Э" });
-    dispatch({ type: "setAdoptedIntoService", payload: 1942 });
-    dispatch({ type: "setCountry", payload: "США" });
-    dispatch({
-      type: "setType",
-      payload: WeaponClassification.armoredVehicle.mediumTank.name.russian,
-    });
-    dispatch({ type: "setProductionPeriod", payload: "1942 - 1943" });
-    dispatch({ type: "setExploitationYears", payload: "1942 - 1943" });
-    dispatch({ type: "setNumberOfIssued", payload: 25 });
-
-    dispatch({ type: "setWeight", payload: 29 });
-    dispatch({ type: "setLength", payload: 5.6 });
-    dispatch({ type: "setWidth", payload: 3.2 });
-    dispatch({ type: "setHeight", payload: 2.2 });
-    dispatch({ type: "setClearance", payload: 0.56 });
-
-    dispatch({ type: "setCrewSize", payload: 4 });
-    dispatch({
-      type: "setCrewStructure",
-      payload: CREWS.size.four.weak.structure,
-    });
+    formik.values.intro =
+      "Т-34 Экранированный (сокращенно Т-34Э) — экранированная версия советского среднего танка Т-34. Из-за возросшей мощи немецких танковых орудий и противотанковой артиллерии с лета 1942 года, Народный комиссариат обороны (НКО) СССР, выдал задание особой группе сотрудников научно-исследовательского института (НИИ) завода №112 на усиление бронирования средних танков Т-34.";
+    formik.values.name = "Т-34Э";
+    formik.values.adoptedIntoService = 1942;
+    formik.values.country = Nations.USA.name.russian;
+    formik.values.type =
+      WeaponClassification.armoredVehicle.mediumTank.name.russian;
+    formik.values.productionPeriod = "1942 - 1943";
+    formik.values.numberOfIssued = 25;
+    formik.values.exploitationYears = "1942 - 1943";
+    formik.values.originalPhotoLink =
+      "https://i-com.cdn.gaijin.net/monthly_2022_04/247324968_T-34Egorkyonstreet2.jpg.10fa7842a497b3a9d2fc6ceaa1de63a9.jpg";
+    formik.values.colorizedPhotoLink =
+      "https://www.wotanks.com/images/wot-novosti/t-34-ekranirovannyj.JPG";
+    setCounter((val) => val + 1);
   }
 
-  function addWeapon() {
-    if (!state.name || !state.intro || !state.country || !state.type) {
-      alert("Заполните все обязательные поля.");
-      return;
-    }
+  const initialValues = {
+    name: "",
+    intro: "",
+    adoptedIntoService: 0,
+    country: "",
+    type: "",
+    productionPeriod: "",
+    exploitationYears: "",
+    numberOfIssued: 0,
+    originalPhotoLink: "",
+    colorizedPhotoLink: "",
+  };
 
-    if (Weapons.doesWeaponExist(state.name)) {
-      alert("Вооружение с таким названием уже существует.");
-      return;
-    }
+  const formik = useFormik({
+    initialValues,
+    onSubmit: (values, { resetForm }) => {
+      if (Weapons.doesWeaponExist(formik.values.name)) {
+        alert("Вооружение с таким названием уже существует.");
+        return;
+      }
 
-    const weapon: IArmoredVehicle = {
-      name: state.name,
-      isReady: true,
-      branch: WeaponClassification.armoredVehicle,
-      type: WeaponClassificationMethods.getByName(state.type)!,
-      nation: NationsMethods.getByName(state.country),
-      adoptedIntoServiceDate: state.adoptedIntoService,
-      intro: [state.intro],
-      specifications: {
-        common: {
-          productionPeriod: state.productionPeriod,
-          exploitationYears: state.exploitationYears,
-          numberOfIssued: state.numberOfIssued,
+      const weapon: IArmoredVehicle = {
+        name: values.name,
+        isReady: true,
+        branch: WeaponClassification.armoredVehicle,
+        type: WeaponClassificationMethods.getByName(values.type)!,
+        nation: NationsMethods.getByName(values.country),
+        adoptedIntoServiceDate: values.adoptedIntoService,
+        intro: [values.intro],
+        galleryInfo: {
+          isIconsRemote: true,
+          remoteOriginalIcon: values.originalPhotoLink,
+          remoteColorizedIcon: values.colorizedPhotoLink,
         },
-        sizes: {
-          weight: state.weight,
-          length: state.length,
-          width: state.width,
-          height: state.height,
-          clearance: state.clearance,
+        specifications: {
+          common: {
+            productionPeriod: values.productionPeriod,
+            exploitationPeriod: values.exploitationYears,
+            numberOfIssued: values.numberOfIssued,
+          },
+          // sizes: {
+          //   weight: state.weight,
+          //   length: state.length,
+          //   width: state.width,
+          //   height: state.height,
+          //   clearance: state.clearance,
+          // },
+          // crew: {
+          //   size: state.crewSize,
+          //   structure: state.crewStructure,
+          // },
         },
-        crew: {
-          size: state.crewSize,
-          structure: state.crewStructure,
-        },
-      },
-    };
+      };
 
-    defineIdProperty(weapon);
-    createGallery(weapon);
-    createModels(weapon);
-    Weapons.addNewWeapon(weapon);
+      defineIdProperty(weapon);
+      createGallery(weapon);
+      createModels(weapon);
+      Weapons.addNewWeapon(weapon);
+      if (localStorage.getItem("created-weapons")) {
+        const savedCreatedWeapons: TWeapon[] = JSON.parse(
+          localStorage.getItem("created-weapons") || ""
+        );
+        savedCreatedWeapons.push(weapon);
+        localStorage.setItem(
+          "created-weapons",
+          JSON.stringify(savedCreatedWeapons)
+        );
+      } else {
+        localStorage.setItem("created-weapons", JSON.stringify([weapon]));
+      }
+      alert(`Вооружение ${values.name} успешно создано.`);
 
-    if (localStorage.getItem("created-weapons")) {
-      const savedCreatedWeapons: TWeapon[] = JSON.parse(
-        localStorage.getItem("created-weapons") || ""
-      );
-      savedCreatedWeapons.push(weapon);
-      localStorage.setItem(
-        "created-weapons",
-        JSON.stringify(savedCreatedWeapons)
-      );
-    } else {
-      localStorage.setItem("created-weapons", JSON.stringify([weapon]));
-    }
+      resetForm({ values: initialValues });
+    },
+    validate: (values) => {
+      const errors: any = {};
 
-    alert(`Вооружение ${state.name} успешно создано.`);
-    dispatch({ type: "setInitialState" });
-  }
+      if (!values.intro) {
+        errors.intro = "Обязательное поле";
+      } else if (values.intro.length < 100) {
+        errors.intro = "Не менее 100 знаков";
+      }
+
+      if (!values.name) {
+        errors.name = "Обязательное поле";
+      }
+
+      if (!values.country) {
+        errors.country = "Обязательное поле";
+      }
+
+      if (!values.type) {
+        errors.type = "Обязательное поле";
+      }
+
+      if (!values.adoptedIntoService) {
+        errors.adoptedIntoService = "Обязательное поле";
+      } else if (
+        values.adoptedIntoService < 1850 ||
+        values.adoptedIntoService > 1950
+      ) {
+        errors.adoptedIntoService = "Неверный год";
+      }
+
+      if (values.numberOfIssued < 0) {
+        errors.numberOfIssued = "Должно быть больше 0";
+      }
+
+      if (!values.originalPhotoLink) {
+        errors.originalPhotoLink = "Обязательное поле";
+      }
+
+      if (!values.colorizedPhotoLink) {
+        errors.colorizedPhotoLink = "Обязательное поле";
+      }
+
+      return errors;
+    },
+  });
 
   if (!pageInfo)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
@@ -213,25 +185,27 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   return (
     <div className={classNames(styles.root, className)}>
       <>
-        {/* <IntroImage imageUrl={pageInfo.introImage} animated /> */}
         <VideoIntro size="half" path="/videos/building.mp4" />
         <ContentWrapper>
           <Container>
             <Title>{pageInfo.name.russian}</Title>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className={styles.wrapper}>
                 <div className={styles.section}>
+                  {/* <img
+                    src="C:\fakepath\icon.jpg"
+                    crossOrigin="anonymous"
+                    alt=""
+                  /> */}
                   <Text color="gold">Введение</Text>
                   <TextField
-                    onChange={(event) =>
-                      dispatch({
-                        type: "setIntro",
-                        payload: event.currentTarget.value,
-                      })
-                    }
-                    value={state.intro}
-                    required
                     label="Пара слов о технике"
+                    name="intro"
+                    value={formik.values.intro}
+                    onChange={formik.handleChange}
+                    error={!!formik.errors.intro}
+                    helperText={formik.errors.intro}
+                    required
                     multiline
                     rows={5}
                   />
@@ -241,26 +215,20 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   <div className={styles.inputsWrapper}>
                     <TextField
                       label="Название"
-                      value={state.name}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setName",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
+                      name="name"
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.name}
+                      helperText={formik.errors.name}
                       required
                     />
                     <TextField
                       label="Принято на вооружение"
-                      value={state.adoptedIntoService || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setAdoptedIntoService",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
+                      name="adoptedIntoService"
+                      value={formik.values.adoptedIntoService || ""}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.adoptedIntoService}
+                      helperText={formik.errors.adoptedIntoService}
                       type="number"
                       required
                       InputProps={{
@@ -272,15 +240,11 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     <FormControl required>
                       <InputLabel htmlFor="country">Страна</InputLabel>
                       <Select
-                        value={state.country}
-                        onChange={(event) =>
-                          dispatch({
-                            type: "setCountry",
-                            payload: event.target.value,
-                          })
-                        }
-                        native
                         name="country"
+                        value={formik.values.country}
+                        onChange={formik.handleChange}
+                        error={!!formik.errors.country}
+                        native
                       >
                         <option aria-label="None" value="" />
                         {Object.values(Nations)
@@ -291,19 +255,18 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                             </option>
                           ))}
                       </Select>
+                      <FormHelperText error={Boolean(formik.errors.country)}>
+                        {formik.errors.country}
+                      </FormHelperText>
                     </FormControl>
                     <FormControl required>
                       <InputLabel htmlFor="type">Тип техники</InputLabel>
                       <Select
-                        onChange={(event) =>
-                          dispatch({
-                            type: "setType",
-                            payload: event.target.value,
-                          })
-                        }
-                        value={state.type}
-                        native
                         name="type"
+                        value={formik.values.type}
+                        onChange={formik.handleChange}
+                        error={!!formik.errors.type}
+                        native
                       >
                         <option aria-label="None" value="" />
                         {WeaponClassificationMethods.getTypesArray(
@@ -314,17 +277,18 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                           </option>
                         ))}
                       </Select>
+                      <FormHelperText error={Boolean(formik.errors.type)}>
+                        {formik.errors.type}
+                      </FormHelperText>
                     </FormControl>
                     <TextField
-                      label="Годы производства"
-                      value={state.productionPeriod}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setProductionPeriod",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
+                      label="Период производства"
+                      name="productionPeriod"
+                      value={formik.values.productionPeriod || ""}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.productionPeriod}
+                      helperText={formik.errors.productionPeriod}
+                      type="text"
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">c – по</InputAdornment>
@@ -333,15 +297,12 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     />
                     <TextField
                       label="Произведено"
-                      value={state.numberOfIssued || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setNumberOfIssued",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
+                      name="numberOfIssued"
+                      value={formik.values.numberOfIssued || ""}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.numberOfIssued}
+                      helperText={formik.errors.numberOfIssued}
+                      type="text"
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">штук</InputAdornment>
@@ -349,15 +310,13 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       }}
                     />
                     <TextField
-                      label="Годы эксплуатации"
-                      value={state.exploitationYears}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setExploitationYears",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
+                      label="Период эксплуатации"
+                      name="exploitationYears"
+                      value={formik.values.exploitationYears || ""}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.exploitationYears}
+                      helperText={formik.errors.exploitationYears}
+                      type="text"
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">c – по</InputAdornment>
@@ -367,6 +326,41 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   </div>
                 </div>
                 <div className={styles.section}>
+                  <Text color="gold">Фотографии</Text>
+                  <div className={styles.inputsWrapper_fullWidthFlex}>
+                    <TextField
+                      label="Черно-белая фотография"
+                      name="originalPhotoLink"
+                      value={formik.values.originalPhotoLink}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.originalPhotoLink}
+                      helperText={formik.errors.originalPhotoLink}
+                      type="text"
+                      required
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">ссылка</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Цветная фотография"
+                      name="colorizedPhotoLink"
+                      value={formik.values.colorizedPhotoLink}
+                      onChange={formik.handleChange}
+                      error={!!formik.errors.colorizedPhotoLink}
+                      helperText={formik.errors.colorizedPhotoLink}
+                      type="text"
+                      required
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">ссылка</InputAdornment>
+                        ),
+                      }}
+                    />
+                  </div>
+                </div>
+                {/* <div className={styles.section}>
                   <Text color="gold">Размеры и масса</Text>
                   <div className={styles.inputsWrapper}>
                     <TextField
@@ -479,24 +473,24 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       }}
                     />
                     <TextField
+                      label="Состав"
+                      value={state.crewStructure}
                       onChange={(event) =>
                         dispatch({
                           type: "setCrewStructure",
                           payload: event.currentTarget.value,
                         })
                       }
-                      value={state.crewStructure}
-                      label="Состав"
                       variant="outlined"
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className={styles.test}>
                   <Button
                     type="submit"
                     onClick={(event) => {
-                      event.preventDefault();
-                      addWeapon();
+                      // event.preventDefault();
+                      // addWeapon();
                     }}
                     variant="contained"
                     color="primary"
@@ -505,7 +499,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     Создать
                   </Button>
                   <Button
-                    onClick={() => testFill()}
+                    onClick={testFill}
                     variant="contained"
                     color="secondary"
                     size="large"
