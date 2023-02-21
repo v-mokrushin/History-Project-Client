@@ -120,7 +120,7 @@ const RegistrationDialog = observer(() => {
               }, 500);
             }}
           >
-            <Text color="white">Зарегистрироваться</Text>
+            <Text>Зарегистрироваться</Text>
           </button>
         </form>
       </div>

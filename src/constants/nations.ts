@@ -183,7 +183,6 @@ export const NationsMethods = {
     }
   },
   getByName(name: string | undefined) {
-    console.log(Object.values(Nations))
     for (let nation of Object.values(Nations)) {
       if (nation.name.russian === name) return nation;
     }

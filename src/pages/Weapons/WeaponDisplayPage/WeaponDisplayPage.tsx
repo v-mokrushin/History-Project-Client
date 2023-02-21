@@ -31,6 +31,7 @@ import TextIntro from "components/Texts/TextIntro/TextIntro";
 import { Scroll } from "utils/scroll";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
+import { DocumentTitle } from "utils/document-title";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -39,6 +40,7 @@ const WeaponDisplayPage = observer(() => {
   React.useEffect(() => {
     loadingStore.checkLoading(weaponId);
     Scroll.toTopInstantly();
+    DocumentTitle.set(weapon?.name || "");
 
     return () => {
       imageViewerStore.close();

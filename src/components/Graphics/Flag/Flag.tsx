@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Flag.module.scss";
 import classNames from "classnames";
 
@@ -12,6 +12,7 @@ import Text from "components/Texts/Text/Text";
 
 interface IFlagProps {
   nation: INation;
+  showLabel?: boolean;
   isNavLink?: boolean;
   minimized?: boolean;
   forFilter?: boolean;
@@ -19,41 +20,28 @@ interface IFlagProps {
 
 export default function Flag({
   nation,
+  showLabel = false,
   isNavLink = true,
   minimized = false,
   forFilter = false,
 }: IFlagProps) {
-  function getContent() {
-    return (
-      <>
-        <div
-          className={classNames(styles.flag)}
-          style={getBackgroundImageStyleObject(nation.flagImage)}
-        ></div>
-        {!minimized && !forFilter && (
-          <Text className={classNames(styles.text)}>{nation.name.russian}</Text>
-        )}
-      </>
-    );
-  }
+  const navigate = useNavigate();
 
-  return isNavLink ? (
-    <NavLink
-      to={nation.path}
-      className={classNames(styles.root, minimized && styles.minimized)}
-      onClick={Scroll.toTopInstantly}
-    >
-      {getContent()}
-    </NavLink>
-  ) : (
+  return (
     <div
-      className={classNames(
-        styles.root,
-        minimized && styles.minimized,
-        forFilter && styles.forFilter
-      )}
+      onClick={() => isNavLink && navigate(nation.path)}
+      className={classNames(styles.root, {
+        [styles.minimized]: minimized,
+        [styles.forFilter]: forFilter,
+      })}
     >
-      {getContent()}
+      <div
+        className={classNames(styles.flag)}
+        style={getBackgroundImageStyleObject(nation.flagImage)}
+      ></div>
+      {showLabel && (
+        <Text className={classNames(styles.text)}>{nation.name.russian}</Text>
+      )}
     </div>
   );
 }

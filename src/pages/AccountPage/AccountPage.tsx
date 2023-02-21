@@ -11,6 +11,7 @@ import { Button, TextField } from "@mui/material";
 import { observer } from "mobx-react-lite";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import actualSectionStore from "stores/mobx/actualSectionStore";
+import { DocumentTitle } from "utils/document-title";
 
 interface IAccountPageProps {
   className?: string;
@@ -23,6 +24,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
     if (commonApplicationStore.isUserAuthorized) {
       commonApplicationStore.setShowOrdinarHeader(true);
       actualSectionStore.throw();
+      DocumentTitle.set('Личный кабинет')
     } else {
       navigate("/");
     }

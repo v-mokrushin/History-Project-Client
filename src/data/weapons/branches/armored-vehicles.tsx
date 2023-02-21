@@ -428,6 +428,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
         numberOfIssued: 4800,
+        platform: Platforms.armoredVehicles.BT,
       },
     },
   },
@@ -440,6 +441,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
         numberOfIssued: 1884,
+        platform: Platforms.armoredVehicles.BT,
       },
     },
   },
@@ -452,6 +454,7 @@ const ussr: IArmoredVehicle[] = [
         developer: Developers.armoredVehicles.Kharkov183,
         producer: [Producers.armoredVehicles.Kharkov183],
         numberOfIssued: 620,
+        platform: Platforms.armoredVehicles.BT,
       },
     },
   },
@@ -901,7 +904,6 @@ const germany: IArmoredVehicle[] = [
     specifications: {
       common: {
         developer: Developers.armoredVehicles.CKD,
-        // platform: Platforms.armoredVehicles.SdKfz251,
         numberOfIssued: 2612,
       },
     },
@@ -1449,7 +1451,12 @@ const finland: IArmoredVehicle[] = [
     name: "BT-42",
     type: WeaponClassification.armoredVehicle.sau,
     adoptedIntoServiceDate: 1942,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 18,
+        platform: Platforms.armoredVehicles.BT,
+      },
+    },
   },
 ];
 
@@ -1458,7 +1465,11 @@ const japan: IArmoredVehicle[] = [
     name: "Chi-Nu",
     type: WeaponClassification.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1943,
-    specifications: { common: {} },
+    specifications: {
+      common: {
+        numberOfIssued: 166,
+      },
+    },
   },
 ];
 

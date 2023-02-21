@@ -42,13 +42,13 @@ const AudioPlayer = observer(({ isMainPlayer = false }: IAudioPlayerProps) => {
           )}
           onClick={() => audioPlayerStore.previous()}
         ></button>
-        <button
+        {/* <button
           className={classNames(
             styles.playButton,
             audioPlayerStore.status ? styles.displayNone : styles.displayBlock
           )}
           onClick={() => audioPlayerStore.toggle()}
-        ></button>
+        ></button> */}
         <button
           className={classNames(
             styles.stopButton,

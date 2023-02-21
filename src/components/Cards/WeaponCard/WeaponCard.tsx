@@ -30,7 +30,7 @@ const WeaponCard = observer(
       <NavLink
         to={
           isAbsoluteLinkPath
-            ? `/weapons/${weapon.branch?.path}/world/${weapon.id}`
+            ? weapon.path!
             : weapon.id!
         }
         className={classNames(

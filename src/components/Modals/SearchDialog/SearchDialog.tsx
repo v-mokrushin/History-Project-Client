@@ -122,11 +122,11 @@ const SearchDialog = observer(() => {
                   {t("search_dialog.weapons")}
                 </Text>
                 <div className={styles.searchResultsWrapper}>
-                  {Weapons.filterByName(inputText).map((item) => (
+                  {Weapons.filterByName(inputText).map((weapon) => (
                     <NavLink
-                      to={`/weapons/${item.branch?.path}/world/${item.id}`}
+                      to={weapon.path!}
                       className={styles.item}
-                      key={item.id}
+                      key={weapon.id}
                       onClick={() => {
                         commonApplicationStore.hideSearchDialog();
                         burgerStore.setClose();
@@ -136,19 +136,19 @@ const SearchDialog = observer(() => {
                         <Preloader color="white" />
                         <img
                           className={styles.item__icon}
-                          src={item.gallery?.icon}
+                          src={weapon.gallery?.icon}
                           alt=""
                         />
                       </div>
                       <div className={styles.item__inforationWrapper}>
                         <Text bold noMargin color="gold">
-                          {item.name}
+                          {weapon.name}
                         </Text>
                         <Text noMargin color="white">
-                          {item.branch?.name.russian}
+                          {weapon.branch?.name.russian}
                         </Text>
                         <Text noMargin color="grey">
-                          {item.nation?.name.russian}
+                          {weapon.nation?.name.russian}
                         </Text>
                       </div>
                     </NavLink>

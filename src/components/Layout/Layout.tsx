@@ -1,4 +1,4 @@
-import SearchDialog from "components/Structure/SearchDialog/SearchDialog";
+import SearchDialog from "components/Modals/SearchDialog/SearchDialog";
 import React from "react";
 import Burger from "../Structure/Burger/Burger";
 import Footer from "../Structure/Footer/Footer";

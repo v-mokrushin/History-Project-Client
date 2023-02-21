@@ -13,6 +13,7 @@ import { IAircraft, IAviationSpecifications } from "./aviation-interfaces";
 export interface IBaseWeapon {
   readonly name: string;
   readonly shortName?: string;
+  readonly path?: string;
   readonly type: IWeaponType;
   readonly adoptedIntoServiceDate: number;
   branch?: IWaponBranch;

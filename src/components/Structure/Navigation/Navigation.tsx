@@ -11,6 +11,7 @@ import settingsStore from "stores/mobx/settingsStore";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import { DocumentTitle } from "utils/document-title";
 
 interface INavigationProps {
   isTypeBurger?: boolean;
@@ -117,6 +118,7 @@ const Navigation: React.FC<INavigationProps> = observer(
           onClick={() => {
             actionOnClose();
             actualSectionStore.set("/battles");
+            DocumentTitle.set("Сражения");
           }}
         >
           {t("navigation.battles")}

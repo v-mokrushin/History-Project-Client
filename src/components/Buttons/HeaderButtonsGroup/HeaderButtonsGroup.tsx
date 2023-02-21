@@ -28,8 +28,8 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
           className
         )}
       >
-        <ToolButton />
         <ButtonSearch />
+        <ToolButton />
         <LanguageSwitcher />
         {!commonApplicationStore.isUserAuthorized ? (
           <>

@@ -5,6 +5,7 @@ import {
   createGallery,
   createModels,
   defineIdProperty,
+  definePathProperty,
   sortByTitle,
 } from "utils/weapons";
 import { INation, Nations } from "../../constants/nations";
@@ -18,7 +19,7 @@ import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
 import { Random } from "utils/random";
-import { NationsMethods } from '../../constants/nations';
+import { NationsMethods } from "../../constants/nations";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -30,22 +31,25 @@ const weapons_data = ([] as TWeapon[]).concat(
 
 weapons_data.forEach((weapon) => {
   defineIdProperty(weapon);
+  definePathProperty(weapon);
   createGallery(weapon);
   createModels(weapon);
 });
 
-
-const createdWeapons = localStorage.getItem('created-weapons');
+const createdWeapons = localStorage.getItem("created-weapons");
 if (createdWeapons) {
-  const parsedCreatedWeapons: TWeapon[] = JSON.parse(localStorage.getItem('created-weapons') || '');
-  parsedCreatedWeapons.forEach(item => item.nation = NationsMethods.getByPath(item.nation?.path))
+  const parsedCreatedWeapons: TWeapon[] = JSON.parse(
+    localStorage.getItem("created-weapons") || ""
+  );
+  parsedCreatedWeapons.forEach(
+    (item) => (item.nation = NationsMethods.getByPath(item.nation?.path))
+  );
   weapons_data.unshift(...parsedCreatedWeapons);
 }
 
 // --------------------------------------------------------------------------------
 
 export class Weapons {
-
   public static addNewWeapon(weapon: TWeapon) {
     weapons_data.unshift(weapon);
     console.log(weapons_data);
@@ -56,7 +60,7 @@ export class Weapons {
   }
 
   public static doesWeaponExist(name: string): boolean {
-    return weapons_data.find(weapon => weapon.name === name) ? true : false;
+    return weapons_data.find((weapon) => weapon.name === name) ? true : false;
   }
 
   public static getWeaponExample(): TWeapon {

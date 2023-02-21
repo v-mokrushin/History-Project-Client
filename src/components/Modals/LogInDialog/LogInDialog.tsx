@@ -103,7 +103,7 @@ const LogInDialog = observer(() => {
               }, 500);
             }}
           >
-            <Text color="white">ВОЙТИ</Text>
+            <Text>ВОЙТИ</Text>
           </button>
         </form>
       </div>

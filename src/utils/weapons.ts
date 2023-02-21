@@ -21,10 +21,24 @@ export function appendWeaponBranch(
 
 export function defineIdProperty(weapon: TWeapon): void {
   Object.defineProperty(weapon, "id", {
-    get: function () {
-      return this.name.replaceAll(" ", "-").replaceAll("/", "-");
-    },
+    value: weapon.name.replaceAll(" ", "-").replaceAll("/", "-"),
   });
+  // Object.defineProperty(weapon, "id", {
+  //   get: function () {
+  //     return this.name.replaceAll(" ", "-").replaceAll("/", "-");
+  //   },
+  // });
+}
+
+export function definePathProperty(weapon: TWeapon): void {
+  Object.defineProperty(weapon, "path", {
+    value: `/weapons/${weapon.branch?.path}/world/${weapon.id}`,
+  });
+  // Object.defineProperty(weapon, "path", {
+  //   get: function () {
+  //     return `/weapons/${this.branch?.path}/world/${this.id}`;
+  //   },
+  // });
 }
 
 export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
@@ -80,9 +94,6 @@ export function createGallery(weapon: TWeapon): void {
     isColorizedIcon: translateStringToBool(localStorage.getItem("colorized")),
     get icon() {
       if (this.isIconsRemote) {
-        // if (this.isColorizedIcon) {
-        //   return this.remoteOriginalIcon;
-        // }
         return !this.isColorizedIcon
           ? this.remoteOriginalIcon
           : this.remoteColorizedIcon;

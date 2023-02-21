@@ -24,12 +24,31 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Text from "components/Texts/Text/Text";
 import { IArmoredVehicle } from "data/weapons/interfaces/armored-interfaces";
-import { createGallery, createModels, defineIdProperty } from "utils/weapons";
+import {
+  createGallery,
+  createModels,
+  defineIdProperty,
+  definePathProperty,
+} from "utils/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { InputAdornment } from "@mui/material";
 import { useFormik } from "formik";
 import { isValidURL } from "utils/common";
+import { DocumentTitle } from "utils/document-title";
+
+const initialValues = {
+  name: "",
+  intro: "",
+  adoptedIntoService: 0,
+  country: "",
+  type: "",
+  productionPeriod: "",
+  exploitationYears: "",
+  numberOfIssued: 0,
+  originalPhotoLink: "",
+  colorizedPhotoLink: "",
+};
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -41,6 +60,10 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   const pageInfo = Pages.getByPath(useLocation().pathname);
   const [counter, setCounter] = React.useState<number>(0);
   const iconInput = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    DocumentTitle.set("Создание статьи");
+  }, []);
 
   function testFill() {
     formik.values.intro =
@@ -59,19 +82,6 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
       "https://www.wotanks.com/images/wot-novosti/t-34-ekranirovannyj.JPG";
     setCounter((val) => val + 1);
   }
-
-  const initialValues = {
-    name: "",
-    intro: "",
-    adoptedIntoService: 0,
-    country: "",
-    type: "",
-    productionPeriod: "",
-    exploitationYears: "",
-    numberOfIssued: 0,
-    originalPhotoLink: "",
-    colorizedPhotoLink: "",
-  };
 
   const formik = useFormik({
     initialValues,
@@ -115,9 +125,11 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
       };
 
       defineIdProperty(weapon);
+      definePathProperty(weapon);
       createGallery(weapon);
       createModels(weapon);
       Weapons.addNewWeapon(weapon);
+
       if (localStorage.getItem("created-weapons")) {
         const savedCreatedWeapons: TWeapon[] = JSON.parse(
           localStorage.getItem("created-weapons") || ""
@@ -197,11 +209,6 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
             <form onSubmit={formik.handleSubmit}>
               <div className={styles.wrapper}>
                 <div className={styles.section}>
-                  {/* <img
-                    src="C:\fakepath\icon.jpg"
-                    crossOrigin="anonymous"
-                    alt=""
-                  /> */}
                   <Text color="gold">Введение</Text>
                   <TextField
                     label="Пара слов о технике"
