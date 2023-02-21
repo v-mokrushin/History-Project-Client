@@ -4,7 +4,7 @@ import {
   TWeapon,
   IWeaponGallery,
 } from "data/weapons/interfaces/common-weapon-interfaces";
-import { translateToBool } from "./common";
+import { translateStringToBool } from "./common";
 import { IProducer } from "data/weapons/departments/producers";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 
@@ -77,7 +77,7 @@ export function createGallery(weapon: TWeapon): void {
     isIconsRemote: weapon.galleryInfo?.isIconsRemote,
     remoteOriginalIcon: weapon.galleryInfo?.remoteOriginalIcon || "error",
     remoteColorizedIcon: weapon.galleryInfo?.remoteColorizedIcon || "error",
-    isColorizedIcon: translateToBool(localStorage.getItem("colorized")),
+    isColorizedIcon: translateStringToBool(localStorage.getItem("colorized")),
     get icon() {
       if (this.isIconsRemote) {
         // if (this.isColorizedIcon) {

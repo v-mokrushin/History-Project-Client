@@ -1,6 +1,6 @@
 import { Weapons } from "../../data/weapons/weapons";
 import { makeAutoObservable } from "mobx";
-import { translateToBool as translateLocalstorageToBool } from "utils/common";
+import { translateStringToBool as translateLocalstorageToBool } from "utils/common";
 
 export enum DisplayOnPreview {
   weapons = "вооружения",

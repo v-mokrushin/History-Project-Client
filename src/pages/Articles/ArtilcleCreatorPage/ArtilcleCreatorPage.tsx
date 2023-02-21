@@ -29,6 +29,7 @@ import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { InputAdornment } from "@mui/material";
 import { useFormik } from "formik";
+import { isValidURL } from "utils/common";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -169,10 +170,14 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
 
       if (!values.originalPhotoLink) {
         errors.originalPhotoLink = "Обязательное поле";
+      } else if (!isValidURL(values.originalPhotoLink)) {
+        errors.originalPhotoLink = "Невалидная ссылка";
       }
 
       if (!values.colorizedPhotoLink) {
         errors.colorizedPhotoLink = "Обязательное поле";
+      } else if (!isValidURL(values.colorizedPhotoLink)) {
+        errors.colorizedPhotoLink = "Невалидная ссылка";
       }
 
       return errors;
@@ -203,8 +208,9 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     name="intro"
                     value={formik.values.intro}
                     onChange={formik.handleChange}
-                    error={!!formik.errors.intro}
-                    helperText={formik.errors.intro}
+                    error={formik.touched.intro && !!formik.errors.intro}
+                    helperText={formik.touched.intro && formik.errors.intro}
+                    onBlur={formik.handleBlur}
                     required
                     multiline
                     rows={5}
@@ -218,8 +224,9 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="name"
                       value={formik.values.name}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.name}
-                      helperText={formik.errors.name}
+                      error={formik.touched.name && !!formik.errors.name}
+                      helperText={formik.touched.name && formik.errors.name}
+                      onBlur={formik.handleBlur}
                       required
                     />
                     <TextField
@@ -227,8 +234,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="adoptedIntoService"
                       value={formik.values.adoptedIntoService || ""}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.adoptedIntoService}
-                      helperText={formik.errors.adoptedIntoService}
+                      error={
+                        formik.touched.adoptedIntoService &&
+                        !!formik.errors.adoptedIntoService
+                      }
+                      helperText={
+                        formik.touched.adoptedIntoService &&
+                        formik.errors.adoptedIntoService
+                      }
+                      onBlur={formik.handleBlur}
                       type="number"
                       required
                       InputProps={{
@@ -243,7 +257,10 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                         name="country"
                         value={formik.values.country}
                         onChange={formik.handleChange}
-                        error={!!formik.errors.country}
+                        error={
+                          formik.touched.country && !!formik.errors.country
+                        }
+                        onBlur={formik.handleBlur}
                         native
                       >
                         <option aria-label="None" value="" />
@@ -256,7 +273,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                           ))}
                       </Select>
                       <FormHelperText error={Boolean(formik.errors.country)}>
-                        {formik.errors.country}
+                        {formik.touched.country && formik.errors.country}
                       </FormHelperText>
                     </FormControl>
                     <FormControl required>
@@ -265,7 +282,8 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                         name="type"
                         value={formik.values.type}
                         onChange={formik.handleChange}
-                        error={!!formik.errors.type}
+                        error={formik.touched.type && !!formik.errors.type}
+                        onBlur={formik.handleBlur}
                         native
                       >
                         <option aria-label="None" value="" />
@@ -278,7 +296,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                         ))}
                       </Select>
                       <FormHelperText error={Boolean(formik.errors.type)}>
-                        {formik.errors.type}
+                        {formik.touched.type && formik.errors.type}
                       </FormHelperText>
                     </FormControl>
                     <TextField
@@ -286,8 +304,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="productionPeriod"
                       value={formik.values.productionPeriod || ""}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.productionPeriod}
-                      helperText={formik.errors.productionPeriod}
+                      error={
+                        formik.touched.productionPeriod &&
+                        !!formik.errors.productionPeriod
+                      }
+                      helperText={
+                        formik.touched.productionPeriod &&
+                        formik.errors.productionPeriod
+                      }
+                      onBlur={formik.handleBlur}
                       type="text"
                       InputProps={{
                         endAdornment: (
@@ -300,8 +325,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="numberOfIssued"
                       value={formik.values.numberOfIssued || ""}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.numberOfIssued}
-                      helperText={formik.errors.numberOfIssued}
+                      error={
+                        formik.touched.numberOfIssued &&
+                        !!formik.errors.numberOfIssued
+                      }
+                      helperText={
+                        formik.touched.numberOfIssued &&
+                        formik.errors.numberOfIssued
+                      }
+                      onBlur={formik.handleBlur}
                       type="text"
                       InputProps={{
                         endAdornment: (
@@ -314,8 +346,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="exploitationYears"
                       value={formik.values.exploitationYears || ""}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.exploitationYears}
-                      helperText={formik.errors.exploitationYears}
+                      error={
+                        formik.touched.exploitationYears &&
+                        !!formik.errors.exploitationYears
+                      }
+                      helperText={
+                        formik.touched.exploitationYears &&
+                        formik.errors.exploitationYears
+                      }
+                      onBlur={formik.handleBlur}
                       type="text"
                       InputProps={{
                         endAdornment: (
@@ -333,8 +372,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="originalPhotoLink"
                       value={formik.values.originalPhotoLink}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.originalPhotoLink}
-                      helperText={formik.errors.originalPhotoLink}
+                      error={
+                        formik.touched.originalPhotoLink &&
+                        !!formik.errors.originalPhotoLink
+                      }
+                      helperText={
+                        formik.touched.originalPhotoLink &&
+                        formik.errors.originalPhotoLink
+                      }
+                      onBlur={formik.handleBlur}
                       type="text"
                       required
                       InputProps={{
@@ -348,8 +394,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       name="colorizedPhotoLink"
                       value={formik.values.colorizedPhotoLink}
                       onChange={formik.handleChange}
-                      error={!!formik.errors.colorizedPhotoLink}
-                      helperText={formik.errors.colorizedPhotoLink}
+                      error={
+                        formik.touched.colorizedPhotoLink &&
+                        !!formik.errors.colorizedPhotoLink
+                      }
+                      helperText={
+                        formik.touched.colorizedPhotoLink &&
+                        formik.errors.colorizedPhotoLink
+                      }
+                      onBlur={formik.handleBlur}
                       type="text"
                       required
                       InputProps={{

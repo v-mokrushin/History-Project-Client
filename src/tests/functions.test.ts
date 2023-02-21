@@ -2,7 +2,7 @@ import {
   getBackgroundImageStyleObject,
   getShortNumber,
   shuffleArray,
-  translateToBool,
+  translateStringToBool,
 } from "utils/common";
 
 test("Get background image style object", () => {
@@ -18,8 +18,8 @@ test("Shuffle array", () => {
 });
 
 test("Translation to bool", () => {
-  expect(translateToBool("true")).toBe(true);
-  expect(translateToBool("false")).toBe(false);
+  expect(translateStringToBool("true")).toBe(true);
+  expect(translateStringToBool("false")).toBe(false);
 });
 
 test("Get short presentation of number", () => {
