@@ -8,6 +8,7 @@ interface ITextProps {
   noMargin?: boolean;
   smallLineHeight?: boolean;
   color?: string;
+  size?: string;
   children: any;
   className?: string;
 }
@@ -17,6 +18,7 @@ export default function Text({
   noMargin = false,
   smallLineHeight = false,
   color = "",
+  size = "",
   children,
   className,
 }: ITextProps) {
@@ -28,6 +30,7 @@ export default function Text({
         smallLineHeight && styles.smallLineHeight,
         bold && global_styles.bold,
         global_styles[color],
+        styles[size],
         className
       )}
     >

@@ -23,4 +23,8 @@
   @include media-breakpoint-down(xs) {
     gap: 20px;
   }
+
+  @include media-breakpoint-down(xxs) {
+    gap: 13px;
+  }
 }

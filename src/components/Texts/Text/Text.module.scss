@@ -8,8 +8,8 @@
   line-height: 35px;
 
   @include media-breakpoint-down(FHD) {
-    line-height: 30px;
     font-size: 18px;
+    line-height: 30px;
   }
 
   @include media-breakpoint-down(xl) {
@@ -19,6 +19,30 @@
 
   @include media-breakpoint-down(xs) {
     font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include media-breakpoint-down(xxs) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.small {
+  font-size: 16px;
+
+  @include media-breakpoint-down(FHD) {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 13px;
     line-height: 24px;
   }
 }

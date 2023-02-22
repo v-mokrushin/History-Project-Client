@@ -26,6 +26,8 @@ import { Scroll } from "utils/scroll";
 import { AppDispatch, RootState } from "stores/redux";
 import { Pages } from "constants/pages";
 import ArticleInfo from "components/Texts/ArticleInfo/ArticleInfo";
+import Subtitle from "components/Texts/Subtitle/Subtitle";
+import Comments from "components/Structure/Comments/Comments";
 
 export default function ArticlePage() {
   const dispatch = useDispatch<AppDispatch>();

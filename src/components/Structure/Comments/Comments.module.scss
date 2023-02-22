@@ -1,0 +1,92 @@
+@import "/src/assets/css/common.scss";
+
+.root {
+}
+
+.commentsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+
+  .commentBox {
+    display: flex;
+    gap: 2vh;
+    padding: 1.75vh 2.25vh;
+    border-radius: 0.5vh;
+    background-color: rgb(255, 238, 244);
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.21);
+    cursor: pointer;
+    transition: all 150ms ease;
+    position: relative;
+
+    &:hover {
+      box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.21);
+    }
+
+    .avatar {
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      height: 8vh;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
+      &_mobile {
+        display: none;
+
+        @include media-breakpoint-down(lg) {
+          display: block;
+          height: 6vh;
+          min-height: 50px;
+          border-radius: 50%;
+        }
+
+        @include media-breakpoint-down(xs) {
+          height: 7 vh;
+        }
+      }
+    }
+
+    .contentBox {
+      display: flex;
+      flex-direction: column;
+      // gap: 0.75vh;
+
+      @include media-breakpoint-down(lg) {
+        gap: 1vh;
+      }
+
+      .header {
+        display: flex;
+        gap: 2vh;
+        align-items: center;
+
+        .header_info {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .date {
+      position: absolute;
+      right: 1.25vh;
+      top: 1vh;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
+      &_mobile {
+        display: none;
+
+        @include media-breakpoint-down(lg) {
+          display: block;
+          position: static;
+        }
+      }
+    }
+  }
+}

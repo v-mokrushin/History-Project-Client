@@ -113,7 +113,12 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         <ContentWrapper>
           <Container>
             <Title>{pageInfo.name.russian}</Title>
-            <form onSubmit={formik.handleSubmit}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                formik.handleSubmit();
+              }}
+            >
               <div className={styles.wrapper}>
                 <div className={styles.section}>
                   <Text color="gold">Введение</Text>
@@ -477,7 +482,10 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     Тестовое заполнение
                   </Button>
                   <Button
-                    onClick={() => localStorage.clear()}
+                    onClick={() => {
+                      localStorage.clear();
+                      console.log(formik.values);
+                    }}
                     variant="contained"
                     color="secondary"
                     size="large"

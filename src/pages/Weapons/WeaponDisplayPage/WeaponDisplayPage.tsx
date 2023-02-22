@@ -32,6 +32,8 @@ import { Scroll } from "utils/scroll";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { DocumentTitle } from "utils/document-title";
+import Comments from "components/Structure/Comments/Comments";
+import { CommentsTemplate } from "testing-templates/comments";
 
 const WeaponDisplayPage = observer(() => {
   const { weaponId } = useParams();
@@ -127,6 +129,7 @@ const WeaponDisplayPage = observer(() => {
                         <Subtitle id="Читайте также">Читайте также</Subtitle>
                         <Recommendations weapon={weapon} />
                       </Block>
+                      <Comments comments={CommentsTemplate} />
                     </>
                   ) : (
                     <SpecialLogo
