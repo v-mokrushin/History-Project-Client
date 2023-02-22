@@ -24,31 +24,19 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Text from "components/Texts/Text/Text";
 import { IArmoredVehicle } from "data/weapons/interfaces/armored-interfaces";
-import {
-  createGallery,
-  createModels,
-  defineIdProperty,
-  definePathProperty,
-} from "utils/weapons";
+import { prepareWeapon, writeNewWeaponToLocalStorage } from "utils/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { InputAdornment } from "@mui/material";
 import { useFormik } from "formik";
 import { isValidURL } from "utils/common";
 import { DocumentTitle } from "utils/document-title";
-
-const initialValues = {
-  name: "",
-  intro: "",
-  adoptedIntoService: 0,
-  country: "",
-  type: "",
-  productionPeriod: "",
-  exploitationYears: "",
-  numberOfIssued: 0,
-  originalPhotoLink: "",
-  colorizedPhotoLink: "",
-};
+import {
+  articleCreatorFormInitialValues,
+  fillFormTest,
+  validateArticleCreatorForm,
+} from "./utils";
+import { set } from "mobx";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -58,33 +46,15 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   className,
 }) => {
   const pageInfo = Pages.getByPath(useLocation().pathname);
-  const [counter, setCounter] = React.useState<number>(0);
-  const iconInput = React.useRef<HTMLInputElement>(null);
+  const [rerenderInitiator, runRerenderInitiator] =
+    React.useState<boolean>(false);
 
   React.useEffect(() => {
     DocumentTitle.set("Создание статьи");
   }, []);
 
-  function testFill() {
-    formik.values.intro =
-      "Т-34 Экранированный (сокращенно Т-34Э) — экранированная версия советского среднего танка Т-34. Из-за возросшей мощи немецких танковых орудий и противотанковой артиллерии с лета 1942 года, Народный комиссариат обороны (НКО) СССР, выдал задание особой группе сотрудников научно-исследовательского института (НИИ) завода №112 на усиление бронирования средних танков Т-34.";
-    formik.values.name = "Т-34Э";
-    formik.values.adoptedIntoService = 1942;
-    formik.values.country = Nations.USA.name.russian;
-    formik.values.type =
-      WeaponClassification.armoredVehicle.mediumTank.name.russian;
-    formik.values.productionPeriod = "1942 - 1943";
-    formik.values.numberOfIssued = 25;
-    formik.values.exploitationYears = "1942 - 1943";
-    formik.values.originalPhotoLink =
-      "https://i-com.cdn.gaijin.net/monthly_2022_04/247324968_T-34Egorkyonstreet2.jpg.10fa7842a497b3a9d2fc6ceaa1de63a9.jpg";
-    formik.values.colorizedPhotoLink =
-      "https://www.wotanks.com/images/wot-novosti/t-34-ekranirovannyj.JPG";
-    setCounter((val) => val + 1);
-  }
-
   const formik = useFormik({
-    initialValues,
+    initialValues: articleCreatorFormInitialValues,
     onSubmit: (values, { resetForm }) => {
       if (Weapons.doesWeaponExist(formik.values.name)) {
         alert("Вооружение с таким названием уже существует.");
@@ -124,76 +94,13 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         },
       };
 
-      defineIdProperty(weapon);
-      definePathProperty(weapon);
-      createGallery(weapon);
-      createModels(weapon);
+      prepareWeapon(weapon);
       Weapons.addNewWeapon(weapon);
-
-      if (localStorage.getItem("created-weapons")) {
-        const savedCreatedWeapons: TWeapon[] = JSON.parse(
-          localStorage.getItem("created-weapons") || ""
-        );
-        savedCreatedWeapons.push(weapon);
-        localStorage.setItem(
-          "created-weapons",
-          JSON.stringify(savedCreatedWeapons)
-        );
-      } else {
-        localStorage.setItem("created-weapons", JSON.stringify([weapon]));
-      }
+      writeNewWeaponToLocalStorage(weapon);
       alert(`Вооружение ${values.name} успешно создано.`);
-
-      resetForm({ values: initialValues });
+      resetForm({ values: articleCreatorFormInitialValues });
     },
-    validate: (values) => {
-      const errors: any = {};
-
-      if (!values.intro) {
-        errors.intro = "Обязательное поле";
-      } else if (values.intro.length < 100) {
-        errors.intro = "Не менее 100 знаков";
-      }
-
-      if (!values.name) {
-        errors.name = "Обязательное поле";
-      }
-
-      if (!values.country) {
-        errors.country = "Обязательное поле";
-      }
-
-      if (!values.type) {
-        errors.type = "Обязательное поле";
-      }
-
-      if (!values.adoptedIntoService) {
-        errors.adoptedIntoService = "Обязательное поле";
-      } else if (
-        values.adoptedIntoService < 1850 ||
-        values.adoptedIntoService > 1950
-      ) {
-        errors.adoptedIntoService = "Неверный год";
-      }
-
-      if (values.numberOfIssued < 0) {
-        errors.numberOfIssued = "Должно быть больше 0";
-      }
-
-      if (!values.originalPhotoLink) {
-        errors.originalPhotoLink = "Обязательное поле";
-      } else if (!isValidURL(values.originalPhotoLink)) {
-        errors.originalPhotoLink = "Невалидная ссылка";
-      }
-
-      if (!values.colorizedPhotoLink) {
-        errors.colorizedPhotoLink = "Обязательное поле";
-      } else if (!isValidURL(values.colorizedPhotoLink)) {
-        errors.colorizedPhotoLink = "Невалидная ссылка";
-      }
-
-      return errors;
-    },
+    validate: (values) => validateArticleCreatorForm(values),
   });
 
   if (!pageInfo)
@@ -559,7 +466,10 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     Создать
                   </Button>
                   <Button
-                    onClick={testFill}
+                    onClick={() => {
+                      fillFormTest(formik);
+                      runRerenderInitiator((val) => !val);
+                    }}
                     variant="contained"
                     color="secondary"
                     size="large"

@@ -6,6 +6,10 @@
   grid-column-gap: 1.7vmax;
   grid-row-gap: 1.38vh;
 
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
   @include media-breakpoint-down(lg) {
     grid-template-columns: repeat(5, 1fr);
   }

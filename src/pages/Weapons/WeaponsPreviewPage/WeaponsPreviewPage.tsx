@@ -68,7 +68,6 @@ const WeaponsPreviewPage = observer(() => {
       document.removeEventListener("scroll", scrollEvent);
       commonApplicationStore.setShowOrdinarHeader(false);
       scrollMemoryStore.shouldRemember = false;
-      console.log("close");
     };
   }, []);
 

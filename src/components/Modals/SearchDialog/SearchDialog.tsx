@@ -162,6 +162,11 @@ const SearchDialog = observer(() => {
         ) : (
           <></>
         )}
+        {inputText && !weapons.length && !articles.length && (
+          <div className={styles.notFoundWrapper}>
+            <Text color="white">НИЧЕГО НЕ НАЙДЕНО</Text>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -7,14 +7,14 @@ import styles from "./SpecialLogo.module.scss";
 
 interface ISpecialLogoProps {
   vertiacalFill?: boolean;
-  className?: string;
   type: SPECIAL_LOGO_TYPE;
+  className?: string;
 }
 
 export default function SpecialLogo({
   vertiacalFill = false,
-  className,
   type,
+  className,
 }: ISpecialLogoProps) {
   const { t } = useTranslation();
 

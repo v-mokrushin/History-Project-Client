@@ -2,10 +2,13 @@ import { IChiefDesigner } from "./departments/chief-designers";
 import { IDeveloper } from "./departments/developers";
 import { shuffleArray } from "utils/common";
 import {
-  createGallery,
-  createModels,
+  defineGallery,
   defineIdProperty,
+  defineModels,
   definePathProperty,
+  prepareWeapon,
+  prepareWeapons,
+  readWeaponsFromLocalStorage,
   sortByTitle,
 } from "utils/weapons";
 import { INation, Nations } from "../../constants/nations";
@@ -29,30 +32,14 @@ const weapons_data = ([] as TWeapon[]).concat(
   GRENADE_LAUNCHERS_DATA
 );
 
-weapons_data.forEach((weapon) => {
-  defineIdProperty(weapon);
-  definePathProperty(weapon);
-  createGallery(weapon);
-  createModels(weapon);
-});
-
-const createdWeapons = localStorage.getItem("created-weapons");
-if (createdWeapons) {
-  const parsedCreatedWeapons: TWeapon[] = JSON.parse(
-    localStorage.getItem("created-weapons") || ""
-  );
-  parsedCreatedWeapons.forEach(
-    (item) => (item.nation = NationsMethods.getByPath(item.nation?.path))
-  );
-  weapons_data.unshift(...parsedCreatedWeapons);
-}
+prepareWeapons(weapons_data);
+readWeaponsFromLocalStorage(weapons_data);
 
 // --------------------------------------------------------------------------------
 
 export class Weapons {
   public static addNewWeapon(weapon: TWeapon) {
     weapons_data.unshift(weapon);
-    console.log(weapons_data);
   }
 
   public get() {

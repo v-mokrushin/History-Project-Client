@@ -210,7 +210,10 @@ export const WeaponClassificationMethods = {
     return ALL_TYPE;
   },
   getTypesArrayWithAll(weaponBranch: IWaponBranch): string[] {
-    return [this.getAllType().name.russian, ...this.getTypesArray(weaponBranch)];
+    return [
+      this.getAllType().name.russian,
+      ...this.getTypesArray(weaponBranch),
+    ];
   },
   getTypesArray(weaponBranch: IWaponBranch): string[] {
     return Object.values(weaponBranch)
@@ -222,6 +225,11 @@ export const WeaponClassificationMethods = {
   },
   identity: {
     isArmoredVehicle(weapon: TWeapon): boolean {
+      if (
+        weapon.branch?.name.russian ===
+        WeaponClassification.armoredVehicle.name.russian
+      )
+        return true;
       return weapon.branch == WeaponClassification.armoredVehicle;
     },
     isAviation(weapon: TWeapon): boolean {
@@ -238,4 +246,3 @@ export const WeaponClassificationMethods = {
     },
   },
 };
-

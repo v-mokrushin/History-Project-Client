@@ -1,4 +1,4 @@
-import { INation } from "./../constants/nations";
+import { INation, NationsMethods } from "./../constants/nations";
 import { IWaponBranch } from "constants/weapon-types";
 import {
   TWeapon,
@@ -19,26 +19,59 @@ export function appendWeaponBranch(
   weapons.forEach((weapon) => (weapon.branch = branch));
 }
 
+export function readWeaponsFromLocalStorage(weapons: TWeapon[]): void {
+  const createdWeapons = localStorage.getItem("created-weapons");
+  if (createdWeapons) {
+    const parsedCreatedWeapons: TWeapon[] = JSON.parse(
+      localStorage.getItem("created-weapons") || ""
+    );
+    parsedCreatedWeapons.forEach((weapon) => {
+      weapon.nation = NationsMethods.getByPath(weapon.nation?.path);
+      defineIdProperty(weapon);
+      definePathProperty(weapon);
+    });
+    weapons.unshift(...parsedCreatedWeapons);
+  }
+}
+
+export function writeNewWeaponToLocalStorage(weapon: TWeapon): void {
+  if (localStorage.getItem("created-weapons")) {
+    const savedCreatedWeapons: TWeapon[] = JSON.parse(
+      localStorage.getItem("created-weapons") || ""
+    );
+    savedCreatedWeapons.push(weapon);
+    localStorage.setItem(
+      "created-weapons",
+      JSON.stringify(savedCreatedWeapons)
+    );
+  } else {
+    localStorage.setItem("created-weapons", JSON.stringify([weapon]));
+  }
+}
+
+export function prepareWeapons(weapons: TWeapon[]): void {
+  weapons.forEach((weapon) => {
+    prepareWeapon(weapon);
+  });
+}
+
+export function prepareWeapon(weapon: TWeapon): void {
+  defineIdProperty(weapon);
+  definePathProperty(weapon);
+  defineGallery(weapon);
+  defineModels(weapon);
+}
+
 export function defineIdProperty(weapon: TWeapon): void {
   Object.defineProperty(weapon, "id", {
     value: weapon.name.replaceAll(" ", "-").replaceAll("/", "-"),
   });
-  // Object.defineProperty(weapon, "id", {
-  //   get: function () {
-  //     return this.name.replaceAll(" ", "-").replaceAll("/", "-");
-  //   },
-  // });
 }
 
 export function definePathProperty(weapon: TWeapon): void {
   Object.defineProperty(weapon, "path", {
     value: `/weapons/${weapon.branch?.path}/world/${weapon.id}`,
   });
-  // Object.defineProperty(weapon, "path", {
-  //   get: function () {
-  //     return `/weapons/${this.branch?.path}/world/${this.id}`;
-  //   },
-  // });
 }
 
 export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
@@ -63,26 +96,7 @@ export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
   );
 }
 
-// export function getGallery(weapon: TWeapon): IWeaponGallery {
-//   let weaponName: string = weapon.name;
-//   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
-
-//   const gallery: IWeaponGallery = {
-//     path: getGalleryPath(weaponName, weapon),
-//     isColorizedIcon: false,
-//     get icon() {
-//       if (!this.isColorizedIcon) {
-//         return this.path + "icon.jpg";
-//       } else {
-//         return this.path + "icon-color.jpg";
-//       }
-//     },
-//   };
-
-//   return gallery;
-// }
-
-export function createGallery(weapon: TWeapon): void {
+export function defineGallery(weapon: TWeapon): void {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
@@ -125,7 +139,7 @@ export function createGallery(weapon: TWeapon): void {
   }
 }
 
-export function createModels(weapon: TWeapon): void {
+export function defineModels(weapon: TWeapon): void {
   if (weapon.models) {
     weapon.models.forEach(
       (model) => (model.photo = weapon.gallery?.path + "/models/" + model.photo)
