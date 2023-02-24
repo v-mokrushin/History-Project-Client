@@ -15,6 +15,7 @@ import burgerStore from "stores/mobx/burgerStore";
 import authorizationStore from "stores/mobx/authorizationStore";
 import { userAccounts } from "testing-templates/user-accounts";
 import { hashSync } from "bcryptjs";
+import axios from "axios";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -97,20 +98,22 @@ const LogInDialog = observer(() => {
                 return;
               }
 
-              // const response = userAccounts.login(username, hashSync(password));
-              const response = userAccounts.login(username, password);
-              if (!response) {
-                alert("Неверный логин или пароль.");
-                return;
-              }
-
-              setTimeout(() => {
-                authorizationStore.authorizeUser(response);
-                burgerStore.setClose();
-                clearForm();
-                commonApplicationStore.hideLogInDialog();
-                navigate("/account");
-              }, 500);
+              axios
+                .post("http://localhost:3001/users", {
+                  username: username,
+                  passwordHash: password,
+                })
+                .then((response) => {
+                  console.log(response);
+                  authorizationStore.authorizeUser(response.data);
+                  burgerStore.setClose();
+                  clearForm();
+                  commonApplicationStore.hideLogInDialog();
+                  navigate("/account");
+                })
+                .catch((error) => {
+                  alert(error.response.data);
+                });
             }}
           >
             <Text>ВОЙТИ</Text>
