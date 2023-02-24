@@ -5,7 +5,6 @@ export class CommonApplicationStore {
   public rdinarHeaderVisibility: boolean = false;
   public logInDialogVisibility: boolean = false;
   public registrationDialogVisibility: boolean = false;
-  public isUserAuthorized: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -39,10 +38,6 @@ export class CommonApplicationStore {
     this.registrationDialogVisibility = false;
   }
 
-  public setIsUserAuthorized(value: boolean): void {
-    this.isUserAuthorized = value;
-    console.log("ss");
-  }
 }
 
 const commonApplicationStore = new CommonApplicationStore();

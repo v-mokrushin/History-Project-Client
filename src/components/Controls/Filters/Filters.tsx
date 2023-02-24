@@ -7,7 +7,7 @@ import filtersStore from "stores/mobx/filtersStore";
 import { WeaponClassificationMethods } from "constants/weapon-types";
 import { Weapons } from "data/weapons/weapons";
 import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
-import Button from "components/Buttons/Button/Button";
+import Button from "components/Buttons/FilterButton/FilterButton";
 import { useTranslation } from "react-i18next";
 
 interface IFiltersProps {

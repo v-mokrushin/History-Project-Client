@@ -37,6 +37,7 @@ import {
   validateArticleCreatorForm,
 } from "./utils";
 import { set } from "mobx";
+import CustomButton from "components/Buttons/Button/Button";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -458,40 +459,26 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   </div>
                 </div> */}
                 <div className={styles.test}>
-                  <Button
-                    type="submit"
-                    onClick={(event) => {
-                      // event.preventDefault();
-                      // addWeapon();
-                    }}
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                  >
+                  <CustomButton color="blue" type="submit">
                     Создать
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      fillFormTest(formik);
-                      runRerenderInitiator((val) => !val);
-                    }}
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                  >
-                    Тестовое заполнение
-                  </Button>
-                  <Button
+                  </CustomButton>
+                  <CustomButton
+                    color="blue"
                     onClick={() => {
                       localStorage.clear();
                       console.log(formik.values);
                     }}
-                    variant="contained"
-                    color="secondary"
-                    size="large"
                   >
-                    Очистить localStorage
-                  </Button>
+                    Тестовое заполнение
+                  </CustomButton>
+                  <CustomButton
+                    color="red"
+                    onClick={() => {
+                      localStorage.clear();
+                    }}
+                  >
+                    Очистить LocalStorage
+                  </CustomButton>
                 </div>
               </div>
             </form>

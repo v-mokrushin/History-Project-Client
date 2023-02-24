@@ -13,10 +13,10 @@
     gap: 2vh;
     padding: 1.75vh 2.25vh;
     border-radius: 0.5vh;
-    background-color: rgb(255, 238, 244);
+    // background-color: rgb(255, 238, 244);
+    // background-color: rgb(255, 238, 244);
     border: 1px solid rgb(211, 211, 211);
     box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.21);
-    cursor: pointer;
     transition: all 150ms ease;
     position: relative;
 
@@ -28,6 +28,13 @@
       border-radius: 50%;
       aspect-ratio: 1 / 1;
       height: 8vh;
+      transition: transform 200ms ease;
+      will-change: transform;
+      cursor: pointer;
+
+      &:hover {
+        // transform: scale(1.05);
+      }
 
       @include media-breakpoint-down(lg) {
         display: none;
@@ -44,7 +51,7 @@
         }
 
         @include media-breakpoint-down(xs) {
-          height: 7 vh;
+          height: 7vh;
         }
       }
     }
@@ -52,6 +59,7 @@
     .contentBox {
       display: flex;
       flex-direction: column;
+      width: 100%;
       // gap: 0.75vh;
 
       @include media-breakpoint-down(lg) {
@@ -66,6 +74,26 @@
         .header_info {
           display: flex;
           flex-direction: column;
+        }
+      }
+
+      .input {
+        width: 100%;
+      }
+
+      .buttonsBox {
+        display: flex;
+        align-self: flex-end;
+        gap: 1vh;
+        margin-top: 2vh;
+
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+          align-self: auto;
+        }
+
+        .test {
+          // background-color: black;
         }
       }
     }

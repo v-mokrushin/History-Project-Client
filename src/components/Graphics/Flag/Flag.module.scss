@@ -6,6 +6,7 @@
   justify-content: stretch;
   align-items: stretch;
   text-decoration: none;
+  cursor: pointer;
   gap: 7px;
 
   @include media-breakpoint-down(xl) {

@@ -10,6 +10,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
+import authorizationStore from "stores/mobx/authorizationStore";
 
 const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
@@ -116,7 +117,7 @@ const RegistrationDialog = observer(() => {
               setTimeout(() => {
                 clearForm();
                 commonApplicationStore.hideRegistrationDialog();
-                commonApplicationStore.setIsUserAuthorized(true);
+                authorizationStore.setIsUserAuthorized(true);
               }, 500);
             }}
           >

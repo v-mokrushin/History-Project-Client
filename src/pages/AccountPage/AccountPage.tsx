@@ -7,11 +7,13 @@ import Container from "components/Structure/Container/Container";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { useNavigate } from "react-router";
 import Text from "components/Texts/Text/Text";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { observer } from "mobx-react-lite";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import { DocumentTitle } from "utils/document-title";
+import CustomButton from "components/Buttons/Button/Button";
+import authorizationStore from "stores/mobx/authorizationStore";
 
 interface IAccountPageProps {
   className?: string;
@@ -21,10 +23,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (commonApplicationStore.isUserAuthorized) {
+    if (authorizationStore.isUserAuthorized) {
       commonApplicationStore.setShowOrdinarHeader(true);
       actualSectionStore.throw();
-      DocumentTitle.set('Личный кабинет')
+      DocumentTitle.set("Личный кабинет");
     } else {
       navigate("/");
     }
@@ -32,14 +34,14 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
     return () => {
       commonApplicationStore.setShowOrdinarHeader(false);
     };
-  }, [commonApplicationStore.isUserAuthorized]);
+  }, [authorizationStore.isUserAuthorized]);
 
   function onExitClick() {
     const result = confirm("Вы действительно хотите выйти из учетной записи?");
 
     if (result) {
       setTimeout(() => {
-        commonApplicationStore.setIsUserAuthorized(false);
+        authorizationStore.setIsUserAuthorized(false);
       }, 500);
     }
   }
@@ -91,8 +93,9 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 />
               </div>
             </div>
+            <CustomButton color="red">Выйти из учетной записи</CustomButton>
             <div className={styles.test}>
-              <Button
+              {/* <Button
                 variant="contained"
                 size="medium"
                 color="warning"
@@ -101,7 +104,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 style={{ minWidth: "33%", margin: "0 auto" }}
               >
                 Выйти из учетной записи
-              </Button>
+              </Button> */}
             </div>
           </div>
         </form>

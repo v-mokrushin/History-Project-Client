@@ -55,6 +55,7 @@
   background-size: cover;
   transition: transform 300ms ease;
   z-index: 0;
+  will-change: transform;
 }
 
 .contentWrapper {

@@ -4,20 +4,45 @@ import classNames from "classnames";
 import Text from "components/Texts/Text/Text";
 
 interface IButtonProps {
-  text: string;
-  callback: Function;
+  children: string;
+  color?: "gold" | "blue" | "grey" | "red";
+  textColor?: "white" | "black" | "gold" | "blue" | "grey" | "red";
+  size?: "medium" | "large";
+  type?: "button" | "submit" | "reset";
+  outlined?: boolean;
+  uppercase?: boolean;
+  onClick?: Function;
   className?: string;
 }
 
-const Button = ({ text, callback, className }: IButtonProps) => {
+const CustomButton: React.FC<IButtonProps> = ({
+  children,
+  size = "medium",
+  color = "",
+  textColor = "white",
+  onClick,
+  type = "button",
+  outlined = false,
+  uppercase = false,
+  className,
+}) => {
   return (
     <button
-      className={classNames(styles.root, className)}
-      onClick={() => callback()}
+      onClick={onClick && (() => onClick())}
+      className={classNames(
+        styles.root,
+        styles[color],
+        styles[size],
+        outlined && styles.outlined,
+        className
+      )}
+      type={type}
     >
-      <Text className={styles.text}>{text}</Text>
+      <Text color={textColor}>
+        {uppercase ? children.toUpperCase() : children}
+      </Text>
     </button>
   );
 };
 
-export default Button;
+export default CustomButton;

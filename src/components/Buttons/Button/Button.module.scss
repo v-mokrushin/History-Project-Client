@@ -1,41 +1,59 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  min-width: 200px;
-  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3vh;
+  min-height: 30px;
+  padding: 0 1.95vh;
+  // width: max-content;
+  // border-radius: 2vh;
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 0.4vh;
+  border: none;
   cursor: pointer;
-  height: 45px;
-  transition: transform 150ms ease, border-color 200ms ease;
+  transition: transform 70ms ease, background-color 250ms ease;
 
   @include media-breakpoint-down(xl) {
-    min-width: 210px;
-    height: 35px;
+    // max-height: 30px;
   }
 
-  @include media-breakpoint-down(md) {
-    min-width: 180px;
-    height: 35px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    border: none;
-    background-color: black;
+  @include media-breakpoint-down(lg) {
+    // min-height: 25px;
   }
 
   &:active {
-    transform: translateY(2px);
-  }
-
-  &:hover {
-    border-color: gray;
+    transform: translateY(0.1vh);
   }
 }
 
-.text {
-  @include media-breakpoint-down(sm) {
-    color: white;
+.gold {
+  background-color: $gold;
+  border: 1px solid $gold;
+}
+
+.blue {
+  background-color: $blue;
+  border: 1px solid $blue;
+
+  &:hover {
+    // background-color: #1a6ab9;
   }
+}
+
+.grey {
+  background-color: $grey;
+}
+
+.red {
+  background-color: rgb(168, 94, 94);
+}
+
+.large {
+  height: 4vh;
+}
+
+.outlined {
+  background-color: transparent;
 }

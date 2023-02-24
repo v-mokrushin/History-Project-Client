@@ -30,7 +30,7 @@ const Input = observer(
     const input = React.useRef<HTMLInputElement>(null);
 
     return (
-      <div className={styles.root}>
+      <div className={classNames(styles.root, className)}>
         {label && (
           <Text noMargin color="gold">
             {label}

@@ -12,6 +12,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
+import authorizationStore from "stores/mobx/authorizationStore";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -98,8 +99,8 @@ const LogInDialog = observer(() => {
                 burgerStore.setClose();
                 clearForm();
                 commonApplicationStore.hideLogInDialog();
-                commonApplicationStore.setIsUserAuthorized(true);
-                navigate("/account");
+                authorizationStore.setIsUserAuthorized(true);
+                // navigate("/account");
               }, 500);
             }}
           >
