@@ -13,6 +13,8 @@ import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
 import authorizationStore from "stores/mobx/authorizationStore";
+import { userAccounts } from "testing-templates/user-accounts";
+import { hashSync } from "bcryptjs";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -95,12 +97,19 @@ const LogInDialog = observer(() => {
                 return;
               }
 
+              // const response = userAccounts.login(username, hashSync(password));
+              const response = userAccounts.login(username, password);
+              if (!response) {
+                alert("Неверный логин или пароль.");
+                return;
+              }
+
               setTimeout(() => {
+                authorizationStore.authorizeUser(response);
                 burgerStore.setClose();
                 clearForm();
                 commonApplicationStore.hideLogInDialog();
-                authorizationStore.setIsUserAuthorized(true);
-                // navigate("/account");
+                navigate("/account");
               }, 500);
             }}
           >

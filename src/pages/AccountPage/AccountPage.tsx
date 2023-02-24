@@ -41,10 +41,12 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
 
     if (result) {
       setTimeout(() => {
-        authorizationStore.setIsUserAuthorized(false);
+        authorizationStore.unauthorizeUser();
       }, 500);
     }
   }
+
+  if (!authorizationStore.authorizedUser) return <></>;
 
   return (
     <ContentWrapper>
@@ -57,7 +59,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               <div className={styles.inputsWrapper}>
                 <TextField
                   label="Никнейм"
-                  value={"xvadim"}
+                  value={authorizationStore.authorizedUser.username}
                   variant="outlined"
                   type="text"
                   InputProps={{
@@ -66,7 +68,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 />
                 <TextField
                   label="Имя"
-                  value={"Вадим"}
+                  value={authorizationStore.authorizedUser.name}
                   variant="outlined"
                   type="text"
                   InputProps={{
@@ -75,7 +77,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 />
                 <TextField
                   label="Фамилия"
-                  value={"Мокрушин"}
+                  value={authorizationStore.authorizedUser.surname}
                   variant="outlined"
                   type="text"
                   InputProps={{
@@ -84,7 +86,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 />
                 <TextField
                   label="Дата регистрации"
-                  value={"20.02.2023"}
+                  value={authorizationStore.authorizedUser.registrationDate}
                   variant="outlined"
                   type="text"
                   InputProps={{
@@ -93,19 +95,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 />
               </div>
             </div>
-            <CustomButton color="red">Выйти из учетной записи</CustomButton>
-            <div className={styles.test}>
-              {/* <Button
-                variant="contained"
-                size="medium"
-                color="warning"
-                onClick={onExitClick}
-                className={styles.exitButton}
-                style={{ minWidth: "33%", margin: "0 auto" }}
-              >
-                Выйти из учетной записи
-              </Button> */}
-            </div>
+            <CustomButton onClick={onExitClick} color="red">
+              Выйти из учетной записи
+            </CustomButton>
+            <div className={styles.test}></div>
           </div>
         </form>
       </Container>

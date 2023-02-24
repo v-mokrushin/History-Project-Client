@@ -18,9 +18,11 @@ import "../../stores/mobx/index";
 import ArtilcleCreatorPage from "pages/Articles/ArtilcleCreatorPage/ArtilcleCreatorPage";
 import GalleryPage from "pages/GalleryPage/GalleryPage";
 import AccountPage from "pages/AccountPage/AccountPage";
+import bcrypt from "bcryptjs";
 
 function App() {
   React.useEffect(() => {
+    console.log(bcrypt.hashSync("metal"));
     document.addEventListener("contextmenu", (event) => {
       // event.preventDefault();
     });

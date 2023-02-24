@@ -20,6 +20,7 @@ interface ICommentsProps {
 const Comments: React.FC<ICommentsProps> = observer(
   ({ comments, className }) => {
     const [newComment, setNewComment] = React.useState<string>("");
+    // UserAccounts
 
     return (
       <div className={classNames(styles.root, className)}>
@@ -28,7 +29,7 @@ const Comments: React.FC<ICommentsProps> = observer(
           {authorizationStore.isUserAuthorized && (
             <div className={styles.commentBox} key={comments[4].id}>
               <img
-                src={comments[4].avatar}
+                src={authorizationStore.authorizedUser?.avatar}
                 className={styles.avatar}
                 alt=""
                 onClick={() => imageViewerStore.openPhoto(comments[4].avatar)}
@@ -36,16 +37,18 @@ const Comments: React.FC<ICommentsProps> = observer(
               <div className={styles.contentBox}>
                 <div className={styles.header}>
                   <img
-                    src={comments[4].avatar}
+                    src={authorizationStore.authorizedUser?.avatar}
                     className={styles.avatar_mobile}
                     alt=""
                     onClick={() =>
-                      imageViewerStore.openPhoto(comments[4].avatar)
+                      imageViewerStore.openPhoto(
+                        authorizationStore.authorizedUser?.avatar!
+                      )
                     }
                   />
                   <div className={styles.header_info}>
                     <Text color="gold" bold>
-                      {comments[4].username}
+                      {authorizationStore.authorizedUser?.username}
                     </Text>
                   </div>
                 </div>

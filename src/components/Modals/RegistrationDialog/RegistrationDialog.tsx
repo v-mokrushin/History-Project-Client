@@ -117,7 +117,7 @@ const RegistrationDialog = observer(() => {
               setTimeout(() => {
                 clearForm();
                 commonApplicationStore.hideRegistrationDialog();
-                authorizationStore.setIsUserAuthorized(true);
+                // authorizationStore.setIsUserAuthorized(true);
               }, 500);
             }}
           >
