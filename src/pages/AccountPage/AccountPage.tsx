@@ -72,7 +72,13 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               {authorizationStore.user.username}
             </Subtitle>
             <div className={styles.buttonsBox}>
-              <CustomButton color="black" uppercase>Редактировать</CustomButton>
+              <CustomButton
+                color="black"
+                uppercase
+                onClick={() => commonApplicationStore.showBanner("СОХРАНЕНИЕ")}
+              >
+                Редактировать
+              </CustomButton>
               <CustomButton onClick={onExitClick} color="red" uppercase>
                 Выйти
               </CustomButton>

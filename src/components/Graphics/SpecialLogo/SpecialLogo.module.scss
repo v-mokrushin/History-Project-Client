@@ -20,6 +20,18 @@
   width: max-content;
   cursor: wait;
 
+  &_white .title {
+    color: $white;
+  }
+
+  &_white .causeTitle {
+    color: $white;
+  }
+
+  &_white %animatedIcon {
+    filter: invert(100%);
+  }
+
   @include media-breakpoint-down(md) {
     gap: 10px;
   }
@@ -88,7 +100,7 @@
 
   @include media-breakpoint-down(md) {
     font-size: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 }
 
@@ -126,6 +138,11 @@
 
   @include media-breakpoint-down(md) {
     width: 12px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 12px;
+    height: 0.5px;
   }
 }
 

@@ -8,6 +8,7 @@ import UpButton from "../Buttons/UpButton/UpButton";
 import styles from "./Layout.module.scss";
 import LogInDialog from "../Modals/LogInDialog/LogInDialog";
 import RegistrationDialog from "../Modals/RegistrationDialog/RegistrationDialog";
+import Banner from "components/Modals/Banner/Banner";
 
 interface ILayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -22,6 +23,7 @@ export default function Layout({ children }: ILayoutProps) {
       <SearchDialog />
       <LogInDialog />
       <RegistrationDialog />
+      <Banner />
       <Header />
       <main className={styles.root}>{children}</main>
       <Footer />

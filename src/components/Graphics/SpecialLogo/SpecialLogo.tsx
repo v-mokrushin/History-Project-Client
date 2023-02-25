@@ -7,13 +7,17 @@ import styles from "./SpecialLogo.module.scss";
 
 interface ISpecialLogoProps {
   vertiacalFill?: boolean;
+  title?: string;
   type: SPECIAL_LOGO_TYPE;
+  whiteColor?: boolean;
   className?: string;
 }
 
 export default function SpecialLogo({
   vertiacalFill = false,
+  title = "",
   type,
+  whiteColor = false,
   className,
 }: ISpecialLogoProps) {
   const { t } = useTranslation();
@@ -31,14 +35,18 @@ export default function SpecialLogo({
   }
 
   function getTitle() {
-    if (type == SPECIAL_LOGO_TYPE.loading) {
-      return t("special_logo.loading");
-    }
-    if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
-      return t("special_logo.in_development");
-    }
-    if (type == SPECIAL_LOGO_TYPE.notFound) {
-      return t("special_logo.not_found");
+    if (title) {
+      return title;
+    } else {
+      if (type == SPECIAL_LOGO_TYPE.loading) {
+        return t("special_logo.loading");
+      }
+      if (type == SPECIAL_LOGO_TYPE.inDevelopment) {
+        return t("special_logo.in_development");
+      }
+      if (type == SPECIAL_LOGO_TYPE.notFound) {
+        return t("special_logo.not_found");
+      }
     }
   }
 
@@ -49,7 +57,13 @@ export default function SpecialLogo({
         vertiacalFill && styles.root_verticalFill
       )}
     >
-      <div className={classNames(styles.wrapper, className)}>
+      <div
+        className={classNames(
+          styles.wrapper,
+          whiteColor && styles.wrapper_white,
+          className
+        )}
+      >
         <div
           className={classNames(styles.animatedIcon_left, getIconStyle())}
         ></div>

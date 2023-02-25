@@ -5,6 +5,8 @@ export class CommonApplicationStore {
   public rdinarHeaderVisibility: boolean = false;
   public logInDialogVisibility: boolean = false;
   public registrationDialogVisibility: boolean = false;
+  public bannerVisibility: boolean = false;
+  public bannerTitle: string = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -38,6 +40,14 @@ export class CommonApplicationStore {
     this.registrationDialogVisibility = false;
   }
 
+  public showBanner(title: string): void {
+    this.bannerTitle = title;
+    this.bannerVisibility = true;
+  }
+
+  public hideBanner(): void {
+    this.bannerVisibility = false;
+  }
 }
 
 const commonApplicationStore = new CommonApplicationStore();
