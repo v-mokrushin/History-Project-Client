@@ -1,85 +1,112 @@
 @import "/src/assets/css/common.scss";
 
 .root {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 4vh;
-  margin-top: 2vh;
 }
 
 .separator {
-  height: 2px;
+  height: 1px;
   width: 100%;
   background-color: black;
-}
 
-.preview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1vh;
-
-  .avatar {
-    border-radius: 50%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    height: 15vh;
-    transition: transform 200ms ease;
-    will-change: transform;
-    cursor: pointer;
-  }
-
-  .buttonsBox {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vh;
+  @include media-breakpoint-down(xs) {
+    display: none;
   }
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 3vh;
+  margin-top: 2vh;
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
 
-  .section {
+  .preview {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    @include media-breakpoint-down(xs) {
+      // flex-direction: row;
     }
 
-    .inputsWrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .avatar {
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      height: 15vh;
+      transition: transform 200ms ease;
+      will-change: transform;
+      cursor: pointer;
+
+      @include media-breakpoint-down(xs) {
+        height: 20vh;
+        min-height: 150px;
+      }
+    }
+
+    .buttonsBox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vh;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    @include media-breakpoint-down(sm) {
       gap: 20px;
+    }
 
-      @include media-breakpoint-down(xl) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5vh;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(xs) {
+          flex-direction: column;
+        }
       }
 
-      @include media-breakpoint-down(sm) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
+      .inputsWrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1vh;
 
-      @include media-breakpoint-down(xxs) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 15px;
-      }
+        @include media-breakpoint-down(xl) {
+          grid-template-columns: repeat(3, 1fr);
+        }
 
-      &_fullWidth {
-        display: block;
-        width: 100%;
+        @include media-breakpoint-down(lg) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media-breakpoint-down(sm) {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 15px;
+        }
+
+        @include media-breakpoint-down(xxs) {
+          gap: 10px;
+        }
+
+        &_fullWidth {
+          display: block;
+          width: 100%;
+        }
       }
     }
   }

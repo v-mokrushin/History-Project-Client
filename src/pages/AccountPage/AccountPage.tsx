@@ -53,9 +53,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   return (
     <ContentWrapper>
       <Container>
-        <Subtitle>Личный кабинет</Subtitle>
+        {/* <Subtitle>Личный кабинет</Subtitle> */}
+        <Title>Личный кабинет</Title>
         <div className={styles.separator}></div>
-        <div className={styles.root}>
+        <div className={styles.wrapper}>
           <div className={styles.preview}>
             {authorizationStore.user.avatar && (
               <img
@@ -71,15 +72,14 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               {authorizationStore.user.username}
             </Subtitle>
             <div className={styles.buttonsBox}>
-              <CustomButton color="gold">Редактировать</CustomButton>
-              {/* <CustomButton color="red"></CustomButton> */}
-              <CustomButton onClick={onExitClick} color="red">
+              <CustomButton color="black" uppercase>Редактировать</CustomButton>
+              <CustomButton onClick={onExitClick} color="red" uppercase>
                 Выйти
               </CustomButton>
             </div>
           </div>
           <form>
-            <div className={styles.wrapper}>
+            <div className={styles.infoWrapper}>
               <div className={styles.section}>
                 <div className={styles.header}>
                   <Subtitle color="black" noMargin>

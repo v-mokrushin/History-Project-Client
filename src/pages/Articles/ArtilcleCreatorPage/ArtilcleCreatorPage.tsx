@@ -459,7 +459,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   </div>
                 </div> */}
                 <div className={styles.test}>
-                  <CustomButton color="blue" type="submit">
+                  <CustomButton color="blue" type="submit" uppercase>
                     Создать
                   </CustomButton>
                   <CustomButton
@@ -468,6 +468,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       localStorage.clear();
                       console.log(formik.values);
                     }}
+                    uppercase
                   >
                     Тестовое заполнение
                   </CustomButton>
@@ -476,6 +477,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     onClick={() => {
                       localStorage.clear();
                     }}
+                    uppercase
                   >
                     Очистить LocalStorage
                   </CustomButton>

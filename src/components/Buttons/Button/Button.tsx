@@ -5,7 +5,7 @@ import Text from "components/Texts/Text/Text";
 
 interface IButtonProps {
   children: string;
-  color?: "gold" | "blue" | "grey" | "red";
+  color?: "black" | "gold" | "blue" | "grey" | "red";
   textColor?: "white" | "black" | "gold" | "blue" | "grey" | "red";
   size?: "medium" | "large";
   type?: "button" | "submit" | "reset";
@@ -38,7 +38,7 @@ const CustomButton: React.FC<IButtonProps> = ({
       )}
       type={type}
     >
-      <Text color={textColor}>
+      <Text color={textColor} size="small">
         {uppercase ? children.toUpperCase() : children}
       </Text>
     </button>
