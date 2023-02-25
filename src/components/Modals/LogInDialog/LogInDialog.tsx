@@ -12,8 +12,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
-import authorizationStore from "stores/mobx/authorizationStore";
-import { userAccounts } from "testing-templates/user-accounts";
+import { authorizationStore } from "stores/mobx/authorizationStore";
 import { hashSync } from "bcryptjs";
 import axios from "axios";
 
@@ -21,6 +20,7 @@ const LogInDialog = observer(() => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
@@ -54,6 +54,7 @@ const LogInDialog = observer(() => {
           commonApplicationStore.logInDialogVisibility && styles.dialog_open
         )}
       >
+        {isLoading && <Preloader color="white" overlapping />}
         <button
           onClick={() => {
             commonApplicationStore.hideLogInDialog();
@@ -98,10 +99,11 @@ const LogInDialog = observer(() => {
                 return;
               }
 
+              setIsLoading(true);
               axios
                 .post("http://localhost:3001/users", {
                   username: username,
-                  passwordHash: password,
+                  password: password,
                 })
                 .then((response) => {
                   console.log(response);
@@ -113,6 +115,9 @@ const LogInDialog = observer(() => {
                 })
                 .catch((error) => {
                   alert(error.response.data);
+                })
+                .finally(() => {
+                  setIsLoading(false);
                 });
             }}
           >

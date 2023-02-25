@@ -40,6 +40,7 @@
   transform: translateY(-150%) translateX(-50%);
   transition: transform 350ms ease;
   border: 1px solid rgb(239, 234, 234);
+  overflow: hidden;
 
   @include media-breakpoint-down(lg) {
     width: 65vw;

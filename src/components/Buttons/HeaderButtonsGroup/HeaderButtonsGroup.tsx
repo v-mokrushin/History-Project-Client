@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import PersonButton from "../PersonButton/PersonButton";
 import { observer } from "mobx-react-lite";
-import authorizationStore from "stores/mobx/authorizationStore";
+import { authorizationStore }  from "stores/mobx/authorizationStore";
 
 interface IHeaderButtonsGroupProps {
   burgerType?: boolean;

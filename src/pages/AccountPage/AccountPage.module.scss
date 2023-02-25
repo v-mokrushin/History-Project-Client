@@ -1,6 +1,40 @@
 @import "/src/assets/css/common.scss";
 
 .root {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4vh;
+  margin-top: 2vh;
+}
+
+.separator {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+
+  .avatar {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: 15vh;
+    transition: transform 200ms ease;
+    will-change: transform;
+    cursor: pointer;
+  }
+
+  .buttonsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+  }
 }
 
 .wrapper {
@@ -15,15 +49,21 @@
   .section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2vh;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     .inputsWrapper {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
 
       @include media-breakpoint-down(xl) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
       }
 
@@ -43,20 +83,4 @@
       }
     }
   }
-
-  .test {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
 }
-
-// .exitButton {
-//   min-width: 20%;
-//   background-color: rgb(189, 89, 89);
-
-//   &:hover {
-//     background-color: rgb(216, 60, 60);
-//   }
-// }

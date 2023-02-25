@@ -41,7 +41,7 @@ export function getShortNumber(num: number): string {
   }
 }
 
-export function isValidURL(URL: string): boolean {  
+export function isValidURL(URL: string): boolean {
   const pattern = new RegExp(
     "^(https?:\\/\\/)?" + // protocol
       "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
@@ -53,4 +53,24 @@ export function isValidURL(URL: string): boolean {
   ); // fragment locator
 
   return !!pattern.test(URL);
+}
+
+function check(digit: number) {
+  return digit / 10 < 1 ? "0" + digit : digit;
+}
+
+export function getStringDate(date: Date): string {
+  return `${check(date.getDate())}.${check(
+    date.getMonth() + 1
+  )}.${date.getFullYear()}`;
+}
+
+export function getStringDateTime(date: Date): string {
+  return (
+    getStringDate(date) +
+    " " +
+    `${check(date.getHours())}:${check(
+      date.getMinutes() + 1
+    )}`
+  );
 }

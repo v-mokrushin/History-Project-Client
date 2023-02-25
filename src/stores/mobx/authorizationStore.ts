@@ -1,24 +1,37 @@
-import { IUser } from "./../../testing-templates/user-accounts";
 import { action, makeAutoObservable, observable } from "mobx";
+
+export interface IUserAccountInfo {
+  id: string;
+  username: string;
+  avatar?: string;
+  name?: string;
+  surname?: string;
+  registrationDate: Date;
+}
 
 export class AuthorizationStore {
   public isUserAuthorized: boolean = false;
-  public authorizedUser: undefined | IUser;
+  public user: undefined | IUserAccountInfo;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  public authorizeUser(user: IUser): void {
+  public authorizeUser(serverUserInformation: any): void {
+    this.user = {
+      ...serverUserInformation,
+      registrationDate: new Date(
+        Date.parse(serverUserInformation.registrationDate)
+      ),
+    };
     this.isUserAuthorized = true;
-    this.authorizedUser = user;
   }
 
   public unauthorizeUser(): void {
     this.isUserAuthorized = false;
-    this.authorizedUser = undefined;
+    this.user = undefined;
   }
 }
 
-const authorizationStore = new AuthorizationStore();
-export default authorizationStore;
+export const authorizationStore = new AuthorizationStore();
+authorizationStore;

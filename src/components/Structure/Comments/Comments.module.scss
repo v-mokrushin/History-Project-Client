@@ -13,8 +13,6 @@
     gap: 2vh;
     padding: 1.75vh 2.25vh;
     border-radius: 0.5vh;
-    // background-color: rgb(255, 238, 244);
-    // background-color: rgb(255, 238, 244);
     border: 1px solid rgb(211, 211, 211);
     box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.21);
     transition: all 150ms ease;
@@ -27,10 +25,12 @@
     .avatar {
       border-radius: 50%;
       aspect-ratio: 1 / 1;
+      object-fit: cover;
       height: 8vh;
       transition: transform 200ms ease;
       will-change: transform;
       cursor: pointer;
+      background-color: rgb(66, 88, 148);
 
       &:hover {
         // transform: scale(1.05);

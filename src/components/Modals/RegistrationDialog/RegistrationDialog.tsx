@@ -10,13 +10,16 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
-import authorizationStore from "stores/mobx/authorizationStore";
+import { authorizationStore } from "stores/mobx/authorizationStore";
+import axios from "axios";
+import Preloader from "components/Graphics/Preloader/Preloader";
 
 const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [passwordConfirm, setPasswordConfirm] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
@@ -52,6 +55,7 @@ const RegistrationDialog = observer(() => {
             styles.dialog_open
         )}
       >
+        {isLoading && <Preloader color="white" overlapping />}
         <button
           onClick={() => {
             commonApplicationStore.hideRegistrationDialog();
@@ -93,7 +97,9 @@ const RegistrationDialog = observer(() => {
           </div>
           <button
             className={classNames(styles.submit)}
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
+
               if (username === "") {
                 alert("Придумайте никнейм.");
                 return;
@@ -114,11 +120,32 @@ const RegistrationDialog = observer(() => {
                 return;
               }
 
-              setTimeout(() => {
-                clearForm();
-                commonApplicationStore.hideRegistrationDialog();
-                // authorizationStore.setIsUserAuthorized(true);
-              }, 500);
+              setIsLoading(true);
+              axios
+                .post("http://localhost:3001/users/registration", {
+                  username: username,
+                  password: password,
+                })
+                .then((response) => {
+                  console.log(response);
+                  authorizationStore.authorizeUser(response.data);
+                  burgerStore.setClose();
+                  clearForm();
+                  commonApplicationStore.hideRegistrationDialog();
+                  navigate("/account");
+                })
+                .catch((error) => {
+                  alert(error.response.data);
+                })
+                .finally(() => {
+                  setIsLoading(false);
+                });
+
+              // setTimeout(() => {
+              //   clearForm();
+              //   commonApplicationStore.hideRegistrationDialog();
+              //   // authorizationStore.setIsUserAuthorized(true);
+              // }, 500);
             }}
           >
             <Text>Зарегистрироваться</Text>

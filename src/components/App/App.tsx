@@ -19,10 +19,10 @@ import ArtilcleCreatorPage from "pages/Articles/ArtilcleCreatorPage/ArtilcleCrea
 import GalleryPage from "pages/GalleryPage/GalleryPage";
 import AccountPage from "pages/AccountPage/AccountPage";
 import bcrypt from "bcryptjs";
+import { getStringDate } from "utils/common";
 
 function App() {
   React.useEffect(() => {
-    console.log(bcrypt.hashSync("metal"));
     document.addEventListener("contextmenu", (event) => {
       // event.preventDefault();
     });

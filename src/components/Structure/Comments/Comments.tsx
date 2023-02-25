@@ -9,7 +9,7 @@ import Input from "components/Controls/Input/Input";
 import { Button, TextField } from "@mui/material";
 import CustomButton from "components/Buttons/Button/Button";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
-import authorizationStore from "stores/mobx/authorizationStore";
+import { authorizationStore } from "stores/mobx/authorizationStore";
 import { observer } from "mobx-react";
 
 interface ICommentsProps {
@@ -20,7 +20,6 @@ interface ICommentsProps {
 const Comments: React.FC<ICommentsProps> = observer(
   ({ comments, className }) => {
     const [newComment, setNewComment] = React.useState<string>("");
-    // UserAccounts
 
     return (
       <div className={classNames(styles.root, className)}>
@@ -29,26 +28,29 @@ const Comments: React.FC<ICommentsProps> = observer(
           {authorizationStore.isUserAuthorized && (
             <div className={styles.commentBox} key={comments[4].id}>
               <img
-                src={authorizationStore.authorizedUser?.avatar}
+                src={authorizationStore.user?.avatar}
                 className={styles.avatar}
                 alt=""
-                onClick={() => imageViewerStore.openPhoto(comments[4].avatar)}
+                onClick={() =>
+                  authorizationStore.user?.avatar &&
+                  imageViewerStore.openPhoto(authorizationStore.user.avatar)
+                }
               />
               <div className={styles.contentBox}>
                 <div className={styles.header}>
                   <img
-                    src={authorizationStore.authorizedUser?.avatar}
+                    src={authorizationStore.user?.avatar}
                     className={styles.avatar_mobile}
                     alt=""
                     onClick={() =>
                       imageViewerStore.openPhoto(
-                        authorizationStore.authorizedUser?.avatar!
+                        authorizationStore.user?.avatar!
                       )
                     }
                   />
                   <div className={styles.header_info}>
                     <Text color="gold" bold>
-                      {authorizationStore.authorizedUser?.username}
+                      {authorizationStore.user?.username}
                     </Text>
                   </div>
                 </div>
