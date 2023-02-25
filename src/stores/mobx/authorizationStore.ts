@@ -31,6 +31,27 @@ export class AuthorizationStore {
     this.isUserAuthorized = false;
     this.user = undefined;
   }
+
+  public updateInfo(
+    name: string | undefined,
+    surname: string | undefined,
+    avatar: string | undefined
+  ) {
+    if (this.user) {
+      this.user.name = name;
+      this.user.surname = surname;
+      this.user.avatar = avatar;
+    }
+  }
+
+  public getEditableInfo() {
+    const info = {
+      name: this.user?.name,
+      surname: this.user?.surname,
+      avatar: this.user?.avatar,
+    };
+    return info;
+  }
 }
 
 export const authorizationStore = new AuthorizationStore();

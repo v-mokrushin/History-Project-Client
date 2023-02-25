@@ -36,6 +36,7 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
           <>
             <CustomButton
               color="gold"
+              uppercase
               onClick={() => {
                 commonApplicationStore.showRegistrationDialog();
               }}
@@ -43,6 +44,7 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
               Регистрация
             </CustomButton>
             <CustomButton
+            uppercase
               color="blue"
               onClick={() => commonApplicationStore.showLogInDialog()}
             >

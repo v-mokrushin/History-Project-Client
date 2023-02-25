@@ -13,6 +13,7 @@ import burgerStore from "stores/mobx/burgerStore";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import axios from "axios";
 import Preloader from "components/Graphics/Preloader/Preloader";
+import { Server } from "config/server";
 
 const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
@@ -105,6 +106,11 @@ const RegistrationDialog = observer(() => {
                 return;
               }
 
+              if (username.length < 3) {
+                alert("Минимальная длина никнейма 3 символа.");
+                return;
+              }
+
               if (password === "") {
                 alert("Придумайте пароль.");
                 return;
@@ -120,14 +126,23 @@ const RegistrationDialog = observer(() => {
                 return;
               }
 
+              if (password.length < 3) {
+                alert("Минимальная длина пароля 4 символа.");
+                return;
+              }
+
+              if (username === password) {
+                alert("Пароль и никнейм не должны совпадать.");
+                return;
+              }
+
               setIsLoading(true);
               axios
-                .post("http://localhost:3001/users/registration", {
+                .post(Server.path("/users/registration"), {
                   username: username,
                   password: password,
                 })
                 .then((response) => {
-                  console.log(response);
                   authorizationStore.authorizeUser(response.data);
                   burgerStore.setClose();
                   clearForm();
@@ -140,12 +155,6 @@ const RegistrationDialog = observer(() => {
                 .finally(() => {
                   setIsLoading(false);
                 });
-
-              // setTimeout(() => {
-              //   clearForm();
-              //   commonApplicationStore.hideRegistrationDialog();
-              //   // authorizationStore.setIsUserAuthorized(true);
-              // }, 500);
             }}
           >
             <Text>Зарегистрироваться</Text>

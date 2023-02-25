@@ -15,6 +15,7 @@ import burgerStore from "stores/mobx/burgerStore";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import { hashSync } from "bcryptjs";
 import axios from "axios";
+import { Server } from "config/server";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -101,12 +102,11 @@ const LogInDialog = observer(() => {
 
               setIsLoading(true);
               axios
-                .post("http://localhost:3001/users", {
+                .post(Server.path("/users"), {
                   username: username,
                   password: password,
                 })
                 .then((response) => {
-                  console.log(response);
                   authorizationStore.authorizeUser(response.data);
                   burgerStore.setClose();
                   clearForm();

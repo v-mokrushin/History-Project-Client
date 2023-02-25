@@ -16,6 +16,9 @@ import CustomButton from "components/Buttons/Button/Button";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import imageViewerStore from "stores/mobx/imageViewerStore";
 import { getStringDate, getStringDateTime } from "utils/common";
+import { useFormik } from "formik";
+import axios from "axios";
+import { Server as ServerSource } from "config/server";
 
 interface IAccountPageProps {
   className?: string;
@@ -23,6 +26,11 @@ interface IAccountPageProps {
 
 const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   const navigate = useNavigate();
+  const [editingMode, setEditingMode] = React.useState(false);
+  const formik = useFormik({
+    initialValues: authorizationStore.getEditableInfo(),
+    onSubmit: (values) => {},
+  });
 
   React.useEffect(() => {
     if (authorizationStore.isUserAuthorized) {
@@ -53,7 +61,6 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   return (
     <ContentWrapper>
       <Container>
-        {/* <Subtitle>Личный кабинет</Subtitle> */}
         <Title>Личный кабинет</Title>
         <div className={styles.separator}></div>
         <div className={styles.wrapper}>
@@ -62,7 +69,6 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               <img
                 className={styles.avatar}
                 src={authorizationStore.user.avatar}
-                alt={`${authorizationStore.user.username} avatar`}
                 onClick={() =>
                   imageViewerStore.openPhoto(authorizationStore.user?.avatar!)
                 }
@@ -72,19 +78,67 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               {authorizationStore.user.username}
             </Subtitle>
             <div className={styles.buttonsBox}>
-              <CustomButton
-                color="black"
-                uppercase
-                onClick={() => commonApplicationStore.showBanner("СОХРАНЕНИЕ")}
-              >
-                Редактировать
-              </CustomButton>
-              <CustomButton onClick={onExitClick} color="red" uppercase>
-                Выйти
-              </CustomButton>
+              {!editingMode ? (
+                <CustomButton
+                  color="black"
+                  uppercase
+                  onClick={() => setEditingMode(true)}
+                >
+                  Редактировать
+                </CustomButton>
+              ) : (
+                <CustomButton
+                  color="blue"
+                  uppercase
+                  onClick={() => {
+                    commonApplicationStore.showBanner("СОХРАНЕНИЕ");
+
+                    axios
+                      .patch(ServerSource.path("/users"), {
+                        id: authorizationStore.user?.id,
+                        name: formik.values.name,
+                        surname: formik.values.surname,
+                        avatar: formik.values.avatar,
+                      })
+                      .then((response) => {
+                        if (authorizationStore.user) {
+                          authorizationStore.updateInfo(
+                            formik.values.name,
+                            formik.values.surname,
+                            formik.values.avatar
+                          );
+                        }
+                        commonApplicationStore.hideBanner();
+                        setEditingMode(false);
+                      })
+                      .catch((error) => alert(error));
+                  }}
+                >
+                  Сохранить
+                </CustomButton>
+              )}
+              {editingMode && (
+                <CustomButton
+                  onClick={() => {
+                    formik.resetForm({
+                      values: authorizationStore.getEditableInfo(),
+                    });
+                    setEditingMode(false);
+                  }}
+                  color="red"
+                  uppercase
+                >
+                  Отменить
+                </CustomButton>
+              )}
+              {editingMode || (
+                <CustomButton onClick={onExitClick} color="red" uppercase>
+                  Выйти
+                </CustomButton>
+              )}
             </div>
           </div>
-          <form>
+          {!editingMode ? (
             <div className={styles.infoWrapper}>
               <div className={styles.section}>
                 <div className={styles.header}>
@@ -120,7 +174,47 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 </div>
               </div>
             </div>
-          </form>
+          ) : (
+            <>
+              <form>
+                <div className={styles.infoWrapper}>
+                  <div className={styles.section}>
+                    <div className={styles.header}>
+                      <Subtitle color="black" noMargin>
+                        Редактирование
+                      </Subtitle>
+                    </div>
+                    <div className={styles.inputsWrapper_editingMode}>
+                      <TextField
+                        label="Имя"
+                        name="name"
+                        value={formik.values.name || ""}
+                        onChange={formik.handleChange}
+                        variant="outlined"
+                        type="text"
+                      />
+                      <TextField
+                        label="Фамилия"
+                        name="surname"
+                        value={formik.values.surname || ""}
+                        onChange={formik.handleChange}
+                        variant="outlined"
+                        type="text"
+                      />
+                      <TextField
+                        label="Аватар"
+                        name="avatar"
+                        value={formik.values.avatar || ""}
+                        onChange={formik.handleChange}
+                        variant="outlined"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </>
+          )}
         </div>
       </Container>
     </ContentWrapper>
