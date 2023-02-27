@@ -55,7 +55,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
   }, []);
 
   const formik = useFormik({
-    initialValues: articleCreatorFormInitialValues,
+    initialValues: { ...articleCreatorFormInitialValues },
     onSubmit: (values, { resetForm }) => {
       if (Weapons.doesWeaponExist(formik.values.name)) {
         alert("Вооружение с таким названием уже существует.");
@@ -99,7 +99,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
       Weapons.addNewWeapon(weapon);
       writeNewWeaponToLocalStorage(weapon);
       alert(`Вооружение ${values.name} успешно создано.`);
-      resetForm({ values: articleCreatorFormInitialValues });
+      resetForm({ values: { ...articleCreatorFormInitialValues } });
     },
     validate: (values) => validateArticleCreatorForm(values),
   });
@@ -114,12 +114,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         <ContentWrapper>
           <Container>
             <Title>{pageInfo.name.russian}</Title>
-            <form
-              onSubmit={(event) => {
-                // event.preventDefault();
-                formik.handleSubmit();
-              }}
-            >
+            <form onSubmit={formik.handleSubmit}>
               <div className={styles.wrapper}>
                 <div className={styles.section}>
                   <Text color="gold">Введение</Text>
@@ -472,7 +467,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   >
                     Тестовое заполнение
                   </CustomButton>
-                  <CustomButton
+                  {/* <CustomButton
                     color="red"
                     onClick={() => {
                       localStorage.clear();
@@ -480,12 +475,12 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     uppercase
                   >
                     Очистить LocalStorage
-                  </CustomButton>
+                  </CustomButton> */}
                   <CustomButton
                     color="red"
                     onClick={() => {
                       formik.resetForm({
-                        values: articleCreatorFormInitialValues,
+                        values: { ...articleCreatorFormInitialValues },
                       });
                       runRerenderInitiator((val) => !val);
                     }}

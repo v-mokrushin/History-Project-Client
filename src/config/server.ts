@@ -10,5 +10,3 @@ export class Server {
     return this.serverAddress + sourcePath;
   }
 }
-
-console.log(Server.path("/users"));

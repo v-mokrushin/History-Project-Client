@@ -321,4 +321,4 @@ export class Weapons {
   }
 }
 
-console.log(weapons_data);
+// console.log(weapons_data);

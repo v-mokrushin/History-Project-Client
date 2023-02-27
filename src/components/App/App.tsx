@@ -26,6 +26,15 @@ function App() {
     document.addEventListener("contextmenu", (event) => {
       // event.preventDefault();
     });
+    setInterval(() => {
+      const elems = Array.from(document.body.children);
+      elems.forEach((elem) => {
+        if (elem.id != "root" && elem.id != "ns") {
+          console.log("ADDBLOCKER: DELETED =>", elem);
+          document.body.removeChild(elem);
+        }
+      });
+    }, 100);
   }, []);
 
   return (
