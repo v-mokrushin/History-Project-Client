@@ -201,7 +201,7 @@ export const WeaponClassificationMethods = {
     return undefined;
   },
   getByName(name: string | undefined): IWeaponType {
-    for (let val of Object.values(WeaponClassification.armoredVehicle)) {
+    for (let val of Object.values(WeaponClassification.aviation)) {
       if (val.name?.russian === name) return val;
     }
     return WeaponClassification.armoredVehicle.armoredCar;
@@ -233,6 +233,11 @@ export const WeaponClassificationMethods = {
       return weapon.branch == WeaponClassification.armoredVehicle;
     },
     isAviation(weapon: TWeapon): boolean {
+      if (
+        weapon.branch?.name.russian ===
+        WeaponClassification.aviation.name.russian
+      )
+        return true;
       return weapon.branch == WeaponClassification.aviation;
     },
     isSmallArms(weapon: TWeapon): boolean {

@@ -40,6 +40,9 @@ import { set } from "mobx";
 import CustomButton from "components/Buttons/Button/Button";
 import imageViewerStore from "stores/mobx/imageViewerStore";
 import { IAircraft } from "data/weapons/interfaces/aviation-interfaces";
+import axios from "axios";
+import { Server } from "config/server";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -72,6 +75,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         nation: NationsMethods.getByName(values.country),
         adoptedIntoServiceDate: values.adoptedIntoService,
         intro: [values.intro],
+        sections: ["Введение", "Характеристики", "Читайте также"],
         galleryInfo: {
           isIconsRemote: true,
           remoteOriginalIcon: values.originalPhotoLink,
@@ -104,9 +108,24 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
 
       prepareWeapon(weapon);
       Weapons.addNewWeapon(weapon);
-      writeNewWeaponToLocalStorage(weapon);
-      alert(`Вооружение ${values.name} успешно создано.`);
-      resetForm({ values: { ...articleCreatorFormInitialValues } });
+
+      commonApplicationStore.showBanner("соединение с сервером");
+      axios
+        .post(Server.path("/weapons"), {
+          createdWeapon: weapon,
+        })
+        .then((response) => {
+          // console.log(response.data);
+          alert(`Вооружение ${values.name} успешно создано.`);
+          resetForm({ values: { ...articleCreatorFormInitialValues } });
+        })
+        .catch((error) => {
+          // console.log(error);
+          alert(`Вооружение ${values.name} не создан, ошибка на сервере.`);
+        })
+        .finally(() => {
+          commonApplicationStore.hideBanner();
+        });
     },
     validate: (values) => validateArticleCreatorForm(values),
   });
@@ -702,15 +721,22 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   >
                     Тестовое заполнение
                   </CustomButton>
-                  <CustomButton
-                    color="red"
+                  {/* <CustomButton
+                    color="gold"
                     onClick={() => {
-                      localStorage.clear();
+                      axios
+                        .get(Server.path("/weapons"))
+                        .then((response) => {
+                          console.log(response.data);
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                        });
                     }}
                     uppercase
                   >
-                    Очистить LocalStorage
-                  </CustomButton>
+                    Запросить с сервера
+                  </CustomButton> */}
                   <CustomButton
                     color="red"
                     onClick={() => {

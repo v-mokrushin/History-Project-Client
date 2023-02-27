@@ -34,13 +34,15 @@ import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { DocumentTitle } from "utils/document-title";
 import Comments from "components/Structure/Comments/Comments";
 import { CommentsTemplate } from "testing-templates/comments";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 const WeaponDisplayPage = observer(() => {
+  const isLoading = commonApplicationStore.isLoading;
   const { weaponId } = useParams();
   const weapon = Weapons.getById(weaponId);
 
   React.useEffect(() => {
-    loadingStore.checkLoading(weaponId);
+    // loadingStore.checkLoading(weaponId);
     Scroll.toTopInstantly();
     DocumentTitle.set(weapon?.name || "");
 
@@ -48,6 +50,8 @@ const WeaponDisplayPage = observer(() => {
       imageViewerStore.close();
     };
   }, [weaponId]);
+
+  if (isLoading) return <VideoIntro />;
 
   if (!weapon)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
@@ -72,11 +76,12 @@ const WeaponDisplayPage = observer(() => {
               type={CONTENT_LIST_TYPE.desktop}
               list={weapon.sections}
               weaponId={weapon.id}
-              loadingStatus={loadingStore.getStatus()}
+              loadingStatus={false}
+              // loadingStatus={loadingStore.getStatus()}
             />
             <Container>
               <Title id="Введение">{weapon.name}</Title>
-              {loadingStore.getStatus() ? (
+              {false ? (
                 <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
               ) : (
                 <div className={ANIMATIONS.fadeIn}>
@@ -86,7 +91,8 @@ const WeaponDisplayPage = observer(() => {
                         type={CONTENT_LIST_TYPE.mobile}
                         weaponId={weapon.id}
                         list={weapon.sections}
-                        loadingStatus={loadingStore.getStatus()}
+                        loadingStatus={false}
+                        // loadingStatus={loadingStore.getStatus()}
                       />
                       <TextIntro weapon={weapon} />
                       {weapon.gallery?.photos && (
@@ -142,7 +148,8 @@ const WeaponDisplayPage = observer(() => {
             </Container>
             <SideSpec
               weapon={weapon}
-              loadingStatus={loadingStore.getStatus()}
+              loadingStatus={false}
+              // loadingStatus={loadingStore.getStatus()}
             />
           </Container>
         </ContentWrapper>

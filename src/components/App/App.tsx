@@ -26,7 +26,7 @@ function App() {
     document.addEventListener("contextmenu", (event) => {
       // event.preventDefault();
     });
-    
+
     setInterval(() => {
       const elems = Array.from(document.body.children);
       elems.forEach((elem) => {
@@ -40,6 +40,7 @@ function App() {
       iframes.forEach((iframe) => {
         if (iframe.className !== "YTFrame_video__LfIOj") {
           console.log("ADDBLOCKER: DELETED =>", iframe);
+          iframe.parentElement?.removeChild(iframe);
           document.body.removeChild(iframe);
         }
       });

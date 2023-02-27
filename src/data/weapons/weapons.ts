@@ -23,6 +23,9 @@ import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
 import { Random } from "utils/random";
 import { NationsMethods } from "../../constants/nations";
+import axios from "axios";
+import { Server } from "config/server";
+import commonApplicationStore from "stores/mobx/commonApplicationStore";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -32,8 +35,29 @@ const weapons_data = ([] as TWeapon[]).concat(
   GRENADE_LAUNCHERS_DATA
 );
 
-readWeaponsFromLocalStorage(weapons_data);
-prepareWeapons(weapons_data);
+commonApplicationStore.showBanner("соединение с сервером");
+commonApplicationStore.setIsLoading(true);
+axios
+  .get(Server.path("/weapons"))
+  .then((response) => {
+    const loadedWeapons: TWeapon[] = response.data;
+
+    if (loadedWeapons.length) {
+      loadedWeapons.forEach((weapon) => {
+        weapon.nation = NationsMethods.getByPath(weapon.nation?.path);
+      });
+      weapons_data.unshift(...loadedWeapons);
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    prepareWeapons(weapons_data);
+    console.log(weapons_data);
+    commonApplicationStore.hideBanner();
+    commonApplicationStore.setIsLoading(false);
+  });
 
 // --------------------------------------------------------------------------------
 
@@ -321,4 +345,4 @@ export class Weapons {
   }
 }
 
-console.log(weapons_data);
+// console.log(weapons_data);

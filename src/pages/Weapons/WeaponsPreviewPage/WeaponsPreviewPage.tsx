@@ -31,6 +31,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 
 const WeaponsPreviewPage = observer(() => {
+  const isLoading = commonApplicationStore.isLoading;
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject =
@@ -38,15 +39,15 @@ const WeaponsPreviewPage = observer(() => {
   const nationObject = NationsMethods.getByPath(nationPath);
   const selectedWeapons: TWeapon[] = React.useMemo(
     () => Weapons.selectWeapons(weaponsBranchPath, nationPath),
-    []
+    [isLoading]
   );
   const filteredWeapons: TWeapon[] = React.useMemo(
     () => Weapons.filterWeapons(selectedWeapons, filtersStore.getFilters()),
-    [filtersStore.filters]
+    [filtersStore.filters, isLoading]
   );
   const uniqueDates = React.useMemo(
     () => Weapons.getUniqueDates(filteredWeapons),
-    [filtersStore.filters]
+    [filtersStore.filters, isLoading]
   );
   const [preview, setPreview] = React.useState({
     weapon: filteredWeapons[1],
