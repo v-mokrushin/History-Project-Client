@@ -19,8 +19,6 @@ export default function SideSpec({
   if (!weapon.isReady) return <div></div>;
   if (loadingStatus) return <div></div>;
 
-  console.log(weapon);
-
   return (
     <aside className={classNames(styles.root, className)}>
       {SpecificationsLayout.getAll(weapon)}

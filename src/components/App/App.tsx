@@ -26,6 +26,7 @@ function App() {
     document.addEventListener("contextmenu", (event) => {
       // event.preventDefault();
     });
+    
     setInterval(() => {
       const elems = Array.from(document.body.children);
       elems.forEach((elem) => {
@@ -34,7 +35,15 @@ function App() {
           document.body.removeChild(elem);
         }
       });
-    }, 100);
+
+      const iframes = document.querySelectorAll("iframe");
+      iframes.forEach((iframe) => {
+        if (iframe.className !== "YTFrame_video__LfIOj") {
+          console.log("ADDBLOCKER: DELETED =>", iframe);
+          document.body.removeChild(iframe);
+        }
+      });
+    }, 50);
   }, []);
 
   return (

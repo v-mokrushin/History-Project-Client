@@ -15,7 +15,22 @@
   .section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1.5vh;
+
+    .photosWrapper {
+      display: flex;
+      gap: 1vh;
+      margin-top: -0.6vh;
+
+      .photo {
+        height: 13vh;
+        min-height: 100px;
+        border-radius: 0.35vh;
+        object-fit: cover;
+        aspect-ratio: 1.7 / 1;
+        cursor: pointer;
+      }
+    }
 
     .inputsWrapper {
       display: grid;

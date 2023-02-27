@@ -27,8 +27,8 @@ export function readWeaponsFromLocalStorage(weapons: TWeapon[]): void {
     );
     parsedCreatedWeapons.forEach((weapon) => {
       weapon.nation = NationsMethods.getByPath(weapon.nation?.path);
-      defineIdProperty(weapon);
-      definePathProperty(weapon);
+      // defineIdProperty(weapon);
+      // definePathProperty(weapon);
     });
     weapons.unshift(...parsedCreatedWeapons);
   }
@@ -97,15 +97,39 @@ export function getGalleryPath(weaponName: string, weapon: TWeapon): string {
 }
 
 export function defineGallery(weapon: TWeapon): void {
+  if (weapon.gallery) {
+    weapon.gallery.isColorizedIcon = translateStringToBool(
+      localStorage.getItem("colorized")
+    );
+
+    Object.defineProperty(weapon.gallery, "icon", {
+      get: function () {
+        if (this.isIconsRemote) {
+          return !this.isColorizedIcon
+            ? this.remoteOriginalIcon
+            : this.remoteColorizedIcon;
+        }
+        if (!this.isColorizedIcon) {
+          return this.path + "icon.jpg";
+        } else {
+          return this.path + "icon-color.jpg";
+        }
+      },
+    });
+
+    return;
+  }
+
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
   weapon.gallery = {
     path: getGalleryPath(weaponName, weapon),
     isIconsRemote: weapon.galleryInfo?.isIconsRemote,
-    remoteOriginalIcon: weapon.galleryInfo?.remoteOriginalIcon || "error",
-    remoteColorizedIcon: weapon.galleryInfo?.remoteColorizedIcon || "error",
+    remoteOriginalIcon: weapon.galleryInfo?.remoteOriginalIcon || "none",
+    remoteColorizedIcon: weapon.galleryInfo?.remoteColorizedIcon || "none",
     isColorizedIcon: translateStringToBool(localStorage.getItem("colorized")),
+
     get icon() {
       if (this.isIconsRemote) {
         return !this.isColorizedIcon
@@ -119,6 +143,7 @@ export function defineGallery(weapon: TWeapon): void {
         return this.path + "icon-color.jpg";
       }
     },
+
     get intro() {
       if (!this.isColorizedIcon) {
         return this.path + "intro.mp4";

@@ -32,8 +32,8 @@ const weapons_data = ([] as TWeapon[]).concat(
   GRENADE_LAUNCHERS_DATA
 );
 
-prepareWeapons(weapons_data);
 readWeaponsFromLocalStorage(weapons_data);
+prepareWeapons(weapons_data);
 
 // --------------------------------------------------------------------------------
 
@@ -321,4 +321,4 @@ export class Weapons {
   }
 }
 
-// console.log(weapons_data);
+console.log(weapons_data);

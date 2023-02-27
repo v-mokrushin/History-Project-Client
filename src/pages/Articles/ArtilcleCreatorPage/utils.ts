@@ -1,6 +1,6 @@
-import { Nations } from './../../../constants/nations';
+import { Nations } from "./../../../constants/nations";
 import { isValidURL } from "utils/common";
-import { WeaponClassification } from 'constants/weapon-types';
+import { WeaponClassification } from "constants/weapon-types";
 
 export const articleCreatorFormInitialValues = {
   name: "",
@@ -11,25 +11,66 @@ export const articleCreatorFormInitialValues = {
   productionPeriod: "",
   exploitationYears: "",
   numberOfIssued: 0,
+
+  emptyWeight: 0,
+  curbWeight: 0,
+  length: 0,
+  height: 0,
+  wingSpan: 0,
+  wingArea: 0,
+
+  crewSize: 0,
+  crewStructure: "",
+  technicalRange: 0,
+  practicalRange: 0,
+  maximumSpeed: 0,
+  climbRate: 0,
+
+  weaponsSet: "",
+  ammunition: "",
+  secondSalvoWeight: 0,
+  bombWeapons: "",
+
   originalPhotoLink: "",
   colorizedPhotoLink: "",
 };
 
 export function fillFormTest(formik: any) {
-  formik.values.intro =
-    "Т-34 Экранированный (сокращенно Т-34Э) — экранированная версия советского среднего танка Т-34. Из-за возросшей мощи немецких танковых орудий и противотанковой артиллерии с лета 1942 года, Народный комиссариат обороны (НКО) СССР, выдал задание особой группе сотрудников научно-исследовательского института (НИИ) завода №112 на усиление бронирования средних танков Т-34.";
-  formik.values.name = "Т-34Э";
-  formik.values.adoptedIntoService = 1942;
-  formik.values.country = Nations.USA.name.russian;
-  formik.values.type =
-    WeaponClassification.armoredVehicle.mediumTank.name.russian;
-  formik.values.productionPeriod = "1942 - 1943";
-  formik.values.numberOfIssued = 25;
+  formik.values.intro = `Появление последней серийной версии Bf 109К ("Курфюст") явилось результатом политики рационализма "истребительного штаба", пытавшегося удержать хорошо отработанный истребитель на конвейере, но сократить число его модификаций и субмодификаций. В результате появился "Курфюст" (литеру I министерство авиации не использовало, а J была присвоена модификации истребителя с двигателем "Испано-Сюиза"), который представлял собой модифицированный вариант Bf 109G-10, получивший ряд использовавшихся на самолетах серии G наборов заводской установки и некоторые аэродинамические улучшения.`;
+
+  formik.values.name = "Bf.109K";
+  formik.values.adoptedIntoService = 1944;
+  formik.values.country = Nations.Germany.name.russian;
+  formik.values.type = WeaponClassification.aviation.fighter.name.russian;
+  formik.values.productionPeriod = "1944 - 1945";
+  formik.values.numberOfIssued = 1200;
   formik.values.exploitationYears = "1942 - 1943";
+
+  formik.values.emptyWeight = 2450;
+  formik.values.curbWeight = 3100;
+  formik.values.length = 8.85;
+  formik.values.height = 2.5;
+  formik.values.wingSpan = 10;
+  formik.values.wingArea = 16.1;
+
+  formik.values.crewSize = 1;
+  formik.values.crewStructure = "пилот";
+
+  formik.values.technicalRange = 790;
+  formik.values.practicalRange = 570;
+  formik.values.maximumSpeed = 695;
+  formik.values.climbRate = 24.5;
+
+  formik.values.weaponsSet =
+    "1 x 30-мм пушка МК 103 или 108, 2 x 15-мм пушки MG 151";
+  formik.values.ammunition = "МК 103 - 120 выстрелов, MG 151 - 440 выстрелов";
+  formik.values.secondSalvoWeight = 3.56;
+  formik.values.bombWeapons = "отсутствует";
+
   formik.values.originalPhotoLink =
-    "https://i-com.cdn.gaijin.net/monthly_2022_04/247324968_T-34Egorkyonstreet2.jpg.10fa7842a497b3a9d2fc6ceaa1de63a9.jpg";
+    "https://grafiq.ru/wp-content/uploads/2016/11/Messerschmitt-Bf-109-G-10-WNr-611155-Schwarzer-Winkel-2-Uffz-Anton-Kellmeier-6-JG-52-Neubiberg-May-1945.jpg";
   formik.values.colorizedPhotoLink =
-    "https://www.wotanks.com/images/wot-novosti/t-34-ekranirovannyj.JPG";
+    "https://www.digitalcombatsimulator.com/upload/iblock/1fa/Digital%20Combat%20Simulator%20%20Black%20Shark%20Screenshot%202018.09.23%20-%2017.58.30.35.jpg";
 }
 
 export function validateArticleCreatorForm(

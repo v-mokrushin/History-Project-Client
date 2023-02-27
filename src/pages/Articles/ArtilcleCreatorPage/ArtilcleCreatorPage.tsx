@@ -38,6 +38,8 @@ import {
 } from "./utils";
 import { set } from "mobx";
 import CustomButton from "components/Buttons/Button/Button";
+import imageViewerStore from "stores/mobx/imageViewerStore";
+import { IAircraft } from "data/weapons/interfaces/aviation-interfaces";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -62,10 +64,10 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         return;
       }
 
-      const weapon: IArmoredVehicle = {
+      const weapon: IAircraft = {
         name: values.name,
         isReady: true,
-        branch: WeaponClassification.armoredVehicle,
+        branch: WeaponClassification.aviation,
         type: WeaponClassificationMethods.getByName(values.type)!,
         nation: NationsMethods.getByName(values.country),
         adoptedIntoServiceDate: values.adoptedIntoService,
@@ -81,17 +83,22 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
             exploitationPeriod: values.exploitationYears,
             numberOfIssued: values.numberOfIssued,
           },
-          // sizes: {
-          //   weight: state.weight,
-          //   length: state.length,
-          //   width: state.width,
-          //   height: state.height,
-          //   clearance: state.clearance,
-          // },
-          // crew: {
-          //   size: state.crewSize,
-          //   structure: state.crewStructure,
-          // },
+          crew: {
+            size: values.crewSize,
+            structure: values.crewStructure,
+          },
+          flightCharacteristics: {
+            technicalRange: values.technicalRange,
+            practicalRange: values.practicalRange,
+            maximumSpeed: values.maximumSpeed,
+            climbRate: values.climbRate,
+          },
+          weapons: {
+            weaponsSet: values.weaponsSet,
+            ammunition: values.ammunition,
+            secondSalvoWeight: values.secondSalvoWeight,
+            bombWeapons: values.bombWeapons,
+          },
         },
       };
 
@@ -117,7 +124,9 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
             <form onSubmit={formik.handleSubmit}>
               <div className={styles.wrapper}>
                 <div className={styles.section}>
-                  <Text color="gold">Введение</Text>
+                  <Text color="gold" noMargin>
+                    Введение
+                  </Text>
                   <TextField
                     label="Пара слов о технике"
                     name="intro"
@@ -128,11 +137,12 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     onBlur={formik.handleBlur}
                     required
                     multiline
-                    rows={5}
                   />
                 </div>
                 <div className={styles.section}>
-                  <Text color="gold">Общее</Text>
+                  <Text color="gold" noMargin>
+                    Общее
+                  </Text>
                   <div className={styles.inputsWrapper}>
                     <TextField
                       label="Название"
@@ -203,7 +213,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       >
                         <option aria-label="None" value="" />
                         {WeaponClassificationMethods.getTypesArray(
-                          WeaponClassification.armoredVehicle
+                          WeaponClassification.aviation
                         ).map((item) => (
                           <option key={item} value={item}>
                             {item}
@@ -280,7 +290,354 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   </div>
                 </div>
                 <div className={styles.section}>
-                  <Text color="gold">Фотографии</Text>
+                  <Text color="gold" noMargin>
+                    Размеры и масса
+                  </Text>
+                  <div className={styles.inputsWrapper}>
+                    <TextField
+                      label="Масса пустого"
+                      name="emptyWeight"
+                      value={formik.values.emptyWeight || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.emptyWeight &&
+                        !!formik.errors.emptyWeight
+                      }
+                      helperText={
+                        formik.touched.emptyWeight && formik.errors.emptyWeight
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">кг</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Масса снаряжённого"
+                      name="curbWeight"
+                      value={formik.values.curbWeight || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.curbWeight && !!formik.errors.curbWeight
+                      }
+                      helperText={
+                        formik.touched.curbWeight && formik.errors.curbWeight
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">кг</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Длина"
+                      name="length"
+                      value={formik.values.length || ""}
+                      onChange={formik.handleChange}
+                      error={formik.touched.length && !!formik.errors.length}
+                      helperText={formik.touched.length && formik.errors.length}
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Высота"
+                      name="height"
+                      value={formik.values.height || ""}
+                      onChange={formik.handleChange}
+                      error={formik.touched.height && !!formik.errors.height}
+                      helperText={formik.touched.height && formik.errors.height}
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Размах крыла"
+                      name="wingSpan"
+                      value={formik.values.wingSpan || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.wingSpan && !!formik.errors.wingSpan
+                      }
+                      helperText={
+                        formik.touched.wingSpan && formik.errors.wingSpan
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Площадь крыла"
+                      name="wingArea"
+                      value={formik.values.wingArea || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.wingArea && !!formik.errors.wingArea
+                      }
+                      helperText={
+                        formik.touched.wingArea && formik.errors.wingArea
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м²</InputAdornment>
+                        ),
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className={styles.section}>
+                  <Text color="gold" noMargin>
+                    Экипаж
+                  </Text>
+                  <div className={styles.inputsWrapper}>
+                    <TextField
+                      label="Количество"
+                      name="crewSize"
+                      value={formik.values.crewSize || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.crewSize && !!formik.errors.crewSize
+                      }
+                      helperText={
+                        formik.touched.crewSize && formik.errors.crewSize
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            человек
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Состав"
+                      name="crewStructure"
+                      value={formik.values.crewStructure}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.crewStructure &&
+                        !!formik.errors.crewStructure
+                      }
+                      helperText={
+                        formik.touched.crewStructure &&
+                        formik.errors.crewStructure
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className={styles.section}>
+                  <Text color="gold" noMargin>
+                    Летные характеристики
+                  </Text>
+                  <div className={styles.inputsWrapper}>
+                    <TextField
+                      label="Техническая дальность"
+                      name="technicalRange"
+                      value={formik.values.technicalRange || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.technicalRange &&
+                        !!formik.errors.technicalRange
+                      }
+                      helperText={
+                        formik.touched.technicalRange &&
+                        formik.errors.technicalRange
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">км</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Практическая дальность"
+                      name="practicalRange"
+                      value={formik.values.practicalRange || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.practicalRange &&
+                        !!formik.errors.practicalRange
+                      }
+                      helperText={
+                        formik.touched.practicalRange &&
+                        formik.errors.practicalRange
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">км</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Максимальная скорость"
+                      name="maximumSpeed"
+                      value={formik.values.maximumSpeed || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.maximumSpeed &&
+                        !!formik.errors.maximumSpeed
+                      }
+                      helperText={
+                        formik.touched.maximumSpeed &&
+                        formik.errors.maximumSpeed
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">км/ч</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Скороподъемность"
+                      name="climbRate"
+                      value={formik.values.climbRate || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.climbRate && !!formik.errors.climbRate
+                      }
+                      helperText={
+                        formik.touched.climbRate && formik.errors.climbRate
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">м/c</InputAdornment>
+                        ),
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className={styles.section}>
+                  <Text color="gold" noMargin>
+                    Вооружение
+                  </Text>
+                  <div className={styles.inputsWrapper_fullWidthFlex}>
+                    <TextField
+                      label="Комплект вооружения"
+                      name="weaponsSet"
+                      value={formik.values.weaponsSet || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.weaponsSet && !!formik.errors.weaponsSet
+                      }
+                      helperText={
+                        formik.touched.weaponsSet && formik.errors.weaponsSet
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                    />
+                    <TextField
+                      label="Боезапас"
+                      name="ammunition"
+                      value={formik.values.ammunition}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.ammunition && !!formik.errors.ammunition
+                      }
+                      helperText={
+                        formik.touched.ammunition && formik.errors.ammunition
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                    />
+                    <TextField
+                      label="Вес секундного залпа"
+                      name="secondSalvoWeight"
+                      value={formik.values.secondSalvoWeight || ""}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.secondSalvoWeight &&
+                        !!formik.errors.secondSalvoWeight
+                      }
+                      helperText={
+                        formik.touched.secondSalvoWeight &&
+                        formik.errors.secondSalvoWeight
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">кг/с</InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      label="Бомбовое вооружение"
+                      name="bombWeapons"
+                      value={formik.values.bombWeapons}
+                      onChange={formik.handleChange}
+                      error={
+                        formik.touched.bombWeapons &&
+                        !!formik.errors.bombWeapons
+                      }
+                      helperText={
+                        formik.touched.bombWeapons && formik.errors.bombWeapons
+                      }
+                      onBlur={formik.handleBlur}
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className={styles.section}>
+                  <Text color="gold" noMargin>
+                    Фотографии
+                  </Text>
+                  {formik.values.originalPhotoLink &&
+                    formik.values.colorizedPhotoLink && (
+                      <div className={styles.photosWrapper}>
+                        {formik.values.originalPhotoLink && (
+                          <img
+                            src={formik.values.originalPhotoLink}
+                            className={styles.photo}
+                            onClick={() =>
+                              imageViewerStore.openPhoto(
+                                formik.values.originalPhotoLink
+                              )
+                            }
+                          />
+                        )}
+                        {formik.values.colorizedPhotoLink && (
+                          <img
+                            src={formik.values.colorizedPhotoLink}
+                            className={styles.photo}
+                            onClick={() =>
+                              imageViewerStore.openPhoto(
+                                formik.values.colorizedPhotoLink
+                              )
+                            }
+                          />
+                        )}
+                      </div>
+                    )}
                   <div className={styles.inputsWrapper_fullWidthFlex}>
                     <TextField
                       label="Черно-белая фотография"
@@ -298,6 +655,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       onBlur={formik.handleBlur}
                       type="text"
                       required
+                      multiline
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">ссылка</InputAdornment>
@@ -320,6 +678,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                       onBlur={formik.handleBlur}
                       type="text"
                       required
+                      multiline
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">ссылка</InputAdornment>
@@ -328,131 +687,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     />
                   </div>
                 </div>
-                {/* <div className={styles.section}>
-                  <Text color="gold">Размеры и масса</Text>
-                  <div className={styles.inputsWrapper}>
-                    <TextField
-                      label="Масса"
-                      value={state.weight || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setWeight",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">тонн</InputAdornment>
-                        ),
-                      }}
-                    />
-                    <TextField
-                      label="Длина"
-                      value={state.length || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setLength",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">м</InputAdornment>
-                        ),
-                      }}
-                    />
-                    <TextField
-                      label="Ширина"
-                      value={state.width || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setWidth",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">м</InputAdornment>
-                        ),
-                      }}
-                    />
-                    <TextField
-                      label="Высота"
-                      value={state.height || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setHeight",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">м</InputAdornment>
-                        ),
-                      }}
-                    />
-                    <TextField
-                      label="Клиренс"
-                      value={state.clearance || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setClearance",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">м</InputAdornment>
-                        ),
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className={styles.section}>
-                  <Text color="gold">Экипаж</Text>
-                  <div className={styles.inputsWrapper}>
-                    <TextField
-                      label="Количество"
-                      value={state.crewSize || ""}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setCrewSize",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                      type="number"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            человек(а)
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-                    <TextField
-                      label="Состав"
-                      value={state.crewStructure}
-                      onChange={(event) =>
-                        dispatch({
-                          type: "setCrewStructure",
-                          payload: event.currentTarget.value,
-                        })
-                      }
-                      variant="outlined"
-                    />
-                  </div>
-                </div> */}
+
                 <div className={styles.test}>
                   <CustomButton color="blue" type="submit" uppercase>
                     Создать
@@ -467,7 +702,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   >
                     Тестовое заполнение
                   </CustomButton>
-                  {/* <CustomButton
+                  <CustomButton
                     color="red"
                     onClick={() => {
                       localStorage.clear();
@@ -475,7 +710,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     uppercase
                   >
                     Очистить LocalStorage
-                  </CustomButton> */}
+                  </CustomButton>
                   <CustomButton
                     color="red"
                     onClick={() => {

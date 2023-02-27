@@ -129,7 +129,7 @@ const WeaponDisplayPage = observer(() => {
                         <Subtitle id="Читайте также">Читайте также</Subtitle>
                         <Recommendations weapon={weapon} />
                       </Block>
-                      <Comments comments={CommentsTemplate} />
+                      {/* <Comments comments={CommentsTemplate} /> */}
                     </>
                   ) : (
                     <SpecialLogo
