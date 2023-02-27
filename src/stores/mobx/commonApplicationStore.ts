@@ -2,7 +2,6 @@ import { action, makeAutoObservable, observable, runInAction } from "mobx";
 
 export class CommonApplicationStore {
   public searchDialogVisibility: boolean = false;
-  public ordinarHeaderVisibility: boolean = false;
   public logInDialogVisibility: boolean = false;
   public registrationDialogVisibility: boolean = false;
   public bannerVisibility: boolean = false;
@@ -11,10 +10,6 @@ export class CommonApplicationStore {
 
   constructor() {
     makeAutoObservable(this);
-  }
-
-  public setShowOrdinarHeader(value: boolean): void {
-    this.ordinarHeaderVisibility = value;
   }
 
   public showSearchDialog(): void {

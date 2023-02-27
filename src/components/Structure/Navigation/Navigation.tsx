@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import AudioPlayer from "../../Controls/AudioPlayer/AudioPlayer";
 import styles from "./Navigation.module.scss";
 import audioPlayerStore from "../../../stores/mobx/audioPlayerStore";
@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "components/Buttons/LanguageSwitcher/LanguageSwitcher";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { DocumentTitle } from "utils/document-title";
+import { checkToShowSolidHeader } from "utils/display";
 
 interface INavigationProps {
   isTypeBurger?: boolean;
@@ -20,6 +21,7 @@ interface INavigationProps {
 const Navigation: React.FC<INavigationProps> = observer(
   ({ isTypeBurger = false }) => {
     const actualSection = actualSectionStore.actualSection;
+    const path: string = useLocation().pathname;
     const { t, i18n } = useTranslation();
 
     function actionOnClose() {
@@ -68,7 +70,7 @@ const Navigation: React.FC<INavigationProps> = observer(
           <div
             className={classNames(
               styles.weaponBox__suggestion,
-              commonApplicationStore.ordinarHeaderVisibility &&
+              checkToShowSolidHeader(path) &&
                 styles.weaponBox__suggestion_opaque
             )}
           >

@@ -21,18 +21,12 @@ const testPhotos = new Array(29)
 
 const GalleryPage: React.FC<IGalleryPageProps> = ({ className }) => {
   React.useEffect(() => {
-    commonApplicationStore.setShowOrdinarHeader(true);
-    return () => {
-      commonApplicationStore.setShowOrdinarHeader(false);
-    };
+    return () => {};
   }, []);
 
   return (
     <>
-      {/* <VideoIntro size="half"/> */}
-      <ContentWrapper
-        containerType={CONTAINER_TYPES.wide}
-      >
+      <ContentWrapper containerType={CONTAINER_TYPES.wide}>
         <Container type={CONTAINER_TYPES.wide}>
           <Title>Галерея</Title>
           <div className={styles.root}>

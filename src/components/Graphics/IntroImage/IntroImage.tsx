@@ -8,16 +8,18 @@ interface IIntroImageProps {
   imageUrl: string;
   animated?: boolean;
   shouldThrowAnimation?: boolean;
+  className?: string;
 }
 
 export default function IntroImage({
   imageUrl,
   animated = false,
   shouldThrowAnimation = false,
+  className,
 }: IIntroImageProps) {
   return (
     <div
-      className={classNames(styles.root)}
+      className={classNames(styles.root, className)}
       onClick={() => imageViewerStore.openPhoto(imageUrl)}
       key={!shouldThrowAnimation ? "intro" : Math.random()}
     >

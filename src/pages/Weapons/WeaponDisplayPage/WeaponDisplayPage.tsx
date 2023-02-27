@@ -51,7 +51,8 @@ const WeaponDisplayPage = observer(() => {
     };
   }, [weaponId]);
 
-  if (isLoading) return <VideoIntro />;
+  // if (isLoading) return <VideoIntro />;
+  if (isLoading) return <></>;
 
   if (!weapon)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
@@ -62,7 +63,10 @@ const WeaponDisplayPage = observer(() => {
         {weapon.isReady && <ReadingProgressBar />}
         {weapon.gallery &&
           (!weapon.isVideoIntro ? (
-            <IntroImage imageUrl={weapon.gallery.icon} />
+            <IntroImage
+              imageUrl={weapon.gallery.icon}
+              className={ANIMATIONS.fadeIn}
+            />
           ) : (
             <VideoIntro
               path={weapon.gallery?.intro}

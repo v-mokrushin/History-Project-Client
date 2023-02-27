@@ -34,16 +34,13 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
 
   React.useEffect(() => {
     if (authorizationStore.isUserAuthorized) {
-      commonApplicationStore.setShowOrdinarHeader(true);
       actualSectionStore.throw();
       DocumentTitle.set("Личный кабинет");
     } else {
       navigate("/");
     }
 
-    return () => {
-      commonApplicationStore.setShowOrdinarHeader(false);
-    };
+    return () => {};
   }, [authorizationStore.isUserAuthorized]);
 
   function onExitClick() {

@@ -107,7 +107,6 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
       };
 
       prepareWeapon(weapon);
-      Weapons.addNewWeapon(weapon);
 
       commonApplicationStore.showBanner("соединение с сервером");
       axios
@@ -117,11 +116,12 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
         .then((response) => {
           // console.log(response.data);
           alert(`Вооружение ${values.name} успешно создано.`);
+          Weapons.addNewWeapon(weapon);
           resetForm({ values: { ...articleCreatorFormInitialValues } });
         })
         .catch((error) => {
           // console.log(error);
-          alert(`Вооружение ${values.name} не создан, ошибка на сервере.`);
+          alert(`Вооружение ${values.name} не создан. Неудалось подключиться к серверу.`);
         })
         .finally(() => {
           commonApplicationStore.hideBanner();

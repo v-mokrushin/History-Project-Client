@@ -60,14 +60,14 @@ const WeaponsPreviewPage = observer(() => {
       scrollMemoryStore.setValue(window.scrollY);
     };
 
-    commonApplicationStore.setShowOrdinarHeader(true);
+    // commonApplicationStore.setShowOrdinarHeader(true);
     scrollMemoryStore.activate();
     document.addEventListener("scroll", scrollEvent);
     scrollMemoryStore.shouldRemember = true;
 
     return () => {
       document.removeEventListener("scroll", scrollEvent);
-      commonApplicationStore.setShowOrdinarHeader(false);
+      // commonApplicationStore.setShowOrdinarHeader(false);
       scrollMemoryStore.shouldRemember = false;
     };
   }, []);

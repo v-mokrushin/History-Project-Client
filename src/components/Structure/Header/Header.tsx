@@ -13,6 +13,7 @@ import HeaderButtonsGroup from "components/Buttons/HeaderButtonsGroup/HeaderButt
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import { observer } from "mobx-react-lite";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import { checkToShowSolidHeader } from "utils/display";
 
 const Header = observer(() => {
   const path: string = useLocation().pathname;
@@ -21,7 +22,7 @@ const Header = observer(() => {
     <header
       className={classNames(
         styles.root,
-        commonApplicationStore.ordinarHeaderVisibility && styles.ordinar,
+        checkToShowSolidHeader(path) && styles.ordinar,
         ANIMATIONS.fadeIn
       )}
     >
