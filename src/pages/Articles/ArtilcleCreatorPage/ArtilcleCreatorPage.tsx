@@ -116,7 +116,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
             <Title>{pageInfo.name.russian}</Title>
             <form
               onSubmit={(event) => {
-                event.preventDefault();
+                // event.preventDefault();
                 formik.handleSubmit();
               }}
             >
@@ -465,8 +465,8 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                   <CustomButton
                     color="blue"
                     onClick={() => {
-                      localStorage.clear();
-                      console.log(formik.values);
+                      fillFormTest(formik);
+                      runRerenderInitiator((val) => !val);
                     }}
                     uppercase
                   >
@@ -480,6 +480,18 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = ({
                     uppercase
                   >
                     Очистить LocalStorage
+                  </CustomButton>
+                  <CustomButton
+                    color="red"
+                    onClick={() => {
+                      formik.resetForm({
+                        values: articleCreatorFormInitialValues,
+                      });
+                      runRerenderInitiator((val) => !val);
+                    }}
+                    uppercase
+                  >
+                    Очистить
                   </CustomButton>
                 </div>
               </div>

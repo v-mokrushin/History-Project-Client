@@ -114,7 +114,11 @@ const LogInDialog = observer(() => {
                   navigate("/account");
                 })
                 .catch((error) => {
-                  alert(error.response.data);
+                  if (error.code === "ERR_NETWORK") {
+                    alert("Сервер недоступен.");
+                  } else {
+                    alert(error.response.data);
+                  }
                 })
                 .finally(() => {
                   setIsLoading(false);

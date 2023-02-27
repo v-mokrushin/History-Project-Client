@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "../../../components/Structure/Container/Container";
 import ContentWrapper from "../../../components/Structure/ContentWrapper/ContentWrapper";
 import IntroImage from "../../../components/Graphics/IntroImage/IntroImage";

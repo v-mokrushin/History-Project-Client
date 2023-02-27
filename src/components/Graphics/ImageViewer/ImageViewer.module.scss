@@ -94,12 +94,12 @@
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  transition: all 150ms ease;
+  transition: all 100ms ease;
   cursor: pointer;
   user-select: none;
 
   &:hover &_arrow {
-    transform: scale(1.1) rotate(90deg);
+    transform: scale(1.05) rotate(90deg);
 
     @include media-breakpoint-down(md) {
       transform: rotate(90deg);
@@ -111,7 +111,7 @@
     filter: invert(100%) brightness(350%);
     background-size: cover;
     aspect-ratio: 1.8 / 1;
-    width: 45%;
+    width: 30%;
     transform: rotate(90deg);
     background-color: transparent;
     border: none;
