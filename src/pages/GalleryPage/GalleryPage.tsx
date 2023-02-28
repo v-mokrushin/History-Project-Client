@@ -10,6 +10,7 @@ import Preloader from "components/Graphics/Preloader/Preloader";
 import Title from "components/Texts/Title/Title";
 import { ANIMATIONS } from "constants/animations";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 interface IGalleryPageProps {
   className?: string;
@@ -21,6 +22,8 @@ const testPhotos = new Array(29)
 
 const GalleryPage: React.FC<IGalleryPageProps> = ({ className }) => {
   React.useEffect(() => {
+    alertsStore.add("info", `Раздел на начальном этупе разработки`);
+
     return () => {};
   }, []);
 

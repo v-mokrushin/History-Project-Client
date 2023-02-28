@@ -7,8 +7,8 @@ import Block from "components/Structure/Block/Block";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 
 interface IModelsProps {
+  models: IModel[] | undefined;
   showTitle?: boolean;
-  models: IModel[];
   className?: string;
 }
 

@@ -1,33 +1,64 @@
-import { action, makeAutoObservable, observable, runInAction } from "mobx";
+import { alertsStore } from "./alertsStore";
+import axios from "axios";
+import { Server } from "config/server";
+import { makeAutoObservable, observable, runInAction, toJS } from "mobx";
 
 export class LoadingStore {
-  private status: boolean;
-  private loadedIds: string[];
+  public isLoading: boolean;
+  public loadedArticlesInfo: any;
+  public actualArticle: any;
 
   constructor() {
-    this.status = true;
-    this.loadedIds = [];
+    this.isLoading = true;
+    this.loadedArticlesInfo = [];
 
     makeAutoObservable(this);
   }
 
-  getStatus(): boolean {
-    return this.status;
+
+  public getActualArticleViews() {
+    if (this.actualArticle) {
+      return this.actualArticle.views;
+    }
   }
 
-  checkLoading(weaponId: string | undefined): void {
-    if (!weaponId) return;
-    if (!this.loadedIds.includes(weaponId)) {
-      this.loadedIds.push(weaponId);
-      this.status = true;
+  private setStatus(value: boolean): void {
+    this.isLoading = value;
+  }
 
-      setTimeout(() => {
-        runInAction(() => {
-          this.status = false;
+  public checkLoading(articleId: string | undefined): void {
+    if (!articleId) return;
+
+    if (!this.loadedArticlesInfo[articleId]) {
+      this.isLoading = true;
+
+      axios
+        .post(Server.path("/weapons/views/add"), { id: articleId })
+        .then((response) => {
+          console.log(response);
+          this.loadedArticlesInfo[articleId] = {
+            id: articleId,
+            views: response.data.views - 1,
+          };
+          this.actualArticle = this.loadedArticlesInfo[articleId];
+          this.setStatus(false);
+        })
+        .catch((error) => {
+          alertsStore.add(
+            "error",
+            "Не удалось загрузить колличество просмотров статьи"
+          );
+          this.setStatus(false);
         });
-      }, 1000);
     } else {
-      this.status = false;
+      this.isLoading = false;
+      this.actualArticle = this.loadedArticlesInfo[articleId];
+
+      axios
+        .post(Server.path("/weapons/views/add"), { id: articleId })
+        .then((response) => {
+          console.log(response);
+        });
     }
   }
 }

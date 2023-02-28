@@ -35,24 +35,27 @@ import { DocumentTitle } from "utils/document-title";
 import Comments from "components/Structure/Comments/Comments";
 import { CommentsTemplate } from "testing-templates/comments";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import Text from "components/Texts/Text/Text";
+import WeaponPhotoCollection from "components/Graphics/WeaponPhotoCollection/WeaponPhotoCollection";
 
 const WeaponDisplayPage = observer(() => {
-  const isLoading = commonApplicationStore.isLoading;
+  const isUserArticlesLoading = commonApplicationStore.isUserArticlesLoading;
   const { weaponId } = useParams();
   const weapon = Weapons.getById(weaponId);
 
   React.useEffect(() => {
-    // loadingStore.checkLoading(weaponId);
-    Scroll.toTopInstantly();
-    DocumentTitle.set(weapon?.name || "");
+    if (!isUserArticlesLoading) {
+      loadingStore.checkLoading(weaponId);
+      Scroll.toTopInstantly();
+      DocumentTitle.set(weapon?.name || "");
+    }
 
     return () => {
       imageViewerStore.close();
     };
-  }, [weaponId]);
+  }, [weaponId, isUserArticlesLoading]);
 
-  // if (isLoading) return <VideoIntro />;
-  if (isLoading) return <></>;
+  if (isUserArticlesLoading) return <></>;
 
   if (!weapon)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
@@ -80,12 +83,22 @@ const WeaponDisplayPage = observer(() => {
               type={CONTENT_LIST_TYPE.desktop}
               list={weapon.sections}
               weaponId={weapon.id}
-              loadingStatus={false}
-              // loadingStatus={loadingStore.getStatus()}
+              loadingStatus={loadingStore.isLoading}
             />
             <Container>
-              <Title id="Введение">{weapon.name}</Title>
-              {false ? (
+              <div className={styles.header}>
+                <Title id="Введение">{weapon.name}</Title>
+                {!loadingStore.isLoading &&
+                loadingStore.getActualArticleViews() ? (
+                  <div className={styles.viewsBox}>
+                    <div className={styles.eye}></div>
+                    <Text noMargin>{loadingStore.getActualArticleViews()}</Text>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              {loadingStore.isLoading ? (
                 <SpecialLogo type={SPECIAL_LOGO_TYPE.loading} vertiacalFill />
               ) : (
                 <div className={ANIMATIONS.fadeIn}>
@@ -95,37 +108,13 @@ const WeaponDisplayPage = observer(() => {
                         type={CONTENT_LIST_TYPE.mobile}
                         weaponId={weapon.id}
                         list={weapon.sections}
-                        loadingStatus={false}
-                        // loadingStatus={loadingStore.getStatus()}
+                        loadingStatus={loadingStore.isLoading}
                       />
                       <TextIntro weapon={weapon} />
-                      {weapon.gallery?.photos && (
-                        <>
-                          <Block formatAsSection>
-                            <Subtitle id="Фотографии">Фотографии</Subtitle>
-                            <div className={styles.photos}>
-                              {weapon.gallery.photos.map((photo, index) => (
-                                <div
-                                  key={`photo-${weapon.id}-${index}`}
-                                  className={styles.photoWrapper}
-                                >
-                                  <img
-                                    src={photo}
-                                    className={styles.photo}
-                                    onClick={() =>
-                                      imageViewerStore.openPhotoCollection(
-                                        weapon.gallery!.photos!,
-                                        index
-                                      )
-                                    }
-                                  />
-                                  <Preloader color="black" />
-                                </div>
-                              ))}
-                            </div>
-                          </Block>
-                        </>
-                      )}
+                      <WeaponPhotoCollection
+                        collection={weapon.gallery?.photos}
+                        articleId={weapon.id!}
+                      />
                       <Spec weapon={weapon} />
                       {weapon.article}
                       {weapon.videomaterials && (
@@ -134,12 +123,12 @@ const WeaponDisplayPage = observer(() => {
                           id={weapon.id!}
                         />
                       )}
-                      {weapon.models && <Models models={weapon.models} />}
+                      <Models models={weapon.models} />
                       <Block formatAsSection>
                         <Subtitle id="Читайте также">Читайте также</Subtitle>
                         <Recommendations weapon={weapon} />
                       </Block>
-                      {/* <Comments comments={CommentsTemplate} /> */}
+                      <Comments comments={CommentsTemplate} />
                     </>
                   ) : (
                     <SpecialLogo
@@ -150,11 +139,7 @@ const WeaponDisplayPage = observer(() => {
                 </div>
               )}
             </Container>
-            <SideSpec
-              weapon={weapon}
-              loadingStatus={false}
-              // loadingStatus={loadingStore.getStatus()}
-            />
+            <SideSpec weapon={weapon} loadingStatus={loadingStore.isLoading} />
           </Container>
         </ContentWrapper>
       </>

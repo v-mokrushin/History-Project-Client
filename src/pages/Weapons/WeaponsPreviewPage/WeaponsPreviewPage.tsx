@@ -31,7 +31,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 
 const WeaponsPreviewPage = observer(() => {
-  const isLoading = commonApplicationStore.isLoading;
+  const isLoading = commonApplicationStore.isUserArticlesLoading;
   const { weaponsBranchPath } = useParams();
   const { nationPath } = useParams();
   const weaponsBranchObject =

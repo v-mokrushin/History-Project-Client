@@ -6,7 +6,7 @@ export class CommonApplicationStore {
   public registrationDialogVisibility: boolean = false;
   public bannerVisibility: boolean = false;
   public bannerTitle: string = "";
-  public isLoading: boolean = false;
+  public isUserArticlesLoading: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -46,7 +46,7 @@ export class CommonApplicationStore {
   }
 
   public setIsLoading(value: boolean): void {
-    this.isLoading = value;
+    this.isUserArticlesLoading = value;
   }
 }
 

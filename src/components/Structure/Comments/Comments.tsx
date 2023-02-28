@@ -11,6 +11,7 @@ import CustomButton from "components/Buttons/Button/Button";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import { observer } from "mobx-react";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 interface ICommentsProps {
   comments: any;
@@ -76,7 +77,14 @@ const Comments: React.FC<ICommentsProps> = observer(
                   <CustomButton
                     color="blue"
                     uppercase
-                    onClick={() => setNewComment("")}
+                    onClick={() => {
+                      if (!newComment.length) {
+                        alertsStore.add(
+                          "error",
+                          "Комментарий не может быть пустым."
+                        );
+                      }
+                    }}
                   >
                     Оставить комментарий
                   </CustomButton>
@@ -84,7 +92,7 @@ const Comments: React.FC<ICommentsProps> = observer(
               </div>
             </div>
           )}
-          {comments.map((comment: any) => (
+          {/* {comments.map((comment: any) => (
             <div className={styles.commentBox} key={comment.id}>
               <img
                 src={comment.avatar}
@@ -125,7 +133,7 @@ const Comments: React.FC<ICommentsProps> = observer(
                 <Text color="black">{comment.text}</Text>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     );
