@@ -31,6 +31,7 @@ import { IAircraft } from "data/weapons/interfaces/aviation-interfaces";
 import axios from "axios";
 import { Server } from "config/server";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 interface IAvationCreatorFormProps {
   className?: string;
@@ -51,7 +52,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
     initialValues: { ...articleCreatorFormInitialValues },
     onSubmit: (values, { resetForm }) => {
       if (Weapons.doesWeaponExist(formik.values.name)) {
-        alert("Вооружение с таким названием уже существует.");
+        alertsStore.add("error", `Вооружение с таким названием уже существует`);
         return;
       }
 
@@ -102,15 +103,14 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
           createdWeapon: weapon,
         })
         .then((response) => {
-          // console.log(response.data);
-          alert(`Вооружение ${values.name} успешно создано.`);
+          alertsStore.add("info", `Статья ${values.name} успешно создана.`);
           Weapons.addNewWeapon(weapon);
           resetForm({ values: { ...articleCreatorFormInitialValues } });
         })
         .catch((error) => {
-          // console.log(error);
-          alert(
-            `Вооружение ${values.name} не создан. Неудалось подключиться к серверу.`
+          alertsStore.add(
+            "error",
+            `Статья ${values.name} не создана. Не удалось подключиться к серверу.`
           );
         })
         .finally(() => {
@@ -162,8 +162,9 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
             <TextField
               select
               label="Вид вооружения"
+              name="kind"
               value={"Авиация"}
-              defaultValue="EUR"
+              onChange={formik.handleChange}
               SelectProps={{
                 native: true,
               }}

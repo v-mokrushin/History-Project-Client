@@ -16,6 +16,7 @@ import { authorizationStore } from "stores/mobx/authorizationStore";
 import { hashSync } from "bcryptjs";
 import axios from "axios";
 import { Server } from "config/server";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -91,12 +92,12 @@ const LogInDialog = observer(() => {
             className={classNames(styles.submit)}
             onClick={() => {
               if (username === "") {
-                alert("Введите никнейм.");
+                alertsStore.add("error", `Введите никнейм.`);
                 return;
               }
 
               if (password === "") {
-                alert("Введите пароль.");
+                alertsStore.add("error", `Введите пароль.`);
                 return;
               }
 
@@ -115,9 +116,9 @@ const LogInDialog = observer(() => {
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
-                    alert("Сервер недоступен.");
+                    alertsStore.add("error", `Сервер недоступен.`);
                   } else {
-                    alert(error.response.data);
+                    alertsStore.add("error", error.response.data);
                   }
                 })
                 .finally(() => {

@@ -14,6 +14,7 @@ import { authorizationStore } from "stores/mobx/authorizationStore";
 import axios from "axios";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import { Server } from "config/server";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
@@ -102,37 +103,46 @@ const RegistrationDialog = observer(() => {
               event.preventDefault();
 
               if (username === "") {
-                alert("Придумайте никнейм.");
+                alertsStore.add("error", `Придумайте никнейм.`);
                 return;
               }
 
               if (username.length < 3) {
-                alert("Минимальная длина никнейма 3 символа.");
+                alertsStore.add(
+                  "error",
+                  `Минимальная длина никнейма 3 символа.`
+                );
                 return;
               }
 
               if (password === "") {
-                alert("Придумайте пароль.");
+                alertsStore.add("error", `Придумайте пароль.`);
                 return;
               }
 
               if (passwordConfirm === "") {
-                alert("Подтвердите пароль.");
+                alertsStore.add("error", `Подтвердите пароль.`);
                 return;
               }
 
               if (password !== passwordConfirm) {
-                alert("Пароли не совпадают.");
+                alertsStore.add("error", `Пароли не совпадают.`);
                 return;
               }
 
               if (password.length < 3) {
-                alert("Минимальная длина пароля 4 символа.");
+                alertsStore.add(
+                  "error",
+                  `Минимальная длина пароля — 4 символа.`
+                );
                 return;
               }
 
               if (username === password) {
-                alert("Пароль и никнейм не должны совпадать.");
+                alertsStore.add(
+                  "error",
+                  `Пароль и никнейм не должны совпадать.`
+                );
                 return;
               }
 
@@ -148,12 +158,13 @@ const RegistrationDialog = observer(() => {
                   clearForm();
                   commonApplicationStore.hideRegistrationDialog();
                   navigate("/account");
+                  alertsStore.add("info", `Вы успешно зарегистрировались.`);
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
-                    alert("Сервер недоступен.");
+                    alertsStore.add("error", `Сервер недоступен.`);
                   } else {
-                    alert(error.response.data);
+                    alertsStore.add("error", error.response.data);
                   }
                 })
                 .finally(() => {

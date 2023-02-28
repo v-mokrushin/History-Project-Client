@@ -19,6 +19,7 @@ import { getStringDate, getStringDateTime } from "utils/common";
 import { useFormik } from "formik";
 import axios from "axios";
 import { Server as ServerSource } from "config/server";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 interface IAccountPageProps {
   className?: string;
@@ -44,13 +45,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   }, [authorizationStore.isUserAuthorized]);
 
   function onExitClick() {
-    const result = confirm("Вы действительно хотите выйти из учетной записи?");
-
-    if (result) {
-      setTimeout(() => {
-        authorizationStore.unauthorizeUser();
-      }, 500);
-    }
+    setTimeout(() => {
+      authorizationStore.unauthorizeUser();
+      alertsStore.add("info", `Вы вышли из учетной записи.`);
+    }, 500);
   }
 
   if (!authorizationStore.user) return <></>;
@@ -107,8 +105,14 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                         }
                         commonApplicationStore.hideBanner();
                         setEditingMode(false);
+                        alertsStore.add("info", `Изменения успешно внесены.`);
                       })
-                      .catch((error) => alert(error));
+                      .catch((error) => {
+                        alertsStore.add(
+                          "error",
+                          `Неудалось внести изменения на сервере.`
+                        );
+                      });
                   }}
                 >
                   Сохранить

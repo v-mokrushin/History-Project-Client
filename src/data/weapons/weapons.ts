@@ -26,6 +26,7 @@ import { NationsMethods } from "../../constants/nations";
 import axios from "axios";
 import { Server } from "config/server";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -48,9 +49,14 @@ axios
       });
       weapons_data.unshift(...loadedWeapons);
     }
+    
+    alertsStore.add("info", `С сервера загружены пользовательские статьи.`);
   })
   .catch((error) => {
-    console.log(error);
+    alertsStore.add(
+      "error",
+      `Не удалось подключиться к серверу. Пользовательские статьи не загружены.`
+    );
   })
   .finally(() => {
     prepareWeapons(weapons_data);

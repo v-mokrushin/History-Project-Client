@@ -11,6 +11,8 @@ import WarningPage from "pages/WarningPage/WarningPage";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { observer } from "mobx-react-lite";
 import AvationCreatorForm from "./AviationCreatorForm";
+import { Alert, AlertTitle } from "@mui/material";
+import Text from "components/Texts/Text/Text";
 
 interface IArtilcleCreatorPageProps {
   className?: string;

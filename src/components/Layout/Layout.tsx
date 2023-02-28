@@ -9,6 +9,7 @@ import styles from "./Layout.module.scss";
 import LogInDialog from "../Modals/LogInDialog/LogInDialog";
 import RegistrationDialog from "../Modals/RegistrationDialog/RegistrationDialog";
 import Banner from "components/Modals/Banner/Banner";
+import Alerts from "components/Alert/Alerts/Alerts";
 
 interface ILayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -17,6 +18,7 @@ interface ILayoutProps {
 export default function Layout({ children }: ILayoutProps) {
   return (
     <div className={styles.root}>
+      <Alerts />
       <UpButton />
       <Burger />
       <ImageViewer />
