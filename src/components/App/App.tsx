@@ -15,7 +15,7 @@ import NationSelectionPage from "../../pages/Weapons/NationSelectionPage/NationS
 import WeaponDisplayPage from "../../pages/Weapons/WeaponDisplayPage/WeaponDisplayPage";
 import WeaponsPreviewPage from "../../pages/Weapons/WeaponsPreviewPage/WeaponsPreviewPage";
 import "../../stores/mobx/index";
-import ArtilcleCreatorPage from "pages/Articles/ArtilcleCreatorPage/ArtilcleCreatorPage";
+import ArtilcleCreatorPage from "pages/Articles/ArticleCreatorPage/ArticleCreatorPage";
 import GalleryPage from "pages/GalleryPage/GalleryPage";
 import AccountPage from "pages/AccountPage/AccountPage";
 import bcrypt from "bcryptjs";

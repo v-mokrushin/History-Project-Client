@@ -19,16 +19,21 @@
 
     .photosWrapper {
       display: flex;
+      flex-wrap: wrap;
       gap: 1vh;
       margin-top: -0.6vh;
 
       .photo {
         height: 13vh;
-        min-height: 100px;
+        min-height: 80px;
         border-radius: 0.35vh;
         object-fit: cover;
         aspect-ratio: 1.7 / 1;
         cursor: pointer;
+
+        @include media-breakpoint-down(xs) {
+          height: 11vh;
+        }
       }
     }
 

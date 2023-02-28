@@ -1,4 +1,4 @@
-import { Nations } from "./../../../constants/nations";
+import { Nations } from "../../../constants/nations";
 import { isValidURL } from "utils/common";
 import { WeaponClassification } from "constants/weapon-types";
 

@@ -7,7 +7,7 @@ import Container from "components/Structure/Container/Container";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { useNavigate } from "react-router";
 import Text from "components/Texts/Text/Text";
-import { TextField } from "@mui/material";
+import { InputAdornment, TextField } from "@mui/material";
 import { observer } from "mobx-react-lite";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import actualSectionStore from "stores/mobx/actualSectionStore";
@@ -204,7 +204,15 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                         value={formik.values.avatar || ""}
                         onChange={formik.handleChange}
                         variant="outlined"
+                        multiline
                         type="text"
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              ссылка
+                            </InputAdornment>
+                          ),
+                        }}
                       />
                     </div>
                   </div>
