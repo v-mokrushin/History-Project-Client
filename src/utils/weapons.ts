@@ -153,15 +153,17 @@ export function defineGallery(weapon: TWeapon): void {
     },
   };
 
-  delete weapon.galleryInfo;
-
-  if (weapon.photosNumber) {
+  if (weapon.galleryInfo?.photoCollectionSize) {
     if (!weapon.gallery) return;
-    weapon.gallery.photos = new Array<string>(weapon.photosNumber).fill("");
+    weapon.gallery.photos = new Array<string>(
+      weapon.galleryInfo.photoCollectionSize
+    ).fill("");
     for (let i = 0; i < weapon.gallery.photos.length; i++)
       weapon.gallery.photos[i] =
         weapon.gallery.path + "photo/" + String(i + 1) + ".jpg";
   }
+
+  delete weapon.galleryInfo;
 }
 
 export function defineModels(weapon: TWeapon): void {

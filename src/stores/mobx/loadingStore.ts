@@ -1,3 +1,4 @@
+import { authorizationStore } from "./authorizationStore";
 import { alertsStore } from "./alertsStore";
 import axios from "axios";
 import { Server } from "config/server";
@@ -15,10 +16,15 @@ export class LoadingStore {
     makeAutoObservable(this);
   }
 
-
   public getActualArticleViews() {
     if (this.actualArticle) {
       return this.actualArticle.views;
+    }
+  }
+
+  public getActualArticleComments() {
+    if (this.actualArticle) {
+      return this.actualArticle.comments;
     }
   }
 
@@ -33,20 +39,26 @@ export class LoadingStore {
       this.isLoading = true;
 
       axios
-        .post(Server.path("/weapons/views/add"), { id: articleId })
-        .then((response) => {
-          console.log(response);
-          this.loadedArticlesInfo[articleId] = {
-            id: articleId,
-            views: response.data.views - 1,
-          };
-          this.actualArticle = this.loadedArticlesInfo[articleId];
-          this.setStatus(false);
-        })
+        .all([
+          axios.post(Server.path("/views/add"), { id: articleId }),
+          axios.post(Server.path("/comments/get"), { id: articleId }),
+        ])
+        .then(
+          axios.spread((responseViews, responseComments) => {
+            this.loadedArticlesInfo[articleId] = {
+              id: articleId,
+              views: responseViews.data.views - 1,
+              comments: responseComments.data,
+            };
+            this.actualArticle = this.loadedArticlesInfo[articleId];
+            this.setStatus(false);
+            console.log(toJS(this.actualArticle));
+          })
+        )
         .catch((error) => {
           alertsStore.add(
             "error",
-            "Не удалось загрузить колличество просмотров статьи"
+            "Не удалось загрузить колличество просмотров и комментарии статьи"
           );
           this.setStatus(false);
         });
@@ -55,11 +67,29 @@ export class LoadingStore {
       this.actualArticle = this.loadedArticlesInfo[articleId];
 
       axios
-        .post(Server.path("/weapons/views/add"), { id: articleId })
+        .post(Server.path("/views/add"), { id: articleId })
         .then((response) => {
           console.log(response);
         });
     }
+  }
+
+  public addNewComment(text: string, setText: Function) {
+    axios
+      .post(Server.path("/comments/add"), {
+        articleId: this.actualArticle.id,
+        userId: authorizationStore.user?.id,
+        text,
+      })
+      .then((response) => {
+        loadingStore.actualArticle.comments.unshift({
+          ...response.data,
+          avatar: authorizationStore.user?.avatar,
+          username: authorizationStore.user?.username,
+        });
+        console.log(toJS(loadingStore.actualArticle));
+        setText("");
+      });
   }
 }
 

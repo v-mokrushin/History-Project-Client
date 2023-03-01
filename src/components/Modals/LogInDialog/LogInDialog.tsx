@@ -112,7 +112,8 @@ const LogInDialog = observer(() => {
                   burgerStore.setClose();
                   clearForm();
                   commonApplicationStore.hideLogInDialog();
-                  navigate("/account");
+                  alertsStore.add("info", "Вы успешно авторизовались.");
+                  // navigate("/account");
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {

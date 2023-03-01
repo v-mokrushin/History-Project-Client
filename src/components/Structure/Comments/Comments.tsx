@@ -12,22 +12,29 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import { observer } from "mobx-react";
 import { alertsStore } from "stores/mobx/alertsStore";
+import { getStringDateTime } from "utils/common";
+import axios from "axios";
+import { Server } from "config/server";
+import loadingStore from "stores/mobx/loadingStore";
 
 interface ICommentsProps {
   comments: any;
+  articleId: any;
   className?: string;
 }
 
 const Comments: React.FC<ICommentsProps> = observer(
-  ({ comments, className }) => {
+  ({ comments, articleId, className }) => {
     const [newComment, setNewComment] = React.useState<string>("");
+
+    if (!comments.length && !authorizationStore.isUserAuthorized) return <></>;
 
     return (
       <div className={classNames(styles.root, className)}>
         <Subtitle id="Комментарии">Комментарии</Subtitle>
         <div className={styles.commentsWrapper}>
           {authorizationStore.isUserAuthorized && (
-            <div className={styles.commentBox} key={comments[4].id}>
+            <div className={styles.commentBox}>
               <img
                 src={authorizationStore.user?.avatar}
                 className={styles.avatar}
@@ -78,7 +85,9 @@ const Comments: React.FC<ICommentsProps> = observer(
                     color="blue"
                     uppercase
                     onClick={() => {
-                      if (!newComment.length) {
+                      if (newComment.length) {
+                        loadingStore.addNewComment(newComment, setNewComment);
+                      } else {
                         alertsStore.add(
                           "error",
                           "Комментарий не может быть пустым."
@@ -92,7 +101,7 @@ const Comments: React.FC<ICommentsProps> = observer(
               </div>
             </div>
           )}
-          {/* {comments.map((comment: any) => (
+          {comments.map((comment: any) => (
             <div className={styles.commentBox} key={comment.id}>
               <img
                 src={comment.avatar}
@@ -128,12 +137,12 @@ const Comments: React.FC<ICommentsProps> = observer(
                   noMargin
                   className={styles.date}
                 >
-                  {comment.date}
+                  {getStringDateTime(new Date(Date.parse(comment.date)))}
                 </Text>
                 <Text color="black">{comment.text}</Text>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     );

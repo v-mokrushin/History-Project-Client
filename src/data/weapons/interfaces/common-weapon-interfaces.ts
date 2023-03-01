@@ -17,7 +17,7 @@ export interface IBaseWeapon {
   readonly type: IWeaponType;
   readonly adoptedIntoServiceDate: number;
   branch?: IWaponBranch;
-  photosNumber?: number;
+  // photosNumber?: number;
   readonly id?: string;
   readonly isReady?: boolean;
   nation?: INation;
@@ -60,9 +60,10 @@ export interface IWeaponGallery {
 }
 
 export interface IWeaponGalleryInfo {
-  isIconsRemote: boolean;
-  remoteOriginalIcon: string;
-  remoteColorizedIcon: string;
+  isIconsRemote?: boolean;
+  remoteOriginalIcon?: string;
+  remoteColorizedIcon?: string;
+  photoCollectionSize?: number;
 }
 
 export interface IModel {
