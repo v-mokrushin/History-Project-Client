@@ -53,10 +53,11 @@ export interface IWeaponGallery {
   isColorizedIcon: boolean;
   get icon(): string;
   get intro(): string;
-  photos?: string[];
   isIconsRemote?: boolean;
   remoteOriginalIcon: string;
   remoteColorizedIcon: string;
+  photos?: string[];
+  schemes?: string[];
 }
 
 export interface IWeaponGalleryInfo {
@@ -64,6 +65,7 @@ export interface IWeaponGalleryInfo {
   remoteOriginalIcon?: string;
   remoteColorizedIcon?: string;
   photoCollectionSize?: number;
+  schemesCollectionSize?: number;
 }
 
 export interface IModel {

@@ -57,7 +57,6 @@ export class LoadingStore {
             };
             this.actualArticle = this.loadedArticlesInfo[articleId];
             this.setStatus(false);
-            console.log(toJS(this.actualArticle));
           })
         )
         .catch((error) => {
@@ -74,7 +73,7 @@ export class LoadingStore {
       axios
         .post(Server.path("/views/add"), { id: articleId })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         });
     }
   }

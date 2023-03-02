@@ -33,7 +33,6 @@ import Preloader from "components/Graphics/Preloader/Preloader";
 import VideoIntro from "components/Graphics/VideoIntro/VideoIntro";
 import { DocumentTitle } from "utils/document-title";
 import Comments from "components/Structure/Comments/Comments";
-import { CommentsTemplate } from "testing-templates/comments";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Text from "components/Texts/Text/Text";
 import WeaponPhotoCollection from "components/Graphics/WeaponPhotoCollection/WeaponPhotoCollection";
@@ -57,7 +56,7 @@ const WeaponDisplayPage = observer(() => {
 
   if (isUserArticlesLoading) return <></>;
 
-  if (!weapon)
+  if (!weapon || !weaponId || !weapon.id)
     return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
@@ -112,16 +111,19 @@ const WeaponDisplayPage = observer(() => {
                       />
                       <TextIntro weapon={weapon} />
                       <WeaponPhotoCollection
+                        title="Фотографии"
                         collection={weapon.gallery?.photos}
-                        articleId={weapon.id!}
+                        articleId={weapon.id}
+                      />
+                      <WeaponPhotoCollection
+                        title="Схемы"
+                        collection={weapon.gallery?.schemes}
+                        articleId={weapon.id}
                       />
                       <Spec weapon={weapon} />
                       {weapon.article}
                       {weapon.videomaterials && (
-                        <YTFrame
-                          links={weapon.videomaterials}
-                          id={weapon.id!}
-                        />
+                        <YTFrame links={weapon.videomaterials} id={weapon.id} />
                       )}
                       <Models models={weapon.models} />
                       <Block formatAsSection>

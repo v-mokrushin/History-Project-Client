@@ -131,7 +131,9 @@ function getLabelsArray(locationPathname: string, language: string): string[] {
     ? ["главная"]
     : locationPathname
         .split("/")
-        .map((path) => getNameByPath(path, language) || path);
+        .map(
+          (path) => getNameByPath(path, language) || decodeURIComponent(path)
+        );
 }
 
 function getPathnamesArray(locationPathname: string): string[] {

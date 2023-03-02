@@ -153,14 +153,26 @@ export function defineGallery(weapon: TWeapon): void {
     },
   };
 
-  if (weapon.galleryInfo?.photoCollectionSize) {
-    if (!weapon.gallery) return;
-    weapon.gallery.photos = new Array<string>(
-      weapon.galleryInfo.photoCollectionSize
-    ).fill("");
-    for (let i = 0; i < weapon.gallery.photos.length; i++)
-      weapon.gallery.photos[i] =
-        weapon.gallery.path + "photo/" + String(i + 1) + ".jpg";
+  if (weapon.galleryInfo) {
+    if (weapon.galleryInfo.photoCollectionSize) {
+      if (!weapon.gallery) return;
+      weapon.gallery.photos = new Array<string>(
+        weapon.galleryInfo.photoCollectionSize
+      ).fill("");
+      for (let i = 0; i < weapon.gallery.photos.length; i++)
+        weapon.gallery.photos[i] =
+          weapon.gallery.path + "photos/" + String(i + 1) + ".jpg";
+    }
+
+    if (weapon.galleryInfo.schemesCollectionSize) {
+      if (!weapon.gallery) return;
+      weapon.gallery.schemes = new Array<string>(
+        weapon.galleryInfo.schemesCollectionSize
+      ).fill("");
+      for (let i = 0; i < weapon.gallery.schemes.length; i++)
+        weapon.gallery.schemes[i] =
+          weapon.gallery.path + "schemes/" + String(i + 1) + ".jpg";
+    }
   }
 
   delete weapon.galleryInfo;

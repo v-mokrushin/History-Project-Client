@@ -59,8 +59,8 @@ axios
     );
   })
   .finally(() => {
+        // console.log(weapons_data);
     prepareWeapons(weapons_data);
-    console.log(weapons_data);
     commonApplicationStore.hideBanner();
     commonApplicationStore.setIsLoading(false);
   });

@@ -69,10 +69,10 @@ export default function SpecialLogo({
         ></div>
         <div className={styles.bodyWrapper}>
           <div className={styles.logoWrapper}>
-            <h1 className={styles.title}>
+            <div className={styles.title}>
               <span className={styles.decorated_letter}>H</span>aze of{" "}
               <span className={styles.decorated_letter}>W</span>ar
-            </h1>
+            </div>
             <div className={styles.datesWrapper}>
               <p className={styles.titleDates}>39</p>
               <div className={styles.datesSeparator}></div>

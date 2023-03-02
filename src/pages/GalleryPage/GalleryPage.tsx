@@ -22,7 +22,7 @@ const testPhotos = new Array(29)
 
 const GalleryPage: React.FC<IGalleryPageProps> = ({ className }) => {
   React.useEffect(() => {
-    alertsStore.add("info", `Раздел на начальном этупе разработки`);
+    alertsStore.add("info", `Раздел на начальном этапе разработки`);
 
     return () => {};
   }, []);

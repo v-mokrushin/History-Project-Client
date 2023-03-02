@@ -16,10 +16,11 @@ import { getStringDateTime } from "utils/common";
 import axios from "axios";
 import { Server } from "config/server";
 import loadingStore from "stores/mobx/loadingStore";
+import { IComment } from "interfaces/comments";
 
 interface ICommentsProps {
-  comments: any;
-  articleId: any;
+  comments?: IComment[];
+  articleId: string;
   className?: string;
 }
 
@@ -27,7 +28,7 @@ const Comments: React.FC<ICommentsProps> = observer(
   ({ comments, articleId, className }) => {
     const [newComment, setNewComment] = React.useState<string>("");
 
-    if (!comments.length && !authorizationStore.isUserAuthorized) return <></>;
+    if (!comments?.length && !authorizationStore.isUserAuthorized) return <></>;
 
     return (
       <div className={classNames(styles.root, className)}>
@@ -86,7 +87,10 @@ const Comments: React.FC<ICommentsProps> = observer(
                     uppercase
                     onClick={() => {
                       if (newComment.length) {
-                        loadingStore.upploadNewComment(newComment, setNewComment);
+                        loadingStore.upploadNewComment(
+                          newComment,
+                          setNewComment
+                        );
                       } else {
                         alertsStore.add(
                           "error",
@@ -101,48 +105,49 @@ const Comments: React.FC<ICommentsProps> = observer(
               </div>
             </div>
           )}
-          {comments.map((comment: any) => (
-            <div className={styles.commentBox} key={comment.id}>
-              <img
-                src={comment.avatar}
-                className={styles.avatar}
-                alt=""
-                onClick={() => imageViewerStore.openPhoto(comment.avatar)}
-              />
-              <div className={styles.contentBox}>
-                <div className={styles.header}>
-                  <img
-                    src={comment.avatar}
-                    className={styles.avatar_mobile}
-                    alt=""
-                    onClick={() => imageViewerStore.openPhoto(comment.avatar)}
-                  />
-                  <div className={styles.header_info}>
-                    <Text color="gold" bold>
-                      {comment.username}
-                    </Text>
-                    <Text
-                      color="grey"
-                      size="small"
-                      noMargin
-                      className={styles.date_mobile}
-                    >
-                      {comment.date}
-                    </Text>
+          {comments &&
+            comments.map((comment: any) => (
+              <div className={styles.commentBox} key={comment.id}>
+                <img
+                  src={comment.avatar}
+                  className={styles.avatar}
+                  alt=""
+                  onClick={() => imageViewerStore.openPhoto(comment.avatar)}
+                />
+                <div className={styles.contentBox}>
+                  <div className={styles.header}>
+                    <img
+                      src={comment.avatar}
+                      className={styles.avatar_mobile}
+                      alt=""
+                      onClick={() => imageViewerStore.openPhoto(comment.avatar)}
+                    />
+                    <div className={styles.header_info}>
+                      <Text color="gold" bold>
+                        {comment.username}
+                      </Text>
+                      <Text
+                        color="grey"
+                        size="small"
+                        noMargin
+                        className={styles.date_mobile}
+                      >
+                        {comment.date}
+                      </Text>
+                    </div>
                   </div>
+                  <Text
+                    color="grey"
+                    size="small"
+                    noMargin
+                    className={styles.date}
+                  >
+                    {getStringDateTime(new Date(Date.parse(comment.date)))}
+                  </Text>
+                  <Text color="black">{comment.text}</Text>
                 </div>
-                <Text
-                  color="grey"
-                  size="small"
-                  noMargin
-                  className={styles.date}
-                >
-                  {getStringDateTime(new Date(Date.parse(comment.date)))}
-                </Text>
-                <Text color="black">{comment.text}</Text>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     );

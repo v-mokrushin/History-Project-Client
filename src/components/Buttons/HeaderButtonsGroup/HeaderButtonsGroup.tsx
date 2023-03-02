@@ -32,7 +32,7 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
         <ButtonSearch />
         {authorizationStore.isUserAuthorized && <ToolButton />}
         {/* <ToolButton /> */}
-        <LanguageSwitcher />
+        {/* <LanguageSwitcher /> */}
         {!authorizationStore.isUserAuthorized ? (
           <>
             <CustomButton

@@ -21,6 +21,7 @@ import AccountPage from "pages/AccountPage/AccountPage";
 import bcrypt from "bcryptjs";
 import { getStringDate } from "utils/common";
 import { runAddBlocker } from "utils/add-blocker";
+import WeaponGalleryPage from "pages/Weapons/WeaponGalleryPage/WeaponGalleryPage";
 
 function App() {
   React.useEffect(() => {
@@ -53,6 +54,10 @@ function App() {
             <Route
               path="/weapons/:weaponsBranchPath/:nationPath/:weaponId"
               element={<WeaponDisplayPage />}
+            />
+            <Route
+              path="/weapons/:weaponsBranchPath/:nationPath/:weaponId/gallery"
+              element={<WeaponGalleryPage />}
             />
             <Route
               path="/battles"
