@@ -3,15 +3,20 @@ import { alertsStore } from "./alertsStore";
 import axios from "axios";
 import { Server } from "config/server";
 import { makeAutoObservable, observable, runInAction, toJS } from "mobx";
+import {
+  IComment,
+  ILoadedArticleInfo,
+  ILoadedArticlesInfo,
+} from "interfaces/comments";
 
 export class LoadingStore {
   public isLoading: boolean;
-  public loadedArticlesInfo: any;
-  public actualArticle: any;
+  public loadedArticlesInfo: ILoadedArticlesInfo;
+  public actualArticle: ILoadedArticleInfo | undefined;
 
   constructor() {
     this.isLoading = true;
-    this.loadedArticlesInfo = [];
+    this.loadedArticlesInfo = {};
 
     makeAutoObservable(this);
   }
@@ -74,22 +79,28 @@ export class LoadingStore {
     }
   }
 
-  public addNewComment(text: string, setText: Function) {
-    axios
-      .post(Server.path("/comments/add"), {
-        articleId: this.actualArticle.id,
-        userId: authorizationStore.user?.id,
-        text,
-      })
-      .then((response) => {
-        loadingStore.actualArticle.comments.unshift({
-          ...response.data,
-          avatar: authorizationStore.user?.avatar,
-          username: authorizationStore.user?.username,
+  public upploadNewComment(text: string, setText: Function) {
+    if (this.actualArticle)
+      axios
+        .post(Server.path("/comments/add"), {
+          articleId: this.actualArticle.id,
+          userId: authorizationStore.user?.id,
+          text,
+        })
+        .then((response) => {
+          this.addNewComment({
+            ...response.data,
+            avatar: authorizationStore.user?.avatar,
+            username: authorizationStore.user?.username,
+          });
+          setText("");
         });
-        console.log(toJS(loadingStore.actualArticle));
-        setText("");
-      });
+  }
+
+  private addNewComment(newComment: IComment) {
+    if (this.actualArticle) {
+      loadingStore.actualArticle?.comments.unshift(newComment);
+    }
   }
 }
 

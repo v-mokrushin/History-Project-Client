@@ -17,7 +17,6 @@ import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenade-launchers";
 import { SMALL_ARMS_DATA } from "./branches/small-arms";
-import { TFilters } from "stores/mobx/filtersStore";
 import { TWeapon } from "./interfaces/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
@@ -27,6 +26,7 @@ import axios from "axios";
 import { Server } from "config/server";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { alertsStore } from "stores/mobx/alertsStore";
+import { TFilters } from "interfaces/filters";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -49,7 +49,7 @@ axios
       });
       weapons_data.unshift(...loadedWeapons);
     }
-    
+
     alertsStore.add("info", `С сервера загружены пользовательские статьи.`);
   })
   .catch((error) => {

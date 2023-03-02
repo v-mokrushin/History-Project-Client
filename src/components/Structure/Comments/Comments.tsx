@@ -86,7 +86,7 @@ const Comments: React.FC<ICommentsProps> = observer(
                     uppercase
                     onClick={() => {
                       if (newComment.length) {
-                        loadingStore.addNewComment(newComment, setNewComment);
+                        loadingStore.upploadNewComment(newComment, setNewComment);
                       } else {
                         alertsStore.add(
                           "error",

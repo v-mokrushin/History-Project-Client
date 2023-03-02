@@ -5,6 +5,7 @@ import { Alert, AlertTitle } from "@mui/material";
 import Text from "components/Texts/Text/Text";
 import { observer } from "mobx-react";
 import { alertsStore } from "stores/mobx/alertsStore";
+import { IAlert } from "interfaces/alert";
 
 interface IAlertsProps {
   className?: string;
@@ -31,7 +32,7 @@ function getIcon(type: string) {
 const Alerts: React.FC<IAlertsProps> = observer(({ className }) => {
   return (
     <div className={classNames(styles.root, className)}>
-      {alertsStore.alerts.map((alert) => (
+      {alertsStore.alerts.map((alert: IAlert) => (
         <div
           key={alert.id}
           className={classNames(styles.alert, styles[alert.type])}

@@ -1,13 +1,5 @@
+import { IUserAccountInfo } from "interfaces/account";
 import { action, makeAutoObservable, observable } from "mobx";
-
-export interface IUserAccountInfo {
-  id: string;
-  username: string;
-  avatar?: string;
-  name?: string;
-  surname?: string;
-  registrationDate: Date;
-}
 
 export class AuthorizationStore {
   public isUserAuthorized: boolean = false;
@@ -55,4 +47,3 @@ export class AuthorizationStore {
 }
 
 export const authorizationStore = new AuthorizationStore();
-authorizationStore;

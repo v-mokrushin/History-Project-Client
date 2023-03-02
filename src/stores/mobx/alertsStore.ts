@@ -1,14 +1,6 @@
+import { IAlert, TAlertType } from "interfaces/alert";
 import { action, makeAutoObservable, observable, runInAction } from "mobx";
 import { Random } from "utils/random";
-
-export interface IAlert {
-  id: string;
-  type: TAlertType;
-  message: string;
-  selfKill: any;
-}
-
-export type TAlertType = "info" | "error";
 
 class AlertsStore {
   public alerts: IAlert[] = [];
