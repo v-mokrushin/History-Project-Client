@@ -40,7 +40,11 @@ const ussr: IArmoredVehicle[] = [
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     article: <IS_2 />,
-    galleryInfo: { photoCollectionSize: 16, schemesCollectionSize: 3 },
+    galleryInfo: {
+      photoCollectionSize: 16,
+      schemesCollectionSize: 3,
+      artsCollectionSize: 15,
+    },
     isVideoIntro: true,
     sections: [
       "Введение",

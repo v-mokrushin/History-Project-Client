@@ -54,6 +54,12 @@ const WeaponGalleryPage: React.FC<IWeaponGalleryPageProps> = observer(
               articleId={weapon.id}
               fullSize
             />
+            <WeaponPhotoCollection
+              title="Арты"
+              collection={weapon.gallery?.arts}
+              articleId={weapon.id}
+              fullSize
+            />
           </Container>
         </ContentWrapper>
       </>

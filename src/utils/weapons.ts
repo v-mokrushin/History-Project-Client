@@ -173,6 +173,16 @@ export function defineGallery(weapon: TWeapon): void {
         weapon.gallery.schemes[i] =
           weapon.gallery.path + "schemes/" + String(i + 1) + ".jpg";
     }
+
+    if (weapon.galleryInfo.artsCollectionSize) {
+      if (!weapon.gallery) return;
+      weapon.gallery.arts = new Array<string>(
+        weapon.galleryInfo.artsCollectionSize
+      ).fill("");
+      for (let i = 0; i < weapon.gallery.arts.length; i++)
+        weapon.gallery.arts[i] =
+          weapon.gallery.path + "arts/" + String(i + 1) + ".jpg";
+    }
   }
 
   delete weapon.galleryInfo;
