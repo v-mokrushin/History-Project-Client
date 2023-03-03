@@ -8,7 +8,7 @@ export interface IAviationEngine {
   readonly takeoffPower: number;
   readonly combatPower: number;
   readonly capacity: number;
-  readonly motorResource: number;
+  readonly motorResource?: number;
 }
 
 export const AVIATION_ENGINES: IAviationEngines = {

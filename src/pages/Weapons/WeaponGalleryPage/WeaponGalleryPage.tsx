@@ -14,6 +14,7 @@ import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { observer } from "mobx-react-lite";
 import { Scroll } from "utils/scroll";
+import { ANIMATIONS } from "constants/animations";
 
 interface IWeaponGalleryPageProps {
   className?: string;
@@ -36,11 +37,8 @@ const WeaponGalleryPage: React.FC<IWeaponGalleryPageProps> = observer(
 
     return (
       <>
-        <ContentWrapper
-          containerType={CONTAINER_TYPES.wide}
-          // showBreadcrumbs={false}
-        >
-          <Container type={CONTAINER_TYPES.wide}>
+        <ContentWrapper containerType={CONTAINER_TYPES.wide}>
+          <Container type={CONTAINER_TYPES.wide} className={ANIMATIONS.fadeIn}>
             <Title>{`${weapon.name}`}</Title>
             <WeaponPhotoCollection
               title="Фотографии"

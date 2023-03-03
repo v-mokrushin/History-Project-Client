@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ArticleCreatorPage.module.scss";
 import { Pages } from "constants/pages";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Weapons } from "data/weapons/weapons";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import WarningPage from "pages/WarningPage/WarningPage";
@@ -40,7 +40,7 @@ interface IAvationCreatorFormProps {
 const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
   className,
 }) => {
-  const pageInfo = Pages.getByPath(useLocation().pathname);
+  const navigate = useNavigate();
   const [rerenderInitiator, runRerenderInitiator] =
     React.useState<boolean>(false);
 
@@ -86,6 +86,16 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
             maximumSpeed: values.maximumSpeed,
             climbRate: values.climbRate,
           },
+          powerUnits: {
+            enginesNumber: values.enginesNumber,
+            engine: {
+              trademark: values.engineTrademark,
+              type: values.engineType,
+              capacity: values.engineCapacity,
+              takeoffPower: values.engineTakeoffPower,
+              combatPower: values.engineCombatPower,
+            },
+          },
           weapons: {
             weaponsSet: values.weaponsSet,
             ammunition: values.ammunition,
@@ -106,6 +116,9 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
           alertsStore.add("info", `Статья ${values.name} успешно создана.`);
           Weapons.addNewWeapon(weapon);
           resetForm({ values: { ...articleCreatorFormInitialValues } });
+          setTimeout(() => {
+            weapon.path && navigate(weapon.path);
+          }, 250);
         })
         .catch((error) => {
           alertsStore.add(
@@ -119,9 +132,6 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
     },
     validate: (values) => validateArticleCreatorForm(values),
   });
-
-  if (!pageInfo)
-    return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -273,7 +283,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.touched.numberOfIssued && formik.errors.numberOfIssued
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">штук</InputAdornment>
@@ -318,7 +328,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.touched.emptyWeight && formik.errors.emptyWeight
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">кг</InputAdornment>
@@ -333,7 +343,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.curbWeight && !!formik.errors.curbWeight}
               helperText={formik.touched.curbWeight && formik.errors.curbWeight}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">кг</InputAdornment>
@@ -348,7 +358,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.length && !!formik.errors.length}
               helperText={formik.touched.length && formik.errors.length}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: <InputAdornment position="end">м</InputAdornment>,
               }}
@@ -361,7 +371,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.height && !!formik.errors.height}
               helperText={formik.touched.height && formik.errors.height}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: <InputAdornment position="end">м</InputAdornment>,
               }}
@@ -374,7 +384,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.wingSpan && !!formik.errors.wingSpan}
               helperText={formik.touched.wingSpan && formik.errors.wingSpan}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: <InputAdornment position="end">м</InputAdornment>,
               }}
@@ -387,7 +397,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.wingArea && !!formik.errors.wingArea}
               helperText={formik.touched.wingArea && formik.errors.wingArea}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">м²</InputAdornment>
@@ -409,7 +419,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.crewSize && !!formik.errors.crewSize}
               helperText={formik.touched.crewSize && formik.errors.crewSize}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">человек</InputAdornment>
@@ -449,7 +459,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.touched.technicalRange && formik.errors.technicalRange
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">км</InputAdornment>
@@ -468,7 +478,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.touched.practicalRange && formik.errors.practicalRange
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">км</InputAdornment>
@@ -487,7 +497,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.touched.maximumSpeed && formik.errors.maximumSpeed
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">км/ч</InputAdornment>
@@ -502,10 +512,122 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
               error={formik.touched.climbRate && !!formik.errors.climbRate}
               helperText={formik.touched.climbRate && formik.errors.climbRate}
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">м/c</InputAdornment>
+                ),
+              }}
+            />
+          </div>
+        </div>
+        <div className={styles.section}>
+          <Text color="gold" noMargin>
+            Силовая установка
+          </Text>
+          <div className={styles.inputsWrapper}>
+            <TextField
+              label="Количество двигателей"
+              name="enginesNumber"
+              value={formik.values.enginesNumber || ""}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.enginesNumber && !!formik.errors.enginesNumber
+              }
+              helperText={
+                formik.touched.enginesNumber && formik.errors.enginesNumber
+              }
+              onBlur={formik.handleBlur}
+              multiline
+              type="number"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">шт.</InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              label="Марка двигателя"
+              name="engineTrademark"
+              value={formik.values.engineTrademark}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.engineTrademark &&
+                !!formik.errors.engineTrademark
+              }
+              helperText={
+                formik.touched.engineTrademark && formik.errors.engineTrademark
+              }
+              onBlur={formik.handleBlur}
+              type="text"
+            />
+            <TextField
+              label="Тип двигателя"
+              name="engineType"
+              value={formik.values.engineType}
+              onChange={formik.handleChange}
+              error={formik.touched.engineType && !!formik.errors.engineType}
+              helperText={formik.touched.engineType && formik.errors.engineType}
+              multiline
+              onBlur={formik.handleBlur}
+              type="text"
+            />
+            <TextField
+              label="Объем двигателя"
+              name="engineCapacity"
+              value={formik.values.engineCapacity || ""}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.engineCapacity && !!formik.errors.engineCapacity
+              }
+              helperText={
+                formik.touched.engineCapacity && formik.errors.engineCapacity
+              }
+              onBlur={formik.handleBlur}
+              type="number"
+              InputProps={{
+                endAdornment: <InputAdornment position="end">л</InputAdornment>,
+              }}
+            />
+            <TextField
+              label="Взлетная мощность"
+              name="engineTakeoffPower"
+              value={formik.values.engineTakeoffPower}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.engineTakeoffPower &&
+                !!formik.errors.engineTakeoffPower
+              }
+              helperText={
+                formik.touched.engineTakeoffPower &&
+                formik.errors.engineTakeoffPower
+              }
+              onBlur={formik.handleBlur}
+              type="number"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">л.с.</InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              label="Боевая мощность"
+              name="engineCombatPower"
+              value={formik.values.engineCombatPower}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.engineCombatPower &&
+                !!formik.errors.engineCombatPower
+              }
+              helperText={
+                formik.touched.engineCombatPower &&
+                formik.errors.engineCombatPower
+              }
+              onBlur={formik.handleBlur}
+              type="number"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">л.с.</InputAdornment>
                 ),
               }}
             />
@@ -552,7 +674,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
                 formik.errors.secondSalvoWeight
               }
               onBlur={formik.handleBlur}
-              type="text"
+              type="number"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">кг/с</InputAdornment>

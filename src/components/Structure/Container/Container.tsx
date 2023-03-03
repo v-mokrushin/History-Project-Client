@@ -11,13 +11,12 @@ interface IContainerProps {
 
 export default function Container({
   type = CONTAINER_TYPES.default,
-  className,
   children,
+  className,
 }: IContainerProps) {
   return (
     <div
-      className={classNames({
-        className,
+      className={classNames(className, {
         [styles.default]: type === CONTAINER_TYPES.default,
         [styles.wide]: type === CONTAINER_TYPES.wide,
         [styles.aside]: type === CONTAINER_TYPES.aside,

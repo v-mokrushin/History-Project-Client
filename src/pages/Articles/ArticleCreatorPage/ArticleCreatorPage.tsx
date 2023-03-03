@@ -15,6 +15,7 @@ import { Alert, AlertTitle } from "@mui/material";
 import Text from "components/Texts/Text/Text";
 import { authorizationStore } from "stores/mobx/authorizationStore";
 import { DocumentTitle } from "utils/document-title";
+import { alertsStore } from "stores/mobx/alertsStore";
 
 interface IArtilcleCreatorPageProps {
   className?: string;
@@ -28,8 +29,13 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = observer(
     React.useEffect(() => {
       if (!authorizationStore.isUserAuthorized) {
         navigate("/");
+        alertsStore.add(
+          "error",
+          "Авторизуйтесь, чтобы получить доступ к созданию статей."
+        );
       } else {
         DocumentTitle.set("Создание статьи");
+        alertsStore.add("info", `Доступно создание статей только об авиации.`);
       }
     }, [authorizationStore.isUserAuthorized]);
 

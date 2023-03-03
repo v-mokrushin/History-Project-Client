@@ -73,7 +73,11 @@ const ussr: IAircraft[] = [
     isReady: true,
     type: WeaponClassification.aviation.fighter,
     adoptedIntoServiceDate: 1943,
-    galleryInfo: { photoCollectionSize: 5 },
+    galleryInfo: {
+      photoCollectionSize: 5,
+      schemesCollectionSize: 3,
+      artsCollectionSize: 9,
+    },
     article: <Yak_3 />,
     sections: [
       "Введение",

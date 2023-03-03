@@ -30,11 +30,15 @@ const WeaponPhotoCollection: React.FC<IWeaponPhotoCollectionProps> = ({
     else return collection?.slice(0, 5);
   }, [collection, fullSize]);
 
-  if (!showCollection) return <></>;
+  if (!collection || !showCollection) return <></>;
 
   return (
     <Block formatAsSection>
-      <Subtitle id={title}>{`${title} (${collection?.length})`}</Subtitle>
+      {!fullSize ? (
+        <Subtitle id={title}>{`${title} (${collection?.length})`}</Subtitle>
+      ) : (
+        <Subtitle id={title}>{`${title}`}</Subtitle>
+      )}
       <div className={styles.innerBox}>
         <div
           className={classNames(
@@ -51,7 +55,7 @@ const WeaponPhotoCollection: React.FC<IWeaponPhotoCollectionProps> = ({
                 src={photo}
                 className={styles.photo}
                 onClick={() =>
-                  imageViewerStore.openPhotoCollection(showCollection, index)
+                  imageViewerStore.openPhotoCollection(collection, index)
                 }
               />
               <Preloader color="black" />
@@ -66,7 +70,7 @@ const WeaponPhotoCollection: React.FC<IWeaponPhotoCollectionProps> = ({
             }}
           >
             <Text className={styles.text} noMargin size="small">
-              Показать все
+              Показать галерею
             </Text>
           </button>
         )}

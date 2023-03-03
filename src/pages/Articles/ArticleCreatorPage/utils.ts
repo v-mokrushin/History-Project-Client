@@ -26,6 +26,13 @@ export const articleCreatorFormInitialValues = {
   maximumSpeed: 0,
   climbRate: 0,
 
+  enginesNumber: 0,
+  engineTrademark: "",
+  engineType: "",
+  engineCapacity: 0,
+  engineTakeoffPower: 0,
+  engineCombatPower: 0,
+
   weaponsSet: "",
   ammunition: "",
   secondSalvoWeight: 0,
@@ -46,8 +53,8 @@ export function fillFormTest(formik: any) {
   formik.values.numberOfIssued = 1200;
   formik.values.exploitationYears = "1942 - 1943";
 
-  formik.values.emptyWeight = 2450;
-  formik.values.curbWeight = 3100;
+  formik.values.emptyWeight = 3100;
+  formik.values.curbWeight = 3400;
   formik.values.length = 8.85;
   formik.values.height = 2.5;
   formik.values.wingSpan = 10;
@@ -60,6 +67,14 @@ export function fillFormTest(formik: any) {
   formik.values.practicalRange = 570;
   formik.values.maximumSpeed = 695;
   formik.values.climbRate = 24.5;
+
+  formik.values.enginesNumber = 1;
+  formik.values.engineTrademark = "Daimler-Benz DB 605ASCM";
+  formik.values.engineType =
+    "двенадцатицилиндровый Λ- образный двигатель жидкостного охлаждения";
+  formik.values.engineCapacity = 35.7;
+  formik.values.engineTakeoffPower = 2000;
+  formik.values.engineCombatPower = 2000;
 
   formik.values.weaponsSet =
     "1 x 30-мм пушка МК 103 или 108, 2 x 15-мм пушки MG 151";

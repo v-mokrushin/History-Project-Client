@@ -11,6 +11,16 @@
   background-color: transparent;
   cursor: pointer;
 
+  &_test {
+    filter: none;
+    border-radius: 50%;
+    height: 3vh;
+
+    @include media-breakpoint-down(lg) {
+      height: 30px;
+    }
+  }
+
   @include media-breakpoint-down(lg) {
     height: 25px;
   }

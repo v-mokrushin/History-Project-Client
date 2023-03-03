@@ -9,21 +9,31 @@ class AlertsStore {
     makeAutoObservable(this);
   }
 
-  public add(type: TAlertType, message: string, duration?: number) {
+  public add(
+    type: TAlertType,
+    message: string,
+    delay?: number,
+    duration?: number
+  ) {
     const id = Random.getUniqueId();
 
     runInAction(() => {
-      this.alerts.push({
-        id,
-        type,
-        message,
-        selfKill: setTimeout(
-          () => {
-            this.delete(id);
-          },
-          duration ? duration : 4000
-        ),
-      });
+      setTimeout(
+        () => {
+          this.alerts.push({
+            id,
+            type,
+            message,
+            selfKill: setTimeout(
+              () => {
+                this.delete(id);
+              },
+              duration ? duration : 4000
+            ),
+          });
+        },
+        delay ? delay : 0
+      );
     });
   }
 

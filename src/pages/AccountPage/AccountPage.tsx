@@ -20,6 +20,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { Server as ServerSource } from "config/server";
 import { alertsStore } from "stores/mobx/alertsStore";
+import { ANIMATIONS } from "constants/animations";
 
 interface IAccountPageProps {
   className?: string;
@@ -78,6 +79,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                   color="black"
                   uppercase
                   onClick={() => setEditingMode(true)}
+                  className={ANIMATIONS.fadeIn}
                 >
                   Редактировать
                 </CustomButton>
@@ -85,6 +87,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 <CustomButton
                   color="blue"
                   uppercase
+                  className={ANIMATIONS.fadeIn}
                   onClick={() => {
                     commonApplicationStore.showBanner("СОХРАНЕНИЕ");
 
@@ -120,10 +123,12 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               )}
               {editingMode && (
                 <CustomButton
+                  className={ANIMATIONS.fadeIn}
                   onClick={() => {
                     formik.resetForm({
                       values: authorizationStore.getEditableInfo(),
                     });
+
                     setEditingMode(false);
                   }}
                   color="red"
@@ -133,14 +138,19 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 </CustomButton>
               )}
               {editingMode || (
-                <CustomButton onClick={onExitClick} color="red" uppercase>
+                <CustomButton
+                  onClick={onExitClick}
+                  color="red"
+                  uppercase
+                  className={ANIMATIONS.fadeIn}
+                >
                   Выйти
                 </CustomButton>
               )}
             </div>
           </div>
           {!editingMode ? (
-            <div className={styles.infoWrapper}>
+            <div className={classNames(styles.infoWrapper, ANIMATIONS.fadeIn)}>
               <div className={styles.section}>
                 <div className={styles.header}>
                   <Subtitle color="black" noMargin>
@@ -176,53 +186,49 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               </div>
             </div>
           ) : (
-            <>
-              <form>
-                <div className={styles.infoWrapper}>
-                  <div className={styles.section}>
-                    <div className={styles.header}>
-                      <Subtitle color="black" noMargin>
-                        Редактирование
-                      </Subtitle>
-                    </div>
-                    <div className={styles.inputsWrapper_editingMode}>
-                      <TextField
-                        label="Имя"
-                        name="name"
-                        value={formik.values.name || ""}
-                        onChange={formik.handleChange}
-                        variant="outlined"
-                        type="text"
-                      />
-                      <TextField
-                        label="Фамилия"
-                        name="surname"
-                        value={formik.values.surname || ""}
-                        onChange={formik.handleChange}
-                        variant="outlined"
-                        type="text"
-                      />
-                      <TextField
-                        label="Аватар"
-                        name="avatar"
-                        value={formik.values.avatar || ""}
-                        onChange={formik.handleChange}
-                        variant="outlined"
-                        multiline
-                        type="text"
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              ссылка
-                            </InputAdornment>
-                          ),
-                        }}
-                      />
-                    </div>
+            <form className={ANIMATIONS.fadeIn}>
+              <div className={styles.infoWrapper}>
+                <div className={styles.section}>
+                  <div className={styles.header}>
+                    <Subtitle color="black" noMargin>
+                      Редактирование
+                    </Subtitle>
+                  </div>
+                  <div className={styles.inputsWrapper_editingMode}>
+                    <TextField
+                      label="Имя"
+                      name="name"
+                      value={formik.values.name || ""}
+                      onChange={formik.handleChange}
+                      variant="outlined"
+                      type="text"
+                    />
+                    <TextField
+                      label="Фамилия"
+                      name="surname"
+                      value={formik.values.surname || ""}
+                      onChange={formik.handleChange}
+                      variant="outlined"
+                      type="text"
+                    />
+                    <TextField
+                      label="Аватар"
+                      name="avatar"
+                      value={formik.values.avatar || ""}
+                      onChange={formik.handleChange}
+                      variant="outlined"
+                      multiline
+                      type="text"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">ссылка</InputAdornment>
+                        ),
+                      }}
+                    />
                   </div>
                 </div>
-              </form>
-            </>
+              </div>
+            </form>
           )}
         </div>
       </Container>

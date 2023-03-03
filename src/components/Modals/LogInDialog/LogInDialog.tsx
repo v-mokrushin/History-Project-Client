@@ -113,6 +113,11 @@ const LogInDialog = observer(() => {
                   clearForm();
                   commonApplicationStore.hideLogInDialog();
                   alertsStore.add("info", "Вы успешно авторизовались.");
+                  alertsStore.add(
+                    "info",
+                    "Теперь вам доступно создание статей.",
+                    1500
+                  );
                   // navigate("/account");
                 })
                 .catch((error) => {

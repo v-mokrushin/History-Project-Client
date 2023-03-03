@@ -15,13 +15,19 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: auto 1fr;
+  align-items: start;
+  grid-template-columns: 18vh 1fr;
   gap: 3vh;
-  margin-top: 2vh;
+  margin-top: 2.5vh;
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: 180px 1fr;
+  }
 
   @include media-breakpoint-down(xs) {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 20px;
   }
 
@@ -33,7 +39,8 @@
     gap: 1vh;
 
     @include media-breakpoint-down(xs) {
-      // flex-direction: row;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .avatar {
