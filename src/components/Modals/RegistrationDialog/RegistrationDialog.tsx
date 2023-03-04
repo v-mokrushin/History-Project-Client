@@ -103,12 +103,12 @@ const RegistrationDialog = observer(() => {
               event.preventDefault();
 
               if (username === "") {
-                alertsStore.add("error", `Придумайте никнейм.`);
+                alertsStore.runAlert("error", `Придумайте никнейм.`);
                 return;
               }
 
               if (username.length < 3) {
-                alertsStore.add(
+                alertsStore.runAlert(
                   "error",
                   `Минимальная длина никнейма 3 символа.`
                 );
@@ -116,22 +116,22 @@ const RegistrationDialog = observer(() => {
               }
 
               if (password === "") {
-                alertsStore.add("error", `Придумайте пароль.`);
+                alertsStore.runAlert("error", `Придумайте пароль.`);
                 return;
               }
 
               if (passwordConfirm === "") {
-                alertsStore.add("error", `Подтвердите пароль.`);
+                alertsStore.runAlert("error", `Подтвердите пароль.`);
                 return;
               }
 
               if (password !== passwordConfirm) {
-                alertsStore.add("error", `Пароли не совпадают.`);
+                alertsStore.runAlert("error", `Пароли не совпадают.`);
                 return;
               }
 
               if (password.length < 3) {
-                alertsStore.add(
+                alertsStore.runAlert(
                   "error",
                   `Минимальная длина пароля — 4 символа.`
                 );
@@ -139,7 +139,7 @@ const RegistrationDialog = observer(() => {
               }
 
               if (username === password) {
-                alertsStore.add(
+                alertsStore.runAlert(
                   "error",
                   `Пароль и никнейм не должны совпадать.`
                 );
@@ -158,13 +158,13 @@ const RegistrationDialog = observer(() => {
                   clearForm();
                   commonApplicationStore.hideRegistrationDialog();
                   navigate("/account");
-                  alertsStore.add("info", `Вы успешно зарегистрировались.`);
+                  alertsStore.runAlert("info", `Вы успешно зарегистрировались.`);
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
-                    alertsStore.add("error", `Сервер недоступен.`);
+                    alertsStore.runAlert("error", `Сервер недоступен.`);
                   } else {
-                    alertsStore.add("error", error.response.data);
+                    alertsStore.runAlert("error", error.response.data);
                   }
                 })
                 .finally(() => {

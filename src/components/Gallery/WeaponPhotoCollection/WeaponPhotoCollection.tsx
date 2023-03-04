@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Block from "components/Structure/Block/Block";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import imageViewerStore from "stores/mobx/imageViewerStore";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../../Graphics/Preloader/Preloader";
 import Text from "components/Texts/Text/Text";
 import { useNavigate } from "react-router-dom";
 

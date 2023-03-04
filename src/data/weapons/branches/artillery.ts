@@ -144,6 +144,9 @@ const ussr: TWeapon[] = [
     name: "БМ-13Н",
     type: WeaponClassification.artillery.reactive,
     adoptedIntoServiceDate: 1943,
+    galleryInfo: {
+      artsCollectionSize: 6,
+    },
     specifications: {
       common: {
         numberOfIssued: 1845,
@@ -188,6 +191,9 @@ const germany: TWeapon[] = [
     shortName: "V-2",
     type: WeaponClassification.artillery.ballisticMissile,
     adoptedIntoServiceDate: 1944,
+    galleryInfo: {
+      artsCollectionSize: 1,
+    },
     specifications: {
       common: {
         developer: Developers.atillery.Peenemunde,

@@ -6,10 +6,10 @@ class AlertsStore {
   public alerts: IAlert[] = [];
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
-  public add(
+  public runAlert(
     type: TAlertType,
     message: string,
     delay?: number,
@@ -17,24 +17,22 @@ class AlertsStore {
   ) {
     const id = Random.getUniqueId();
 
-    runInAction(() => {
-      setTimeout(
-        () => {
-          this.alerts.push({
-            id,
-            type,
-            message,
-            selfKill: setTimeout(
-              () => {
-                this.delete(id);
-              },
-              duration ? duration : 4000
-            ),
-          });
-        },
-        delay ? delay : 0
-      );
-    });
+    setTimeout(
+      action(() => {
+        this.alerts.push({
+          id,
+          type,
+          message,
+          selfKill: setTimeout(
+            () => {
+              this.delete(id);
+            },
+            duration ? duration : 4000
+          ),
+        });
+      }),
+      delay ? delay : 0
+    );
   }
 
   public delete(id: string) {

@@ -29,13 +29,13 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = observer(
     React.useEffect(() => {
       if (!authorizationStore.isUserAuthorized) {
         navigate("/");
-        alertsStore.add(
+        alertsStore.runAlert(
           "error",
           "Авторизуйтесь, чтобы получить доступ к созданию статей."
         );
       } else {
         DocumentTitle.set("Создание статьи");
-        alertsStore.add("info", `Доступно создание статей только об авиации.`);
+        alertsStore.runAlert("info", `Доступно создание статей только об авиации.`);
       }
     }, [authorizationStore.isUserAuthorized]);
 

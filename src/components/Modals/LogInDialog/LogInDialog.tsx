@@ -92,12 +92,12 @@ const LogInDialog = observer(() => {
             className={classNames(styles.submit)}
             onClick={() => {
               if (username === "") {
-                alertsStore.add("error", `Введите никнейм.`);
+                alertsStore.runAlert("error", `Введите никнейм.`);
                 return;
               }
 
               if (password === "") {
-                alertsStore.add("error", `Введите пароль.`);
+                alertsStore.runAlert("error", `Введите пароль.`);
                 return;
               }
 
@@ -112,8 +112,8 @@ const LogInDialog = observer(() => {
                   burgerStore.setClose();
                   clearForm();
                   commonApplicationStore.hideLogInDialog();
-                  alertsStore.add("info", "Вы успешно авторизовались.");
-                  alertsStore.add(
+                  alertsStore.runAlert("info", "Вы успешно авторизовались.");
+                  alertsStore.runAlert(
                     "info",
                     "Теперь вам доступно создание статей.",
                     1500
@@ -122,9 +122,9 @@ const LogInDialog = observer(() => {
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
-                    alertsStore.add("error", `Сервер недоступен.`);
+                    alertsStore.runAlert("error", `Сервер недоступен.`);
                   } else {
-                    alertsStore.add("error", error.response.data);
+                    alertsStore.runAlert("error", error.response.data);
                   }
                 })
                 .finally(() => {

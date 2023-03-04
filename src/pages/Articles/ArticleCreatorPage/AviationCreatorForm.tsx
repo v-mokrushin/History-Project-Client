@@ -52,7 +52,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
     initialValues: { ...articleCreatorFormInitialValues },
     onSubmit: (values, { resetForm }) => {
       if (Weapons.doesWeaponExist(formik.values.name)) {
-        alertsStore.add("error", `Вооружение с таким названием уже существует`);
+        alertsStore.runAlert("error", `Вооружение с таким названием уже существует`);
         return;
       }
 
@@ -113,7 +113,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
           createdWeapon: weapon,
         })
         .then((response) => {
-          alertsStore.add("info", `Статья ${values.name} успешно создана.`);
+          alertsStore.runAlert("info", `Статья ${values.name} успешно создана.`);
           Weapons.addNewWeapon(weapon);
           resetForm({ values: { ...articleCreatorFormInitialValues } });
           setTimeout(() => {
@@ -121,7 +121,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
           }, 250);
         })
         .catch((error) => {
-          alertsStore.add(
+          alertsStore.runAlert(
             "error",
             `Статья ${values.name} не создана. Не удалось подключиться к серверу.`
           );

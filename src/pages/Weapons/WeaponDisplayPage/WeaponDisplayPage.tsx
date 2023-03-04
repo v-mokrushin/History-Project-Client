@@ -35,7 +35,7 @@ import { DocumentTitle } from "utils/document-title";
 import Comments from "components/Structure/Comments/Comments";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Text from "components/Texts/Text/Text";
-import WeaponPhotoCollection from "components/Graphics/WeaponPhotoCollection/WeaponPhotoCollection";
+import WeaponPhotoCollection from "components/Gallery/WeaponPhotoCollection/WeaponPhotoCollection";
 
 const WeaponDisplayPage = observer(() => {
   const isUserArticlesLoading = commonApplicationStore.isUserArticlesLoading;

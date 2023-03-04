@@ -123,24 +123,31 @@ export function defineGallery(weapon: TWeapon): void {
   let weaponName: string = weapon.name;
   if (weaponName.at(-1) === ".") weaponName = weaponName.slice(0, -1);
 
+  const galleryPath = getGalleryPath(weaponName, weapon);
   weapon.gallery = {
-    path: getGalleryPath(weaponName, weapon),
+    path: galleryPath,
     isIconsRemote: weapon.galleryInfo?.isIconsRemote,
+    localOriginalIcon: galleryPath + "icon.jpg",
+    localColorizedIcon: galleryPath + "icon-color.jpg",
     remoteOriginalIcon: weapon.galleryInfo?.remoteOriginalIcon || "none",
     remoteColorizedIcon: weapon.galleryInfo?.remoteColorizedIcon || "none",
     isColorizedIcon: translateStringToBool(localStorage.getItem("colorized")),
+
+    get originalIcon() {
+      return !this.isIconsRemote
+        ? this.localOriginalIcon
+        : this.remoteOriginalIcon;
+    },
 
     get icon() {
       if (this.isIconsRemote) {
         return !this.isColorizedIcon
           ? this.remoteOriginalIcon
           : this.remoteColorizedIcon;
-      }
-
-      if (!this.isColorizedIcon) {
-        return this.path + "icon.jpg";
       } else {
-        return this.path + "icon-color.jpg";
+        return !this.isColorizedIcon
+          ? this.localOriginalIcon
+          : this.localColorizedIcon;
       }
     },
 

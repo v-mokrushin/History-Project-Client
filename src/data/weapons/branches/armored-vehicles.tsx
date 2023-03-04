@@ -25,6 +25,9 @@ const ussr: IArmoredVehicle[] = [
     intro: [
       "ИС-3 — последний советский тяжёлый танк, принятый на вооружение и запущенный в серийное производство во время Второй Мировой войны. Его проектирование началось весной 1944 года как глубокая модернизация ИС-2, который не устраивал военных по бронезащите. В результате ИС-3 получил новый сварной корпус с характерным «щучим носом» (такое название он получил из-за формы верхней лобовой части корпуса) и бортовыми бронелистами под наклоном. На крыше башни новой конструкции были сделаны новые люки, намного более удобные для экипажа, а механик-водитель получил новый треугольный люк для лучшей обзорности вне боевой обстановки. Помимо этого, топливные баки были убраны из боевого отделения, а вместо командирской башенки установили удачные перископические приборы наблюдения.",
     ],
+    galleryInfo: {
+      artsCollectionSize: 5,
+    },
     specifications: {
       common: {
         developer: Developers.armoredVehicles.ChelyabinskExp100,
@@ -146,6 +149,9 @@ const ussr: IArmoredVehicle[] = [
     name: "ИС-1",
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
+    galleryInfo: {
+      artsCollectionSize: 2,
+    },
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
@@ -412,6 +418,7 @@ const ussr: IArmoredVehicle[] = [
     galleryInfo: {
       photoCollectionSize: 17,
       schemesCollectionSize: 3,
+      artsCollectionSize: 8,
     },
     specifications: {
       common: {
@@ -685,6 +692,9 @@ const germany: IArmoredVehicle[] = [
     shortName: "Königstiger",
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
+    galleryInfo: {
+      artsCollectionSize: 21,
+    },
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
@@ -701,10 +711,14 @@ const germany: IArmoredVehicle[] = [
     isReady: true,
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1942,
+
     intro: [
       "Panzerkampfwagen VI Ausf. H1, или «Тигр» – это первый немецкий тяжелый танк времен Второй мировой войны. Один из самых знаменитых танков Германии.",
     ],
     sections: ["Введение", "Характеристики", "Модели"],
+    galleryInfo: {
+      artsCollectionSize: 8,
+    },
     models: [
       {
         title: `Сборная модель ZVEZDA T-VI "Тигр" масштаб 1:35`,

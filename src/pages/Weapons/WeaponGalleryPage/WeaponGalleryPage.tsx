@@ -8,7 +8,7 @@ import ContentWrapper from "components/Structure/ContentWrapper/ContentWrapper";
 import Title from "components/Texts/Title/Title";
 import { useParams } from "react-router-dom";
 import { Weapons } from "data/weapons/weapons";
-import WeaponPhotoCollection from "components/Graphics/WeaponPhotoCollection/WeaponPhotoCollection";
+import WeaponPhotoCollection from "components/Gallery/WeaponPhotoCollection/WeaponPhotoCollection";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";

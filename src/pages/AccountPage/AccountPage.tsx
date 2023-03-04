@@ -48,7 +48,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
   function onExitClick() {
     setTimeout(() => {
       authorizationStore.unauthorizeUser();
-      alertsStore.add("info", `Вы вышли из учетной записи.`);
+      alertsStore.runAlert("info", `Вы вышли из учетной записи.`);
     }, 500);
   }
 
@@ -108,10 +108,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                         }
                         commonApplicationStore.hideBanner();
                         setEditingMode(false);
-                        alertsStore.add("info", `Изменения успешно внесены.`);
+                        alertsStore.runAlert("info", `Изменения успешно внесены.`);
                       })
                       .catch((error) => {
-                        alertsStore.add(
+                        alertsStore.runAlert(
                           "error",
                           `Неудалось внести изменения на сервере.`
                         );

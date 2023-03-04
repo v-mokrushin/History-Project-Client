@@ -27,6 +27,8 @@ import { Server } from "config/server";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import { alertsStore } from "stores/mobx/alertsStore";
 import { TFilters } from "interfaces/filters";
+import galleryStore from "stores/mobx/galleryStore";
+import { toJS } from "mobx";
 
 const weapons_data = ([] as TWeapon[]).concat(
   ARMORED_VEHICLES,
@@ -50,17 +52,35 @@ axios
       weapons_data.unshift(...loadedWeapons);
     }
 
-    alertsStore.add("info", `С сервера загружены пользовательские статьи.`);
+    alertsStore.runAlert("info", `С сервера загружены пользовательские статьи.`);
   })
   .catch((error) => {
-    alertsStore.add(
+    alertsStore.runAlert(
       "error",
       `Не удалось подключиться к серверу. Пользовательские статьи не загружены.`
     );
   })
   .finally(() => {
-        // console.log(weapons_data);
     prepareWeapons(weapons_data);
+    // console.log(weapons_data);
+
+    weapons_data.forEach((weapon) => {
+      const gallery = weapon.gallery;
+
+      if (gallery) {
+        const arts = gallery.arts;
+        arts && galleryStore.pushArtsContent(arts);
+
+        const weapons = gallery.photos;
+        weapons && galleryStore.pushWeaponsContent(weapons);
+        gallery.originalIcon &&
+          galleryStore.pushWeaponsContent([gallery.originalIcon]);
+
+        const schemes = gallery.schemes;
+        schemes && galleryStore.pushSchemesContent(schemes);
+      }
+    });
+
     commonApplicationStore.hideBanner();
     commonApplicationStore.setIsLoading(false);
   });

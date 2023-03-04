@@ -187,6 +187,9 @@ const ussr: IAircraft[] = [
     name: "Ил-4",
     type: WeaponClassification.aviation.strategicBomber,
     adoptedIntoServiceDate: 1940,
+    galleryInfo: {
+      artsCollectionSize: 14,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.IL,
@@ -234,6 +237,9 @@ const germany: IAircraft[] = [
     name: "Heinkel He 111",
     type: WeaponClassification.aviation.frontlineBomber,
     adoptedIntoServiceDate: 1935,
+    galleryInfo: {
+      artsCollectionSize: 18,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Heinkel,
@@ -329,6 +335,9 @@ const usa: IAircraft[] = [
     name: "North American P-51-D Mustang",
     type: WeaponClassification.aviation.fighter,
     adoptedIntoServiceDate: 1944,
+    galleryInfo: {
+      artsCollectionSize: 11,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.NorthAmerican,
@@ -352,6 +361,9 @@ const usa: IAircraft[] = [
     shortName: "B-29",
     type: WeaponClassification.aviation.strategicBomber,
     adoptedIntoServiceDate: 1944,
+    galleryInfo: {
+      artsCollectionSize: 14,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Boeing,

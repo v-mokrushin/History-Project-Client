@@ -54,6 +54,9 @@ export interface IWeaponGallery {
   get icon(): string;
   get intro(): string;
   isIconsRemote?: boolean;
+  originalIcon: string;
+  localOriginalIcon: string;
+  localColorizedIcon: string;
   remoteOriginalIcon: string;
   remoteColorizedIcon: string;
   photos?: string[];

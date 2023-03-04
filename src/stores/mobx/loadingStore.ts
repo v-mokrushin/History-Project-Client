@@ -35,6 +35,7 @@ export class LoadingStore {
 
   private setStatus(value: boolean): void {
     this.isLoading = value;
+    console.log(this.isLoading);
   }
 
   public checkLoading(articleId: string | undefined): void {
@@ -60,7 +61,7 @@ export class LoadingStore {
           })
         )
         .catch((error) => {
-          alertsStore.add(
+          alertsStore.runAlert(
             "error",
             "Не удалось загрузить колличество просмотров и комментарии статьи"
           );

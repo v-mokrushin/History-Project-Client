@@ -3,36 +3,96 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  // overflow: auto;
+  gap: 5vh;
 }
 
 .sectionsBox {
-  overflow: auto;
-  height: 17vh;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 
   @include media-breakpoint-down(lg) {
     height: 13vh;
-    // overflow: scroll;
-    // overflow-x: auto;
-    // white-space: nowrap;
-    // overflow-x: auto;
-    // overflow-y: hidden;
   }
 
   .sectionCard {
-    aspect-ratio: 1 / 1;
-    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    aspect-ratio: 1.7 / 1;
+    height: 17vh;
+    min-height: 120px;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
+    transition: transform 150ms ease;
+
+    &:active {
+      // transform: translateY(4px);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 70%,
+        rgba(0, 0, 0, 0.6) 85%,
+        rgba(0, 0, 0, 0.75) 100%
+      );
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: background-color 300ms ease;
+    }
+
+    &:hover::after {
+      background-color: rgba($color: #000000, $alpha: 0.35);
+    }
+
+    &:hover .contentBox .title {
+      color: $gold;
+    }
+
+    &:hover .sectionImage {
+      transform: scale(1.05);
+    }
+
+    .contentBox {
+      padding: 0.8vh 1vh;
+      z-index: 3;
+
+      .title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 2.2vh;
+        letter-spacing: 0.16vh;
+        color: $white;
+        transition: transform 300ms ease, color 300ms ease;
+
+        &_actual {
+          color: $gold;
+        }
+
+        @include media-breakpoint-down(xs) {
+          font-size: 16px;
+        }
+
+        @include media-breakpoint-down(xxs) {
+          font-size: 15px;
+        }
+      }
+    }
 
     .sectionImage {
+      position: absolute;
       object-fit: cover;
       width: 100%;
       height: 100%;
+      z-index: 0;
+      transition: transform 300ms ease;
+      will-change: transform;
     }
   }
 }

@@ -92,7 +92,7 @@ const Comments: React.FC<ICommentsProps> = observer(
                           setNewComment
                         );
                       } else {
-                        alertsStore.add(
+                        alertsStore.runAlert(
                           "error",
                           "Комментарий не может быть пустым."
                         );
