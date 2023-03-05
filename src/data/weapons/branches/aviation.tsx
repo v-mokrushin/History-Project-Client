@@ -6,7 +6,7 @@ import { Developers } from "../departments/developers";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { Platforms } from "../departments/platforms";
 import { AVIATION_ENGINES } from "../parts/engines/aviation-engines";
-import { IAircraft } from "../interfaces/aviation-interfaces";
+import { IAircraft } from "../../../interfaces/weapons/aviation-interfaces";
 import { Producers } from "../departments/producers";
 
 const ussr: IAircraft[] = [
@@ -75,6 +75,7 @@ const ussr: IAircraft[] = [
     adoptedIntoServiceDate: 1943,
     galleryInfo: {
       photoCollectionSize: 5,
+      postwarPhotoCollectionSize: 7,
       schemesCollectionSize: 3,
       artsCollectionSize: 9,
     },
@@ -160,6 +161,9 @@ const ussr: IAircraft[] = [
     name: "Ил-10",
     type: WeaponClassification.aviation.attackАircraft,
     adoptedIntoServiceDate: 1945,
+    galleryInfo: {
+      artsCollectionSize: 5,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.IL,
@@ -225,6 +229,9 @@ const germany: IAircraft[] = [
     shortName: "Me.262",
     type: WeaponClassification.aviation.fighter,
     adoptedIntoServiceDate: 1944,
+    galleryInfo: {
+      artsCollectionSize: 21,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Messerschmitt,
@@ -382,6 +389,10 @@ const usa: IAircraft[] = [
     shortName: "C-47",
     type: WeaponClassification.aviation.militaryTransport,
     adoptedIntoServiceDate: 1942,
+    galleryInfo: {
+      artsCollectionSize: 8,
+      postwarPhotoCollectionSize: 14,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Douglas,

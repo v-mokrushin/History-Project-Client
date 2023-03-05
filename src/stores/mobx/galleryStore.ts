@@ -5,6 +5,7 @@ export class GalleryStore {
   public actualSection: IGallerySection;
 
   public weapons: IGallerySection;
+  public postwarWeapons: IGallerySection;
   public arts: IGallerySection;
   public posters: IGallerySection;
   public schemes: IGallerySection;
@@ -14,6 +15,13 @@ export class GalleryStore {
       title: "Вооружения",
       name: "weapons",
       src: "/images/gallery/sections/weapons.jpg",
+      content: [] as string[],
+    };
+
+    this.postwarWeapons = {
+      title: "Послевоенные",
+      name: "post-war-weapons",
+      src: "/images/gallery/sections/post-war.jpg",
       content: [] as string[],
     };
 
@@ -57,11 +65,15 @@ export class GalleryStore {
   }
 
   public getSections(): IGallerySection[] {
-    return [this.weapons, this.arts, this.posters, this.schemes];
+    return [this.weapons, this.postwarWeapons, this.arts, this.posters, this.schemes];
   }
 
   public pushWeaponsContent(content: string[]) {
     this.weapons.content.push(...content);
+  }
+
+  public pushPostWarWeaponsContent(content: string[]) {
+    this.postwarWeapons.content.push(...content);
   }
 
   public pushArtsContent(content: string[]) {

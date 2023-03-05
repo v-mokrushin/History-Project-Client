@@ -5,7 +5,7 @@ import { TimelineContext } from "../Timeline/context";
 import classNames from "classnames";
 import settingsStore from "stores/mobx/settingsStore";
 import { observer } from "mobx-react";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 
 interface ITimelineItemProps {
   contentCollection: TWeapon[];

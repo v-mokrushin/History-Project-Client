@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Infographics.module.scss";
 import classNames from "classnames";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import { ANIMATIONS } from "constants/animations";
 import Text from "components/Texts/Text/Text";
 import { getShortNumber } from "utils/common";

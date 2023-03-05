@@ -13,7 +13,7 @@ import { Platforms } from "../departments/platforms";
 import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,
-} from "../interfaces/armored-interfaces";
+} from "../../../interfaces/weapons/armored-interfaces";
 import { Producers } from "../departments/producers";
 
 const ussr: IArmoredVehicle[] = [

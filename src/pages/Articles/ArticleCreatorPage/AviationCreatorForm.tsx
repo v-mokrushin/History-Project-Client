@@ -27,7 +27,7 @@ import {
 } from "./utils";
 import CustomButton from "components/Buttons/Button/Button";
 import imageViewerStore from "stores/mobx/imageViewerStore";
-import { IAircraft } from "data/weapons/interfaces/aviation-interfaces";
+import { IAircraft } from "interfaces/weapons/aviation-interfaces";
 import axios from "axios";
 import { Server } from "config/server";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";

@@ -59,6 +59,13 @@ const pages = {
     "Сражений",
     "Battles"
   ),
+  gallery: Page(
+    "gallery",
+    "/images/backgrounds/gallery.jpg",
+    "Галерея",
+    "Галереи",
+    "Gallery"
+  ),
   aviation: Page(
     "aviation",
     "/images/backgrounds/weapons/aviation.jpg",

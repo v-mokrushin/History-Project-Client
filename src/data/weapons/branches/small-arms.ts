@@ -3,7 +3,7 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WeaponClassification } from "../../../constants/weapon-types";
 import { Nations } from "../../../constants/nations";
 import { ChiefDesigners } from "../departments/chief-designers";
-import { ISmallArm } from "../interfaces/small-arms-interfaces";
+import { ISmallArm } from "../../../interfaces/weapons/small-arms-interfaces";
 import { platform } from "process";
 import { Platforms } from "../departments/platforms";
 

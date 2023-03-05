@@ -18,7 +18,7 @@ import WeaponPreviewSettings from "components/Controls/WeaponPreviewSettings/Wea
 import Filters from "components/Controls/Filters/Filters";
 import WarningPage from "pages/WarningPage/WarningPage";
 import { WARNING_PAGE_TYPE } from "pages/WarningPage/constants";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import Text from "components/Texts/Text/Text";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import { getShortNumber } from "utils/common";

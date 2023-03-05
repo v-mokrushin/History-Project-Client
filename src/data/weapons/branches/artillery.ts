@@ -2,7 +2,7 @@ import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WeaponClassification } from "../../../constants/weapon-types";
 import { Nations } from "../../../constants/nations";
 import { Developers } from "../departments/developers";
-import { TWeapon } from "../interfaces/common-weapon-interfaces";
+import { TWeapon } from "../../../interfaces/weapons/common-weapon-interfaces";
 import { ChiefDesigners } from "../departments/chief-designers";
 
 const ussr: TWeapon[] = [

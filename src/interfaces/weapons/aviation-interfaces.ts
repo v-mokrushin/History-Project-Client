@@ -1,5 +1,5 @@
-import { IAviationEngine } from "./../parts/engines/aviation-engines";
-import { ICrew } from "../departments/crews";
+import { IAviationEngine } from "../../data/weapons/parts/engines/aviation-engines";
+import { ICrew } from "../../data/weapons/departments/crews";
 import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
 
 export interface IAircraft extends IBaseWeapon {

@@ -5,12 +5,12 @@ import {
   IWeaponType,
   WeaponClassificationMethods,
 } from "constants/weapon-types";
-import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
-import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
+import { IArmoredVehiclesSpecifications } from "interfaces/weapons/armored-interfaces";
+import { IAviationSpecifications } from "interfaces/weapons/aviation-interfaces";
 import {
   TWeapon,
   TWeaponSpecification,
-} from "data/weapons/interfaces/common-weapon-interfaces";
+} from "interfaces/weapons/common-weapon-interfaces";
 import { getProducersText } from "./weapons";
 
 export const SpecificationsLayout = {

@@ -31,22 +31,19 @@
   width: 75%;
   max-height: 90%;
   object-fit: contain;
-  // transform: scale(0);
-  transform: translateY(300%);
-  transition: transform 350ms ease;
+  opacity: 0;
+  transition: all 250ms ease;
 
   @include media-breakpoint-down(lg) {
     width: 87%;
   }
 
   @include media-breakpoint-down(md) {
-    // width: 92.5%;
     max-height: 80%;
   }
 
   &_open {
-    // transform: scale(1);
-    transform: translateY(0);
+    opacity: 1;
   }
 }
 

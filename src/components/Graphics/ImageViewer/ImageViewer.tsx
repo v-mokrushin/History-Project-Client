@@ -26,9 +26,9 @@ const ImageViewer = observer(() => {
   }, []);
 
   React.useEffect(() => {
-    imageViewerStore.open
-      ? DocumentOverflow.setHidden()
-      : DocumentOverflow.setAuto();
+    // imageViewerStore.open
+    //   ? DocumentOverflow.setHidden()
+    //   : DocumentOverflow.setAuto();
   }, [imageViewerStore.open]);
 
   return (
@@ -38,7 +38,6 @@ const ImageViewer = observer(() => {
         imageViewerStore.open && styles.root_open
       )}
     >
-      {/* <Preloader color="white" /> */}
       <img
         id="image-viewer-image"
         className={classNames(

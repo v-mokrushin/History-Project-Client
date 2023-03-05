@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Models.module.scss";
 import classNames from "classnames";
 import Text from "components/Texts/Text/Text";
-import { IModel } from "data/weapons/interfaces/common-weapon-interfaces";
+import { IModel } from "interfaces/weapons/common-weapon-interfaces";
 import Block from "components/Structure/Block/Block";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 

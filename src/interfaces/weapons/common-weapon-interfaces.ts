@@ -1,9 +1,9 @@
 import { INation } from "constants/nations";
 import { IWaponBranch, IWeaponType } from "constants/weapon-types";
-import { IChiefDesigner } from "../departments/chief-designers";
-import { IDeveloper } from "../departments/developers";
-import { IPlatform } from "../departments/platforms";
-import { IProducer } from "../departments/producers";
+import { IChiefDesigner } from "../../data/weapons/departments/chief-designers";
+import { IDeveloper } from "../../data/weapons/departments/developers";
+import { IPlatform } from "../../data/weapons/departments/platforms";
+import { IProducer } from "../../data/weapons/departments/producers";
 import {
   IArmoredVehicle,
   IArmoredVehiclesSpecifications,
@@ -17,7 +17,6 @@ export interface IBaseWeapon {
   readonly type: IWeaponType;
   readonly adoptedIntoServiceDate: number;
   branch?: IWaponBranch;
-  // photosNumber?: number;
   readonly id?: string;
   readonly isReady?: boolean;
   nation?: INation;
@@ -60,6 +59,7 @@ export interface IWeaponGallery {
   remoteOriginalIcon: string;
   remoteColorizedIcon: string;
   photos?: string[];
+  postwarPhotos?: string[];
   schemes?: string[];
   arts?: string[];
 }
@@ -69,6 +69,7 @@ export interface IWeaponGalleryInfo {
   remoteOriginalIcon?: string;
   remoteColorizedIcon?: string;
   photoCollectionSize?: number;
+  postwarPhotoCollectionSize?: number;
   schemesCollectionSize?: number;
   artsCollectionSize?: number;
 }

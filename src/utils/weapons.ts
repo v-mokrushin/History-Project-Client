@@ -3,7 +3,7 @@ import { IWaponBranch } from "constants/weapon-types";
 import {
   TWeapon,
   IWeaponGallery,
-} from "data/weapons/interfaces/common-weapon-interfaces";
+} from "interfaces/weapons/common-weapon-interfaces";
 import { translateStringToBool } from "./common";
 import { IProducer } from "data/weapons/departments/producers";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
@@ -169,6 +169,16 @@ export function defineGallery(weapon: TWeapon): void {
       for (let i = 0; i < weapon.gallery.photos.length; i++)
         weapon.gallery.photos[i] =
           weapon.gallery.path + "photos/" + String(i + 1) + ".jpg";
+    }
+
+    if (weapon.galleryInfo.postwarPhotoCollectionSize) {
+      if (!weapon.gallery) return;
+      weapon.gallery.postwarPhotos = new Array<string>(
+        weapon.galleryInfo.postwarPhotoCollectionSize
+      ).fill("");
+      for (let i = 0; i < weapon.gallery.postwarPhotos.length; i++)
+        weapon.gallery.postwarPhotos[i] =
+          weapon.gallery.path + "post-war-photos/" + String(i + 1) + ".jpg";
     }
 
     if (weapon.galleryInfo.schemesCollectionSize) {

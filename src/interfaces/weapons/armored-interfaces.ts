@@ -1,6 +1,6 @@
-import { ICrew } from "../departments/crews";
-import { IBodyArmoring } from "../parts/bodies";
-import { ITowerArmoring } from "../parts/towers";
+import { ICrew } from "../../data/weapons/departments/crews";
+import { IBodyArmoring } from "../../data/weapons/parts/bodies";
+import { ITowerArmoring } from "../../data/weapons/parts/towers";
 import { IBaseWeapon, IWaponCommonSpec } from "./common-weapon-interfaces";
 
 export interface IArmoredVehicle extends IBaseWeapon {

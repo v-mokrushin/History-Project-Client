@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SideSpec.module.scss";
 import classNames from "classnames";
 import { SpecificationsLayout } from "utils/specifications-layout";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 
 interface ISideSpecProps {
   weapon: TWeapon | undefined;

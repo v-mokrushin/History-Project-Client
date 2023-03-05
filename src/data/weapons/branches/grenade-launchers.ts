@@ -1,7 +1,7 @@
 import { appendNation, appendWeaponBranch } from "utils/weapons";
 import { WeaponClassification } from "../../../constants/weapon-types";
 import { Nations } from "../../../constants/nations";
-import { TWeapon } from "../interfaces/common-weapon-interfaces";
+import { TWeapon } from "../../../interfaces/weapons/common-weapon-interfaces";
 import { ChiefDesigners } from "../departments/chief-designers";
 import { Developers } from "../departments/developers";
 

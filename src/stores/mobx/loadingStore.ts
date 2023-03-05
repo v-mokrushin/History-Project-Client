@@ -35,7 +35,6 @@ export class LoadingStore {
 
   private setStatus(value: boolean): void {
     this.isLoading = value;
-    console.log(this.isLoading);
   }
 
   public checkLoading(articleId: string | undefined): void {
@@ -73,9 +72,7 @@ export class LoadingStore {
 
       axios
         .post(Server.path("/views/add"), { id: articleId })
-        .then((response) => {
-          // console.log(response);
-        });
+        .then((response) => {});
     }
   }
 
@@ -93,6 +90,7 @@ export class LoadingStore {
             avatar: authorizationStore.user?.avatar,
             username: authorizationStore.user?.username,
           });
+          alertsStore.runAlert("info", "Вы оставили комментарий.");
           setText("");
         });
   }

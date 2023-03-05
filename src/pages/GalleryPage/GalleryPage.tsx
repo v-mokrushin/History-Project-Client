@@ -16,6 +16,7 @@ import { IGallerySection } from "interfaces/gallery";
 import galleryStore from "stores/mobx/galleryStore";
 import { toJS } from "mobx";
 import { observer } from "mobx-react";
+import CustomButton from "components/Buttons/Button/Button";
 
 interface IGalleryPageProps {
   className?: string;
@@ -54,12 +55,6 @@ const GalleryPage: React.FC<IGalleryPageProps> = observer(({ className }) => {
     );
   };
 
-  React.useEffect(() => {
-    alertsStore.runAlert("info", `Раздел на начальном этапе разработки`);
-
-    return () => {};
-  }, []);
-
   return (
     <>
       <ContentWrapper containerType={CONTAINER_TYPES.wide}>
@@ -93,6 +88,7 @@ const GalleryPage: React.FC<IGalleryPageProps> = observer(({ className }) => {
                 ))}
             </div>
           </div>
+          {/* <CustomButton color="black" uppercase>Загрузить еще</CustomButton> */}
         </Container>
       </ContentWrapper>
     </>

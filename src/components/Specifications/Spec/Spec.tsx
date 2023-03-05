@@ -3,10 +3,10 @@ import styles from "./Spec.module.scss";
 import classNames from "classnames";
 import Subtitle from "components/Texts/Subtitle/Subtitle";
 import { SpecificationsLayout } from "utils/specifications-layout";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import { WeaponClassificationMethods } from "constants/weapon-types";
-import { IArmoredVehiclesSpecifications } from "data/weapons/interfaces/armored-interfaces";
-import { IAviationSpecifications } from "data/weapons/interfaces/aviation-interfaces";
+import { IArmoredVehiclesSpecifications } from "interfaces/weapons/armored-interfaces";
+import { IAviationSpecifications } from "interfaces/weapons/aviation-interfaces";
 import Block from "components/Structure/Block/Block";
 
 interface ISpecProps {

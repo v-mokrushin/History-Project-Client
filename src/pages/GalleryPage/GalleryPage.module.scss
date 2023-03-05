@@ -3,7 +3,7 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: 5vh;
+  gap: 4vh;
 }
 
 .sectionsBox {
@@ -12,7 +12,15 @@
   gap: 10px;
 
   @include media-breakpoint-down(lg) {
-    height: 13vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
   }
 
   .sectionCard {
@@ -21,11 +29,14 @@
     position: relative;
     aspect-ratio: 1.7 / 1;
     height: 17vh;
-    min-height: 120px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 0.3vh;
     cursor: pointer;
     transition: transform 150ms ease;
+
+    @include media-breakpoint-down(lg) {
+      height: auto;
+    }
 
     &:active {
       // transform: translateY(4px);
@@ -75,6 +86,10 @@
           color: $gold;
         }
 
+        @include media-breakpoint-down(md) {
+          font-size: 16px;
+        }
+
         @include media-breakpoint-down(xs) {
           font-size: 16px;
         }
@@ -103,7 +118,7 @@
   grid-gap: 0.2vw;
 
   @include media-breakpoint-down(lg) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   @include media-breakpoint-down(xs) {

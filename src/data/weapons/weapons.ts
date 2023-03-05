@@ -17,7 +17,7 @@ import { ARTILLERY_DATA } from "./branches/artillery";
 import { AVIATION_DATA } from "./branches/aviation";
 import { GRENADE_LAUNCHERS_DATA } from "./branches/grenade-launchers";
 import { SMALL_ARMS_DATA } from "./branches/small-arms";
-import { TWeapon } from "./interfaces/common-weapon-interfaces";
+import { TWeapon } from "../../interfaces/weapons/common-weapon-interfaces";
 import { ISelectionVariantWithFlag } from "components/Controls/Filter/Filter";
 import { IProducer } from "./departments/producers";
 import { Random } from "utils/random";
@@ -52,7 +52,10 @@ axios
       weapons_data.unshift(...loadedWeapons);
     }
 
-    alertsStore.runAlert("info", `С сервера загружены пользовательские статьи.`);
+    alertsStore.runAlert(
+      "info",
+      `С сервера загружены пользовательские статьи.`
+    );
   })
   .catch((error) => {
     alertsStore.runAlert(
@@ -75,6 +78,9 @@ axios
         weapons && galleryStore.pushWeaponsContent(weapons);
         gallery.originalIcon &&
           galleryStore.pushWeaponsContent([gallery.originalIcon]);
+
+        const postwar = gallery.postwarPhotos;
+        postwar && galleryStore.pushPostWarWeaponsContent(postwar);
 
         const schemes = gallery.schemes;
         schemes && galleryStore.pushSchemesContent(schemes);

@@ -7,7 +7,7 @@ import { getBackgroundImageStyleObject } from "../../../utils/common";
 import Flag from "../../Graphics/Flag/Flag";
 import { observer } from "mobx-react";
 import settingsStore from "stores/mobx/settingsStore";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import Preloader from "components/Graphics/Preloader/Preloader";
 
 interface IWeaponCardProps {

@@ -1,4 +1,4 @@
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 
 export type IWaponBranch =
   | IArmoredVehiclesBranch

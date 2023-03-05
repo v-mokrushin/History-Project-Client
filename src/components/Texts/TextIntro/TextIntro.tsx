@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TextIntro.module.scss";
 import classNames from "classnames";
-import { TWeapon } from "data/weapons/interfaces/common-weapon-interfaces";
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import Paragraph from "components/Texts/Paragraph/Paragraph";
 import Block from "components/Structure/Block/Block";
 

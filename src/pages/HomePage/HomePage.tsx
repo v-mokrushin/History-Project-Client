@@ -16,6 +16,7 @@ export default function HomePage() {
             <SectionCard information={Pages.articles} />
             <SectionCard information={Pages.weapons} />
             <SectionCard information={Pages.battles} />
+            <SectionCard information={Pages.gallery} />
           </div>
         </Container>
       </ContentWrapper>
