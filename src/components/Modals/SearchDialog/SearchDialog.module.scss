@@ -29,10 +29,10 @@
   width: 65%;
   min-height: 30%;
   max-height: 70%;
-  transform: translateY(350%) translateX(-50%);
-  transition: transform 350ms ease;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 250ms ease;
   border: 1px solid rgb(239, 234, 234);
-  transform: height 200ms ease;
 
   @include media-breakpoint-down(xl) {
     width: 75%;
@@ -45,12 +45,8 @@
     top: 10%;
   }
 
-  @include media-breakpoint-down(xs) {
-    // border: 1px solid rgb(239, 234, 234);
-  }
-
   &_open {
-    transform: translateY(0) translateX(-50%);
+    opacity: 1;
   }
 
   .title {
@@ -130,17 +126,4 @@
   flex-grow: 2;
   justify-content: center;
   align-items: center;
-}
-
-.closeButton {
-  position: absolute;
-  right: 1.5vh;
-  top: 1.5vh;
-  height: 2.25vh;
-  aspect-ratio: 1 / 1;
-  border: none;
-  background-color: transparent;
-  background-image: url(../../../assets/images/cross.svg);
-  background-size: cover;
-  cursor: pointer;
 }

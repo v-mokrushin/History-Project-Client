@@ -10,6 +10,7 @@
   border-radius: 0.3vh;
   cursor: pointer;
   transition: transform 150ms ease;
+  user-select: none;
 
   @include media-breakpoint-down(lg) {
     height: auto;

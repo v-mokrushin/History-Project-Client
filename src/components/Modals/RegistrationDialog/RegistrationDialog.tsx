@@ -15,6 +15,8 @@ import axios from "axios";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import { Server } from "config/server";
 import { alertsStore } from "stores/mobx/alertsStore";
+import CloseButton from "components/Buttons/CloseButton/CloseButton";
+import CustomButton from "components/Buttons/Button/Button";
 
 const RegistrationDialog = observer(() => {
   const navigate = useNavigate();
@@ -58,13 +60,12 @@ const RegistrationDialog = observer(() => {
         )}
       >
         {isLoading && <Preloader color="white" overlapping />}
-        <button
+        <CloseButton
           onClick={() => {
             commonApplicationStore.hideRegistrationDialog();
             clearForm();
           }}
-          className={styles.closeButton}
-        ></button>
+        />
         <Logo disableLink className={styles.logo} />
         <Subtitle color="white" className={styles.title}>
           Регистрация
@@ -97,10 +98,13 @@ const RegistrationDialog = observer(() => {
               hideIcon
             />
           </div>
-          <button
-            className={classNames(styles.submit)}
-            onClick={(event) => {
-              event.preventDefault();
+          <CustomButton
+            style="login"
+            color="gold"
+            textColor="black"
+            uppercase
+            onClick={(event: any) => {
+              // event.preventDefault();
 
               if (username === "") {
                 alertsStore.runAlert("error", `Придумайте никнейм.`);
@@ -158,7 +162,10 @@ const RegistrationDialog = observer(() => {
                   clearForm();
                   commonApplicationStore.hideRegistrationDialog();
                   navigate("/account");
-                  alertsStore.runAlert("info", `Вы успешно зарегистрировались.`);
+                  alertsStore.runAlert(
+                    "info",
+                    `Вы успешно зарегистрировались.`
+                  );
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
@@ -172,8 +179,8 @@ const RegistrationDialog = observer(() => {
                 });
             }}
           >
-            <Text>Зарегистрироваться</Text>
-          </button>
+            Зарегистрироваться
+          </CustomButton>
         </form>
       </div>
     </div>

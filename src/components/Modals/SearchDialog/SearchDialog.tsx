@@ -13,6 +13,7 @@ import { NavLink } from "react-router-dom";
 import burgerStore from "stores/mobx/burgerStore";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import { useTranslation } from "react-i18next";
+import CloseButton from "components/Buttons/CloseButton/CloseButton";
 
 const SearchDialog = observer(() => {
   const [inputText, setInputText] = React.useState<string>("");
@@ -42,7 +43,6 @@ const SearchDialog = observer(() => {
       DocumentOverflow.setHidden();
     } else {
       DocumentOverflow.setAuto();
-      // setInputText("");
     }
   }, [commonApplicationStore.searchDialogVisibility]);
 
@@ -59,14 +59,11 @@ const SearchDialog = observer(() => {
           commonApplicationStore.searchDialogVisibility && styles.window_open
         )}
       >
-        <button
-          className={styles.closeButton}
+        <CloseButton
           onClick={() => {
             commonApplicationStore.hideSearchDialog();
           }}
-        >
-          <div className={styles.closeButton_icon}></div>
-        </button>
+        />
         <Subtitle className={styles.title}>{t("search_dialog.title")}</Subtitle>
         <Input
           theme="dark"

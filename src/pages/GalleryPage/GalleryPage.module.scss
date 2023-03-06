@@ -29,6 +29,7 @@
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 0.2vw;
 
+
   @include media-breakpoint-down(lg) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -52,6 +53,8 @@
     cursor: pointer;
     transition: transform 250ms ease;
     will-change: transform;
+    user-select: none;
+
 
     &:hover {
       transform: scale(1.025);

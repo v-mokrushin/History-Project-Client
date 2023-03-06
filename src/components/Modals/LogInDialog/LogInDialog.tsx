@@ -17,6 +17,8 @@ import { hashSync } from "bcryptjs";
 import axios from "axios";
 import { Server } from "config/server";
 import { alertsStore } from "stores/mobx/alertsStore";
+import CustomButton from "components/Buttons/Button/Button";
+import CloseButton from "components/Buttons/CloseButton/CloseButton";
 
 const LogInDialog = observer(() => {
   const navigate = useNavigate();
@@ -57,13 +59,12 @@ const LogInDialog = observer(() => {
         )}
       >
         {isLoading && <Preloader color="white" overlapping />}
-        <button
+        <CloseButton
           onClick={() => {
             commonApplicationStore.hideLogInDialog();
             clearForm();
           }}
-          className={styles.closeButton}
-        ></button>
+        />
         <Logo disableLink className={styles.logo} />
         <Subtitle color="white" className={styles.title}>
           Вход
@@ -88,8 +89,11 @@ const LogInDialog = observer(() => {
               hideIcon
             />
           </div>
-          <button
-            className={classNames(styles.submit)}
+          <CustomButton
+            style="login"
+            color="blue"
+            textColor="white"
+            uppercase
             onClick={() => {
               if (username === "") {
                 alertsStore.runAlert("error", `Введите никнейм.`);
@@ -118,7 +122,6 @@ const LogInDialog = observer(() => {
                     "Теперь вам доступно создание статей.",
                     1500
                   );
-                  // navigate("/account");
                 })
                 .catch((error) => {
                   if (error.code === "ERR_NETWORK") {
@@ -132,8 +135,8 @@ const LogInDialog = observer(() => {
                 });
             }}
           >
-            <Text>ВОЙТИ</Text>
-          </button>
+            войти
+          </CustomButton>
         </form>
       </div>
     </div>

@@ -27,6 +27,7 @@ const ussr: IArmoredVehicle[] = [
     ],
     galleryInfo: {
       artsCollectionSize: 5,
+      postwarPhotoCollectionSize: 4,
     },
     specifications: {
       common: {
@@ -418,6 +419,7 @@ const ussr: IArmoredVehicle[] = [
     ],
     galleryInfo: {
       photoCollectionSize: 17,
+      postwarPhotoCollectionSize: 7,
       schemesCollectionSize: 3,
       artsCollectionSize: 8,
     },
