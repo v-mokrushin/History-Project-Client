@@ -17,6 +17,7 @@ import galleryStore from "stores/mobx/galleryStore";
 import { toJS } from "mobx";
 import { observer } from "mobx-react";
 import CustomButton from "components/Buttons/Button/Button";
+import GallerySectionCard from "components/Cards/GallerySectionCard/GallerySectionCard";
 
 interface IGalleryPageProps {
   className?: string;
@@ -25,36 +26,6 @@ interface IGalleryPageProps {
 const GalleryPage: React.FC<IGalleryPageProps> = observer(({ className }) => {
   const isLoading = commonApplicationStore.isUserArticlesLoading;
 
-  const SectionCard = (section: IGallerySection, isLoading: boolean) => {
-    return (
-      <div
-        className={styles.sectionCard}
-        onClick={() => galleryStore.setActual(section)}
-        key={section.name}
-      >
-        <div className={styles.contentBox}>
-          {isLoading ? (
-            <span
-              className={classNames(
-                styles.title,
-                galleryStore.isActual(section) && styles.title_actual
-              )}
-            >{`${section.title}`}</span>
-          ) : (
-            <span
-              className={classNames(
-                styles.title,
-                galleryStore.isActual(section) && styles.title_actual
-              )}
-            >{`${section.title} (${section.content.length})`}</span>
-          )}
-        </div>
-        <img className={styles.sectionImage} src={section.src} />
-        <div className={styles.background}></div>
-      </div>
-    );
-  };
-
   return (
     <>
       <ContentWrapper containerType={CONTAINER_TYPES.wide}>
@@ -62,9 +33,13 @@ const GalleryPage: React.FC<IGalleryPageProps> = observer(({ className }) => {
           <Title>Галерея</Title>
           <div className={styles.root}>
             <div className={styles.sectionsBox}>
-              {galleryStore
-                .getSections()
-                .map((item) => SectionCard(item, isLoading))}
+              {galleryStore.getSections().map((section) => (
+                <GallerySectionCard
+                  section={section}
+                  isLoading={isLoading}
+                  key={section.name}
+                />
+              ))}
             </div>
             <div
               className={classNames(styles.photos, ANIMATIONS.fadeIn)}
@@ -88,7 +63,6 @@ const GalleryPage: React.FC<IGalleryPageProps> = observer(({ className }) => {
                 ))}
             </div>
           </div>
-          {/* <CustomButton color="black" uppercase>Загрузить еще</CustomButton> */}
         </Container>
       </ContentWrapper>
     </>

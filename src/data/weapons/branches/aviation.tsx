@@ -352,10 +352,14 @@ const usa: IAircraft[] = [
     },
   },
   {
-    name: "Douglas A-20G Havoc",
-    shortName: "A-20 Havoc",
+    name: "Douglas A-20G Boston",
+    shortName: "A-20G Boston",
     type: WeaponClassification.aviation.attackАircraft,
     adoptedIntoServiceDate: 1943,
+    galleryInfo: {
+      postwarPhotoCollectionSize: 4,
+      artsCollectionSize: 10,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Douglas,

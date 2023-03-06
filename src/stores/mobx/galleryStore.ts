@@ -51,7 +51,7 @@ export class GalleryStore {
       content: [] as string[],
     };
 
-    this.actualSection = this.posters;
+    this.actualSection = this.weapons;
 
     makeAutoObservable(this);
   }
@@ -65,7 +65,13 @@ export class GalleryStore {
   }
 
   public getSections(): IGallerySection[] {
-    return [this.weapons, this.postwarWeapons, this.arts, this.posters, this.schemes];
+    return [
+      this.weapons,
+      this.postwarWeapons,
+      this.schemes,
+      this.arts,
+      this.posters,
+    ];
   }
 
   public pushWeaponsContent(content: string[]) {

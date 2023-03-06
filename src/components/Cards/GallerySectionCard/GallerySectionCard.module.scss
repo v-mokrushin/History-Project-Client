@@ -1,0 +1,89 @@
+@import "/src/assets/css/common.scss";
+
+.sectionCard {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  aspect-ratio: 1.7 / 1;
+  height: 17vh;
+  overflow: hidden;
+  border-radius: 0.3vh;
+  cursor: pointer;
+  transition: transform 150ms ease;
+
+  @include media-breakpoint-down(lg) {
+    height: auto;
+  }
+
+  &:active {
+    // transform: translateY(4px);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 70%,
+      rgba(0, 0, 0, 0.6) 85%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: background-color 300ms ease;
+  }
+
+  &:hover::after {
+    background-color: rgba($color: #000000, $alpha: 0.35);
+  }
+
+  &:hover .contentBox .title {
+    color: $gold;
+  }
+
+  &:hover .sectionImage {
+    transform: scale(1.05);
+  }
+
+  .contentBox {
+    padding: 0.8vh 1vh;
+    z-index: 3;
+
+    .title {
+      font-family: "Oswald", sans-serif;
+      font-weight: 400;
+      font-size: 2.2vh;
+      letter-spacing: 0.16vh;
+      color: $white;
+      transition: transform 300ms ease, color 300ms ease;
+
+      &_actual {
+        color: $gold;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 16px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: 16px;
+      }
+
+      @include media-breakpoint-down(xxs) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .sectionImage {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: transform 300ms ease;
+    will-change: transform;
+  }
+}

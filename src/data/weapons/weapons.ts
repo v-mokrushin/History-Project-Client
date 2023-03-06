@@ -87,6 +87,7 @@ axios
       }
     });
 
+    galleryStore.setActual(galleryStore.weapons);
     commonApplicationStore.hideBanner();
     commonApplicationStore.setIsLoading(false);
   });

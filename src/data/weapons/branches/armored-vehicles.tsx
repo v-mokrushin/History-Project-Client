@@ -44,7 +44,8 @@ const ussr: IArmoredVehicle[] = [
     adoptedIntoServiceDate: 1944,
     article: <IS_2 />,
     galleryInfo: {
-      photoCollectionSize: 16,
+      photoCollectionSize: 17,
+      postwarPhotoCollectionSize: 10,
       schemesCollectionSize: 3,
       artsCollectionSize: 15,
     },
