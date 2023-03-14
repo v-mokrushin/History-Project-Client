@@ -15,4 +15,5 @@ export interface IComment {
   avatar: string;
   date: string;
   text: string;
+  articleId: string;
 }

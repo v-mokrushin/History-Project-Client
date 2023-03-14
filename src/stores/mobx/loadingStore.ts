@@ -76,7 +76,7 @@ export class LoadingStore {
     }
   }
 
-  public upploadNewComment(text: string, setText: Function) {
+  public uploadNewComment(text: string, setText: Function) {
     if (this.actualArticle)
       axios
         .post(Server.path("/comments/add"), {
@@ -90,6 +90,7 @@ export class LoadingStore {
             avatar: authorizationStore.user?.avatar,
             username: authorizationStore.user?.username,
           });
+
           alertsStore.runAlert("info", "Вы оставили комментарий.");
           setText("");
         });
@@ -98,6 +99,7 @@ export class LoadingStore {
   private addNewComment(newComment: IComment) {
     if (this.actualArticle) {
       loadingStore.actualArticle?.comments.unshift(newComment);
+      authorizationStore.user?.comments?.unshift(newComment);
     }
   }
 }

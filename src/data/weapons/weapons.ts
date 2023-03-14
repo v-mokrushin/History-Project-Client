@@ -103,6 +103,10 @@ export class Weapons {
     return weapons_data;
   }
 
+  public static getWeaponsByIds(ids: string[] | undefined) {
+    return ids?.map((id) => weapons_data.find((weapon) => weapon.id === id));
+  }
+
   public static doesWeaponExist(name: string): boolean {
     return weapons_data.find((weapon) => weapon.name === name) ? true : false;
   }

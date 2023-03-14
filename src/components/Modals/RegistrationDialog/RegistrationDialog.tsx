@@ -102,6 +102,7 @@ const RegistrationDialog = observer(() => {
             style="login"
             color="gold"
             textColor="black"
+            type="submit"
             uppercase
             onClick={(event: any) => {
               // event.preventDefault();

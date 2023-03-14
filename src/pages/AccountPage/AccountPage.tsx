@@ -21,6 +21,8 @@ import axios from "axios";
 import { Server as ServerSource } from "config/server";
 import { alertsStore } from "stores/mobx/alertsStore";
 import { ANIMATIONS } from "constants/animations";
+import Comments from "components/Structure/Comments/Comments";
+import { toJS } from "mobx";
 
 interface IAccountPageProps {
   className?: string;
@@ -108,7 +110,10 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                         }
                         commonApplicationStore.hideBanner();
                         setEditingMode(false);
-                        alertsStore.runAlert("info", `Изменения успешно внесены.`);
+                        alertsStore.runAlert(
+                          "info",
+                          `Изменения успешно внесены.`
+                        );
                       })
                       .catch((error) => {
                         alertsStore.runAlert(
@@ -154,7 +159,7 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
               <div className={styles.section}>
                 <div className={styles.header}>
                   <Subtitle color="black" noMargin>
-                    Мои данные
+                    Данные
                   </Subtitle>
                   <Text color="grey" size="small">
                     {"Зарегистрирован: " +
@@ -183,6 +188,20 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                     }}
                   />
                 </div>
+              </div>
+              <div className={styles.section}>
+                <div className={styles.header}>
+                  {/* <Subtitle color="black" noMargin>
+                    Комментарии
+                  </Subtitle> */}
+                </div>
+                {authorizationStore.user.comments?.length ? (
+                  <Comments
+                    articleId="ss"
+                    comments={authorizationStore.user.comments}
+                    accountMode
+                  />
+                ) : null}
               </div>
             </div>
           ) : (

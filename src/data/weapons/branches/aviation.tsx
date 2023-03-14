@@ -231,6 +231,7 @@ const germany: IAircraft[] = [
     adoptedIntoServiceDate: 1944,
     galleryInfo: {
       artsCollectionSize: 21,
+      postwarPhotoCollectionSize: 8,
     },
     specifications: {
       common: {
@@ -331,6 +332,9 @@ const usa: IAircraft[] = [
     shortName: "F8F",
     type: WeaponClassification.aviation.fighter,
     adoptedIntoServiceDate: 1945,
+    galleryInfo: {
+      postwarPhotoCollectionSize: 6,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Grumman,
@@ -344,6 +348,7 @@ const usa: IAircraft[] = [
     adoptedIntoServiceDate: 1944,
     galleryInfo: {
       artsCollectionSize: 11,
+      postwarPhotoCollectionSize: 6,
     },
     specifications: {
       common: {
@@ -374,6 +379,7 @@ const usa: IAircraft[] = [
     adoptedIntoServiceDate: 1944,
     galleryInfo: {
       artsCollectionSize: 14,
+      postwarPhotoCollectionSize: 6,
     },
     specifications: {
       common: {

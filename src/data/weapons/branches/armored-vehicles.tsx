@@ -275,6 +275,7 @@ const ussr: IArmoredVehicle[] = [
     shortName: "Т-34 (1940)",
     type: WeaponClassification.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
+    galleryInfo: { photoCollectionSize: 2, postwarPhotoCollectionSize: 1 },
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
@@ -304,7 +305,7 @@ const ussr: IArmoredVehicle[] = [
     isReady: true,
     type: WeaponClassification.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    galleryInfo: { photoCollectionSize: 6 },
+    galleryInfo: { photoCollectionSize: 6, postwarPhotoCollectionSize: 3 },
     intro: [
       "Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны. Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод - СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года.",
     ],

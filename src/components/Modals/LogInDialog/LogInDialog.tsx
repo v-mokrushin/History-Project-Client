@@ -30,6 +30,7 @@ const LogInDialog = observer(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         commonApplicationStore.hideLogInDialog();
+        clearForm();
       }
     });
   }, []);
@@ -93,6 +94,7 @@ const LogInDialog = observer(() => {
             style="login"
             color="blue"
             textColor="white"
+            type="submit"
             uppercase
             onClick={() => {
               if (username === "") {
