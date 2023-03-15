@@ -9,4 +9,5 @@ export interface IUserAccountInfo {
   surname?: string;
   registrationDate: Date;
   comments?: IComment[];
+  viewsHistory: string[];
 }

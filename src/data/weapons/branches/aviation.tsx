@@ -428,6 +428,9 @@ const britain: IAircraft[] = [
     shortName: "Lancaster",
     type: WeaponClassification.aviation.strategicBomber,
     adoptedIntoServiceDate: 1942,
+    galleryInfo: {
+      postwarPhotoCollectionSize: 15,
+    },
     specifications: {
       common: {
         developer: Developers.aviation.Avro,

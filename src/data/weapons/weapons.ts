@@ -99,12 +99,19 @@ export class Weapons {
     weapons_data.unshift(weapon);
   }
 
-  public get() {
+  public static get() {
     return weapons_data;
   }
 
-  public static getWeaponsByIds(ids: string[] | undefined) {
-    return ids?.map((id) => weapons_data.find((weapon) => weapon.id === id));
+  public static getWeaponsByIds(ids: string[]): TWeapon[] {
+    const weapons: TWeapon[] = [];
+
+    for (let i = 0; i < ids.length; i++) {
+      const find = weapons_data.find((weapon) => weapon.id === ids[i]);
+      if (find) weapons.push(find);
+    }
+
+    return weapons;
   }
 
   public static doesWeaponExist(name: string): boolean {

@@ -23,6 +23,9 @@ import { alertsStore } from "stores/mobx/alertsStore";
 import { ANIMATIONS } from "constants/animations";
 import Comments from "components/Structure/Comments/Comments";
 import { toJS } from "mobx";
+import { Weapons } from "data/weapons/weapons";
+import WeaponCard from "components/Cards/WeaponCard/WeaponCard";
+import { Scroll } from "utils/scroll";
 
 interface IAccountPageProps {
   className?: string;
@@ -35,6 +38,13 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
     initialValues: authorizationStore.getEditableInfo(),
     onSubmit: (values) => {},
   });
+  const viewsHistoryWeapons = React.useMemo(() => {
+    if (authorizationStore.user?.viewsHistory) {
+      return Weapons.getWeaponsByIds(authorizationStore.user.viewsHistory);
+    } else {
+      return undefined;
+    }
+  }, []);
 
   React.useEffect(() => {
     if (authorizationStore.isUserAuthorized) {
@@ -190,11 +200,6 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                 </div>
               </div>
               <div className={styles.section}>
-                <div className={styles.header}>
-                  {/* <Subtitle color="black" noMargin>
-                    Комментарии
-                  </Subtitle> */}
-                </div>
                 {authorizationStore.user.comments?.length ? (
                   <Comments
                     articleId="ss"
@@ -203,6 +208,22 @@ const AccountPage: React.FC<IAccountPageProps> = observer(({ className }) => {
                   />
                 ) : null}
               </div>
+              {viewsHistoryWeapons?.length ? (
+                <div className={styles.section}>
+                  <Subtitle color="black" noMargin>
+                    Вы читали
+                  </Subtitle>
+                  <div className={styles.viewHistory}>
+                    {viewsHistoryWeapons.map((weapon) => (
+                      <WeaponCard
+                        key={weapon?.id}
+                        weapon={weapon}
+                        isAbsoluteLinkPath
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
           ) : (
             <form className={ANIMATIONS.fadeIn}>

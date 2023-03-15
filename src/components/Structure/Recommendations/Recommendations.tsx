@@ -10,8 +10,11 @@ interface IRecommendationsProps {
   className?: string;
 }
 
-const Recommendations = ({ className, weapon }: IRecommendationsProps) => {
-  const collecion = Weapons.getRecommendation(weapon.branch?.path, weapon.id);
+const Recommendations = ({ weapon, className }: IRecommendationsProps) => {
+  const collecion = React.useMemo(
+    () => Weapons.getRecommendation(weapon.branch?.path, weapon.id),
+    [weapon]
+  );
 
   return (
     <div className={classNames(styles.root, className)}>

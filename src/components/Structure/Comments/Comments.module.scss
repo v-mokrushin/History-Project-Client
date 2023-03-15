@@ -36,6 +36,10 @@
       cursor: pointer;
       background-color: rgb(66, 88, 148);
 
+      &_accountMode {
+        border-radius: 15%;
+      }
+
       &:hover {
         // transform: scale(1.05);
       }
@@ -50,7 +54,9 @@
         @include media-breakpoint-down(lg) {
           display: block;
           height: 6vh;
+          object-fit: cover;
           min-height: 50px;
+          aspect-ratio: 1 / 1;
           border-radius: 50%;
         }
 

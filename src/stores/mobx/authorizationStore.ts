@@ -1,3 +1,5 @@
+import axios from "axios";
+import { Server } from "config/server";
 import { IUserAccountInfo } from "interfaces/account";
 import { action, makeAutoObservable, observable } from "mobx";
 
@@ -10,6 +12,7 @@ export class AuthorizationStore {
   }
 
   public authorizeUser(serverUserInformation: any): void {
+    console.log(serverUserInformation);
     this.user = {
       ...serverUserInformation,
       registrationDate: new Date(
@@ -43,6 +46,31 @@ export class AuthorizationStore {
       avatar: this.user?.avatar,
     };
     return info;
+  }
+
+  public addViewsHistory(articleId: string) {
+    if (this.isUserAuthorized) {
+      const viewsHistory = this.user?.viewsHistory;
+
+      if (viewsHistory) {
+        const index = viewsHistory?.indexOf(articleId);
+
+        if (index == -1) {
+          viewsHistory.unshift(articleId);
+        } else {
+          viewsHistory.splice(index, 1);
+          viewsHistory.unshift(articleId);
+        }
+      }
+
+      axios
+        .post(Server.path("/users/set-views-history"), {
+          userId: this.user?.id,
+          viewsHistory: this.user?.viewsHistory,
+        })
+        .then((response) => {})
+        .catch((error) => {});
+    }
   }
 }
 

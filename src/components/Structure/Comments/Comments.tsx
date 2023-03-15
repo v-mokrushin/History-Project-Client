@@ -33,7 +33,7 @@ const Comments: React.FC<ICommentsProps> = observer(
     const [newComment, setNewComment] = React.useState<string>("");
     const articles = React.useMemo(() => {
       if (!accountMode) return [];
-      else {
+      else if (comments) {
         return Weapons.getWeaponsByIds(
           comments?.map((comment) => comment.articleId)
         );
@@ -134,17 +134,20 @@ const Comments: React.FC<ICommentsProps> = observer(
                 onClick={() => {
                   if (accountMode && articles) {
                     if (articles[index] != undefined)
-                      navigate(articles[index]!.path!);
+                      navigate(articles[index].path!);
                   }
                 }}
               >
                 <img
                   src={
-                    accountMode
-                      ? authorizationStore.user?.avatar
+                    accountMode && articles
+                      ? articles[index]?.gallery?.icon
                       : comment.avatar
                   }
-                  className={styles.avatar}
+                  className={classNames(
+                    styles.avatar,
+                    accountMode && styles.avatar_accountMode
+                  )}
                   alt=""
                   onClick={(event) =>
                     accountMode || imageViewerStore.openPhoto(comment.avatar)
@@ -154,11 +157,14 @@ const Comments: React.FC<ICommentsProps> = observer(
                   <div className={styles.header}>
                     <img
                       src={
-                        accountMode
-                          ? authorizationStore.user?.avatar
+                        accountMode && articles
+                          ? articles[index]?.gallery?.icon
                           : comment.avatar
                       }
-                      className={styles.avatar_mobile}
+                      className={classNames(
+                        styles.avatar_mobile,
+                        accountMode && styles.avatar_accountMode
+                      )}
                       alt=""
                       onClick={() =>
                         accountMode ||
@@ -166,7 +172,7 @@ const Comments: React.FC<ICommentsProps> = observer(
                       }
                     />
                     <div className={styles.header_info}>
-                      <Text color="gold" bold>
+                      <Text color="gold" bold noMargin>
                         {accountMode
                           ? `Статья: ${articles && articles[index]?.name}`
                           : comment.username}
@@ -177,7 +183,7 @@ const Comments: React.FC<ICommentsProps> = observer(
                         noMargin
                         className={styles.date_mobile}
                       >
-                        {comment.date}
+                        {getStringDateTime(new Date(Date.parse(comment.date)))}
                       </Text>
                     </div>
                   </div>
