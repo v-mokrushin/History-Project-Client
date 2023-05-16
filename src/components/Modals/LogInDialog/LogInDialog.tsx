@@ -12,7 +12,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 import { hashSync } from "bcryptjs";
 import axios from "axios";
 import { Server } from "config/server";
@@ -114,7 +114,7 @@ const LogInDialog = observer(() => {
                   password: password,
                 })
                 .then((response) => {
-                  authorizationStore.authorizeUser(response.data);
+                  accountStore.authorizeUser(response.data);
                   burgerStore.setClose();
                   clearForm();
                   commonApplicationStore.hideLogInDialog();

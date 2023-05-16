@@ -1,0 +1,147 @@
+@import "/src/assets/css/common.scss";
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}
+
+.wrapper {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 18vh 1fr;
+  gap: 3vh;
+  margin-top: 2.5vh;
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: 180px 1fr;
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+
+    @include media-breakpoint-down(xs) {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      height: 15vh;
+      transition: transform 200ms ease;
+      will-change: transform;
+      cursor: pointer;
+      background-color: rgb(90, 115, 148);
+
+      @include media-breakpoint-down(xs) {
+        height: 22vh;
+        min-height: 150px;
+      }
+    }
+
+    .buttonsBox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vh;
+      width: 100%;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    @include media-breakpoint-down(sm) {
+      gap: 20px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5vh;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(xs) {
+          flex-direction: column;
+        }
+      }
+
+      .inputsWrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1vh;
+
+        &_editingMode {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 1vh;
+        }
+
+        @include media-breakpoint-down(xl) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media-breakpoint-down(lg) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media-breakpoint-down(sm) {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 15px;
+        }
+
+        @include media-breakpoint-down(xxs) {
+          gap: 10px;
+        }
+
+        &_fullWidth {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.viewHistory {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+
+  @include media-breakpoint-down(xl) {
+    grid-gap: 12px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+}
+

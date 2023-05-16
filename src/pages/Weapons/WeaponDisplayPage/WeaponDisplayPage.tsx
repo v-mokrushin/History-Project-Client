@@ -36,7 +36,7 @@ import Comments from "components/Structure/Comments/Comments";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Text from "components/Texts/Text/Text";
 import WeaponPhotoCollection from "components/Gallery/WeaponPhotoCollection/WeaponPhotoCollection";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 
 const WeaponDisplayPage = observer(() => {
   const isUserArticlesLoading = commonApplicationStore.isUserArticlesLoading;
@@ -48,7 +48,7 @@ const WeaponDisplayPage = observer(() => {
       loadingStore.checkLoading(weaponId);
       Scroll.toTopInstantly();
       DocumentTitle.set(weapon?.name || "");
-      weaponId && authorizationStore.addViewsHistory(weaponId);
+      weaponId && accountStore.addViewsHistory(weaponId);
     }
 
     return () => {

@@ -3,8 +3,9 @@ import { Server } from "config/server";
 import { IUserAccountInfo } from "interfaces/account";
 import { action, makeAutoObservable, observable } from "mobx";
 
-export class AuthorizationStore {
+export class AccountStore {
   public isUserAuthorized: boolean = false;
+  public isAdmin: boolean = false;
   public user: undefined | IUserAccountInfo;
 
   constructor() {
@@ -12,13 +13,14 @@ export class AuthorizationStore {
   }
 
   public authorizeUser(serverUserInformation: any): void {
-    console.log(serverUserInformation);
+    this.isAdmin = serverUserInformation.isAdmin;
     this.user = {
       ...serverUserInformation,
+      isAdmin: undefined,
       registrationDate: new Date(
         Date.parse(serverUserInformation.registrationDate)
       ),
-    };
+    } as IUserAccountInfo;
     this.isUserAuthorized = true;
   }
 
@@ -74,4 +76,4 @@ export class AuthorizationStore {
   }
 }
 
-export const authorizationStore = new AuthorizationStore();
+export const accountStore = new AccountStore();

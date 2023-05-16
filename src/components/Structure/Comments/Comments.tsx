@@ -9,7 +9,7 @@ import Input from "components/Controls/Input/Input";
 import { Button, TextField } from "@mui/material";
 import CustomButton from "components/Buttons/Button/Button";
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 import { observer } from "mobx-react";
 import { alertsStore } from "stores/mobx/alertsStore";
 import { getStringDateTime } from "utils/common";
@@ -41,13 +41,13 @@ const Comments: React.FC<ICommentsProps> = observer(
       return [];
     }, [comments]);
 
-    if (!comments?.length && !authorizationStore.isUserAuthorized) return <></>;
+    if (!comments?.length && !accountStore.isUserAuthorized) return <></>;
 
     return (
       <div className={classNames(styles.root, className)}>
         <Subtitle id="Комментарии">Комментарии</Subtitle>
         <div className={styles.commentsWrapper}>
-          {authorizationStore.isUserAuthorized && !accountMode && (
+          {accountStore.isUserAuthorized && !accountMode && (
             <div
               className={classNames(
                 styles.commentBox,
@@ -55,29 +55,29 @@ const Comments: React.FC<ICommentsProps> = observer(
               )}
             >
               <img
-                src={authorizationStore.user?.avatar}
+                src={accountStore.user?.avatar}
                 className={styles.avatar}
                 alt=""
                 onClick={() =>
-                  authorizationStore.user?.avatar &&
-                  imageViewerStore.openPhoto(authorizationStore.user.avatar)
+                  accountStore.user?.avatar &&
+                  imageViewerStore.openPhoto(accountStore.user.avatar)
                 }
               />
               <div className={styles.contentBox}>
                 <div className={styles.header}>
                   <img
-                    src={authorizationStore.user?.avatar}
+                    src={accountStore.user?.avatar}
                     className={styles.avatar_mobile}
                     alt=""
                     onClick={() =>
                       imageViewerStore.openPhoto(
-                        authorizationStore.user?.avatar!
+                        accountStore.user?.avatar!
                       )
                     }
                   />
                   <div className={styles.header_info}>
                     <Text color="gold" bold>
-                      {authorizationStore.user?.username}
+                      {accountStore.user?.username}
                     </Text>
                   </div>
                 </div>

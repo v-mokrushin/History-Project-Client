@@ -10,7 +10,7 @@ import commonApplicationStore from "stores/mobx/commonApplicationStore";
 import Logo from "components/Graphics/Logo/Logo";
 import { useNavigate } from "react-router";
 import burgerStore from "stores/mobx/burgerStore";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 import axios from "axios";
 import Preloader from "components/Graphics/Preloader/Preloader";
 import SpecialLogo from "components/Graphics/SpecialLogo/SpecialLogo";

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import PersonButton from "../PersonButton/PersonButton";
 import { observer } from "mobx-react-lite";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 
 interface IHeaderButtonsGroupProps {
   burgerType?: boolean;
@@ -30,10 +30,10 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
         )}
       >
         <ButtonSearch />
-        {authorizationStore.isUserAuthorized && <ToolButton />}
+        {accountStore.isUserAuthorized && <ToolButton />}
         {/* <ToolButton /> */}
         {/* <LanguageSwitcher /> */}
-        {!authorizationStore.isUserAuthorized ? (
+        {!accountStore.isUserAuthorized ? (
           <>
             <CustomButton
               color="gold"

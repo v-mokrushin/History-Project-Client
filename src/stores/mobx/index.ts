@@ -1,4 +1,4 @@
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 import { injectStores } from "@mobx-devtools/tools";
 
 import commonApplicationStore from "stores/mobx/commonApplicationStore";
@@ -12,7 +12,7 @@ import settingsStore from "../../stores/mobx/settingsStore";
 import loadingStore from "../../stores/mobx/loadingStore";
 
 injectStores({
-  authorizationStore,
+  authorizationStore: accountStore,
   commonApplicationStore,
   burgerStore,
   imageViewerStore,

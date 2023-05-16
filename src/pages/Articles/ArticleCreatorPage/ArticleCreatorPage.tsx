@@ -13,7 +13,7 @@ import { observer } from "mobx-react-lite";
 import AvationCreatorForm from "./AviationCreatorForm";
 import { Alert, AlertTitle } from "@mui/material";
 import Text from "components/Texts/Text/Text";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 import { DocumentTitle } from "utils/document-title";
 import { alertsStore } from "stores/mobx/alertsStore";
 
@@ -27,7 +27,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = observer(
     const navigate = useNavigate();
 
     React.useEffect(() => {
-      if (!authorizationStore.isUserAuthorized) {
+      if (!accountStore.isUserAuthorized) {
         navigate("/");
         alertsStore.runAlert(
           "error",
@@ -37,7 +37,7 @@ const ArtilcleCreatorPage: React.FC<IArtilcleCreatorPageProps> = observer(
         DocumentTitle.set("Создание статьи");
         alertsStore.runAlert("info", `Доступно создание статей только об авиации.`);
       }
-    }, [authorizationStore.isUserAuthorized]);
+    }, [accountStore.isUserAuthorized]);
 
     if (!pageInfo)
       return <WarningPage pageType={WARNING_PAGE_TYPE.notFound}></WarningPage>;

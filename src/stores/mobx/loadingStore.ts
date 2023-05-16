@@ -1,4 +1,4 @@
-import { authorizationStore } from "./authorizationStore";
+import { accountStore } from "./authorizationStore";
 import { alertsStore } from "./alertsStore";
 import axios from "axios";
 import { Server } from "config/server";
@@ -81,14 +81,14 @@ export class LoadingStore {
       axios
         .post(Server.path("/comments/add"), {
           articleId: this.actualArticle.id,
-          userId: authorizationStore.user?.id,
+          userId: accountStore.user?.id,
           text,
         })
         .then((response) => {
           this.addNewComment({
             ...response.data,
-            avatar: authorizationStore.user?.avatar,
-            username: authorizationStore.user?.username,
+            avatar: accountStore.user?.avatar,
+            username: accountStore.user?.username,
           });
 
           alertsStore.runAlert("info", "Вы оставили комментарий.");
@@ -99,7 +99,7 @@ export class LoadingStore {
   private addNewComment(newComment: IComment) {
     if (this.actualArticle) {
       loadingStore.actualArticle?.comments.unshift(newComment);
-      authorizationStore.user?.comments?.unshift(newComment);
+      accountStore.user?.comments?.unshift(newComment);
     }
   }
 }

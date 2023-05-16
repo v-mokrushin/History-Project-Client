@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import burgerStore from "stores/mobx/burgerStore";
 import actualSectionStore from "stores/mobx/actualSectionStore";
 import { getBackgroundImageStyleObject } from "utils/common";
-import { authorizationStore } from "stores/mobx/authorizationStore";
+import { accountStore } from "stores/mobx/authorizationStore";
 
 interface IPersonButtonProps {
   className?: string;
@@ -15,7 +15,7 @@ interface IPersonButtonProps {
 
 const PersonButton = observer(({ className }: IPersonButtonProps) => {
   const navigate = useNavigate();
-  const avatar: string | undefined = authorizationStore.user?.avatar;
+  const avatar: string | undefined = accountStore.user?.avatar;
 
   return (
     <button
