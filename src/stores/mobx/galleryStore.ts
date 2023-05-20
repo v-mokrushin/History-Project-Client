@@ -1,3 +1,4 @@
+import { TWeapon } from "interfaces/weapons/common-weapon-interfaces";
 import { IGallerySection } from "../../interfaces/gallery";
 import { action, makeAutoObservable, observable } from "mobx";
 
@@ -54,6 +55,28 @@ export class GalleryStore {
     this.actualSection = this.weapons;
 
     makeAutoObservable(this);
+  }
+
+  public createGallery(weapons: TWeapon[]): void {
+    weapons.forEach((weapon: TWeapon) => {
+      const gallery = weapon.gallery;
+
+      if (gallery) {
+        const arts = gallery.arts;
+        arts && this.pushArtsContent(arts);
+
+        const weapons = gallery.photos;
+        weapons && this.pushWeaponsContent(weapons);
+        gallery.originalIcon &&
+          this.pushWeaponsContent([gallery.originalIcon]);
+
+        const postwar = gallery.postwarPhotos;
+        postwar && this.pushPostWarWeaponsContent(postwar);
+
+        const schemes = gallery.schemes;
+        schemes && this.pushSchemesContent(schemes);
+      }
+    });
   }
 
   public setActual(section: IGallerySection): void {

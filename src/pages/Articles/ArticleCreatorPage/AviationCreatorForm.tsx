@@ -16,7 +16,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Text from "components/Texts/Text/Text";
-import { prepareWeapon, writeNewWeaponToLocalStorage } from "utils/weapons";
+import { defineWeaponProperties, writeNewWeaponToLocalStorage } from "utils/weapons";
 import { InputAdornment } from "@mui/material";
 import { useFormik } from "formik";
 import { DocumentTitle } from "utils/document-title";
@@ -105,7 +105,7 @@ const AvationCreatorForm: React.FC<IAvationCreatorFormProps> = ({
         },
       };
 
-      prepareWeapon(weapon);
+      defineWeaponProperties(weapon);
 
       commonApplicationStore.showBanner("соединение с сервером");
       axios

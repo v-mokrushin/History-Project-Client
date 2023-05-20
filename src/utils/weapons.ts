@@ -51,11 +51,11 @@ export function writeNewWeaponToLocalStorage(weapon: TWeapon): void {
 
 export function prepareWeapons(weapons: TWeapon[]): void {
   weapons.forEach((weapon) => {
-    prepareWeapon(weapon);
+    defineWeaponProperties(weapon);
   });
 }
 
-export function prepareWeapon(weapon: TWeapon): void {
+export function defineWeaponProperties(weapon: TWeapon): void {
   defineIdProperty(weapon);
   definePathProperty(weapon);
   defineGallery(weapon);
@@ -226,3 +226,58 @@ export function sortByTitle(variants: ISelectionVariantWithFlag[]): void {
     return 0;
   });
 }
+
+// запрос на загрузку пользовательских статей
+// commonApplicationStore.showBanner("соединение с сервером");
+// commonApplicationStore.setIsLoading(true);
+// axios
+//   .get(Server.path("/weapons"))
+//   .then((response) => {
+//     const loadedWeapons: TWeapon[] = response.data;
+
+//     if (loadedWeapons.length) {
+//       loadedWeapons.forEach((weapon) => {
+//         weapon.nation = NationsMethods.getByPath(weapon.nation?.path);
+//       });
+//       weapons_data.unshift(...loadedWeapons);
+//     }
+
+//     alertsStore.runAlert(
+//       "info",
+//       `С сервера загружены пользовательские статьи.`
+//     );
+//   })
+//   .catch((error) => {
+//     alertsStore.runAlert(
+//       "error",
+//       `Не удалось подключиться к серверу. Пользовательские статьи не загружены.`
+//     );
+//   })
+//   .finally(() => {
+//     prepareWeapons(weapons_data);
+//     // console.log(weapons_data);
+
+//     weapons_data.forEach((weapon) => {
+//       const gallery = weapon.gallery;
+
+//       if (gallery) {
+//         const arts = gallery.arts;
+//         arts && galleryStore.pushArtsContent(arts);
+
+//         const weapons = gallery.photos;
+//         weapons && galleryStore.pushWeaponsContent(weapons);
+//         gallery.originalIcon &&
+//           galleryStore.pushWeaponsContent([gallery.originalIcon]);
+
+//         const postwar = gallery.postwarPhotos;
+//         postwar && galleryStore.pushPostWarWeaponsContent(postwar);
+
+//         const schemes = gallery.schemes;
+//         schemes && galleryStore.pushSchemesContent(schemes);
+//       }
+//     });
+
+//     galleryStore.setActual(galleryStore.weapons);
+//     commonApplicationStore.hideBanner();
+//     commonApplicationStore.setIsLoading(false);
+//   });
