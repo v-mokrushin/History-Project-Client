@@ -11,6 +11,7 @@ import actualSectionStore from "stores/mobx/actualSectionStore";
 import PersonButton from "../PersonButton/PersonButton";
 import { observer } from "mobx-react-lite";
 import { accountStore } from "stores/mobx/authorizationStore";
+import { INCLUDE_SERVER_INTERACTIONS } from "config/settings";
 
 interface IHeaderButtonsGroupProps {
   burgerType?: boolean;
@@ -33,27 +34,30 @@ const HeaderButtonsGroup: React.FC<IHeaderButtonsGroupProps> = observer(
         {accountStore.isUserAuthorized && <ToolButton />}
         {/* <ToolButton /> */}
         {/* <LanguageSwitcher /> */}
-        {!accountStore.isUserAuthorized ? (
+        {INCLUDE_SERVER_INTERACTIONS && (
           <>
-            <CustomButton
-              color="gold"
-              uppercase
-              onClick={() => {
-                commonApplicationStore.showRegistrationDialog();
-              }}
-            >
-              Регистрация
-            </CustomButton>
-            <CustomButton
-              uppercase
-              color="blue"
-              onClick={() => commonApplicationStore.showLogInDialog()}
-            >
-              Войти
-            </CustomButton>
+            !accountStore.isUserAuthorized ? (
+            <>
+              <CustomButton
+                color="gold"
+                uppercase
+                onClick={() => {
+                  commonApplicationStore.showRegistrationDialog();
+                }}
+              >
+                Регистрация
+              </CustomButton>
+              <CustomButton
+                uppercase
+                color="blue"
+                onClick={() => commonApplicationStore.showLogInDialog()}
+              >
+                Войти
+              </CustomButton>
+            </>
+            ) : (
+            <PersonButton />){" "}
           </>
-        ) : (
-          <PersonButton />
         )}
       </div>
     );

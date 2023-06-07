@@ -8,6 +8,7 @@ import {
   ILoadedArticleInfo,
   ILoadedArticlesInfo,
 } from "interfaces/comments";
+import { INCLUDE_SERVER_INTERACTIONS } from "config/settings";
 
 export class LoadingStore {
   public isLoading: boolean;
@@ -15,7 +16,7 @@ export class LoadingStore {
   public actualArticle: ILoadedArticleInfo | undefined;
 
   constructor() {
-    this.isLoading = true;
+    this.isLoading = INCLUDE_SERVER_INTERACTIONS;
     this.loadedArticlesInfo = {};
 
     makeAutoObservable(this);
@@ -39,6 +40,7 @@ export class LoadingStore {
 
   public checkLoading(articleId: string | undefined): void {
     if (!articleId) return;
+    if (!INCLUDE_SERVER_INTERACTIONS) return;
 
     if (!this.loadedArticlesInfo[articleId]) {
       this.isLoading = true;

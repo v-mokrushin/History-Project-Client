@@ -17,6 +17,8 @@ export default function IntroImage({
   shouldThrowAnimation = false,
   className,
 }: IIntroImageProps) {
+  console.log("function IntroImage");
+
   return (
     <div
       className={classNames(styles.root, className)}
