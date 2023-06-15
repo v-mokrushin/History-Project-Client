@@ -8,6 +8,9 @@ import Text from "components/Texts/Text/Text";
 import Preloader from "components/Graphics/Preloader/Preloader";
 
 const ImageViewer = observer(() => {
+  const [displayed, setDisplayed] = React.useState<boolean>(false);
+  const [open, setOpen] = React.useState<boolean>(false);
+
   React.useEffect(() => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
@@ -20,30 +23,41 @@ const ImageViewer = observer(() => {
         imageViewerStore.switchPhoto(true);
       }
     });
-    document.addEventListener("wheel", () => {
-      imageViewerStore.close();
+    document.addEventListener("wheel", (event) => {
+      if (event.deltaY > 0) imageViewerStore.switchPhoto(false);
+      if (event.deltaY < 0) imageViewerStore.switchPhoto(true);
+      // imageViewerStore.close();
     });
   }, []);
 
-  React.useEffect(() => {
-    // imageViewerStore.open
-    //   ? DocumentOverflow.setHidden()
-    //   : DocumentOverflow.setAuto();
+  React.useLayoutEffect(() => {
+    if (imageViewerStore.open) {
+      setDisplayed(true);
+    } else {
+      setOpen(false);
+      setTimeout(() => setDisplayed(false), 250);
+    }
+
+    imageViewerStore.open
+      ? DocumentOverflow.setHidden()
+      : DocumentOverflow.setAuto();
   }, [imageViewerStore.open]);
+
+  React.useEffect(() => {
+    if (displayed) setOpen(true);
+  }, [displayed]);
 
   return (
     <div
       className={classNames(
         styles.root,
-        imageViewerStore.open && styles.root_open
+        displayed && styles.root_displayed,
+        open && styles.root_open
       )}
     >
       <img
         id="image-viewer-image"
-        className={classNames(
-          styles.image,
-          imageViewerStore.open && styles.image_open
-        )}
+        className={classNames(styles.image)}
         src={imageViewerStore.url}
         alt=""
       />

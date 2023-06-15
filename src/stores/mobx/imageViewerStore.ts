@@ -30,13 +30,15 @@ export class ImageViewerStore {
 
   public switchPhoto(direction: boolean): void {
     if (!this.isCollection) return;
-    if (direction && this.currentPhoto < this.collection.length - 1) {
-      this.currentPhoto++;
-      this.updateURL();
-    } else if (!direction && this.currentPhoto > 0) {
-      this.currentPhoto--;
-      this.updateURL();
+    if (direction) {
+      if (this.currentPhoto < this.collection.length - 1) this.currentPhoto++;
+      else this.currentPhoto = 0;
+    } else if (!direction) {
+      if (this.currentPhoto > 0) this.currentPhoto--;
+      else this.currentPhoto = this.collection.length - 1;
     }
+
+    this.updateURL();
   }
 
   private updateURL() {
