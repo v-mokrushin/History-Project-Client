@@ -16,7 +16,7 @@
   cursor: pointer;
   overflow: hidden;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     display: flex;
     bottom: 10px;
     padding: 7px 85px 5px;
@@ -24,7 +24,7 @@
     bottom: 7px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     padding: 7px 60px 5px;
   }
 }
@@ -37,7 +37,7 @@
   transform: scale(0);
   transition: max-height 400ms ease, padding 400ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 10px;
   }
 
@@ -45,11 +45,11 @@
     max-height: 400px;
     transform: scale(1);
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       padding-bottom: 8px;
     }
 
-    @include media-breakpoint-down(xs) {
+    @include breakpoint(xs) {
       padding-bottom: 8px;
     }
   }
@@ -64,7 +64,7 @@
   letter-spacing: 1px;
   text-align: center;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 18px;
   }
 }
@@ -78,7 +78,7 @@
   transition: transform 200ms ease;
   letter-spacing: 0.5px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 15px;
   }
 

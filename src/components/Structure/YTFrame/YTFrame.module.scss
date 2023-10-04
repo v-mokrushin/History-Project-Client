@@ -5,16 +5,16 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     grid-gap: 12px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
   }
@@ -25,7 +25,7 @@
   width: 100%;
   border-radius: 5px;
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     height: auto;
   }
 }

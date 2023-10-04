@@ -7,20 +7,20 @@
   border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
-  height: 45px;
+  height: 40px;
   transition: transform 150ms ease, border-color 200ms ease;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     min-width: 210px;
-    height: 35px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     min-width: 180px;
-    height: 35px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     border: none;
     background-color: black;
   }
@@ -35,7 +35,7 @@
 }
 
 .text {
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     color: white;
   }
 }

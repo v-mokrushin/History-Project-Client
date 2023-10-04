@@ -7,7 +7,7 @@ import { Pages } from "../../../constants/pages";
 import actualSectionStore from "../../../stores/mobx/actualSectionStore";
 import styles from "./Beadcrumbs.module.scss";
 
-const Beadcrumbs = observer(() => {
+const Breadcrumbs = observer(() => {
   const locationPathname: string = useLocation().pathname;
   const labels: Array<string> = React.useMemo(
     () => Pages.getLabelsArray(locationPathname, settingsStore.language),
@@ -46,4 +46,4 @@ const Beadcrumbs = observer(() => {
   );
 });
 
-export default Beadcrumbs;
+export default Breadcrumbs;

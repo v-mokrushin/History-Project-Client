@@ -44,14 +44,14 @@
         // transform: scale(1.05);
       }
 
-      @include media-breakpoint-down(lg) {
+      @include breakpoint(lg) {
         display: none;
       }
 
       &_mobile {
         display: none;
 
-        @include media-breakpoint-down(lg) {
+        @include breakpoint(lg) {
           display: block;
           height: 6vh;
           object-fit: cover;
@@ -60,7 +60,7 @@
           border-radius: 50%;
         }
 
-        @include media-breakpoint-down(xs) {
+        @include breakpoint(xs) {
           height: 7vh;
         }
       }
@@ -72,7 +72,7 @@
       width: 100%;
       // gap: 0.75vh;
 
-      @include media-breakpoint-down(lg) {
+      @include breakpoint(lg) {
         gap: 1vh;
       }
 
@@ -97,7 +97,7 @@
         gap: 1vh;
         margin-top: 2vh;
 
-        @include media-breakpoint-down(sm) {
+        @include breakpoint(sm) {
           flex-direction: column;
           align-self: auto;
         }
@@ -113,14 +113,14 @@
       right: 1.25vh;
       top: 1vh;
 
-      @include media-breakpoint-down(lg) {
+      @include breakpoint(lg) {
         display: none;
       }
 
       &_mobile {
         display: none;
 
-        @include media-breakpoint-down(lg) {
+        @include breakpoint(lg) {
           display: block;
           position: static;
         }

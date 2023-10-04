@@ -5,15 +5,15 @@
   margin-bottom: 25px;
   padding: 37px 3px 15px;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     padding-top: 30px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     padding-top: 25px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     padding-top: 20px;
   }
 
@@ -25,11 +25,11 @@
     margin-bottom: 110px;
     width: max-content;
 
-    @include media-breakpoint-down(FHD) {
+    @include breakpoint(FHD) {
       margin-bottom: 90px;
     }
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       column-gap: 12px;
       margin-bottom: 75px;
     }
@@ -44,7 +44,7 @@
       height: 2px;
       background-color: gray;
 
-      @include media-breakpoint-down(xl) {
+      @include breakpoint(xl) {
         height: 2px;
         top: calc(100% + 6px);
       }
@@ -82,11 +82,11 @@
       transition: all 250ms ease;
       will-change: transform;
 
-      @include media-breakpoint-down(FHD) {
+      @include breakpoint(FHD) {
         width: 55px;
       }
 
-      @include media-breakpoint-down(xl) {
+      @include breakpoint(xl) {
         width: 40px;
       }
 
@@ -111,11 +111,11 @@
         line-height: normal;
         transition: 250ms ease;
 
-        @include media-breakpoint-down(FHD) {
+        @include breakpoint(FHD) {
           font-size: 15px;
         }
 
-        @include media-breakpoint-down(xl) {
+        @include breakpoint(xl) {
           font-size: 12px;
         }
       }
@@ -131,18 +131,18 @@
         width: 100px;
         transition: 250ms ease;
 
-        @include media-breakpoint-down(FHD) {
+        @include breakpoint(FHD) {
           font-size: 15px;
           line-height: 15px;
         }
 
-        @include media-breakpoint-down(xl) {
+        @include breakpoint(xl) {
           font-size: 12px;
           line-height: 11px;
           width: 60px;
         }
 
-        @include media-breakpoint-down(xs) {
+        @include breakpoint(xs) {
           top: calc(100% + 32px);
         }
       }

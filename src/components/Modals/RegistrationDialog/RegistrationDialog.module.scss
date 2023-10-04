@@ -42,11 +42,11 @@
   border: 1px solid rgb(239, 234, 234);
   overflow: hidden;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     width: 65vw;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     width: 85vw;
     top: 25%;
   }

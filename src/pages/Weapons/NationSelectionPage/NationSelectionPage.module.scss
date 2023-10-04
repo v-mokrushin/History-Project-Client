@@ -2,25 +2,29 @@
 
 .flagsWrapper {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-column-gap: 1.7vmax;
-  grid-row-gap: 1.38vh;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 15px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(FHD) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include breakpoint(xl) {
     grid-template-columns: repeat(7, 1fr);
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2vmax;
     grid-column-gap: 15px;
   }
 
-  @include media-breakpoint-down(xxs) {
+  @include breakpoint(xxs) {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 35px;
   }

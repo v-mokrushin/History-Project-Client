@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 20px;
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     gap: 15px;
   }
 }

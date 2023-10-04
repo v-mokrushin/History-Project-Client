@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: transform 200ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 6px;
   }
 
@@ -18,12 +18,12 @@
     position: absolute;
     left: 2.5vw;
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       // position: relative;
       // left: auto;
     }
 
-    @include media-breakpoint-down(lg) {
+    @include breakpoint(lg) {
       position: relative;
       left: auto;
     }
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   transition: color 300ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 25px;
     letter-spacing: 4px;
   }
@@ -59,7 +59,7 @@
   text-transform: uppercase;
   transition: color 300ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 12px;
     letter-spacing: 6px;
   }

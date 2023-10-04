@@ -8,23 +8,23 @@
   flex-direction: column;
   gap: 30px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 25px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     gap: 23px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     gap: 21px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 20px;
   }
 
-  @include media-breakpoint-down(xxs) {
+  @include breakpoint(xxs) {
     gap: 13px;
   }
 }

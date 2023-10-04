@@ -82,21 +82,21 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 34px;
     margin-top: 200px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     font-size: 32px;
     margin-top: 250px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     font-size: 32px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 23px;
   }
 }

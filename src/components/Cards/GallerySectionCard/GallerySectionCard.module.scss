@@ -12,7 +12,7 @@
   transition: transform 150ms ease;
   user-select: none;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: auto;
   }
 
@@ -64,15 +64,15 @@
         color: $gold;
       }
 
-      @include media-breakpoint-down(md) {
+      @include breakpoint(md) {
         font-size: 16px;
       }
 
-      @include media-breakpoint-down(xs) {
+      @include breakpoint(xs) {
         font-size: 16px;
       }
 
-      @include media-breakpoint-down(xxs) {
+      @include breakpoint(xxs) {
         font-size: 15px;
       }
     }

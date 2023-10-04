@@ -15,7 +15,7 @@ const FilterButton = ({ text, callback, className }: IFilterButtonProps) => {
       className={classNames(styles.root, className)}
       onClick={() => callback()}
     >
-      <Text className={styles.text}>{text}</Text>
+      {text}
     </button>
   );
 };

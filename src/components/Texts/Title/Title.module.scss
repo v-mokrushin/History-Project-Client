@@ -3,35 +3,30 @@
 .title {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 36px;
   letter-spacing: 1px;
   color: $black;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 
-  @include media-breakpoint-down(FHD) {
-    font-size: 36px;
-    margin-bottom: 35px;
-  }
-
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 28px;
     margin-bottom: 20px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     font-size: 31px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     font-size: 28px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 24px;
     margin-bottom: 20px;
   }
 
-  @include media-breakpoint-down(xxs) {
+  @include breakpoint(xxs) {
     font-size: 20px;
     line-height: 16px;
   }

@@ -62,7 +62,7 @@ const Filter: React.FC<IFilterProps> = observer(
           setOpen((val) => !val);
         }}
       >
-        <Text>{title}</Text>
+        {title}
         <Text className={styles.wrapper_selected}>{getter}</Text>
         <button
           className={classNames(styles.arrow, open && styles.arrow_open)}

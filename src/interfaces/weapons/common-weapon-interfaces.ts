@@ -74,6 +74,25 @@ export interface IWeaponGalleryInfo {
   artsCollectionSize?: number;
 }
 
+export class WeaponGalleryInfo implements IWeaponGalleryInfo {
+  photoCollectionSize?: number;
+  postwarPhotoCollectionSize?: number;
+  schemesCollectionSize?: number;
+  artsCollectionSize?: number;
+
+  constructor(
+    photoCollectionSize: number | undefined,
+    postwarPhotoCollectionSize: number | undefined,
+    schemesCollectionSize: number | undefined,
+    artsCollectionSize: number | undefined
+  ) {
+    this.photoCollectionSize = photoCollectionSize;
+    this.postwarPhotoCollectionSize = postwarPhotoCollectionSize;
+    this.schemesCollectionSize = schemesCollectionSize;
+    this.artsCollectionSize = artsCollectionSize;
+  }
+}
+
 export interface IModel {
   readonly title: string;
   photo: string;

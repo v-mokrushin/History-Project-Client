@@ -5,7 +5,7 @@
   width: 100%;
   background-color: black;
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     display: none;
   }
 }
@@ -17,11 +17,11 @@
   gap: 3vh;
   margin-top: 2.5vh;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     grid-template-columns: 180px 1fr;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -35,7 +35,7 @@
     justify-content: center;
     gap: 1vh;
 
-    @include media-breakpoint-down(xs) {
+    @include breakpoint(xs) {
       margin: 0 auto;
       width: 100%;
     }
@@ -50,7 +50,7 @@
       cursor: pointer;
       background-color: rgb(90, 115, 148);
 
-      @include media-breakpoint-down(xs) {
+      @include breakpoint(xs) {
         height: 22vh;
         min-height: 150px;
       }
@@ -69,7 +69,7 @@
     flex-direction: column;
     gap: 3vh;
 
-    @include media-breakpoint-down(sm) {
+    @include breakpoint(sm) {
       gap: 20px;
     }
 
@@ -82,7 +82,7 @@
         display: flex;
         justify-content: space-between;
 
-        @include media-breakpoint-down(xs) {
+        @include breakpoint(xs) {
           flex-direction: column;
         }
       }
@@ -98,20 +98,20 @@
           gap: 1vh;
         }
 
-        @include media-breakpoint-down(xl) {
+        @include breakpoint(xl) {
           grid-template-columns: repeat(3, 1fr);
         }
 
-        @include media-breakpoint-down(lg) {
+        @include breakpoint(lg) {
           grid-template-columns: repeat(2, 1fr);
         }
 
-        @include media-breakpoint-down(sm) {
+        @include breakpoint(sm) {
           grid-template-columns: repeat(1, 1fr);
           gap: 15px;
         }
 
-        @include media-breakpoint-down(xxs) {
+        @include breakpoint(xxs) {
           gap: 10px;
         }
 
@@ -130,16 +130,16 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     grid-gap: 12px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 8px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
   }

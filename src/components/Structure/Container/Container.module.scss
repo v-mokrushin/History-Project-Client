@@ -4,19 +4,19 @@
   width: 1450px;
   margin: 0 auto;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     width: 1075px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     width: 960px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     // width: 100%;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     width: 100%;
   }
 }
@@ -25,7 +25,7 @@
   margin: 0 auto;
   width: 98%;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     width: 100%;
   }
 }
@@ -36,7 +36,7 @@
   grid-template-columns: 450px auto 450px;
   grid-column-gap: 65px;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     grid-template-columns: 325px auto 325px;
     grid-column-gap: 55px;
   }
@@ -45,7 +45,7 @@
   //   grid-column-gap: 65px;
   // }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     display: block;
     width: 100%;
   }

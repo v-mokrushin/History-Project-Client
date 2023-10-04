@@ -16,12 +16,12 @@
     border-radius: 50%;
     height: 3vh;
 
-    @include media-breakpoint-down(lg) {
+    @include breakpoint(lg) {
       height: 30px;
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 25px;
   }
 }

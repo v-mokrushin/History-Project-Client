@@ -4,13 +4,13 @@
   background-image: url(../../../assets/images/input-search/magnifier.svg);
   filter: invert(100%);
   aspect-ratio: 1 / 1;
-  height: 2.4vh;
+  height: 25px;
   padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 25px;
   }
 }

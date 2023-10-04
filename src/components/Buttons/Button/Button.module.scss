@@ -4,22 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3vh;
-  min-height: 30px;
+  height: 40px;
   padding: 0 1.95vh;
   background-color: transparent;
   border-radius: 0.4vh;
   border: none;
   cursor: pointer;
   transition: transform 70ms ease, background-color 250ms ease;
-
-  @include media-breakpoint-down(xl) {
-    // max-height: 30px;
-  }
-
-  @include media-breakpoint-down(lg) {
-    // min-height: 25px;
-  }
 
   &:active {
     transform: translateY(0.1vh);
@@ -40,7 +31,7 @@
   background-color: $gold;
   transition: transform 150ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     max-height: 40px;
   }
 

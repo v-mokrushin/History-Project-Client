@@ -28,11 +28,11 @@
     grid-gap: 0.5vw;
     width: 100%;
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       grid-template-columns: repeat(5, 1fr);
     }
 
-    @include media-breakpoint-down(xs) {
+    @include breakpoint(xs) {
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 1vw;
     }
@@ -40,11 +40,11 @@
     &_fullSize {
       grid-template-columns: repeat(10, 1fr);
 
-      @include media-breakpoint-down(lg) {
+      @include breakpoint(lg) {
         grid-template-columns: repeat(6, 1fr);
       }
 
-      @include media-breakpoint-down(xs) {
+      @include breakpoint(xs) {
         grid-template-columns: repeat(4, 1fr);
       }
     }
@@ -67,7 +67,7 @@
       &:hover {
         transform: scale(1.05);
 
-        @include media-breakpoint-down(md) {
+        @include breakpoint(md) {
           transform: none;
         }
       }

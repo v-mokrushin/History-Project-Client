@@ -13,15 +13,15 @@
   border-radius: 2.5%;
   overflow: hidden;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     transform: translateX(-50%) translateY(calc(-35px - 100%));
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     transform: translateX(-50%) translateY(calc(-25px - 100%));
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     display: none;
   }
 }

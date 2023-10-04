@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 1vh;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     top: 65px ;
   }
 }
@@ -23,11 +23,11 @@
   padding: 1vh 1.75vh 1vh 1vh;
   cursor: pointer;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     width: 280px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     width: 180px;
   }
 

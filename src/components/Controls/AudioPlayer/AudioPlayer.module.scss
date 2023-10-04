@@ -12,7 +12,7 @@
   gap: 7px;
   height: 28px;
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     height: 24px;
     gap: 8px;
   }
@@ -29,11 +29,11 @@
   cursor: pointer;
   transition: transform 200ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     height: 20px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
   }
 
   &:hover {

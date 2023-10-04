@@ -5,10 +5,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.25vh;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     display: flex;
     flex-direction: column;
   }

@@ -13,11 +13,11 @@
     width: 0;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 7px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 5px;
   }
 }
@@ -29,11 +29,11 @@
   gap: 10px;
   white-space: nowrap;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 7px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 5px;
   }
 }
@@ -45,15 +45,15 @@
   letter-spacing: 1px;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 13px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 11px;
     letter-spacing: 0.25px;
   }

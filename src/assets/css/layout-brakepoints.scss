@@ -8,7 +8,7 @@ $breakpoints: (
   FHD: 1999.98px,
 );
 
-@mixin media-breakpoint-down($breakpoint) {
+@mixin breakpoint($breakpoint) {
   $size: map-get($breakpoints, $breakpoint);
 
   @if ($size == 0) {
@@ -20,23 +20,23 @@ $breakpoints: (
   }
 }
 
-@include media-breakpoint-down(FHD) {
+@include breakpoint(FHD) {
 }
 
-@include media-breakpoint-down(xl) {
+@include breakpoint(xl) {
 }
 
-@include media-breakpoint-down(lg) {
+@include breakpoint(lg) {
 }
 
-@include media-breakpoint-down(md) {
+@include breakpoint(md) {
 }
 
-@include media-breakpoint-down(sm) {
+@include breakpoint(sm) {
 }
 
-@include media-breakpoint-down(xs) {
+@include breakpoint(xs) {
 }
 
-@include media-breakpoint-down(xxs) {
+@include breakpoint(xxs) {
 }

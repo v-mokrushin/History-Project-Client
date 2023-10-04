@@ -13,24 +13,24 @@
   box-shadow: 0px 0px 30px 0px rgba(36, 39, 42, 0.3);
   background-color: #000000;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     // height: 300px;
     // height: 300px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 290px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     height: 280px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     height: 270px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     // border-radius: 0;
     height: 220px;
   }
@@ -83,21 +83,21 @@
   padding: 30px 20px;
   z-index: 3;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 11px;
     padding: 20px 16px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     padding: 25px 18px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     gap: 10px;
     padding: 18px 13px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 8px;
   }
 }
@@ -110,20 +110,20 @@
   letter-spacing: 1px;
   transition: color 300ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     // font-size: 23px;
     font-size: 20px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     font-size: 22px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     font-size: 19px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 15px;
   }
 }
@@ -135,19 +135,19 @@
   color: $white;
   letter-spacing: 1px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 15px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     font-size: 18px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     font-size: 14px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 12px;
   }
 }
@@ -158,20 +158,20 @@
   background-color: rgb(238, 226, 226);
   transition: width 300ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     height: 2px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 3px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     width: 100%;
     height: 2px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     height: 1px;
   }
 }

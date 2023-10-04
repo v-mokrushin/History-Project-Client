@@ -9,20 +9,20 @@
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     grid-gap: 15px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     grid-gap: 15px;
     grid-template-columns: 1fr;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     grid-template-columns: 1fr;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     row-gap: 15px;
   }
 }

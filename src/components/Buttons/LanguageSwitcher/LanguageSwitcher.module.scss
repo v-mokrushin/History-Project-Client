@@ -9,7 +9,7 @@
   padding: 0;
   cursor: pointer;
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 5px;
   }
 
@@ -22,7 +22,7 @@
   aspect-ratio: 1 / 1;
   height: 2.2vh;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 20px;
   }
 }

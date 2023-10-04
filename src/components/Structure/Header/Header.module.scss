@@ -16,7 +16,7 @@
   padding: 0 1.5%;
   align-items: center;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     height: 60px;
     // flex-direction: column;
     // height: auto;
@@ -24,14 +24,14 @@
     // row-gap: 15px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     flex-direction: column;
     height: auto;
     padding: 25px 0;
     row-gap: 15px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     padding: 15px 0;
   }
 }

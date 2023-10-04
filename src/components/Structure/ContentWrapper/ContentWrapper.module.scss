@@ -8,23 +8,23 @@
   gap: 18px;
   flex-grow: 1;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     padding: 18px 0 40px;
     gap: 12px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     padding: 20px 30px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     padding: 25px 25px 50px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     padding: 10px 15px 35px;
     gap: 12px;
   }

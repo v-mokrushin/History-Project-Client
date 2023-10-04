@@ -5,13 +5,13 @@
   align-items: center;
   gap: 0.5vw;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     position: absolute;
     top: 30px;
     right: 20px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     display: none;
   }
 

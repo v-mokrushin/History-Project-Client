@@ -13,11 +13,11 @@
   &__titleBox {
     min-width: 100px;
 
-    @include media-breakpoint-down(xs) {
+    @include breakpoint(xs) {
       min-width: 80px;
     }
 
-    @include media-breakpoint-down(xxs) {
+    @include breakpoint(xxs) {
       min-width: 60px;
     }
   }

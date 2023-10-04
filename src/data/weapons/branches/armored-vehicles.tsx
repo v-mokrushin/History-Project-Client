@@ -15,6 +15,7 @@ import {
   IArmoredVehiclesSpecifications,
 } from "../../../interfaces/weapons/armored-interfaces";
 import { Producers } from "../departments/producers";
+import { WeaponGalleryInfo } from "interfaces/weapons/common-weapon-interfaces";
 
 const ussr: IArmoredVehicle[] = [
   {
@@ -25,10 +26,7 @@ const ussr: IArmoredVehicle[] = [
     intro: [
       "ИС-3 — последний советский тяжёлый танк, принятый на вооружение и запущенный в серийное производство во время Второй Мировой войны. Его проектирование началось весной 1944 года как глубокая модернизация ИС-2, который не устраивал военных по бронезащите. В результате ИС-3 получил новый сварной корпус с характерным «щучим носом» (такое название он получил из-за формы верхней лобовой части корпуса) и бортовыми бронелистами под наклоном. На крыше башни новой конструкции были сделаны новые люки, намного более удобные для экипажа, а механик-водитель получил новый треугольный люк для лучшей обзорности вне боевой обстановки. Помимо этого, топливные баки были убраны из боевого отделения, а вместо командирской башенки установили удачные перископические приборы наблюдения.",
     ],
-    galleryInfo: {
-      artsCollectionSize: 5,
-      postwarPhotoCollectionSize: 4,
-    },
+    galleryInfo: new WeaponGalleryInfo(undefined, 4, undefined, 4),
     specifications: {
       common: {
         developer: Developers.armoredVehicles.ChelyabinskExp100,
@@ -44,12 +42,7 @@ const ussr: IArmoredVehicle[] = [
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
     article: <IS_2 />,
-    galleryInfo: {
-      photoCollectionSize: 17,
-      postwarPhotoCollectionSize: 10,
-      schemesCollectionSize: 3,
-      artsCollectionSize: 15,
-    },
+    galleryInfo: new WeaponGalleryInfo(17, 10, 3, 15),
     isVideoIntro: true,
     sections: [
       "Введение",
@@ -151,9 +144,7 @@ const ussr: IArmoredVehicle[] = [
     name: "ИС-1",
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1943,
-    galleryInfo: {
-      artsCollectionSize: 2,
-    },
+    galleryInfo: new WeaponGalleryInfo(undefined, undefined, undefined, 2),
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Ermolaev, // ???
@@ -275,7 +266,7 @@ const ussr: IArmoredVehicle[] = [
     shortName: "Т-34 (1940)",
     type: WeaponClassification.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1940,
-    galleryInfo: { photoCollectionSize: 2, postwarPhotoCollectionSize: 1 },
+    galleryInfo: new WeaponGalleryInfo(2, 1, undefined, undefined),
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.Koshkin,
@@ -305,7 +296,7 @@ const ussr: IArmoredVehicle[] = [
     isReady: true,
     type: WeaponClassification.armoredVehicle.mediumTank,
     adoptedIntoServiceDate: 1941,
-    galleryInfo: { photoCollectionSize: 6, postwarPhotoCollectionSize: 3 },
+    galleryInfo: new WeaponGalleryInfo(6, 3, undefined, undefined),
     intro: [
       "Танк Т-34 является самым известным советским танком и одним из самых узнаваемых символов Второй мировой войны. Из-за постоянных перебоев с поставками пушек Л-11 было решено поставить на танк Т-34 более мощное орудие Ф-34. Новые Т-34 начали производиться с февраля 1941-го года. К осени 1941-го года крупным производителем этого танка остался только один завод - СТЗ. В связи с этим в городе Сталинград была развёрнута цепочка заводов, которые снабжали комплектующими сборочные цеха. Всего было выпущено 3014 экземпляров Т-34 образца 1941-го года.",
     ],
@@ -418,12 +409,7 @@ const ussr: IArmoredVehicle[] = [
       "Характеристики",
       "Читайте также",
     ],
-    galleryInfo: {
-      photoCollectionSize: 17,
-      postwarPhotoCollectionSize: 7,
-      schemesCollectionSize: 3,
-      artsCollectionSize: 8,
-    },
+    galleryInfo: new WeaponGalleryInfo(17, 7, 3, 8),
     specifications: {
       common: {
         developer: Developers.armoredVehicles.Tagil183,
@@ -696,9 +682,7 @@ const germany: IArmoredVehicle[] = [
     shortName: "Königstiger",
     type: WeaponClassification.armoredVehicle.heavyTank,
     adoptedIntoServiceDate: 1944,
-    galleryInfo: {
-      artsCollectionSize: 21,
-    },
+    galleryInfo: new WeaponGalleryInfo(undefined, undefined, undefined, 21),
     specifications: {
       common: {
         chiefDesigner: ChiefDesigners.armoredVehicles.ErwinAders,
@@ -720,9 +704,7 @@ const germany: IArmoredVehicle[] = [
       "Panzerkampfwagen VI Ausf. H1, или «Тигр» – это первый немецкий тяжелый танк времен Второй мировой войны. Один из самых знаменитых танков Германии.",
     ],
     sections: ["Введение", "Характеристики", "Модели"],
-    galleryInfo: {
-      artsCollectionSize: 8,
-    },
+    galleryInfo: new WeaponGalleryInfo(undefined, undefined, undefined, 8),
     models: [
       {
         title: `Сборная модель ZVEZDA T-VI "Тигр" масштаб 1:35`,

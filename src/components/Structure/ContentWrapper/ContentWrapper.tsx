@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import Beadcrumbs from "../Beadcrumbs/Beadcrumbs";
+import Breadcrumbs from "../Beadcrumbs/Beadcrumbs";
 import styles from "./ContentWrapper.module.scss";
 import Container from "../Container/Container";
 import { ANIMATIONS } from "../../../constants/animations";
@@ -22,7 +22,7 @@ export default function ContentWrapper({
   return (
     <div className={classNames(styles.root, className, ANIMATIONS.fadeIn)}>
       <Container type={containerType}>
-        {showBreadcrumbs && <Beadcrumbs />}
+        {showBreadcrumbs && <Breadcrumbs />}
       </Container>
       {children}
     </div>

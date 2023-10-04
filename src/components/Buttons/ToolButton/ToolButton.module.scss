@@ -11,7 +11,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     height: 25px;
   }
 }

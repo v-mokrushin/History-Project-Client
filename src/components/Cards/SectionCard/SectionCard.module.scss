@@ -2,7 +2,7 @@
 
 .root {
   width: 100%;
-  height: 20vh;
+  height: 220px;
   position: relative;
   text-decoration: none;
   transition: transform 300ms ease;
@@ -13,7 +13,7 @@
   transition: height 300ms ease;
   background-color: #000000;
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     max-height: 170px;
   }
 
@@ -63,18 +63,18 @@
   justify-content: flex-start;
   gap: 15px;
   position: relative;
-  padding: 2vh 1.5vmax;
+  padding: 20px 30px;
   z-index: 3;
 
   .title {
     font-family: "Oswald", sans-serif;
     font-weight: 400;
-    font-size: 3.2vh;
-    letter-spacing: 0.16vh;
+    font-size: 35px;
+    letter-spacing: 1px;
     color: $white;
     transition: transform 300ms ease, color 300ms ease;
 
-    @include media-breakpoint-down(xxs) {
+    @include breakpoint(xxs) {
       font-size: 20px;
     }
   }

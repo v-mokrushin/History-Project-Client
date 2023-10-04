@@ -11,31 +11,31 @@
   // padding: 25px 15px;
   // border-radius: 5px;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     min-width: auto;
     width: 325px;
     margin-bottom: 20px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     width: 290px;
     margin-bottom: 23px;
     gap: 10px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     width: 300px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     width: 300px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     width: auto;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     width: auto;
     gap: 10px;
     width: 100%;
@@ -55,11 +55,11 @@
   flex-direction: column;
   gap: 12px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 10px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 9px;
   }
 }
@@ -72,23 +72,23 @@
   color: $black;
   margin: 0 auto;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     letter-spacing: normal;
     font-size: 22px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 19px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     font-size: 18px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 17px;
     margin: 0 auto;
   }

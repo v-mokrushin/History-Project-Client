@@ -8,26 +8,26 @@
   align-items: center;
   gap: 25px;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     gap: 22px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 17px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     position: static;
     transform: none;
     // left: 0;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     gap: 17px;
     position: static;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     display: none;
   }
 }
@@ -61,11 +61,11 @@
   height: max-content;
   white-space: normal;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     font-size: 18px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 15px;
     letter-spacing: 4px;
   }
@@ -102,7 +102,7 @@
   &:hover::after {
     transform: scaleX(1);
 
-    @include media-breakpoint-down(md) {
+    @include breakpoint(md) {
       transform: scaleX(0);
     }
   }
@@ -146,12 +146,12 @@
       background-color: rgb(0, 0, 0);
     }
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       padding: 10px 12px 13px;
       gap: 6px;
     }
 
-    @include media-breakpoint-down(md) {
+    @include breakpoint(md) {
       display: none;
     }
   }

@@ -11,13 +11,13 @@
   flex-wrap: wrap;
   gap: 10px;
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
@@ -30,11 +30,11 @@
   grid-gap: 0.2vw;
 
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5vw;
   }
@@ -59,7 +59,7 @@
     &:hover {
       transform: scale(1.025);
 
-      @include media-breakpoint-down(md) {
+      @include breakpoint(md) {
         transform: none;
       }
     }

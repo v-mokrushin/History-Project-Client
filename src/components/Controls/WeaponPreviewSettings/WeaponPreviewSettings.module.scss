@@ -6,11 +6,11 @@
   flex-wrap: wrap;
   gap: 16px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 15px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     column-gap: 12px;
     row-gap: 2px;
     margin-bottom: 10px;

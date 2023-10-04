@@ -12,16 +12,16 @@
   clear: right;
   cursor: pointer;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     width: 33%;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoint(md) {
     margin-bottom: 10px;
     width: 40%;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     width: 100%;
     margin-left: 0;
   }
@@ -32,11 +32,11 @@
     margin-left: auto;
     margin-right: auto;
 
-    @include media-breakpoint-down(md) {
+    @include breakpoint(md) {
       width: 90%;
     }
 
-    @include media-breakpoint-down(sm) {
+    @include breakpoint(sm) {
       width: 100%;
     }
   }
@@ -57,11 +57,11 @@
   object-fit: contain;
   transition: transform 250ms ease;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     border-radius: 2px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     border-radius: 1px;
   }
 
@@ -76,15 +76,15 @@
   color: $grey;
   transition: color 250ms ease;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
     line-height: 23px;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     line-height: 20px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     line-height: 18px;
   }
 }

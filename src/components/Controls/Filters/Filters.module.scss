@@ -7,11 +7,11 @@
   margin-bottom: 10px;
   user-select: none;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     row-gap: 7px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 7px;

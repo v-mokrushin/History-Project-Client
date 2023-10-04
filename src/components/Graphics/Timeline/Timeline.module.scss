@@ -6,11 +6,11 @@
   gap: 20px;
   overflow: hidden;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 16px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 15px;
   }
 }

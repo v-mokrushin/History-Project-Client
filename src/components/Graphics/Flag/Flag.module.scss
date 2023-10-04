@@ -9,11 +9,11 @@
   cursor: pointer;
   gap: 7px;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     gap: 5px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     gap: 2px;
   }
 
@@ -43,17 +43,17 @@
     height: 26px;
     border-radius: 2px;
 
-    @include media-breakpoint-down(FHD) {
+    @include breakpoint(FHD) {
       height: 24px;
       border-radius: 1px;
     }
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       height: 21px;
       border-radius: 1px;
     }
 
-    @include media-breakpoint-down(xs) {
+    @include breakpoint(xs) {
       height: 18px;
     }
 
@@ -68,11 +68,11 @@
   transition: color 400ms ease;
   margin: 0 auto;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     font-size: 14px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
     font-size: 13px;
   }
 }
@@ -90,23 +90,24 @@
   background-size: cover;
   transition: transform 400 ease;
   z-index: 0;
+  overflow: hidden;
 
-  @include media-breakpoint-down(FHD) {
+  @include breakpoint(FHD) {
   }
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoint(lg) {
     box-shadow: 0px 0px 10px 0px rgba(36, 39, 42, 0.3);
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoint(sm) {
     border-radius: 2px;
     // margin-bottom: 5px;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include breakpoint(xs) {
   }
 
   &::after {
@@ -122,7 +123,7 @@
   &:hover {
     transform: translateY(-4px);
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoint(xl) {
       transform: translateY(-3px);
     }
   }

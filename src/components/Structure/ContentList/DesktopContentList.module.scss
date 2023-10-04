@@ -10,7 +10,7 @@
   height: max-content;
   justify-self: right;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoint(xl) {
     display: none;
   }
 
